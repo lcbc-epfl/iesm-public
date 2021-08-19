@@ -1,0 +1,94 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: Introduction to Electronic Structure Methods
+author: Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger
+
+only_build_toc_files        : true
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: 'off'
+
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - colon_fence
+    - deflist
+    - dollarmath
+    - html_admonition
+    - html_image
+    - linkify
+    - replacements
+    - smartquotes
+    - substitution
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/lcbc-epfl/iesm-public  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+launch_buttons:
+  notebook_interface        : jupyterlab
+  jupyterhub_url: "https://noto.epfl.ch"
+  colab_url: ""
+  binderhub_url:  ""
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_multitoc_numbering: false
+  use_repository_button: true
+  extra_footer              :   # Will be displayed underneath the footer.
+    <div class="container-lg mt-3 footer">
+      <div class="row">
+        <div class="col-xl-9 d-flex">
+          <div class="container">
+            <div class="row">
+              <div class="col-6 d-flex" style="justify-content:center">
+            <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+
+              </div>
+              <div class="col-6 d-flex" style="justify-content:center">
+                <ul style="list-style:none">
+                  <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li>
+                  <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3">
+          <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="row_footer my-3">
+      Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise)
+    </div>
+sphinx: 
+    config:
+        language: en
+        html_show_copyright: false
+        mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+        mathjax_config:
+            TeX:
+              Macros:
+                "ket": ["\\lvert #1 \\rangle",1]
+                "bra": ["\\langle #1 \\lvert",1]
+                "Ket": ["\\lvert #1 \\rangle",1]
+                "Bra": ["\\langle #1 \\lvert",1]
+                "braket": ["\\langle #1 \\lvert #2 \\rangle",2]
+                "hop": "\\hat{\\mathcal{H}}"
+                "unit": "\\mathbbm{1}"
+

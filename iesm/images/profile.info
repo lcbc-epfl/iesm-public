@@ -1,0 +1,2 @@
+plot 0.5/(1+exp(5*(x-5)))+(exp(-2*(x-5)**2))+1 w l lc rgb "purple" lw 4 notitle
+plot (exp(-0.6*(x-3)**2)+0.3*(exp(-0.1*(x-3)**2))+0.8*exp(-0.1*(x-9)**2)+0.6*(exp(-0.1*(x)**2))+0.8*exp(-0.1*(x-13)**2)) w l lc rgb "red" lw 4 notitle
