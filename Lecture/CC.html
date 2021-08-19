@@ -1,0 +1,896 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coupled cluster &#8212; Introduction to Electronic Structure Methods</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="9.2. Locating Transition States: Constrained Optimisations" href="../Exercises/Ex8/Ex8.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction to Electronic Structure Methods
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex2/Ex2.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex3/Ex3.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex3/Ex3Diss.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex3/Ex3GeoOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex4.html">
+   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex4/Ex4Theory.html">
+     4.1. Møller-Plesset Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex4/BDE.html">
+     4.2. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex4/HNO3_Correlation.html">
+     4.5. Correlation energy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex4b.html">
+   5. The hartree fock procedure in detail
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/Ex5.html">
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex5/Ex5.html">
+     6.1. DFT functionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex5/Ex5b.html">
+     6.2. Density Functional Theory 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex6.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex8/Ex8Theory.html">
+     9.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Exercises/Ex8/Ex8.html">
+     9.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Coupled cluster
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/Lecture/CC.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lcbc-epfl/iesm-public"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FLecture/CC.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#recap">
+   Recap
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-coupled-cluster-theory">
+   What is Coupled Cluster Theory?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#size-consistency-size-extensivity-and-strict-separability">
+   Size-consistency, size-extensivity, and strict separability
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#size-consistency">
+     Size-consistency
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#size-extensivity">
+     Size-extensivity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#strict-separability">
+     Strict separability
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-do-we-want-size-extensivity">
+     Why do we want size-extensivity?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-coupled-cluster-equations">
+   The Coupled Cluster equations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-exponential-ansatz">
+     The exponential ansatz
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-cc-schrodinger-equation">
+     The CC Schrödinger equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-cc-amplitudes">
+     The CC amplitudes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cc-models-and-comments">
+   CC models and comments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standard-cc-models">
+     Standard CC models
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computational-cost">
+     Computational cost
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-cc-theory-used-for">
+     What is CC theory used for?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="coupled-cluster">
+<h1>Coupled cluster<a class="headerlink" href="#coupled-cluster" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="recap">
+<h2>Recap<a class="headerlink" href="#recap" title="Permalink to this headline">¶</a></h2>
+<p>We are interested in the (ground-state) solutions of the molecular electronic
+Schrödinger equation (i.e. under the Born–Oppenheimer approximation).</p>
+<p>So far we have seen:</p>
+<ul class="simple">
+<li><p><strong>Hartree–Fock (HF):</strong> A mean-field approximation in which the wave-function is
+written as a single Slater determinant. The molecular orbitals (MO) used in the HF
+wave-function are expressed as a linear combination of basis functions (usually atomic orbitals).
+The coefficients of the MO expansion are obtained variationally and are the
+only wave-function parameters.</p></li>
+<li><p><strong>Full Configuration Interaction (FCI):</strong> The exact solution to the
+electronic Schrödinger equation <em>in a given one-electron basis</em>. The FCI
+wave-function is expressed as a linear combination of all possible Slater determinant.
+The coefficients of the FCI expansion are obtained variationally and are the
+only wave-function parameters.</p></li>
+<li><p><strong>Truncated CI and Møller–Plesset (MP) theory:</strong> Post HF models providing intermediate
+results between HF and FCI (compromise between accuracy and computational
+cost).</p></li>
+<li><p>More things that are not really relevant here…</p></li>
+</ul>
+<p>In the wave-function based models described above and in Coupled Cluster (CC)
+theory as well, we make approximations of two different kinds:</p>
+<ul class="simple">
+<li><p>In the one-electron space (choice of a <em>finite</em> basis set).</p></li>
+<li><p>In the N-electron space (choice of a wave-function model).</p></li>
+</ul>
+<p>In this lecture we are only concerned with the approximations introduced in the
+N-electron space. We will therefore always consider solutions to the electronic
+Schrödinger equation for a particular choice of one-electron basis set, keeping
+in mind that for approaching the exact solution it is important to make
+improvement in <strong>both</strong> spaces. A FCI solution for a minimal basis set is not
+very useful in practice…</p>
+<p><img alt="image" src="../_images/convergence.png" /></p>
+<p>The systematic approach to the exact solution of the Schrödinger equation by  successive improvements in the one- and <em>N</em>-electron spaces. (Replicated  from Figure 5.1 in [Helgaker2000]_).</p>
+</div>
+<div class="section" id="what-is-coupled-cluster-theory">
+<h2>What is Coupled Cluster Theory?<a class="headerlink" href="#what-is-coupled-cluster-theory" title="Permalink to this headline">¶</a></h2>
+<p>Coupled Cluster Theory corresponds to a set of models that, similarly to
+truncated CI and MP theory, have been designed as <strong>post-HF</strong> methods targeting the
+FCI solution to the electronic Schrödinger equation.</p>
+<p>The goal of CC is thus to recover the correlation energy, defined as the
+difference between the FCI and the HF energy in a given basis set. And to do
+that as efficiently as possible, i.e., to recover most of the correlation
+energy at the minimum computational cost.</p>
+<p>CC theory is often preferred over the CI and MP methods for the two following
+reasons:</p>
+<ul class="simple">
+<li><p>It is <strong>size-extensive</strong> (we will clarify that point in the next section),</p></li>
+<li><p>and it provides <strong>fast and systematic convergence</strong> to the FCI solutions.</p></li>
+</ul>
+<p>Perturbation models like MP theory often have convergence troubles, and,
+as we will see in the next section, truncated CI methods do not provide
+size-extensive energies.</p>
+<p>However, these properties of CC theory come at the expense of a variational
+formulation. So in standard CC theory, <strong>the CC energy is not variational</strong>.
+Another major issue for CC theory is its <strong>high computational cost</strong> and in
+particular the scaling of the cost with the size of the system.</p>
+</div>
+<div class="section" id="size-consistency-size-extensivity-and-strict-separability">
+<h2>Size-consistency, size-extensivity, and strict separability<a class="headerlink" href="#size-consistency-size-extensivity-and-strict-separability" title="Permalink to this headline">¶</a></h2>
+<p>Those three concepts are used to qualify and differentiate quantum chemistry models
+from one another.
+A lot of confusion exists in the literature and it is thus important to explain
+what is meant when using those words.</p>
+<div class="section" id="size-consistency">
+<h3>Size-consistency<a class="headerlink" href="#size-consistency" title="Permalink to this headline">¶</a></h3>
+<p>The first concept, that we will refer to as <em>size-consistency</em>, has to do with
+the ability of a model to properly describe the entire potential energy surface
+of a system.  For example at the equilibrium geometry but also when all the
+elements are far apart as well as the intermediate regions (bond-breaking
+processes). The size-consistency concept (as defined here) is thus more of a
+system dependent problem than a property of an approximate quantum chemistry
+model. Of course the FCI solutions are always size-consistent. However, HF
+is not always size-consistent (e.g. hydrogen dissociation) and thus all approximate
+post-HF methods will inherit from this issue. When HF is failing, one should
+instead consider multi-configuration and multi-reference methods to provide a
+size-consistent description of the system under consideration.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unfortunately, the term size-consistent is also often used to describe the
+concept explained below (size-extensivity, and strict separability) which
+are related but fundamentally different.
+This leads to a lot of confusion…</p>
+</div>
+</div>
+<div class="section" id="size-extensivity">
+<h3>Size-extensivity<a class="headerlink" href="#size-extensivity" title="Permalink to this headline">¶</a></h3>
+<p>This term was introduced in analogy to size-extensive properties in
+thermodynamics. A quantum chemistry model (like CC, and FCI) should provide
+size-extensive energies in the sense that the energy should grow linearly with
+the number of electrons in the system.</p>
+</div>
+<div class="section" id="strict-separability">
+<h3>Strict separability<a class="headerlink" href="#strict-separability" title="Permalink to this headline">¶</a></h3>
+<p>This is the easiest concept to define clearly and the one we are really interested in here.</p>
+<p>The idea is that if a system is composed of non-interacting fragments A and B,
+such that</p>
+<div class="math notranslate nohighlight">
+\[    H^{AB} | \Psi^{AB} \rangle = E^{AB} | \Psi^{AB} \rangle\]</div>
+<div class="math notranslate nohighlight">
+\[    H^{A} | \Psi^{A} \rangle = E^{A} | \Psi^{A} \rangle, 
+    \qquad \text{and} \qquad 
+    H^{B} | \Psi^{B} \rangle = E^{B} | \Psi^{B} \rangle,\]</div>
+<p>and such that <strong>we can split the Hamiltonian</strong> of the total system as</p>
+<div class="math notranslate nohighlight">
+\[   H^{AB} = H^A + H^B,\]</div>
+<p>then, a wave-function model that is <em>strictly separable</em> will fulfill the
+following conditions on the resulting wave-function and energy.</p>
+<div class="math notranslate nohighlight">
+\[   | \Psi^{AB} \rangle = | \Psi^{A} \rangle | \Psi^{B} \rangle
+    \qquad \text{and} \qquad 
+   E^{AB} = E^{A} + E^{B}\]</div>
+<p>The key here is to understand that when talking about non-interacting system we
+mean that the total Hamiltonian can be decomposed into the sum of the
+Hamiltonian of the fragments.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If one is to compute the CC energy of, e.g., a water molecule for a very large
+H–O bond length (e.g. 20 Angstroms),
+the relation above does not hold unless we specify excplicitly to the computer
+program that the Hamiltonian should be written as two independent contributions.
+Otherwise, the CC energy of the total system will suffer from the lack of
+<em>size-consistency</em> of the HF solution. CC energies are therefore not always
+size-consistent (as defined above).</p>
+<p>The size-extensivity and strict separability properties described here are
+mathematical properties and one should be careful when testing those properties
+numerically.</p>
+</div>
+</div>
+<div class="section" id="why-do-we-want-size-extensivity">
+<h3>Why do we want size-extensivity?<a class="headerlink" href="#why-do-we-want-size-extensivity" title="Permalink to this headline">¶</a></h3>
+<p>So why is it important for a good quantum chemistry model to satisfy the strict
+separability and the size-extensivity conditions above?</p>
+<p>The first and most important reason is that those properties are
+properties of the exact solution to the electronic Schrödinger equation.
+For the other reasons, I cannot put it better than that:</p>
+<blockquote>
+<div><p>An important advantage of a size-extensive method is that it allows straightforward  comparisons between calculations involving variable numbers of electrons, e.g.  ionization processes or calculations using different numbers of active electrons.   Lack of size-extensivity implies that errors from the exact energy increase as more  electrons enter the calculation. From <a class="reference external" href="https://web.archive.org/web/20170606215414/http://www.uam.es/docencia/quimcursos/Docs/Knowledge/Fundamental_Theory/cc/node7.html">Size-Extensivity and Size-Consistency</a> (1996) by T. Daniel Crawford.</p>
+</div></blockquote>
+<p>One of the main troubles of truncated CI models is that they do not satisfy the
+strict separability and size-extensivity properties. On the other hand, truncated
+CC methods do satisfy those properties.
+In the appendix :ref:<code class="docutils literal notranslate"><span class="pre">appendix_h2_dimer</span></code> we propose an illustration of the
+strict separability problem for a dimer of hydrogen in a minimal basis.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>HF and MP theories also satisfy the strict separability and size-extensivity requirements.</p>
+</div>
+</div>
+</div>
+<div class="section" id="the-coupled-cluster-equations">
+<h2>The Coupled Cluster equations<a class="headerlink" href="#the-coupled-cluster-equations" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-exponential-ansatz">
+<h3>The exponential ansatz<a class="headerlink" href="#the-exponential-ansatz" title="Permalink to this headline">¶</a></h3>
+<p>The size-extensivity problem of truncated CI methods can be linked to the
+linear parametrization of the CI wave-function.
+The CC wave-function, on the other hand relies on a exponential
+parametrization, which introduces the non-linearity required to have
+size-extensive energies (see appendix :ref:<code class="docutils literal notranslate"><span class="pre">appendix_h2_dimer</span></code>).
+The CC wave-function is usually written as</p>
+<div class="math notranslate nohighlight">
+\[   | CC \rangle = \exp (\hat{T}) | \Phi_0 \rangle\]</div>
+<p>where the cluster operator <span class="math notranslate nohighlight">\(\hat{T}\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[   \hat{T} = 1 + \hat{T}_1 + \hat{T}_2 \dots \hat{T}_N\]</div>
+<p><span class="math notranslate nohighlight">\(N\)</span> is the total number of electrons and each cluster operator <span class="math notranslate nohighlight">\(\hat{T}_{\mu}\)</span>
+produces all the determinants that differ in orbital occupation by <span class="math notranslate nohighlight">\(\mu\)</span> electrons
+with respect to a reference determinant (e.g. HF). We refer to this process
+as (virtual) excitations since it <strong>excites</strong> or promotes <span class="math notranslate nohighlight">\(\mu\)</span> electrons from
+spin-orbitals that are occupied (<span class="math notranslate nohighlight">\(i, j...\)</span>) in the reference determinant to virtual (unoccupied)
+spin-orbitals (<span class="math notranslate nohighlight">\(a, b...\)</span>).
+For example, the singles and doubles operators acting on a reference
+determinant lead to</p>
+<div class="math notranslate nohighlight">
+\[   \hat{T}_1 | \Phi_0 \rangle = \sum_i^{occ} \sum_a^{vir} t_i^a | \Phi_i^a \rangle\]</div>
+<div class="math notranslate nohighlight">
+\[   \hat{T}_2 | \Phi_0 \rangle = \sum_{i&lt;j}^{occ} \sum_{a&lt;b}^{vir} t_{ij}^{ab} | \Phi_{ij}^{ab} \rangle\]</div>
+<p>where the <span class="math notranslate nohighlight">\(t\)</span> coefficients are usually called the CC amplitudes and are
+the equivalent of the expansion coefficients of the CI wave-function, i.e.,
+they are the CC wave-function parameters.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The mathematical formalism behind the (virtual) excitation processes is
+called second-quantization. It is at the basis of quantum field theory and
+extensively used in the development of CC theory. For more details on the
+usage of second-quantization in quantum chemistry, see [Helgaker2000]_</p>
+</div>
+<p>The CC exponential ansatz can then be expanded explicitly</p>
+<div class="math notranslate nohighlight">
+\[   \exp(\hat{T}) | \Phi_0 \rangle = (1 + \hat{T} + \frac{1}{2!} \hat{T}^2
+   + \frac{1}{3!} \hat{T}^3 + \cdots ) | \Phi_0 \rangle.\]</div>
+<p>This expansion reveals the non-linearity of the parametrization.
+We see for examples that even if the cluster operator is truncated to include
+only double excitations, higher excitation will remain in the expansion through
+the non-linear terms like <span class="math notranslate nohighlight">\(\hat{T}_2 \hat{T}_2\)</span> which correspond to a
+quadruple excitation.</p>
+<p>In CC theory, those terms are the key to size-extensivity. They are also
+responsible for the fast convergence of CC models to the FCI limit, since
+for an equivalent number of parameters (e.g. between truncated CI and CC) the
+CC expansion will include higher excitations indirectly through those
+non-linear terms.</p>
+</div>
+<div class="section" id="the-cc-schrodinger-equation">
+<h3>The CC Schrödinger equation<a class="headerlink" href="#the-cc-schrodinger-equation" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have seen the expression of the CC wave-function we can insert it into
+the electronic Schrödinger equation to determine the CC ground-state energy.</p>
+<div class="math notranslate nohighlight">
+\[   H | CC \rangle = E_{CC} | CC \rangle\]</div>
+<p>For reasons that we will not get into here, it is not possible to have an
+efficient formulation of CC theory by relying on the variational principle to
+minimize the energy. Instead, the CC Schrödinger equation is projected against
+the reference state <span class="math notranslate nohighlight">\(\Phi_0\)</span>. It is also common to work with a similarity
+transformed Hamiltonian,</p>
+<div class="math notranslate nohighlight">
+\[   H^{\hat{T}} =  \exp(-\hat{T}) H  \exp(\hat{T})\]</div>
+<p>which can be shown to preserve the eigenvalue spectrum of the original
+Hamiltonian but it is not a Hermitian operator anymore.
+We now have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}   \exp(-\hat{T}) H  | CC \rangle &amp;= \exp(-\hat{T})  E_{CC} | CC \rangle \\
+   \exp(-\hat{T}) H  \exp(\hat{T}) | \Phi_0 \rangle &amp;= E_{CC} \exp(-\hat{T}) \exp(\hat{T}) | \Phi_0 \rangle \\
+    H^{\hat{T}} | \Phi_0 \rangle  &amp;= E_{CC} | \Phi_0 \rangle.\end{split}\]</div>
+<p>Projection against the reference determinant leads to the CC energy,</p>
+<div class="math notranslate nohighlight">
+\[   E_{CC} = \langle \Phi_0 | H^{\hat{T}} | \Phi_0 \rangle\]</div>
+<p>or more explicitly</p>
+<div class="math notranslate nohighlight">
+\[   E_{CC} = \langle \Phi_0 | \exp(-\hat{T}) H  \exp(\hat{T}) | \Phi_0 \rangle.\]</div>
+<p>By expanding the exponentials and using the algebra of the second-quantization
+operators (hidden in the cluster operators), one arrives at the following explicit
+expression</p>
+<div class="math notranslate nohighlight">
+\[   E_{CC} = E_{\Phi_0} + \sum_i^{occ} \sum_a^{vir} t_i^a \langle \Phi_0| H | \Phi_i^a \rangle 
+   + \sum_{i&lt;j}^{occ} \sum_{a&lt;b}^{vir} (t_{ij}^{ab} + t_i^a t_j^b - t_i^b t_j^a )
+     \langle \Phi_0| H | \Phi_{ij}^{ab} \rangle\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_0\)</span> is the energy corresponding to the reference wave-function
+<span class="math notranslate nohighlight">\(\Phi_0\)</span>. When the reference wave-function is the HF determinant the
+expression for the CC energy simplifies to</p>
+<div class="math notranslate nohighlight">
+\[   E_{CC} = E_{HF}  + \sum_{i&lt;j}^{occ} \sum_{a&lt;b}^{vir} (t_{ij}^{ab} + t_i^a t_j^b - t_i^b t_j^a )
+      (ia||jb)\]</div>
+<p>due to Brillouin’s theorem.</p>
+</div>
+<div class="section" id="the-cc-amplitudes">
+<h3>The CC amplitudes<a class="headerlink" href="#the-cc-amplitudes" title="Permalink to this headline">¶</a></h3>
+<p>From the last equation we see that the CC energy if (of course) depending on
+the CC wave-function parameters (the amplitudes). As stated previously these
+are not obtained variationally but by projection techniques.
+To determine the amplitudes we project the CC Schrödinger equation against the
+set of excited determinants (up to the truncation level), i.e., for a coupled
+cluster with single and double excitations (CCSD) we have to solve the
+following non-linear equations</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}   \langle \Phi_i^a | \exp(-\hat{T}) H  \exp(\hat{T}) | \Phi_0 \rangle &amp;= 0, \\
+   \langle \Phi_{ij}^{ab} | \exp(-\hat{T}) H  \exp(\hat{T}) | \Phi_0 \rangle &amp;= 0.\end{split}\]</div>
+<p>For higher truncation levels we need to project over excited determinants of
+higher excitation ranks.
+Note that the right-hand-side of the equation is zero due to orthogonality
+between the reference determinant and any excited determinant.</p>
+<p>The left-hand-side of the equation can be derived into more explicit
+expressions, i.e, in terms of amplitudes and integrals (like the final expression
+for the energy) which can be implemented into computer programs.</p>
+<p>The CC amplitude equations form a set of non-linear equations which have to be
+solved iteratively before the CC energy can be calculated.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The equations presented here correspond to standard CC theory for which the
+reference wave-function must be a single slater determinant. In general this
+determinant is chosen to be the HF wave-function.</p>
+</div>
+</div>
+</div>
+<div class="section" id="cc-models-and-comments">
+<h2>CC models and comments<a class="headerlink" href="#cc-models-and-comments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="standard-cc-models">
+<h3>Standard CC models<a class="headerlink" href="#standard-cc-models" title="Permalink to this headline">¶</a></h3>
+<p>With the equations that we have presented in the previous section, the standard
+models of CC theory can be easily defined. Basically a given CC model is
+defined by the truncation level of the cluster operator  (a bit like in the CI
+models). If only single excitations are included, <span class="math notranslate nohighlight">\(\hat{T} = \hat{T}_1\)</span>,
+the CC energy is equal to the HF energy and this model, denoted CCS, is not
+relevant here (it can however be used to calculate excited state properties).
+The next model is the most common in the standard CC hierarchy. It includes
+single and double excitations and it is denoted CCSD.</p>
+<p>As you can imagine, the next steps consist in including
+triples, CCSDT, and quadruples, CCSDTQ, etc.
+This allows for a systematic convergence to the FCI solution which is the main
+selling point of CC theory (together with the size-extensivity property
+described before).</p>
+</div>
+<div class="section" id="computational-cost">
+<h3>Computational cost<a class="headerlink" href="#computational-cost" title="Permalink to this headline">¶</a></h3>
+<p>However, as we get closer to the FCI solution, the computational cost of
+solving the CC amplitude equations increases drastically. In particular the
+scaling of the method with the size of the system, <em>N</em>, goes as follows ,</p>
+<ul class="simple">
+<li><p>CCSD already scales as <span class="math notranslate nohighlight">\(N^6\)</span>,</p></li>
+<li><p>CCSDT scales as <span class="math notranslate nohighlight">\(N^8\)</span>,</p></li>
+<li><p>and CCSDTQ as <span class="math notranslate nohighlight">\(N^{10}\)</span>…</p></li>
+</ul>
+<p><img alt="image" src="../_images/water.png" /></p>
+<p>To be more concrete, if it takes 1 minute to perform a CCSD calculation on 1 water molecule, it would take <strong>120 years</strong> to perform the same calculation on a cluster of 20 water molecules.</p>
+<p>A lot of work has been done (and is still going on) to lower the computational
+cost of CC models and to develop intermediates in the CC hierarchy.</p>
+<p>One particularly popular and successful method is the CCSD(T) model in which,
+a standard CCSD calculation is performed and corrected by the effect of triples
+which are included in a perturbative manner (i.e., by relying on arguments from
+many-body perturbation theory).
+This method scales as <span class="math notranslate nohighlight">\(N^7\)</span> with the system size but recover most of the
+effects of a full CCSDT calculation.
+Due to the success of the CCSD(T) model, it is often described as the gold-standard
+of quantum chemistry.</p>
+</div>
+<div class="section" id="what-is-cc-theory-used-for">
+<h3>What is CC theory used for?<a class="headerlink" href="#what-is-cc-theory-used-for" title="Permalink to this headline">¶</a></h3>
+<p>As we have seen CC theory has the following properties:</p>
+<ul class="simple">
+<li><p><strong>Fast and systematic convergence</strong> to the FCI solutions.</p></li>
+<li><p><strong>Size-extensivity</strong> of the energy, (wave-function and energy strictly separable).</p></li>
+<li><p>Fast increase of the computational scaling with the truncation level, i.e.,
+<strong>high computational cost</strong>.</p></li>
+<li><p><strong>Single-reference</strong> method. CC cannot be applied when more than one electronic
+configuration is important to describe a system, e.g. when breaking bonds.
+In other words, the (HF) reference needs to provide a qualitatively good
+description of the system under consideration.</p></li>
+</ul>
+<p>So what can it be used for?</p>
+<p>The ground-state CC theory that has been introduced here can be used to
+calculate very accurate ground-state energies of small molecules near their
+equilibrium geometry.</p>
+<p>In addition molecular properties (dipole moments, polarizabilities…) and excitation
+energies can be calculated by combining CC theory with response theory (see also the
+equation-of-motion EOM-CC methods).</p>
+<p>Being able to calculate energies and properties accurately and with a
+systematic convergence to the FCI solutions makes it possible to benchmark more
+affordable models (like DFT) that can be applied to larger molecules.</p>
+<p>It should also be mentioned that since the late 90s, a lot of effort has been put
+in the development of more affordable CC models and a lot of progress has been made.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./Lecture"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../Exercises/Ex8/Ex8.html" title="previous page"><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+        
+          <div class="extra_footer">
+            <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

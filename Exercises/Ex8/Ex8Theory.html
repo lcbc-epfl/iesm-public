@@ -1,0 +1,632 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.1. Theory &#8212; Introduction to Electronic Structure Methods</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="9.2. Locating Transition States: Constrained Optimisations" href="Ex8.html" />
+    <link rel="prev" title="9. Finding Transition States and Barrier Heights: First Order Saddle Points" href="../ex8.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction to Electronic Structure Methods
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3Diss.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4.html">
+   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/Ex4Theory.html">
+     4.1. Møller-Plesset Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/BDE.html">
+     4.2. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HNO3_Correlation.html">
+     4.5. Correlation energy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4b.html">
+   5. The hartree fock procedure in detail
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="simple">
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex5.html">
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5.html">
+     6.1. DFT functionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5b.html">
+     6.2. Density Functional Theory 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex6.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex8.html">
+     9.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/CC.html">
+   Coupled cluster
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Exercises/Ex8/Ex8Theory.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lcbc-epfl/iesm-public"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Ex8Theory.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/docs/Exercises/Ex8/Ex8Theory.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#synthesis-of-propylene-oxide">
+   9.1.1. Synthesis of Propylene Oxide
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#transition-state-theory">
+   9.1.2. Transition State Theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-minimum-potential-energy-path">
+   9.1.3. A Minimum (Potential) Energy Path
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#from-curvature-to-vibrational-frequencies-the-hessian">
+   9.1.4. From Curvature to Vibrational Frequencies: The Hessian
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="theory">
+<h1><span class="section-number">9.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="synthesis-of-propylene-oxide">
+<h2><span class="section-number">9.1.1. </span>Synthesis of Propylene Oxide<a class="headerlink" href="#synthesis-of-propylene-oxide" title="Permalink to this headline">¶</a></h2>
+<p>Corrosive propylene oxide is the simplest chiral
+epoxide and of great industrial importance. The historically most
+important synthesis is based on hydrochlorination and ring closure of
+the resulting chloropropanols in a basic environment:</p>
+<div class="figure align-default" id="epoxide-reaction-scheme">
+<img alt="../../_images/reaction_epoxide4.png" src="../../_images/reaction_epoxide4.png" />
+<p class="caption"><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Epoxide reaction.</span><a class="headerlink" href="#epoxide-reaction-scheme" title="Permalink to this image">¶</a></p>
+</div>
+<p>The resulting epoxide is most often directly used as a racemate.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>What kind of reaction mechanism would you expect? Would you expect
+the stereochemistry at the chiral carbon to be preserved? Identify
+the chirality centre in the chloropropanoate and the product
+epoxide.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Suggest possible transition state structures.</p>
+</div>
+</div>
+<div class="section" id="transition-state-theory">
+<h2><span class="section-number">9.1.2. </span>Transition State Theory<a class="headerlink" href="#transition-state-theory" title="Permalink to this headline">¶</a></h2>
+<p>Any chemical reaction is nothing but a mere rearrangement of nuclei, and
+all the possible ways the nuclei could rearrange span a plethora of
+possible paths. Hence, there are usually many paths on the potential
+energy surface (PES) that connect reactants and products, and depending
+on the energy of the system, more or less of these paths will be
+accessible for the chemical transformation. Finding all of these paths
+is a daunting task, as all the involved degrees of freedom have to be
+mapped out of the full PES onto a reduced - but still multidimensional -
+PES. The study of these <em>rare events</em> using various mapping techniques
+is an involved subject; various elaborate techniques exist for
+elucidating possible paths. They are, however, often linked to
+computationally expensive molecular dynamics simulations (MD) and are
+more concerned with studying the free energy surface (FES; including
+entropic effects) rather than just the PES. For the study of the latter,
+simpler models exist, often yielding a qualitatively sufficient picture
+to explain many chemical transformations.</p>
+</div>
+<div class="section" id="a-minimum-potential-energy-path">
+<h2><span class="section-number">9.1.3. </span>A Minimum (Potential) Energy Path<a class="headerlink" href="#a-minimum-potential-energy-path" title="Permalink to this headline">¶</a></h2>
+<div class="figure align-default" id="pes-extended">
+<img alt="../../_images/PES_extended.png" src="../../_images/PES_extended.png" />
+<p class="caption"><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Visualisation of transition state theory in a ficticious 2D PES. Dark
+areas correspond to high-energy regions, whereas brightly coloured areas
+correspond to energetically lower lying states. Reactants and products
+are connected through a minimum energy path via a first-order saddle
+point, the transition state.</span><a class="headerlink" href="#pes-extended" title="Permalink to this image">¶</a></p>
+</div>
+<p>The fundamental concepts that greatly simplify the problem of finding
+reactive pathways on the PES were introduced as early as the nineteenth
+century, and in the 1930ies, their development culminated in a model
+called <em>Transition State Theory</em>. Assuming that the most likely path is
+also the unique path by which a reaction proceeds, one searches for the
+<em>minimum energy path</em> connecting reactants and products along the
+reaction coordinate. The energetically highest point along this path is
+a stationary point, the <em>transition state</em> (<em>cf.</em> figure 2). There is a
+striking analogy with lazy hikers that want to get from one valley to
+another: They will not choose the steepest path across a peak of 4000 m
+altitude, but they will rather choose a mountain pass (a <em>col</em>) to reach
+their destination with least effort. The villages in the valleys
+correspond to reactant and product states: In all directions, the path
+goes uphill.<br />
+It is straightforward to see from this analogy that the transition state
+is given by a <em>first order saddle point</em>. Along all possible coordinates
+except the reaction coordinate, the potential energy surface goes
+uphill; along the reaction coordinate, it goes downhill. This implies
+that the transition state is the highest energy point <em>along</em> the
+reaction coordinate, but the lowest energy point <em>perpendicular</em> to the
+reaction coordinate. This gives raise to the typical transition state
+diagrams that are frequently used to describe simple reactions in
+organic chemistry.</p>
+</div>
+<div class="section" id="from-curvature-to-vibrational-frequencies-the-hessian">
+<h2><span class="section-number">9.1.4. </span>From Curvature to Vibrational Frequencies: The Hessian<a class="headerlink" href="#from-curvature-to-vibrational-frequencies-the-hessian" title="Permalink to this headline">¶</a></h2>
+<p>(Local) Minima and saddle points of any order are all <em>stationary
+points</em>, stable points on the potential energy surface where the
+curvature is zero. This implies that the first derivative matrix of the
+nuclear coordinates vanishes at any stationary point. However, this
+information will not be sufficient to classify the nature of the
+stationary point. The matrix of second derivatives, the <em>Hessian</em>, has
+to be used instead. The Hessian matrix can be diagonalised, and the
+resulting eigenvalues contain the desired information on the stationary
+point: If all eigenvalues are negative, the corresponding geometry
+constitutes a local maximum; if they are all positive, the geometry
+corresponds to a local minimum. If positive and negative eigenvalues
+occur, one is dealing with an N<span class="math notranslate nohighlight">\(^{th}\)</span> order saddle point. The task of
+finding a transition state using the Hessian matrix of the system is
+therefore easy: One searches for the geometry that yields a Hessian with
+exactly one negative eigenvalue, <em>i.e.</em> a first-order saddle point - the
+transition state. (Similarly, the eigenvalue test can also be used to
+check whether a geometry optimisation has found a true minimum, or
+whether it is blocked in a flat region of the PES.)<br />
+The Hessian of the system contains further useful information. For
+instance, in the approximation of a <em>harmonic oscillator</em> in a quadratic
+potential, the vibrational eigenvalues are known:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+E_\nu = \left(\nu+\frac{1}{2}\right)\hbar\omega \quad ; \quad \omega = \sqrt{\frac{k}{m}},\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is a force constant and <span class="math notranslate nohighlight">\(m\)</span> is the (reduced) mass of the
+oscillator. By locally approximating the PES to be harmonic, the
+(decoupled) vibrational frequencies for the corresponding geometries can
+be calculated from the Hessian matrix: It turns out that <span class="math notranslate nohighlight">\(k\)</span> is simply
+given by the eigenvalues of the Hessian evaluated in mass-weighted
+coordinates. For equilibrium geometries with positive Hessian
+eigenvalues, the molecular vibrational frequencies <span class="math notranslate nohighlight">\(\omega\)</span> (as observed
+in IR spectroscopy) can easily be calculated, and the corresponding
+vibrational modes can be visualised. The possiblity of visualising the
+frequencies opens up a valuable tool in the transition state search: As
+a first order saddle point will have one negative eigenvalue, the
+corresponding frequency will be imaginary. By visualising this imaginary
+frequency, one can immediately verify whether one has found a TS of
+interest, or just another, non-relevant first-order saddle point on the
+TS: If the imaginary vibrational node corresponds to a motion that
+transfers reactants to products, the search was successful.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "iesm2"
+        },
+        kernelOptions: {
+            kernelName: "iesm2",
+            path: "./Exercises/Ex8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'iesm2'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../ex8.html" title="previous page"><span class="section-number">9. </span>Finding Transition States and Barrier Heights: First Order Saddle Points</a>
+    <a class='right-next' id="next-link" href="Ex8.html" title="next page"><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+        
+          <div class="extra_footer">
+            <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
