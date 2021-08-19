@@ -34,8 +34,8 @@ parse:
 # Information about where the book exists on the web
 repository:
   url: https://github.com/lcbc-epfl/iesm-public  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
+  path_to_book: iesm  # Optional path to your book, relative to the repository root
+  branch: deploy  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
   notebook_interface        : jupyterlab

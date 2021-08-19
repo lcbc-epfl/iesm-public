@@ -1,5 +1,7 @@
 [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 
+[Link to course website](https://lcbc-epfl.github.io/iesm-public/intro.html)
+
 # Introduction to Electronic Structure Methods
 
 An interactive introduction to electronic structure methods (HF, post-HF and DFT methods) given at EPFL by Prof. Ursula Roethlisberger. 
@@ -19,9 +21,18 @@ Over the years many people have contributed to this material:
 * Andrea Levy
 
 
-## Creating an Conda Environment
+## How to use it (easy)
 
-You can install the required packages in any linux environment in a miniconda environment.
+These notebooks are made to be run on [noto.epfl.ch](https://noto.epfl.ch), the EPFL JupyterHub. Select the Quantum Chemistry environment and click on the 🚀 icon on the course website to automatically get the latest notebook for this particular exercise. Changes will be automatically saved in your account and you can pick up where you left off. Note, that noto limits usage to 2 CPUs per User. 
+
+
+## How to use it (hard)
+
+This should only be done if you plan to adopt these notebooks for your own course or if you want to run the notebooks offline. 
+
+### Creating an Conda Environment
+
+You can install the required packages in any linux environment using miniconda.
 
 1. `conda env create -f environment.yml`
 2. `conda activate iesm`
