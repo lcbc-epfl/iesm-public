@@ -24,7 +24,7 @@ parts:
       - file: Exercises/Ex4/HNO3_Correlation.ipynb
     - file: Exercises/ex4b.md
       sections:
-      - file: Exercises/Ex4/HF.ipynb
+      - file: Exercises/Ex4/HF_student.ipynb
     - file: Exercises/Ex5.md
       sections: 
       - file: Exercises/Ex5/Ex5.ipynb
