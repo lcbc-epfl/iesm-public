@@ -211,7 +211,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -226,7 +231,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -742,74 +747,6 @@ viewergrid_16287812982446342[0][0].render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16287814255155861"  style="position: relative; width: 640px; height: 480px">
-        <p id="3dmolwarning_16287814255155861" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_16287814255155861 = null;
-var warn = document.getElementById("3dmolwarning_16287814255155861");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-var viewergrid_16287814255155861 = null;
-viewergrid_16287814255155861 = $3Dmol.createViewerGrid($("#3dmolviewer_16287814255155861"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
-viewer_16287814255155861 = viewergrid_16287814255155861[0][0];
-viewergrid_16287814255155861[0][0].zoomTo();viewergrid_16287814255155861[0][1].zoomTo();	viewergrid_16287814255155861[0][0].addModel("11\n\n C    0.224768290094   -0.575970360166   -0.059683739329\n C    0.224768290094   -0.575970360166    1.440316260671\nCL    0.224768290094    1.686774420253   -0.859675025962\n H    1.235890543635   -0.754258494259   -0.422679785639\n C   -1.167962086684   -0.821546302444   -0.559678293475\n O    0.224768290094   -1.984245446973    1.191999366607\n H    1.098420821124   -0.071566836197    1.796979042627\n H   -0.648884240936   -0.071566836197    1.796979042627\n H   -1.167962086684   -0.821546302444   -1.629678293475\n H   -1.512989007454   -1.769513887195   -0.203007742119\n H   -1.816405347309   -0.048754315201   -0.203007742119\n","xyz");
-	viewergrid_16287814255155861[0][0].addLabel("0",{"position": {"x": 0.22476829009438942, "y": -0.5759703601668448, "z": -0.05968373932955492}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("1",{"position": {"x": 0.22476829009438942, "y": -0.5759703601668448, "z": 1.4403162606738749}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("2",{"position": {"x": 0.22476829009438942, "y": 1.686774420257149, "z": -0.8596750259635483}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("3",{"position": {"x": 1.2358905436373302, "y": -0.7542584942612103, "z": -0.4226797856397294}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("4",{"position": {"x": -1.1679620866865206, "y": -0.8215463024455855, "z": -0.5596782934758008}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("5",{"position": {"x": 0.22476829009438942, "y": -1.9842454469775224, "z": 1.191999366609597}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("6",{"position": {"x": 1.0984208211263762, "y": -0.07156683619732974, "z": 1.7969790426315304}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("7",{"position": {"x": -0.6488842409375969, "y": -0.07156683619732887, "z": 1.7969790426315304}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("8",{"position": {"x": -1.1679620866865206, "y": -0.8215463024455852, "z": -1.6296782934782479}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("9",{"position": {"x": -1.5129890074571914, "y": -1.7695138871994327, "z": -0.20300774211964764}, "inFront": true});
-	viewergrid_16287814255155861[0][0].addLabel("10",{"position": {"x": -1.8164053473128035, "y": -0.04875431520135457, "z": -0.20300774211964684}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addModel("11\n\n C    0.167598983715   -0.609607776614   -0.079600355888\n C    0.167598983715   -0.609607776614    1.367645119866\nCL    0.167598983715    1.739534045434   -0.571060120164\n H    1.123736803055   -0.562476463144   -0.578356524542\n C   -1.059805892716   -0.922780430843   -0.894764202766\n O    0.351430785319   -1.939182035471    0.961063597049\n H    1.014194068747   -0.128033703032    1.875603425038\n H   -0.786183167941   -0.381547412193    1.866896014623\n H   -1.103869071413   -0.280227015552   -1.777030701767\n H   -1.046149051110   -1.975716481459   -1.204867303234\n H   -1.966648475510   -0.748606213292   -0.303475971869\n","xyz");
-	viewergrid_16287814255155861[0][1].addLabel("0",{"position": {"x": 0.16759898371552723, "y": -0.609607776615544, "z": -0.0796003558882859}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("1",{"position": {"x": 0.16759898371552723, "y": -0.609607776615544, "z": 1.3676451198687127}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("2",{"position": {"x": 0.16759898371552723, "y": 1.7395340454384012, "z": -0.5710601201655082}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("3",{"position": {"x": 1.1237368030574115, "y": -0.5624764631450518, "z": -0.5783565245433491}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("4",{"position": {"x": -1.0598058927181637, "y": -0.9227804308454556, "z": -0.8947642027682035}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("5",{"position": {"x": 0.35143078532006083, "y": -1.9391820354756473, "z": 0.9610635970508048}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("6",{"position": {"x": 1.0141940687489257, "y": -0.12803370303215963, "z": 1.875603425041949}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("7",{"position": {"x": -0.7861831679425413, "y": -0.38154741219349864, "z": 1.8668960146268287}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("8",{"position": {"x": -1.1038690714157209, "y": -0.2802270155521906, "z": -1.7770307017715248}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("9",{"position": {"x": -1.0461490511120408, "y": -1.9757164814639967, "z": -1.2048673032371595}, "inFront": true});
-	viewergrid_16287814255155861[0][1].addLabel("10",{"position": {"x": -1.9666484755144362, "y": -0.7486062132936017, "z": -0.3034759718695101}, "inFront": true});
-	viewergrid_16287814255155861[0][0].setStyle({"stick": {}});
-	viewergrid_16287814255155861[0][1].setStyle({"stick": {}});
-	viewergrid_16287814255155861[0][0].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287814255155861[0][1].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287814255155861[0][0].zoomTo();
-	viewergrid_16287814255155861[0][1].zoomTo();
-viewergrid_16287814255155861[0][1].render();
-viewergrid_16287814255155861[0][0].render();
-});
-</script></div></div>
 </div>
 </div>
 <div class="section" id="finding-the-transition-state">
@@ -835,18 +772,6 @@ viewergrid_16287814255155861[0][0].render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
- 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
-Warning: thermodynamics relations excluded imaginary frequencies: [&#39;381.2365i&#39;]
-Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;85.7172&#39; &#39;182.7490&#39; &#39;225.6997&#39; &#39;301.9617&#39; &#39;379.9305&#39; &#39;408.6446&#39;]
-Optimizer: Optimization complete!
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;11\n\n C    0.161357053629   -0.511256148914   -0.065664084757\n C    0.161357053629   -0.511256148914    1.410182742708\nCL    0.161357053629    1.675082246570   -0.830276612112\n H    1.132467894899   -0.697551737274   -0.509038133351\n C   -1.040810400675   -1.016788088306   -0.814524778141\n O    0.357820745280   -1.868677427818    1.406009598037\n H    0.974204396689    0.103595337534    1.848386886461\n H   -0.802592739043   -0.159400885501    1.838653307947\n H   -0.947697450572   -0.799236008474   -1.882558623854\n H   -1.132489426792   -2.098230744587   -0.668157830485\n H   -1.951179355428   -0.531215137812   -0.443830646071\n&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>We can also compare the TS with the guess to see how far we are.</p>
 <div class="cell docutils container">
@@ -855,74 +780,6 @@ Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16287820567118528"  style="position: relative; width: 640px; height: 480px">
-        <p id="3dmolwarning_16287820567118528" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_16287820567118528 = null;
-var warn = document.getElementById("3dmolwarning_16287820567118528");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-var viewergrid_16287820567118528 = null;
-viewergrid_16287820567118528 = $3Dmol.createViewerGrid($("#3dmolviewer_16287820567118528"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
-viewer_16287820567118528 = viewergrid_16287820567118528[0][0];
-viewergrid_16287820567118528[0][0].zoomTo();viewergrid_16287820567118528[0][1].zoomTo();	viewergrid_16287820567118528[0][0].addModel("11\n\n C    0.167598983715   -0.609607776614   -0.079600355888\n C    0.167598983715   -0.609607776614    1.367645119866\nCL    0.167598983715    1.739534045434   -0.571060120164\n H    1.123736803055   -0.562476463144   -0.578356524542\n C   -1.059805892716   -0.922780430843   -0.894764202766\n O    0.351430785319   -1.939182035471    0.961063597049\n H    1.014194068747   -0.128033703032    1.875603425038\n H   -0.786183167941   -0.381547412193    1.866896014623\n H   -1.103869071413   -0.280227015552   -1.777030701767\n H   -1.046149051110   -1.975716481459   -1.204867303234\n H   -1.966648475510   -0.748606213292   -0.303475971869\n","xyz");
-	viewergrid_16287820567118528[0][0].addLabel("0",{"position": {"x": 0.16759898371552723, "y": -0.609607776615544, "z": -0.0796003558882859}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("1",{"position": {"x": 0.16759898371552723, "y": -0.609607776615544, "z": 1.3676451198687127}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("2",{"position": {"x": 0.16759898371552723, "y": 1.7395340454384012, "z": -0.5710601201655082}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("3",{"position": {"x": 1.1237368030574115, "y": -0.5624764631450518, "z": -0.5783565245433491}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("4",{"position": {"x": -1.0598058927181637, "y": -0.9227804308454556, "z": -0.8947642027682035}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("5",{"position": {"x": 0.35143078532006083, "y": -1.9391820354756473, "z": 0.9610635970508048}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("6",{"position": {"x": 1.0141940687489257, "y": -0.12803370303215963, "z": 1.875603425041949}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("7",{"position": {"x": -0.7861831679425413, "y": -0.38154741219349864, "z": 1.8668960146268287}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("8",{"position": {"x": -1.1038690714157209, "y": -0.2802270155521906, "z": -1.7770307017715248}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("9",{"position": {"x": -1.0461490511120408, "y": -1.9757164814639967, "z": -1.2048673032371595}, "inFront": true});
-	viewergrid_16287820567118528[0][0].addLabel("10",{"position": {"x": -1.9666484755144362, "y": -0.7486062132936017, "z": -0.3034759718695101}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addModel("11\n\n C    0.161357053629   -0.511256148914   -0.065664084757\n C    0.161357053629   -0.511256148914    1.410182742708\nCL    0.161357053629    1.675082246570   -0.830276612112\n H    1.132467894899   -0.697551737274   -0.509038133351\n C   -1.040810400675   -1.016788088306   -0.814524778141\n O    0.357820745280   -1.868677427818    1.406009598037\n H    0.974204396689    0.103595337534    1.848386886461\n H   -0.802592739043   -0.159400885501    1.838653307947\n H   -0.947697450572   -0.799236008474   -1.882558623854\n H   -1.132489426792   -2.098230744587   -0.668157830485\n H   -1.951179355428   -0.531215137812   -0.443830646071\n","xyz");
-	viewergrid_16287820567118528[0][1].addLabel("0",{"position": {"x": 0.16135705362967134, "y": -0.5112561489153796, "z": -0.0656640847569374}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("1",{"position": {"x": 0.16135705362967134, "y": -0.5112561489153796, "z": 1.4101827427108533}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("2",{"position": {"x": 0.16135705362967134, "y": 1.6750822465735689, "z": -0.8302766121135379}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("3",{"position": {"x": 1.1324678949014244, "y": -0.6975517372759803, "z": -0.5090381333520839}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("4",{"position": {"x": -1.040810400677755, "y": -1.0167880883085787, "z": -0.8145247781431951}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("5",{"position": {"x": 0.35782074528037755, "y": -1.8686774278218754, "z": 1.4060095980403426}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("6",{"position": {"x": 0.9742043966908637, "y": 0.10359533753445017, "z": 1.8483868864655522}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("7",{"position": {"x": -0.8025927390450799, "y": -0.15940088550152212, "z": 1.8386533079512446}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("8",{"position": {"x": -0.9476974505738671, "y": -0.7992360084754624, "z": -1.8825586238579102}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("9",{"position": {"x": -1.132489426794913, "y": -2.098230744591749, "z": -0.6681578304860681}, "inFront": true});
-	viewergrid_16287820567118528[0][1].addLabel("10",{"position": {"x": -1.9511793554321404, "y": -0.5312151378135388, "z": -0.44383064607207023}, "inFront": true});
-	viewergrid_16287820567118528[0][0].setStyle({"stick": {}});
-	viewergrid_16287820567118528[0][1].setStyle({"stick": {}});
-	viewergrid_16287820567118528[0][0].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287820567118528[0][1].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287820567118528[0][0].zoomTo();
-	viewergrid_16287820567118528[0][1].zoomTo();
-viewergrid_16287820567118528[0][1].render();
-viewergrid_16287820567118528[0][0].render();
-});
-</script></div></div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 4</p>
@@ -949,20 +806,11 @@ viewergrid_16287820567118528[0][0].render();
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to use the right file in the show_normal_modes</span>
-<span class="n">NormalModeFile</span> <span class="o">=</span> <span class="o">!</span>ls ts.*.molden_normal_modes 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;File name: &#39;</span><span class="o">+</span><span class="n">NormalModeFile</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 
-<span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">NormalModeFile</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;NAMEOF.molden_normal_modes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>File name: ts.default.14947.molden_normal_modes
-</pre></div>
-</div>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "4f472874c20a4da99869177d7ab4d75f", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 4</p>
@@ -991,14 +839,6 @@ We will save the wave function as well because we want to use the hessian to spe
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
 <span class="n">E</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">frequency</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
- 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
-Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.1010i&#39;]
-Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0345&#39; &#39;200.0323&#39; &#39;200.6087&#39; &#39;278.1032&#39; &#39;310.4237&#39; &#39;399.1138&#39;]
 </pre></div>
 </div>
 </div>
@@ -1041,11 +881,6 @@ profile and visualize it.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="backward">
 <h2><span class="section-number">9.3.1. </span>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
@@ -1067,15 +902,6 @@ profile and visualize it.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
- 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
-Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.0870i&#39;]
-Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0557&#39; &#39;200.1544&#39; &#39;200.5153&#39; &#39;277.9453&#39; &#39;310.4210&#39; &#39;399.1393&#39;]
-Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">return_history=True</span></code> option indicates to additionally return dictionary of lists of geometries, energies, and gradients at each step in the optimization. We can use this history to follow the optimization along the IRC steps.
 Some operations on the arrays are needed in order to properly visualize the PES.</p>
@@ -1085,7 +911,7 @@ Some operations on the arrays are needed in order to properly visualize the PES.
 <span class="n">energies_backward</span> <span class="o">=</span> <span class="n">history_backward</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
 
 <span class="n">backward_e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies_backward</span><span class="p">]</span>
-<span class="n">backward_e</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+<span class="n">backward_e</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># revert the list</span>
 <span class="n">backward_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1094,7 +920,7 @@ Some operations on the arrays are needed in order to properly visualize the PES.
 </div>
 <div class="section" id="forward">
 <h2><span class="section-number">9.3.2. </span>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
-<p>Then, let’s alos optimize towards the products</p>
+<p>Then, let’s also optimize towards the products</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc_forward.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -1110,15 +936,6 @@ Some operations on the arrays are needed in order to properly visualize the PES.
 
 
 <span class="n">E</span><span class="p">,</span> <span class="n">history_forward</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">forward</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="c1">#, ref_gradient=wfn.gradient())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
- 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
-Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.1058i&#39;]
-Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;122.9877&#39; &#39;199.9856&#39; &#39;200.5702&#39; &#39;277.9339&#39; &#39;310.3788&#39; &#39;399.1489&#39;]
-Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -1152,74 +969,6 @@ Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16287848860810616"  style="position: relative; width: 640px; height: 480px">
-        <p id="3dmolwarning_16287848860810616" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_16287848860810616 = null;
-var warn = document.getElementById("3dmolwarning_16287848860810616");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-var viewergrid_16287848860810616 = null;
-viewergrid_16287848860810616 = $3Dmol.createViewerGrid($("#3dmolviewer_16287848860810616"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
-viewer_16287848860810616 = viewergrid_16287848860810616[0][0];
-viewergrid_16287848860810616[0][0].zoomTo();viewergrid_16287848860810616[0][1].zoomTo();	viewergrid_16287848860810616[0][0].addModel("11\n\n C    0.164725685417   -0.314404742072   -0.199251844430\n C    0.164725685417   -0.314404742072    1.352596286801\nCL    0.164725685417    1.420561294057   -0.940953729318\n H    1.118984197602   -0.724376676710   -0.542413888188\n C   -1.000380393813   -1.079182652284   -0.788605067476\n O    0.304422597990   -1.574904494097    1.780447894381\n H    0.981424855593    0.399658700644    1.658313187484\n H   -0.792735012852    0.203251550892    1.661255207777\n H   -0.926214186384   -1.194666488602   -1.877086166771\n H   -0.991233289024   -2.061756970882   -0.303033684683\n H   -1.948541085022   -0.580168246328   -0.548327999630\n","xyz");
-	viewergrid_16287848860810616[0][0].addLabel("0",{"position": {"x": 0.16472568541737143, "y": -0.31440474207288505, "z": -0.19925184443053592}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("1",{"position": {"x": 0.16472568541737143, "y": -0.31440474207288505, "z": 1.352596286803661}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("2",{"position": {"x": 0.16472568541737143, "y": 1.4205612940603736, "z": -0.9409537293200873}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("3",{"position": {"x": 1.1189841976047818, "y": -0.7243766767119932, "z": -0.5424138881893892}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("4",{"position": {"x": -1.000380393815203, "y": -1.0791826522864452, "z": -0.7886050674774562}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("5",{"position": {"x": 0.3044225979907533, "y": -1.5749044941010204, "z": 1.7804478943850588}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("6",{"position": {"x": 0.9814248555956254, "y": 0.39965870064448117, "z": 1.6583131874881356}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("7",{"position": {"x": -0.7927350128534594, "y": 0.2032515508926214, "z": 1.6612552077804932}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("8",{"position": {"x": -0.9262141863859129, "y": -1.194666488604609, "z": -1.8770861667748715}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("9",{"position": {"x": -0.9912332890261355, "y": -2.061756970886851, "z": -0.30303368468354824}, "inFront": true});
-	viewergrid_16287848860810616[0][0].addLabel("10",{"position": {"x": -1.9485410850265037, "y": -0.5801682463293755, "z": -0.5483279996313566}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addModel("11\n\n C    0.179334534090   -1.050644687500   -0.322183005568\n C    0.179334534090   -1.050644687500    1.128832626702\nCL    0.179334534090    2.199535470029   -0.037147845479\n H    1.101960784366   -0.730204373449   -0.805002816769\n C   -1.070192592648   -0.850663650564   -1.127390606063\n O    0.314171546546   -2.295877604414    0.413648906227\n H    1.065974227305   -0.713087334324    1.663045940360\n H   -0.764846490968   -0.918050667949    1.657788876138\n H   -1.137416820235    0.215598437119   -1.372069043467\n H   -1.045514740841   -1.446793770782   -2.050386583284\n H   -1.956730853376   -1.139860376965   -0.550345127950\n","xyz");
-	viewergrid_16287848860810616[0][1].addLabel("0",{"position": {"x": 0.17933453409032724, "y": -1.0506446875028055, "z": -0.3221830055690783}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("1",{"position": {"x": 0.17933453409032724, "y": -1.0506446875028055, "z": 1.1288326267050472}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("2",{"position": {"x": 0.17933453409032724, "y": 2.1995354700336756, "z": -0.037147845478645816}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("3",{"position": {"x": 1.101960784368728, "y": -0.7302043734509799, "z": -0.8050028167712314}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("4",{"position": {"x": -1.0701925926507319, "y": -0.8506636505661986, "z": -1.1273906060660228}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("5",{"position": {"x": 0.31417154654690244, "y": -2.2958776044191804, "z": 0.4136489062282238}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("6",{"position": {"x": 1.0659742273069448, "y": -0.7130873343255814, "z": 1.6630459403639695}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("7",{"position": {"x": -0.764846490969848, "y": -0.9180506679507878, "z": 1.6577888761422155}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("8",{"position": {"x": -1.1374168202377657, "y": 0.21559843711916038, "z": -1.372069043470591}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("9",{"position": {"x": -1.0455147408434853, "y": -1.4467937707853984, "z": -2.0503865832888324}, "inFront": true});
-	viewergrid_16287848860810616[0][1].addLabel("10",{"position": {"x": -1.956730853380951, "y": -1.139860376967243, "z": -0.5503451279515833}, "inFront": true});
-	viewergrid_16287848860810616[0][0].setStyle({"stick": {}});
-	viewergrid_16287848860810616[0][1].setStyle({"stick": {}});
-	viewergrid_16287848860810616[0][0].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287848860810616[0][1].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287848860810616[0][0].zoomTo();
-	viewergrid_16287848860810616[0][1].zoomTo();
-viewergrid_16287848860810616[0][1].render();
-viewergrid_16287848860810616[0][0].render();
-});
-</script></div></div>
 </div>
 <p>Now let’s have a look to the potential energy profile along the IRC steps.</p>
 <div class="cell docutils container">
@@ -1233,9 +982,6 @@ viewergrid_16287848860810616[0][0].render();
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Ex8_40_0.png" src="../../_images/Ex8_40_0.png" />
 </div>
 </div>
 <div class="exercise admonition">
@@ -1255,10 +1001,6 @@ the overall barrier for the reaction as depicted in the previous section?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8dc8f29b6d704014b405310ab15c10eb", "version_major": 2, "version_minor": 0}
-</script></div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 8</p>
@@ -1299,9 +1041,6 @@ place retained?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Ex8_47_0.png" src="../../_images/Ex8_47_0.png" />
-</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise  9</p>
@@ -1336,9 +1075,6 @@ possible changes you observe, change the code below. Explain in your report what
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Ex8_50_0.png" src="../../_images/Ex8_50_0.png" />
 </div>
 </div>
 </div>
@@ -1384,7 +1120,7 @@ possible changes you observe, change the code below. Explain in your report what
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

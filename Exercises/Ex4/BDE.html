@@ -213,7 +213,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -228,7 +233,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -692,21 +697,11 @@ viewer_16268794659222882.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -805,21 +800,11 @@ viewer_16244664999571018.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;guess&quot;</span><span class="p">:</span><span class="s2">&quot;gwh&quot;</span><span class="p">,</span> <span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;both&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ch3_radical</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -831,45 +816,6 @@ viewer_16244664999571018.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16244666095614412"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16244666095614412" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_16244666095614412 = null;
-var warn = document.getElementById("3dmolwarning_16244666095614412");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16244666095614412 = $3Dmol.createViewer($("#3dmolviewer_16244666095614412"),{backgroundColor:"white"});
-viewer_16244666095614412.zoomTo();
-	viewer_16244666095614412.addModel("4\n\n C    0.000012946446   -0.000018322566   -0.000000000310\n H    0.205125747569    1.051921673793   -0.000000004684\n H   -0.102639951532   -0.525851763592   -0.928232538117\n H   -0.102639947152   -0.525851746544    0.928232546489\n","xyz");
-	viewer_16244666095614412.setStyle({"sphere": {"scale": 0.1}});
-	viewer_16244666095614412.zoomTo();
-viewer_16244666095614412.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -905,20 +851,10 @@ viewer_16244666095614412.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -948,52 +884,6 @@ viewer_16244666095614412.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>hf</th>
-      <th>mp2</th>
-      <th>mp3</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>ch3f</th>
-      <td>-139.057552</td>
-      <td>-139.422653</td>
-      <td>-139.43692</td>
-    </tr>
-    <tr>
-      <th>ch3</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>f</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </div>
 
@@ -1037,7 +927,7 @@ viewer_16244666095614412.render();
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

@@ -213,7 +213,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -228,7 +233,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -493,7 +498,6 @@ configurational minima, and the rotational barrier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -504,11 +508,6 @@ configurational minima, and the rotational barrier.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
 </pre></div>
 </div>
 </div>
@@ -672,7 +671,7 @@ viewer_16280642809598265.render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#First optimize the butane molecule </span>
 <span class="c1">#from the starting geometry provided</span>
-<span class="c1">#use the bylp method and the 6-31+G* basis set</span>
+<span class="c1">#use the blyp method and the 6-31+G* basis set</span>
 </pre></div>
 </div>
 </div>
@@ -696,87 +695,11 @@ viewer_16280642809598265.render();
      <span class="p">})</span> 
     
     <span class="c1">#Perform the optimization of the butame molecule here</span>
-    <span class="c1">#use the bylp method and the 6-31+G* basis set</span>
+    <span class="c1">#use the blyp method and the 6-31+G* basis set</span>
     <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>
     
     <span class="n">geometries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">butane</span><span class="o">.</span><span class="n">clone</span><span class="p">())</span>
     <span class="n">PES</span><span class="p">[</span><span class="n">dihedral</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>180.0
-175.0
-170.0
-165.0
-160.0
-155.0
-150.0
-145.0
-140.0
-135.0
-130.0
-125.0
-120.0
-115.0
-110.0
-105.0
-100.0
-95.0
-90.0
-85.0
-80.0
-75.0
-70.0
-65.0
-60.0
-55.0
-50.0
-45.0
-40.0
-35.0
-30.0
-25.0
-20.0
-15.0
-10.0
-5.0
-0.0
--5.0
--10.0
--15.0
--20.0
--25.0
--30.0
--35.0
--40.0
--45.0
--50.0
--55.0
--60.0
--65.0
--70.0
--75.0
--80.0
--85.0
--90.0
--95.0
--100.0
--105.0
--110.0
--115.0
--120.0
--125.0
--130.0
--135.0
--140.0
--145.0
--150.0
--155.0
--160.0
--165.0
--170.0
--175.0
 </pre></div>
 </div>
 </div>
@@ -806,11 +729,6 @@ viewer_16280642809598265.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "1f5ef2207d3648938e45d2711f429be7", "version_major": 2, "version_minor": 0}
-</script><img alt="../../_images/Ex7_18_1.png" src="../../_images/Ex7_18_1.png" />
-</div>
 </div>
 <p>Now, we can monitor different quantities during the rigid PES scan, to understand how the different dihedrals affect the overall geometry. One example is the bond length between C atoms 1 and 2, the central atoms of the dihedral for which we performed the scan. Having a look at the fluctuations of this bond legth during the scan can be easily done using one of the helper functions, which will read the coordinates of the two atoms and calculate their distance.</p>
 <div class="cell docutils container">
@@ -832,9 +750,6 @@ viewer_16280642809598265.render();
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Ex7_21_0.png" src="../../_images/Ex7_21_0.png" />
 </div>
 </div>
 <div class="exercise admonition">
@@ -907,7 +822,7 @@ mol<span class="math notranslate nohighlight">\(^{-1}\)</span> [^Murcko1996]. Co
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

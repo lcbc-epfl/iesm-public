@@ -1,0 +1,1469 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry &#8212; Introduction to Electronic Structure Methods</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods" href="../Ex5.html" />
+    <link rel="prev" title="5. The hartree fock procedure in detail" href="../ex4b.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction to Electronic Structure Methods
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3Diss.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4.html">
+   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex4Theory.html">
+     4.1. Møller-Plesset Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="BDE.html">
+     4.2. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="HNO3_Correlation.html">
+     4.5. Correlation energy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ex4b.html">
+   5. The hartree fock procedure in detail
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex5.html">
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5.html">
+     6.1. Testing DFT functionals on an aldol reaction.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5b.html">
+     6.2. Density Functional Theory 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex6.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8Theory.html">
+     9.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8.html">
+     9.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/CC.html">
+   Coupled cluster
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Exercises/Ex4/HF_student.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lcbc-epfl/iesm-public"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex4/HF_student.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/HF_student.ipynb&branch=deploy"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-hartree-fock-procedure">
+   5.1.1. The Hartree-Fock procedure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">
+   5.1.2. Orthogonalizing the AO basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iv-the-overlap-integrals">
+   5.1.3. IV. The overlap integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-the-overlap-matrix">
+   5.1.4. Constructing the overlap matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einstein-implicit-summation-notation">
+   5.1.5. Einstein implicit summation notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">
+   5.1.6. Gaussian atomic orbital basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-orthogonalization-matrix">
+   5.1.7. An orthogonalization matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">
+   5.1.8. The Fock Matrix Transformed to an Orthonormal Basis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
+   5.1.9. Initial guess for the Fock Matrix is the one electron Hamiltonian
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-density-matrix">
+   5.1.10. The Density Matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">
+   5.1.11. Coulomb and Exchange Integrals and the SCF Energy
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-12 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">based on <strong>Hartree-Fock Procedure for Approximate Quantum Chemistry</strong>
+Ashley Ringer McDonald  <a class="reference external" href="https://orcid.org/0000-0002-4381-1239"><img alt="Orcid" src="../../_images/orcid.png" /></a> Dominic A. Sirianni <a class="reference external" href="https://orcid.org/0000-0002-6464-0213"><img alt="Orcid" src="../../_images/orcid.png" /></a> Tricia D. Shepherd <a class="reference external" href="https://orcid.org/0000-0001-6512-8951"><img alt="Orcid" src="../../_images/orcid.png" /></a> Sean Garrett-Roe <a class="reference external" href="https://orcid.org/0000-0001-6199-8773"><img alt="Orcid" src="../../_images/orcid.png" /></a>, 2008-2020, The Psi4Education Developers    License BSD-3</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hartree-fock-procedure-for-approximate-quantum-chemistry">
+<h1><span class="section-number">5.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry<a class="headerlink" href="#hartree-fock-procedure-for-approximate-quantum-chemistry" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">splinalg</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We learned that we can only solve the Schroedinger equation exactly for one-electron systems.</p>
+<p>To solve many-electron systems we need to use  Hartree-Fock molecular orbital theory comes in! Just as a test case, let’s use Psi4 to compute the Hartree-Fock wavefunction and energy for the Hydrogen atom:</p>
+<p>In this lab activity, you will build and diagonalize the Fock matrix to determine the MO coefficients and energies for a molecule.  We will be using the functions of the Psi4 quantum chemistry software package to compute the integrals we need.  The following notebook will lead you through setting up your molecule, establishing the basis set, and forming and diagonalizing the Fock matrix.  Be sure to run each cell as your proceed through the notebook.</p>
+<div class="section" id="the-hartree-fock-procedure">
+<h2><span class="section-number">5.1.1. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this headline">¶</a></h2>
+<p>The Schrödinger equation has the structure of an eigenvalue equation</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}|\psi\rangle = E|\psi\rangle
+\]</div>
+<p>In Hartree-Fock theory, this is reexpresed in terms of the Fock matrix, <span class="math notranslate nohighlight">\(F\)</span>, a matrix of wavefunction amplitudes for each MO, <span class="math notranslate nohighlight">\(C\)</span>, and the overlap matrix, <span class="math notranslate nohighlight">\(S\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-fockmatrix">
+<span class="eqno">(5.1)<a class="headerlink" href="#equation-fockmatrix" title="Permalink to this equation">¶</a></span>\[
+FC = SCE.
+\]</div>
+<p>The Fock matrix for a closed-shell system is</p>
+<div class="math notranslate nohighlight">
+\[
+F = H + 2J - K
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> is the one electron “core” Hamiltonian, <span class="math notranslate nohighlight">\(J\)</span> is the Coulomb integral matrix, and <span class="math notranslate nohighlight">\(K\)</span> is the exchange integral matrix. The definitions of <span class="math notranslate nohighlight">\(J\)</span> and <span class="math notranslate nohighlight">\(K\)</span> depend on the coefficients, <span class="math notranslate nohighlight">\(C\)</span>. We see here the central premise of SCF:  To get the Fock matrix, we need the coefficient matrix, but to compute the coefficient matrix we need the Fock matrix. When <span class="math notranslate nohighlight">\(S\)</span> is not equal to the identity matrix (i.e. the basis is not orthonormal), then this is a pseudo-eigenvalue problem and is even harder to solve. This is our task.</p>
+<p>We will</p>
+<ul class="simple">
+<li><p>introduce the overlap matrix</p></li>
+<li><p>learn how to build an orthogonalization matrix</p></li>
+<li><p>learn how to calculate the density</p></li>
+<li><p>learn how to calculate the Coulomb and Exchange integral matrices</p></li>
+<li><p>learn how to diagonalize the Fock matrix</p></li>
+<li><p>build an iterative procedure to converge HF energy</p></li>
+</ul>
+<p>It can be helpful to look back at <a class="reference internal" href="../Ex1/Ex1Theory.html#exercise1"><span class="std std-ref">Hilbert Space and Bra-Ket Notation</span></a></p>
+</div>
+<div class="section" id="orthogonalizing-the-ao-basis-set">
+<h2><span class="section-number">5.1.2. </span>Orthogonalizing the AO basis set<a class="headerlink" href="#orthogonalizing-the-ao-basis-set" title="Permalink to this headline">¶</a></h2>
+<p>Use the two orthonormal basis vector that we defined in Exercise 1</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a first basis vector and a second, orthogonal vector (you can use your solutions from Ex 1)</span>
+<span class="n">phi1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1">#insert here</span>
+<span class="n">phi2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1">#insert here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="iv-the-overlap-integrals">
+<h2><span class="section-number">5.1.3. </span>IV. The overlap integrals<a class="headerlink" href="#iv-the-overlap-integrals" title="Permalink to this headline">¶</a></h2>
+<p>For a set of basis functions, <span class="math notranslate nohighlight">\(\phi_i(\tau)\)</span>, where <span class="math notranslate nohighlight">\(\tau\)</span> is a shorthand for all the coordinates of all the particles, we can calculate the overlap integrals between the basis functions in the following way</p>
+<div class="math notranslate nohighlight">
+\[S_{ij}=\int {\rm d}\tau\; \phi_i^*(\tau)\phi_j(\tau).\]</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Define <span class="math notranslate nohighlight">\(S_{ij}\)</span> using Dirac notation.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>For an orthonormal basis, what does the overlap integral array, <code class="docutils literal notranslate"><span class="pre">S</span></code>, look like?</p>
+</div>
+<p>the terms <code class="docutils literal notranslate"><span class="pre">S_ij</span></code> using the basis vectors <code class="docutils literal notranslate"><span class="pre">phi1</span></code> and <code class="docutils literal notranslate"><span class="pre">phi2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the overlap (inner product) of the vectors </span>
+<span class="n">S_11</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#&lt;your formulas here&gt;</span>
+<span class="n">S_12</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">S_21</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">S_22</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The ij elements of S:&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S_11</span><span class="p">,</span><span class="n">S_12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">S_21</span><span class="p">,</span><span class="n">S_22</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The ij elements of S:
+None None
+None None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="constructing-the-overlap-matrix">
+<h2><span class="section-number">5.1.4. </span>Constructing the overlap matrix<a class="headerlink" href="#constructing-the-overlap-matrix" title="Permalink to this headline">¶</a></h2>
+<p>These overlap integrals, <span class="math notranslate nohighlight">\(S_{ij}\)</span>, can be interpreted as the elements on the <span class="math notranslate nohighlight">\(i\)</span>-th row and <span class="math notranslate nohighlight">\(j\)</span>-th column of a matrix, <span class="math notranslate nohighlight">\(S\)</span>. Let’s propose a matrix, <span class="math notranslate nohighlight">\(S\)</span>, made of the overlap integrals <span class="math notranslate nohighlight">\(S_{ij}\)</span>. We can build <span class="math notranslate nohighlight">\(S\)</span> systematically in the following way. First, make a matrix, <span class="math notranslate nohighlight">\(B\)</span>, composed of our basis vectors as columns,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} B = \left(\begin{array}{ccc}|&amp; |&amp;|\\ \phi_1 &amp;\phi_2&amp;\phi_3\\|&amp;|&amp;|\end{array}\right).\end{split}\]</div>
+<p>We will use the symbol <span class="math notranslate nohighlight">\(\dagger\)</span> to indicate the complex conjugate of the transpose of a matrix. So</p>
+<div class="math notranslate nohighlight">
+\[B^\dagger = (B^T)^*.\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># construct the overlap matrix from matrix of basis vectors</span>
+<span class="n">vector_length</span> <span class="o">=</span> <span class="n">phi1</span><span class="o">.</span><span class="n">size</span> <span class="c1">#length of the vector space</span>
+<span class="n">phi1_column</span> <span class="o">=</span> <span class="n">phi1</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vector_length</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#this makes phi a column vector</span>
+<span class="n">phi2_column</span> <span class="o">=</span> <span class="n">phi2</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">vector_length</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># put together (concatenate) the vectors into the matrix B</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">phi1_column</span><span class="p">,</span><span class="n">phi2_column</span><span class="p">),</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;The matrix B:</span><span class="se">\n</span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">B_dagger</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">conj</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;The matrix B^\dagger:</span><span class="se">\n</span><span class="si">{</span><span class="n">B_dagger</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The matrix B:
+[[1 0]
+ [0 1]]
+The matrix B^\dagger:
+[[1 0]
+ [0 1]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, multiplying the rows of <span class="math notranslate nohighlight">\(B^\dagger\)</span> by the columns of <span class="math notranslate nohighlight">\(B\)</span> (normal matrix multiplication) produces a matrix of the overlap integrals in the correct locations. we defined to be the matrix <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}B^\dagger B =\left(\begin{array}{ccc}-&amp; \phi_1^*&amp;-\\-&amp; \phi_2^* &amp;-\\-&amp;\phi_3&amp;-\end{array}\right) \left(\begin{array}{ccc}|&amp; |&amp;|\\ \phi_1 &amp;\phi_2&amp;\phi_3\\|&amp;|&amp;|\end{array}\right)\equiv S.\end{split}\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Numpy commands for matrix operations</p>
+<p><code class="docutils literal notranslate"><span class="pre">v</span></code> = vector, and <code class="docutils literal notranslate"><span class="pre">M</span></code> = matrix:</p>
+<p>matrix vector product: <code class="docutils literal notranslate"><span class="pre">M.dot(v)</span></code></p>
+<p>matrix matrix product: <code class="docutils literal notranslate"><span class="pre">M.dot(M)</span></code></p>
+<p>matrix complex conjugate: <code class="docutils literal notranslate"><span class="pre">M.conj()</span></code></p>
+<p>matrix transpose: <code class="docutils literal notranslate"><span class="pre">M.T</span></code></p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">B</span></code> and <code class="docutils literal notranslate"><span class="pre">B_dagger</span></code> and the matrix rules above to calculate the matrix <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate S from matrix of basis vectors</span>
+<span class="n">S</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#&lt;your formula here&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;The matrix of eigenvectors in columns B =</span><span class="se">\n</span><span class="s1"> </span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s1"> </span><span class="se">\n\n</span><span class="s1">and S = B^† B =</span><span class="se">\n</span><span class="si">{</span><span class="n">S</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The matrix of eigenvectors in columns B =
+ None 
+
+and S = B^† B =
+None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="einstein-implicit-summation-notation">
+<h2><span class="section-number">5.1.5. </span>Einstein implicit summation notation<a class="headerlink" href="#einstein-implicit-summation-notation" title="Permalink to this headline">¶</a></h2>
+<p>Matrix multiplication is defined through</p>
+<div class="math notranslate nohighlight">
+\[(AB)_{pq}= \sum_i A_{p,i}B_{i,q}\qquad\text{explicit summation}\]</div>
+<p>Note that there is a repeated index, <span class="math notranslate nohighlight">\(i\)</span>, in the summation. In implicit summation notation, Einstein notation, we do not write the <span class="math notranslate nohighlight">\(\sum\)</span> and treat the summation as understood.</p>
+<div class="math notranslate nohighlight">
+\[(AB)_{pq}=A_{p,i}B_{i,q}\qquad\text{implicit summation}\]</div>
+<p>Using implicit summation for the case at hand, <span class="math notranslate nohighlight">\(B^\dagger B\)</span> gives</p>
+<div class="math notranslate nohighlight">
+\[S_{pq}=(B^\dagger B)_{pq}= (B^\dagger)_{p,i}B_{i,q}\qquad\text{implicit summation}\]</div>
+<div class="math notranslate nohighlight">
+\[= (B^*)_{i,p}B_{i,q}\qquad\text{implicit summation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(B^*\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(B\)</span> (no transpose). Note that the two sets of indices, <span class="math notranslate nohighlight">\((i,p)\)</span> and <span class="math notranslate nohighlight">\((i,q)\)</span>, in the input matrices become one set, <span class="math notranslate nohighlight">\((p,q)\)</span>, in the product.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a convenient function in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> called <code class="docutils literal notranslate"><span class="pre">einsum()</span></code>, which is one of the crown jewels of the numpy library.  In short, <code class="docutils literal notranslate"><span class="pre">einsum</span></code> lets you perform various combinations of multiplying, summing, and transposing matrices very efficiently.  <a class="reference external" href="http://ajcr.net/Basic-guide-to-einsum/">This is a good tutorial</a> about <code class="docutils literal notranslate"><span class="pre">einsum</span></code> .  To specify the operations you want to do, you use the <strong>Ein</strong>stein <strong>Sum</strong>mation convention.)</p>
+</div>
+<p>To calculate the sum</p>
+<div class="math notranslate nohighlight">
+\[S_{pq} = (B^*)_{i,p}B_{i,q}\qquad\text{implicit summation}\]</div>
+<p>use <code class="docutils literal notranslate"><span class="pre">S=numpy.einsum('ip,iq-&gt;pq',B.conj(),B)</span></code>, as demonstrated below. We will use <code class="docutils literal notranslate"><span class="pre">einsum()</span></code> in several places.</p>
+<p>Let’s try this with a simple basis set of two (perhaps) orthonormal vectors.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Describe how the notation of the <code class="docutils literal notranslate"><span class="pre">np.einsum</span></code> command coorelates to the implicit summation formula written above.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code> to calculate the matrix <code class="docutils literal notranslate"><span class="pre">S</span></code>, and confirm that your answer is the same as above.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate S from Einstein sum</span>
+<span class="n">S</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#&lt;your formula here&gt;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;S from Einstein notation:</span><span class="se">\n</span><span class="si">{</span><span class="n">S</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>S from Einstein notation:
+None
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Propose a different orthonormal basis, modify <code class="docutils literal notranslate"><span class="pre">phi1</span></code> and <code class="docutils literal notranslate"><span class="pre">phi2</span></code>, and verify that <code class="docutils literal notranslate"><span class="pre">S</span></code> still has the same form. There are infinitely many choices. It isn’t complex… or <em>is</em> it?!</p>
+</div>
+</div>
+<div class="section" id="gaussian-atomic-orbital-basis-set">
+<span id="basisset"></span><h2><span class="section-number">5.1.6. </span>Gaussian atomic orbital basis set<a class="headerlink" href="#gaussian-atomic-orbital-basis-set" title="Permalink to this headline">¶</a></h2>
+<p>We have already used Psi4 for hartree fock calculations on H<span class="math notranslate nohighlight">\(_2\)</span>O, we will reuse it here.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>How many electrons are there in total in H<span class="math notranslate nohighlight">\(_2\)</span>O?
+How many occupied molecular orbitals would you expect?</p>
+</div>
+<p>Before we can begin to implement the HF procedure, we need to specify the molecule and basis set that we will be using.  We will also set the memory usage for our calcluation and the output file name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Set Basic Psi4 Options &lt;==</span>
+<span class="c1"># Memory specification</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;500 MB&#39;</span><span class="p">)</span>
+<span class="n">numpy_memory</span> <span class="o">=</span> <span class="mi">2</span> <span class="c1"># No NumPy array can exceed 2 MB in size</span>
+
+<span class="c1"># set output file</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;output.dat&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># specify the basis</span>
+<span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;sto-3g&#39;</span>
+
+
+<span class="c1"># Set computation options</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;basis&#39;</span><span class="p">:</span> <span class="n">basis</span><span class="p">,</span>
+                  <span class="s1">&#39;scf_type&#39;</span><span class="p">:</span> <span class="s1">&#39;pk&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;e_convergence&#39;</span><span class="p">:</span> <span class="mf">1e-8</span><span class="p">})</span>
+
+
+<span class="c1"># ==&gt; Define Molecule &lt;==</span>
+<span class="c1"># Define our model of water</span>
+<span class="n">mol</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">symmetry c1</span>
+<span class="s2">O</span>
+<span class="s2">H 1 1.1</span>
+<span class="s2">H 1 1.1 2 104</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1"># compute energy</span>
+
+<span class="n">SCF_E_psi</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;scf&#39;</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The Hartree-Fock ground state energy of the water is: </span><span class="si">{</span><span class="n">SCF_E_psi</span><span class="si">}</span><span class="s2"> Eh&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The Hartree-Fock ground state energy of the water is: -74.94207989868083 Eh
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we need to build the wavefunction from the basis functions.  We store the wavefunction in a variable called <code class="docutils literal notranslate"><span class="pre">wfn</span></code>. We use the function <code class="docutils literal notranslate"><span class="pre">nalpha()</span></code> provided by the wavefunction object we created above, <code class="docutils literal notranslate"><span class="pre">wfn</span></code>, to determine the number of orbitals with spin alpha, which will be doubly occupied orbitals for close shelled systems. We save this answer as a variable called <code class="docutils literal notranslate"><span class="pre">ndocc</span></code> (number of doubly occupied orbitals).</p>
+<p>Execute the code below and confirm that the number of doubly occupied orbitals matches your expectation for the molecule you chose.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Compute static 1e- and 2e- quantities with Psi4 &lt;==</span>
+<span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Wavefunction</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">mol</span><span class="p">,</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">get_global_option</span><span class="p">(</span><span class="s1">&#39;basis&#39;</span><span class="p">))</span>
+
+<span class="c1"># number of spin alpha orbitals (doubly occupied for closed-shell systems)</span>
+<span class="n">ndocc</span> <span class="o">=</span> <span class="n">wfn</span><span class="o">.</span><span class="n">nalpha</span><span class="p">()</span>
+<span class="n">nbf</span> <span class="o">=</span> <span class="n">wfn</span><span class="o">.</span><span class="n">basisset</span><span class="p">()</span><span class="o">.</span><span class="n">nbf</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Number of occupied orbitals: </span><span class="si">{</span><span class="n">ndocc</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Number of basis functions: </span><span class="si">{</span><span class="n">nbf</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Number of occupied orbitals: 5
+Number of basis functions: 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next we will examine the atomic orbital basis set. To do this, we have to set up a data structure, called a class, to calculate the molecular integrals. (Psi4 will do the nasty calculus for us.) We will call this data structure <code class="docutils literal notranslate"><span class="pre">mints</span></code> (Molecular INTegralS). We use the function <code class="docutils literal notranslate"><span class="pre">ao_overlap</span></code> to calculate the overlap integrals between all the AO basis functions.  We cast the result to a numpy array called <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
+<div class="margin sidebar">
+<p class="sidebar-title">asarray()</p>
+<p><code class="docutils literal notranslate"><span class="pre">asarray()</span></code> is a special case of <code class="docutils literal notranslate"><span class="pre">array()</span></code> that does not copy arrays when compatible and converts array subclasses to base class ndarrays. <a class="reference external" href="https://stackoverflow.com/questions/14415741/what-is-the-difference-between-numpys-array-and-asarray-functions">Reference</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construct a molecular integrals object</span>
+<span class="n">mints</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">MintsHelper</span><span class="p">(</span><span class="n">wfn</span><span class="o">.</span><span class="n">basisset</span><span class="p">())</span>
+
+<span class="c1"># Overlap matrix as a psi4 Matrix object</span>
+<span class="n">S_matrix</span> <span class="o">=</span> <span class="n">mints</span><span class="o">.</span><span class="n">ao_overlap</span><span class="p">()</span>
+
+<span class="c1"># Overlap matrix converted into an ndarray</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">S_matrix</span><span class="p">)</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Shape of S is </span><span class="si">{</span><span class="n">S</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape of S is (7, 7)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Explain the shape (number of rows and columns) of <code class="docutils literal notranslate"><span class="pre">S</span></code> in terms of the AO basis set we chose.</p>
+</div>
+<p>Examine the contents of <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">S</span><span class="p">)</span> <span class="c1">#the full matrix may be somewhat hard to read based on the basis set</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 1.00000000e+00  2.36703937e-01  0.00000000e+00  0.00000000e+00
+   0.00000000e+00  3.84055925e-02  3.84055925e-02]
+ [ 2.36703937e-01  1.00000000e+00 -9.64852854e-18  0.00000000e+00
+   0.00000000e+00  3.86138794e-01  3.86138794e-01]
+ [ 0.00000000e+00 -9.64852854e-18  1.00000000e+00  0.00000000e+00
+   0.00000000e+00  2.09726923e-01  2.09726923e-01]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00
+   0.00000000e+00  0.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  0.00000000e+00
+   1.00000000e+00 -2.68438220e-01  2.68438220e-01]
+ [ 3.84055925e-02  3.86138794e-01  2.09726923e-01  0.00000000e+00
+  -2.68438220e-01  1.00000000e+00  1.81759851e-01]
+ [ 3.84055925e-02  3.86138794e-01  2.09726923e-01  0.00000000e+00
+   2.68438220e-01  1.81759851e-01  1.00000000e+00]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at the first few elements</span>
+<span class="n">peak</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Here is a peak at the first 4 x 4 elements of the matrix:
+[[ 1.00000000e+00  2.36703937e-01  0.00000000e+00  0.00000000e+00]
+ [ 2.36703937e-01  1.00000000e+00 -9.64852854e-18  0.00000000e+00]
+ [ 0.00000000e+00 -9.64852854e-18  1.00000000e+00  0.00000000e+00]
+ [ 0.00000000e+00  0.00000000e+00  0.00000000e+00  1.00000000e+00]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Based on your observations of <code class="docutils literal notranslate"><span class="pre">S</span></code> in the AO basis, answer the following questions</p>
+<ol class="simple">
+<li><p>What do the diagonal elements of <code class="docutils literal notranslate"><span class="pre">S</span></code> indicate?</p></li>
+<li><p>What do the off-diagonal elements of <code class="docutils literal notranslate"><span class="pre">S</span></code> indicate?</p></li>
+<li><p>Does the Gaussian atomic orbital basis set form an orthonormal basis?</p></li>
+</ol>
+</div>
+<p>We can perform this test programmatically as well, with a few python tricks. Construct an array of the same size as the overlap array (<code class="docutils literal notranslate"><span class="pre">S</span></code>) that has 1’s along the diagonal and 0’s everywhere else. Then compare that array to the <code class="docutils literal notranslate"><span class="pre">S</span></code> array to determine if the AO basis is orthonormal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">isBasisOrthonormal</span><span class="p">(</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Does the result agree with what you determined above?</p>
+</div>
+</div>
+<div class="section" id="an-orthogonalization-matrix">
+<h2><span class="section-number">5.1.7. </span>An orthogonalization matrix<a class="headerlink" href="#an-orthogonalization-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Recall that if we had used the hydrogen atom wavefunctions as our basis set, the AO wavefunctions would all be orthonormal. Since we used a basis set of Gaussian wavefuctions, this may not be the case. We will now introduce some tools to fix it!</p>
+<p>Since our AO basis set was not orthonormal, we seek to construct an orthogonalization matrix, <span class="math notranslate nohighlight">\(A\)</span>, such that <span class="math notranslate nohighlight">\({\bf A}^{\dagger}{\bf SA} = {\bf 1}\)</span>.</p>
+<p><strong>Motivation:</strong> If <span class="math notranslate nohighlight">\({\bf A}\)</span> and <span class="math notranslate nohighlight">\({\bf S}\)</span> were real numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(s\)</span> (not matrices), this would be simple to solve. First, <span class="math notranslate nohighlight">\(a^\dagger=a\)</span> because a real number is the same as its hermitian transpose. By simple algebra we can solve for a,</p>
+<div class="math notranslate nohighlight">
+\[
+a^\dagger s a=1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+a^\dagger s a=a s a=a^2s=1
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Rightarrow{}a=s^{-1/2}
+\]</div>
+<p>In linear algebra (with matrices instead of numbers) this is more complicated, but numpy and the mints class can take care of the details for us! Leaving out the details, we will calculate</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf A}={\bf S}^{-1/2}
+\]</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Use the function <code class="docutils literal notranslate"><span class="pre">np.linalg.inv()</span></code> to calculate the inverse of <code class="docutils literal notranslate"><span class="pre">S</span></code>, and the function <code class="docutils literal notranslate"><span class="pre">splinalg.sqrtm()</span></code> to take its (matrix) square root. Execute the code below and examine the matrix <code class="docutils literal notranslate"><span class="pre">A</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Construct AO orthogonalization matrix A &lt;==</span>
+
+<span class="c1"># inverse of S using np.linalg.inv</span>
+<span class="c1"># matrix square root of the inverse of S using sp.linalg.sqrtm</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">peak</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>What do you observe about the elements of <code class="docutils literal notranslate"><span class="pre">A</span></code>? Is the matrix real or complex? Is the matrix symmetric or not?</p>
+</div>
+<p>Our basis set <span class="math notranslate nohighlight">\(B\)</span> is not orthonormal, so we want to take linear combinations of its columns to make a new basis set, <span class="math notranslate nohighlight">\(B'\)</span>, that is orthonormal. We define a new matrix, <span class="math notranslate nohighlight">\(A\)</span>, in terms of that transformation,</p>
+<div class="math notranslate nohighlight">
+\[B' = BA.\]</div>
+<p>The new overlap matrix will be</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fb38e272-6921-41a7-94dd-83e385810e89">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-fb38e272-6921-41a7-94dd-83e385810e89" title="Permalink to this equation">¶</a></span>\[\begin{align}
+ S' &amp;= B'^\dagger B',\\
+ &amp;= (BA)^\dagger (BA),\\
+&amp;= A^\dagger B^\dagger BA,\\
+&amp;= A^\dagger S A.
+\end{align}\]</div>
+<p>The matrix <span class="math notranslate nohighlight">\(A\)</span> makes the proper linear combination of the columns of <span class="math notranslate nohighlight">\(B\)</span> and <span class="math notranslate nohighlight">\(A^\dagger\)</span> makes the linear combinations of the rows of <span class="math notranslate nohighlight">\(B^\dagger\)</span>. This is a very common structure of transformation matrices. Because <span class="math notranslate nohighlight">\(S\)</span> is real and symmetric, <span class="math notranslate nohighlight">\(A\)</span> is also real and symmetric, so <span class="math notranslate nohighlight">\(A^\dagger=A\)</span>. The transformation becomes simply</p>
+<div class="math notranslate nohighlight">
+\[S' = A S A.\]</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Use the orthogonalization matrix <code class="docutils literal notranslate"><span class="pre">A</span></code> to transform the overlap matrix, <code class="docutils literal notranslate"><span class="pre">S</span></code>. Check the transformed overlap matrix, <code class="docutils literal notranslate"><span class="pre">S_p</span></code>, to make sure it represents an orthonormal basis.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transform S with A and assign the result to S_p</span>
+
+<span class="n">S_p</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1">#&lt;your equation here&gt;</span>
+
+<span class="n">isBasisOrthonormal</span><span class="p">(</span><span class="n">S_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>The product A S A does not take the complex conjugate transpose of A. What conditions (properties of A) make that ok?</p>
+</div>
+</div>
+<div class="section" id="the-fock-matrix-transformed-to-an-orthonormal-basis">
+<h2><span class="section-number">5.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">¶</a></h2>
+<p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(5.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  bewteen <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-76955f6c-c14d-4b83-9171-36619732b281">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-76955f6c-c14d-4b83-9171-36619732b281" title="Permalink to this equation">¶</a></span>\[\begin{align}
+FC&amp;=SCE\\
+F({\bf1})C&amp;=S({\bf1})CE\\
+FAA^{-1}C&amp;=SAA^{-1}CE
+\end{align}\]</div>
+<p>Multiplying on the left by <span class="math notranslate nohighlight">\(A\)</span> then gives</p>
+<div class="math notranslate nohighlight">
+\[
+AFAA^{-1}C=ASAA^{-1}CE
+\]</div>
+<p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
+<div class="amsmath math notranslate nohighlight" id="equation-154afb94-dec0-4e7b-86cf-82e6314e6ce6">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-154afb94-dec0-4e7b-86cf-82e6314e6ce6" title="Permalink to this equation">¶</a></span>\[\begin{align}
+F'C'&amp;=S'C'E,\\
+&amp;=C'E.
+\end{align}\]</div>
+<p>The last line follows because <span class="math notranslate nohighlight">\(S'={\bf1}\)</span> in our new basis. We now have an eigenvalue problem that we can solve by matrix diagonalization.</p>
+<p>In the expression</p>
+<div class="math notranslate nohighlight">
+\[C'=A^{-1}C,\]</div>
+<p>the matrix <span class="math notranslate nohighlight">\(A^{-1}\)</span> transforms the coefficients, <span class="math notranslate nohighlight">\(C\)</span>, into the orthogonalized basis set. We will also need a way to transform those coefficients, <span class="math notranslate nohighlight">\(C'\)</span>, back to the original AO basis.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Based on the definition of <span class="math notranslate nohighlight">\(C'\)</span>, propose a definition of <span class="math notranslate nohighlight">\(C\)</span> in terms of <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(C'\)</span>. Justify your equation.</p>
+</div>
+</div>
+<div class="section" id="initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
+<h2><span class="section-number">5.1.9. </span>Initial guess for the Fock Matrix is the one electron Hamiltonian<a class="headerlink" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian" title="Permalink to this headline">¶</a></h2>
+<p>To get the Fock matrix, we need the coefficient matrix, but to compute the coefficient matrix we need the Fock matrix.  So we start with a guess for the Fock matrix, which is the core Hamiltonian matrix.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build core Hamiltonian</span>
+<span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mints</span><span class="o">.</span><span class="n">ao_kinetic</span><span class="p">())</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mints</span><span class="o">.</span><span class="n">ao_potential</span><span class="p">())</span>
+<span class="n">H</span> <span class="o">=</span> <span class="n">T</span> <span class="o">+</span> <span class="n">V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>In the cell below, use the core Hamiltonian matrix as your initial guess for the Fock matrix. Transform it with the same A matrix you used above.  To calculate the eigenvalues, <code class="docutils literal notranslate"><span class="pre">vals</span></code>, and eigenvectors, <code class="docutils literal notranslate"><span class="pre">vecs</span></code>, of matrix <code class="docutils literal notranslate"><span class="pre">M</span></code> using  <code class="docutils literal notranslate"><span class="pre">vals,</span> <span class="pre">vecs</span> <span class="pre">=</span> <span class="pre">np.linalg.eigh(M)</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Guess for the Fock matrix</span>
+<span class="n">F</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Replace</span>
+
+<span class="c1"># Transformed Fock matrix</span>
+<span class="n">F_p</span> <span class="o">=</span>  <span class="kc">None</span> <span class="c1"># Replace</span>
+
+<span class="c1"># Diagonalize F_p for eigenvalues &amp; eigenvectors with NumPy</span>
+<span class="n">e</span><span class="p">,</span> <span class="n">C_p</span> <span class="o">=</span>  <span class="kc">None</span> <span class="c1"># Replace</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Display, i.e., <code class="docutils literal notranslate"><span class="pre">print</span></code>, the coefficent matrix and confirm it the correct size</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">C_p</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now that we have the coefficents in the transformed basis, we need to go back and get the coefficients in the original AO basis.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Use <code class="docutils literal notranslate"><span class="pre">A</span></code> and the formula you proposed previously to transform the coefficient matrix back to the AO basis. Confirm that the resulting matrix appears reasonable, i.e., similar size and magnitude</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transform the coefficient matrix back into AO basis</span>
+<span class="n">C</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Insert equation here</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-density-matrix">
+<h2><span class="section-number">5.1.10. </span>The Density Matrix<a class="headerlink" href="#the-density-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Recall, the Fock matrix is</p>
+<div class="math notranslate nohighlight">
+\[
+F = H + 2J - K
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(H\)</span> is the one electron “core” Hamiltonian, <span class="math notranslate nohighlight">\(J\)</span> is the Coulomb integral matrix, and <span class="math notranslate nohighlight">\(K\)</span> is the exchange integral matrix. The HF energy can be expressed in explicit terms of one and two electron integrals</p>
+<div class="math notranslate nohighlight">
+\[
+E_{HF} = \sum_i^{elec}\langle i|h_i|i\rangle + \sum_{i&gt;j}^{elec}[ii|jj]-[ij|ji]
+\]</div>
+<p>Expanding the orbitals in terms of basis functions, we find</p>
+<div class="math notranslate nohighlight" id="equation-coloumbintegral">
+<span class="eqno">(5.5)<a class="headerlink" href="#equation-coloumbintegral" title="Permalink to this equation">¶</a></span>\[
+[ii|jj]=\sum_{pqrs}c^*_{pi}c_{qi}c^*_{rj}c_{sj}\int{\rm d}\tau\; \phi_p^*(1)\phi_q(1)\frac{1}{r_{ij}}\phi_r^*(2)\phi_s(2)
+\]</div>
+<p>First, look at the coefficients in <a class="reference internal" href="#equation-coloumbintegral">(5.5)</a>. They come in two pairs of complex-conjugates, <span class="math notranslate nohighlight">\(c^*_{pi}c_{qi}\)</span> and <span class="math notranslate nohighlight">\(c^*_{ri}c_{si}\)</span>. The diagonal terms, when <span class="math notranslate nohighlight">\(p=q\)</span> for example, are the probability of some basis function <span class="math notranslate nohighlight">\(p\)</span> contributing to the MO <span class="math notranslate nohighlight">\(i\)</span>. We will sum each term over the occupied orbitals, <span class="math notranslate nohighlight">\(i\)</span>, to form the “density matrix”</p>
+<div class="math notranslate nohighlight" id="equation-densitymatrix">
+<span class="eqno">(5.6)<a class="headerlink" href="#equation-densitymatrix" title="Permalink to this equation">¶</a></span>\[
+D_{pq}=\sum_i^{occ} c^*_{pi}c_{qi}.
+\]</div>
+<p>We are going to construct the density matrix from the occupied orbitals.  To get a matrix of just the occupied orbitals, use the coefficient matrix in the original AO basis, and take a slice to include all rows and just the columns that represent the occupied orbitals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grab occupied orbitals (recall: ndocc is the number of doubly occupied orbitals we found earlier)</span>
+<span class="n">C_occ</span> <span class="o">=</span> <span class="n">C</span><span class="p">[:,</span> <span class="p">:</span><span class="n">ndocc</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;The shape of C_occ is </span><span class="si">{</span><span class="n">C_occ</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The shape of C_occ is (7, 5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Build the density matrix, <code class="docutils literal notranslate"><span class="pre">D</span></code>, from the occupied orbitals, <code class="docutils literal notranslate"><span class="pre">C_occ</span></code>, using the function <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>. <strong>Hint</strong> Look at <a class="reference internal" href="#equation-densitymatrix">(5.6)</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build density matrix from occupied orbitals</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># Insert code here</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;The shape of D is </span><span class="si">{</span><span class="n">D</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The shape of D is (0,)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="coulomb-and-exchange-integrals-and-the-scf-energy">
+<h2><span class="section-number">5.1.11. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this headline">¶</a></h2>
+<p>The integral on the right of Eq.3 is super important. It has four indicies, <span class="math notranslate nohighlight">\(p,q,r,s\)</span>, so formally it is a tensor. It accounts for the repulsion between pairs of electrons, so it is called the electron repulsion integral tensor, <span class="math notranslate nohighlight">\(I\)</span>,
+$<span class="math notranslate nohighlight">\(
+I_{pqrs} = \int{\rm d}\tau\; \phi_p^*(1)\phi_q(1)\frac{1}{r_{ij}}\phi_r^*(2)\phi_s(2).
+\)</span>$
+First, we can build the electron-repulsion integral (ERI) tensor, which calculates the electron repulsion between the atomic orbital wavefunctions, and the core Hamiltonian. Mints does all the work for us!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build electron repulsion integral (ERI) Tensor</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mints</span><span class="o">.</span><span class="n">ao_eri</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><a class="reference internal" href="#equation-coloumbintegral">(5.5)</a> can be expressed in terms of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8be4bcc6-5ca4-466d-9ae8-583dfb79dbc3">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-8be4bcc6-5ca4-466d-9ae8-583dfb79dbc3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+[ii|jj] &amp;= \sum_{pqrs}D_{pq}D_{rs}I_{pqrs},\\
+&amp;=\sum_{pq}D_{pq}\sum_{rs}D_{rs}I_{pqrs}.
+\end{align}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(\sum_{rs}D_{rs}I_{pqrs}\)</span> is the effective repulsion felt by one electron due to the other electrons in the system. This term is the Coulomb integral matrix
+$<span class="math notranslate nohighlight">\(
+J_{pq}=\sum_{rs}D_{rs}I_{pqrs}.
+\)</span>$</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Define J  in terms of the density matrix, <code class="docutils literal notranslate"><span class="pre">D</span></code>, and the electron repulsion integral tensor, <code class="docutils literal notranslate"><span class="pre">I</span></code>, using <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define J</span>
+<span class="n">J</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># insert code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Similarly,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-29369e53-ee1e-4b7b-97ab-02a068fc2945">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-29369e53-ee1e-4b7b-97ab-02a068fc2945" title="Permalink to this equation">¶</a></span>\[\begin{align}
+[ij|ji] &amp;= \sum_{pqrs}D_{ps}D_{rq}I_{pqrs},\\
+ &amp;= \sum_{ps}D_{ps}\sum_{rq}D_{rq}I_{pqrs}.
+\end{align}\]</div>
+<p>corrects the repulsion due to electrons “avoiding each other” due to their Fermionic (antisymmetric w.r.t. exchange) character. This term is the exchange integral matrix
+$<span class="math notranslate nohighlight">\(
+K_{ps}=\sum_{rq}D_{rq}I_{pqrs}.
+\)</span>$</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Define K  in terms of the density matrix, <code class="docutils literal notranslate"><span class="pre">D</span></code>, and the electron repulsion integral tensor, <code class="docutils literal notranslate"><span class="pre">I</span></code>, using <code class="docutils literal notranslate"><span class="pre">einsum()</span></code>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define K</span>
+<span class="n">K</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># insert code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Define F in terms of H, J, and K. (Recall Section XI.)</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Define F as a function of H, J, and K</span>
+<span class="n">F</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># insert code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A more convenient form of the SCF energy is in terms of a sum over the AO basis functions
+$<span class="math notranslate nohighlight">\(
+E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
+\)</span>$</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Calculate the SCF energy based on H, F, and D using <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title">Hint</p>
+<p>The right hand side of the equation is the sum of the product of two terms, each of which has two indices (p and q). The result, E, is a number, so it has no indices. In <code class="docutils literal notranslate"><span class="pre">einsum()</span></code> notation, this case will be represented with the indices for the matrices on the left of the <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>, and no index on the right of the <code class="docutils literal notranslate"><span class="pre">-&gt;</span></code>. For example, in the case of just one matrix, the sum of all its elements of a matrix <code class="docutils literal notranslate"><span class="pre">M</span></code> is <code class="docutils literal notranslate"><span class="pre">sum_of_m</span> <span class="pre">=</span> <span class="pre">np.einsum('pq-&gt;',M</span> <span class="pre">)</span></code>. In your answer below, be sure to account for any modifications required of an element-wise product of two matrices.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_nuc</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span>
+<span class="n">SCF_E</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># insert your code here</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Energy = </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">27</span><span class="o">-</span><span class="n">db2c3ad3789b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">E_nuc</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">SCF_E</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># insert your code here</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Energy = </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;mol&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Based on the result of the calculation in <a class="reference internal" href="#basisset"><span class="std std-ref">Gaussian atomic orbital basis set</span></a>, is this a reasonable answer?</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Describe a procedure (i.e. identify the steps/commands) that will updated coefficients and compute a new density matrix based on the new definition of the Fock matrix.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Using the procedure proposed above, calculate the updated coefficients</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># insert remaining steps here</span>
+
+<span class="c1"># Select the occupied MOs</span>
+<span class="n">C_occ</span> <span class="o">=</span> <span class="n">C</span><span class="p">[:,</span> <span class="p">:</span><span class="n">ndocc</span><span class="p">]</span>
+
+<span class="c1"># Update the density matrix</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;pi,qi-&gt;pq&#39;</span><span class="p">,</span> <span class="n">C_occ</span><span class="p">,</span> <span class="n">C_occ</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">185</span><span class="n">a85e36f35</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Select the occupied MOs</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">C_occ</span> <span class="o">=</span> <span class="n">C</span><span class="p">[:,</span> <span class="p">:</span><span class="n">ndocc</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Update the density matrix</span>
+
+<span class="ne">NameError</span>: name &#39;ndocc&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>You have just completed one cycle of the SCF calculation!</p>
+<p>Now we will use the density matrix to build the Fock matrix.  The code block below sets up a skeleton of the Hartree-Fock procedure.  The basic steps are:</p>
+<ol class="simple">
+<li><p>Calculate the Fock Matrix based on the density matrix previously defined from a one electron hamiltonian</p></li>
+<li><p>Calculate the energy from the Fock matrix.</p></li>
+<li><p>Check and see if the energy has converged by comparing the current energy to the previous energy and seeing if it is within the convergence threshold.</p></li>
+<li><p>If the energy has not converged, transform the Fock matrix, and diagonalize the transformed Fock matrix to get the energy and MO coefficients.  Then transform back to the original AO basis, pull the occupied orbitals, and reconstruct the density matrix.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Nuclear Repulsion Energy &lt;==</span>
+<span class="n">E_nuc</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span>
+
+<span class="c1"># ==&gt; SCF Iterations &lt;==</span>
+<span class="c1"># Pre-iteration energy declarations</span>
+<span class="n">SCF_E</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="n">E_old</span> <span class="o">=</span> <span class="mf">0.0</span>
+
+<span class="c1"># ==&gt; Set default program options &lt;==</span>
+<span class="c1"># We continue recalculating the energy until it converges to the level we specify.  </span>
+<span class="c1"># The varible `E_conv` is where we set this level of convergence.  We also set a </span>
+<span class="c1"># maximum number of iterations so that if our calculation does not converge, it </span>
+<span class="c1"># eventually stops and lets us know that it did not converge.  </span>
+<span class="c1"># Maximum SCF iterations</span>
+<span class="n">MAXITER</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="c1"># Energy convergence criterion</span>
+<span class="n">E_conv</span> <span class="o">=</span> <span class="mf">1.0e-6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;==&gt; Starting SCF Iterations &lt;==</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Begin Iterations</span>
+<span class="k">for</span> <span class="n">scf_iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAXITER</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+    
+    <span class="c1"># Build Fock matrix (Section XII)</span>
+    
+    <span class="c1"># &lt;your code here&gt;</span>
+
+    <span class="c1"># Compute SCF energy</span>
+    
+    <span class="n">SCF_E</span> <span class="o">=</span> <span class="c1">#&lt;your formula here&gt;</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;SCF Iteration </span><span class="si">{</span><span class="n">scf_iter</span><span class="si">}</span><span class="s1">: Energy = </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1"> dE = </span><span class="si">{</span><span class="n">SCF_E</span> <span class="o">-</span> <span class="n">E_old</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Check to see if the energy is converged.  If it is break out of the loop.</span>
+    <span class="c1"># If it is not, set the current energy E_old</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">SCF_E</span> <span class="o">-</span> <span class="n">E_old</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">E_conv</span><span class="p">):</span>
+        <span class="k">break</span>
+    <span class="n">E_old</span> <span class="o">=</span> <span class="n">SCF_E</span>
+    
+    <span class="c1"># Compute new coefficient &amp; density matrices (Section X &amp; XI) </span>
+    
+    <span class="c1"># &lt;your code here&gt;  </span>
+    
+    <span class="c1"># MAXITER exceeded?</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">scf_iter</span> <span class="o">==</span> <span class="n">MAXITER</span><span class="p">):</span>
+        <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Maximum number of SCF iterations exceeded.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Post iterations</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">SCF converged.&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;Final RHF Energy: </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s1">.6f</span><span class="si">}</span><span class="s1"> [Eh]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
+==&gt; Starting SCF Iterations &lt;==
+
+SCF Iteration 1: Energy = -73.285796 dE = -73.285796
+E_old =  0.0
+SCF Iteration 2: Energy = -74.828125 dE = -1.542329
+E_old =  -73.28579644121243
+SCF Iteration 3: Energy = -74.935488 dE = -0.107363
+E_old =  -74.82812525733655
+SCF Iteration 4: Energy = -74.941478 dE = -0.005990
+E_old =  -74.93548796052792
+SCF Iteration 5: Energy = -74.941972 dE = -0.000494
+E_old =  -74.94147771236476
+SCF Iteration 6: Energy = -74.942056 dE = -0.000084
+E_old =  -74.94197196651132
+SCF Iteration 7: Energy = -74.942074 dE = -0.000018
+E_old =  -74.94205603188098
+SCF Iteration 8: Energy = -74.942079 dE = -0.000004
+E_old =  -74.94207438962167
+SCF Iteration 9: Energy = -74.942080 dE = -0.000001
+E_old =  -74.94207861812686
+SCF Iteration 10: Energy = -74.942080 dE = -0.000000
+E_old =  -74.942079600628
+SCF Iteration 11: Energy = -74.942080 dE = -0.000000
+E_old =  -74.94207982929245
+SCF Iteration 12: Energy = -74.942080 dE = -0.000000
+E_old =  -74.94207988252629
+SCF Iteration 13: Energy = -74.942080 dE = -0.000000
+E_old =  -74.94207989491986
+SCF Iteration 14: Energy = -74.942080 dE = -0.000000
+E_old =  -74.94207989780526
+SCF Iteration 15: Energy = -74.942080 dE = -0.000000
+E_old =  -74.942079898477
+SCF Iteration 16: Energy = -74.942080 dE = -0.000000
+
+SCF converged.
+Final RHF Energy: -74.942080 [Eh]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare your results to Psi4 by computing the energy using <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> in the cell below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Compare our SCF to Psi4 &lt;==</span>
+<span class="c1"># Call psi4.energy() to compute the SCF energy</span>
+<span class="n">SCF_E_psi</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;SCF&#39;</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PSI4 </span><span class="si">{</span><span class="n">SCF_E_psi</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">  Ours </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">   Absolute difference </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">SCF_E</span><span class="o">-</span><span class="n">SCF_E_psi</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PSI4 -74.942080  Ours -74.942080   Absolute difference 1.1041834113711957e-11
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Bonus Exercise</p>
+<p>Modify the value of E_conv and describe its affect the number of iterations.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3710jvsc74a57bd041014d9ef4f1575fd00aab395420944c5c4814a3cabc0b1373f73a24b67da32e",
+            path: "./Exercises/Ex4"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3710jvsc74a57bd041014d9ef4f1575fd00aab395420944c5c4814a3cabc0b1373f73a24b67da32e'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../ex4b.html" title="previous page"><span class="section-number">5. </span>The hartree fock procedure in detail</a>
+    <a class='right-next' id="next-link" href="../Ex5.html" title="next page"><span class="section-number">6. </span>Density Functional Theory - Comparison with (Post) Hartree-Fock Methods</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+        
+          <div class="extra_footer">
+            <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -213,7 +213,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -228,7 +233,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -426,18 +431,23 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#accuracy-of-dft-swiss-army-knife-for-computational-chemistry">
+   7.2.2. Accuracy of DFT: Swiss army knife for computational chemistry?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bde-cao-into-atomic-calcium-and-oxygen">
-   7.2.2. BDE CaO into atomic calcium and oxygen
+   7.2.3. BDE CaO into atomic calcium and oxygen
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#interaction-of-two-ethane-molecules">
-   7.2.3. Interaction of two Ethane molecules
+   7.2.4. Interaction of two Ethane molecules
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#eclipsed-staggered-methanol">
-   7.2.4. Eclipsed/Staggered Methanol
+   7.2.5. Eclipsed/Staggered Methanol
   </a>
  </li>
 </ul>
@@ -464,13 +474,16 @@
 v_c^{\text{nl}}(\vec{r}) = \int f(\vec{r}, \vec{r}') dr'
 \]</div>
 <p>where a perturbation at <span class="math notranslate nohighlight">\(\vec{r}'\)</span> due to atom B, induces an exchange-correlation potential at <span class="math notranslate nohighlight">\(\vec{r}\)</span> on atom A, even at a great distance.
-Examples for such functionals are VV10 and vdW-DF-10.</p>
+Examples for such functionals are <code class="docutils literal notranslate"><span class="pre">VV10</span></code> and <code class="docutils literal notranslate"><span class="pre">vdW-DF-10</span></code>.</p>
 <p>A cheaper and simple solution is to use an empirical potential of the form <span class="math notranslate nohighlight">\(- C_6/R^6\)</span>.
-A popular dispersion correction is DFT-D3 by Grimme <a class="reference external" href="http://et.al">et.al</a>. Like other corrections of the DFT-D family, this is an additive correction.</p>
+A popular dispersion correction is DFT-D3 by Grimme and coworkers. Like other corrections of the DFT-D family, this is an additive correction.</p>
 <div class="math notranslate nohighlight">
 \[E_{\text{B3LYP-D3}} = E_{\text{B3LYP}} + E_{\text{D3, 2-body}} + E_{\text{ATM, 3-body}}\]</div>
 <p>The dispersion correction consists of a two-body term plus a three-body term of the Axilrod-Teller-Muto (ATM) triple-dipole variety. If the BJ approach is used, a slightly different damping function is employed to make the potential finite (but non-zero) for <span class="math notranslate nohighlight">\(R_{AB} \rightarrow 0\)</span>. This is the preferred dispersion correction for most uses.</p>
-<p>In Psi4 we can also add non-local density based correlation energy from the VV10 functional to e.g the b3lyp functional <code class="docutils literal notranslate"><span class="pre">b3lyp-nl</span></code>.  The VV10 functional is less empirical than the DFT-D approaches, as it contains only two fitted parameters.</p>
+<p>In Psi4 we can also add non-local density based correlation energy from the VV10 functional to e.g the b3lyp functional by using the following keyword <code class="docutils literal notranslate"><span class="pre">b3lyp-nl</span></code>.  The VV10 functional is less empirical than the DFT-D approaches, as it contains only two fitted parameters.</p>
+</div>
+<div class="section" id="accuracy-of-dft-swiss-army-knife-for-computational-chemistry">
+<h2><span class="section-number">7.2.2. </span>Accuracy of DFT: Swiss army knife for computational chemistry?<a class="headerlink" href="#accuracy-of-dft-swiss-army-knife-for-computational-chemistry" title="Permalink to this headline">¶</a></h2>
 <p>DFT although fast and available in many quantum chemistry programs is not a universal solution for any system. In principle, DFT is exact. However, in practice, as we rely on density functional approximations (DFA), the results can vary widely, depending on the DFA used. DFA are often fit using reference data from databases containing atomization energies and various other data. In this example, we will look at three reactions using geometries obtained from quantum chemical reference datasets. For reasons of efficiency, we will only perform single point calculations using a variety of functionals to learn about some points that we need to be careful about when using DFT.</p>
 <p>The reactions of interest are:</p>
 <ol class="simple">
@@ -478,31 +491,30 @@ A popular dispersion correction is DFT-D3 by Grimme <a class="reference external
 <li><p>Interaction energy of two ethane molecules (taken from GMTKN55 database, -1.34 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span>)</p></li>
 <li><p>Energy difference between the staggered and eclipsed methanol conformations (taken from GMTKN55 database, -1.01 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span>)</p></li>
 </ol>
-<p>Note that one of the reactions is contained in the training data of one of the functionals that we will be using.</p>
+<p>Note, that one of the reactions is contained in the training data of one of the functionals that we will be using.</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 1</p>
 <p>Which of the reaction energies (i.e. the energy difference between product and reactants) do you think is most “difficult” to calculate? Rank them in order of increasing difficulty.</p>
 <p>Difficult in this case refers to getting an accurate reaction energy with low absolute error to true energy (reference energy from the dataset). As chemical accuracy we usually use 1 kcal mol<span class="math notranslate nohighlight">\(^-1\)</span></p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 2</p>
 <p>Run the calculations below and check whether your assessment of the hard, medium and easy reactions is correct. Include the tables containing the calculated energies for the three problems in your report. Which functional do you think contained the reaction in its training data?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise</p>
+<p class="admonition-title">Bonus Exercise 1</p>
 <p>How could fortitous error cancellation help in getting good results when calculating reaction energies?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise</p>
+<p class="admonition-title">Bonus Exercise 2</p>
 <p>What is the impact of using the dispersion correction for the ethane complex? For what phenomena are such corrections relevant? Give a real world example system.</p>
 </div>
 </div>
 <div class="section" id="bde-cao-into-atomic-calcium-and-oxygen">
-<h2><span class="section-number">7.2.2. </span>BDE CaO into atomic calcium and oxygen<a class="headerlink" href="#bde-cao-into-atomic-calcium-and-oxygen" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.3. </span>BDE CaO into atomic calcium and oxygen<a class="headerlink" href="#bde-cao-into-atomic-calcium-and-oxygen" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 
@@ -517,11 +529,6 @@ A popular dispersion correction is DFT-D3 by Grimme <a class="reference external
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
 </pre></div>
 </div>
 </div>
@@ -679,7 +686,7 @@ A popular dispersion correction is DFT-D3 by Grimme <a class="reference external
 </div>
 </div>
 <div class="section" id="interaction-of-two-ethane-molecules">
-<h2><span class="section-number">7.2.3. </span>Interaction of two Ethane molecules<a class="headerlink" href="#interaction-of-two-ethane-molecules" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.4. </span>Interaction of two Ethane molecules<a class="headerlink" href="#interaction-of-two-ethane-molecules" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dimer</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -887,7 +894,7 @@ viewergrid_1627658475076343[0][0].render();
 </div>
 </div>
 <div class="section" id="eclipsed-staggered-methanol">
-<h2><span class="section-number">7.2.4. </span>Eclipsed/Staggered Methanol<a class="headerlink" href="#eclipsed-staggered-methanol" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">7.2.5. </span>Eclipsed/Staggered Methanol<a class="headerlink" href="#eclipsed-staggered-methanol" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methanol_eclipsed</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -1114,7 +1121,7 @@ viewergrid_16276586667101328[0][0].render();
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

@@ -211,7 +211,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -226,7 +231,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -423,14 +428,17 @@
                 
   <div class="section" id="integration-grids">
 <h1><span class="section-number">7.3. </span>Integration grids<a class="headerlink" href="#integration-grids" title="Permalink to this headline">¶</a></h1>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Sources: <a class="reference external" href="https://manual.q-chem.com/5.2/Ch5.S5.SS2.html">Q-Chem Documentation</a>
+<a class="reference external" href="https://doi.org/10.1002/qua.26332">Morgante and Peverati</a></p>
+</div>
 <p>In order to do DFT calculations we use an integration grid when evaluating the exchange–correlation integrals. There are many integration schemes around. Most of them calculate the integrals as weighted sum over a finite amount of grid points generally defined on the surface of a sphere. The “thickness” of these grids is usually represented by the corresponding number of radial and angular points. The choice of the grid can significantly affect the computed results.
 The SG-0 and SG-1 (pruned 50,194 with &lt; 40% of the points of the full grid) grids were optimized for an integration error in the energy to fall below a target threshold. Unfortunately, derivatives of the energy (eg. (hyper)polarizabilities) are often more sensitive to the quality of the integration grid.
 This is also true when imaginary vibrational frequencies or  PES curves of non-bonded interactionsare are calculated. If the grid is low quality,  low-frequency (but real) vibrational frequencies might manifest as imaginary and PES curves might contain artefacts.</p>
 <p>More recent functionals developed since ~2005 often depend on the kinetic energy density or the laplacian of the density (e.g Meta-GGA functionals) and require finer grids than GGA functionals.</p>
 <p>The issue of choosing the most appropriate integration grid is often overlooked. Relying on the default settings of quantum chemistry programs is not a good idea, even if some developers implemented variable grid requirements that depend on the chosen functional (e.g in Q-Chem). In this experiment we will look at the dissociation curve of the argon dimer, between 3.0 and 6.0 Ångström using psi4 which uses the medium quality 75, 302 grid as default.</p>
-<p>Try the b3lyp and the m06-hf functional.</p>
-<p>Sources: <a class="reference external" href="https://manual.q-chem.com/5.2/Ch5.S5.SS2.html">Q-Chem Documentation</a>
-<a class="reference external" href="https://doi.org/10.1002/qua.26332">Morgante and Peverati</a></p>
+<p>We will test two functionals: <code class="docutils literal notranslate"><span class="pre">b3lyp</span></code> and  <code class="docutils literal notranslate"><span class="pre">m06-hf</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
@@ -451,7 +459,8 @@ This is also true when imaginary vibrational frequencies or  PES curves of non-b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.24</span><span class="p">,</span><span class="mf">1.21</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.19</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are the reference energies taken from https://doi.org/10.1002/qua.26332</span>
+<span class="n">reference</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.24</span><span class="p">,</span><span class="mf">1.21</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.19</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -529,8 +538,6 @@ This is also true when imaginary vibrational frequencies or  PES curves of non-b
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="../../_images/Ex6_DFT_integration_grid_10_0.svg" src="../../_images/Ex6_DFT_integration_grid_10_0.svg" /></div>
 </div>
 </div>
 
@@ -574,7 +581,7 @@ This is also true when imaginary vibrational frequencies or  PES curves of non-b
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

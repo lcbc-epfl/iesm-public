@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7. Troubleshooting, Pitfalls, Traps" href="../ex6.html" />
-    <link rel="prev" title="6.1. DFT functionals" href="Ex5.html" />
+    <link rel="prev" title="6.1. Testing DFT functionals on an aldol reaction." href="Ex5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -213,7 +213,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -228,7 +233,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -496,10 +501,6 @@ MP2 in predicting these structural parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
@@ -514,18 +515,6 @@ MP2 in predicting these structural parameters.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">__version__</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.4rc2&#39;
 </pre></div>
 </div>
 </div>
@@ -561,20 +550,10 @@ In a standard SCF calculation as you get close to convergence the orbital change
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_hf</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-278.8245365472743
 </pre></div>
 </div>
 </div>
@@ -594,20 +573,10 @@ In a standard SCF calculation as you get close to convergence the orbital change
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_mp2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-279.5254305193196
 </pre></div>
 </div>
 </div>
@@ -719,16 +688,6 @@ viewer_16267912457531056.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MP2 values
-1.2175239089801662
-1.38854886806525
-1.217522965392925
-O-N-O angle: 132.901
-O-N-O angle: 113.550
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="dft">
 <h2><span class="section-number">6.3.1. </span>DFT<a class="headerlink" href="#dft" title="Permalink to this headline">¶</a></h2>
@@ -743,11 +702,6 @@ O-N-O angle: 113.550
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -759,7 +713,7 @@ O-N-O angle: 113.550
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbitals</span> <span class="o">=</span> <span class="n">findCubeFiles</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbitals</span> <span class="o">=</span> <span class="n">findCubeFiles</span><span class="p">()</span> <span class="c1"># if we provide no path, the function looks in the current directory for the cube files</span>
 <span class="n">show_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="o">=</span><span class="n">radical</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -780,16 +734,6 @@ O-N-O angle: 113.550
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r3: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O-N-O angle: </span><span class="si">{</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O-N-O angle: </span><span class="si">{</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DFT: B3LYP
-r1: 1.240
-r2: 1.240
-r3: 1.240
-O-N-O angle: 119.998
-O-N-O angle: 120.001
 </pre></div>
 </div>
 </div>
@@ -865,7 +809,7 @@ the quality of your results?</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Ex5.html" title="previous page"><span class="section-number">6.1. </span>DFT functionals</a>
+    <a class='left-prev' id="prev-link" href="Ex5.html" title="previous page"><span class="section-number">6.1. </span>Testing DFT functionals on an aldol reaction.</a>
     <a class='right-next' id="next-link" href="../ex6.html" title="next page"><span class="section-number">7. </span>Troubleshooting, Pitfalls, Traps</a>
 
         </div>
@@ -880,7 +824,7 @@ the quality of your results?</p>
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

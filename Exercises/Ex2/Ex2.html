@@ -213,7 +213,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -228,7 +233,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -905,16 +910,6 @@ Unrestricted Hartree-Fock (UHF).</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Equilibrium distance:
-RHF:  -1.1267350944766272
-UHF:  -1.1267350944528727
-Large distance:
-RHF:  -0.7451120298600016
-UHF:  -0.9964658919270579
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 9</p>
@@ -928,6 +923,17 @@ The energy to break a chemical bond is usually between 20 and 100 kcal/mol. Expl
 <p>List the files in your directory (type <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your terminal) to see what new files have been generated. Indeed,
 you should find the .log files created by Psi4. As this files may be very large and we have no intention of editing it, you may use <code class="docutils literal notranslate"><span class="pre">less</span></code> to display it.</p>
 <p>As example, type <code class="docutils literal notranslate"><span class="pre">less</span></code> followed by the name of the last .log file created (<em>large_UHF-output.log</em>):</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Terminal commands in Jupyter Notebooks</p>
+<p>You can access the terminal on JupyterHub by clicking on the plus icon in the toolbar and launching a new terminal in the <code class="docutils literal notranslate"><span class="pre">Quantum</span> <span class="pre">Chemistry</span></code> environment. This allows you to navigate the file system (e.g using <code class="docutils literal notranslate"><span class="pre">cd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span></code>), to view files (using <code class="docutils literal notranslate"><span class="pre">less</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>) or to edit files (using <code class="docutils literal notranslate"><span class="pre">vi</span></code> or <code class="docutils literal notranslate"><span class="pre">nano</span></code>).</p>
+<p>In Jupyter Notebooks you can also execute terminal commands by prefixing them with <code class="docutils literal notranslate"><span class="pre">!</span></code> and running them inside a python cell. In the actual terminal commands do not need a prefix.</p>
+<p>You can even use python variables for this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>myvariable = &#39;searchstring&#39;  # this is python
+!grep $myvariable filetosearch.txt 
+</pre></div>
+</div>
+<p>The upper command will search the file <code class="docutils literal notranslate"><span class="pre">filetosearch.txt</span></code> for occurence of the contents of the variable and return them.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>less large_UHF-output.log
@@ -1032,7 +1038,7 @@ Compare the number of cycles for the different basis sets.</p></li>
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>

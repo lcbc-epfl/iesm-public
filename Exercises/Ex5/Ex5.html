@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6.1. DFT functionals &#8212; Introduction to Electronic Structure Methods</title>
+    <title>6.1. Testing DFT functionals on an aldol reaction. &#8212; Introduction to Electronic Structure Methods</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -213,7 +213,12 @@
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -228,7 +233,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.1. DFT functionals
+     6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
@@ -421,8 +426,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-molecules-in-molden">
-   6.1.1. Creating Molecules in Molden
+  <a class="reference internal nav-link" href="#creating-diacetone-alcohol">
+   6.1.1. Creating diacetone alcohol
   </a>
  </li>
 </ul>
@@ -436,12 +441,12 @@
         
               <div>
                 
-  <div class="section" id="dft-functionals">
-<h1><span class="section-number">6.1. </span>DFT functionals<a class="headerlink" href="#dft-functionals" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="testing-dft-functionals-on-an-aldol-reaction">
+<h1><span class="section-number">6.1. </span>Testing DFT functionals on an aldol reaction.<a class="headerlink" href="#testing-dft-functionals-on-an-aldol-reaction" title="Permalink to this headline">¶</a></h1>
+<p>In this example, we will study the aldol condensation of two acetone molecules to diacetone alcohol using different DFT functionals.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -465,12 +470,15 @@
 </div>
 </div>
 </div>
-<div class="section" id="creating-molecules-in-molden">
-<h2><span class="section-number">6.1.1. </span>Creating Molecules in Molden<a class="headerlink" href="#creating-molecules-in-molden" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-diacetone-alcohol">
+<h2><span class="section-number">6.1.1. </span>Creating diacetone alcohol<a class="headerlink" href="#creating-diacetone-alcohol" title="Permalink to this headline">¶</a></h2>
 <p>For larger molecules, the creation of an approximate xyz file that can
 be used as the molecular input coordinates is impossible. In these
-cases, one may refer to the drawing ability of Molden. First, we may
-want to create coordinates for acetone.</p>
+cases, one may refer to molecular visualization softwares.</p>
+<p>Many different programs can be used for this task. Popular ones are for example Avogadro (open source, cross-plattform),
+<em>MolView</em> (<a class="reference external" href="https://molview.org/">https://molview.org/</a>) (web-based), molden, GaussView (comes with the Gaussian quantum chemistry software), IQMol and many more.</p>
+<p>For simplicity, we provide you the coordinates below but you could as well have drawn them yourselves. The coordinates need to be approximately right and many programs come with a force field optimization routine, that will quickly snap together all bonds to their equilibrium distances and so on.</p>
+<p>An alternative is to download structures from a database such as PubChem. We will do this for acetone below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">product</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -573,8 +581,10 @@ viewergrid_16267919719132493[0][0].render();
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 2</p>
 <p>Compute the energy of reactants and products and calculate the reaction enthalpy at 0 K, <span class="math notranslate nohighlight">\(\Delta H_{0K}\)</span>, filling the table above.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">6-31+G*</span></code> basis set and HF, MP2 as well as the following functionals <code class="docutils literal notranslate"><span class="pre">blyp</span></code>, <code class="docutils literal notranslate"><span class="pre">mpw1pw91</span></code>,<code class="docutils literal notranslate"><span class="pre">b97-2</span></code>,<code class="docutils literal notranslate"><span class="pre">PBE</span></code>, <code class="docutils literal notranslate"><span class="pre">TPSS</span></code>, <code class="docutils literal notranslate"><span class="pre">M06-L</span></code>, <code class="docutils literal notranslate"><span class="pre">M06-2X</span></code></p>
 </div>
 <div class="highlight-{admonition, notranslate"><div class="highlight"><pre><span></span>:class: tip
+
 You can generate a table using python by creating a list of the methods you want to use and iterating over them. 
 As we want to start the geometry optimizations from the same geometries it is important that you always optimize a clone of the original molecule. 
 We can do this by using `mol_to_optimize =  starting_mol.clone()`
@@ -606,14 +616,6 @@ In the end you will have a full dictionary containing all the results which we c
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-Optimizer: Optimization complete!
-Optimizer: Optimization complete!
-Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -624,7 +626,12 @@ Optimizer: Optimization complete!
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can copy the loop and run it seperately for the  &quot;ρ based&quot; methods</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can copy the loop and run it seperately for the  &quot;ρ based&quot; DFT</span>
+<span class="c1"># methods</span>
+
+<span class="c1">#use the following functionals, you can also distribute the work among yourselves. </span>
+
+<span class="n">methods</span> <span class="o">=</span>  <span class="p">[</span><span class="s1">&#39;blyp&#39;</span><span class="p">,</span> <span class="s1">&#39;mpw1pw91&#39;</span><span class="p">,</span><span class="s1">&#39;b97-2&#39;</span><span class="p">,</span><span class="s1">&#39;PBE&#39;</span><span class="p">,</span> <span class="s1">&#39;TPSS&#39;</span><span class="p">,</span> <span class="s1">&#39;M06-L&#39;</span><span class="p">,</span> <span class="s1">&#39;M06-2X&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -716,7 +723,7 @@ geometry optimisation for both species?</p>
         
           <div class="extra_footer">
             <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm">GitHub </a> </li> </li> <li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
           </div>
       </p>
     </div>
