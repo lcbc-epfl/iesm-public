@@ -464,11 +464,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="creating-diacetone-alcohol">
 <h2><span class="section-number">6.1.1. </span>Creating diacetone alcohol<a class="headerlink" href="#creating-diacetone-alcohol" title="Permalink to this headline">¶</a></h2>
@@ -582,22 +577,6 @@ viewergrid_16267919719132493[0][0].render();
 <p class="admonition-title">Exercise 2</p>
 <p>Compute the energy of reactants and products and calculate the reaction enthalpy at 0 K, <span class="math notranslate nohighlight">\(\Delta H_{0K}\)</span>, filling the table above.</p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">6-31+G*</span></code> basis set and HF, MP2 as well as the following functionals <code class="docutils literal notranslate"><span class="pre">blyp</span></code>, <code class="docutils literal notranslate"><span class="pre">mpw1pw91</span></code>,<code class="docutils literal notranslate"><span class="pre">b97-2</span></code>,<code class="docutils literal notranslate"><span class="pre">PBE</span></code>, <code class="docutils literal notranslate"><span class="pre">TPSS</span></code>, <code class="docutils literal notranslate"><span class="pre">M06-L</span></code>, <code class="docutils literal notranslate"><span class="pre">M06-2X</span></code></p>
-</div>
-<div class="highlight-{admonition, notranslate"><div class="highlight"><pre><span></span>:class: tip
-
-You can generate a table using python by creating a list of the methods you want to use and iterating over them. 
-As we want to start the geometry optimizations from the same geometries it is important that you always optimize a clone of the original molecule. 
-We can do this by using `mol_to_optimize =  starting_mol.clone()`
-To display the table you need to store the results in a dictionary. 
-
-A dictionary in python looks like this: `results_dict = {&quot;key&quot;: &quot;value&quot;}`. The value can be a `str`, `int` or even a `list`. 
-In this case you can update the dictionary for each method iteration like so:
-`results_dict[method] = [E1, E2, dH, label]`
-
-In the end you will have a full dictionary containing all the results which we can nicely print as a pandas dataframe using:
-
-`pd.DataFrame.from_dict(data, orient=&#39;index&#39;, columns=[&#39;E_reactant&#39;, &#39;E_product&#39;, &#39;ΔH(0K) [kcal/mol]&#39;, &#39;remark&#39;])`
-</pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
