@@ -474,7 +474,7 @@ However, such truncations introduce size-consistency problems.</p>
 <h2><span class="section-number">4.5.1. </span>Influence of correlation on geometry<a class="headerlink" href="#influence-of-correlation-on-geometry" title="Permalink to this headline">¶</a></h2>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
-<p>Assess and comment on the performance of HF, MP2 and MP3 with respect to the prediction of bond lengths and bond angles in HNO<span class="math notranslate nohighlight">\(_3\)</span> in reference to the experimental values <a class="footnote-reference brackets" href="#no3" id="id1">1</a></p>
+<p>Assess and comment on the performance of HF, MP2 and MP3 with respect to the prediction of bond lengths and bond angles in HNO<span class="math notranslate nohighlight">\(_3\)</span> in reference to the experimental values <span id="id1"><sup><a class="reference internal" href="../../intro.html#id3">1</a></sup></span></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -753,14 +753,22 @@ viewer_1630941640277363.render();
 </div>
 <div class="section" id="recovering-correlation-energy">
 <h2><span class="section-number">4.5.2. </span>Recovering Correlation Energy<a class="headerlink" href="#recovering-correlation-energy" title="Permalink to this headline">¶</a></h2>
-<div class="margin sidebar">
-<p class="sidebar-title">Attribution</p>
-<p>This section was adapted from Shepherd et. al. under BSD-3 license.</p>
+<div class="sphinx-bs container pb-4 docutils">
+<div class="row docutils">
+<div class="d-flex col-12 docutils">
+<div class="card w-100 shadow docutils">
+<div class="card-body docutils">
+<p class="card-text">Based on <strong>Basis sets</strong>
+Tricia D. Shepherd <a class="reference external" href="https://orcid.org/0000-0001-6512-8951"><img alt="Orcid" src="../../_images/orcid.png" /></a>, Ryan C. Fortenberry, Matthewy Kennedy, C. David Sheril, 2008-2019, The Psi4Education Developers    License BSD-3</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <p>At the Hartree Fock level of theory, each electron experiences an average potential field of all the other electrons. In essence, it is a “mean field” approach that neglects individual electron-electron interactions or “electron correlation”. Thus, we define the difference between the self-consistent field energy and the exact energy as the correlation energy. Two fundamentally different approaches to account for electron correlation effects are available by selecting a Correlation method: Moller Plesset (MP) Perturbation theory and Coupled Cluster (CC) theory.</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 8</p>
-<p>Calculate the SCF energy for Boron using the <em>6-311+G</em>* basis set, then determine the value of the correlation energy for boron assuming an “experimental” energy of <strong>-24.608 hartrees</strong> <a class="footnote-reference brackets" href="#schaefer" id="id2">2</a></p>
+<p>Calculate the SCF energy for Boron using the <em>6-311+G</em>* basis set, then determine the value of the correlation energy for boron assuming an “experimental” energy of <strong>-24.608 hartrees</strong> <span id="id2"><sup><a class="reference internal" href="../../intro.html#id4">8</a></sup></span></p>
 <p>Using the same basis set, perform an energy calculation with MP2 and MP4.</p>
 <p>Using the same basis set, perform an energy calculation with CCSD and CCSD(T).</p>
 <p>Determine the percentage of the correlation energy recovered for HF, MP2, MP4, CCSD, CCSD(T).</p>
@@ -881,15 +889,6 @@ MP4 will require the use of the following options: <code class="docutils literal
 </table>
 </div></div></div>
 </div>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="no3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Anglada J. M., Olivella, S., Sole A., Phys. Chem. Chem. Phys., 2014 16, 19437</p>
-</dd>
-<dt class="label" id="schaefer"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>H. S. Schaefer and F. Harris, (1968) Phys Rev. 167, 67</p>
-</dd>
-</dl>
 </div>
 </div>
 

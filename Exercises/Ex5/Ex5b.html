@@ -498,7 +498,7 @@ good use in a notoriously tricky system, the NO<span class="math notranslate noh
 Nitrite radicals are highly reactive species that are rapidly destroyed
 by sunlight, but as the sun sets, they start to play an important role
 in chemical transformations (in what is called the night-time chemistry
-of the atmosphere) <a class="footnote-reference brackets" href="#radical" id="id1">1</a>.</p>
+of the atmosphere) <span id="id1"><sup><a class="reference internal" href="../../intro.html#id3">1</a></sup></span>.</p>
 <p>There exist various experimental and theoretical
 studies of NO<span class="math notranslate nohighlight">\(_3\cdot\)</span> , with the experiment indicating a fully symmetric D<span class="math notranslate nohighlight">\(_3^h\)</span>
 structure with equal N-O bond lengths of 1.24 Å and O-N-O bond angles of
@@ -608,7 +608,7 @@ but one should bear in mind that they have to be interpreted with care.</p>
 <p>In Psi4 we will use the <code class="docutils literal notranslate"><span class="pre">frontier_orbitals</span></code> setting, which produces <code class="docutils literal notranslate"><span class="pre">cube</span></code> representations of the frontier molecular orbitals. For closed shell species, the highest occupied (HOMO) and the lowest unoccupied (LUMO) alpha orbitals (ie. <span class="math notranslate nohighlight">\(\psi_\alpha(r)\)</span>) are printed, while for open shell species a total of (<span class="math notranslate nohighlight">\(4+M_s\)</span>) orbitals are printed (<span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> spin for both lowest virtual (LVMO) and highest doubly occupied orbitals (DOMO), along with all singly occupied (SOMO) orbitals).
 The plot below will print <span class="math notranslate nohighlight">\(\alpha\)</span> spin orbitals in red and <span class="math notranslate nohighlight">\(\beta\)</span> spin orbitals in blue.</p>
 <p>Unfortuneately, there is a bug in psi4 1.4rc2 when printing cube files for MP2 wavefunctions. We therefore provide you with the necessary cube files which you can visualize using the commands <code class="docutils literal notranslate"><span class="pre">findCubeFiles(pathToDirectory)</span></code> and <code class="docutils literal notranslate"><span class="pre">showOrbitals(pathToDirectory)</span></code></p>
-<p>Using cubeprop you can also acces the electron density (<code class="docutils literal notranslate"><span class="pre">density</span></code>), the basis functions (<code class="docutils literal notranslate"><span class="pre">basis_functions</span></code>), the electrostatic potential (<code class="docutils literal notranslate"><span class="pre">esp</span></code>) and the a descriptor calculated from the frontier orbitals which is <span class="math notranslate nohighlight">\(f^2(r) = \rho_{\text{LUMO}}(r) - \rho_{\text{HOMO}}(r)\)</span> (<code class="docutils literal notranslate"><span class="pre">dual_descriptor</span></code>). This descriptor is a good measure of nucleophilicity and electrophilicity and is like both Fukui functions combined.</p>
+<p>Using cubeprop you can also acces the electron density (keyword <code class="docutils literal notranslate"><span class="pre">density</span></code>), the basis functions (keyword <code class="docutils literal notranslate"><span class="pre">basis_functions</span></code>), the electrostatic potential (keyword <code class="docutils literal notranslate"><span class="pre">esp</span></code>) and a descriptor calculated from the frontier orbitals which is <span class="math notranslate nohighlight">\(f^2(r) = \rho_{\text{LUMO}}(r) - \rho_{\text{HOMO}}(r)\)</span> (keyword <code class="docutils literal notranslate"><span class="pre">dual_descriptor</span></code>). This descriptor is a good measure of nucleophilicity and electrophilicity and is like both Fukui functions combined.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the code to get the cube files printed, </span>
@@ -790,12 +790,6 @@ the quality of your results?</p>
 <p class="admonition-title">Exercise 9</p>
 <p>If you needed a highly accurate structure and energy for  NO<span class="math notranslate nohighlight">\(_3\cdot\)</span>, which method would you use?</p>
 </div>
-<hr class="footnotes docutils" />
-<dl class="footnote brackets">
-<dt class="label" id="radical"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p><em>Phys. Chem. Chem. Phys.</em>, <strong>2014</strong>, 16, <em>19437</em></p>
-</dd>
-</dl>
 </div>
 </div>
 

@@ -440,8 +440,7 @@
 <h1><span class="section-number">7.3. </span>Integration grids<a class="headerlink" href="#integration-grids" title="Permalink to this headline">¶</a></h1>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Sources: <a class="reference external" href="https://manual.q-chem.com/5.2/Ch5.S5.SS2.html">Q-Chem Documentation</a>
-<a class="reference external" href="https://doi.org/10.1002/qua.26332">Morgante and Peverati</a></p>
+<p>These exercises are based on  <span id="id1">Morgante and Peverati<sup><a class="reference internal" href="../../intro.html#id6">6</a></sup></span>. Some of the description is based on the Q-Chem manual <code class="docutils literal notranslate"><span class="pre">cite:ts</span></code>{q-chem_team_httpsmanualq-chemcom52ch5s5ss2html_nodate}</p>
 </div>
 <p>In order to do DFT calculations we use an integration grid when evaluating the exchange–correlation integrals. There are many integration schemes around. Most of them calculate the integrals as weighted sum over a finite amount of grid points generally defined on the surface of a sphere. The “thickness” of these grids is usually represented by the corresponding number of radial and angular points. The choice of the grid can significantly affect the computed results.
 The SG-0 and SG-1 (pruned 50,194 with &lt; 40% of the points of the full grid) grids were optimized for an integration error in the energy to fall below a target threshold. Unfortunately, derivatives of the energy (eg. (hyper)polarizabilities) are often more sensitive to the quality of the integration grid.
