@@ -22,7 +22,7 @@ Over the years many people have contributed to the improvement of the course mat
 * Andrea Levy [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-1255-859X)
 
 
-** References **
+**References**
 
 ```{bibliography}
 :style: plain
