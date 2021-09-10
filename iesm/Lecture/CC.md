@@ -42,7 +42,7 @@ very useful in practice...
 ![image](../images/convergence.png)
 
 
-The systematic approach to the exact solution of the Schrödinger equation by  successive improvements in the one- and *N*-electron spaces. (Replicated  from Figure 5.1 in [Helgaker2000]_).
+The systematic approach to the exact solution of the Schrödinger equation by  successive improvements in the one- and *N*-electron spaces. (Replicated  from Figure 5.1 in {cite}`helgaker_molecular_2000`.
 
 ## What is Coupled Cluster Theory?
 
@@ -169,7 +169,7 @@ properties of the exact solution to the electronic Schrödinger equation.
 For the other reasons, I cannot put it better than that:
 
 > An important advantage of a size-extensive method is that it allows straightforward  comparisons between calculations involving variable numbers of electrons, e.g.  ionization processes or calculations using different numbers of active electrons.   Lack of size-extensivity implies that errors from the exact energy increase as more  electrons enter the calculation. From [Size-Extensivity and Size-Consistency](https://web.archive.org/web/20170606215414/http://www.uam.es/docencia/quimcursos/Docs/Knowledge/Fundamental_Theory/cc/node7.html) (1996) by T. Daniel Crawford. 
-
+ {cite}`lipkowitz_introduction_2007`
 
 
 One of the main troubles of truncated CI models is that they do not satisfy the
@@ -230,7 +230,7 @@ they are the CC wave-function parameters.
    The mathematical formalism behind the (virtual) excitation processes is
    called second-quantization. It is at the basis of quantum field theory and
    extensively used in the development of CC theory. For more details on the
-   usage of second-quantization in quantum chemistry, see [Helgaker2000]_
+   usage of second-quantization in quantum chemistry, see {cite}`helgaker_molecular_2000`
 ```
 
 The CC exponential ansatz can then be expanded explicitly

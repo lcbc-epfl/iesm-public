@@ -16,7 +16,7 @@ Over the years many people have contributed to the improvement of the course mat
 * Nicholas Browning  [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-7859-6495)
 * Thibaud von Erlach 
 * Pablo Baudin [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0001-7233-645X)
-* François Mouvet
+* François Mouvet [![Orcid](./images/orcid.png)](https://orcid.org/0000-0002-0416-2598)
 * Justin Villard [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-4606-319X)
 * Simon Dürr  [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-4304-8106)
 * Andrea Levy [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-1255-859X)
