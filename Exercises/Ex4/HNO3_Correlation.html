@@ -606,6 +606,7 @@ viewer_16309401172490427.render();
 </pre></div>
 </div>
 <p>this has been implemented in the <code class="docutils literal notranslate"><span class="pre">calculate_bond</span></code> function contained in <code class="docutils literal notranslate"><span class="pre">helpers.py</span></code> imported above.</p>
+<p>The calculation for the angle is also possible using numpy. You can use the following function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_angle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
     <span class="n">ba</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
     <span class="n">bc</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="n">b</span>
@@ -616,7 +617,6 @@ viewer_16309401172490427.render();
 </pre></div>
 </div>
 </div>
-<p>The calculation for the angle is also possible using numpy. You can use the following function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ_labeled</span><span class="p">(</span><span class="n">hno3</span><span class="p">)</span>
