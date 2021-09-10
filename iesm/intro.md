@@ -20,3 +20,10 @@ Over the years many people have contributed to the improvement of the course mat
 * Justin Villard [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-4606-319X)
 * Simon Dürr  [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-4304-8106)
 * Andrea Levy [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-1255-859X)
+
+
+** References **
+
+```{bibliography}
+:style: plain
+```
