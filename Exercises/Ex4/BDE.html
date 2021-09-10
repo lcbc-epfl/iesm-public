@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -43,15 +43,15 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4.5. Correlation energy" href="HNO3_Correlation.html" />
@@ -81,7 +81,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -423,7 +423,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
@@ -501,7 +501,7 @@ certain higher order methods (such as MP4), which causes the
 computational time for a geometry optimisation to become exorbitantly
 high.)</p>
 <div class="exercise admonition">
-<p class="admonition-title">Question 1</p>
+<p class="admonition-title">Exercise 1</p>
 <p>Complete the following table by running the calculations below.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -546,30 +546,30 @@ high.)</p>
 </table>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 2</p>
+<p class="admonition-title">Exercise 2</p>
 <p>Is the homolytic cleavage of the H<span class="math notranslate nohighlight">\(_3\)</span>C-F bond likely, based on the
 BDE that you calculated? (Think of radical processes in general.)</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 3</p>
+<p class="admonition-title">Exercise 3</p>
 <p>Why is it a reasonable choice to use Hartree-Fock geometries as a starting point for optimisations at the
 Post-Hartree-Fock level? What is the advantage and how is this
 approach justified?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 3</p>
+<p class="admonition-title">Exercise 4</p>
 <p>What is the trend in energies when moving from HF over MP2 to MP3?
 Does this series converge?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 3</p>
+<p class="admonition-title">Exercise 5</p>
 <p>Comment on the accuracy of the HF approach for this system. If the
 difference between HF and MPn is large, how is the use of MPn still
 justified? (Hint: Think in terms of the scale of the absolute energy
 of the system, rather than the reaction.)</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 3</p>
+<p class="admonition-title">Exercise 6</p>
 <p>Why did we choose not to carry out a geometry optimisation for the
 methods where no analytical gradient is available (such as MP4)?</p>
 </div>
@@ -594,7 +594,13 @@ methods where no analytical gradient is available (such as MP4)?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
 </pre></div>
 </div>
 </div>
@@ -620,8 +626,8 @@ methods where no analytical gradient is available (such as MP4)?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16268794659222882"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16268794659222882" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16309371973781054"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309371973781054" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -644,18 +650,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16268794659222882 = null;
-var warn = document.getElementById("3dmolwarning_16268794659222882");
+var viewer_16309371973781054 = null;
+var warn = document.getElementById("3dmolwarning_16309371973781054");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16268794659222882 = $3Dmol.createViewer($("#3dmolviewer_16268794659222882"),{backgroundColor:"white"});
-viewer_16268794659222882.zoomTo();
-	viewer_16268794659222882.addModel("5\n\n F   -0.642381967195    0.000000095800   -0.000000000108\n C    0.742340417015   -0.000000119001    0.000000000132\n H    1.090184715481   -1.027287458657    0.000000000131\n H    1.090184841794    0.513643534810   -0.889656896780\n H    1.090184842203    0.513643534859    0.889656897127\n","xyz");
-	viewer_16268794659222882.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16268794659222882.zoomTo();
-viewer_16268794659222882.render();
+viewer_16309371973781054 = $3Dmol.createViewer($("#3dmolviewer_16309371973781054"),{backgroundColor:"white"});
+viewer_16309371973781054.zoomTo();
+	viewer_16309371973781054.addModel("5\n\n F   -0.642381967195    0.000000095800   -0.000000000108\n C    0.742340417015   -0.000000119001    0.000000000132\n H    1.090184715481   -1.027287458657    0.000000000131\n H    1.090184841794    0.513643534810   -0.889656896780\n H    1.090184842203    0.513643534859    0.889656897127\n","xyz");
+	viewer_16309371973781054.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309371973781054.zoomTo();
+viewer_16309371973781054.render();
 });
 </script></div></div>
 </div>
@@ -697,11 +703,21 @@ viewer_16268794659222882.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -747,8 +763,8 @@ viewer_16268794659222882.render();
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16244664999571018"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16244664999571018" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16309384631587336"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309384631587336" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -771,18 +787,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16244664999571018 = null;
-var warn = document.getElementById("3dmolwarning_16244664999571018");
+var viewer_16309384631587336 = null;
+var warn = document.getElementById("3dmolwarning_16309384631587336");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16244664999571018 = $3Dmol.createViewer($("#3dmolviewer_16244664999571018"),{backgroundColor:"white"});
-viewer_16244664999571018.zoomTo();
-	viewer_16244664999571018.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
-	viewer_16244664999571018.setStyle({"sphere": {"scale": 0.1}});
-	viewer_16244664999571018.zoomTo();
-viewer_16244664999571018.render();
+viewer_16309384631587336 = $3Dmol.createViewer($("#3dmolviewer_16309384631587336"),{backgroundColor:"white"});
+viewer_16309384631587336.zoomTo();
+	viewer_16309384631587336.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
+	viewer_16309384631587336.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309384631587336.zoomTo();
+viewer_16309384631587336.render();
 });
 </script></div></div>
 </div>
@@ -800,11 +816,21 @@ viewer_16244664999571018.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;guess&quot;</span><span class="p">:</span><span class="s2">&quot;gwh&quot;</span><span class="p">,</span> <span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;both&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ch3_radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -816,6 +842,45 @@ viewer_16244664999571018.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16309386037216058"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309386037216058" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_16309386037216058 = null;
+var warn = document.getElementById("3dmolwarning_16309386037216058");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16309386037216058 = $3Dmol.createViewer($("#3dmolviewer_16309386037216058"),{backgroundColor:"white"});
+viewer_16309386037216058.zoomTo();
+	viewer_16309386037216058.addModel("4\n\n C    0.000012610110    0.000007010329   -0.000000004082\n H    0.109919535326    1.081319647027   -0.000000126760\n H   -0.055034890302   -0.540701713784   -0.941231991659\n H   -0.055034791441   -0.540701404027    0.941232167018\n","xyz");
+	viewer_16309386037216058.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309386037216058.zoomTo();
+viewer_16309386037216058.render();
+});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -851,10 +916,20 @@ viewer_16244664999571018.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -877,6 +952,14 @@ viewer_16244664999571018.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1367/2021433398.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
+    <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1">#</span>
+                            <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,26 +979,46 @@ viewer_16244664999571018.render();
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "psi4",
             path: "./Exercises/Ex4"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Ex4Theory.html" title="previous page"><span class="section-number">4.1. </span>Møller-Plesset Perturbation Theory</a>
-    <a class='right-next' id="next-link" href="HNO3_Correlation.html" title="next page"><span class="section-number">4.5. </span>Correlation energy</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Ex4Theory.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">4.1. </span>Møller-Plesset Perturbation Theory</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="HNO3_Correlation.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">4.5. </span>Correlation energy</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

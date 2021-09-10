@@ -9,7 +9,7 @@ Over the years many people have contributed to the improvement of the course mat
 
 * Ursula Roethlisberger
 * Manuel Doemer 
-* Elisabeth Brunk
+* Elisabeth Brunk [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0001-8578-8658) 
 * Martin Bircher [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-6905-3130)
 * Ariadni Boziki [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-2347-8993)
 * Esra Bozkurt [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0001-8492-1162)

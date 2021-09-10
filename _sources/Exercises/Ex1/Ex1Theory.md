@@ -103,7 +103,7 @@ superposition of eigenfunctions of their underlying operator, one needs
 to define a mathematical *functional space* in which these
 eigenfunctions reside. An N-dimensional *euclidian space* is restricted
 to real numbers, but the eigenfunctions we are interested in may as well
-be complex valued.[^1]
+be complex valued (Cartesian space is just an example of a 3-dimensional euclidian space).
 
 The concept of euclidian space was generalised by Hilbert onto an
 infinite dimensional complex space of square integrable functions, the
@@ -368,9 +368,7 @@ $$\begin{aligned}
  \left<\Psi\middle|\Psi\right> = \int \Psi^\ast\left(\mathbf{r},t\right)\Psi\left(\mathbf{r},t\right)\mathrm{d}\mathbf{r}.
  \end{aligned}$$
 
-\
-\
- \
+
 
 ### Probabilities and Observables
 

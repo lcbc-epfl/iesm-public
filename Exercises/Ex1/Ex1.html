@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -43,15 +43,15 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="2. Hartree-Fock Calculations in Psi4" href="../ex2.html" />
@@ -81,7 +81,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -438,11 +438,11 @@
 <div class="section" id="working-with-vectors-using-numpy">
 <h1><span class="section-number">1.3. </span>Working with vectors using Numpy<a class="headerlink" href="#working-with-vectors-using-numpy" title="Permalink to this headline">¶</a></h1>
 <p>The wavefunction, <span class="math notranslate nohighlight">\(\psi(x)\)</span> can be represented as a <em>column vector</em>, <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> . The complex conjugate of the wavefunction, <span class="math notranslate nohighlight">\(\psi^*(x)\)</span> is also represented by a vector which is the complex conjugate transpose of <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-82828a1a-5bfc-43e2-a2d7-9d22c83c04dc">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-82828a1a-5bfc-43e2-a2d7-9d22c83c04dc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
 \psi(x)&amp;\rightarrow|\psi\rangle\quad\text{column vector}\\
 \psi^*(x)&amp;\rightarrow\langle\psi|\quad\text{row vector}
-\end{align}\]</div>
+\end{align*}\]</div>
 <p>The normalization of a wavefunction <span class="math notranslate nohighlight">\(\psi(x)\)</span> is an integral</p>
 <div class="math notranslate nohighlight">
 \[\int\psi^*(x)\psi(x)\;\mathrm{d}x=1.\]</div>
@@ -456,7 +456,7 @@
 <div class="math notranslate nohighlight">
 \[\langle\psi_i|\psi_j\rangle=1.\]</div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 2</p>
+<p class="admonition-title">Exercise 21</p>
 <p>Define two vectors, <code class="docutils literal notranslate"><span class="pre">ϕ1</span></code> and <code class="docutils literal notranslate"><span class="pre">ϕ2</span></code>, with two elements each, that are normalized, in the sense <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_i\rangle=1\)</span>, and orthogonal in sense that <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_j\rangle=0\)</span>.</p>
 </div>
 <div class="margin sidebar">
@@ -465,7 +465,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with ϕ2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with ϕ1</span>
 <span class="n">ϕ2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with ϕ2 </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ϕ1: </span><span class="si">{</span><span class="n">ϕ1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -487,7 +487,7 @@
 <p>inner product of <span class="math notranslate nohighlight">\(v^\dagger v\)</span>: <code class="docutils literal notranslate"><span class="pre">v.conj().dot(v)</span></code></p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Question 3</p>
+<p class="admonition-title">Exercise 22</p>
 <p>Show that <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are normalized and orthonormal</p>
 </div>
 <div class="cell docutils container">
@@ -528,26 +528,46 @@
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "psi4",
             path: "./Exercises/Ex1"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="Ex1Exercises.html" title="previous page"><span class="section-number">1.2. </span>Exercises</a>
-    <a class='right-next' id="next-link" href="../ex2.html" title="next page"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Ex1Exercises.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">1.2. </span>Exercises</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../ex2.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

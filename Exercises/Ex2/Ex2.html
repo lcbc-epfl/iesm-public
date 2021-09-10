@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -43,15 +43,15 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. Large Basis Sets, Dissociation Energy and Geometry Optimisation" href="../ex3.html" />
@@ -81,7 +81,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -423,7 +423,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
@@ -706,15 +706,15 @@ d) …enhance the description of core orbitals.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 5</p>
-<p>Using the information given about the 3-21G contraction coefficients:
-a) Give the basis functions corresponding to the 1s, 2s and 2p orbitals of Carbon (<strong>Hint</strong>: use information from <a class="reference internal" href="#basis-set-param"><span class="std std-ref">Example of a basis set parameter file</span></a>. <br />
+<p>Using the information given about the 3-21G contraction coefficients:<br />
+a) Give the basis functions corresponding to the 1s, 2s and 2p orbitals of Carbon (<strong>Hint</strong>: use information from <strong>Fig. 2.2</strong> ).<br />
 b) If you wish to calculate the Hartree-Fock energy of a carbon atom,
 how many coefficients are <em>optimised</em> during the calculation?</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 6</p>
 <p>You wish to calculate the wavefunction of ethylene C<span class="math notranslate nohighlight">\(_2\)</span>H<span class="math notranslate nohighlight">\(_2\)</span> using the 6-31G* basis. <br />
-Indicate the number of basis functions and the number of Gaussian primitives that will be used in the calculation. Note, that this basis set is defined using cartesian gaussian type orbitals.</p>
+Indicate the number of basis functions and the number of Gaussian primitives that will be used in the calculation.</p>
 </div>
 </div>
 </div>
@@ -761,6 +761,12 @@ programs.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
+  Threads set to 2 by Python driver.
 </pre></div>
 </div>
 </div>
@@ -821,9 +827,9 @@ Note that if more atoms would be present, it would be needed to specify for each
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STO-3G -0.4665818495572754
-6-31G -0.4982329107290703
-6-311G -0.4998098152732822
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STO-3G -0.46658184955727544
+6-31G -0.4982329107290702
+6-311G -0.49980981527328183
 </pre></div>
 </div>
 </div>
@@ -910,6 +916,16 @@ Unrestricted Hartree-Fock (UHF).</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Equilibrium distance:
+RHF:  -1.1267350944766052
+UHF:  -1.1267350944528505
+Large distance:
+RHF:  -0.7451120298600045
+UHF:  -0.9964658919270584
+</pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 9</p>
@@ -923,17 +939,6 @@ The energy to break a chemical bond is usually between 20 and 100 kcal/mol. Expl
 <p>List the files in your directory (type <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your terminal) to see what new files have been generated. Indeed,
 you should find the .log files created by Psi4. As this files may be very large and we have no intention of editing it, you may use <code class="docutils literal notranslate"><span class="pre">less</span></code> to display it.</p>
 <p>As example, type <code class="docutils literal notranslate"><span class="pre">less</span></code> followed by the name of the last .log file created (<em>large_UHF-output.log</em>):</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Terminal commands in Jupyter Notebooks</p>
-<p>You can access the terminal on JupyterHub by clicking on the plus icon in the toolbar and launching a new terminal in the <code class="docutils literal notranslate"><span class="pre">Quantum</span> <span class="pre">Chemistry</span></code> environment. This allows you to navigate the file system (e.g using <code class="docutils literal notranslate"><span class="pre">cd</span></code> and <code class="docutils literal notranslate"><span class="pre">ls</span></code>), to view files (using <code class="docutils literal notranslate"><span class="pre">less</span></code>, <code class="docutils literal notranslate"><span class="pre">tail</span></code>, <code class="docutils literal notranslate"><span class="pre">head</span></code>) or to edit files (using <code class="docutils literal notranslate"><span class="pre">vi</span></code> or <code class="docutils literal notranslate"><span class="pre">nano</span></code>).</p>
-<p>In Jupyter Notebooks you can also execute terminal commands by prefixing them with <code class="docutils literal notranslate"><span class="pre">!</span></code> and running them inside a python cell. In the actual terminal commands do not need a prefix.</p>
-<p>You can even use python variables for this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>myvariable = &#39;searchstring&#39;  # this is python
-!grep $myvariable filetosearch.txt 
-</pre></div>
-</div>
-<p>The upper command will search the file <code class="docutils literal notranslate"><span class="pre">filetosearch.txt</span></code> for occurence of the contents of the variable and return them.</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>less large_UHF-output.log
@@ -942,15 +947,19 @@ you should find the .log files created by Psi4. As this files may be very large 
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7[?47h[?1h=
-*** tstart() called on Zeus
-*** at Mon Jun 28 08:53:04 2021
+Scratch directory: /tmp/
+
+Scratch directory: /tmp/
+
+*** tstart() called on noto.epfl.ch
+*** at Mon Sep  6 10:19:06 2021
 
    =&gt; Loading Basis Set &lt;=
 
     Name: 6-31G
     Role: ORBITAL
     Keyword: BASIS
-    atoms 1-2 entry H          line    26 file /root/miniconda3/envs/iesm/share/psi4/basis/6-31g.gbs 
+    atoms 1-2 entry H          line    26 file /opt/psi4conda/psi4conda-1.4rc3/share/psi4/basis/6-31g.gbs 
 
 
          ---------------------------------------------------------
@@ -958,12 +967,8 @@ you should find the .log files created by Psi4. As this files may be very large 
                by Justin Turney, Rob Parrish, Andy Simmonett
                           and Daniel G. A. Smith
                               UHF Reference
-                        4 Threads,   1907 MiB Core
-         ---------------------------------------------------------
-
-  ==&gt; Geometry &lt;==
-
-[K:[Kge_UHF-output.log[m[K
+                        2 Threads,   1907 MiB Core
+[7mlarge_UHF-output.log[m[K
 </pre></div>
 </div>
 </div>
@@ -1007,26 +1012,46 @@ Compare the number of cycles for the different basis sets.</p></li>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "psi4",
             path: "./Exercises/Ex2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../ex2.html" title="previous page"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></a>
-    <a class='right-next' id="next-link" href="../ex3.html" title="next page"><span class="section-number">3. </span>Large Basis Sets, Dissociation Energy and Geometry Optimisation</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../ex2.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../ex3.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">3. </span>Large Basis Sets, Dissociation Energy and Geometry Optimisation</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

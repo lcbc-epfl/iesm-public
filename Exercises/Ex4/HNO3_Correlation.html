@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -43,15 +43,15 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. The hartree fock procedure in detail" href="../ex4b.html" />
@@ -81,7 +81,7 @@
 </div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -423,7 +423,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#influence-of-correlation-on-geometry">
@@ -463,7 +463,7 @@ However, such truncations introduce size-consistency problems.</p>
 <div class="section" id="influence-of-correlation-on-geometry">
 <h2><span class="section-number">4.5.1. </span>Influence of correlation on geometry<a class="headerlink" href="#influence-of-correlation-on-geometry" title="Permalink to this headline">¶</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 7</p>
 <p>Assess and comment on the performance of HF, MP2 and MP3 with respect to the prediction of bond lengths and bond angles in HNO<span class="math notranslate nohighlight">\(_3\)</span> in reference to the experimental values <a class="footnote-reference brackets" href="#no3" id="id1">1</a></p>
 </div>
 <div class="cell docutils container">
@@ -501,8 +501,8 @@ However, such truncations introduce size-consistency problems.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_162688010790452"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_162688010790452" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16309401172490427"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309401172490427" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -525,18 +525,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_162688010790452 = null;
-var warn = document.getElementById("3dmolwarning_162688010790452");
+var viewer_16309401172490427 = null;
+var warn = document.getElementById("3dmolwarning_16309401172490427");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_162688010790452 = $3Dmol.createViewer($("#3dmolviewer_162688010790452"),{backgroundColor:"white"});
-viewer_162688010790452.zoomTo();
-	viewer_162688010790452.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_162688010790452.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_162688010790452.zoomTo();
-viewer_162688010790452.render();
+viewer_16309401172490427 = $3Dmol.createViewer($("#3dmolviewer_16309401172490427"),{backgroundColor:"white"});
+viewer_16309401172490427.zoomTo();
+	viewer_16309401172490427.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_16309401172490427.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309401172490427.zoomTo();
+viewer_16309401172490427.render();
 });
 </script></div></div>
 </div>
@@ -556,7 +556,8 @@ viewer_162688010790452.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_hf</span><span class="p">,</span> <span class="n">history_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;hf/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">hno3_hf</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_hf.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">E_hf</span><span class="p">,</span> <span class="n">history_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;hf/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">hno3_hf</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -617,8 +618,8 @@ viewer_162688010790452.render();
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16268804457407212"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16268804457407212" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_1630941640277363"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_1630941640277363" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -641,24 +642,24 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16268804457407212 = null;
-var warn = document.getElementById("3dmolwarning_16268804457407212");
+var viewer_1630941640277363 = null;
+var warn = document.getElementById("3dmolwarning_1630941640277363");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16268804457407212 = $3Dmol.createViewer($("#3dmolviewer_16268804457407212"),{backgroundColor:"white"});
-viewer_16268804457407212.zoomTo();
-	viewer_16268804457407212.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_16268804457407212.addLabel("0",{"position": {"x": 1.33818170834342, "y": -0.3441480621560101, "z": -0.11947710580699746}, "inFront": true});
-	viewer_16268804457407212.addLabel("1",{"position": {"x": 0.02718170834042214, "y": 0.013851937844808478, "z": 0.4225228941942418}, "inFront": true});
-	viewer_16268804457407212.addLabel("2",{"position": {"x": -0.3168182916603645, "y": 1.3208519378477972, "z": -0.13747710580703862}, "inFront": true});
-	viewer_16268804457407212.addLabel("3",{"position": {"x": -0.9318182916617707, "y": -0.944148062157382, "z": -0.12747710580701577}, "inFront": true});
-	viewer_16268804457407212.addLabel("4",{"position": {"x": -1.7988182916637532, "y": -0.7091480621568447, "z": 0.23052289419380287}, "inFront": true});
-	viewer_16268804457407212.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16268804457407212.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewer_16268804457407212.zoomTo();
-viewer_16268804457407212.render();
+viewer_1630941640277363 = $3Dmol.createViewer($("#3dmolviewer_1630941640277363"),{backgroundColor:"white"});
+viewer_1630941640277363.zoomTo();
+	viewer_1630941640277363.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_1630941640277363.addLabel("0",{"position": {"x": 1.33818170834342, "y": -0.3441480621560101, "z": -0.11947710580699746}, "inFront": true});
+	viewer_1630941640277363.addLabel("1",{"position": {"x": 0.02718170834042214, "y": 0.013851937844808478, "z": 0.4225228941942418}, "inFront": true});
+	viewer_1630941640277363.addLabel("2",{"position": {"x": -0.3168182916603645, "y": 1.3208519378477972, "z": -0.13747710580703862}, "inFront": true});
+	viewer_1630941640277363.addLabel("3",{"position": {"x": -0.9318182916617707, "y": -0.944148062157382, "z": -0.12747710580701577}, "inFront": true});
+	viewer_1630941640277363.addLabel("4",{"position": {"x": -1.7988182916637532, "y": -0.7091480621568447, "z": 0.23052289419380287}, "inFront": true});
+	viewer_1630941640277363.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_1630941640277363.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewer_1630941640277363.zoomTo();
+viewer_1630941640277363.render();
 });
 </script></div></div>
 </div>
@@ -685,6 +686,63 @@ viewer_16268804457407212.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>hf</th>
+      <th>mp2</th>
+      <th>mp3</th>
+      <th>exp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>r(O1-N) Å</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.198</td>
+    </tr>
+    <tr>
+      <th>r(O2-N) Å</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.410</td>
+    </tr>
+    <tr>
+      <th>r(O3-N) Å</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>1.213</td>
+    </tr>
+    <tr>
+      <th>φ(O-N-O) °</th>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>130.200</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </div>
 <div class="section" id="recovering-correlation-energy">
@@ -695,7 +753,7 @@ viewer_16268804457407212.render();
 </div>
 <p>At the Hartree Fock level of theory, each electron experiences an average potential field of all the other electrons. In essence, it is a “mean field” approach that neglects individual electron-electron interactions or “electron correlation”. Thus, we define the difference between the self-consistent field energy and the exact energy as the correlation energy. Two fundamentally different approaches to account for electron correlation effects are available by selecting a Correlation method: Moller Plesset (MP) Perturbation theory and Coupled Cluster (CC) theory.</p>
 <div class="exercise admonition">
-<p class="admonition-title">Question 5</p>
+<p class="admonition-title">Exercise 8</p>
 <p>Calculate the SCF energy for Boron using the <em>6-311+G</em>* basis set, then determine the value of the correlation energy for boron assuming an “experimental” energy of <strong>-24.608 hartrees</strong> <a class="footnote-reference brackets" href="#schaefer" id="id2">2</a></p>
 <p>Using the same basis set, perform an energy calculation with MP2 and MP4.</p>
 <p>Using the same basis set, perform an energy calculation with CCSD and CCSD(T).</p>
@@ -731,6 +789,11 @@ MP4 will require the use of the following options: <code class="docutils literal
 <span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy recovered </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Electron correlation: </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2"> hartrees&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Electron correlation: None hartrees
 </pre></div>
 </div>
 </div>
@@ -770,6 +833,52 @@ MP4 will require the use of the following options: <code class="docutils literal
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>% correlation recovered</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>hf</th>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>mp2</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mp4</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ccsd</th>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>ccsd(t)</th>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
@@ -792,26 +901,46 @@ MP4 will require the use of the following options: <code class="docutils literal
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "psi4",
             path: "./Exercises/Ex4"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="BDE.html" title="previous page"><span class="section-number">4.2. </span>Homolytic Cleavage of the C-F Bond</a>
-    <a class='right-next' id="next-link" href="../ex4b.html" title="next page"><span class="section-number">5. </span>The hartree fock procedure in detail</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="BDE.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">4.2. </span>Homolytic Cleavage of the C-F Bond</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../ex4b.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">5. </span>The hartree fock procedure in detail</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
