@@ -460,6 +460,9 @@ div.topbar div.tocsection {
 	border-color: darkgrey;
 }
 
+.prevnext-title{
+color:#b51f1f !important
+}
 
 img.avatar-style {
     border: 4px solid #b51f1f;

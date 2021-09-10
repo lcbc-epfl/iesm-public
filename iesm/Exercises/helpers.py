@@ -224,11 +224,13 @@ def drawXYZSideBySide(mol1, mol2):
 def drawXYZSideBySide_labeled(mol1, mol2):
     hartree2A = 0.52917721067121
     view = py3Dmol.view(viewergrid=(1,2))
-
+    if type(mol1) == str:
+        mol1 = psi4.geometry(mol1)
     view.addModel(mol1.save_string_xyz_file(), "xyz", viewer=(0,0))
     for i,(x,y,z) in enumerate(mol1.to_arrays()[0]*hartree2A):
         view.addLabel(str(i),{'position':{'x':x,'y':y,'z':z},'inFront':True}, viewer=(0,0))
-    
+    if type(mol2) == str:
+        mol2 = psi4.geometry(mol2) 
     view.addModel(mol2.save_string_xyz_file(), "xyz", viewer=(0,1))
     for i,(x,y,z) in enumerate(mol2.to_arrays()[0]*hartree2A):
         view.addLabel(str(i),{'position':{'x':x,'y':y,'z':z},'inFront':True}, viewer=(0,1))

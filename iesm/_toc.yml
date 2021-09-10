@@ -41,6 +41,8 @@ parts:
       sections:
       - file: Exercises/Ex8/Ex8Theory.ipynb
       - file: Exercises/Ex8/Ex8.ipynb
+      - file: Exercises/Ex8/Backward.ipynb
+      - file: Exercises/Ex8/Visualize.ipynb
   - caption: Lecture
     chapters:
     - file: Lecture/CC.md
