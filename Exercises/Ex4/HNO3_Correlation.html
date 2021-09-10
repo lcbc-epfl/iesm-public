@@ -307,6 +307,16 @@
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Visualize.html">
+     9.5. IRC analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -590,17 +600,13 @@ viewer_16309401172490427.render();
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>the distance between two points is the L2 norm (Euclidean distance)</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>this has been implemented in the <code class="docutils literal notranslate"><span class="pre">calculate_bond</span></code> function contained in <code class="docutils literal notranslate"><span class="pre">helpers.py</span></code> imported above.</p>
-</div>
-<p>The calculation for the angle is also possible using numpy. You can use the following function</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_angle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_angle</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
     <span class="n">ba</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
     <span class="n">bc</span> <span class="o">=</span> <span class="n">c</span> <span class="o">-</span> <span class="n">b</span>
 
@@ -610,7 +616,7 @@ viewer_16309401172490427.render();
 </pre></div>
 </div>
 </div>
-</div>
+<p>The calculation for the angle is also possible using numpy. You can use the following function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ_labeled</span><span class="p">(</span><span class="n">hno3</span><span class="p">)</span>
@@ -789,11 +795,6 @@ MP4 will require the use of the following options: <code class="docutils literal
 <span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy recovered </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Electron correlation: </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2"> hartrees&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Electron correlation: None hartrees
 </pre></div>
 </div>
 </div>

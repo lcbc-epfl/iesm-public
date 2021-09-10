@@ -307,6 +307,16 @@
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Visualize.html">
+     9.5. IRC analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -826,13 +836,6 @@ Note that if more atoms would be present, it would be needed to specify for each
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STO-3G -0.46658184955727544
-6-31G -0.4982329107290702
-6-311G -0.49980981527328183
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
@@ -916,16 +919,6 @@ Unrestricted Hartree-Fock (UHF).</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Equilibrium distance:
-RHF:  -1.1267350944766052
-UHF:  -1.1267350944528505
-Large distance:
-RHF:  -0.7451120298600045
-UHF:  -0.9964658919270584
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 9</p>
@@ -945,33 +938,6 @@ you should find the .log files created by Psi4. As this files may be very large 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7[?47h[?1h=
-Scratch directory: /tmp/
-
-Scratch directory: /tmp/
-
-*** tstart() called on noto.epfl.ch
-*** at Mon Sep  6 10:19:06 2021
-
-   =&gt; Loading Basis Set &lt;=
-
-    Name: 6-31G
-    Role: ORBITAL
-    Keyword: BASIS
-    atoms 1-2 entry H          line    26 file /opt/psi4conda/psi4conda-1.4rc3/share/psi4/basis/6-31g.gbs 
-
-
-         ---------------------------------------------------------
-                                   SCF
-               by Justin Turney, Rob Parrish, Andy Simmonett
-                          and Daniel G. A. Smith
-                              UHF Reference
-                        2 Threads,   1907 MiB Core
-[7mlarge_UHF-output.log[m[K
-</pre></div>
-</div>
-</div>
 </div>
 <p>When using the terminal, after typing <code class="docutils literal notranslate"><span class="pre">less</span></code> you may ‘jump’ through the file using the enter key, or you may directly drop to its end using a capital <code class="docutils literal notranslate"><span class="pre">G</span></code> (i.e. shift and g). Pop back to the top by typing a lowercase <code class="docutils literal notranslate"><span class="pre">g</span></code>. For a more finely tuned navigation, simply resort to the arrow keys. Typing <code class="docutils literal notranslate"><span class="pre">/</span></code> followed by a word will jump to said word in the file and pressing <code class="docutils literal notranslate"><span class="pre">n</span></code> will make you go through all the occurrences of that word in the file.</p>
 <p>If you are interested in extracting the lines of a file containing one particular keyword another useful command is <code class="docutils literal notranslate"><span class="pre">grep</span></code>.
@@ -979,11 +945,6 @@ For example, considering again the last .log file created, it is possible to ext
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep <span class="s1">&#39;Final Energy&#39;</span> large_UHF-output.log
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-UHF Final Energy:    -0.99646589192706
 </pre></div>
 </div>
 </div>

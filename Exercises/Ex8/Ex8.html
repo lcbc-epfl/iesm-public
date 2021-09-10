@@ -52,7 +52,7 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Coupled cluster" href="../../Lecture/CC.html" />
+    <link rel="next" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
     <link rel="prev" title="9.1. Theory" href="Ex8Theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -305,6 +305,16 @@
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualize.html">
+     9.5. IRC analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -423,49 +433,25 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   9.2. Locating Transition States: Constrained Optimisations
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-guess">
+   9.2.1. Constructing a Guess
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#constructing-a-guess">
-     9.2.1. Constructing a Guess
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#constrained-optimization">
-     9.2.2. Constrained optimization
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#finding-the-transition-state">
-     9.2.3. Finding the Transition State
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc">
-   9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constrained-optimization">
+   9.2.2. Constrained optimization
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#backward">
-     9.3.1. Backward
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#forward">
-     9.3.2. Forward
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#irc">
-     9.3.3. IRC
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-transition-state">
+   9.2.3. Finding the Transition State
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#irc">
+   9.2.4. IRC
+  </a>
  </li>
 </ul>
 
@@ -587,7 +573,7 @@ geometry can then be optimised to a transition state by selectively
 <span class="s2">dih12   =    180.0      </span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 
-<span class="c1">#Edit the Z-matrix to obtain the TS guess accordin to the requests above</span>
+<span class="c1">#Edit the Z-matrix to obtain the TS guess according to the requests above</span>
 <span class="n">ts_guess</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">0 1</span>
 <span class="s2"> symmetry c1</span>
@@ -645,75 +631,6 @@ geometry can then be optimised to a transition state by selectively
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16287812982446342"  style="position: relative; width: 640px; height: 480px">
-        <p id="3dmolwarning_16287812982446342" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_16287812982446342 = null;
-var warn = document.getElementById("3dmolwarning_16287812982446342");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-var viewergrid_16287812982446342 = null;
-viewergrid_16287812982446342 = $3Dmol.createViewerGrid($("#3dmolviewer_16287812982446342"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
-viewer_16287812982446342 = viewergrid_16287812982446342[0][0];
-viewergrid_16287812982446342[0][0].zoomTo();viewergrid_16287812982446342[0][1].zoomTo();	viewergrid_16287812982446342[0][0].addModel("12\n\n C    0.222358902508   -0.353606380052   -0.294378928442\n C    0.222358902508   -0.353606380052    1.205621071558\nCL    0.222358902508    1.334024102010   -0.891039096389\n H    1.233481156049   -0.531894514146   -0.657374974751\n C   -1.170371474270   -0.599182322331   -0.794373482587\n O    0.222358902508   -1.692171516159    1.708754628777\n H    1.096011433538    0.150797143916    1.562283853515\n H   -0.651293628522    0.150797143916    1.562283853515\n H   -1.170371474270   -0.599182322331   -1.864373482587\n H   -1.515398395040   -1.547149907082   -0.437702931232\n H   -1.818814734895    0.173609664912   -0.437702931232\n H    0.222358902508   -1.673059128797    2.678566320111\n","xyz");
-	viewergrid_16287812982446342[0][0].addLabel("0",{"position": {"x": 0.22235890250849727, "y": -0.35360638005327316, "z": -0.2943789284427553}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("1",{"position": {"x": 0.22235890250849727, "y": -0.35360638005327316, "z": 1.2056210715606743}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("2",{"position": {"x": 0.22235890250849727, "y": 1.3340241020129557, "z": -0.8910390963906087}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("3",{"position": {"x": 1.2334811560514378, "y": -0.5318945141476388, "z": -0.6573749747529298}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("4",{"position": {"x": -1.1703714742724125, "y": -0.5991823223320136, "z": -0.7943734825890012}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("5",{"position": {"x": 0.22235890250849727, "y": -1.6921715161630655, "z": 1.7087546287805488}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("6",{"position": {"x": 1.0960114335404842, "y": 0.15079714391624185, "z": 1.56228385351833}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("7",{"position": {"x": -0.651293628523489, "y": 0.15079714391624277, "z": 1.56228385351833}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("8",{"position": {"x": -1.1703714742724125, "y": -0.5991823223320135, "z": -1.8643734825914484}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("9",{"position": {"x": -1.5153983950430838, "y": -1.547149907085861, "z": -0.43770293123284804}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("10",{"position": {"x": -1.8188147348986956, "y": 0.17360966491221708, "z": -0.4377029312328472}, "inFront": true});
-	viewergrid_16287812982446342[0][0].addLabel("11",{"position": {"x": 0.22235890250849727, "y": -1.6730591288011394, "z": 2.678566320117393}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addModel("11\n\n C    0.224768290094   -0.575970360166   -0.059683739329\n C    0.224768290094   -0.575970360166    1.440316260671\nCL    0.224768290094    1.686774420253   -0.859675025962\n H    1.235890543635   -0.754258494259   -0.422679785639\n C   -1.167962086684   -0.821546302444   -0.559678293475\n O    0.224768290094   -1.984245446973    1.191999366607\n H    1.098420821124   -0.071566836197    1.796979042627\n H   -0.648884240936   -0.071566836197    1.796979042627\n H   -1.167962086684   -0.821546302444   -1.629678293475\n H   -1.512989007454   -1.769513887195   -0.203007742119\n H   -1.816405347309   -0.048754315201   -0.203007742119\n","xyz");
-	viewergrid_16287812982446342[0][1].addLabel("0",{"position": {"x": 0.22476829009438942, "y": -0.5759703601668448, "z": -0.05968373932955492}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("1",{"position": {"x": 0.22476829009438942, "y": -0.5759703601668448, "z": 1.4403162606738749}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("2",{"position": {"x": 0.22476829009438942, "y": 1.686774420257149, "z": -0.8596750259635483}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("3",{"position": {"x": 1.2358905436373302, "y": -0.7542584942612103, "z": -0.4226797856397294}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("4",{"position": {"x": -1.1679620866865206, "y": -0.8215463024455855, "z": -0.5596782934758008}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("5",{"position": {"x": 0.22476829009438942, "y": -1.9842454469775224, "z": 1.191999366609597}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("6",{"position": {"x": 1.0984208211263762, "y": -0.07156683619732974, "z": 1.7969790426315304}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("7",{"position": {"x": -0.6488842409375969, "y": -0.07156683619732887, "z": 1.7969790426315304}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("8",{"position": {"x": -1.1679620866865206, "y": -0.8215463024455852, "z": -1.6296782934782479}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("9",{"position": {"x": -1.5129890074571914, "y": -1.7695138871994327, "z": -0.20300774211964764}, "inFront": true});
-	viewergrid_16287812982446342[0][1].addLabel("10",{"position": {"x": -1.8164053473128035, "y": -0.04875431520135457, "z": -0.20300774211964684}, "inFront": true});
-	viewergrid_16287812982446342[0][0].setStyle({"stick": {}});
-	viewergrid_16287812982446342[0][1].setStyle({"stick": {}});
-	viewergrid_16287812982446342[0][0].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287812982446342[0][1].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewergrid_16287812982446342[0][0].zoomTo();
-	viewergrid_16287812982446342[0][1].zoomTo();
-viewergrid_16287812982446342[0][1].render();
-viewergrid_16287812982446342[0][0].render();
-});
-</script></div></div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 3</p>
@@ -729,14 +646,6 @@ viewergrid_16287812982446342[0][0].render();
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;poxide.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;frozen_distance&quot;</span><span class="p">:</span><span class="s2">&quot;1 3&quot;</span><span class="p">})</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts_guess_opt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-653.2420085847897
 </pre></div>
 </div>
 </div>
@@ -768,7 +677,11 @@ viewergrid_16287812982446342[0][0].render();
     <span class="p">})</span>
 
 <span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
-<span class="n">ts</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">()</span>
+
+
+<span class="c1">#print out TS in case something goes wrong</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -792,22 +705,17 @@ viewergrid_16287812982446342[0][0].render();
 <p>We can now have a look at the normal model that we obtained, for that we need to first check how the file is named. Then you can visualize one normal mode at time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how the file is named</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how the file is named, this is a bash command</span>
+<span class="c1"># ls means list all the files in the current directory</span>
+<span class="c1"># -ltrh are flags that print output as a detailed list (-l) in reversed order(-r) by time (-t) with human readable units (-h)</span>
 <span class="o">!</span>ls -lrth ts.*.molden_normal_modes 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-rw-r--r-- 1 anlevy software 21K Aug 12 17:26 ts.default.14947.molden_normal_modes
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to use the right file in the show_normal_modes</span>
-
-<span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;NAMEOF.molden_normal_modes&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;FILENAME.XX.molden_normal_modes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -827,64 +735,6 @@ What motions are associated with low and high vibrational frequencies? Choose tw
 transition state? <strong>Bonus:</strong> How would you define ‘meaningful’ in
 this context?</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Solution</p>
-<p>From the TS it is necessary to find a minimum energy reaction path on the PES joining the reactants with the TS and the TS with the products.</p>
-<p>TS corresponds to a saddle point of the PES, this can be verified through the  eigenvalues of the Hessian matrix. The TS found should be a maximum of the PES over the reaction coordinate.</p>
-<p><strong>Bonus:</strong> A TS state can be defined meaningful if it is not too far from reactant and products and it is energetically feasible.</p>
-</div>
-<p>Lets check again that our TS is a good one by performing a frequency calculation.
-We will save the wave function as well because we want to use the hessian to speed up our IRC search.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
-<span class="n">E</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">frequency</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc">
-<h1><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)<a class="headerlink" href="#recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc" title="Permalink to this headline">¶</a></h1>
-<p>A transition state search merely guarantees that one reaches a
-first-order saddle point on the PES; there is, however, no guarantee
-that it is really linked to the reactant and product. (For instance,
-there may be further transition states lying in between.) Although the
-visualisation of the imaginary vibrational mode may give some hint as to
-whether one has found a reasonable saddle point, this information is not
-sufficient to guarantee a connection to the reactant and product well.
-Following the negative Hessian eigenvalues from the transition state to
-the next local minimum, on the other hand, will immediately reveal
-whether such a connection exists. This Hessian-following in
-mass-weighted coordinates is referred to as a search along the
-<em>Intrinsic Reaction Coordinate</em> (IRC). This search will create a
-potential energy profile for the reaction, as well as a trajectory that
-visualises the lowest energy path from reactant to TS to product.</p>
-<p>You will verify whether the transition state
-you computed is the proper state that connects your
-starting material to the product, and you will build the reaction
-profile and visualize it.</p>
-<p>As Psi4 updates the molecule geometry when optimizing we make two copies for the product and reactant and then we use <code class="docutils literal notranslate"><span class="pre">irc</span></code> to follow the intrinsic reaction coordinate.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">backward</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">forward</span> <span class="o">=</span> <span class="n">ts</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
-<span class="n">E_b</span><span class="p">,</span> <span class="n">wfn_b</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">backward</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="backward">
-<h2><span class="section-number">9.3.1. </span>Backward<a class="headerlink" href="#backward" title="Permalink to this headline">¶</a></h2>
-<p>First, let’s optimize towards the reactant</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc_backward.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
@@ -911,56 +761,15 @@ Some operations on the arrays are needed in order to properly visualize the PES.
 <span class="n">energies_backward</span> <span class="o">=</span> <span class="n">history_backward</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
 
 <span class="n">backward_e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies_backward</span><span class="p">]</span>
-<span class="n">backward_e</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span> <span class="c1"># revert the list</span>
+<span class="n">backward_e</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
 <span class="n">backward_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<div class="section" id="forward">
-<h2><span class="section-number">9.3.2. </span>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">¶</a></h2>
-<p>Then, let’s also optimize towards the products</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc_forward.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
-     <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
-     <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="c1">#-1</span>
-     <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;irc&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;irc_step_size&quot;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
-     <span class="s2">&quot;ensure_bt_convergence&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-<span class="c1">#     &quot;cart_hess_read&quot;:True,</span>
-     <span class="s2">&quot;irc_direction&quot;</span><span class="p">:</span><span class="s2">&quot;forward&quot;</span><span class="p">,</span>
-     <span class="p">})</span>
-
-
-<span class="n">E</span><span class="p">,</span> <span class="n">history_forward</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">forward</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="c1">#, ref_gradient=wfn.gradient())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates_forward</span> <span class="o">=</span> <span class="n">history_forward</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
-<span class="n">energies_forward</span> <span class="o">=</span> <span class="n">history_forward</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
-
-<span class="n">forward_e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies_forward</span> <span class="p">]</span>
-<span class="n">forward_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energies</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">backward_e</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span><span class="n">forward_e</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
 <div class="section" id="irc">
-<h2><span class="section-number">9.3.3. </span>IRC<a class="headerlink" href="#irc" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.2.4. </span>IRC<a class="headerlink" href="#irc" title="Permalink to this headline">¶</a></h2>
 <p>Now we have all the data to obtain the  potential energy profile for the reaction, as well as the trajectory that visualises the lowest energy path from reactant to TS to product.</p>
 <p>We can fist have a look at the <em>backward</em> and <em>forward</em> conformations, which correspond to the starting and ending point of the IRC that we performed</p>
 <div class="cell docutils container">
@@ -1089,16 +898,16 @@ possible changes you observe, change the code below. Explain in your report what
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm2"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm2",
+            kernelName: "psi4",
             path: "./Exercises/Ex8"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm2'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               
@@ -1119,10 +928,10 @@ possible changes you observe, change the code below. Explain in your report what
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="../../Lecture/CC.html" title="next page">
+        <a class="right-next" href="Backward.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Coupled cluster</p>
+                <p class="prevnext-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

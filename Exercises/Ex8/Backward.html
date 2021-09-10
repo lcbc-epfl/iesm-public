@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>1.2. Exercises &#8212; Introduction to Electronic Structure Methods</title>
+    <title>9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC) &#8212; Introduction to Electronic Structure Methods</title>
     
   <link href="../../_static/css/theme.css" rel="stylesheet" />
   <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -43,8 +43,6 @@
     <script src="../../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -54,8 +52,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.3. Working with vectors using Numpy" href="Ex1.html" />
-    <link rel="prev" title="1.1. Theory" href="Ex1Theory.html" />
+    <link rel="next" title="9.5. IRC analysis" href="Visualize.html" />
+    <link rel="prev" title="9.2. Locating Transition States: Constrained Optimisations" href="Ex8.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -96,28 +94,28 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex1.html">
    1. Linear Algebra in Quantum Mechanics
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1Theory.html">
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
      1.1. Theory
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
      1.2. Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1.html">
+    <a class="reference internal" href="../Ex1/Ex1.html">
      1.3. Working with vectors using Numpy
     </a>
    </li>
@@ -287,33 +285,33 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../ex8.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8Theory.html">
+    <a class="reference internal" href="Ex8Theory.html">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8.html">
+    <a class="reference internal" href="Ex8.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Backward.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Visualize.html">
+    <a class="reference internal" href="Visualize.html">
      9.5. IRC analysis
     </a>
    </li>
@@ -372,7 +370,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Exercises/Ex1/Ex1Exercises.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/Exercises/Ex8/Backward.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -392,7 +390,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex1/Ex1Exercises.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Backward.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -414,7 +412,7 @@
     <div class="dropdown-buttons">
         
         
-        <a class="jupyterhub-button" href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex1/Ex1Exercises.ipynb&branch=deploy"><button type="button"
+        <a class="jupyterhub-button" href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Backward.ipynb&branch=deploy"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
                 data-placement="left"><img class="jupyterhub-button-logo"
                     src="../../_static/images/logo_jupyterhub.svg"
@@ -435,40 +433,27 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vectors-and-matrices">
-   1.2.1. Vectors and Matrices
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-simple-model-hamiltonian">
-   1.2.2. A Simple Model Hamiltonian
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#choose-a-direction">
+   9.4. Choose a direction
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#real-space-basis">
-   1.2.3. Real Space Basis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#commutation-relation">
-   1.2.4. Commutation Relation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linearity-and-hermiticity">
-   1.2.5. Linearity and Hermiticity
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bra-ket-notation-and-state-basis">
-   1.2.6. Bra-Ket Notation and State Basis
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#supporting-literature">
-   1.2.7. Supporting Literature
-  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pickling-the-result">
+     9.4.1. Pickling the result.
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#upload-the-part-of-the-irc-that-you-calculated-to-share-with-your-colleague">
+     9.4.2. Upload the part of the IRC that you calculated to share with your colleague
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -481,260 +466,148 @@
         
               <div>
                 
-  <div class="section" id="exercises">
-<h1><span class="section-number">1.2. </span>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p>The questions must be answered in your own words and have to be handed
-in as a written report.</p>
-<div class="section" id="vectors-and-matrices">
-<h2><span class="section-number">1.2.1. </span>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 1</p>
-<p>Calculate the vector product <span class="math notranslate nohighlight">\(\mathbf{c}=\mathbf{a}\times\mathbf{b}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{aligned}
-     \mathbf{a} = \left(\begin{matrix}
-     2 \\ 6 \\ 4
-     \end{matrix}\right)
-     \quad
-     \mathbf{b} = \left(\begin{matrix}
-     5 \\ 1 \\ 7
-     \end{matrix}\right)
-     \end{aligned}
-    \end{split}\]</div>
-<p>and, for the same <span class="math notranslate nohighlight">\(\mathbf{a},\mathbf{b}\)</span>, the scalar product</p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{aligned}
-     d = \mathbf{a}\cdot \mathbf{b}
-     \end{aligned}
-   \]</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 2</p>
-<p>Evaluate the matrix product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\mathbf{B}\)</span>, where</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \mathbf{A} =\begin{aligned}
-     \left(\begin{matrix}
-     6 &amp; 8 &amp;2 \\ 9 &amp; 1 &amp; 5 \\ 7 &amp; 4 &amp; 3
-     \end{matrix}\right),\quad\mathbf{B}=
-      \left(\begin{matrix}
-     9 &amp; 6 &amp; 7 \\ 5 &amp; 4 &amp; 4 \\  3 &amp; 2 &amp; 8
-     \end{matrix}\right).
-     \end{aligned}
-    \end{split}\]</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 3</p>
-<p>Evaluate the determinant for the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \begin{aligned}
-     \mathbf{A} =
-     \left(\begin{matrix}
-     1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 2 \\ 2 &amp; 2 &amp; 3
-     \end{matrix}\right)
-     \end{aligned}
- \end{split}\]</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 4</p>
-<p>Find the eigenvalues and eigenvectors of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \mathbf{A} =\begin{aligned}
-     \left(\begin{matrix}
-     2 &amp; 1 \\ -1 &amp; 4
-     \end{matrix}\right)
-    \end{aligned}
-  \end{split}\]</div>
-</div>
-<!-- #region -->
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 5</p>
-<p>Diagonalise the matrices <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Specify which one is Hermitian.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \mathbf{A}=\begin{aligned}
-     \left(\begin{matrix}
-     1 &amp; 1-i \\ 1+i &amp; 2
-     \end{matrix}\right)
-     , \quad
-     \mathbf{B} =\left(\begin{matrix}
-     1 &amp; 1 \\ 0 &amp; 1
-     \end{matrix}\right)
-     \end{aligned}
- \end{split}\]</div>
-</div>
-<!-- #endregion -->
-<!-- #region -->
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 6</p>
-<p>Show that if the product <span class="math notranslate nohighlight">\(\mathbf{C}=\mathbf{A}\mathbf{B}\)</span> of two
-Hermitian matrices is also Hermitian, then <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and
-<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> commute.</p>
-</div>
-<!-- #endregion -->
-<!-- #region -->
-</div>
-<div class="section" id="a-simple-model-hamiltonian">
-<h2><span class="section-number">1.2.2. </span>A Simple Model Hamiltonian<a class="headerlink" href="#a-simple-model-hamiltonian" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 7</p>
-<p>In a system that consists of only two states (such as an electron spin
-in a magnetic field, where the electron spin can be in one of two
-orientations), the Hamiltonian has the following matrix elements:
-<span class="math notranslate nohighlight">\(H_{11}=a, \ H_{22}=b, \ H_{12}=d, \ H_{21}=d\)</span>. How would you determine
-the energy levels <span class="math notranslate nohighlight">\(E\)</span> and the eigenstates <span class="math notranslate nohighlight">\(\mathbf{\Psi}\)</span> of the system?
-(You do not need to solve this problem explicitly, merely outlining the
-procedure is sufficient.)</p>
-</div>
-<!-- #endregion -->
-<!-- #region -->
-</div>
-<div class="section" id="real-space-basis">
-<h2><span class="section-number">1.2.3. </span>Real Space Basis<a class="headerlink" href="#real-space-basis" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 8</p>
-<p>Give the position and the momentum operators (consider only one
-dimension) in the position representation.</p>
-</div>
-<!-- #endregion -->
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 9</p>
-<p>Give the commutator of the position and linear momentum operators in
-the position representation (consider one dimension only).</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 10</p>
-<p>Show that the potential energy operator
-<span class="math notranslate nohighlight">\(\hat{\mathrm{V}}(\mathbf{r})\)</span> is multiplicative when applied to the
-real-space wavefunction.</p>
-</div>
-<!-- #region -->
-</div>
-<div class="section" id="commutation-relation">
-<h2><span class="section-number">1.2.4. </span>Commutation Relation<a class="headerlink" href="#commutation-relation" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 11</p>
-<p>Explain the connection between the Heisenberg uncertainty principle and
-the commutation relation.</p>
-</div>
-<!-- #endregion -->
-<div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 12</p>
-<p>The link between position and momentum representation is
-given by a Fourier transform. Explain how this relates to the Heisenberg
-uncertainty principle.</p>
-</div>
-<!-- #region -->
-</div>
-<div class="section" id="linearity-and-hermiticity">
-<h2><span class="section-number">1.2.5. </span>Linearity and Hermiticity<a class="headerlink" href="#linearity-and-hermiticity" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 13</p>
-<p>Is the electronic Hamiltonian <span class="math notranslate nohighlight">\(\hat{H}_{el}\)</span> a linear operator and
-why (not)?</p>
-</div>
-<!-- #endregion -->
-<!-- #region -->
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 14</p>
-<p>Does the exponent of an operator always satisfy the relation
-<span class="math notranslate nohighlight">\(e^{\hat{A}+\hat{B}} = e^{\hat{A}}e^{\hat{B}}\)</span> ? Start from the
-definition of the matrix exponential.</p>
-</div>
-<!-- #endregion -->
-<div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 15</p>
-<p>Prove that the eigenvalues of a Hermitian operator are
-real.</p>
-</div>
-<!-- #region -->
-</div>
-<div class="section" id="bra-ket-notation-and-state-basis">
-<h2><span class="section-number">1.2.6. </span>Bra-Ket Notation and State Basis<a class="headerlink" href="#bra-ket-notation-and-state-basis" title="Permalink to this headline">¶</a></h2>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 16</p>
-<p>What is the meaning of a multiplication of a bra and a ket</p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{aligned}
-     \left&lt;a\middle|b\right&gt;,
-     \end{aligned}
-  \]</div>
-<p>and, conversely, an operator formed by a ket and a bra?</p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{aligned}
-     \hat{\mathrm{O}} = \left|a\right&gt;\left&lt;b\right|
-     \end{aligned}
-  \]</div>
-</div>
-<!-- #endregion -->
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 17</p>
-<p>Given a basis <span class="math notranslate nohighlight">\(\left\{\psi\right\}\)</span> for which</p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{aligned}
-     \left&lt;\psi_i\middle|\psi_j\right&gt; = \delta_{ij},
-     \end{aligned}
-   \]</div>
-<p>where <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> is the Kronecker delta, for any  state <span class="math notranslate nohighlight">\(\Psi\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-    \begin{aligned}
-     \Ket{\Psi} = \sum_j c_j\Ket{\psi_j},
-     \end{aligned}
-   \]</div>
-<p>the inner product is defined as</p>
-<div class="math notranslate nohighlight">
-\[
-     \begin{aligned}
-     \left&lt;\Psi\middle|\Psi\right&gt; = 1.
-     \end{aligned}
-   \]</div>
-<p>Show that this holds only as long as<br />
-$<span class="math notranslate nohighlight">\(
-    \begin{aligned}
-     \sum_j c_j^2 = 1,
-     \end{aligned}
-    \)</span>$</p>
-<p>where the <span class="math notranslate nohighlight">\(c_j\)</span> are the aforementioned expansion coefficients.</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 18</p>
-<p>Prove that, given the above conditions,
-<span class="math notranslate nohighlight">\(c_j=\left&lt;\psi_j\middle|\Psi\right&gt;\)</span>.</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 19</p>
-<p>Show that, if two operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>
-commute and if <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
-<span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\Ket{\psi}\)</span> is an eigenvector of
-<span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, too, with the same eigenvalue.\</p>
-<p><strong>Bonus</strong>:   If <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is part of a set of degenerate
-eigenvectors, show that the subspace spanned by the eigenvalues of
-<span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> is invariant under the action of
-<span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>.</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 20</p>
-<p>Demonstrate that, if two hermitian operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
-<span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span> commute and <span class="math notranslate nohighlight">\({\Ket{\psi_1}}\)</span>, <span class="math notranslate nohighlight">\({\Ket{\psi_2}}\)</span>
-are eigenvectors of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> associated to different
-eigenvalues, then the matrix element
-<span class="math notranslate nohighlight">\(\Bra{\psi_1}\hat{\mathrm{B}}\Ket{\psi_2}\)</span> vanishes.</p>
+  <div class="section" id="recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc">
+<h1><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)<a class="headerlink" href="#recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc" title="Permalink to this headline">¶</a></h1>
+<p>A transition state search merely guarantees that one reaches a
+first-order saddle point on the PES; there is, however, no guarantee
+that it is really linked to the reactant and product. (For instance,
+there may be further transition states lying in between.) Although the
+visualisation of the imaginary vibrational mode may give some hint as to
+whether one has found a reasonable saddle point, this information is not
+sufficient to guarantee a connection to the reactant and product well.
+Following the negative Hessian eigenvalues from the transition state to
+the next local minimum, on the other hand, will immediately reveal
+whether such a connection exists. This Hessian-following in
+mass-weighted coordinates is referred to as a search along the
+<em>Intrinsic Reaction Coordinate</em> (IRC). This search will create a
+potential energy profile for the reaction, as well as a trajectory that
+visualises the lowest energy path from reactant to TS to product or reactant (depending on the direction that one chooses).</p>
+<p>As psi4 automatically performs a frequency calculation we can verify whether the transition state that was computed is the proper transition state.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
 </div>
 </div>
-<div class="section" id="supporting-literature">
-<h2><span class="section-number">1.2.7. </span>Supporting Literature<a class="headerlink" href="#supporting-literature" title="Permalink to this headline">¶</a></h2>
-<p>Cohen-Tannoudji, C. <em>et al.</em>: <em>Mécanique quantique, tome 1</em>. Hermann,
-Paris, <strong>1997</strong><br />
-Specifically, chapters II(B-E), compléments D<span class="math notranslate nohighlight">\(_\text{II}\)</span> and
-E<span class="math notranslate nohighlight">\(_\text{III}\)</span>.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the transition state coordinates from disk</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ts_string</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># this is the xyz file as a string</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ts_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">-1 1</span>
+<span class="s2">symmetry c1</span>
+<span class="s2">#coordinates here&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="choose-a-direction">
+<h1><span class="section-number">9.4. </span>Choose a direction<a class="headerlink" href="#choose-a-direction" title="Permalink to this headline">¶</a></h1>
+<p>Start from the TS that we optimized and run the IRC calculation in one direction.</p>
+<p>You can choose <code class="docutils literal notranslate"><span class="pre">forward</span></code> or <code class="docutils literal notranslate"><span class="pre">backward</span></code> for the <code class="docutils literal notranslate"><span class="pre">irc_direction</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">irc_direction</span> <span class="o">=</span>  <span class="s1">&#39;forward&#39;</span> <span class="c1"># &#39;backward&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+     <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
+     <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;irc&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;irc_step_size&quot;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
+     <span class="s2">&quot;ensure_bt_convergence&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+     <span class="s2">&quot;irc_direction&quot;</span><span class="p">:</span><span class="n">irc_direction</span><span class="p">,</span>
+     <span class="p">})</span>
+
+<span class="n">E</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.3714i&#39;]
+Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0283&#39; &#39;199.5642&#39; &#39;200.4680&#39; &#39;278.6674&#39; &#39;310.2934&#39; &#39;399.1543&#39;]
+Optimizer: Optimization complete!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
+<span class="n">energies</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
+
+
+<span class="c1"># Convert to kcal mol-1</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># use a list comprehension</span>
+<span class="c1"># set highest value to 0</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># convert list to np.array and use broadcasting to substract max value, you can use np.max()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="pickling-the-result">
+<h2><span class="section-number">9.4.1. </span>Pickling the result.<a class="headerlink" href="#pickling-the-result" title="Permalink to this headline">¶</a></h2>
+<p>We write the resulting energies and coordiations to a pickle file which is a binary representation of python objects on disk.</p>
+<p>We can load this in another notebook or you can share it with a colleague (see below).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">json</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">((</span><span class="n">backward_e</span><span class="p">,</span> 
+             <span class="n">mol2traj</span><span class="p">(</span><span class="n">backward</span><span class="p">,</span> <span class="n">coordinates_backward</span><span class="p">),</span> 
+             <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_backward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">irc_direction</span><span class="si">}</span><span class="s2">.p&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculating the IRC takes some time. We therefore ask you to only calculate one part of the trajectory and paired you with one of you colleagues so that you can still look at the full trajectory. See Moodle for the list of partners.</p>
+</div>
+<div class="section" id="upload-the-part-of-the-irc-that-you-calculated-to-share-with-your-colleague">
+<h2><span class="section-number">9.4.2. </span>Upload the part of the IRC that you calculated to share with your colleague<a class="headerlink" href="#upload-the-part-of-the-irc-that-you-calculated-to-share-with-your-colleague" title="Permalink to this headline">¶</a></h2>
+<p>We use <code class="docutils literal notranslate"><span class="pre">curl</span></code> which is a linux package to perform http requests. We use the free <code class="docutils literal notranslate"><span class="pre">file.io</span></code> service that allows you share file anonymously without registering.
+The file can only be downloaded once. You can of course also use any other method to share the pickled files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Upload, # change the name of the file forward.p</span>
+<span class="n">response</span> <span class="o">=</span> <span class="o">!</span>curl -F <span class="s2">&quot;file=@forward.p&quot;</span> https://file.io
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Share this code with you colleague: &quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">6</span><span class="p">])[</span><span class="s1">&#39;key&#39;</span><span class="p">])</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Something went wrong, check the name of the file and check the response&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 
@@ -751,7 +624,7 @@ E<span class="math notranslate nohighlight">\(_\text{III}\)</span>.</p>
         },
         kernelOptions: {
             kernelName: "psi4",
-            path: "./Exercises/Ex1"
+            path: "./Exercises/Ex8"
         },
         predefinedOutput: true
     }
@@ -768,19 +641,19 @@ E<span class="math notranslate nohighlight">\(_\text{III}\)</span>.</p>
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Ex1Theory.html" title="previous page">
+        <a class="left-prev" href="Ex8.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">1.1. </span>Theory</p>
+                <p class="prevnext-title"><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations</p>
             </div>
         </a>
     </div>
      <div id="next">
-        <a class="right-next" href="Ex1.html" title="next page">
+        <a class="right-next" href="Visualize.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">1.3. </span>Working with vectors using Numpy</p>
+                <p class="prevnext-title"><span class="section-number">9.5. </span>IRC analysis</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>

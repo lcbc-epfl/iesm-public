@@ -307,6 +307,16 @@
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Visualize.html">
+     9.5. IRC analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -436,8 +446,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#relaxed-pes-scan">
-     8.1.1.2. Relaxed PES scan
+    <a class="reference internal nav-link" href="#rigid-pes-scan">
+     8.1.1.2. Rigid PES scan
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -498,6 +508,7 @@ configurational minima, and the rotational barrier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 </pre></div>
@@ -508,6 +519,16 @@ configurational minima, and the rotational barrier.</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+
+  Memory set to   1.863 GiB by Python driver.
 </pre></div>
 </div>
 </div>
@@ -526,22 +547,20 @@ configurational minima, and the rotational barrier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">butane</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2">symmetry c1</span>
-<span class="s2"> C   -0.574898269478    0.504464946904    0.002857403041</span>
-<span class="s2"> C    0.574897889171   -0.504464956128    0.002852323696</span>
-<span class="s2"> C   -1.952555649148   -0.156973625260   -0.002714475295</span>
-<span class="s2"> C    1.952555886024    0.156973652497   -0.002581128735</span>
-<span class="s2"> H   -0.482337591908    1.153589194213   -0.865497092594</span>
-<span class="s2"> H   -0.486779969577    1.148810594948    0.875228985704</span>
-<span class="s2"> H    0.486726518666   -1.148880661714    0.875166539075</span>
-<span class="s2"> H    0.482391583848   -1.153518537029   -0.865560612888</span>
-<span class="s2"> H   -2.083450168132   -0.782621265854   -0.881234078511</span>
-<span class="s2"> H   -2.088869387618   -0.785799807033    0.872685653169</span>
-<span class="s2"> H   -2.745769632423    0.584304626628   -0.003839522994</span>
-<span class="s2"> H    2.083505309790    0.782692137537   -0.881042037137</span>
-<span class="s2"> H    2.745769132889   -0.584305467493   -0.003716913318</span>
-<span class="s2"> H    2.088815912268    0.785728971311    0.872878191372</span>
+<span class="s2">C       </span>
+<span class="s2">C    1    1.450000</span>
+<span class="s2">C    1    1.450000      2  109.471000</span>
+<span class="s2">H    1 1.089         2 109.471000         3 120</span>
+<span class="s2">H    1 1.089        2 109.471000          3 -120</span>
+<span class="s2">C    2 1.45         1 109.471000         3 180</span>
+<span class="s2">H    2 1.089        1 109.471000        6 120</span>
+<span class="s2">H    2 1.089         1 109.471000          6 240</span>
+<span class="s2">H    3 1.089         1 109.471000          2 180</span>
+<span class="s2">H    3 1.089        1 109.471000         9 120</span>
+<span class="s2">H    3 1.089        1 109.471000         9 240</span>
+<span class="s2">H    6 1.089        2 109.471000         1 180</span>
+<span class="s2">H    6 1.089       2 109.471000        12 120</span>
+<span class="s2">H    6 1.089        2 109.471000        12 240</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -554,8 +573,8 @@ configurational minima, and the rotational barrier.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_162921287770743"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_162921287770743" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16312694809216015"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16312694809216015" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -578,33 +597,33 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_162921287770743 = null;
-var warn = document.getElementById("3dmolwarning_162921287770743");
+var viewer_16312694809216015 = null;
+var warn = document.getElementById("3dmolwarning_16312694809216015");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_162921287770743 = $3Dmol.createViewer($("#3dmolviewer_162921287770743"),{backgroundColor:"white"});
-viewer_162921287770743.zoomTo();
-	viewer_162921287770743.addModel("14\n\n C   -0.574898269478    0.504464946904    0.002857403041\n C    0.574897889171   -0.504464956128    0.002852323696\n C   -1.952555649148   -0.156973625260   -0.002714475295\n C    1.952555886024    0.156973652497   -0.002581128735\n H   -0.482337591908    1.153589194213   -0.865497092594\n H   -0.486779969577    1.148810594948    0.875228985704\n H    0.486726518666   -1.148880661714    0.875166539075\n H    0.482391583848   -1.153518537029   -0.865560612888\n H   -2.083450168132   -0.782621265854   -0.881234078511\n H   -2.088869387618   -0.785799807033    0.872685653169\n H   -2.745769632423    0.584304626628   -0.003839522994\n H    2.083505309790    0.782692137537   -0.881042037137\n H    2.745769132889   -0.584305467493   -0.003716913318\n H    2.088815912268    0.785728971311    0.872878191372\n","xyz");
-	viewer_162921287770743.addLabel("0",{"position": {"x": -0.5748982694792218, "y": 0.5044649469052975, "z": 0.0028574030409458813}, "inFront": true});
-	viewer_162921287770743.addLabel("1",{"position": {"x": 0.5748978891724074, "y": -0.5044649561290097, "z": 0.0028523236959458703}, "inFront": true});
-	viewer_162921287770743.addLabel("2",{"position": {"x": -1.952555649152372, "y": -0.156973625260215, "z": -0.0027144752950668594}, "inFront": true});
-	viewer_162921287770743.addLabel("3",{"position": {"x": 1.9525558860285575, "y": 0.1569736524975029, "z": -0.0025811287350665543}, "inFront": true});
-	viewer_162921287770743.addLabel("4",{"position": {"x": -0.4823375919090102, "y": 1.1535891942157819, "z": -0.8654970925960397}, "inFront": true});
-	viewer_162921287770743.addLabel("5",{"position": {"x": -0.48677996957802033, "y": 1.148810594950771, "z": 0.8752289857059407}, "inFront": true});
-	viewer_162921287770743.addLabel("6",{"position": {"x": 0.4867265186672057, "y": -1.148880661716483, "z": 0.8751665390769405}, "inFront": true});
-	viewer_162921287770743.addLabel("7",{"position": {"x": 0.4823915838491958, "y": -1.1535185370314938, "z": -0.8655606128900399}, "inFront": true});
-	viewer_162921287770743.addLabel("8",{"position": {"x": -2.0834501681366713, "y": -0.7826212658556456, "z": -0.8812340785130758}, "inFront": true});
-	viewer_162921287770743.addLabel("9",{"position": {"x": -2.088869387622683, "y": -0.7857998070346529, "z": 0.8726856531709348}, "inFront": true});
-	viewer_162921287770743.addLabel("10",{"position": {"x": -2.7457696324291856, "y": 0.58430462662948, "z": -0.003839522994069432}, "inFront": true});
-	viewer_162921287770743.addLabel("11",{"position": {"x": 2.083505309794857, "y": 0.7826921375389336, "z": -0.8810420371390754}, "inFront": true});
-	viewer_162921287770743.addLabel("12",{"position": {"x": 2.7457691328953713, "y": -0.5843054674941922, "z": -0.0037169133180691514}, "inFront": true});
-	viewer_162921287770743.addLabel("13",{"position": {"x": 2.088815912272869, "y": 0.7857289713129406, "z": 0.8728781913739352}, "inFront": true});
-	viewer_162921287770743.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_162921287770743.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewer_162921287770743.zoomTo();
-viewer_162921287770743.render();
+viewer_16312694809216015 = $3Dmol.createViewer($("#3dmolviewer_16312694809216015"),{backgroundColor:"white"});
+viewer_16312694809216015.zoomTo();
+	viewer_16312694809216015.addModel("14\n\n C    0.000000000000    0.725000000000    0.000000000000\n C    0.000000000000   -0.725000000000    0.000000000000\n C   -1.367074971503    1.208328069007    0.000000000000\n H    0.513360222058    1.087996046309    0.889165987188\n H    0.513360222058    1.087996046309   -0.889165987188\n C    1.367074971503   -1.208328069007    0.000000000000\n H   -0.513360222058   -1.087996046309    0.889165987188\n H   -0.513360222058   -1.087996046309   -0.889165987188\n H   -1.367074971503    2.297328069007    0.000000000000\n H   -1.880429602190    0.845324115338   -0.889165987188\n H   -1.880429602190    0.845324115338    0.889165987188\n H    1.367074971503   -2.297328069007    0.000000000000\n H    1.880429602190   -0.845324115338   -0.889165987188\n H    1.880429602190   -0.845324115338    0.889165987188\n","xyz");
+	viewer_16312694809216015.addLabel("0",{"position": {"x": 0.0, "y": 0.7250000000016578, "z": 0.0}, "inFront": true});
+	viewer_16312694809216015.addLabel("1",{"position": {"x": 0.0, "y": -0.7250000000016578, "z": 0.0}, "inFront": true});
+	viewer_16312694809216015.addLabel("2",{"position": {"x": -1.367074971506163, "y": 1.2083280690096956, "z": 0.0}, "inFront": true});
+	viewer_16312694809216015.addLabel("3",{"position": {"x": 0.5133602220586935, "y": 1.087996046311832, "z": 0.8891659871904984}, "inFront": true});
+	viewer_16312694809216015.addLabel("4",{"position": {"x": 0.5133602220586935, "y": 1.087996046311832, "z": -0.8891659871904984}, "inFront": true});
+	viewer_16312694809216015.addLabel("5",{"position": {"x": 1.367074971506163, "y": -1.2083280690096956, "z": 0.0}, "inFront": true});
+	viewer_16312694809216015.addLabel("6",{"position": {"x": -0.5133602220586935, "y": -1.087996046311832, "z": 0.8891659871904984}, "inFront": true});
+	viewer_16312694809216015.addLabel("7",{"position": {"x": -0.5133602220586935, "y": -1.087996046311832, "z": -0.8891659871904984}, "inFront": true});
+	viewer_16312694809216015.addLabel("8",{"position": {"x": -1.367074971506163, "y": 2.297328069012185, "z": 0.0}, "inFront": true});
+	viewer_16312694809216015.addLabel("9",{"position": {"x": -1.8804296021942979, "y": 0.845324115339741, "z": -0.8891659871904983}, "inFront": true});
+	viewer_16312694809216015.addLabel("10",{"position": {"x": -1.8804296021942979, "y": 0.845324115339741, "z": 0.8891659871904984}, "inFront": true});
+	viewer_16312694809216015.addLabel("11",{"position": {"x": 1.367074971506163, "y": -2.297328069012185, "z": 0.0}, "inFront": true});
+	viewer_16312694809216015.addLabel("12",{"position": {"x": 1.8804296021942979, "y": -0.845324115339741, "z": -0.8891659871904984}, "inFront": true});
+	viewer_16312694809216015.addLabel("13",{"position": {"x": 1.880429602194298, "y": -0.845324115339741, "z": 0.8891659871904983}, "inFront": true});
+	viewer_16312694809216015.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16312694809216015.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewer_16312694809216015.zoomTo();
+viewer_16312694809216015.render();
 });
 </script></div></div>
 </div>
@@ -615,8 +634,8 @@ viewer_162921287770743.render();
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16280642809598265"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16280642809598265" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16312694819803686"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16312694819803686" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -639,25 +658,26 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16280642809598265 = null;
-var warn = document.getElementById("3dmolwarning_16280642809598265");
+var viewer_16312694819803686 = null;
+var warn = document.getElementById("3dmolwarning_16312694819803686");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16280642809598265 = $3Dmol.createViewer($("#3dmolviewer_16280642809598265"),{backgroundColor:"white"});
-viewer_16280642809598265.zoomTo();
-	viewer_16280642809598265.addModel("14\n\n C   -0.574898269478    0.504464946904    0.002857403041\n C    0.574897889171   -0.504464956128    0.002852323696\n C   -1.952555649148   -0.156973625260   -0.002714475295\n C    1.952555886024    0.156973652497   -0.002581128735\n H   -0.482337591908    1.153589194213   -0.865497092594\n H   -0.486779969577    1.148810594948    0.875228985704\n H    0.486726518666   -1.148880661714    0.875166539075\n H    0.482391583848   -1.153518537029   -0.865560612888\n H   -2.083450168132   -0.782621265854   -0.881234078511\n H   -2.088869387618   -0.785799807033    0.872685653169\n H   -2.745769632423    0.584304626628   -0.003839522994\n H    2.083505309790    0.782692137537   -0.881042037137\n H    2.745769132889   -0.584305467493   -0.003716913318\n H    2.088815912268    0.785728971311    0.872878191372\n","xyz");
-	viewer_16280642809598265.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16280642809598265.zoomTo();
-viewer_16280642809598265.render();
+viewer_16312694819803686 = $3Dmol.createViewer($("#3dmolviewer_16312694819803686"),{backgroundColor:"white"});
+viewer_16312694819803686.zoomTo();
+	viewer_16312694819803686.addModel("14\n\n C    0.000000000000    0.725000000000    0.000000000000\n C    0.000000000000   -0.725000000000    0.000000000000\n C   -1.367074971503    1.208328069007    0.000000000000\n H    0.513360222058    1.087996046309    0.889165987188\n H    0.513360222058    1.087996046309   -0.889165987188\n C    1.367074971503   -1.208328069007    0.000000000000\n H   -0.513360222058   -1.087996046309    0.889165987188\n H   -0.513360222058   -1.087996046309   -0.889165987188\n H   -1.367074971503    2.297328069007    0.000000000000\n H   -1.880429602190    0.845324115338   -0.889165987188\n H   -1.880429602190    0.845324115338    0.889165987188\n H    1.367074971503   -2.297328069007    0.000000000000\n H    1.880429602190   -0.845324115338   -0.889165987188\n H    1.880429602190   -0.845324115338    0.889165987188\n","xyz");
+	viewer_16312694819803686.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16312694819803686.zoomTo();
+viewer_16312694819803686.render();
 });
 </script></div></div>
 </div>
 </div>
-<div class="section" id="relaxed-pes-scan">
-<h3><span class="section-number">8.1.1.2. </span>Relaxed PES scan<a class="headerlink" href="#relaxed-pes-scan" title="Permalink to this headline">¶</a></h3>
-<p>Now that we had a look at the butane molecule, let’s perform the relaxed PES scan. We will fix the dihedral angle at different values and optimize the other degrees of freedom.</p>
+<div class="section" id="rigid-pes-scan">
+<h3><span class="section-number">8.1.1.2. </span>Rigid PES scan<a class="headerlink" href="#rigid-pes-scan" title="Permalink to this headline">¶</a></h3>
+<p>Now that we had a look at the butane molecule, let’s perform the rigid PES scan. We will fix the dihedral angle at different values and do single point calculations.
+First, we need to optimize the the geometry provided above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
@@ -671,47 +691,49 @@ viewer_16280642809598265.render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#First optimize the butane molecule </span>
 <span class="c1">#from the starting geometry provided</span>
-<span class="c1">#use the blyp method and the 6-31+G* basis set</span>
+<span class="c1">#use the bylp method and the 6-31+G* basis set</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dihedrals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">175</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span> <span class="c1">#We set here the dihedrals that we are going to use for the scan</span>
-<span class="n">PES</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the optimized energy for each dihedral</span>
-<span class="n">geometries</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#Here we will store the optimized geometries</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dihedrals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">72</span><span class="p">)</span> <span class="c1">#We set here the dihedrals that we are going to use for the scan</span>
+<span class="n">PES</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the optimized energy for each dihedral. This is a dictionary</span>
+<span class="n">geometries</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#Here we will store the optimized geometries. This is a list</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dihedral</span> <span class="ow">in</span> <span class="n">dihedrals</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">dihedral</span><span class="p">)</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
-    <span class="s2">&quot;fixed_dihedral&quot;</span><span class="p">:</span> <span class="s2">&quot;3 1 2 4 &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">dihedral</span><span class="p">),</span> <span class="c1">#This option specifies the dihedral angles between atoms to be fixed</span>
-    <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span> <span class="c1">#This option sets the maximum number of geometry optimization steps</span>
-     <span class="p">})</span> 
-    
-    <span class="c1">#Perform the optimization of the butame molecule here</span>
-    <span class="c1">#use the blyp method and the 6-31+G* basis set</span>
-    <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>
-    
-    <span class="n">geometries</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">butane</span><span class="o">.</span><span class="n">clone</span><span class="p">())</span>
-    <span class="n">PES</span><span class="p">[</span><span class="n">dihedral</span><span class="p">]</span> <span class="o">=</span> <span class="n">E</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">butane</span><span class="o">.</span><span class="n">print_in_input_format</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>The geometry optimization will print you the optimized coordinates in the format you provided them at the end if you call <code class="docutils literal notranslate"><span class="pre">butane.print_in_input_format()</span></code>. Here, this is the z-matrix format. Use these coordinates below and create a python f-string where you replace the dihedral that we want to scan with a variable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dihedral</span> <span class="ow">in</span> <span class="n">dihedrals</span><span class="p">:</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    x i bond k angle j </span><span class="si">{</span><span class="n">dihedral</span><span class="si">}</span><span class="s2"> #this is the dihedral we want to optimize</span>
+<span class="s2">    x i bond k angle j dihedral</span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="p">[</span><span class="o">....</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Save the molecules in the <code class="docutils literal notranslate"><span class="pre">geometries</span></code> list (use <code class="docutils literal notranslate"><span class="pre">butane.clone()</span></code>) and save the calculated energies in the <code class="docutils literal notranslate"><span class="pre">PES</span></code> dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert the energy units to kcal/mol</span>
 <span class="c1">#you can use psi4.constants.hartree2kcalmol for the unit conversion </span>
+<span class="c1"># in python you can use list comprehensions e.g [x+1 for x in lst] will increase every value in lst by 1.</span>
+<span class="c1"># to access the values in the dictionary PES you can use PES.values() which return a list.</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="c1">#Rescale the energy scale by setting the minimum value as the zero of the scale</span>
 <span class="c1">#and change everything accordingly</span>
+<span class="c1"># the function np.min(lst) returns the lowest value of a list. </span>
+<span class="c1"># to use broadcasting you need to convert the list into a np.array by calling np.array(energies)</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span>
 </pre></div>
 </div>
@@ -725,6 +747,7 @@ viewer_16280642809598265.render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traj</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">geometries</span><span class="p">]</span>
 <span class="n">traj_arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom</span><span class="o">.</span><span class="n">to_arrays</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">geometries</span><span class="p">]</span>
+
 <span class="n">drawXYZGeomSliderMolecularProperty</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">dihedrals</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="s1">&#39;dihedral&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -751,11 +774,6 @@ viewer_16280642809598265.render();
 </pre></div>
 </div>
 </div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 1</p>
-<p>Plot the fluctuations of the dihedral that you used in the rigid
-scan and show this plot in your report.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 2</p>
@@ -791,16 +809,16 @@ mol<span class="math notranslate nohighlight">\(^{-1}\)</span> [^Murcko1996]. Co
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm2"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm2",
+            kernelName: "psi4",
             path: "./Exercises/Ex7"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm2'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               

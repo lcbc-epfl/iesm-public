@@ -307,6 +307,16 @@
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Visualize.html">
+     9.5. IRC analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -566,7 +576,7 @@ A popular dispersion correction is DFT-D3 by Grimme and coworkers. Like other co
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span><span class="p">[</span> <span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;mn15&#39;</span><span class="p">,</span><span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;scan&#39;</span><span class="p">]</span> <span class="c1">#&#39;b3lyp&#39;, &#39;b3lyp-d3&#39;, #These are the methods that we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span><span class="p">[</span> <span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;mn15&#39;</span><span class="p">,</span><span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;scan&#39;</span><span class="p">]</span>  <span class="c1">#These are the methods that we are going to use</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the energies</span>
 
 <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span>
@@ -778,7 +788,7 @@ viewergrid_1627658475076343[0][0].render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp-d3(bj)&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp-nl&#39;</span> <span class="p">,</span><span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;pbe-d3&#39;</span><span class="p">,</span> <span class="s1">&#39;mp2&#39;</span><span class="p">]</span> <span class="c1">#These are the methods that we are going to compare</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp-d3(bj)&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp-nl&#39;</span> <span class="p">,</span><span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;pbe-d3&#39;</span><span class="p">,</span> <span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;svwn&#39;</span><span class="p">]</span> <span class="c1">#These are the methods that we are going to compare</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the energies</span>
 
 <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span>

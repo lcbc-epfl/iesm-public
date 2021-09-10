@@ -1,0 +1,817 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>9.5. IRC analysis &#8212; Introduction to Electronic Structure Methods</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Coupled cluster" href="../../Lecture/CC.html" />
+    <link rel="prev" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../intro.html">
+   Introduction to Electronic Structure Methods
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3Diss.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4.html">
+   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/Ex4Theory.html">
+     4.1. Møller-Plesset Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/BDE.html">
+     4.2. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HNO3_Correlation.html">
+     4.5. Correlation energy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4b.html">
+   5. The hartree fock procedure in detail
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF_student.html">
+     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex5.html">
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5.html">
+     6.1. Testing DFT functionals on an aldol reaction.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5b.html">
+     6.2. Density Functional Theory 2
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex6.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex8Theory.html">
+     9.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex8.html">
+     9.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     9.5. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/CC.html">
+   Coupled cluster
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/Exercises/Ex8/Visualize.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lcbc-epfl/iesm-public"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Visualize.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        <a class="jupyterhub-button" href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Visualize.ipynb&branch=deploy"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#download-the-other-part-of-the-trajectory-from-your-colleague">
+   9.5.1. Download the other part of the trajectory from your colleague
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#visualize-the-trajectory">
+   9.5.2. Visualize the trajectory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-minium-energy-path">
+   9.5.3. Plot the minium energy path
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#analyse-bonds">
+   9.5.4. Analyse Bonds
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="irc-analysis">
+<h1><span class="section-number">9.5. </span>IRC analysis<a class="headerlink" href="#irc-analysis" title="Permalink to this headline">¶</a></h1>
+<p>In this notebook, we combine the both the forward and backward irc search into one trajectory and one list of energy values so that we can plot/analyze the minimum free energy path for converting the chloro-alcohol into the epoxide.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">import</span> <span class="nn">psi4</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="download-the-other-part-of-the-trajectory-from-your-colleague">
+<h2><span class="section-number">9.5.1. </span>Download the other part of the trajectory from your colleague<a class="headerlink" href="#download-the-other-part-of-the-trajectory-from-your-colleague" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy the code that you got from your colleague</span>
+<span class="n">key</span> <span class="o">=</span>  <span class="s1">&#39;adz9IoTVAFHh&#39;</span>
+
+<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;forward&#39;</span> <span class="c1">#backward</span>
+
+<span class="o">!</span>curl https://file.io/<span class="nv">$key</span> --output <span class="nv">$name</span>.p
+</pre></div>
+</div>
+</div>
+</div>
+<p>This load the pickled objects from disk, deserializes them and you get back the original variables.</p>
+<p>Note, that psi4.molecules cannot directly be pickled but numpy arrays and python lists, strings, integers etc. can be pickled.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pickle load returns a tuple of three lists (list1, list2, list3)</span>
+<span class="c1"># We can directly unpack this tuple into different variables using l1, l2, l3 = (list1, list2, list3) </span>
+
+<span class="n">backward_e</span><span class="p">,</span> <span class="n">traj_backward</span><span class="p">,</span> <span class="n">traj_backward_np</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;backward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">)</span> <span class="p">)</span>
+<span class="n">forward_e</span><span class="p">,</span> <span class="n">traj_forward</span><span class="p">,</span> <span class="n">traj_forward_np</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;forward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Look at the energy list and find out which you need to reverse.</p>
+<p>Remember that we substracted the highest energy from all the values. Think about which point is the highest energy point on the minimum energy path connecting reactant and products.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">variablename.reverse()</span></code> to reverse the list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at backward_e</span>
+<span class="n">backward_e</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">backward_e</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span>
+<span class="n">forward_e</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#list.reverse() #this is an inplace operation</span>
+
+<span class="c1"># combine the energies </span>
+<span class="c1"># Note that we need exclude the ts point from one of the trajectories</span>
+<span class="c1"># You can remove one index from the lists using list1[:-1] </span>
+<span class="c1"># Lists can be combined using lists = l1 + l2</span>
+<span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># combine the trajectories which are lists</span>
+<span class="n">traj</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="visualize-the-trajectory">
+<h2><span class="section-number">9.5.2. </span>Visualize the trajectory<a class="headerlink" href="#visualize-the-trajectory" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZGeomSlider</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "ed6f4bfd18ca48298cc52ee5d3f324a0", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 8</p>
+<p>Is the stereochemistry at the carbon at which the reaction takes  place retained?</p>
+</div>
+</div>
+<div class="section" id="plot-the-minium-energy-path">
+<h2><span class="section-number">9.5.3. </span>Plot the minium energy path<a class="headerlink" href="#plot-the-minium-energy-path" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pot Energy (kcal mol$^{-1}$)&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<p>Take a screenshot of the graph of the potential energy profile you recorded.
+Why is the barrier for the epoxide formation so low? Will this be the overall barrier for the reaction as depicted in the previous section?</p>
+</div>
+</div>
+<div class="section" id="analyse-bonds">
+<h2><span class="section-number">9.5.4. </span>Analyse Bonds<a class="headerlink" href="#analyse-bonds" title="Permalink to this headline">¶</a></h2>
+<p>For the visualization we used a list of xyz file formated strings.
+For the analysis it is more convenient to work with a list of numpy arrays of xyz coordinates.</p>
+<p>We can then use standard python tools to calculate distances, angles or dihedrals.</p>
+<p>Let’s have a look at different bond distances involving different atoms in the molecule.</p>
+<p>We can fist have a look at the first and last conformations, which correspond to the starting and ending point of the IRC that we performed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">traj</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16311988370924737"  style="position: relative; width: 640px; height: 480px">
+        <p id="3dmolwarning_16311988370924737" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_16311988370924737 = null;
+var warn = document.getElementById("3dmolwarning_16311988370924737");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+var viewergrid_16311988370924737 = null;
+viewergrid_16311988370924737 = $3Dmol.createViewerGrid($("#3dmolviewer_16311988370924737"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
+viewer_16311988370924737 = viewergrid_16311988370924737[0][0];
+viewergrid_16311988370924737[0][0].zoomTo();viewergrid_16311988370924737[0][1].zoomTo();	viewergrid_16311988370924737[0][0].addModel("11\n\n C    0.160379936003   -0.274358535619   -0.250687562184\n C    0.187692358787   -0.541536736739    1.273326656579\nCL    0.153954542336    1.560737510258   -0.688287906602\n H    1.107234333761   -0.636654700770   -0.677811612663\n C   -1.018381296258   -0.931935892905   -0.942065298938\n O    0.326841374089   -1.855280552220    1.482184191070\n H    1.017792912030    0.123742081357    1.684035357712\n H   -0.751165411261   -0.086175192740    1.678237748462\n H   -0.957952836897   -0.850302253443   -2.035817924249\n H   -1.005614164670   -1.977650171615   -0.640290963117\n H   -1.958064022685   -0.470632408942   -0.609306843219\n","xyz");
+	viewergrid_16311988370924737[0][0].addLabel("0",{"position": {"x": 0.16037993600325903, "y": -0.2743585356191373, "z": -0.25068756218479704}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("1",{"position": {"x": 0.18769235878758664, "y": -0.5415367367397628, "z": 1.2733266565821912}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("2",{"position": {"x": 0.15395454233593794, "y": 1.5607375102612366, "z": -0.6882879066038118}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("3",{"position": {"x": 1.1072343337638237, "y": -0.6366547007717812, "z": -0.6778116126643904}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("4",{"position": {"x": -1.0183812962602965, "y": -0.9319358929066855, "z": -0.9420652989401923}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("5",{"position": {"x": 0.3268413740901303, "y": -1.8552805522237523, "z": 1.482184191073403}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("6",{"position": {"x": 1.0177929120324956, "y": 0.12374208135679275, "z": 1.6840353577153606}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("7",{"position": {"x": -0.7511654112624216, "y": -0.0861751927402206, "z": 1.678237748465457}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("8",{"position": {"x": -0.9579528368991489, "y": -0.8503022534453328, "z": -2.0358179242539993}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("9",{"position": {"x": -1.0056141646727776, "y": -1.9776501716198138, "z": -0.640290963118775}, "inFront": true});
+	viewergrid_16311988370924737[0][0].addLabel("10",{"position": {"x": -1.9580640226890649, "y": -0.4706324089434447, "z": -0.6093068432208331}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addModel("11\n\n C    0.128961846745   -1.086621208518    0.207138700320\n C    0.095272442351   -0.416271399513    1.491408548931\nCL    0.296273119288    1.925703778358   -1.035328186516\n H    1.107759301745   -1.054486202884   -0.345292153238\n C   -1.084831810889   -1.235712393623   -0.659324349210\n O    0.181897969684   -1.855251286318    1.437021800191\n H    0.984268462601    0.097412863216    1.853662436923\n H   -0.855327514711   -0.019771740823    1.856864844080\n H   -1.089953294447   -0.400372037258   -1.365423088195\n H   -1.067303236918   -2.190762176428   -1.203085822099\n H   -1.999199827660   -1.196543950098   -0.054014926474\n","xyz");
+	viewergrid_16311988370924737[0][1].addLabel("0",{"position": {"x": 0.12896184674504155, "y": -1.0866212085208107, "z": 0.2071387003206128}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("1",{"position": {"x": 0.09527244235141086, "y": -0.41627139951425557, "z": 1.491408548934826}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("2",{"position": {"x": 0.29627311928827876, "y": 1.9257037783628839, "z": -1.035328186518185}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("3",{"position": {"x": 1.1077593017479592, "y": -1.054486202886409, "z": -0.34529215323878265}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("4",{"position": {"x": -1.0848318108918726, "y": -1.2357123936262284, "z": -0.6593243492115177}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("5",{"position": {"x": 0.1818979696842043, "y": -1.8552512863223212, "z": 1.4370218001938113}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("6",{"position": {"x": 0.9842684626028192, "y": 0.0974128632160798, "z": 1.853662436926964}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("7",{"position": {"x": -0.8553275147124672, "y": -0.019771740823455206, "z": 1.856864844084738}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("8",{"position": {"x": -1.0899532944496968, "y": -0.4003720372591144, "z": -1.3654230881979088}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("9",{"position": {"x": -1.067303236920007, "y": -2.1907621764329495, "z": -1.203085822101859}, "inFront": true});
+	viewergrid_16311988370924737[0][1].addLabel("10",{"position": {"x": -1.9991998276642193, "y": -1.1965439501010058, "z": -0.05401492647402644}, "inFront": true});
+	viewergrid_16311988370924737[0][0].setStyle({"stick": {}});
+	viewergrid_16311988370924737[0][1].setStyle({"stick": {}});
+	viewergrid_16311988370924737[0][0].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewergrid_16311988370924737[0][1].setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewergrid_16311988370924737[0][0].zoomTo();
+	viewergrid_16311988370924737[0][1].zoomTo();
+viewergrid_16311988370924737[0][1].render();
+viewergrid_16311988370924737[0][0].render();
+});
+</script></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traj_array</span> <span class="o">=</span> <span class="n">traj_backward_np</span> <span class="o">+</span> <span class="n">traj_forward_np</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bond_length_XX</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">traj_array</span><span class="p">:</span>
+    <span class="c1"># collect bond length between atom 0 and 1 over the trajectory</span>
+    <span class="n">bond_length_XX</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise  9</p>
+<p>How do the C-Cl and the two relevant C-O bond lengths change during the trajectory? Does the C-C bond in the ring contract as the epoxide is formed? Show a graph depicting the evolution of these parameters as the reaction progresses.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># add a call to ax.plot for each distance that you want to plot </span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bond_length_XX</span><span class="p">)</span>
+
+<span class="c1"># add an entry to the list of labels for each distance that you want to plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;label&quot;</span><span class="p">])</span> 
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;bond [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 10</p>
+<p>What is happening to the methyl group as the reaction proceeds? Find a suitable parameter (angle, dihedral) to describe and characterise possible changes you observe, change the code below. Explain in your report what atoms you considered and take and include the evolutions of the chosen parameters during the IRC procedure.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Modify the code below, chosing proper atoms to monitor the changes of the methyl group </span>
+<span class="n">methyl_angle</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">methyl_dihedral</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">traj_array</span><span class="p">:</span>
+    <span class="n">methyl_angle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="c1">#], coord[#], coord[#])) </span>
+    <span class="n">methyl_dihedral</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_dihedral</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="c1">#], coord[#], coord[#], coord[#])) </span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methyl_angle</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methyl_dihedral</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;angle (#-#-#)&quot;</span><span class="p">,</span> <span class="s2">&quot;dihedral (#-#-#-#)&quot;</span><span class="p">])</span>
+        
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;angle [deg]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "psi4"
+        },
+        kernelOptions: {
+            kernelName: "psi4",
+            path: "./Exercises/Ex8"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'psi4'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Backward.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../../Lecture/CC.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Coupled cluster</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+        
+          <div class="extra_footer">
+            <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+          </div>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

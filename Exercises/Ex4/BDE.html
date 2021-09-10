@@ -307,6 +307,16 @@
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Visualize.html">
+     9.5. IRC analysis
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -816,11 +826,6 @@ viewer_16309384631587336.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -842,45 +847,6 @@ viewer_16309384631587336.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16309386037216058"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16309386037216058" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_16309386037216058 = null;
-var warn = document.getElementById("3dmolwarning_16309386037216058");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16309386037216058 = $3Dmol.createViewer($("#3dmolviewer_16309386037216058"),{backgroundColor:"white"});
-viewer_16309386037216058.zoomTo();
-	viewer_16309386037216058.addModel("4\n\n C    0.000012610110    0.000007010329   -0.000000004082\n H    0.109919535326    1.081319647027   -0.000000126760\n H   -0.055034890302   -0.540701713784   -0.941231991659\n H   -0.055034791441   -0.540701404027    0.941232167018\n","xyz");
-	viewer_16309386037216058.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16309386037216058.zoomTo();
-viewer_16309386037216058.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -949,14 +915,6 @@ viewer_16309386037216058.render();
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># </span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># </span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># </span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/tmp/ipykernel_1367/2021433398.py&quot;</span><span class="gt">, line </span><span class="mi">4</span>
-    <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1">#</span>
-                            <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
 </pre></div>
 </div>
 </div>
