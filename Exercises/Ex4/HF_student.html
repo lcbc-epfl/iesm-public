@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -73,6 +73,7 @@
     
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
+      
       
       
       <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
@@ -903,8 +904,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71841e19-2796-4369-9a03-4999a58dde0c">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-71841e19-2796-4369-9a03-4999a58dde0c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e2e702c0-8f52-406b-b4c7-63aea6e36324">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-e2e702c0-8f52-406b-b4c7-63aea6e36324" title="Permalink to this equation">¶</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -936,8 +937,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="section" id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">5.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">¶</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(5.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  bewteen <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d179f99a-6bad-4e46-bd34-47486f5c7368">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-d179f99a-6bad-4e46-bd34-47486f5c7368" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-554189e0-26ac-4cb4-ad5e-9ca12ad98043">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-554189e0-26ac-4cb4-ad5e-9ca12ad98043" title="Permalink to this equation">¶</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -948,8 +949,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-92a00c16-d231-41bd-b4c0-ca205278daa2">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-92a00c16-d231-41bd-b4c0-ca205278daa2" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-797b1043-385e-4a9e-9992-185465ab3bf2">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-797b1043-385e-4a9e-9992-185465ab3bf2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1092,8 +1093,8 @@ First, we can build the electron-repulsion integral (ERI) tensor, which calculat
 </div>
 </div>
 <p><a class="reference internal" href="#equation-coloumbintegral">(5.5)</a> can be expressed in terms of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f2f1619f-bf09-4d91-8a2c-ce1e41e05862">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-f2f1619f-bf09-4d91-8a2c-ce1e41e05862" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c95001ea-8935-4bc2-9516-db13d1b33f1b">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-c95001ea-8935-4bc2-9516-db13d1b33f1b" title="Permalink to this equation">¶</a></span>\[\begin{align}
 [ii|jj] &amp;= \sum_{pqrs}D_{pq}D_{rs}I_{pqrs},\\
 &amp;=\sum_{pq}D_{pq}\sum_{rs}D_{rs}I_{pqrs}.
 \end{align}\]</div>
@@ -1114,8 +1115,8 @@ J_{pq}=\sum_{rs}D_{rs}I_{pqrs}.
 </div>
 </div>
 <p>Similarly,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f1aec6c-5d2c-4913-9c95-41de981eafd3">
-<span class="eqno">(5.8)<a class="headerlink" href="#equation-2f1aec6c-5d2c-4913-9c95-41de981eafd3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-686df790-1178-4039-87a5-1bbb06a56cc5">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-686df790-1178-4039-87a5-1bbb06a56cc5" title="Permalink to this equation">¶</a></span>\[\begin{align}
 [ij|ji] &amp;= \sum_{pqrs}D_{ps}D_{rq}I_{pqrs},\\
  &amp;= \sum_{ps}D_{ps}\sum_{rq}D_{rq}I_{pqrs}.
 \end{align}\]</div>
@@ -1331,7 +1332,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
         
         </div>
     </div>
-    <footer class="footer mt-5 mt-md-0">
+    <footer class="footer">
     <div class="container">
       <p>
         
