@@ -111,7 +111,7 @@ infinite dimensional complex space of square integrable functions, the
 that has a well-defined metric such that the distance between two
 vectors as well as the magnitude of a vector can be computed.)
 
-Each instantaneous state is described by a unit vector or a *state
+Each instantaneous state is described by a unit vector (meaning of norm 1) or a *state
 vector* in Hilbert space. Just like a position vector in cartesian
 space, the state vector is expressed in terms of the orthogonal basis
 vectors that are formed by all the eigenfunctions. (The chapter on
@@ -140,8 +140,7 @@ $$\begin{aligned}
  \end{aligned}$$
 
  which is the adjoint of the ket (*i.e.* a row vector
-that is the complex conjugate of the ket). As both bra and ket are unit
-vectors, their norm is 1. In Hilbert space, an inner product of two
+that is the complex conjugate of the ket). As both bra and ket are normalized vectors, their norm is 1. In Hilbert space, an inner product of two
 vectors $\left<\Phi,\Psi\right>$ is always defined. For $\Phi=\Psi$, the
 inner product defines the norm of the vectors - we will leave further
 specification as an exercise question. For two orthogonal basis vectors
