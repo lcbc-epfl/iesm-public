@@ -111,7 +111,7 @@ infinite dimensional complex space of square integrable functions, the
 that has a well-defined metric such that the distance between two
 vectors as well as the magnitude of a vector can be computed.)
 
-Each instantaneous state is described by a unit vector (meaning of norm 1)or a *state
+Each instantaneous state is described by a unit vector (meaning of norm 1) or a *state
 vector* in Hilbert space. Just like a position vector in cartesian
 space, the state vector is expressed in terms of the orthogonal basis
 vectors that are formed by all the eigenfunctions. (The chapter on
