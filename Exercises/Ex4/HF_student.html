@@ -904,8 +904,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-54aaf4af-0a59-48c3-ac3e-3d542c23bf9f">
-<span class="eqno">(5.2)<a class="headerlink" href="#equation-54aaf4af-0a59-48c3-ac3e-3d542c23bf9f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-47d6ab24-87d2-4408-88e3-1eac6257d324">
+<span class="eqno">(5.2)<a class="headerlink" href="#equation-47d6ab24-87d2-4408-88e3-1eac6257d324" title="Permalink to this equation">¶</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -937,8 +937,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="section" id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">5.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">¶</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(5.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  bewteen <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-87d46229-ca4b-4774-9721-0a7f61e0e00d">
-<span class="eqno">(5.3)<a class="headerlink" href="#equation-87d46229-ca4b-4774-9721-0a7f61e0e00d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e4761221-a5e5-429c-b625-45360d2a143e">
+<span class="eqno">(5.3)<a class="headerlink" href="#equation-e4761221-a5e5-429c-b625-45360d2a143e" title="Permalink to this equation">¶</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -949,8 +949,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1f5bc4f-3f24-4247-a689-19acdfa6c0d5">
-<span class="eqno">(5.4)<a class="headerlink" href="#equation-f1f5bc4f-3f24-4247-a689-19acdfa6c0d5" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ad86d01-ae20-4238-9752-a39636a9e66d">
+<span class="eqno">(5.4)<a class="headerlink" href="#equation-4ad86d01-ae20-4238-9752-a39636a9e66d" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1093,8 +1093,8 @@ First, we can build the electron-repulsion integral (ERI) tensor, which calculat
 </div>
 </div>
 <p><a class="reference internal" href="#equation-coloumbintegral">(5.5)</a> can be expressed in terms of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5022b5ac-8457-417c-aa92-c798ebe8b3dc">
-<span class="eqno">(5.7)<a class="headerlink" href="#equation-5022b5ac-8457-417c-aa92-c798ebe8b3dc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4ee0271f-87e6-4817-baac-5cb4b25260f9">
+<span class="eqno">(5.7)<a class="headerlink" href="#equation-4ee0271f-87e6-4817-baac-5cb4b25260f9" title="Permalink to this equation">¶</a></span>\[\begin{align}
 [ii|jj] &amp;= \sum_{pqrs}D_{pq}D_{rs}I_{pqrs},\\
 &amp;=\sum_{pq}D_{pq}\sum_{rs}D_{rs}I_{pqrs}.
 \end{align}\]</div>
@@ -1115,8 +1115,8 @@ J_{pq}=\sum_{rs}D_{rs}I_{pqrs}.
 </div>
 </div>
 <p>Similarly,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df66d96e-db24-4708-ab6a-28c4a5a67270">
-<span class="eqno">(5.8)<a class="headerlink" href="#equation-df66d96e-db24-4708-ab6a-28c4a5a67270" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f394a5bc-c90b-493c-b508-612f998dffba">
+<span class="eqno">(5.8)<a class="headerlink" href="#equation-f394a5bc-c90b-493c-b508-612f998dffba" title="Permalink to this equation">¶</a></span>\[\begin{align}
 [ij|ji] &amp;= \sum_{pqrs}D_{ps}D_{rq}I_{pqrs},\\
  &amp;= \sum_{ps}D_{ps}\sum_{rq}D_{rq}I_{pqrs}.
 \end{align}\]</div>
