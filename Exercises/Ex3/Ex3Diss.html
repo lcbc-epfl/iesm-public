@@ -457,7 +457,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -473,7 +473,7 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <li><p>we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specificing the desired method, basis and molecule</p></li>
 <li><p>we clean up temporary files and add our calculated energy to a list for the plotting</p></li>
 </ul>
-<p>For the UHF calculations first try the same options and then set the options to <code class="docutils literal notranslate"><span class="pre">'guess':'gwh',</span> <span class="pre">'guess_mix':True</span></code></p>
+<p>For the UHF calculations, copy the cell and change the reference and then first try the same options for <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">guess_mix</span></code> and then set the options to <code class="docutils literal notranslate"><span class="pre">'guess':'gwh',</span> <span class="pre">'guess_mix':True</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
@@ -550,14 +550,16 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <p>we can convert our lists of energies to numpy arrays and use broadcasting to quickly substract the energy of the single H atoms from each list item to get the interaction energy.</p>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>We have to use <code class="docutils literal notranslate"><span class="pre">np.array</span></code> as standard python lists (defined using <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2]</span></code>) do not support broadcasting.
-Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a for loop to perform aritemethic for each element we can simply substract the single H energy once and the operation is broadcast.</p>
+<p>We have to use <code class="docutils literal notranslate"><span class="pre">np.array</span></code> as standard python lists (defined using <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2]</span></code>) do not support broadcasting.</p>
+<p>Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to perform arithemetic for each element we can simply substract the single H energy once and the operation is broadcast meaning that numpy will be smart about the dimensions. In the case of substracting a scalar from a matrix it will substract each value of the matrix by the scalar.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_inter_RHF</span> <span class="o">=</span>  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energies_RHF</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">E_H_UHF</span><span class="p">)</span><span class="o">*</span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Complete formula below</span>
 
-<span class="n">E_inter_UHF</span> <span class="o">=</span>  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energies_UHF</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">E_H_UHF</span><span class="p">)</span><span class="o">*</span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
+<span class="c1">#E_inter_RHF =  (np.array(energies_RHF) #### insert here #### )*psi4.constants.hartree2kcalmol</span>
+
+<span class="c1">#E_inter_UHF = ...</span>
     
 </pre></div>
 </div>

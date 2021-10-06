@@ -503,7 +503,7 @@ local minimum, but not neccessarily the global minimum.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -513,16 +513,6 @@ with an unrealistic H-O-H angle of 90<span class="math notranslate nohighlight">
 Psi4 will move downhill on the potential energy surface until it
 finds a minimum.</p>
 <p>This time we will visualize our molecule, so we need to import further packages.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For interact and 3D molecule viewing</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">widgets</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span> <span class="k">as</span> <span class="nn">p3d</span>
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
@@ -561,7 +551,7 @@ finds a minimum.</p>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">})</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;h2o-opt.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;print_trajectory_xyz_file&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;print_trajectory_xyz_file&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span> <span class="c1"># this will print a geometry for each single point optimization run during the geometry optimization</span>
 </pre></div>
 </div>
 </div>
@@ -633,7 +623,7 @@ You can use the little helper function <code class="docutils literal notranslate
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">angle_dist</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">coords</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">:</span>
+<span class="k">for</span> <span class="n">coords</span> <span class="ow">in</span> <span class="n">coordinates</span><span class="p">:</span> <span class="c1"># iterate over the list of coordinates, coords being a single point calculation result</span>
     <span class="n">angle_dist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">angle_distances</span><span class="p">(</span><span class="n">coords</span><span class="p">))</span>
 
 <span class="n">h2o_angles_dist</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">angle_dist</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
@@ -646,7 +636,7 @@ You can use the little helper function <code class="docutils literal notranslate
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="o">!</span>grep -a <span class="s1">&#39;@DF-UHF Final Energy&#39;</span> h2o-opt.log
-<span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;  @DF-UHF Final Energy:   &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">geo_opt_energies</span><span class="p">]</span>
+<span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;  @DF-UHF Final Energy:   &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">geo_opt_energies</span><span class="p">]</span> <span class="c1"># this is some formatting to get the values from the text file</span>
 <span class="n">geo_opt_energies</span>
 </pre></div>
 </div>
@@ -682,6 +672,7 @@ You can use the little helper function <code class="docutils literal notranslate
                                 <span class="p">)</span>  
                      <span class="p">])</span>
 <span class="c1"># here we plot our geometry optimization results</span>
+<span class="c1"># change the z, x, y options if you plot multiple lines, you can also change the colors</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">add_scatter3d</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">geo_opt_energies</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">h2o_angles_dist</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">h2o_angles_dist</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers+lines&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
                    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
                    <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Geometry Optimization&quot;</span>
