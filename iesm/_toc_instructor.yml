@@ -17,14 +17,15 @@ parts:
       - file: Exercises/Ex3/Ex3_instructor.ipynb
       - file: Exercises/Ex3/Ex3Diss_instructor.ipynb
       - file: Exercises/Ex3/Ex3GeoOpt_instructor.ipynb
+    - file: Exercises/ex4b.md
+      sections:
+      - file: Exercises/Ex4/HF_instructor.ipynb
+    - file: Exercises/Written_exam_2012_instructor.md
     - file: Exercises/ex4.md
       sections:
       - file: Exercises/Ex4/Ex4Theory.md
       - file: Exercises/Ex4/BDE_instructor.ipynb
       - file: Exercises/Ex4/HNO3_Correlation_instructor.ipynb
-    - file: Exercises/ex4b.md
-      sections:
-      - file: Exercises/Ex4/HF_instructor.ipynb
     - file: Exercises/Ex5.md
       sections: 
       - file: Exercises/Ex5/Ex5_instructor.ipynb
