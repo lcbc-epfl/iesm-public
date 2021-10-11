@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. The hartree fock procedure in detail &#8212; Introduction to Electronic Structure Methods</title>
+    <title>4. The hartree fock procedure in detail &#8212; Introduction to Electronic Structure Methods</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -52,8 +52,8 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry" href="Ex4/HF_student.html" />
-    <link rel="prev" title="4.5. Correlation energy" href="Ex4/HNO3_Correlation.html" />
+    <link rel="next" title="4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry" href="Ex4/HF_student.html" />
+    <link rel="prev" title="3.3. Geometry optimization of \(H_2O\)" href="Ex3/Ex3GeoOpt.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -176,46 +176,46 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex4.html">
-   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   4. The hartree fock procedure in detail
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/Ex4Theory.html">
-     4.1. Møller-Plesset Perturbation Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/BDE.html">
-     4.2. Homolytic Cleavage of the C-F Bond
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/HNO3_Correlation.html">
-     4.5. Correlation energy
+    <a class="reference internal" href="Ex4/HF_student.html">
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   5. The hartree fock procedure in detail
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="ex4.html">
+   5. Post-Hartree Fock Methods: MPn and Configuration Interaction
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/HF_student.html">
-     5.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    <a class="reference internal" href="Ex4/Ex4Theory.html">
+     5.1. Møller-Plesset Perturbation Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex4/BDE.html">
+     5.2. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex4/HNO3_Correlation.html">
+     5.5. Correlation energy
     </a>
    </li>
   </ul>
@@ -421,7 +421,7 @@
               <div>
                 
   <div class="section" id="the-hartree-fock-procedure-in-detail">
-<h1><span class="section-number">5. </span>The hartree fock procedure in detail<a class="headerlink" href="#the-hartree-fock-procedure-in-detail" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">4. </span>The hartree fock procedure in detail<a class="headerlink" href="#the-hartree-fock-procedure-in-detail" title="Permalink to this headline">¶</a></h1>
 <p>So far you have run some Hartree Fock calculations using Psi4 and in the lectures we have seen the theoretical derivation of the scheme.</p>
 <p>In this exercise, we will recapitulate the HF scheme by implementing it on our own using Psi4. That means we will go through the steps of the HF procedure but we will let Psi4 evaluate the integrals for us.</p>
 <div class="toctree-wrapper compound">
@@ -458,11 +458,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="Ex4/HNO3_Correlation.html" title="previous page">
+        <a class="left-prev" href="Ex3/Ex3GeoOpt.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title"><span class="section-number">4.5. </span>Correlation energy</p>
+                <p class="prevnext-title"><span class="section-number">3.3. </span>Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span></p>
             </div>
         </a>
     </div>
@@ -470,7 +470,7 @@
         <a class="right-next" href="Ex4/HF_student.html" title="next page">
             <div class="prevnext-info">
                 <p class="prevnext-label">next</p>
-                <p class="prevnext-title"><span class="section-number">5.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry</p>
+                <p class="prevnext-title"><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry</p>
             </div>
             <i class="prevnext-label fas fa-angle-right"></i>
         </a>
