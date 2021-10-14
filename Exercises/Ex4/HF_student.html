@@ -533,7 +533,7 @@ Ashley Ringer McDonald  <a class="reference external" href="https://orcid.org/00
 <p>To solve many-electron systems we need to use  Hartree-Fock molecular orbital theory. Just as a test case, let’s use Psi4 to compute the Hartree-Fock wavefunction and energy for the Hydrogen atom:</p>
 <p>In this lab activity, you will build and diagonalize the Fock matrix to determine the MO coefficients and energies for a molecule.  We will be using the functions of the Psi4 quantum chemistry software package to compute the integrals we need.  The following notebook will lead you through setting up your molecule, establishing the basis set, and forming and diagonalizing the Fock matrix.  Be sure to run each cell as your proceed through the notebook.</p>
 <div class="section" id="the-hartree-fock-procedure">
-<h2><span class="section-number">4.1.1. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this headline">¶</a></h2>
+<span id="hf"></span><h2><span class="section-number">4.1.1. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this headline">¶</a></h2>
 <p>The Schrödinger equation has the structure of an eigenvalue equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -693,16 +693,20 @@ None
 <p>where <span class="math notranslate nohighlight">\(B^*\)</span> is the complex conjugate of <span class="math notranslate nohighlight">\(B\)</span> (no transpose). Note that the two sets of indices, <span class="math notranslate nohighlight">\((i,p)\)</span> and <span class="math notranslate nohighlight">\((i,q)\)</span>, in the input matrices become one set, <span class="math notranslate nohighlight">\((p,q)\)</span>, in the product.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>There is a convenient function in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> called <code class="docutils literal notranslate"><span class="pre">einsum()</span></code>, which is one of the crown jewels of the numpy library.  In short, <code class="docutils literal notranslate"><span class="pre">einsum</span></code> lets you perform various combinations of multiplying, summing, and transposing matrices very efficiently.  <a class="reference external" href="http://ajcr.net/Basic-guide-to-einsum/">This is a good tutorial</a> about <code class="docutils literal notranslate"><span class="pre">einsum</span></code> .  To specify the operations you want to do, you use the <strong>Ein</strong>stein <strong>Sum</strong>mation convention.)</p>
-</div>
-<p>To calculate the sum</p>
+<p>There is a convenient function in <code class="docutils literal notranslate"><span class="pre">numpy</span></code> called <code class="docutils literal notranslate"><span class="pre">einsum()</span></code>, which is one of the crown jewels of the numpy library.  In short, <code class="docutils literal notranslate"><span class="pre">einsum</span></code> lets you perform various combinations of multiplying, summing, and transposing matrices very efficiently.  <a class="reference external" href="http://ajcr.net/Basic-guide-to-einsum/">This is a good tutorial</a> about <code class="docutils literal notranslate"><span class="pre">einsum</span></code> if you want to learn more. In this exercise, it suffices to look carefully at the indices of the matrices and use the <strong>Ein</strong>stein <strong>Sum</strong>mation convention.)</p>
+<p>So in order to calculate the sum</p>
 <div class="math notranslate nohighlight">
 \[S_{pq} = (B^*)_{i,p}B_{i,q}\qquad\text{implicit summation}\]</div>
-<p>use <code class="docutils literal notranslate"><span class="pre">S=numpy.einsum('ip,iq-&gt;pq',B.conj(),B)</span></code>, as demonstrated below. We will use <code class="docutils literal notranslate"><span class="pre">einsum()</span></code> in several places.</p>
-<p>Let’s try this with a simple basis set of two (perhaps) orthonormal vectors.</p>
+<p>use</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">S</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;ip,iq-&gt;pq&#39;</span><span class="p">,</span><span class="n">B</span><span class="o">.</span><span class="n">conj</span><span class="p">(),</span><span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>We will use <code class="docutils literal notranslate"><span class="pre">einsum()</span></code> in several places.
+Let’s try this with a simple basis set of two (perhaps) orthonormal vectors.</p>
+</div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 4</p>
-<p>Describe how the notation of the <code class="docutils literal notranslate"><span class="pre">np.einsum</span></code> command coorelates to the implicit summation formula written above.</p>
+<p>Describe how the notation of the <code class="docutils literal notranslate"><span class="pre">np.einsum</span></code> command correlates to the implicit summation formula written above.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 5</p>
@@ -887,7 +891,7 @@ a^\dagger s a=a s a=a^2s=1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Construct AO orthogonalization matrix A &lt;==</span>
 
 <span class="c1"># inverse of S using np.linalg.inv</span>
-<span class="c1"># matrix square root of the inverse of S using sp.linalg.sqrtm</span>
+<span class="c1"># matrix square root of the inverse of S using splinalg.sqrtm</span>
 
 <span class="n">A</span> <span class="o">=</span> <span class="kc">None</span>
 
@@ -900,12 +904,16 @@ a^\dagger s a=a s a=a^2s=1
 <p class="admonition-title">Exercise 12</p>
 <p>What do you observe about the elements of <code class="docutils literal notranslate"><span class="pre">A</span></code>? Is the matrix real or complex? Is the matrix symmetric or not?</p>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Solution</p>
+<p>A is real and symmetric.</p>
+</div>
 <p>Our basis set <span class="math notranslate nohighlight">\(B\)</span> is not orthonormal, so we want to take linear combinations of its columns to make a new basis set, <span class="math notranslate nohighlight">\(B'\)</span>, that is orthonormal. We define a new matrix, <span class="math notranslate nohighlight">\(A\)</span>, in terms of that transformation,</p>
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-19a221ca-c66f-46e9-9af3-1427b6ee0884">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-19a221ca-c66f-46e9-9af3-1427b6ee0884" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-5d5ccbac-63dd-4bcb-9552-88bc4dde1ee5">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-5d5ccbac-63dd-4bcb-9552-88bc4dde1ee5" title="Permalink to this equation">¶</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -933,12 +941,16 @@ a^\dagger s a=a s a=a^2s=1
 <p class="admonition-title">Exercise 14</p>
 <p>The product A S A does not take the complex conjugate transpose of A. What conditions (properties of A) make that ok?</p>
 </div>
+<div class="tip admonition">
+<p class="admonition-title">Solution</p>
+<p>A is real and symmetric.</p>
+</div>
 </div>
 <div class="section" id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">¶</a></h2>
-<p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  bewteen <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4671323f-5d5b-4d2a-87dc-6244b7ca927e">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-4671323f-5d5b-4d2a-87dc-6244b7ca927e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a067f7c5-a124-430b-959f-5ad27427a339">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-a067f7c5-a124-430b-959f-5ad27427a339" title="Permalink to this equation">¶</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -949,8 +961,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08a5592c-fcb9-4086-9686-58ab54565d20">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-08a5592c-fcb9-4086-9686-58ab54565d20" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6373d43c-643a-4aba-a4f2-f0d402d5d3d7">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-6373d43c-643a-4aba-a4f2-f0d402d5d3d7" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1078,12 +1090,13 @@ D_{pq}=\sum_i^{occ} c^*_{pi}c_{qi}.
 </div>
 </div>
 <div class="section" id="coulomb-and-exchange-integrals-and-the-scf-energy">
-<h2><span class="section-number">4.1.11. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this headline">¶</a></h2>
-<p>The integral on the right of Eq.3 is super important. It has four indicies, <span class="math notranslate nohighlight">\(p,q,r,s\)</span>, so formally it is a tensor. It accounts for the repulsion between pairs of electrons, so it is called the electron repulsion integral tensor, <span class="math notranslate nohighlight">\(I\)</span>,
-$<span class="math notranslate nohighlight">\(
+<span id="jk-hf"></span><h2><span class="section-number">4.1.11. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this headline">¶</a></h2>
+<p>The integral on the right of  <a class="reference internal" href="#equation-electronrepuslionintrealtensor">(4.7)</a> is super important. It has four indicies, <span class="math notranslate nohighlight">\(p,q,r,s\)</span>, so formally it is a tensor. It accounts for the repulsion between pairs of electrons, so it is called the electron repulsion integral tensor, <span class="math notranslate nohighlight">\(I\)</span>,</p>
+<div class="math notranslate nohighlight" id="equation-electronrepuslionintrealtensor">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-electronrepuslionintrealtensor" title="Permalink to this equation">¶</a></span>\[
 I_{pqrs} = \int{\rm d}\tau\; \phi_p^*(1)\phi_q(1)\frac{1}{r_{ij}}\phi_r^*(2)\phi_s(2).
-\)</span>$
-First, we can build the electron-repulsion integral (ERI) tensor, which calculates the electron repulsion between the atomic orbital wavefunctions, and the core Hamiltonian. Mints does all the work for us!</p>
+\]</div>
+<p>First, we can build the electron-repulsion integral (ERI) tensor, which calculates the electron repulsion between the atomic orbital wavefunctions, and the core Hamiltonian. Mints does all the work for us!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build electron repulsion integral (ERI) Tensor</span>
@@ -1093,15 +1106,18 @@ First, we can build the electron-repulsion integral (ERI) tensor, which calculat
 </div>
 </div>
 <p><a class="reference internal" href="#equation-coloumbintegral">(4.5)</a> can be expressed in terms of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d02f91eb-ba71-4d2d-9de2-8bb54bbed32d">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-d02f91eb-ba71-4d2d-9de2-8bb54bbed32d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
 [ii|jj] &amp;= \sum_{pqrs}D_{pq}D_{rs}I_{pqrs},\\
 &amp;=\sum_{pq}D_{pq}\sum_{rs}D_{rs}I_{pqrs}.
-\end{align}\]</div>
-<p>The term <span class="math notranslate nohighlight">\(\sum_{rs}D_{rs}I_{pqrs}\)</span> is the effective repulsion felt by one electron due to the other electrons in the system. This term is the Coulomb integral matrix
-$<span class="math notranslate nohighlight">\(
+\end{align}
+\end{split}\]</div>
+<p>The term <span class="math notranslate nohighlight">\(\sum_{rs}D_{rs}I_{pqrs}\)</span> is the effective repulsion felt by one electron due to the other electrons in the system. This term is the Coulomb integral matrix</p>
+<div class="math notranslate nohighlight">
+\[
 J_{pq}=\sum_{rs}D_{rs}I_{pqrs}.
-\)</span>$</p>
+\]</div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 20</p>
 <p>Define J  in terms of the density matrix, <code class="docutils literal notranslate"><span class="pre">D</span></code>, and the electron repulsion integral tensor, <code class="docutils literal notranslate"><span class="pre">I</span></code>, using <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>.</p>
@@ -1115,8 +1131,8 @@ J_{pq}=\sum_{rs}D_{rs}I_{pqrs}.
 </div>
 </div>
 <p>Similarly,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da947d80-a0f8-42e5-b6a8-d687e78ed0e7">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-da947d80-a0f8-42e5-b6a8-d687e78ed0e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-efc390b5-3bae-4acc-97ce-033c7fb8224c">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-efc390b5-3bae-4acc-97ce-033c7fb8224c" title="Permalink to this equation">¶</a></span>\[\begin{align}
 [ij|ji] &amp;= \sum_{pqrs}D_{ps}D_{rq}I_{pqrs},\\
  &amp;= \sum_{ps}D_{ps}\sum_{rq}D_{rq}I_{pqrs}.
 \end{align}\]</div>
@@ -1138,7 +1154,7 @@ K_{ps}=\sum_{rq}D_{rq}I_{pqrs}.
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 22</p>
-<p>Define F in terms of H, J, and K. (Recall Section XI.)</p>
+<p>Define F in terms of H, J, and K. (Recall <a class="reference internal" href="#hf"><span class="std std-ref">The Hartree-Fock procedure</span></a>)</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1148,10 +1164,12 @@ K_{ps}=\sum_{rq}D_{rq}I_{pqrs}.
 </div>
 </div>
 </div>
-<p>A more convenient form of the SCF energy is in terms of a sum over the AO basis functions
-$<span class="math notranslate nohighlight">\(
+<p>A more convenient form of the SCF energy is in terms of a sum over the AO basis functions</p>
+<div class="math notranslate nohighlight">
+\[
 E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
-\)</span>$</p>
+\]</div>
+<p>Remember, that this is the electronic energy only. To this we need to add the nuclear repulsion energy.</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 23</p>
 <p>Calculate the SCF energy based on H, F, and D using <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>.</p>
@@ -1175,7 +1193,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 25</p>
-<p>Describe a procedure (i.e. identify the steps/commands) that will updated coefficients and compute a new density matrix based on the new definition of the Fock matrix.</p>
+<p>Describe a procedure (i.e. identify the steps/commands) that will update the coefficients and compute a new density matrix based on the new definition of the Fock matrix.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 26</p>
@@ -1197,7 +1215,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 <p>You have just completed one cycle of the SCF calculation!</p>
 <p>Now we will use the density matrix to build the Fock matrix.  The code block below sets up a skeleton of the Hartree-Fock procedure.  The basic steps are:</p>
 <ol class="simple">
-<li><p>Calculate the Fock Matrix based on the density matrix previously defined from a one electron hamiltonian</p></li>
+<li><p>Calculate the Fock Matrix based on the density matrix previously defined from a one electron hamiltonian <a class="reference internal" href="#jk-hf"><span class="std std-ref">Coulomb and Exchange Integrals and the SCF Energy</span></a></p></li>
 <li><p>Calculate the energy from the Fock matrix.</p></li>
 <li><p>Check and see if the energy has converged by comparing the current energy to the previous energy and seeing if it is within the convergence threshold.</p></li>
 <li><p>If the energy has not converged, transform the Fock matrix, and diagonalize the transformed Fock matrix to get the energy and MO coefficients.  Then transform back to the original AO basis, pull the occupied orbitals, and reconstruct the density matrix.</p></li>
@@ -1227,7 +1245,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 <span class="c1"># Begin Iterations</span>
 <span class="k">for</span> <span class="n">scf_iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAXITER</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     
-    <span class="c1"># Build Fock matrix (Section XII)</span>
+    <span class="c1"># Build Fock matrix </span>
     
     <span class="c1"># &lt;your code here&gt;</span>
 
@@ -1244,7 +1262,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
         <span class="k">break</span>
     <span class="n">E_old</span> <span class="o">=</span> <span class="n">SCF_E</span>
     
-    <span class="c1"># Compute new coefficient &amp; density matrices (Section X &amp; XI) </span>
+    <span class="c1"># Compute new coefficient &amp; density matrices (Exercise 26)</span>
     
     <span class="c1"># &lt;your code here&gt;  </span>
     
