@@ -601,7 +601,7 @@ viewer_16309401172490427.render();
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>the distance between two points is the L2 norm (Euclidean distance)</p>
+<p>The distance between two points is the L2 norm (Euclidean distance)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">a</span><span class="o">-</span><span class="n">b</span><span class="p">)</span>
@@ -779,7 +779,8 @@ Tricia D. Shepherd <a class="reference external" href="https://orcid.org/0000-00
 <p class="admonition-title">CCSD energy/mp2 energy</p>
 <p>You may recover the CCSD energy from the CCSD(T) calculation but you will have to look at the output file or by calculating both. The calculations for a single atom are quick.</p>
 <p>The same is true for the MP2 energy which can be extracted from the MP4 calculation.
-MP4 will require the use of the following options: <code class="docutils literal notranslate"><span class="pre">psi4.set_options({&quot;reference&quot;</span> <span class="pre">:&quot;rohf&quot;,</span> <span class="pre">&quot;qc_module&quot;:&quot;detci&quot;})</span></code> as psi4 does not have MP4 implemented using a rhf reference.</p>
+MP4 will require the use of the following options: <code class="docutils literal notranslate"><span class="pre">psi4.set_options({&quot;reference&quot;</span> <span class="pre">:&quot;rohf&quot;,</span> <span class="pre">&quot;qc_module&quot;:&quot;detci&quot;})</span></code> as psi4 does not have MP4 implemented using a rhf reference.
+You can get an overview of what Psi4 has implemented in the <a class="reference external" href="https://psicode.org/psi4manual/master/notes_c.html">documentation</a></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -802,7 +803,7 @@ MP4 will require the use of the following options: <code class="docutils literal
 <span class="n">B_exact_e</span> <span class="o">=</span> <span class="o">-</span><span class="mf">24.608</span>
 
 
-<span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy recovered </span>
+<span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy that should be recovered</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Electron correlation: </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2"> hartrees&quot;</span><span class="p">)</span>
 </pre></div>
