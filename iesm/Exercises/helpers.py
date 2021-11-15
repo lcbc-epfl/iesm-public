@@ -204,7 +204,7 @@ def show_orbitals(wd="./", mol=None):
     """
     wrapper function that parses the files and initializes the widget.
     """
-    orbitals =  findCubeFiles()
+    orbitals =  findCubeFiles(wd)
     _ = interact(draw_orbital, mol=fixed(mol),wd=fixed(wd), orbitals=fixed(orbitals), orbital = widgets.Dropdown(
     options=orbitals.keys(),
     value='SOMO',
