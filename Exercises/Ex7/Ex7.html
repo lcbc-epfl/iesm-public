@@ -729,10 +729,12 @@ First, we need to optimize the the geometry provided above.</p>
 <p>Save the molecules in the <code class="docutils literal notranslate"><span class="pre">geometries</span></code> list (use <code class="docutils literal notranslate"><span class="pre">butane.clone()</span></code>) and save the calculated energies in the <code class="docutils literal notranslate"><span class="pre">PES</span></code> dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Convert the energy units to kcal/mol</span>
-<span class="c1">#you can use psi4.constants.hartree2kcalmol for the unit conversion </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the energy units to kcal/mol</span>
+<span class="c1"># you can use psi4.constants.hartree2kcalmol for the unit conversion </span>
 <span class="c1"># in python you can use list comprehensions e.g [x+1 for x in lst] will increase every value in lst by 1.</span>
 <span class="c1"># to access the values in the dictionary PES you can use PES.values() which return a list.</span>
+<span class="c1"># to construct the list comprehensions set energies equal to... .</span>
+<span class="c1"># [e*conversionfactor for e in list(insert the call to the list of PES values here)].</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span>
 
 <span class="c1">#Rescale the energy scale by setting the minimum value as the zero of the scale</span>
