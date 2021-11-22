@@ -694,9 +694,9 @@ First, we need to optimize the the geometry provided above.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#First optimize the butane molecule </span>
-<span class="c1">#from the starting geometry provided</span>
-<span class="c1">#use the bylp method and the 6-31+G* basis set</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do Something HERE</span>
+<span class="c1"># optimize the butane molecule from the starting geometry provided</span>
+<span class="c1"># use the blyp method and the 6-31+G* basis set</span>
 </pre></div>
 </div>
 </div>
@@ -718,15 +718,23 @@ First, we need to optimize the the geometry provided above.</p>
 </div>
 </div>
 <p>The geometry optimization will print you the optimized coordinates in the format you provided them at the end if you call <code class="docutils literal notranslate"><span class="pre">butane.print_in_input_format()</span></code>. Here, this is the z-matrix format. Use these coordinates below and create a python f-string where you replace the dihedral that we want to scan with a variable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dihedral</span> <span class="ow">in</span> <span class="n">dihedrals</span><span class="p">:</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    x i bond k angle j </span><span class="si">{</span><span class="n">dihedral</span><span class="si">}</span><span class="s2"> #this is the dihedral we want to optimize</span>
-<span class="s2">    x i bond k angle j dihedral</span>
-<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
-    <span class="p">[</span><span class="o">....</span><span class="p">]</span>
+<p>Save the molecules in the <code class="docutils literal notranslate"><span class="pre">geometries</span></code> list (use <code class="docutils literal notranslate"><span class="pre">butane.clone()</span></code>) and save the calculated energies in the <code class="docutils literal notranslate"><span class="pre">PES</span></code> dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do something HERE </span>
+<span class="c1">#for dihedral in dihedrals:</span>
+<span class="c1">#    print(f&quot;optimizing {dihedral}&quot;)</span>
+<span class="c1">#    butane = psi4.geometry(f&quot;&quot;&quot;  #you get this geometry from the print_in_input_format() command</span>
+<span class="c1">#    x i bond k angle j {dihedral} #this is the dihedral we want to optimize</span>
+<span class="c1">#    x i bond k angle j dihedral</span>
+<span class="c1">#    &quot;&quot;&quot;)</span>
+<span class="c1">#    E = .... # the energy should be calculated using the same method and basis set above</span>
+<span class="c1">#    PES[dihedral] =  set to energy just calculated</span>
+<span class="c1">#    geometries.append( insert clone of molecule here   )</span>
 </pre></div>
 </div>
-<p>Save the molecules in the <code class="docutils literal notranslate"><span class="pre">geometries</span></code> list (use <code class="docutils literal notranslate"><span class="pre">butane.clone()</span></code>) and save the calculated energies in the <code class="docutils literal notranslate"><span class="pre">PES</span></code> dictionary.</p>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the energy units to kcal/mol</span>
