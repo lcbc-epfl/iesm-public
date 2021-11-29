@@ -4,6 +4,7 @@ import numpy as np
 import ipywidgets
 from ipywidgets import interact, interactive, fixed, widgets
 import py3Dmol
+import psi4 
 
 hartree2A = 0.52917721067121
 
