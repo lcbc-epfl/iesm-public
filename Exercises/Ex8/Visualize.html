@@ -439,23 +439,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-other-part-of-the-trajectory-from-your-colleague">
-   9.5.1. Download the other part of the trajectory from your colleague
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#visualize-the-trajectory">
-   9.5.2. Visualize the trajectory
+   9.5.1. Visualize the trajectory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-the-minium-energy-path">
-   9.5.3. Plot the minium energy path
+   9.5.2. Plot the minium energy path
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#analyse-bonds">
-   9.5.4. Analyse Bonds
+   9.5.3. Analyse Bonds
   </a>
  </li>
 </ul>
@@ -486,21 +481,7 @@
 </div>
 </div>
 </div>
-<div class="section" id="download-the-other-part-of-the-trajectory-from-your-colleague">
-<h2><span class="section-number">9.5.1. </span>Download the other part of the trajectory from your colleague<a class="headerlink" href="#download-the-other-part-of-the-trajectory-from-your-colleague" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy the code that you got from your colleague</span>
-<span class="n">key</span> <span class="o">=</span>  <span class="s1">&#39;adz9IoTVAFHh&#39;</span>
-
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;forward&#39;</span> <span class="c1">#backward</span>
-
-<span class="o">!</span>curl https://file.io/<span class="nv">$key</span> --output <span class="nv">$name</span>.p
-</pre></div>
-</div>
-</div>
-</div>
-<p>This load the pickled objects from disk, deserializes them and you get back the original variables.</p>
+<p>This loads the pickled objects from disk, deserializes them and you get back the original variables.</p>
 <p>Note, that psi4.molecules cannot directly be pickled but numpy arrays and python lists, strings, integers etc. can be pickled.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -518,7 +499,7 @@
 <p>You can use <code class="docutils literal notranslate"><span class="pre">variablename.reverse()</span></code> to reverse the list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at backward_e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># look at backward_e or forward_e</span>
 <span class="n">backward_e</span>
 </pre></div>
 </div>
@@ -534,7 +515,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#list.reverse() #this is an inplace operation</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#list.reverse() #this is an inplace operation meaning you do not need to reassign the variable</span>
 
 <span class="c1"># combine the energies </span>
 <span class="c1"># Note that we need exclude the ts point from one of the trajectories</span>
@@ -553,9 +534,8 @@
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="visualize-the-trajectory">
-<h2><span class="section-number">9.5.2. </span>Visualize the trajectory<a class="headerlink" href="#visualize-the-trajectory" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5.1. </span>Visualize the trajectory<a class="headerlink" href="#visualize-the-trajectory" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZGeomSlider</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
@@ -568,12 +548,12 @@
 </script></div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 12</p>
+<p class="admonition-title">Exercise 8</p>
 <p>Is the stereochemistry at the carbon at which the reaction takes  place retained?</p>
 </div>
 </div>
 <div class="section" id="plot-the-minium-energy-path">
-<h2><span class="section-number">9.5.3. </span>Plot the minium energy path<a class="headerlink" href="#plot-the-minium-energy-path" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5.2. </span>Plot the minium energy path<a class="headerlink" href="#plot-the-minium-energy-path" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -588,13 +568,13 @@
 </div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 13</p>
+<p class="admonition-title">Exercise 9</p>
 <p>Take a screenshot of the graph of the potential energy profile you recorded.
 Why is the barrier for the epoxide formation so low? Will this be the overall barrier for the reaction as depicted in the previous section?</p>
 </div>
 </div>
 <div class="section" id="analyse-bonds">
-<h2><span class="section-number">9.5.4. </span>Analyse Bonds<a class="headerlink" href="#analyse-bonds" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">9.5.3. </span>Analyse Bonds<a class="headerlink" href="#analyse-bonds" title="Permalink to this headline">¶</a></h2>
 <p>For the visualization we used a list of xyz file formated strings.
 For the analysis it is more convenient to work with a list of numpy arrays of xyz coordinates.</p>
 <p>We can then use standard python tools to calculate distances, angles or dihedrals.</p>
@@ -694,7 +674,7 @@ viewergrid_16311988370924737[0][0].render();
 </div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise  14</p>
+<p class="admonition-title">Exercise  10</p>
 <p>How do the C-Cl and the two relevant C-O bond lengths change during the trajectory? Does the C-C bond in the ring contract as the epoxide is formed? Show a graph depicting the evolution of these parameters as the reaction progresses.</p>
 </div>
 <div class="cell docutils container">

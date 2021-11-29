@@ -447,18 +447,6 @@
   <a class="reference internal nav-link" href="#choose-a-direction">
    9.4. Choose a direction
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pickling-the-result">
-     9.4.1. Pickling the result.
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#upload-the-part-of-the-irc-that-you-calculated-to-share-with-your-colleague">
-     9.4.2. Upload the part of the IRC that you calculated to share with your colleague
-    </a>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -488,6 +476,10 @@ mass-weighted coordinates is referred to as a search along the
 potential energy profile for the reaction, as well as a trajectory that
 visualises the lowest energy path from reactant to TS to product or reactant (depending on the direction that one chooses).</p>
 <p>As psi4 automatically performs a frequency calculation we can verify whether the transition state that was computed is the proper transition state.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>You do not need to run this notebook. The outputs <code class="docutils literal notranslate"><span class="pre">forward.p</span></code> and <code class="docutils literal notranslate"><span class="pre">backward.p</span></code> are provided to you in the next notebook. This is here for completeness. The calculation takes about 30 - 45 minutes depending on the direction you choose.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
@@ -515,7 +507,17 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">-1 1</span>
 <span class="s2">symmetry c1</span>
-<span class="s2">#coordinates here&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2"> C    0.169891741896   -0.303396542243   -0.246565081910</span>
+<span class="s2"> C    0.191012418901   -0.532643890512    1.275916186757</span>
+<span class="s2">CL    0.143804012854    1.566013819697   -0.686628413220</span>
+<span class="s2"> H    1.120024392980   -0.636063203527   -0.672877892311</span>
+<span class="s2"> C   -1.016755132582   -0.934703159138   -0.942141431016</span>
+<span class="s2"> O    0.339535270596   -1.849728813088    1.472891387260</span>
+<span class="s2"> H    1.010561961934    0.121411357267    1.686229845174</span>
+<span class="s2"> H   -0.762913236261   -0.079611519921    1.679061412831</span>
+<span class="s2"> H   -0.957983639113   -0.847359581313   -2.033892804890</span>
+<span class="s2"> H   -1.031376458892   -1.990374831218   -0.649080196171</span>
+<span class="s2"> H   -1.947496420408   -0.464044585762   -0.599503342745&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -565,17 +567,15 @@ Optimizer: Optimization complete!
 
 
 <span class="c1"># Convert to kcal mol-1</span>
-<span class="n">e</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># use a list comprehension</span>
+
+<span class="c1"># Convert to kcal mol-1</span>
+<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies</span><span class="p">]</span>
 <span class="c1"># set highest value to 0</span>
-<span class="n">e</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># convert list to np.array and use broadcasting to substract max value, you can use np.max()</span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="pickling-the-result">
-<h2><span class="section-number">9.4.1. </span>Pickling the result.<a class="headerlink" href="#pickling-the-result" title="Permalink to this headline">¶</a></h2>
-<p>We write the resulting energies and coordiations to a pickle file which is a binary representation of python objects on disk.</p>
-<p>We can load this in another notebook or you can share it with a colleague (see below).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
@@ -590,27 +590,6 @@ Optimizer: Optimization complete!
              <span class="n">mol2traj</span><span class="p">(</span><span class="n">backward</span><span class="p">,</span> <span class="n">coordinates_backward</span><span class="p">),</span> 
              <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_backward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">irc_direction</span><span class="si">}</span><span class="s2">.p&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-<p>Calculating the IRC takes some time. We therefore ask you to only calculate one part of the trajectory and paired you with one of you colleagues so that you can still look at the full trajectory. See Moodle for the list of partners.</p>
-</div>
-<div class="section" id="upload-the-part-of-the-irc-that-you-calculated-to-share-with-your-colleague">
-<h2><span class="section-number">9.4.2. </span>Upload the part of the IRC that you calculated to share with your colleague<a class="headerlink" href="#upload-the-part-of-the-irc-that-you-calculated-to-share-with-your-colleague" title="Permalink to this headline">¶</a></h2>
-<p>We use <code class="docutils literal notranslate"><span class="pre">curl</span></code> which is a linux package to perform http requests. We use the free <code class="docutils literal notranslate"><span class="pre">file.io</span></code> service that allows you share file anonymously without registering.
-The file can only be downloaded once. You can of course also use any other method to share the pickled files.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Upload, # change the name of the file forward.p</span>
-<span class="n">response</span> <span class="o">=</span> <span class="o">!</span>curl -F <span class="s2">&quot;file=@forward.p&quot;</span> https://file.io
-
-<span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Share this code with you colleague: &quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">response</span><span class="p">[</span><span class="mi">6</span><span class="p">])[</span><span class="s1">&#39;key&#39;</span><span class="p">])</span>
-<span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Something went wrong, check the name of the file and check the response&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 </div>
 </div>
