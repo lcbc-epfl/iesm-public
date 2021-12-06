@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Hartree-Fock Calculations in Psi4 &#8212; Introduction to Electronic Structure Methods</title>
+    <title>Basis functions in quantum chemistry &#8212; Introduction to Electronic Structure Methods</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet">
   <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -43,6 +43,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -53,8 +55,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2.1. Basis Sets - Defining Vector Spaces" href="Ex2/Ex2.html" />
-    <link rel="prev" title="1.3. Working with vectors using Numpy" href="Ex1/Ex1.html" />
+    <link rel="next" title="Coupled cluster" href="CC.html" />
+    <link rel="prev" title="9.5. IRC analysis" href="../Exercises/Ex8/Visualize.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -98,9 +100,9 @@
   Exercises
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex1.html">
+  <a class="reference internal" href="../Exercises/ex1.html">
    1. Linear Algebra in Quantum Mechanics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -110,44 +112,44 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1/Ex1Theory.html">
+    <a class="reference internal" href="../Exercises/Ex1/Ex1Theory.html">
      1.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1/Ex1Exercises.html">
+    <a class="reference internal" href="../Exercises/Ex1/Ex1Exercises.html">
      1.2. Exercises
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1/Ex1.html">
+    <a class="reference internal" href="../Exercises/Ex1/Ex1.html">
      1.3. Working with vectors using Numpy
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Exercises/ex2.html">
    2. Hartree-Fock Calculations in
    <em>
     Psi4
    </em>
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex2/Ex2.html">
+    <a class="reference internal" href="../Exercises/Ex2/Ex2.html">
      2.1. Basis Sets - Defining Vector Spaces
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex3.html">
+  <a class="reference internal" href="../Exercises/ex3.html">
    3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -157,12 +159,12 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex3/Ex3.html">
+    <a class="reference internal" href="../Exercises/Ex3/Ex3.html">
      3.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex3/Ex3Diss.html">
+    <a class="reference internal" href="../Exercises/Ex3/Ex3Diss.html">
      3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
@@ -171,7 +173,7 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex3/Ex3GeoOpt.html">
+    <a class="reference internal" href="../Exercises/Ex3/Ex3GeoOpt.html">
      3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
@@ -181,7 +183,7 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex4b.html">
+  <a class="reference internal" href="../Exercises/ex4b.html">
    4. The hartree fock procedure in detail
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -191,14 +193,14 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/HF_student.html">
+    <a class="reference internal" href="../Exercises/Ex4/HF_student.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex4.html">
+  <a class="reference internal" href="../Exercises/ex4.html">
    5. Post-Hartree Fock Methods: MPn and Configuration Interaction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -208,24 +210,24 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/Ex4Theory.html">
+    <a class="reference internal" href="../Exercises/Ex4/Ex4Theory.html">
      5.1. Møller-Plesset Perturbation Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/BDE.html">
+    <a class="reference internal" href="../Exercises/Ex4/BDE.html">
      5.2. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex4/HNO3_Correlation.html">
+    <a class="reference internal" href="../Exercises/Ex4/HNO3_Correlation.html">
      5.5. Correlation energy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="Ex5.html">
+  <a class="reference internal" href="../Exercises/Ex5.html">
    6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -235,19 +237,19 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex5/Ex5.html">
+    <a class="reference internal" href="../Exercises/Ex5/Ex5.html">
      6.1. Testing DFT functionals on an aldol reaction.
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex5/Ex5b.html">
+    <a class="reference internal" href="../Exercises/Ex5/Ex5b.html">
      6.2. Density Functional Theory 2
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex6.html">
+  <a class="reference internal" href="../Exercises/ex6.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -257,24 +259,24 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex6/Ex6.html">
+    <a class="reference internal" href="../Exercises/Ex6/Ex6.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Exercises/Ex6/Ex6_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Exercises/Ex6/Ex6_DFT_integration_grid.html">
      7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex7.html">
+  <a class="reference internal" href="../Exercises/ex7.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -284,14 +286,14 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex7/Ex7.html">
+    <a class="reference internal" href="../Exercises/Ex7/Ex7.html">
      8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="ex8.html">
+  <a class="reference internal" href="../Exercises/ex8.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -301,22 +303,22 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8/Ex8Theory.html">
+    <a class="reference internal" href="../Exercises/Ex8/Ex8Theory.html">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8/Ex8.html">
+    <a class="reference internal" href="../Exercises/Ex8/Ex8.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8/Backward.html">
+    <a class="reference internal" href="../Exercises/Ex8/Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8/Visualize.html">
+    <a class="reference internal" href="../Exercises/Ex8/Visualize.html">
      9.5. IRC analysis
     </a>
    </li>
@@ -328,14 +330,14 @@
   Lecture
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Lecture/BasisFunctions.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Basis functions in quantum chemistry
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../Lecture/CC.html">
+  <a class="reference internal" href="CC.html">
    Coupled cluster
   </a>
  </li>
@@ -380,7 +382,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/Exercises/ex2.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/Lecture/BasisFunctions.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -400,7 +402,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/ex2.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FLecture/BasisFunctions.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -421,6 +423,26 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#difference-plane-wave-and-atomic-centered-basis-sets">
+   Difference plane-wave and atomic-centered basis sets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#comparison-of-atomic-centered-and-plane-wave-basis-sets">
+     Comparison of atomic centered and plane wave basis sets
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -429,13 +451,92 @@
         
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="hartree-fock-calculations-in-psi4">
-<h1><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em><a class="headerlink" href="#hartree-fock-calculations-in-psi4" title="Permalink to this headline">¶</a></h1>
-<p>This set of exercises comprises all the information you will need to run a Hartree-Fock calculation in <a class="reference external" href="https://psicode.org/">Psi4</a>.</p>
-<p>After giving a detailed account on the most common basis sets, this tutorial introduces you to the world
-of working in the UNIX command line and  apply this knowledge to your own first electronic
-structure calculation.</p>
-<div class="toctree-wrapper compound">
+  <div class="tex2jax_ignore mathjax_ignore section" id="basis-functions-in-quantum-chemistry">
+<h1>Basis functions in quantum chemistry<a class="headerlink" href="#basis-functions-in-quantum-chemistry" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="difference-plane-wave-and-atomic-centered-basis-sets">
+<h2>Difference plane-wave and atomic-centered basis sets<a class="headerlink" href="#difference-plane-wave-and-atomic-centered-basis-sets" title="Permalink to this headline">¶</a></h2>
+<p>One of the main approximations for electronic structure calculations is the introduction of a basis set used to describe the wavefunction.
+In the case of an incomplete basis we make an approximation of a molecular orbital. All computation methods scale at least with <span class="math notranslate nohighlight">\(M^4\)</span> where M denotes the number of basis functions.
+Therefore, we want that our basis set is small and easy to evaluate in order to make computations fast.</p>
+<p>Two main types exist:</p>
+<ul class="simple">
+<li><p>atomic centered basis sets using gaussian or slater-type functions</p></li>
+<li><p>plane-wave basis sets using plane-wave basis functions.</p></li>
+</ul>
+<p>A <strong>gaussian type</strong> atomic centered orbital in polar or cartesian coordinates is commonly written as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{aligned}
+\chi_{\zeta, n, l, m}(r, \theta, \varphi) &amp;=N Y_{l, m}(\theta, \varphi) r^{2 n-2-l} \mathrm{e}^{-\zeta r^{2}} \\
+\chi_{\zeta, l_{x}, l_{y}, l_{z}}(x, y, z) &amp;=N x^{l_{x}} y^{l_{y}} z^{l_{z}} \mathrm{e}^{-\zeta r^{2}}
+\end{aligned}
+\end{split}\]</div>
+<p>The sum of <span class="math notranslate nohighlight">\(l_x\)</span>, <span class="math notranslate nohighlight">\(l_y\)</span> and <span class="math notranslate nohighlight">\(l_z\)</span> determines the type or orbital.</p>
+<p>A <strong>plane wave</strong> orbital can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[
+\chi_{k}(\mathbf{r})=e^{i \mathbf{k} \cdot \mathbf{r}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the wave vector which is related to the energy <span class="math notranslate nohighlight">\(E=\frac{1}{2} k^2\)</span>. The allowed values for <span class="math notranslate nohighlight">\(k\)</span> are given by the unit cell translational vector <span class="math notranslate nohighlight">\(t\)</span> with <span class="math notranslate nohighlight">\(k*t = 2\pi m\)</span> where <span class="math notranslate nohighlight">\(m\)</span> a positive integer.
+The role of <span class="math notranslate nohighlight">\(k\)</span> is similar to <span class="math notranslate nohighlight">\(\zeta\)</span> for gaussian type basis sets. Plane-waves are well suited for describing delocalized slowly varying electron densities - e.g the valence bands in a metal.
+The core electrons on the other hand are difficult to describe because they are strongly localized around the nuclei and contain many oscillations. They therefore require large <span class="math notranslate nohighlight">\(k\)</span> values.
+Therefore, in practice the nuclear charge is smeared and the core electrons approximated by a so called pseudopotential, which is fitted to reproduce on average the wavefunction of the core electrons and thus makes the calculation tractable.</p>
+<p>For plane wave basis sets the number of plane waves depends on <span class="math notranslate nohighlight">\(N_{PW} = \frac{1}{2\pi^2} \Omega E_\text{cut}^{\frac{3}{2}}\)</span> where <span class="math notranslate nohighlight">\(\Omega\)</span> is the box volume.
+An example of how the quality of the approximation changes with the core parameter (number of gaussians for atomic centered basis set vs. <span class="math notranslate nohighlight">\(E_\text{cut}\)</span> for plane wave basis set) is given here for the 3d-orbital in iron:</p>
+<div class="figure align-default" id="atomiccentered">
+<a class="reference internal image-reference" href="../_images/atomic_centered_basisset.png"><img alt="../_images/atomic_centered_basisset.png" src="../_images/atomic_centered_basisset.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Atomic centered basis functions to describe the 3d orbital in Fe. The quality increases with the number of gaussian used.</span><a class="headerlink" href="#atomiccentered" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="planewaves">
+<a class="reference internal image-reference" href="../_images/plane_wave_basis_set.png"><img alt="../_images/plane_wave_basis_set.png" src="../_images/plane_wave_basis_set.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Plane-wave basis functions to describe the 3d orbital in Fe. The quality increases with the cutoff energy and the box size.</span><a class="headerlink" href="#planewaves" title="Permalink to this image">¶</a></p>
+</div>
+<p>Images taken from <a class="reference external" href="https://www.archer.ac.uk/training/course-material/2014/04/PMMP_UCL/Slides/castep_1.pdf">Archer Training Material</a></p>
+<div class="section" id="comparison-of-atomic-centered-and-plane-wave-basis-sets">
+<h3>Comparison of atomic centered and plane wave basis sets<a class="headerlink" href="#comparison-of-atomic-centered-and-plane-wave-basis-sets" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Atomic centered basis set</p></th>
+<th class="head"><p>Plane wave basis set</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>➕ Consistent with chemical picture of molecules</p></td>
+<td><p>➕ Consistent with chemical picture of solids</p></td>
+</tr>
+<tr class="row-odd"><td><p>➕ Need few basis functions to well describe molecules</p></td>
+<td><p>➖ Many basis functions required</p></td>
+</tr>
+<tr class="row-even"><td><p>➕ Inner electrons are not much more difficult than outer electrons</p></td>
+<td><p>➖ Many oscillations for core electrons, need pseudopotential to describe core electrons</p></td>
+</tr>
+<tr class="row-odd"><td><p>➕ Computation independent of empty volume of system</p></td>
+<td><p>➖ Empty volume as expensive as the atoms in the calculation</p></td>
+</tr>
+<tr class="row-even"><td><p>➖ Non-orthogonal (if using Gaussians)</p></td>
+<td><p>➕ Orthogonal</p></td>
+</tr>
+<tr class="row-odd"><td><p>➖ No analytical derivatives (if using Slater type functions)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>➖ Basis set superposition error</p></td>
+<td><p>➕ No BSSE</p></td>
+</tr>
+<tr class="row-odd"><td><p>➖ Many parameters to optimize/choose</p></td>
+<td><p>➕ Single parameter to control quality (<span class="math notranslate nohighlight">\(G_\text{max}\)</span>/<span class="math notranslate nohighlight">\(E_\text{cut}\)</span>), to improve basis set improve cutoff</p></td>
+</tr>
+<tr class="row-even"><td><p>〰️ No periodicity</p></td>
+<td><p>〰️ Periodic</p></td>
+</tr>
+<tr class="row-odd"><td><p>〰️ Easily tunable (e.g use diffuse functions for anions)</p></td>
+<td><p>〰️ All or nothing description (no spot prefered)</p></td>
+</tr>
+<tr class="row-even"><td><p>➖ Depends on atomic positions, forces are difficult to calculate</p></td>
+<td><p>➕ Independent of atomic positons (no Pulay forces)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 
@@ -452,7 +553,7 @@ structure calculation.</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Exercises"
+            path: "./Lecture"
         },
         predefinedOutput: true
     }
@@ -464,17 +565,17 @@ structure calculation.</p>
         
             <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Ex1/Ex1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Exercises/Ex8/Visualize.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.3. </span>Working with vectors using Numpy</p>
+            <p class="prev-next-title"><span class="section-number">9.5. </span>IRC analysis</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex2/Ex2.html" title="next page">
+    <a class='right-next' id="next-link" href="CC.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.1. </span>Basis Sets - Defining Vector Spaces</p>
+        <p class="prev-next-title">Coupled cluster</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
