@@ -456,14 +456,14 @@
 <div class="section" id="difference-plane-wave-and-atomic-centered-basis-sets">
 <h2>Difference plane-wave and atomic-centered basis sets<a class="headerlink" href="#difference-plane-wave-and-atomic-centered-basis-sets" title="Permalink to this headline">¶</a></h2>
 <p>One of the main approximations for electronic structure calculations is the introduction of a basis set used to describe the wavefunction.
-In the case of an incomplete basis we make an approximation of a molecular orbital. All computation methods scale at least with <span class="math notranslate nohighlight">\(M^4\)</span> where M denotes the number of basis functions.
+In the case of an incomplete basis we make an approximation of a molecular orbital. All electronic structure methods scale at least with <span class="math notranslate nohighlight">\(M^4\)</span> where M denotes the number of basis functions.
 Therefore, we want that our basis set is small and easy to evaluate in order to make computations fast.</p>
 <p>Two main types exist:</p>
 <ul class="simple">
-<li><p>atomic centered basis sets using gaussian or slater-type functions</p></li>
+<li><p>atomic-centered basis sets using gaussian or slater-type functions</p></li>
 <li><p>plane-wave basis sets using plane-wave basis functions.</p></li>
 </ul>
-<p>A <strong>gaussian type</strong> atomic centered orbital in polar or cartesian coordinates is commonly written as:</p>
+<p>A <strong>gaussian type</strong> atomic-centered orbital in polar or cartesian coordinates is commonly written as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -472,17 +472,23 @@ Therefore, we want that our basis set is small and easy to evaluate in order to 
 \end{aligned}
 \end{split}\]</div>
 <p>The sum of <span class="math notranslate nohighlight">\(l_x\)</span>, <span class="math notranslate nohighlight">\(l_y\)</span> and <span class="math notranslate nohighlight">\(l_z\)</span> determines the type or orbital.</p>
-<p>A <strong>plane wave</strong> orbital can be expressed as:</p>
+<p>A <strong>plane-wave</strong> orbital can be expressed as:</p>
 <div class="math notranslate nohighlight">
 \[
 \chi_{k}(\mathbf{r})=e^{i \mathbf{k} \cdot \mathbf{r}}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(k\)</span> is the wave vector which is related to the energy <span class="math notranslate nohighlight">\(E=\frac{1}{2} k^2\)</span>. The allowed values for <span class="math notranslate nohighlight">\(k\)</span> are given by the unit cell translational vector <span class="math notranslate nohighlight">\(t\)</span> with <span class="math notranslate nohighlight">\(k*t = 2\pi m\)</span> where <span class="math notranslate nohighlight">\(m\)</span> a positive integer.
-The role of <span class="math notranslate nohighlight">\(k\)</span> is similar to <span class="math notranslate nohighlight">\(\zeta\)</span> for gaussian type basis sets. Plane-waves are well suited for describing delocalized slowly varying electron densities - e.g the valence bands in a metal.
-The core electrons on the other hand are difficult to describe because they are strongly localized around the nuclei and contain many oscillations. They therefore require large <span class="math notranslate nohighlight">\(k\)</span> values.
-Therefore, in practice the nuclear charge is smeared and the core electrons approximated by a so called pseudopotential, which is fitted to reproduce on average the wavefunction of the core electrons and thus makes the calculation tractable.</p>
-<p>For plane wave basis sets the number of plane waves depends on <span class="math notranslate nohighlight">\(N_{PW} = \frac{1}{2\pi^2} \Omega E_\text{cut}^{\frac{3}{2}}\)</span> where <span class="math notranslate nohighlight">\(\Omega\)</span> is the box volume.
-An example of how the quality of the approximation changes with the core parameter (number of gaussians for atomic centered basis set vs. <span class="math notranslate nohighlight">\(E_\text{cut}\)</span> for plane wave basis set) is given here for the 3d-orbital in iron:</p>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is the wave vector which is related to the energy <span class="math notranslate nohighlight">\(E=\frac{1}{2} k^2\)</span>.</p>
+<p>The allowed values for <span class="math notranslate nohighlight">\(k\)</span> are given by the unit cell translational vector <span class="math notranslate nohighlight">\(t\)</span> with <span class="math notranslate nohighlight">\(k*t = 2\pi m\)</span> where <span class="math notranslate nohighlight">\(m\)</span> a positive integer.</p>
+<p>The role of <span class="math notranslate nohighlight">\(k\)</span> is similar to <span class="math notranslate nohighlight">\(\zeta\)</span> for gaussian type basis sets.</p>
+<p>Plane-waves are well suited for describing delocalized slowly varying electron densities - e.g the valence bands in a metal.</p>
+<p>The core electrons on the other hand are difficult to describe because they are strongly localized around the nuclei and contain many oscillations. They therefore require large <span class="math notranslate nohighlight">\(k\)</span> values. Therefore, in practice the nuclear charge is smeared and the core electrons approximated by a so called pseudopotential, which is fitted to reproduce on average the wavefunction of the core electrons and thus makes the calculation tractable.</p>
+<p>For plane wave basis sets the number of plane waves depends on:</p>
+<div class="math notranslate nohighlight">
+\[
+N_{PW} = \frac{1}{2\pi^2} \Omega E_\text{cut}^{\frac{3}{2}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Omega\)</span> is the box volume.</p>
+<p>An example of how the quality of the approximation changes with the core parameter (number of gaussians for atomic centered basis set vs. <span class="math notranslate nohighlight">\(E_\text{cut}\)</span> for plane wave basis set) is given here for the 3d-orbital in iron:</p>
 <div class="figure align-default" id="atomiccentered">
 <a class="reference internal image-reference" href="../_images/atomic_centered_basisset.png"><img alt="../_images/atomic_centered_basisset.png" src="../_images/atomic_centered_basisset.png" style="height: 300px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Atomic centered basis functions to describe the 3d orbital in Fe. The quality increases with the number of gaussian used.</span><a class="headerlink" href="#atomiccentered" title="Permalink to this image">¶</a></p>
@@ -523,7 +529,7 @@ An example of how the quality of the approximation changes with the core paramet
 <td><p>➕ No BSSE</p></td>
 </tr>
 <tr class="row-odd"><td><p>➖ Many parameters to optimize/choose</p></td>
-<td><p>➕ Single parameter to control quality (<span class="math notranslate nohighlight">\(G_\text{max}\)</span>/<span class="math notranslate nohighlight">\(E_\text{cut}\)</span>), to improve basis set improve cutoff</p></td>
+<td><p>➕ Single parameter to control quality (<span class="math notranslate nohighlight">\(E_\text{cut}\)</span>), to improve basis set improve cutoff</p></td>
 </tr>
 <tr class="row-even"><td><p>〰️ No periodicity</p></td>
 <td><p>〰️ Periodic</p></td>
@@ -536,6 +542,7 @@ An example of how the quality of the approximation changes with the core paramet
 </tr>
 </tbody>
 </table>
+<p>〰️ indicates properties that might be advantageous or disadvantageous depending on the system.</p>
 </div>
 </div>
 </div>
