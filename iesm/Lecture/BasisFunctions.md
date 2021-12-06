@@ -4,14 +4,14 @@
 ## Difference plane-wave and atomic-centered basis sets
 
 One of the main approximations for electronic structure calculations is the introduction of a basis set used to describe the wavefunction. 
-In the case of an incomplete basis we make an approximation of a molecular orbital. All computation methods scale at least with $M^4$ where M denotes the number of basis functions. 
+In the case of an incomplete basis we make an approximation of a molecular orbital. All electronic structure methods scale at least with $M^4$ where M denotes the number of basis functions. 
 Therefore, we want that our basis set is small and easy to evaluate in order to make computations fast. 
 
 Two main types exist: 
-- atomic centered basis sets using gaussian or slater-type functions
+- atomic-centered basis sets using gaussian or slater-type functions
 - plane-wave basis sets using plane-wave basis functions. 
 
-A **gaussian type** atomic centered orbital in polar or cartesian coordinates is commonly written as:
+A **gaussian type** atomic-centered orbital in polar or cartesian coordinates is commonly written as:
 
 $$
 \begin{aligned}
@@ -21,19 +21,32 @@ $$
 $$
 The sum of $l_x$, $l_y$ and $l_z$ determines the type or orbital. 
 
-A **plane wave** orbital can be expressed as:
+A **plane-wave** orbital can be expressed as:
 
 $$
 \chi_{k}(\mathbf{r})=e^{i \mathbf{k} \cdot \mathbf{r}}
 $$
 
-where $k$ is the wave vector which is related to the energy $E=\frac{1}{2} k^2$. The allowed values for $k$ are given by the unit cell translational vector $t$ with $k*t = 2\pi m$ where $m$ a positive integer. 
-The role of $k$ is similar to $\zeta$ for gaussian type basis sets. Plane-waves are well suited for describing delocalized slowly varying electron densities - e.g the valence bands in a metal. 
-The core electrons on the other hand are difficult to describe because they are strongly localized around the nuclei and contain many oscillations. They therefore require large $k$ values. 
-Therefore, in practice the nuclear charge is smeared and the core electrons approximated by a so called pseudopotential, which is fitted to reproduce on average the wavefunction of the core electrons and thus makes the calculation tractable. 
+where $k$ is the wave vector which is related to the energy $E=\frac{1}{2} k^2$. 
+
+The allowed values for $k$ are given by the unit cell translational vector $t$ with $k*t = 2\pi m$ where $m$ a positive integer. 
+
+The role of $k$ is similar to $\zeta$ for gaussian type basis sets. 
 
 
-For plane wave basis sets the number of plane waves depends on $N_{PW} = \frac{1}{2\pi^2} \Omega E_\text{cut}^{\frac{3}{2}}$ where $\Omega$ is the box volume.
+Plane-waves are well suited for describing delocalized slowly varying electron densities - e.g the valence bands in a metal. 
+
+The core electrons on the other hand are difficult to describe because they are strongly localized around the nuclei and contain many oscillations. They therefore require large $k$ values. Therefore, in practice the nuclear charge is smeared and the core electrons approximated by a so called pseudopotential, which is fitted to reproduce on average the wavefunction of the core electrons and thus makes the calculation tractable. 
+
+
+For plane wave basis sets the number of plane waves depends on:
+
+$$
+N_{PW} = \frac{1}{2\pi^2} \Omega E_\text{cut}^{\frac{3}{2}}
+$$
+
+where $\Omega$ is the box volume.
+
 An example of how the quality of the approximation changes with the core parameter (number of gaussians for atomic centered basis set vs. $E_\text{cut}$ for plane wave basis set) is given here for the 3d-orbital in iron: 
 
 ```{figure} ../images/atomic_centered_basisset.png
@@ -64,7 +77,9 @@ Images taken from [Archer Training Material](https://www.archer.ac.uk/training/c
 | ➖ Non-orthogonal (if using Gaussians)                              | ➕ Orthogonal                                                     |
 | ➖ No analytical derivatives (if using Slater type functions)                                                                  |                                                              |
 | ➖ Basis set superposition error                                                                  | ➕ No BSSE                                                             |
-| ➖ Many parameters to optimize/choose   | ➕ Single parameter to control quality ($G_\text{max}$/$E_\text{cut}$), to improve basis set improve cutoff                                                           |
+| ➖ Many parameters to optimize/choose   | ➕ Single parameter to control quality ($E_\text{cut}$), to improve basis set improve cutoff                                                           |
 | 〰️ No periodicity                      |  〰️ Periodic                                               |
 |  〰️ Easily tunable (e.g use diffuse functions for anions)                                                                 |  〰️ All or nothing description (no spot prefered)                                                      |
 | ➖ Depends on atomic positions, forces are difficult to calculate                                                               |  ➕ Independent of atomic positons (no Pulay forces)                                                           |
+
+〰️ indicates properties that might be advantageous or disadvantageous depending on the system.  
