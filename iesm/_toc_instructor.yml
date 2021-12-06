@@ -47,4 +47,5 @@ parts:
       - file: Exercises/Ex8/Visualize_instructor.ipynb
   - caption: Lecture
     chapters:
+    - file: Lecture/BasisFunctions.md
     - file: Lecture/CC.md
