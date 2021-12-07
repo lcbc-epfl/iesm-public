@@ -89,10 +89,36 @@ Here we present three examples in which multi-reference methods should be consid
 
 **Making/Breaking Bonds:**
 * In reactions where bonds are being broken and made we need to be able to represent a system as it exists partially through these electron configuration rearrangements in which two configurations of the electrons might be close in energy
-* \N_2 dissociation is a classic test case system for new multi-reference approach 
+* $N_2$ dissociation is a classic test case system for new multi-reference approach 
 * Why does this matter? For obvious reasons we want to understand the molecular systems involved in chemical reactions : ) Being able to adequately model systems in which electrons are in the process of rearranging requires flexibility to represent multiple configurations near in energy. 
-* Further reading: [J. Almlöf et al.](https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838). This is a 1989 paper discussing challenge of N_2 dissociation energy calculations. [D. Kats](https://aip.scitation.org/doi/10.1063/1.4892792). You only need to skim beginning of Results section where they test several multi-reference methods against N_2 dissociation. 
+* Further reading: [J. Almlöf et al.](https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838). This is a 1989 paper discussing challenge of $N_2$ dissociation energy calculations. [D. Kats](https://aip.scitation.org/doi/10.1063/1.4892792). You only need to skim beginning of Results section where they test several multi-reference methods against $N_2$ dissociation. 
 
 **In sum:**
 Systems which have near-degenerate electronic configurations or which are in the process of making/breaking bonds are not adequately represented by a single Slater Determinant for a given state, such as the ground state. We call these kinds of systems "multi-reference" because multiple electron configurations represent a given state, ground or excited. These systems experience strong static correlation and require treatment with post-HF methods which incorporate multi-reference representations! 
+:::
+
+
+
+:::{admonition} What is the normal ordering in Coupled Cluster theory?
+:class: tip, dropdown
+A product of creation and and annihilation operators in second quantization is said to be normal ordered when all creation operators are to the left of all annihilation operators in the product. Concerning the Couple Cluster theory, the cluster operator $\hat{T}$ is written as a sum of excitation operators $\hat{T}_1$,  $\hat{T}_2$,  $\hat{T}_3$, $\dots$ corresponding to all single, double, triple, ... excitations, and these operators can be expressed as normal-ordered products of creation and annihilation operators. 
+$$
+\begin{aligned}
+\hat{T}_1 &= \sum_a \sum_r t_a^r \hat{a}^\dagger_r\hat{a}_a\\
+\hat{T}_2 &= \sum_{a,b} \sum_{r,s} t_{ab}^{rs} \hat{a}^\dagger_s\hat{a}^\dagger_r\hat{a}_b\hat{a}_a\\
+&\dots
+\end{aligned}
+$$
+Where the sum corresponding to the annihilation operators is restricted to the occupied states of the system ($a$,$b$,$c$,$\dots$), and the one for the creation operators to the unoccupied states ($r$,$s$,$t$,$\dots$).
+
+Additional note (*more detailed discussion*):
+Note that by restricting the sum as above, it turns out that the only difference that the ordering would make is in the phase of the wavefunction. For example in the case of he elements of $\hat{T}_1$:
+$$
+\begin{aligned}
+\hat{a}^\dagger_r\hat{a}_a \Ket{a b c d \dots} &= \hat{a}^\dagger_r \Ket{b c d \dots} = \Ket{r b c d \dots} \\
+\hat{a}_a \hat{a}^\dagger_r\Ket{a b c d \dots} &= \hat{a}_a \Ket{r a b c d \dots} = - \Ket{r b c d \dots} \\
+\end{aligned}
+$$
+where the $-$ sign comes from the commutation relations. 
+However, in the general case such as when deriving the equations for Coupled Cluster theory, the sums run over all the possible states and there it is fundamental to express the operators as normal ordered products.
 :::
