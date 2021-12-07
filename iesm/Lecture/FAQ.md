@@ -80,7 +80,7 @@ Here we present three examples in which multi-reference methods should be consid
 * Ozone absorbs in visible and near-infrared pointing to low-lying, near-in-energy excited states
 * Ozone has a good amount of diradical character and isn't represented accurately by a single electronic configuration. 
 * Why does this matter? We can't assume that small molecules are "safe" to represent with single Slater determinant. If we observe near-degenerate electronic configurations for a system's ground or low-lying excited states, we should consider pursuing multi-reference calculation methods.
-* Furhter reading: [T. Tsuneda, H. Nakano and K. Hirao](https://aip.scitation.org/doi/pdf/10.1063/1.470378) and [Y. Zhao et al.](https://pubs.acs.org/doi/10.1021/jp811054n). Only need to skim over the beginning of introductions and abstracts. 
+* Further reading: [T. Tsuneda, H. Nakano and K. Hirao](https://aip.scitation.org/doi/pdf/10.1063/1.470378) and [Y. Zhao et al.](https://pubs.acs.org/doi/10.1021/jp811054n). Only need to skim over the beginning of introductions and abstracts. 
 
 **Transition Metals:**
 * Due to partially unoccupied d-orbitals transition metal-systems typically have many near-degenerate electronic configurations. Strong dynamic and static correlation in these systems!
@@ -89,9 +89,9 @@ Here we present three examples in which multi-reference methods should be consid
 
 **Making/Breaking Bonds:**
 * In reactions where bonds are being broken and made we need to be able to represent a system as it exists partially through these electron configuration rearrangements in which two configurations of the electrons might be close in energy
-* N_2 dissociation is a classic test case system for new multi-reference approach 
+* \N_2 dissociation is a classic test case system for new multi-reference approach 
 * Why does this matter? For obvious reasons we want to understand the molecular systems involved in chemical reactions : ) Being able to adequately model systems in which electrons are in the process of rearranging requires flexibility to represent multiple configurations near in energy. 
-* Further reading: [J. Alm{\"o}f et al.](https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838). This is a 1989 paper discussing challenge of N_2 dissociation energy calculations. [D. Kats](https://aip.scitation.org/doi/10.1063/1.4892792). You only need to skim beginning of Results section where they test several multi-reference methods against N_2 dissociation. 
+* Further reading: [J. Almlöf et al.](https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838). This is a 1989 paper discussing challenge of N_2 dissociation energy calculations. [D. Kats](https://aip.scitation.org/doi/10.1063/1.4892792). You only need to skim beginning of Results section where they test several multi-reference methods against N_2 dissociation. 
 
 **In sum:**
 Systems which have near-degenerate electronic configurations or which are in the process of making/breaking bonds are not adequately represented by a single Slater Determinant for a given state, such as the ground state. We call these kinds of systems "multi-reference" because multiple electron configurations represent a given state, ground or excited. These systems experience strong static correlation and require treatment with post-HF methods which incorporate multi-reference representations! 
