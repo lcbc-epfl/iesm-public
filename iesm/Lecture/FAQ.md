@@ -9,66 +9,6 @@ Answer
 :::
 -->
 
-:::{admonition} What is the role of self-interaction in DFT?
-:class: tip, dropdown
-One of the key failings of Kohn–Sham density functional theory with approximate density functionals in common use is self-interaction error.
-
-The energy is a functional of the single-particle density, so there is no way to precisely distinguish two-body Coulomb interactions from self-interaction: the interaction of each electron with the entire electron density (including its own density) is considered as a Coulomb energy. The removal of the self-interaction energy from the Coloumb energy is done by the exchange correlation functional, but since this functional can be only approximated, DFT always suffers from self-interaction.
-
-J. P. Perdew and A. Zunger proposed a self-interaction correction scheme (PZ-SIC, [Physical Review B, 1981](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.23.5048)) which subtracts, orbital by orbital, the contribution that the Hartree and the Exchange Correlation
-functionals would make if there was only one electron in the system. However, this correction is not able to account for all the SIE. 
-
-Extension of PZ-SIC and other correction methods have been proposed, but in general it is recognized that approximate density functionals in common use do not totally remove the SIE.
-(Further reading by [Tsuneda, T. & Hirao, K.](https://aip.scitation.org/doi/10.1063/1.4866996) )
-:::
-
-:::{admonition} Why might one perform a Configuration Interaction Singles (CIS) calculation?
-:class: tip, dropdown
-We commonly dicuss truncated confguration interaction using the CISD method, which incorporates single and double excitations. Due to [Brillouin's theorem](https://en.wikipedia.org/wiki/Brillouin%27s_theorem) we understand that its only with the onset of double excitations that we recover correlation energy for our ground state wavefunction. So is there any value in preforming a CIS calculation with only single excitations included? Yes! CIS is helpful in excited state studies in particular. Below are some additional details.
-
-**Pros for CIS:**
-* Fast and therefore applicable to larger systems 
-* Can calculate interesting properties such as vertical excitation energies, charge densities because we can calculate the excited state with analytical gradients 
-* CI methods are variational 
-
-**Cons for CI methods in general, including CIS:**
-* If you use HF as the reference wavefunction you need a system that can be well-represented by a single reference wave function (If we need to represent systems with multireference nature we might choose a different method)
-* Like the reference HF system, CIS does not include electron correlation for the excited states and will overestimate excitation energies
-
-**Pro or Con depending on your study:**
-* According to Brillouin's theorem, singly excited determinants do not interact directly with reference HF determinant (see proof here) and therefore CIS does not provide improvements to the ground state energy. However, CIS does improve the energies of the excited states. So if you're interested in excited stated CIS can be useful for your study!
-
-Response based on these resources:
-University of California Santa Barbara course pages: [one](https://people.chem.ucsb.edu/kahn/kalju/chem126/public/elspect_cis.html) and [two](https://people.chem.ucsb.edu/kahn/kalju/chem226/public/task2C.html) 
-And writings from Professor Sherrill from Georgia Institute of Technology [here](http://vergil.chemistry.gatech.edu/notes/cis/cis.pdf)
-:::
-
-:::{admonition} What is the difference between Configuration Interaction Method and the Coupled Cluster Method?
-:class: tip, dropdown
-In the configuration interaction (CI) methods, we define our many electron wavefunction as a linear combination of Slater determinants of electronic configurations describing excitations from a reference ground state determinant. In practice, 1) we do not have a complete, infinite basis set so complete CI with an infinite basis set is out the window AND 2) we usually have to truncate the expansion at singles and doubles (CISD) for computational reasons meaning Full CI with infinite excitations for a selected one-electron basis is often not tangible either. However, CISD can still be very useful for recovering some of the correlation energy. Furthermore, since CI-methods are variational we can happily minimize the total energy with respect to the coefficients in front of the sums of the different excited Slater determinants.  
-
-```{math}
-     |\Psi^{CI} \rangle = C_{0} |\Phi_{0} \rangle + \sum_{a}\sum_{r} C^{r}_{a} |\Phi^{r}_{a} \rangle + \sum_{a} \sum_{b} \sum_{r} \sum_{s} C^{rs}_{ab} |  \Phi^{rs}_{ab} \rangle + \cdots.
-``` 
-
-
-In coupled cluster (CC) we adopt a similar mindset to CI in the sense of including excited states from a reference (usually HF), however, we do so in an exponential expansion of cluster operators. This provides a very nice advantage! CC includes all excitations of a given type (S, D, T, etc) to infinite order. In reality, the excitations are physically finite due to number of MOs/excitations possible. When we expand our cluster operators as a Taylor expansion, we see a non-linear parameterization which allows us to efficiently capture multiple excitations: $\hat{T}_2$\hat{T}_2$ recovers quadruple excitations for example. Herein lies the power of CC. These non-linear terms allow for the inclusion of higher excitations even when we truncate at double excitations enabling this method to be size-consistent and convergent very quickly to a Full CI limit. We recommend reading more about CC on our page about its theory and application [here](https://lcbc-epfl.github.io/iesm-public/Lecture/CC.html)
-
-   ```{math}
-    \exp(\hat{T}) | \Phi_0 \rangle = (1 + \hat{T} + \frac{1}{2!} \hat{T}^2
-     + \frac{1}{3!} \hat{T}^3 + \cdots ) | \Phi_0 \rangle.
-```
-
-**Key Similarities:**
-* CI and CC are both wavefunction based post-HF methods aimed to recover the correlation energy missing from HF.
-* CI and CC both take into account excited electronic configurations from a reference (usually ground state HF) in linear combinations, but differ in how they handle these linear combinations. 
-
-**Key Differences:**
-* CI is variational, CC is NOT variational.
-* Truncated CI (like CISD) is not size-consistent or size-extensive, CC is size-extensive and size-consistent as long as the reference wavefunction is size consistent.
-* CI's ansatz exhibits a linear combination of sums of Slater determinants describing excitations from a reference wavefunction. CC's ansatz uses exponential cluster operators to generate excited states from a reference wavefunction.
-* While CCSD is slightly more expensive than CISD, CCSD is size-consistent method and it is more accurate at capturing electron correlation at the S and D truncation level than CISD.
-:::
 
 :::{admonition} What are multi-reference systems?
 :class: tip, dropdown
@@ -98,6 +38,56 @@ Systems which have near-degenerate electronic configurations or which are in the
 :::
 
 
+:::{admonition} Why might one perform a Configuration Interaction Singles (CIS) calculation?
+:class: tip, dropdown
+We commonly dicuss truncated confguration interaction using the CISD method, which incorporates single and double excitations. Due to [Brillouin's theorem](https://en.wikipedia.org/wiki/Brillouin%27s_theorem) we understand that its only with the onset of double excitations that we recover correlation energy for our ground state wavefunction. So is there any value in preforming a CIS calculation with only single excitations included? Yes! CIS is helpful in excited state studies in particular. Below are some additional details.
+
+**Pros for CIS:**
+* Fast and therefore applicable to larger systems 
+* Can calculate interesting properties such as vertical excitation energies, charge densities because we can calculate the excited state with analytical gradients 
+* CI methods are variational 
+
+**Cons for CI methods in general, including CIS:**
+* If you use HF as the reference wavefunction you need a system that can be well-represented by a single reference wave function (If we need to represent systems with multireference nature we might choose a different method)
+* Like the reference HF system, CIS does not include electron correlation for the excited states and will overestimate excitation energies
+
+**Pro or Con depending on your study:**
+* According to Brillouin's theorem, singly excited determinants do not interact directly with reference HF determinant (see proof here) and therefore CIS does not provide improvements to the ground state energy. However, CIS does improve the energies of the excited states. So if you're interested in excited stated CIS can be useful for your study!
+
+Response based on these resources:
+University of California Santa Barbara course pages: [one](https://people.chem.ucsb.edu/kahn/kalju/chem126/public/elspect_cis.html) and [two](https://people.chem.ucsb.edu/kahn/kalju/chem226/public/task2C.html) 
+And writings from Professor Sherrill from Georgia Institute of Technology [here](http://vergil.chemistry.gatech.edu/notes/cis/cis.pdf)
+:::
+
+
+:::{admonition} What is the difference between Configuration Interaction Method and the Coupled Cluster Method?
+:class: tip, dropdown
+In the configuration interaction (CI) methods, we define our many electron wavefunction as a linear combination of Slater determinants of electronic configurations describing excitations from a reference ground state determinant. In practice, 1) we do not have a complete, infinite basis set so complete CI with an infinite basis set is out the window AND 2) we usually have to truncate the expansion at singles and doubles (CISD) for computational reasons meaning Full CI with infinite excitations for a selected one-electron basis is often not tangible either. However, CISD can still be very useful for recovering some of the correlation energy. Furthermore, since CI-methods are variational we can happily minimize the total energy with respect to the coefficients in front of the sums of the different excited Slater determinants.  
+
+```{math}
+     |\Psi^{CI} \rangle = C_{0} |\Phi_{0} \rangle + \sum_{a}\sum_{r} C^{r}_{a} |\Phi^{r}_{a} \rangle + \sum_{a} \sum_{b} \sum_{r} \sum_{s} C^{rs}_{ab} |  \Phi^{rs}_{ab} \rangle + \cdots.
+``` 
+
+
+In coupled cluster (CC) we adopt a similar mindset to CI in the sense of including excited states from a reference (usually HF), however, we do so in an exponential expansion of cluster operators. This provides a very nice advantage! CC includes all excitations of a given type (S, D, T, etc) to infinite order. In reality, the excitations are physically finite due to number of MOs/excitations possible. When we expand our cluster operators as a Taylor expansion, we see a non-linear parameterization which allows us to efficiently capture multiple excitations: $\hat{T}_2$\hat{T}_2$ recovers quadruple excitations for example. Herein lies the power of CC. These non-linear terms allow for the inclusion of higher excitations even when we truncate at double excitations enabling this method to be size-consistent and convergent very quickly to a Full CI limit. We recommend reading more about CC on our page about its theory and application [here](https://lcbc-epfl.github.io/iesm-public/Lecture/CC.html)
+
+   ```{math}
+    \exp(\hat{T}) | \Phi_0 \rangle = (1 + \hat{T} + \frac{1}{2!} \hat{T}^2
+     + \frac{1}{3!} \hat{T}^3 + \cdots ) | \Phi_0 \rangle.
+```
+
+**Key Similarities:**
+* CI and CC are both wavefunction based post-HF methods aimed to recover the correlation energy missing from HF.
+* CI and CC both take into account excited electronic configurations from a reference (usually ground state HF) in linear combinations, but differ in how they handle these linear combinations. 
+
+**Key Differences:**
+* CI is variational, CC is NOT variational.
+* Truncated CI (like CISD) is not size-consistent or size-extensive, CC is size-extensive and size-consistent as long as the reference wavefunction is size consistent.
+* CI's ansatz exhibits a linear combination of sums of Slater determinants describing excitations from a reference wavefunction. CC's ansatz uses exponential cluster operators to generate excited states from a reference wavefunction.
+* While CCSD is slightly more expensive than CISD, CCSD is size-consistent method and it is more accurate at capturing electron correlation at the S and D truncation level than CISD.
+:::
+
+
 
 :::{admonition} What is the normal ordering in Coupled Cluster theory?
 :class: tip, dropdown
@@ -122,3 +112,19 @@ $$
 where the $-$ sign comes from the commutation relations. 
 However, in the general case such as when deriving the equations for Coupled Cluster theory, the sums run over all the possible states and there it is fundamental to express the operators as normal ordered products.
 :::
+
+
+:::{admonition} What is the role of self-interaction in DFT?
+:class: tip, dropdown
+One of the key failings of Kohn–Sham density functional theory with approximate density functionals in common use is self-interaction error.
+
+The energy is a functional of the single-particle density, so there is no way to precisely distinguish two-body Coulomb interactions from self-interaction: the interaction of each electron with the entire electron density (including its own density) is considered as a Coulomb energy. The removal of the self-interaction energy from the Coloumb energy is done by the exchange correlation functional, but since this functional can be only approximated, DFT always suffers from self-interaction.
+
+J. P. Perdew and A. Zunger proposed a self-interaction correction scheme (PZ-SIC, [Physical Review B, 1981](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.23.5048)) which subtracts, orbital by orbital, the contribution that the Hartree and the Exchange Correlation
+functionals would make if there was only one electron in the system. However, this correction is not able to account for all the SIE. 
+
+Extension of PZ-SIC and other correction methods have been proposed, but in general it is recognized that approximate density functionals in common use do not totally remove the SIE.
+(Further reading by [Tsuneda, T. & Hirao, K.](https://aip.scitation.org/doi/10.1063/1.4866996) )
+:::
+
+
