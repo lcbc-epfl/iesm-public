@@ -47,3 +47,4 @@ parts:
     chapters:
     - file: Lecture/BasisFunctions.md
     - file: Lecture/CC.md
+    - file: Lecture/FAQ.ipynb
