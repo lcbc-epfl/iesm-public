@@ -43,6 +43,8 @@
     <script src="../_static/copybutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script>
         const thebe_selector = ".thebe"
@@ -452,6 +454,77 @@ Answer
 functionals would make if there was only one electron in the system. However, this correction is not able to account for all the SIE.</p>
 <p>Extension of PZ-SIC and other correction methods have been proposed, but in general it is recognized that approximate density functionals in common use do not totally remove the SIE.
 (Further reading by <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4866996">Tsuneda, T. &amp; Hirao, K.</a> )</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Why might one perform a Configuration Interaction Singles (CIS) calculation?</p>
+<p>We commonly dicuss truncated confguration interaction using the CISD method, which incorporates single and double excitations. Due to <a class="reference external" href="https://en.wikipedia.org/wiki/Brillouin%27s_theorem">Brillouin’s theorem</a> we understand that its only with the onset of double excitations that we recover correlation energy for our ground state wavefunction. So is there any value in preforming a CIS calculation with only single excitations included? Yes! CIS is helpful in excited state studies in particular. Below are some additional details.</p>
+<p><strong>Pros for CIS:</strong></p>
+<ul class="simple">
+<li><p>Fast and therefore applicable to larger systems</p></li>
+<li><p>Can calculate interesting properties such as vertical excitation energies, charge densities because we can calculate the excited state with analytical gradients</p></li>
+<li><p>CI methods are variational</p></li>
+</ul>
+<p><strong>Cons for CI methods in general, including CIS:</strong></p>
+<ul class="simple">
+<li><p>If you use HF as the reference wavefunction you need a system that can be well-represented by a single reference wave function (If we need to represent systems with multireference nature we might choose a different method)</p></li>
+<li><p>Like the reference HF system, CIS does not include electron correlation for the excited states and will overestimate excitation energies</p></li>
+</ul>
+<p><strong>Pro or Con depending on your study:</strong></p>
+<ul class="simple">
+<li><p>According to Brillouin’s theorem, singly excited determinants do not interact directly with reference HF determinant (see proof here) and therefore CIS does not provide improvements to the ground state energy. However, CIS does improve the energies of the excited states. So if you’re interested in excited stated CIS can be useful for your study!</p></li>
+</ul>
+<p>Response based on these resources:
+University of California Santa Barbara course pages: <a class="reference external" href="https://people.chem.ucsb.edu/kahn/kalju/chem126/public/elspect_cis.html">one</a> and <a class="reference external" href="https://people.chem.ucsb.edu/kahn/kalju/chem226/public/task2C.html">two</a>
+And writings from Professor Sherrill from Georgia Institute of Technology <a class="reference external" href="http://vergil.chemistry.gatech.edu/notes/cis/cis.pdf">here</a></p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">What is the difference between Configuration Interaction Method and the Coupled Cluster Method?</p>
+<p>In the configuration interaction (CI) methods, we define our many electron wavefunction as a linear combination of Slater determinants of electronic configurations describing excitations from a reference ground state determinant. In practice, 1) we do not have a complete, infinite basis set so complete CI with an infinite basis set is out the window AND 2) we usually have to truncate the expansion at singles and doubles (CISD) for computational reasons meaning Full CI with infinite excitations for a selected one-electron basis is often not tangible either. However, CISD can still be very useful for recovering some of the correlation energy. Furthermore, since CI-methods are variational we can happily minimize the total energy with respect to the coefficients in front of the sums of the different excited Slater determinants.</p>
+<div class="math notranslate nohighlight">
+\[     |\Psi^{CI} \rangle = C_{0} |\Phi_{0} \rangle + \sum_{a}\sum_{r} C^{r}_{a} |\Phi^{r}_{a} \rangle + \sum_{a} \sum_{b} \sum_{r} \sum_{s} C^{rs}_{ab} |  \Phi^{rs}_{ab} \rangle + \cdots.\]</div>
+<p>In coupled cluster (CC) we adopt a similar mindset to CI in the sense of including excited states from a reference (usually HF), however, we do so in an exponential expansion of cluster operators. This provides a very nice advantage! CC includes all excitations of a given type (S, D, T, etc) to infinite order. In reality, the excitations are physically finite due to number of MOs/excitations possible. When we expand our cluster operators as a Taylor expansion, we see a non-linear parameterization which allows us to efficiently capture multiple excitations: <span class="math notranslate nohighlight">\(\hat{T}_2\)</span>\hat{T}_2$ recovers quadruple excitations for example. Herein lies the power of CC. These non-linear terms allow for the inclusion of higher excitations even when we truncate at double excitations enabling this method to be size-consistent and convergent very quickly to a Full CI limit. We recommend reading more about CC on our page about its theory and application <a class="reference external" href="https://lcbc-epfl.github.io/iesm-public/Lecture/CC.html">here</a></p>
+<div class="math notranslate nohighlight">
+\[ \exp(\hat{T}) | \Phi_0 \rangle = (1 + \hat{T} + \frac{1}{2!} \hat{T}^2
+  + \frac{1}{3!} \hat{T}^3 + \cdots ) | \Phi_0 \rangle.\]</div>
+<p><strong>Key Similarities:</strong></p>
+<ul class="simple">
+<li><p>CI and CC are both wavefunction based post-HF methods aimed to recover the correlation energy missing from HF.</p></li>
+<li><p>CI and CC both take into account excited electronic configurations from a reference (usually ground state HF) in linear combinations, but differ in how they handle these linear combinations.</p></li>
+</ul>
+<p><strong>Key Differences:</strong></p>
+<ul class="simple">
+<li><p>CI is variational, CC is NOT variational.</p></li>
+<li><p>Truncated CI (like CISD) is not size-consistent or size-extensive, CC is size-extensive and size-consistent as long as the reference wavefunction is size consistent.</p></li>
+<li><p>CI’s ansatz exhibits a linear combination of sums of Slater determinants describing excitations from a reference wavefunction. CC’s ansatz uses exponential cluster operators to generate excited states from a reference wavefunction.</p></li>
+<li><p>While CCSD is slightly more expensive than CISD, CCSD is size-consistent method and it is more accurate at capturing electron correlation at the S and D truncation level than CISD.</p></li>
+</ul>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">What are multi-reference systems?</p>
+<p>In this course we often discuss systems in which a single electronic configuration, aka a single Slater Determinant like we use in HF, can accurately describe the system in a particular state (ground state or a specific excited state). However, there are many systems in which a single configuration (single Slater Determinant) does not accurately capture the system at a particular state and we refer to such systems as multi-reference. We would expect to find that these systems have strong static correlation energy contributions because static correlation is the contribution of correlation energy due to degenerate and near-degenerate electronic configurations. In these cases, we can employ other methods to better describe our systems, like multi-reference configuration interaction (MRCI). No need to worry about which multi-reference methods you could choose at this moment, but it is helpful to know what is meant by multi-reference and how the term multi-reference relates to static correlation energy.</p>
+<p>Here we present three examples in which multi-reference methods should be considered:</p>
+<p><strong>Ozone:</strong></p>
+<ul class="simple">
+<li><p>Ozone absorbs in visible and near-infrared pointing to low-lying, near-in-energy excited states</p></li>
+<li><p>Ozone has a good amount of diradical character and isn’t represented accurately by a single electronic configuration.</p></li>
+<li><p>Why does this matter? We can’t assume that small molecules are “safe” to represent with single Slater determinant. If we observe near-degenerate electronic configurations for a system’s ground or low-lying excited states, we should consider pursuing multi-reference calculation methods.</p></li>
+<li><p>Furhter reading: <a class="reference external" href="https://aip.scitation.org/doi/pdf/10.1063/1.470378">T. Tsuneda, H. Nakano and K. Hirao</a> and <a class="reference external" href="https://pubs.acs.org/doi/10.1021/jp811054n">Y. Zhao et al.</a>. Only need to skim over the beginning of introductions and abstracts.</p></li>
+</ul>
+<p><strong>Transition Metals:</strong></p>
+<ul class="simple">
+<li><p>Due to partially unoccupied d-orbitals transition metal-systems typically have many near-degenerate electronic configurations. Strong dynamic and static correlation in these systems!</p></li>
+<li><p>Why does this matter? Transition metal chemistry is critical to understand (many enzymes include them) and in order to study these systems we must find methods which accurately capture their multi-reference character.</p></li>
+<li><p>Further reading: <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2021/cp/d1cp02640b">A. Khedkar and M. Roemelt</a>. See Figure 9 near end of this review paper.</p></li>
+</ul>
+<p><strong>Making/Breaking Bonds:</strong></p>
+<ul class="simple">
+<li><p>In reactions where bonds are being broken and made we need to be able to represent a system as it exists partially through these electron configuration rearrangements in which two configurations of the electrons might be close in energy</p></li>
+<li><p>N_2 dissociation is a classic test case system for new multi-reference approach</p></li>
+<li><p>Why does this matter? For obvious reasons we want to understand the molecular systems involved in chemical reactions : ) Being able to adequately model systems in which electrons are in the process of rearranging requires flexibility to represent multiple configurations near in energy.</p></li>
+<li><p>Further reading: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838">J. Alm{“o}f et al.</a>. This is a 1989 paper discussing challenge of N_2 dissociation energy calculations. <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4892792">D. Kats</a>. You only need to skim beginning of Results section where they test several multi-reference methods against N_2 dissociation.</p></li>
+</ul>
+<p><strong>In sum:</strong>
+Systems which have near-degenerate electronic configurations or which are in the process of making/breaking bonds are not adequately represented by a single Slater Determinant for a given state, such as the ground state. We call these kinds of systems “multi-reference” because multiple electron configurations represent a given state, ground or excited. These systems experience strong static correlation and require treatment with post-HF methods which incorporate multi-reference representations!</p>
 </div>
 </div>
 
