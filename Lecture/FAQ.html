@@ -447,13 +447,31 @@ Answer
 :::
 -->
 <div class="tip dropdown admonition">
-<p class="admonition-title">What is the role of self-interaction in DFT?</p>
-<p>One of the key failings of Kohn–Sham density functional theory with approximate density functionals in common use is self-interaction error.</p>
-<p>The energy is a functional of the single-particle density, so there is no way to precisely distinguish two-body Coulomb interactions from self-interaction: the interaction of each electron with the entire electron density (including its own density) is considered as a Coulomb energy. The removal of the self-interaction energy from the Coloumb energy is done by the exchange correlation functional, but since this functional can be only approximated, DFT always suffers from self-interaction.</p>
-<p>J. P. Perdew and A. Zunger proposed a self-interaction correction scheme (PZ-SIC, <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.23.5048">Physical Review B, 1981</a>) which subtracts, orbital by orbital, the contribution that the Hartree and the Exchange Correlation
-functionals would make if there was only one electron in the system. However, this correction is not able to account for all the SIE.</p>
-<p>Extension of PZ-SIC and other correction methods have been proposed, but in general it is recognized that approximate density functionals in common use do not totally remove the SIE.
-(Further reading by <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4866996">Tsuneda, T. &amp; Hirao, K.</a> )</p>
+<p class="admonition-title">What are multi-reference systems?</p>
+<p>In this course we often discuss systems in which a single electronic configuration, aka a single Slater Determinant like we use in HF, can accurately describe the system in a particular state (ground state or a specific excited state). However, there are many systems in which a single configuration (single Slater Determinant) does not accurately capture the system at a particular state and we refer to such systems as multi-reference. We would expect to find that these systems have strong static correlation energy contributions because static correlation is the contribution of correlation energy due to degenerate and near-degenerate electronic configurations. In these cases, we can employ other methods to better describe our systems, like multi-reference configuration interaction (MRCI). No need to worry about which multi-reference methods you could choose at this moment, but it is helpful to know what is meant by multi-reference and how the term multi-reference relates to static correlation energy.</p>
+<p>Here we present three examples in which multi-reference methods should be considered:</p>
+<p><strong>Ozone:</strong></p>
+<ul class="simple">
+<li><p>Ozone absorbs in visible and near-infrared pointing to low-lying, near-in-energy excited states</p></li>
+<li><p>Ozone has a good amount of diradical character and isn’t represented accurately by a single electronic configuration.</p></li>
+<li><p>Why does this matter? We can’t assume that small molecules are “safe” to represent with single Slater determinant. If we observe near-degenerate electronic configurations for a system’s ground or low-lying excited states, we should consider pursuing multi-reference calculation methods.</p></li>
+<li><p>Further reading: <a class="reference external" href="https://aip.scitation.org/doi/pdf/10.1063/1.470378">T. Tsuneda, H. Nakano and K. Hirao</a> and <a class="reference external" href="https://pubs.acs.org/doi/10.1021/jp811054n">Y. Zhao et al.</a>. Only need to skim over the beginning of introductions and abstracts.</p></li>
+</ul>
+<p><strong>Transition Metals:</strong></p>
+<ul class="simple">
+<li><p>Due to partially unoccupied d-orbitals transition metal-systems typically have many near-degenerate electronic configurations. Strong dynamic and static correlation in these systems!</p></li>
+<li><p>Why does this matter? Transition metal chemistry is critical to understand (many enzymes include them) and in order to study these systems we must find methods which accurately capture their multi-reference character.</p></li>
+<li><p>Further reading: <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2021/cp/d1cp02640b">A. Khedkar and M. Roemelt</a>. See Figure 9 near end of this review paper.</p></li>
+</ul>
+<p><strong>Making/Breaking Bonds:</strong></p>
+<ul class="simple">
+<li><p>In reactions where bonds are being broken and made we need to be able to represent a system as it exists partially through these electron configuration rearrangements in which two configurations of the electrons might be close in energy</p></li>
+<li><p><span class="math notranslate nohighlight">\(N_2\)</span> dissociation is a classic test case system for new multi-reference approach</p></li>
+<li><p>Why does this matter? For obvious reasons we want to understand the molecular systems involved in chemical reactions : ) Being able to adequately model systems in which electrons are in the process of rearranging requires flexibility to represent multiple configurations near in energy.</p></li>
+<li><p>Further reading: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838">J. Almlöf et al.</a>. This is a 1989 paper discussing challenge of <span class="math notranslate nohighlight">\(N_2\)</span> dissociation energy calculations. <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4892792">D. Kats</a>. You only need to skim beginning of Results section where they test several multi-reference methods against <span class="math notranslate nohighlight">\(N_2\)</span> dissociation.</p></li>
+</ul>
+<p><strong>In sum:</strong>
+Systems which have near-degenerate electronic configurations or which are in the process of making/breaking bonds are not adequately represented by a single Slater Determinant for a given state, such as the ground state. We call these kinds of systems “multi-reference” because multiple electron configurations represent a given state, ground or excited. These systems experience strong static correlation and require treatment with post-HF methods which incorporate multi-reference representations!</p>
 </div>
 <div class="tip dropdown admonition">
 <p class="admonition-title">Why might one perform a Configuration Interaction Singles (CIS) calculation?</p>
@@ -500,33 +518,6 @@ And writings from Professor Sherrill from Georgia Institute of Technology <a cla
 </ul>
 </div>
 <div class="tip dropdown admonition">
-<p class="admonition-title">What are multi-reference systems?</p>
-<p>In this course we often discuss systems in which a single electronic configuration, aka a single Slater Determinant like we use in HF, can accurately describe the system in a particular state (ground state or a specific excited state). However, there are many systems in which a single configuration (single Slater Determinant) does not accurately capture the system at a particular state and we refer to such systems as multi-reference. We would expect to find that these systems have strong static correlation energy contributions because static correlation is the contribution of correlation energy due to degenerate and near-degenerate electronic configurations. In these cases, we can employ other methods to better describe our systems, like multi-reference configuration interaction (MRCI). No need to worry about which multi-reference methods you could choose at this moment, but it is helpful to know what is meant by multi-reference and how the term multi-reference relates to static correlation energy.</p>
-<p>Here we present three examples in which multi-reference methods should be considered:</p>
-<p><strong>Ozone:</strong></p>
-<ul class="simple">
-<li><p>Ozone absorbs in visible and near-infrared pointing to low-lying, near-in-energy excited states</p></li>
-<li><p>Ozone has a good amount of diradical character and isn’t represented accurately by a single electronic configuration.</p></li>
-<li><p>Why does this matter? We can’t assume that small molecules are “safe” to represent with single Slater determinant. If we observe near-degenerate electronic configurations for a system’s ground or low-lying excited states, we should consider pursuing multi-reference calculation methods.</p></li>
-<li><p>Further reading: <a class="reference external" href="https://aip.scitation.org/doi/pdf/10.1063/1.470378">T. Tsuneda, H. Nakano and K. Hirao</a> and <a class="reference external" href="https://pubs.acs.org/doi/10.1021/jp811054n">Y. Zhao et al.</a>. Only need to skim over the beginning of introductions and abstracts.</p></li>
-</ul>
-<p><strong>Transition Metals:</strong></p>
-<ul class="simple">
-<li><p>Due to partially unoccupied d-orbitals transition metal-systems typically have many near-degenerate electronic configurations. Strong dynamic and static correlation in these systems!</p></li>
-<li><p>Why does this matter? Transition metal chemistry is critical to understand (many enzymes include them) and in order to study these systems we must find methods which accurately capture their multi-reference character.</p></li>
-<li><p>Further reading: <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2021/cp/d1cp02640b">A. Khedkar and M. Roemelt</a>. See Figure 9 near end of this review paper.</p></li>
-</ul>
-<p><strong>Making/Breaking Bonds:</strong></p>
-<ul class="simple">
-<li><p>In reactions where bonds are being broken and made we need to be able to represent a system as it exists partially through these electron configuration rearrangements in which two configurations of the electrons might be close in energy</p></li>
-<li><p><span class="math notranslate nohighlight">\(N_2\)</span> dissociation is a classic test case system for new multi-reference approach</p></li>
-<li><p>Why does this matter? For obvious reasons we want to understand the molecular systems involved in chemical reactions : ) Being able to adequately model systems in which electrons are in the process of rearranging requires flexibility to represent multiple configurations near in energy.</p></li>
-<li><p>Further reading: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/epdf/10.1002/qua.560360838">J. Almlöf et al.</a>. This is a 1989 paper discussing challenge of <span class="math notranslate nohighlight">\(N_2\)</span> dissociation energy calculations. <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4892792">D. Kats</a>. You only need to skim beginning of Results section where they test several multi-reference methods against <span class="math notranslate nohighlight">\(N_2\)</span> dissociation.</p></li>
-</ul>
-<p><strong>In sum:</strong>
-Systems which have near-degenerate electronic configurations or which are in the process of making/breaking bonds are not adequately represented by a single Slater Determinant for a given state, such as the ground state. We call these kinds of systems “multi-reference” because multiple electron configurations represent a given state, ground or excited. These systems experience strong static correlation and require treatment with post-HF methods which incorporate multi-reference representations!</p>
-</div>
-<div class="tip dropdown admonition">
 <p class="admonition-title">What is the normal ordering in Coupled Cluster theory?</p>
 <p>A product of creation and and annihilation operators in second quantization is said to be normal ordered when all creation operators are to the left of all annihilation operators in the product. Concerning the Couple Cluster theory, the cluster operator <span class="math notranslate nohighlight">\(\hat{T}\)</span> is written as a sum of excitation operators <span class="math notranslate nohighlight">\(\hat{T}_1\)</span>,  <span class="math notranslate nohighlight">\(\hat{T}_2\)</span>,  <span class="math notranslate nohighlight">\(\hat{T}_3\)</span>, <span class="math notranslate nohighlight">\(\dots\)</span> corresponding to all single, double, triple, … excitations, and these operators can be expressed as normal-ordered products of creation and annihilation operators.
 $<span class="math notranslate nohighlight">\(
@@ -547,6 +538,15 @@ $<span class="math notranslate nohighlight">\(
 \)</span><span class="math notranslate nohighlight">\(
 where the \)</span>-$ sign comes from the commutation relations.
 However, in the general case such as when deriving the equations for Coupled Cluster theory, the sums run over all the possible states and there it is fundamental to express the operators as normal ordered products.</p>
+</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">What is the role of self-interaction in DFT?</p>
+<p>One of the key failings of Kohn–Sham density functional theory with approximate density functionals in common use is self-interaction error.</p>
+<p>The energy is a functional of the single-particle density, so there is no way to precisely distinguish two-body Coulomb interactions from self-interaction: the interaction of each electron with the entire electron density (including its own density) is considered as a Coulomb energy. The removal of the self-interaction energy from the Coloumb energy is done by the exchange correlation functional, but since this functional can be only approximated, DFT always suffers from self-interaction.</p>
+<p>J. P. Perdew and A. Zunger proposed a self-interaction correction scheme (PZ-SIC, <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.23.5048">Physical Review B, 1981</a>) which subtracts, orbital by orbital, the contribution that the Hartree and the Exchange Correlation
+functionals would make if there was only one electron in the system. However, this correction is not able to account for all the SIE.</p>
+<p>Extension of PZ-SIC and other correction methods have been proposed, but in general it is recognized that approximate density functionals in common use do not totally remove the SIE.
+(Further reading by <a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4866996">Tsuneda, T. &amp; Hirao, K.</a> )</p>
 </div>
 </div>
 
