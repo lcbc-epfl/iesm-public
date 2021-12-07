@@ -452,20 +452,32 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="faq">
 <h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Answer</span>
-<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">tip</span><span class="p">,</span> <span class="n">dropdown</span>
-<span class="n">Answer</span>
-<span class="p">:::</span>
+<!--
+TEMPLATE FOR Q AND A
 
-<span class="p">:::{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">Answer</span>
-<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">tip</span><span class="p">,</span> <span class="n">dropdown</span>
-<span class="n">Answer</span>
-<span class="p">:::</span>
-</pre></div>
+
+:::{admonition} Question 
+:class: exercise
+Question
+:::
+
+:::{admonition} Answer
+:class: tip, dropdown
+Answer
+:::
+
+--><div class="exercise admonition">
+<p class="admonition-title">Question</p>
+<p>What is the role of self-interaction in DFT?</p>
 </div>
-</div>
+<div class="tip dropdown admonition">
+<p class="admonition-title">Answer</p>
+<p>One of the key failings of Kohn–Sham density functional theory with approximate density functionals in common use is self-interaction error.</p>
+<p>The energy is a functional of the single-particle density, so there is no way to precisely distinguish two-body Coulomb interactions from self-interaction: the interaction of each electron with the entire electron density (including its own density) is considered as a Coulomb energy. The removal of the self-interaction energy from the Coloumb energy is done by the exchange correlation functional, but since this functional can be only approximated, DFT always suffers from self-interaction.</p>
+<p>J. P. Perdew and A. Zunger proposed a self-interaction correction scheme (PZ-SIC, <a class="reference external" href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.23.5048">Physical Review B, 1981</a>) which subtracts, orbital by orbital, the contribution that the Hartree and the Exchange Correlation
+functionals would make if there was only one electron in the system. However, this correction is not able to account for all the SIE.</p>
+<p>Extension of PZ-SIC and other correction methods have been proposed, but in general it is recognized that approximate density functionals in common use do not totally remove the SIE.
+(<a class="reference external" href="https://aip.scitation.org/doi/10.1063/1.4866996">Further reading</a></p>
 </div>
 </div>
 
