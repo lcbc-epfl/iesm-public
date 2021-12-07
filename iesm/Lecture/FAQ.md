@@ -92,25 +92,28 @@ In coupled cluster (CC) we adopt a similar mindset to CI in the sense of includi
 :::{admonition} What is the normal ordering in Coupled Cluster theory?
 :class: tip, dropdown
 A product of creation and and annihilation operators in second quantization is said to be normal ordered when all creation operators are to the left of all annihilation operators in the product. Concerning the Couple Cluster theory, the cluster operator $\hat{T}$ is written as a sum of excitation operators $\hat{T}_1$,  $\hat{T}_2$,  $\hat{T}_3$, $\dots$ corresponding to all single, double, triple, ... excitations, and these operators can be expressed as normal-ordered products of creation and annihilation operators. 
+
 $$
 \begin{aligned}
 \hat{T}_1 &= \sum_a \sum_r t_a^r \hat{a}^\dagger_r\hat{a}_a\\
 \hat{T}_2 &= \sum_{a,b} \sum_{r,s} t_{ab}^{rs} \hat{a}^\dagger_s\hat{a}^\dagger_r\hat{a}_b\hat{a}_a\\
-&\dots
+        &\dots
 \end{aligned}
 $$
+
 Where the sum corresponding to the annihilation operators is restricted to the occupied states of the system ($a$,$b$,$c$,$\dots$), and the one for the creation operators to the unoccupied states ($r$,$s$,$t$,$\dots$).
 
-Additional note (*more detailed discussion*):
+Additional note (**more detailed discussion**):
 Note that by restricting the sum as above, it turns out that the only difference that the ordering would make is in the phase of the wavefunction. For example in the case of he elements of $\hat{T}_1$:
+
 $$
 \begin{aligned}
 \hat{a}^\dagger_r\hat{a}_a \Ket{a b c d \dots} &= \hat{a}^\dagger_r \Ket{b c d \dots} = \Ket{r b c d \dots} \\
 \hat{a}_a \hat{a}^\dagger_r\Ket{a b c d \dots} &= \hat{a}_a \Ket{r a b c d \dots} = - \Ket{r b c d \dots} \\
 \end{aligned}
 $$
-where the $-$ sign comes from the commutation relations. 
-However, in the general case such as when deriving the equations for Coupled Cluster theory, the sums run over all the possible states and there it is fundamental to express the operators as normal ordered products.
+
+where the $-$ sign comes from the commutation relations. However, in the general case such as when deriving the equations for Coupled Cluster theory, the sums run over all the possible states and there it is fundamental to express the operators as normal ordered products.
 :::
 
 
