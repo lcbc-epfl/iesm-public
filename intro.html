@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to Electronic Structure Methods &#8212; Introduction to Electronic Structure Methods</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet">
-  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,39 +20,38 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Linear Algebra in Quantum Mechanics" href="Exercises/ex1.html" />
@@ -61,7 +62,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -70,9 +85,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
       
@@ -85,14 +101,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
-   Introduction to Electronic Structure Methods
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introduction to Electronic Structure Methods
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Exercises
  </span>
@@ -346,90 +363,180 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/lcbc-epfl/iesm-public"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#time-table-fall-semester-2021">
    Time Table Fall Semester 2021
@@ -437,17 +544,40 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction to Electronic Structure Methods</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-table-fall-semester-2021">
+   Time Table Fall Semester 2021
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-electronic-structure-methods">
-<h1>Introduction to Electronic Structure Methods<a class="headerlink" href="#introduction-to-electronic-structure-methods" title="Permalink to this headline">¶</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-electronic-structure-methods">
+<h1>Introduction to Electronic Structure Methods<a class="headerlink" href="#introduction-to-electronic-structure-methods" title="Permalink to this headline">#</a></h1>
 <p>This book contains the script and exercises for the course CHE-351 <code class="docutils literal notranslate"><span class="pre">Introduction</span> <span class="pre">to</span> <span class="pre">Electronic</span> <span class="pre">Structure</span> <span class="pre">Methods</span></code> (IESM) given at EPFL.</p>
 <p><strong>Contributors</strong></p>
 <p>Over the years many people have contributed to the improvement of the course materials. They appear here in chronological order:</p>
@@ -467,8 +597,8 @@
 <li><p>Andrea Levy <a class="reference external" href="https://orcid.org/0000-0003-1255-859X"><img alt="Orcid" src="_images/orcid.png" /></a></p></li>
 <li><p>Sophie Johnson <a class="reference external" href="https://orcid.org/0000-0003-4207-4350"><img alt="Orcid" src="_images/orcid.png" /></a></p></li>
 </ul>
-<div class="section" id="time-table-fall-semester-2021">
-<h2>Time Table Fall Semester 2021<a class="headerlink" href="#time-table-fall-semester-2021" title="Permalink to this headline">¶</a></h2>
+<section id="time-table-fall-semester-2021">
+<h2>Time Table Fall Semester 2021<a class="headerlink" href="#time-table-fall-semester-2021" title="Permalink to this headline">#</a></h2>
 <p>The course will be <strong>Mon 10:15-12:00am</strong> (Lectures in <a class="reference external" href="https://plan.epfl.ch/?room==BCH%203303">BCH3303</a>, Exercises in <a class="reference external" href="https://plan.epfl.ch/?room==BCH%201113">BCH1113</a>) and <strong>Fri: 10:15-12:00am, 1:15-3:00 pm</strong> (Exercises in <a class="reference external" href="https://plan.epfl.ch/?room==BCH%201113">BCH1113</a>, Lectures in <a class="reference external" href="https://plan.epfl.ch/?room==BCH%204310">BCH4310</a>).</p>
 <table class="colwidths-auto table">
 <thead>
@@ -626,40 +756,53 @@
 </tr>
 </tbody>
 </table>
-<p><strong>References</strong></p>
-<p id="id1"><dl class="citation">
-<dt class="label" id="id3"><span class="brackets">1</span></dt>
-<dd><p>Josep M. Anglada, Santiago Olivella, and Albert Solé. Atmospheric formation of the NO $_\textrm 3$ radical from gas-phase reaction of HNO $_\textrm 3$ acid with the NH $_\textrm 2$ radical: proton-coupled electron-transfer versus hydrogen atom transfer mechanisms. <em>Phys. Chem. Chem. Phys.</em>, 16(36):19437–19445, 2014. URL: <a class="reference external" href="http://xlink.rsc.org/?DOI=C4CP02792B">http://xlink.rsc.org/?DOI=C4CP02792B</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1039/C4CP02792B">doi:10.1039/C4CP02792B</a>.</p>
-</dd>
-<dt class="label" id="id11"><span class="brackets">2</span></dt>
-<dd><p>Claude Cohen-Tannoudji, Bernard Diu, and Franck Laloë. <em>Mécanique quantique</em>. Savoirs actuels. EDP sciences CNRS éditions, Les Ulis Paris, nouvelle éd edition, 2018. ISBN 978-2-7598-2287-4 978-2-271-12498-2.</p>
-</dd>
-<dt class="label" id="id8"><span class="brackets">3</span></dt>
-<dd><p>T. Daniel Crawford and Henry F. Schaefer. An Introduction to Coupled Cluster Theory for Computational Chemists. In Kenny B. Lipkowitz and Donald B. Boyd, editors, <em>Reviews in Computational Chemistry</em>, pages 33–136. John Wiley &amp; Sons, Inc., Hoboken, NJ, USA, January 2007. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/9780470125915.ch2">https://onlinelibrary.wiley.com/doi/10.1002/9780470125915.ch2</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1002/9780470125915.ch2">doi:10.1002/9780470125915.ch2</a>.</p>
-</dd>
-<dt class="label" id="id9"><span class="brackets">4</span></dt>
-<dd><p>Trygve Helgaker, Poul Jørgensen, and Jeppe Olsen. <em>Molecular Electronic-Structure Theory: Helgaker/Molecular Electronic-Structure Theory</em>. John Wiley &amp; Sons, Ltd, Chichester, UK, August 2000. ISBN 978-1-119-01957-2 978-1-118-53147-1. URL: <a class="reference external" href="http://doi.wiley.com/10.1002/9781119019572">http://doi.wiley.com/10.1002/9781119019572</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1002/9781119019572">doi:10.1002/9781119019572</a>.</p>
-</dd>
-<dt class="label" id="id2"><span class="brackets">5</span></dt>
-<dd><p>W. Sean McGivern, Agnes Derecskei-Kovacs, Simon W. North, and Joseph S. Francisco. Computationally Efficient Methodology to Calculate C−H and C−X (X = F, Cl, and Br) Bond Dissociation Energies in Haloalkanes. <em>The Journal of Physical Chemistry A</em>, 104(2):436–442, January 2000. URL: <a class="reference external" href="https://pubs.acs.org/doi/10.1021/jp993275d">https://pubs.acs.org/doi/10.1021/jp993275d</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1021/jp993275d">doi:10.1021/jp993275d</a>.</p>
-</dd>
-<dt class="label" id="id6"><span class="brackets">6</span></dt>
-<dd><p>Pierpaolo Morgante and Roberto Peverati. The devil in the details: A tutorial review on some undervalued aspects of density functional theory calculations. <em>International Journal of Quantum Chemistry</em>, September 2020. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1002/qua.26332">https://onlinelibrary.wiley.com/doi/10.1002/qua.26332</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1002/qua.26332">doi:10.1002/qua.26332</a>.</p>
-</dd>
-<dt class="label" id="id5"><span class="brackets">7</span></dt>
-<dd><p>Mark A. Murcko, Henry Castejon, and Kenneth B. Wiberg. Carbon−Carbon Rotational Barriers in Butane, 1-Butene, and 1,3-Butadiene. <em>The Journal of Physical Chemistry</em>, 100(40):16162–16168, January 1996. URL: <a class="reference external" href="https://pubs.acs.org/doi/10.1021/jp9621742">https://pubs.acs.org/doi/10.1021/jp9621742</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1021/jp9621742">doi:10.1021/jp9621742</a>.</p>
-</dd>
-<dt class="label" id="id4"><span class="brackets">8</span></dt>
-<dd><p>Henry F. Schaefer and Frank E. Harris. Electronic Structure of Atomic Boron. <em>Physical Review</em>, 167(1):67–73, March 1968. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRev.167.67">https://link.aps.org/doi/10.1103/PhysRev.167.67</a> (visited on 2021-09-10), <a class="reference external" href="https://doi.org/10.1103/PhysRev.167.67">doi:10.1103/PhysRev.167.67</a>.</p>
-</dd>
-</dl>
-</p>
-</div>
+<!---# Time Table Fall Semester 2022
+The course will be **Mon 10:15-12:00am** (Lectures in [BCH3303](https://plan.epfl.ch/?room==BCH%203303), Exercises in [BCH1113](https://plan.epfl.ch/?room==BCH%201113)) and **Fri: 10:15-12:00am, 1:15-3:00 pm** (Exercises in [BCH1113](https://plan.epfl.ch/?room==BCH%201113), Lectures in [BCH4310](https://plan.epfl.ch/?room==BCH%204310)).
+
+| date            | type     | description                                               |            |
+|-----------------|----------|-----------------------------------------------------------|------------|
+| 19.09. Mon      |          | jeûne fédéral                                             |            |
+| 26.09. Mon      | course   | Practical info                                            | UR         |
+| 03.10. Mon      | exercise | Exercise 1: Linear Algebra in Quantum Mechanics           | assistants |
+| 10.10. Mon      | course   | Basis Sets I                                              | UR         |
+| 17.10. Mon      | exercise | Exercise 2: Intro Linux/Noto.epfl.ch & Psi4/ H Atom       | assistants |
+| 24.10. Mon      | course   | Basis sets II                                             | UR         |
+| 31.10. Mon      | exercise | Exercise 3: Basis sets, De, geom opt.                     | assistants |
+| 07.11. Mon      | course   | Hartree Fock I                                            | UR         |
+| 11.11. Fri (m)  | exercise | Exercise 4: Hartree Fock procedure in detail              | assistants |
+| 11.11. Fri (a)  | course   | Hartree Fock II                                           | UR         |
+| 14.11. Mon      | exercise | Mock exam with old written exam                           | assistants |
+| 18.11. Fri (m)  | exercise | Solutions of mock exam & questioning hour                 | assistants |
+| 18.11. Fri (a)  | course   | CI & Many-Body Perturbation Theory                        | UR         |
+| 21.11. Mon      | exam     | Written exam                                              | UR         |
+| 25.11. Fri (m)  | course   | CI & Many-Body Perturbation Theory - Continued            | UR         |
+| 25.11. Fri (a)  | exercise | Exercise 5: Post HF: MPn & CI                             | assistants |
+| 28.11. Mon      | course   | Coupled cluster                                           | UR         |
+| 02.12. Fri (m)  | course   | DFT I                                                     | UR         |
+| 02.12. Fri (a)  | exercise | Exercise 6: DFT vs HF/MP2                                 | assistants |
+| 05.12. Mon      | exercise | Exercise 7: Trouble Shooting, Pitfalls, traps             | assistants |
+| 09.12. Fri (m)  | course   | DFT II                                                    | UR         |
+| 09.12. Fri (a)  | exercise | Exercise 7(cont.) Trouble Shooting, Pitfalls, traps       | assistants |
+| 12.12. Mon      | exercise | Exercise 8: PES scans                                     | assistants |
+| 16.12. Fri (m)  | exercise | Exercise 9: TS & Barrier Heights                          | assistants |
+| 16.12. Fri (a)  | course   | DFT III (CP, QM/MM & Demos) & Summary                     | UR         |
+| 19.12. Mon      | exercise | Question hour                                             | assistants |
+| 23.12. Fri (m)  | exam     | Oral exam                                                 | UR         |
+| 23.12. Fri (a)  | exam     | Oral exam                                                 | UR         |
+---!>
+
+
+**References**
+
+```{bibliography}
+:style: plain
+```
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
 </div>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -683,8 +826,10 @@
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
     <a class='right-next' id="next-link" href="Exercises/ex1.html" title="next page">
     <div class="prev-next-info">
@@ -694,29 +839,31 @@
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
-        
-          <div class="extra_footer">
-            <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+  
+    <div class="extra_footer">
+      <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
 </div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

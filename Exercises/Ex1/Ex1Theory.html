@@ -4,11 +4,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>1.1. Theory &#8212; Introduction to Electronic Structure Methods</title>
     
-  <link href="../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,41 +20,40 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script>
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
-    </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.2. Exercises" href="Ex1Exercises.html" />
@@ -64,7 +65,21 @@
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -73,9 +88,10 @@
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../index.html">
       
       
@@ -88,14 +104,15 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../intro.html">
-   Introduction to Electronic Structure Methods
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction to Electronic Structure Methods
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Exercises
  </span>
@@ -349,90 +366,180 @@
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/Exercises/Ex1/Ex1Theory.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/lcbc-epfl/iesm-public"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex1/Ex1Theory.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex1/Ex1Theory.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Exercises/Ex1/Ex1Theory.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
    1.1.1. Operators
@@ -501,19 +608,103 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Theory</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   1.1.1. Operators
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eigenfunctions-and-eigenvalues">
+     1.1.1.1. Eigenfunctions and eigenvalues
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-several-operators-commutators">
+     1.1.1.2. Applying several operators: Commutators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations">
+   1.1.2. Linear Algebra and Quantum Mechanics: Hermiticity and Matrix Representations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hilbert-space-and-bra-ket-notation">
+   1.1.3. Hilbert Space and Bra-Ket Notation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#valid-quantum-mechanical-operators-linearity-and-hermiticity">
+     1.1.3.1. Valid Quantum Mechanical Operators: Linearity and Hermiticity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-representation-of-operators">
+     1.1.3.2. Matrix Representation of Operators
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-wavefunction-and-its-properties-projections-out-of-hilbert-space">
+   1.1.4. The Wavefunction and its Properties - Projections out of Hilbert Space
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-wavefunction-in-position-representation">
+     1.1.4.1. The Wavefunction in Position Representation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probabilities-and-observables">
+     1.1.4.2. Probabilities and Observables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation">
+     1.1.4.3. Solving the Eigenvalue Problem of the Time-Independent Schrödinger Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions">
+     1.1.4.4. Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="theory">
-<h1><span class="section-number">1.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="operators">
-<h2><span class="section-number">1.1.1. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="theory">
+<h1><span class="section-number">1.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h1>
+<section id="operators">
+<h2><span class="section-number">1.1.1. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
 <p>In classical mechanics, an observable is described by a function.
 Instead, in quantum mechanics, an observable is represented by a linear
 operator that acts on a wavefunction. An operator is itself a function
@@ -525,8 +716,8 @@ integration etc. (Strictly speaking, the linear operators used in
 quantum mechanics are special cases of a linear mapping
 <span class="math notranslate nohighlight">\(V \rightarrow W\)</span> where <span class="math notranslate nohighlight">\(V = W\)</span> - linear algebra plays a crucial role in
 quantum mechanics.)</p>
-<div class="section" id="eigenfunctions-and-eigenvalues">
-<h3><span class="section-number">1.1.1.1. </span>Eigenfunctions and eigenvalues<a class="headerlink" href="#eigenfunctions-and-eigenvalues" title="Permalink to this headline">¶</a></h3>
+<section id="eigenfunctions-and-eigenvalues">
+<h3><span class="section-number">1.1.1.1. </span>Eigenfunctions and eigenvalues<a class="headerlink" href="#eigenfunctions-and-eigenvalues" title="Permalink to this headline">#</a></h3>
 <p>Applying an operator <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> to some function <span class="math notranslate nohighlight">\(f\)</span> can result
 in the function being changed, but it may also result in the operator
 returning the same function, multiplied by a scalar:</p>
@@ -556,9 +747,9 @@ decomposing <span class="math notranslate nohighlight">\(g\)</span> in terms of 
 \hat{\mathrm{A}}g = \hat{\mathrm{A}}\sum_i c_if_i = \sum_i c_i\hat{\mathrm{A}}f_i = \sum_i c_i \lambda_i f_i.\end{aligned}\]</div>
 <p>A quite comprehensive list of quantum mechanical operators can be found
 at the end of this chapter.</p>
-</div>
-<div class="section" id="applying-several-operators-commutators">
-<h3><span class="section-number">1.1.1.2. </span>Applying several operators: Commutators<a class="headerlink" href="#applying-several-operators-commutators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="applying-several-operators-commutators">
+<h3><span class="section-number">1.1.1.2. </span>Applying several operators: Commutators<a class="headerlink" href="#applying-several-operators-commutators" title="Permalink to this headline">#</a></h3>
 <p>For some operators such as simple multiplications, the order in which
 the operators are applied to the function does not matter. Consider this
 (trivial) example:</p>
@@ -585,19 +776,19 @@ determines whether two observables can be simultaneously determined
 (<em>cf.</em> the Heisenberg uncertainty principle). Commuting operators share
 the same eigenfunctions (or, <em>vice versa</em>, operators sharing the same
 eigenfunctions will commute).</p>
-</div>
-</div>
-<div class="section" id="linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations">
-<h2><span class="section-number">1.1.2. </span>Linear Algebra and Quantum Mechanics: Hermiticity and Matrix Representations<a class="headerlink" href="#linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations">
+<h2><span class="section-number">1.1.2. </span>Linear Algebra and Quantum Mechanics: Hermiticity and Matrix Representations<a class="headerlink" href="#linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations" title="Permalink to this headline">#</a></h2>
 <p>From here on, operators will be applied to some (wave)function <span class="math notranslate nohighlight">\(\phi\)</span>,
 <span class="math notranslate nohighlight">\(\psi\)</span> rather than an arbitrary function <span class="math notranslate nohighlight">\(f\)</span>. This is just a matter of
 notation and goes, of course, without loss of generality. (Note that we
 chose not to write <span class="math notranslate nohighlight">\(\phi(x)\)</span> or the like, because it is not relevant
 whether we use the position or the momentum wavefunction, <em>cf.</em> the
 bra-ket notation that will be discussed below.)</p>
-</div>
-<div class="section" id="hilbert-space-and-bra-ket-notation">
-<span id="exercise1"></span><h2><span class="section-number">1.1.3. </span>Hilbert Space and Bra-Ket Notation<a class="headerlink" href="#hilbert-space-and-bra-ket-notation" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="hilbert-space-and-bra-ket-notation">
+<span id="exercise1"></span><h2><span class="section-number">1.1.3. </span>Hilbert Space and Bra-Ket Notation<a class="headerlink" href="#hilbert-space-and-bra-ket-notation" title="Permalink to this headline">#</a></h2>
 <p>Recalling that any arbitrary function can be expressed as a weighted
 superposition of eigenfunctions of their underlying operator, one needs
 to define a mathematical <em>functional space</em> in which these
@@ -674,8 +865,8 @@ wavefunction expansion is the same).</p>
 vectors it is built upon, any state <span class="math notranslate nohighlight">\(\Psi\)</span> must also be of the same
 norm. This requirement is conserved if and only if the normalisation
 <span class="math notranslate nohighlight">\(\sum_j c_j^2 = 1\)</span> is imposed.</p>
-<div class="section" id="valid-quantum-mechanical-operators-linearity-and-hermiticity">
-<h3><span class="section-number">1.1.3.1. </span>Valid Quantum Mechanical Operators: Linearity and Hermiticity<a class="headerlink" href="#valid-quantum-mechanical-operators-linearity-and-hermiticity" title="Permalink to this headline">¶</a></h3>
+<section id="valid-quantum-mechanical-operators-linearity-and-hermiticity">
+<h3><span class="section-number">1.1.3.1. </span>Valid Quantum Mechanical Operators: Linearity and Hermiticity<a class="headerlink" href="#valid-quantum-mechanical-operators-linearity-and-hermiticity" title="Permalink to this headline">#</a></h3>
 <p>In order for an operator to be a valid quantum mechanical operator, it
 must be <em>linear</em></p>
 <div class="math notranslate nohighlight">
@@ -701,9 +892,9 @@ again) and <em>orthogonal</em> to each other (this is why basis vectors in
 Hilbert space are orthogonal - and this is what allows for algebraic
 transformations in euclidian space to be easily extended onto the
 complex Hilbert space).</p>
-</div>
-<div class="section" id="matrix-representation-of-operators">
-<h3><span class="section-number">1.1.3.2. </span>Matrix Representation of Operators<a class="headerlink" href="#matrix-representation-of-operators" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="matrix-representation-of-operators">
+<h3><span class="section-number">1.1.3.2. </span>Matrix Representation of Operators<a class="headerlink" href="#matrix-representation-of-operators" title="Permalink to this headline">#</a></h3>
 <p>The definition of a Hermitian operator being based on properties known
 from matrices implies a link between the two. Indeed, any operator can
 be written in a matrix form.</p>
@@ -769,10 +960,10 @@ in matrix form:</p>
 <p><span class="math notranslate nohighlight">\(c,d\)</span> are vectors of expansion coefficients of
 <span class="math notranslate nohighlight">\(\Phi,\Psi\)</span> respectively. Operators for which <span class="math notranslate nohighlight">\(A_{ij} = 0\)</span> are, just
 like their underlying matrix, <em>diagonal</em>.</p>
-</div>
-</div>
-<div class="section" id="the-wavefunction-and-its-properties-projections-out-of-hilbert-space">
-<h2><span class="section-number">1.1.4. </span>The Wavefunction and its Properties - Projections out of Hilbert Space<a class="headerlink" href="#the-wavefunction-and-its-properties-projections-out-of-hilbert-space" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-wavefunction-and-its-properties-projections-out-of-hilbert-space">
+<h2><span class="section-number">1.1.4. </span>The Wavefunction and its Properties - Projections out of Hilbert Space<a class="headerlink" href="#the-wavefunction-and-its-properties-projections-out-of-hilbert-space" title="Permalink to this headline">#</a></h2>
 <p>So far, any state <span class="math notranslate nohighlight">\(\Psi\)</span> was discussed as an abstract unit vector in
 Hilbert space that is expanded over a basis of eigenfunctions. In this
 chapter, it will be demonstrated how the familiar picture of a
@@ -780,8 +971,8 @@ wavefunction in position representation is extracted from Hilbert space
 and what properties such a wavefunction has. The theory outlined so far
 will be applied to the energy eigenvalue problem of Schrödinger (the
 time-independent Schrödinger equation).</p>
-<div class="section" id="the-wavefunction-in-position-representation">
-<h3><span class="section-number">1.1.4.1. </span>The Wavefunction in Position Representation<a class="headerlink" href="#the-wavefunction-in-position-representation" title="Permalink to this headline">¶</a></h3>
+<section id="the-wavefunction-in-position-representation">
+<h3><span class="section-number">1.1.4.1. </span>The Wavefunction in Position Representation<a class="headerlink" href="#the-wavefunction-in-position-representation" title="Permalink to this headline">#</a></h3>
 <p>The more abstract bra-ket notation and the notation of the wavefunction
 as being position or momentum dependent are often used interchangeably.
 Position and momentum wavefunctions are obtained by <em>projecting</em> the
@@ -835,9 +1026,9 @@ real space is naturally given by:</p>
 \[\begin{aligned}
  \left&lt;\Psi\middle|\Psi\right&gt; = \int \Psi^\ast\left(\mathbf{r},t\right)\Psi\left(\mathbf{r},t\right)\mathrm{d}\mathbf{r}.
  \end{aligned}\]</div>
-</div>
-<div class="section" id="probabilities-and-observables">
-<h3><span class="section-number">1.1.4.2. </span>Probabilities and Observables<a class="headerlink" href="#probabilities-and-observables" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="probabilities-and-observables">
+<h3><span class="section-number">1.1.4.2. </span>Probabilities and Observables<a class="headerlink" href="#probabilities-and-observables" title="Permalink to this headline">#</a></h3>
 <p>Whereas a wavefunction contains all the neccessary information, it lacks
 any direct physical interpretation. Its square, however, fulfills the
 requirements of a <em>probability distribution</em>. Namely, for a
@@ -893,9 +1084,9 @@ From the properties of a Hermitian operator, we have that</p>
 earlier. This is a requirement for a physical observable and
 demonstrates why Hermitian operators are of great value in quantum
 mechanics.</p>
-</div>
-<div class="section" id="solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation">
-<h3><span class="section-number">1.1.4.3. </span>Solving the Eigenvalue Problem of the Time-Independent Schrödinger Equation<a class="headerlink" href="#solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation">
+<h3><span class="section-number">1.1.4.3. </span>Solving the Eigenvalue Problem of the Time-Independent Schrödinger Equation<a class="headerlink" href="#solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation" title="Permalink to this headline">#</a></h3>
 <p>The preceeding theoretical considerations shall now be put to good use.
 Until now, it has not been stated which operator of interest spans the
 Hilbert space. The time-independent Schrödinger equation is an
@@ -998,9 +1189,9 @@ eigenvalue problem that is to be solved is given by:</p>
 <p>The eigenvalue problem of the time-independent
 Schrödinger equation <em>can now be solved as the classical eigenvalue
 problem of a matrix</em>, by resorting to simple linear algebra.</p>
-</div>
-<div class="section" id="bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions">
-<h3><span class="section-number">1.1.4.4. </span>Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions<a class="headerlink" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions">
+<h3><span class="section-number">1.1.4.4. </span>Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions<a class="headerlink" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions" title="Permalink to this headline">#</a></h3>
 <p>Quantum mechanics imposes certain symmetry constraints on permutations
 of indistinguishable particles. For bosons, the wavefunction must remain
 unchanged upon exchange of particles. For fermions (such as electrons)
@@ -1080,9 +1271,9 @@ wavefunction, this reduces to</p>
  = \Psi\left(\mathbf{r}_1,\mathbf{r}_2\right)
  \end{aligned}\end{split}\]</div>
 <p>which is in agreement with the permutation requirement.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1106,9 +1297,11 @@ wavefunction, this reduces to</p>
 
               </div>
               
-        
-            <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../ex1.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1124,29 +1317,31 @@ wavefunction, this reduces to</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-        
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-    <div class="container">
-      <p>
-        
-          By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
-        
-          <div class="extra_footer">
-            <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+  
+    <div class="extra_footer">
+      <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
 </div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
-          </div>
-      </p>
     </div>
-  </footer>
-</main>
+</p>
+        </footer>
+    </div>
+    
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
