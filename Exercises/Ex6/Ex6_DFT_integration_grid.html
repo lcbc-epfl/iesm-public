@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -208,7 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF_student.html">
+    <a class="reference internal" href="../Ex4/HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -250,17 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -333,8 +323,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -420,7 +415,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex6/Ex6_DFT_integration_grid.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex6/Ex6_DFT_integration_grid.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -601,33 +596,29 @@ This is also true when imaginary vibrational frequencies or  PES curves of non-b
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># These are the reference energies taken from https://doi.org/10.1002/qua.26332</span>
-<span class="n">reference</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.24</span><span class="p">,</span><span class="mf">1.21</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.19</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">reference</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.24</span><span class="p">,</span><span class="mf">1.21</span><span class="p">,</span> <span class="mf">0.57</span><span class="p">,</span> <span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.19</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.27</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.23</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.21</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.18</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.14</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.11</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.10</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.09</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.07</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.06</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.05</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.04</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.03</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.02</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">functional</span> <span class="o">=</span> <span class="s2">&quot;b3lyp&quot;</span> <span class="c1"># try b3lyp and m06-hf</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">functional</span> <span class="o">=</span> <span class="s2">&quot;b3lyp&quot;</span> <span class="c1"># b3lyp and m06-hf</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="n">distances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
 
-<span class="c1"># here we setup the grid points in a dictionary to iterate over them</span>
 <span class="n">grid_options</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;sg1&#39;</span><span class="p">:{</span><span class="s1">&#39;dft_grid_name&#39;</span><span class="p">:</span><span class="s1">&#39;sg1&#39;</span><span class="p">},</span> <span class="c1"># as this is a pruned grid it is set up differently</span>
-    <span class="s1">&#39;75-302&#39;</span><span class="p">:{</span><span class="s1">&#39;dft_radial_points&#39;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;dft_spherical_points&#39;</span><span class="p">:</span> <span class="mi">302</span><span class="p">},</span> <span class="c1"># default in psi4</span>
+    <span class="s1">&#39;sg1&#39;</span><span class="p">:{</span><span class="s1">&#39;dft_grid_name&#39;</span><span class="p">:</span><span class="s1">&#39;sg1&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;75-302&#39;</span><span class="p">:{</span><span class="s1">&#39;dft_radial_points&#39;</span><span class="p">:</span><span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;dft_spherical_points&#39;</span><span class="p">:</span> <span class="mi">302</span><span class="p">},</span>
     <span class="s1">&#39;99-590&#39;</span><span class="p">:{</span><span class="s1">&#39;dft_radial_points&#39;</span><span class="p">:</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;dft_spherical_points&#39;</span><span class="p">:</span> <span class="mi">590</span><span class="p">}</span>
 <span class="p">}</span>
 
-<span class="c1"># we have two nested loops here, the outer loop will run three times (once per grid setting)</span>
 <span class="k">for</span> <span class="n">grid</span> <span class="ow">in</span> <span class="n">grid_options</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
     <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">(</span><span class="n">grid_options</span><span class="p">[</span><span class="n">grid</span><span class="p">])</span>
 
     <span class="n">energies</span><span class="p">[</span><span class="n">grid</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
 
-    <span class="c1"># the inner loop runs for the distance array</span>
     <span class="k">for</span> <span class="n">R</span> <span class="ow">in</span> <span class="n">distances</span><span class="p">:</span>
         <span class="c1"># Argon Dimer Z-Matrix</span>
         <span class="n">ar_dimer</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
@@ -655,11 +646,11 @@ This is also true when imaginary vibrational frequencies or  PES curves of non-b
 </div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 7</p>
+<p class="admonition-title">Exercise</p>
 <p>Which grid size should you use for this kind of problem? Are the fluctuations observed with the SG1 grid physical?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 8</p>
+<p class="admonition-title">Exercise</p>
 <p>Compare the two functionals regarding convergence with respect to the integration grid. Which functional shows concerning behavior in this regard?</p>
 </div>
 <div class="cell docutils container">

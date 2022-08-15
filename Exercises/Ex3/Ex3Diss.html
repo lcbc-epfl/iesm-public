@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF_student.html">
+    <a class="reference internal" href="../Ex4/HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -252,17 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,8 +325,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -422,7 +417,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex3/Ex3Diss.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex3/Ex3Diss.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -589,7 +584,13 @@ title="Print to PDF"
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
+  Threads set to 4 by Python driver.
 </pre></div>
 </div>
 </div>
@@ -597,15 +598,12 @@ title="Print to PDF"
 <p>Calculate the energy of H<span class="math notranslate nohighlight">\(_2\)</span> at the following internuclear distances at
 both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <p>You are given the example for RHF and you need to modify the UHF calculation.</p>
-<p>The calcuation works by creating a list of the distances we want to try and then by iterating over it:</p>
-<ul class="simple">
-<li><p>we create a <code class="docutils literal notranslate"><span class="pre">h2</span></code> molecule replacing the z coordinate with our desired distance using a Python f-string</p></li>
-<li><p>we specify the logfile and set appending to <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
-<li><p>we specify the reference we want to use and set <code class="docutils literal notranslate"><span class="pre">guess_mix</span></code> to false and use <code class="docutils literal notranslate"><span class="pre">'guess':'sad'</span></code> for the guess</p></li>
-<li><p>we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specificing the desired method, basis and molecule</p></li>
-<li><p>we clean up temporary files and add our calculated energy to a list for the plotting</p></li>
-</ul>
-<p>For the UHF calculations, copy the cell and change the reference and then first try the same options for <code class="docutils literal notranslate"><span class="pre">guess</span></code> and <code class="docutils literal notranslate"><span class="pre">guess_mix</span></code> and then set the options to <code class="docutils literal notranslate"><span class="pre">'guess':'gwh',</span> <span class="pre">'guess_mix':True</span></code></p>
+<p>The calcuation works by creating a list of the distances we want to try and then by iterating over it:
+* we create a <code class="docutils literal notranslate"><span class="pre">h2</span></code> molecule replacing the z coordinate with our desired distance.
+* we specify the logfile and set appending to <code class="docutils literal notranslate"><span class="pre">True</span></code>
+* we specify the reference we want to use and set <code class="docutils literal notranslate"><span class="pre">guess_mix</span></code> to false and use <code class="docutils literal notranslate"><span class="pre">'guess':'sad'</span></code> for the guess
+* we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specificing the desired method, basis and molecule
+* we clean up temporary files and add our calculated energy to a list for the plotting</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
@@ -656,6 +654,14 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <p>The value for the <span class="math notranslate nohighlight">\(E_H^{6-31G}\)</span> you can calculate as described below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">H 0.0 0.0 0.0</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
@@ -682,8 +688,8 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <p>we can convert our lists of energies to numpy arrays and use broadcasting to quickly substract the energy of the single H atoms from each list item to get the interaction energy.</p>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>We have to use <code class="docutils literal notranslate"><span class="pre">np.array</span></code> as standard python lists (defined using <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2]</span></code>) do not support broadcasting.</p>
-<p>Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop to perform arithemetic for each element we can simply substract the single H energy once and the operation is broadcast meaning that numpy will be smart about the dimensions. In the case of substracting a scalar from a matrix it will substract each value of the matrix by the scalar.</p>
+<p>We have to use <code class="docutils literal notranslate"><span class="pre">np.array</span></code> as standard python lists (defined using <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2]</span></code>) do not support broadcasting.
+Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a for loop to perform aritemethic for each element we can simply substract the single H energy once and the operation is broadcast.</p>
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -692,7 +698,6 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <span class="c1">#E_inter_RHF =  (np.array(energies_RHF) #### insert here #### )*psi4.constants.hartree2kcalmol</span>
 
 <span class="c1">#E_inter_UHF = ...</span>
-    
 </pre></div>
 </div>
 </div>
@@ -736,16 +741,16 @@ You can look at the Psi4 manual to find out about the different options for the 
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "psi4",
             path: "./Exercises/Ex3"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               

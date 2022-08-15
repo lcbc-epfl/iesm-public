@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="HF_student.html">
+    <a class="reference internal" href="HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -252,17 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,8 +325,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -422,7 +417,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/BDE.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/BDE.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -649,15 +644,20 @@ the BDE in a radical process by comparing Hartree-Fock to MPn results.
 Consider the reaction enthalpy of the homolytic cleavage of the H<span class="math notranslate nohighlight">\(_3\)</span>C-F
 bond in monofluoro methane:</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-CH_3F \quad \rightarrow \quad H_3C\cdot \quad + \quad F\cdot.\end{aligned}\]</div>
+\[
+\begin{aligned}
+CH_3F \quad \rightarrow \quad H_3C\cdot \quad + \quad F\cdot.\end{aligned}
+\]</div>
 <p>As in the exercise on hydrogen dissociation, you may calculate the bond
 dissociation energy as the difference of the energy of the fragments:</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-E^{BDE} =  E^{H_3C\cdot} + E^{F\cdot} - E^{CH_3F}\end{aligned}\]</div>
+\[
+\begin{aligned}
+E^{BDE} =  E^{H_3C\cdot} + E^{F\cdot} - E^{CH_3F}\end{aligned}
+\]</div>
 <p>where
-<span class="math notranslate nohighlight">\(E^{BDE}\)</span> was experimentally determined to be 109.2 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> <span id="id1"><sup></sup></span></p>
+<span class="math notranslate nohighlight">\(E^{BDE}\)</span> was experimentally determined to be 109.2 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> (<em>J.
+Phys. Chem. A</em>, <strong>2000</strong>, 104, <em>436</em>).</p>
 <section id="practical-application-of-post-hartree-fock-methods">
 <h2><span class="section-number">5.2.1. </span>Practical Application of Post-Hartree-Fock Methods<a class="headerlink" href="#practical-application-of-post-hartree-fock-methods" title="Permalink to this headline">#</a></h2>
 <p>Bond dissociation energies of large systems often require the use of
@@ -685,7 +685,7 @@ computational time for a geometry optimisation to become exorbitantly
 high.)</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 1</p>
-<p>Complete the following table by running the calculations below.</p>
+<p>Complete the following table.</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Method:</p></th>
@@ -735,7 +735,8 @@ BDE that you calculated? (Think of radical processes in general.)</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 3</p>
-<p>Why is it a reasonable choice to use Hartree-Fock geometries as a starting point for optimisations at the
+<p>Why is it a reasonable choice to use Hartree-Fock geometries and
+wavefunctions as a starting point for optimisations at the
 Post-Hartree-Fock level? What is the advantage and how is this
 approach justified?</p>
 </div>
@@ -753,8 +754,7 @@ of the system, rather than the reaction.)</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 6</p>
-<p>Why did we choose not to carry out a geometry optimisation for the
-methods where no analytical gradient is available (such as MP4)?</p>
+<p>Why did we choose not to carry out a geometry optimisation for mp3?</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -773,6 +773,16 @@ methods where no analytical gradient is available (such as MP4)?</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+
+  Memory set to   1.863 GiB by Python driver.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
 </pre></div>
 </div>
 </div>
@@ -798,8 +808,8 @@ methods where no analytical gradient is available (such as MP4)?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16309371973781054"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16309371973781054" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16309378866940935"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309378866940935" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -822,18 +832,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16309371973781054 = null;
-var warn = document.getElementById("3dmolwarning_16309371973781054");
+var viewer_16309378866940935 = null;
+var warn = document.getElementById("3dmolwarning_16309378866940935");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16309371973781054 = $3Dmol.createViewer($("#3dmolviewer_16309371973781054"),{backgroundColor:"white"});
-viewer_16309371973781054.zoomTo();
-	viewer_16309371973781054.addModel("5\n\n F   -0.642381967195    0.000000095800   -0.000000000108\n C    0.742340417015   -0.000000119001    0.000000000132\n H    1.090184715481   -1.027287458657    0.000000000131\n H    1.090184841794    0.513643534810   -0.889656896780\n H    1.090184842203    0.513643534859    0.889656897127\n","xyz");
-	viewer_16309371973781054.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16309371973781054.zoomTo();
-viewer_16309371973781054.render();
+viewer_16309378866940935 = $3Dmol.createViewer($("#3dmolviewer_16309378866940935"),{backgroundColor:"white"});
+viewer_16309378866940935.zoomTo();
+	viewer_16309378866940935.addModel("5\n\n F    0.652123810946   -0.000000071709    0.000000000171\n C   -0.755115976270    0.000000082879   -0.000000000237\n H   -1.100693373673    1.041608449783   -0.000000000128\n H   -1.100693548896   -0.520804042423   -0.902059273468\n H   -1.100693548446   -0.520804042413    0.902059273195\n","xyz");
+	viewer_16309378866940935.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309378866940935.zoomTo();
+viewer_16309378866940935.render();
 });
 </script></div></div>
 </div>
@@ -870,8 +880,12 @@ viewer_16309371973781054.render();
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">})</span> 
-<span class="c1"># we store our results in the dictionary</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;hf/aug-cc-pvdz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -880,6 +894,11 @@ viewer_16309371973781054.render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -919,14 +938,13 @@ viewer_16309371973781054.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is our inital radical structure, not very realistic</span>
-<span class="n">drawXYZ</span><span class="p">(</span><span class="n">ch3_radical</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">ch3_radical</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16309384631587336"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16309384631587336" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16309379393166692"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309379393166692" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -949,18 +967,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16309384631587336 = null;
-var warn = document.getElementById("3dmolwarning_16309384631587336");
+var viewer_16309379393166692 = null;
+var warn = document.getElementById("3dmolwarning_16309379393166692");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16309384631587336 = $3Dmol.createViewer($("#3dmolviewer_16309384631587336"),{backgroundColor:"white"});
-viewer_16309384631587336.zoomTo();
-	viewer_16309384631587336.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
-	viewer_16309384631587336.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16309384631587336.zoomTo();
-viewer_16309384631587336.render();
+viewer_16309379393166692 = $3Dmol.createViewer($("#3dmolviewer_16309379393166692"),{backgroundColor:"white"});
+viewer_16309379393166692.zoomTo();
+	viewer_16309379393166692.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
+	viewer_16309379393166692.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309379393166692.zoomTo();
+viewer_16309379393166692.render();
 });
 </script></div></div>
 </div>
@@ -978,6 +996,11 @@ viewer_16309384631587336.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -986,14 +1009,57 @@ viewer_16309384631587336.render();
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Lets look at the optimized radical</span>
-<span class="n">drawXYZ</span><span class="p">(</span><span class="n">ch3_radical</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">ch3_radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16309380695813327"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309380695813327" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_16309380695813327 = null;
+var warn = document.getElementById("3dmolwarning_16309380695813327");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16309380695813327 = $3Dmol.createViewer($("#3dmolviewer_16309380695813327"),{backgroundColor:"white"});
+viewer_16309380695813327.zoomTo();
+	viewer_16309380695813327.addModel("4\n\n C    0.000004358509   -0.000000133305    0.000000000005\n H   -0.000007787466    1.086882376421    0.000000000134\n H   -0.000022053735   -0.543440394392   -0.941268452722\n H   -0.000022054819   -0.543440394793    0.941268452528\n","xyz");
+	viewer_16309380695813327.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309380695813327.zoomTo();
+viewer_16309380695813327.render();
+});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1029,10 +1095,20 @@ viewer_16309384631587336.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -1049,9 +1125,9 @@ viewer_16309384631587336.render();
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the BDE energies here and convert them to kcal/mol </span>
 <span class="c1"># You can use psi4.constants.hartree2kcalmol for the unit conversion</span>
 
-<span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># </span>
-<span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># </span>
-<span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="c1"># </span>
+<span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># </span>
+<span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># </span>
+<span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">][</span><span class="s1">&#39;bde&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># </span>
 </pre></div>
 </div>
 </div>

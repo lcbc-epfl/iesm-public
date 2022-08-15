@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF_student.html">
+    <a class="reference internal" href="../Ex4/HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -252,17 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
@@ -335,8 +325,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -422,7 +417,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex6/Ex6.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex6/Ex6.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -653,10 +648,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 <span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
@@ -677,7 +668,7 @@ title="Print to PDF"
 <section id="allyl-radical">
 <h2><span class="section-number">7.1.1. </span>Allyl radical<a class="headerlink" href="#allyl-radical" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 1</p>
+<p class="admonition-title">Exercise</p>
 <p>Fix the error in the single-point wavefunction optimization for the allyl radical using the BLYP exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -773,12 +764,51 @@ fm: [2]
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_1626161323725347"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_1626161323725347" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_1626161323725347 = null;
+var warn = document.getElementById("3dmolwarning_1626161323725347");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_1626161323725347 = $3Dmol.createViewer($("#3dmolviewer_1626161323725347"),{backgroundColor:"white"});
+viewer_1626161323725347.zoomTo();
+	viewer_1626161323725347.addModel("10\n\n C    0.217111940963    0.047209279022    1.307894000000\n C   -0.518483059037   -0.102811720978   -0.000000000000\n C    0.217111940963    0.047209279022   -1.307894000000\n H   -0.466284059037   -0.004199720978    2.171777000000\n H    0.987037940963   -0.746787720978    1.440837000000\n H    0.762860940963    1.013041279022    1.356754000000\n H   -1.563970059037   -0.424171720978   -0.000000000000\n H   -0.466284059037   -0.004199720978   -2.171777000000\n H    0.762860940963    1.013041279022   -1.356754000000\n H    0.987037940963   -0.746787720978   -1.440837000000\n","xyz");
+	viewer_1626161323725347.setStyle({"stick": {}});
+	viewer_1626161323725347.zoomTo();
+viewer_1626161323725347.render();
+});
+</script></div></div>
 </div>
 </section>
 <section id="copper-water-complex">
 <h2><span class="section-number">7.1.2. </span>Copper Water complex<a class="headerlink" href="#copper-water-complex" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 2</p>
+<p class="admonition-title">Exercise</p>
 <p>Fix the error in the single-point wavefunction optimisation of the Cu[HO] aqua complex (as observed in the gas phase) using the PBE exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -925,7 +955,7 @@ viewer_16261614771358273.render();
 <section id="n2-geometry-optimization">
 <h2><span class="section-number">7.1.3. </span>N2 Geometry optimization<a class="headerlink" href="#n2-geometry-optimization" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 3</p>
+<p class="admonition-title">Exercise</p>
 <p>Fix the error in the geometry optimisation of <span class="math notranslate nohighlight">\(N_2\)</span> using the BP86 exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -945,12 +975,17 @@ viewer_16261614771358273.render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-109.53094289747644
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="o-single-point-optimization">
 <h2><span class="section-number">7.1.4. </span><span class="math notranslate nohighlight">\(^3 O\)</span> Single point optimization<a class="headerlink" href="#o-single-point-optimization" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 4</p>
+<p class="admonition-title">Exercise</p>
 <p>Fix the error in the single point calculation of  <span class="math notranslate nohighlight">\(^3 O\)</span> using the B97-2 exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -974,76 +1009,6 @@ viewer_16261614771358273.render();
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;b97-2/6-31+G*&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mi">8</span><span class="n">eff61a26ca4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># solution psi4.set_options({&#39;reference&#39;:&#39;uks&#39;, &#39;g_convergence&#39;:&#39;gau_tight&#39;})</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b97-2/6-31+G*&#39;</span><span class="p">)</span>
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/driver.py</span> in <span class="ni">optimize</span><span class="nt">(name, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1314</span>         <span class="c1"># Compute the gradient - preserve opt data despite core.clean calls in gradient</span>
-<span class="g g-Whitespace">   </span><span class="mi">1315</span>         <span class="n">core</span><span class="o">.</span><span class="n">IOManager</span><span class="o">.</span><span class="n">shared_object</span><span class="p">()</span><span class="o">.</span><span class="n">set_specific_retention</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1316</span>         <span class="n">G</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">(</span><span class="n">lowername</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">moleculeclone</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1317</span>         <span class="n">thisenergy</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="s1">&#39;CURRENT ENERGY&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1318</span> 
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/driver.py</span> in <span class="ni">gradient</span><span class="nt">(name, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">675</span>         <span class="k">if</span> <span class="n">dertype</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">676</span>             <span class="c1"># Bounce to CBS in pure-gradient mode if &quot;method/basis&quot; name and all parts have analytic grad. avail.</span>
-<span class="ne">--&gt; </span><span class="mi">677</span>             <span class="k">return</span> <span class="n">driver_cbs</span><span class="o">.</span><span class="n">_cbs_gufunc</span><span class="p">(</span><span class="n">gradient</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">ptype</span><span class="o">=</span><span class="s1">&#39;gradient&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">678</span>         <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">679</span>             <span class="c1"># Set method-dependent scf convergence criteria (test on procedures[&#39;energy&#39;] since that&#39;s guaranteed)</span>
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/driver_cbs.py</span> in <span class="ni">_cbs_gufunc</span><span class="nt">(func, total_method_name, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1959</span>         <span class="n">optstash</span> <span class="o">=</span> <span class="n">p4util</span><span class="o">.</span><span class="n">OptionsState</span><span class="p">([</span><span class="s1">&#39;BASIS&#39;</span><span class="p">])</span>
-<span class="g g-Whitespace">   </span><span class="mi">1960</span>         <span class="n">core</span><span class="o">.</span><span class="n">set_global_option</span><span class="p">(</span><span class="s1">&#39;BASIS&#39;</span><span class="p">,</span> <span class="n">basis</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1961</span>         <span class="n">ptype_value</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">func</span><span class="p">(</span><span class="n">method_name</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">molecule</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1962</span>         <span class="k">if</span> <span class="n">core</span><span class="o">.</span><span class="n">get_option</span><span class="p">(</span><span class="s2">&quot;SCF&quot;</span><span class="p">,</span> <span class="s2">&quot;DF_INTS_IO&quot;</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;SAVE&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1963</span>             <span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/driver.py</span> in <span class="ni">gradient</span><span class="nt">(name, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">716</span> 
-<span class="g g-Whitespace">    </span><span class="mi">717</span>         <span class="c1"># Perform the gradient calculation</span>
-<span class="ne">--&gt; </span><span class="mi">718</span>         <span class="n">wfn</span> <span class="o">=</span> <span class="n">procedures</span><span class="p">[</span><span class="s1">&#39;gradient&#39;</span><span class="p">][</span><span class="n">lowername</span><span class="p">](</span><span class="n">lowername</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">molecule</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">719</span> 
-<span class="g g-Whitespace">    </span><span class="mi">720</span>     <span class="k">else</span><span class="p">:</span>
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/procrouting/proc.py</span> in <span class="ni">run_scf_gradient</span><span class="nt">(name, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2442</span>     <span class="n">ref_wfn</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ref_wfn&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2443</span>     <span class="k">if</span> <span class="n">ref_wfn</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">2444</span>         <span class="n">ref_wfn</span> <span class="o">=</span> <span class="n">run_scf</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2445</span> 
-<span class="g g-Whitespace">   </span><span class="mi">2446</span>     <span class="k">if</span> <span class="n">core</span><span class="o">.</span><span class="n">get_option</span><span class="p">(</span><span class="s1">&#39;SCF&#39;</span><span class="p">,</span> <span class="s1">&#39;REFERENCE&#39;</span><span class="p">)</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ROHF&#39;</span><span class="p">,</span> <span class="s1">&#39;CUHF&#39;</span><span class="p">]:</span>
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/procrouting/proc.py</span> in <span class="ni">run_scf</span><span class="nt">(name, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2347</span>         <span class="n">core</span><span class="o">.</span><span class="n">set_global_option</span><span class="p">(</span><span class="s1">&#39;SCF_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;DF&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2348</span> 
-<span class="ne">-&gt; </span><span class="mi">2349</span>     <span class="n">scf_wfn</span> <span class="o">=</span> <span class="n">scf_helper</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">post_scf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">2350</span>     <span class="n">returnvalue</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
-<span class="g g-Whitespace">   </span><span class="mi">2351</span> 
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/procrouting/proc.py</span> in <span class="ni">scf_helper</span><span class="nt">(name, post_scf, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1494</span>         <span class="n">core</span><span class="o">.</span><span class="n">print_out</span><span class="p">(</span><span class="s2">&quot;         &quot;</span> <span class="o">+</span> <span class="n">banner</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">58</span><span class="p">));</span>
-<span class="g g-Whitespace">   </span><span class="mi">1495</span> 
-<span class="ne">-&gt; </span><span class="mi">1496</span>     <span class="n">scf_wfn</span> <span class="o">=</span> <span class="n">scf_wavefunction_factory</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">base_wfn</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">get_option</span><span class="p">(</span><span class="s1">&#39;SCF&#39;</span><span class="p">,</span> <span class="s1">&#39;REFERENCE&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1497</span>     <span class="n">core</span><span class="o">.</span><span class="n">set_legacy_wavefunction</span><span class="p">(</span><span class="n">scf_wfn</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1498</span> 
-
-<span class="nn">~/miniconda3/envs/iesm/lib/python3.7/site-packages/psi4/driver/procrouting/proc.py</span> in <span class="ni">scf_wavefunction_factory</span><span class="nt">(name, ref_wfn, reference, **kwargs)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1178</span>     <span class="n">core</span><span class="o">.</span><span class="n">prepare_options_for_module</span><span class="p">(</span><span class="s2">&quot;SCF&quot;</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1179</span>     <span class="k">if</span> <span class="n">reference</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RHF&quot;</span><span class="p">,</span> <span class="s2">&quot;RKS&quot;</span><span class="p">]:</span>
-<span class="ne">-&gt; </span><span class="mi">1180</span>         <span class="n">wfn</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">ref_wfn</span><span class="p">,</span> <span class="n">superfunc</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1181</span>     <span class="k">elif</span> <span class="n">reference</span> <span class="o">==</span> <span class="s2">&quot;ROHF&quot;</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1182</span>         <span class="n">wfn</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">ref_wfn</span><span class="p">,</span> <span class="n">superfunc</span><span class="p">)</span>
-
-<span class="ne">RuntimeError</span>: 
-<span class="n">Fatal</span> <span class="n">Error</span><span class="p">:</span> <span class="n">RHF</span><span class="p">:</span> <span class="n">RHF</span> <span class="n">reference</span> <span class="ow">is</span> <span class="n">only</span> <span class="k">for</span> <span class="n">singlets</span><span class="o">.</span>
-<span class="n">Error</span> <span class="n">occurred</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">psilocaluser</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">builds</span><span class="o">/</span><span class="n">psi4</span><span class="o">-</span><span class="n">multiout_1622823463100</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">psi4</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">psi4</span><span class="o">/</span><span class="n">libscf_solver</span><span class="o">/</span><span class="n">rhf</span><span class="o">.</span><span class="n">cc</span> <span class="n">on</span> <span class="n">line</span><span class="p">:</span> <span class="mi">94</span>
-<span class="n">The</span> <span class="n">most</span> <span class="n">recent</span> <span class="mi">5</span> <span class="n">function</span> <span class="n">calls</span> <span class="n">were</span><span class="p">:</span>
 </pre></div>
 </div>
 </div>

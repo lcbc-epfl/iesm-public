@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF_student.html">
+    <a class="reference internal" href="../Ex4/HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -252,17 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,8 +325,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -422,7 +417,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex2/Ex2.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex2/Ex2.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -870,8 +865,7 @@ Gaussians and one function containing
 \chi(2p)^{(2)}_{\Gamma} &amp; = \sum_{k=1}^2 \alpha_{2p,k} \ \Gamma_p(\mathbf{r}) \ \mathrm{e}^{-\zeta_{2p,k}\mathbf{r}^2} \\
 \chi(2p)^{(1)}_{\Gamma}  &amp; =\alpha'_{2p} \ \Gamma_p(\mathbf{r}) \ \mathrm{e}^{-\zeta'_{2p}\mathbf{r}^2}
 \end{split}
-\end{aligned}
-\end{split}\]</div>
+\end{aligned}\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\Gamma_p(\mathbf{r})=x,y,z\)</span> accounts
 for orbitals <span class="math notranslate nohighlight">\(p_x\)</span>, <span class="math notranslate nohighlight">\(p_y\)</span>, <span class="math notranslate nohighlight">\(p_z\)</span>. Fixed coefficients are added in front
 of each Gaussian, denoted by <span class="math notranslate nohighlight">\(\alpha\)</span>.<br />
@@ -1052,12 +1046,13 @@ Note that if more atoms would be present, it would be needed to specify for each
 </div>
 </div>
 </div>
+<p>To verify the number of basis sets used, navigate to the appropriate output log file located in your file directory (lefthand side of page). You can use the CTRL+F search function to look for the phrase “Number of basis functions” and read under the section called “Primary Basis.”</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
 <p>Include a table of the the calculated energies using the three different basis sets, specifying the number of basis functions used. Compare the energies with the analytical value for the H atom, given by the analytical expression:</p>
 <div class="math notranslate nohighlight">
 \[
- E = - \frac{1}{2} m_e c^2\alpha^2,
+ E = \frac{1}{2} m_e c^2\alpha^2,
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fine structure constant.</p>
 <div class="math notranslate nohighlight">
@@ -1134,11 +1129,52 @@ Unrestricted Hartree-Fock (UHF).</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Equilibrium distance:
+RHF:  -1.1267350944766052
+UHF:  -1.1267350944528505
+Large distance:
+RHF:  -0.7451120298600045
+UHF:  -0.996465891927058
+</pre></div>
+</div>
+</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 9</p>
 <p>Include a table of the the calculated energies using the two reference wafefunctions. Compute also their difference, for both bond distances.<br />
 The energy to break a chemical bond is usually between 20 and 100 kcal/mol. Explain the roots and physical origin of the difference <span class="math notranslate nohighlight">\(E_{UHF-RHF}\)</span> (in your own words). Why is the energy gap between UHF and RHF larger at a larger bond distance?</p>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Solution</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Distance (A)</p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{RHF} (a.u.)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{UHF} (a.u.)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{UHF}-E_{RHF} (a.u.)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{UHF}-E_{RHF} (kcal/mol)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.7414</p></td>
+<td class="text-align:center"><p>-1.12674</p></td>
+<td class="text-align:center"><p>-1.12674</p></td>
+<td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>5.600</p></td>
+<td class="text-align:center"><p>-0.74511</p></td>
+<td class="text-align:center"><p>-0.99647</p></td>
+<td class="text-align:center"><p>-0.25136</p></td>
+<td class="text-align:center"><p>-157.73</p></td>
+</tr>
+</tbody>
+</table>
+<p>The ionization energy predicted by RHF and UHF is respectively 0.38163 a.u.(= 239.5 kcal/mol) and 0.13027  a.u.(= 81.7 kcal/mol). In particular, for the RHF case, this value is way larger than the 20-100 kcal/mol range.</p>
+<p>In UHF, the electrons of opposite spin are allowed to occupy different spatial orbitals, whereas in
+RHF this is not the case. At large internuclear separation each electron on the respective H-atom will behave more or less like an electron in 1s atomic orbital. Since in RHF both electrons have to occupy the same spatial orbital,
+even at very large distances, the spatial distribution would be the same, resulting in an unphysical ionic term. At equilibrium this effect is minimized, therefore both UHF and RHF give the same result.</p>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="output-files">
@@ -1153,6 +1189,33 @@ you should find the .log files created by Psi4. As this files may be very large 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7[?47h[?1h=
+Scratch directory: /tmp/
+
+Scratch directory: /tmp/
+
+*** tstart() called on noto.epfl.ch
+*** at Mon Sep  6 10:19:06 2021
+
+   =&gt; Loading Basis Set &lt;=
+
+    Name: 6-31G
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry H          line    26 file /opt/psi4conda/psi4conda-1.4rc3/share/psi4/basis/6-31g.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
+                              UHF Reference
+                        2 Threads,   1907 MiB Core
+[7mlarge_UHF-output.log[m[K
+</pre></div>
+</div>
+</div>
 </div>
 <p>When using the terminal, after typing <code class="docutils literal notranslate"><span class="pre">less</span></code> you may ‘jump’ through the file using the enter key, or you may directly drop to its end using a capital <code class="docutils literal notranslate"><span class="pre">G</span></code> (i.e. shift and g). Pop back to the top by typing a lowercase <code class="docutils literal notranslate"><span class="pre">g</span></code>. For a more finely tuned navigation, simply resort to the arrow keys. Typing <code class="docutils literal notranslate"><span class="pre">/</span></code> followed by a word will jump to said word in the file and pressing <code class="docutils literal notranslate"><span class="pre">n</span></code> will make you go through all the occurrences of that word in the file.</p>
 <p>If you are interested in extracting the lines of a file containing one particular keyword another useful command is <code class="docutils literal notranslate"><span class="pre">grep</span></code>.
@@ -1160,6 +1223,11 @@ For example, considering again the last .log file created, it is possible to ext
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep <span class="s1">&#39;Final Energy&#39;</span> large_UHF-output.log
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-UHF Final Energy:    -0.99646589192706
 </pre></div>
 </div>
 </div>

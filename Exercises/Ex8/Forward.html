@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.6. IRC analysis &#8212; Introduction to Electronic Structure Methods</title>
+    <title>9.5. Forward &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basis functions in quantum chemistry" href="../../Lecture/BasisFunctions.html" />
-    <link rel="prev" title="9.5. Forward" href="Forward.html" />
+    <link rel="next" title="9.6. IRC analysis" href="Visualize.html" />
+    <link rel="prev" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -322,13 +322,13 @@ const thebe_selector_output = ".output, .cell_output"
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Forward.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      9.5. Forward
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -415,7 +415,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Visualize.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Forward.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -475,7 +475,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Visualize.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Forward.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -503,7 +503,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex8/Visualize.ipynb"
+        <a href="../../_sources/Exercises/Ex8/Forward.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -540,90 +540,23 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-other-part-of-the-trajectory-from-your-colleague">
-   9.6.1. Download the other part of the trajectory from your colleague
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-the-trajectory">
-   9.6.2. Visualize the trajectory
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-the-minium-energy-path">
-   9.6.3. Plot the minium energy path
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-bonds">
-   9.6.4. Analyse Bonds
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>IRC analysis</h1>
+                <h1>Forward</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-other-part-of-the-trajectory-from-your-colleague">
-   9.6.1. Download the other part of the trajectory from your colleague
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-the-trajectory">
-   9.6.2. Visualize the trajectory
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-the-minium-energy-path">
-   9.6.3. Plot the minium energy path
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-bonds">
-   9.6.4. Analyse Bonds
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -631,197 +564,86 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="irc-analysis">
-<h1><span class="section-number">9.6. </span>IRC analysis<a class="headerlink" href="#irc-analysis" title="Permalink to this headline">#</a></h1>
-<p>In this notebook, we combine the both the forward and backward irc search into one trajectory and one list of energy values so that we can plot/analyze the minimum free energy path for converting the chloro-alcohol into the epoxide.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="forward">
+<h1><span class="section-number">9.5. </span>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">#</a></h1>
+<p>For optimizing towards the product.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="kn">import</span> <span class="nn">psi4</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
 </pre></div>
 </div>
 </div>
 </div>
-<section id="download-the-other-part-of-the-trajectory-from-your-colleague">
-<h2><span class="section-number">9.6.1. </span>Download the other part of the trajectory from your colleague<a class="headerlink" href="#download-the-other-part-of-the-trajectory-from-your-colleague" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy the code that you got from your colleague</span>
-<span class="n">key</span> <span class="o">=</span>  <span class="s1">&#39;adz9IoTVAFHh&#39;</span>
-
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;forward&#39;</span> <span class="c1">#backward</span>
-
-<span class="o">!</span>curl https://file.io/<span class="nv">$key</span> --output <span class="nv">$name</span>.p
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">-1 1</span>
+<span class="s2">symmetry c1</span>
+<span class="s2">C    0.161365681713   -0.511276706871   -0.065673009935</span>
+<span class="s2">C    0.161365681713   -0.511276706871    1.410165317053</span>
+<span class="s2">CL    0.161365681713    1.675115213693   -0.830233244286</span>
+<span class="s2">H    1.132477277417   -0.697571103690   -0.509045086116</span>
+<span class="s2">C   -1.040798213810   -1.016790788061   -0.814550748460</span>
+<span class="s2">O    0.357772074988   -1.868713449198    1.405962676748</span>
+<span class="s2">H    0.974243696079    0.103536536446    1.848363511315</span>
+<span class="s2">H   -0.802563630608   -0.159387482769    1.838649009148</span>
+<span class="s2">H   -0.947705950347   -0.799141876667   -1.882566051513</span>
+<span class="s2">H   -1.132438474569   -2.098248457383   -0.668277590228</span>
+<span class="s2">H   -1.951177110115   -0.531277272596   -0.443805926449&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>This load the pickled objects from disk</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">backward_e</span><span class="p">,</span> <span class="n">traj_backward</span><span class="p">,</span> <span class="n">traj_backward_np</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;backward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">forward_e</span><span class="p">,</span> <span class="n">traj_forward</span><span class="p">,</span> <span class="n">traj_forward_np</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;forward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Look at the energy list and find out which you need to reverse.</p>
-<p>Remember that we substracted the highest energy from all the values. Think about which point is the highest energy point on the minimum energy path connecting reactant and products.</p>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">variablename.reverse()</span></code> to reverse the list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">backward_e</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span>
-<span class="n">forward_e</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc_forward_new.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+     <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
+     <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;irc&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;irc_step_size&quot;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
+     <span class="s2">&quot;ensure_bt_convergence&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+     <span class="s2">&quot;irc_direction&quot;</span><span class="p">:</span><span class="s2">&quot;forward&quot;</span><span class="p">,</span>
+     <span class="p">})</span>
 
-<span class="c1">#list.reverse() #this is an inplace operation meaning you do not need to reassign the variable</span>
-
-<span class="c1"># combine the energies </span>
-<span class="c1"># Note that we need exclude the ts point from one of the trajectories</span>
-<span class="c1"># You can remove one index from the lists using list1[:-1] </span>
-<span class="c1"># Lists can be combined using lists = l1 + l2</span>
-<span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span> 
-
-<span class="c1"># combine the trajectories which are lists</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="kc">None</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="visualize-the-trajectory">
-<h2><span class="section-number">9.6.2. </span>Visualize the trajectory<a class="headerlink" href="#visualize-the-trajectory" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZGeomSlider</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
+<span class="n">E</span><span class="p">,</span> <span class="n">history_forward</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">forward</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="c1">#, )</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ed6f4bfd18ca48298cc52ee5d3f324a0", "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 8</p>
-<p>Is the stereochemistry at the carbon at which the reaction takes
-place retained?</p>
-</div>
-</section>
-<section id="plot-the-minium-energy-path">
-<h2><span class="section-number">9.6.3. </span>Plot the minium energy path<a class="headerlink" href="#plot-the-minium-energy-path" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pot Energy (kcal mol$^{-1}$)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 7</p>
-<p>Take a screenshot of the graph of the potential energy profile you
-recorded.
-Why is the barrier for the epoxide formation so low? Will this be
-the overall barrier for the reaction as depicted in the previous section?</p>
-</div>
-</section>
-<section id="analyse-bonds">
-<h2><span class="section-number">9.6.4. </span>Analyse Bonds<a class="headerlink" href="#analyse-bonds" title="Permalink to this headline">#</a></h2>
-<p>For the visualization we used a list of xyz file formated strings.
-For the analysis it is more convenient to work with a list of numpy arrays.</p>
-<p>Let’s have a look at different bond distances involving different atoms in the molecule.</p>
-<p>We can fist have a look at the first and last conformations, which correspond to the starting and ending point of the IRC that we performed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">traj</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.3714i&#39;]
+Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0283&#39; &#39;199.5642&#39; &#39;200.4680&#39; &#39;278.6674&#39; &#39;310.2934&#39; &#39;399.1543&#39;]
+Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traj_array</span> <span class="o">=</span> <span class="n">traj_backward_np</span> <span class="o">+</span> <span class="n">traj_forward_np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates_forward</span> <span class="o">=</span> <span class="n">history_forward</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
+<span class="n">energies_forward</span> <span class="o">=</span> <span class="n">history_forward</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
+
+<span class="n">forward_e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies_forward</span><span class="p">]</span>
+<span class="n">forward_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bond_length_XX</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">traj_array</span><span class="p">:</span>
-    <span class="c1"># collect bond length between atom 0 and 1 over the trajectory</span>
-    <span class="n">bond_length_XX</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We print out the numpy array of energies, list of xyz,  list of numpy arrays of xyz coordinates</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">((</span><span class="n">forward_e</span><span class="p">,</span> <span class="n">mol2traj</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span> <span class="n">coordinates_forward</span><span class="p">),</span> <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_forward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;forward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise  9</p>
-<p>How do the C-Cl and the two relevant C-O bond lengths change during
-the trajectory? Does the C-C bond in the ring contract as the
-epoxide is formed? Show a graph depicting the evolution of these
-parameters as the reaction progresses.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># add a call to ax.plot for each distance that you want to plot </span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bond_length_XX</span><span class="p">)</span>
-
-<span class="c1"># add an entry to the list of labels for each distance that you want to plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;label&quot;</span><span class="p">])</span> 
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;bond [A]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 10</p>
-<p>What is happening to the methyl group as the reaction proceeds? Find
-a suitable parameter (angle, dihedral) to describe and characterise
-possible changes you observe, change the code below. Explain in your report what atoms you considered and take and include the evolutions of the chosen parameters during the IRC procedure.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Modify the code below, chosing proper atoms to monitor the changes of the methyl group </span>
-<span class="n">methyl_angle</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">methyl_dihedral</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">traj_array</span><span class="p">:</span>
-    <span class="c1">#modify here</span>
-    <span class="n">methyl_angle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="c1">#], coord[#], coord[#])) </span>
-    <span class="n">methyl_dihedral</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_dihedral</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="c1">#], coord[#], coord[#], coord[#])) </span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methyl_angle</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methyl_dihedral</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;angle (#-#-#)&quot;</span><span class="p">,</span> <span class="s2">&quot;dihedral (#-#-#-#)&quot;</span><span class="p">])</span>
-        
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;angle [deg]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -851,17 +673,17 @@ possible changes you observe, change the code below. Explain in your report what
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Forward.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Backward.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9.5. </span>Forward</p>
+            <p class="prev-next-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../Lecture/BasisFunctions.html" title="next page">
+    <a class='right-next' id="next-link" href="Visualize.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basis functions in quantum chemistry</p>
+        <p class="prev-next-title"><span class="section-number">9.6. </span>IRC analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

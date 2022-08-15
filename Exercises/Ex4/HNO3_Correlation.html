@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="HF_student.html">
+    <a class="reference internal" href="HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -252,17 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,8 +325,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -422,7 +417,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/HNO3_Correlation.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/HNO3_Correlation.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -636,7 +631,7 @@ However, such truncations introduce size-consistency problems.</p>
 <h2><span class="section-number">5.5.1. </span>Influence of correlation on geometry<a class="headerlink" href="#influence-of-correlation-on-geometry" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
-<p>Assess and comment on the performance of HF, MP2 and MP3 with respect to the prediction of bond lengths and bond angles in HNO<span class="math notranslate nohighlight">\(_3\)</span> in reference to the experimental values <span id="id1"><sup></sup></span></p>
+<p>Assess and comment on the performance of HF, MP2 and MP3 with respect to the prediction of bond lengths and bond angles in HNO<span class="math notranslate nohighlight">\(_3\)</span> in reference to the experimental values <a class="footnote-reference brackets" href="#no3" id="id1">1</a></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -644,6 +639,7 @@ However, such truncations introduce size-consistency problems.</p>
 <span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
@@ -673,8 +669,8 @@ However, such truncations introduce size-consistency problems.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16309401172490427"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16309401172490427" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16309395087760777"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309395087760777" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -697,18 +693,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
 }
 
-var viewer_16309401172490427 = null;
-var warn = document.getElementById("3dmolwarning_16309401172490427");
+var viewer_16309395087760777 = null;
+var warn = document.getElementById("3dmolwarning_16309395087760777");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16309401172490427 = $3Dmol.createViewer($("#3dmolviewer_16309401172490427"),{backgroundColor:"white"});
-viewer_16309401172490427.zoomTo();
-	viewer_16309401172490427.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_16309401172490427.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16309401172490427.zoomTo();
-viewer_16309401172490427.render();
+viewer_16309395087760777 = $3Dmol.createViewer($("#3dmolviewer_16309395087760777"),{backgroundColor:"white"});
+viewer_16309395087760777.zoomTo();
+	viewer_16309395087760777.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_16309395087760777.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309395087760777.zoomTo();
+viewer_16309395087760777.render();
 });
 </script></div></div>
 </div>
@@ -721,7 +717,7 @@ viewer_16309401172490427.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_hf</span> <span class="o">=</span>  <span class="n">hno3</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="c1"># we clone the molecule as we want to start the geometry optimization from the same starting structure</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_hf</span> <span class="o">=</span>  <span class="n">hno3</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -729,7 +725,7 @@ viewer_16309401172490427.render();
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_hf.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">E_hf</span><span class="p">,</span> <span class="n">history_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;hf/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">hno3_hf</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">E_hf</span><span class="p">,</span> <span class="n">history_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;scf/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">hno3_hf</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -741,8 +737,18 @@ viewer_16309401172490427.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># perform the calculations for mp2 and mp3 here also creating cloned molecules</span>
-<span class="c1"># also create a history file as we will use it to get the last optimized geometries from psi4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_mp2</span> <span class="o">=</span> <span class="n">hno3_hf</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_mp2.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1"># run MP2 calculation here, need to use return_history=True</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_mp3</span> <span class="o">=</span> <span class="n">hno3_mp2</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_mp3.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="c1"># run mp3 calculation here, need to use return_history=True</span>
 </pre></div>
 </div>
 </div>
@@ -785,58 +791,12 @@ viewer_16309401172490427.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_1630941640277363"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_1630941640277363" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
-}
-
-var viewer_1630941640277363 = null;
-var warn = document.getElementById("3dmolwarning_1630941640277363");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_1630941640277363 = $3Dmol.createViewer($("#3dmolviewer_1630941640277363"),{backgroundColor:"white"});
-viewer_1630941640277363.zoomTo();
-	viewer_1630941640277363.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_1630941640277363.addLabel("0",{"position": {"x": 1.33818170834342, "y": -0.3441480621560101, "z": -0.11947710580699746}, "inFront": true});
-	viewer_1630941640277363.addLabel("1",{"position": {"x": 0.02718170834042214, "y": 0.013851937844808478, "z": 0.4225228941942418}, "inFront": true});
-	viewer_1630941640277363.addLabel("2",{"position": {"x": -0.3168182916603645, "y": 1.3208519378477972, "z": -0.13747710580703862}, "inFront": true});
-	viewer_1630941640277363.addLabel("3",{"position": {"x": -0.9318182916617707, "y": -0.944148062157382, "z": -0.12747710580701577}, "inFront": true});
-	viewer_1630941640277363.addLabel("4",{"position": {"x": -1.7988182916637532, "y": -0.7091480621568447, "z": 0.23052289419380287}, "inFront": true});
-	viewer_1630941640277363.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_1630941640277363.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewer_1630941640277363.zoomTo();
-viewer_1630941640277363.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we use the opt_coord dictionary to cacluate the properties using python </span>
-
-<span class="c1"># the units are in bohr (atomic unit of distance), we convert to Å </span>
-
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we use the opt_coord dictionary to calculate the properties using python </span>
+<span class="c1"># the central N has index 1, the oxygens have index 0,2,3</span>
+<span class="c1"># the units are in bohr, we convert to Å</span>
 <span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hf&#39;</span><span class="p">:{},</span><span class="s1">&#39;mp2&#39;</span><span class="p">:{},</span><span class="s1">&#39;mp3&#39;</span><span class="p">:{},</span><span class="s1">&#39;exp&#39;</span><span class="p">:{</span><span class="s1">&#39;r(O1-N) Å&#39;</span><span class="p">:</span><span class="mf">1.198</span><span class="p">,</span> <span class="s1">&#39;r(O2-N) Å&#39;</span><span class="p">:</span><span class="mf">1.410</span><span class="p">,</span> <span class="s1">&#39;r(O3-N) Å&#39;</span><span class="p">:</span><span class="mf">1.213</span><span class="p">,</span> <span class="s1">&#39;φ(O-N-O) °&#39;</span><span class="p">:</span><span class="mf">130.2</span><span class="p">},</span> <span class="p">}</span>
 <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">,</span> <span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;mp3&#39;</span><span class="p">]:</span>
     <span class="n">xyz</span> <span class="o">=</span> <span class="n">opt_coord</span><span class="p">[</span><span class="n">method</span><span class="p">]</span> <span class="c1"># store the geometry array optimized with the current method in a temp variable</span>
@@ -854,63 +814,6 @@ viewer_1630941640277363.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>hf</th>
-      <th>mp2</th>
-      <th>mp3</th>
-      <th>exp</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>r(O1-N) Å</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.198</td>
-    </tr>
-    <tr>
-      <th>r(O2-N) Å</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.410</td>
-    </tr>
-    <tr>
-      <th>r(O3-N) Å</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>1.213</td>
-    </tr>
-    <tr>
-      <th>φ(O-N-O) °</th>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>130.200</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 </section>
 <section id="recovering-correlation-energy">
@@ -918,7 +821,7 @@ viewer_1630941640277363.render();
 <p>At the Hartree Fock level of theory, each electron experiences an average potential field of all the other electrons. In essence, it is a “mean field” approach that neglects individual electron-electron interactions or “electron correlation”. Thus, we define the difference between the self-consistent field energy and the exact energy as the correlation energy. Two fundamentally different approaches to account for electron correlation effects are available by selecting a Correlation method: Moller Plesset (MP) Perturbation theory and Coupled Cluster (CC) theory.</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 8</p>
-<p>Calculate the SCF energy for Boron using the <em>6-311+G</em>* basis set, then determine the value of the correlation energy for boron assuming an “experimental” energy of <strong>-24.608 hartrees</strong> <span id="id2"><sup></sup></span></p>
+<p>Calculate the SCF energy for Boron using the <em>6-311+G</em>* basis set, then determine the value of the correlation energy for boron assuming an “experimental” energy of <strong>-24.608 hartrees</strong> <a class="footnote-reference brackets" href="#schaefer" id="id2">2</a></p>
 <p>Using the same basis set, perform an energy calculation with MP2 and MP4.</p>
 <p>Using the same basis set, perform an energy calculation with CCSD and CCSD(T).</p>
 <p>Determine the percentage of the correlation energy recovered for HF, MP2, MP4, CCSD, CCSD(T).</p>
@@ -927,8 +830,7 @@ viewer_1630941640277363.render();
 <p class="admonition-title">CCSD energy/mp2 energy</p>
 <p>You may recover the CCSD energy from the CCSD(T) calculation but you will have to look at the output file or by calculating both. The calculations for a single atom are quick.</p>
 <p>The same is true for the MP2 energy which can be extracted from the MP4 calculation.
-MP4 will require the use of the following options: <code class="docutils literal notranslate"><span class="pre">psi4.set_options({&quot;reference&quot;</span> <span class="pre">:&quot;rohf&quot;,</span> <span class="pre">&quot;qc_module&quot;:&quot;detci&quot;})</span></code> as psi4 does not have MP4 implemented using a rhf reference.
-You can get an overview of what Psi4 has implemented in the <a class="reference external" href="https://psicode.org/psi4manual/master/notes_c.html">documentation</a></p>
+MP4 will require the use of the following options: <code class="docutils literal notranslate"><span class="pre">psi4.set_options({&quot;reference&quot;</span> <span class="pre">:&quot;rohf&quot;,</span> <span class="pre">&quot;qc_module&quot;:&quot;detci&quot;})</span></code> as psi4 does not have MP4 implemented using a rhf reference.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +853,7 @@ You can get an overview of what Psi4 has implemented in the <a class="reference 
 <span class="n">B_exact_e</span> <span class="o">=</span> <span class="o">-</span><span class="mf">24.608</span>
 
 
-<span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy that should be recovered</span>
+<span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy that should be recovered using the B_exact_e</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Electron correlation: </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2"> hartrees&quot;</span><span class="p">)</span>
 </pre></div>
@@ -993,53 +895,16 @@ You can get an overview of what Psi4 has implemented in the <a class="reference 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>% correlation recovered</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>hf</th>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>mp2</th>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>mp4</th>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ccsd</th>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>ccsd(t)</th>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="no3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Anglada J. M., Olivella, S., Sole A., Phys. Chem. Chem. Phys., 2014 16, 19437</p>
+</dd>
+<dt class="label" id="schaefer"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>H. S. Schaefer and F. Harris, (1968) Phys Rev. 167, 67</p>
+</dd>
+</dl>
 </section>
 </section>
 

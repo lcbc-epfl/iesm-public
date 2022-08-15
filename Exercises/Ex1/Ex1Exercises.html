@@ -21,7 +21,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
@@ -38,7 +38,7 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
@@ -210,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF_student.html">
+    <a class="reference internal" href="../Ex4/HF.html">
      4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
@@ -252,17 +252,7 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5.html">
-     6.1. Testing DFT functionals on an aldol reaction.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5/Ex5b.html">
-     6.2. Density Functional Theory 2
-    </a>
-   </li>
+  <ul class="simple">
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -335,8 +325,13 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.5. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -422,7 +417,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https://github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex1/Ex1Exercises.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex1/Ex1Exercises.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -676,7 +671,8 @@ in as a written report.</p>
 <h2><span class="section-number">1.2.1. </span>Vectors and Matrices<a class="headerlink" href="#vectors-and-matrices" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 1</p>
-<p>Calculate the vector product <span class="math notranslate nohighlight">\(\mathbf{c}=\mathbf{a}\times\mathbf{b}\)</span>.</p>
+<p>Calculate the vector product <span class="math notranslate nohighlight">\(\mathbf{c}=\mathbf{a}\times\mathbf{b}\)</span>
+with</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \begin{aligned}
@@ -697,9 +693,7 @@ in as a written report.</p>
      \end{aligned}
    \]</div>
 </div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 2</p>
-<p>Evaluate the matrix product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\mathbf{B}\)</span>, where</p>
+<p>Evaluate the matrix product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\mathbf{B}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
     \mathbf{A} =\begin{aligned}
@@ -711,14 +705,15 @@ in as a written report.</p>
      \end{matrix}\right).
      \end{aligned}
     \end{split}\]</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 3</p>
 <p>Evaluate the determinant for the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-    \begin{aligned}
-     \mathbf{A} =
+    \mathbf{A}=\begin{aligned}
      \left(\begin{matrix}
      1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 2 \\ 2 &amp; 2 &amp; 3
      \end{matrix}\right)
@@ -754,7 +749,6 @@ in as a written report.</p>
      \end{aligned}
  \end{split}\]</div>
 </div>
-<!-- #endregion -->
 <!-- #region -->
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 6</p>
@@ -762,7 +756,6 @@ in as a written report.</p>
 Hermitian matrices is also Hermitian, then <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and
 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> commute.</p>
 </div>
-<!-- #endregion -->
 <!-- #region -->
 </section>
 <section id="a-simple-model-hamiltonian">
@@ -777,7 +770,6 @@ the energy levels <span class="math notranslate nohighlight">\(E\)</span> and th
 (You do not need to solve this problem explicitly, merely outlining the
 procedure is sufficient.)</p>
 </div>
-<!-- #endregion -->
 <!-- #region -->
 </section>
 <section id="real-space-basis">
@@ -787,7 +779,6 @@ procedure is sufficient.)</p>
 <p>Give the position and the momentum operators (consider only one
 dimension) in the position representation.</p>
 </div>
-<!-- #endregion -->
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 9</p>
 <p>Give the commutator of the position and linear momentum operators in
@@ -808,7 +799,6 @@ real-space wavefunction.</p>
 <p>Explain the connection between the Heisenberg uncertainty principle and
 the commutation relation.</p>
 </div>
-<!-- #endregion -->
 <div class="exercise admonition">
 <p class="admonition-title">Bonus Exercise 12</p>
 <p>The link between position and momentum representation is
@@ -824,7 +814,6 @@ uncertainty principle.</p>
 <p>Is the electronic Hamiltonian <span class="math notranslate nohighlight">\(\hat{H}_{el}\)</span> a linear operator and
 why (not)?</p>
 </div>
-<!-- #endregion -->
 <!-- #region -->
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 14</p>
@@ -832,7 +821,6 @@ why (not)?</p>
 <span class="math notranslate nohighlight">\(e^{\hat{A}+\hat{B}} = e^{\hat{A}}e^{\hat{B}}\)</span> ? Start from the
 definition of the matrix exponential.</p>
 </div>
-<!-- #endregion -->
 <div class="exercise admonition">
 <p class="admonition-title">Bonus Exercise 15</p>
 <p>Prove that the eigenvalues of a Hermitian operator are
@@ -859,7 +847,6 @@ real.</p>
      \end{aligned}
   \]</div>
 </div>
-<!-- #endregion -->
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 17</p>
 <p>Given a basis <span class="math notranslate nohighlight">\(\left\{\psi\right\}\)</span> for which</p>
@@ -901,8 +888,8 @@ $<span class="math notranslate nohighlight">\(
 <p>Show that, if two operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>
 commute and if <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
 <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\Ket{\psi}\)</span> is an eigenvector of
-<span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, too, with the same eigenvalue.\</p>
-<p><strong>Bonus</strong>:   If <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is part of a set of degenerate
+<span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, too, with the same eigenvalue.</p>
+<p><strong>Bonus</strong>:  If <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is part of a set of degenerate
 eigenvectors, show that the subspace spanned by the eigenvalues of
 <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> is invariant under the action of
 <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>.</p>
@@ -918,7 +905,10 @@ eigenvalues, then the matrix element
 </section>
 <section id="supporting-literature">
 <h2><span class="section-number">1.2.7. </span>Supporting Literature<a class="headerlink" href="#supporting-literature" title="Permalink to this headline">#</a></h2>
-<p>Read more in <span id="id1"></span>. Specifically in chapters II (B-E), complements DII and EIII.</p>
+<p>Cohen-Tannoudji, C. <em>et al.</em>: <em>Mécanique quantique, tome 1</em>. Hermann,
+Paris, <strong>1997</strong><br />
+Specifically, chapters II(B-E), compléments D<span class="math notranslate nohighlight">\(_\text{II}\)</span> and
+E<span class="math notranslate nohighlight">\(_\text{III}\)</span>.</p>
 </section>
 </section>
 
