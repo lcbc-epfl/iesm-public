@@ -19,7 +19,8 @@ parts:
       - file: Exercises/Ex3/Ex3GeoOpt.ipynb
     - file: Exercises/ex4b.md
       sections:
-      - file: Exercises/Ex4/HF_student.ipynb
+      - file: Exercises/Ex4/HF.ipynb
+    - file: Exercises/Written_exam_2012.md
     - file: Exercises/ex4.md
       sections:
       - file: Exercises/Ex4/Ex4Theory.md
@@ -42,6 +43,7 @@ parts:
       - file: Exercises/Ex8/Ex8Theory.ipynb
       - file: Exercises/Ex8/Ex8.ipynb
       - file: Exercises/Ex8/Backward.ipynb
+      - file: Exercises/Ex8/Forward.ipynb
       - file: Exercises/Ex8/Visualize.ipynb
   - caption: Lecture
     chapters:
