@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.1. Basis Sets - Defining Vector Spaces &#8212; Introduction to Electronic Structure Methods</title>
+    <title>2.1. Basis Sets - Defining Vector Spaces &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Large Basis Sets, Dissociation Energy and Geometry Optimisation" href="../ex3.html" />
-    <link rel="prev" title="1. Hartree-Fock Calculations in Psi4" href="../ex2.html" />
+    <link rel="next" title="3. Large Basis Sets, Dissociation Energy and Geometry Optimisation" href="../ex3.html" />
+    <link rel="prev" title="2. Hartree-Fock Calculations in Psi4" href="../ex2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -118,44 +118,71 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../ex2.html">
-   1. Hartree-Fock Calculations in
+   2. Hartree-Fock Calculations in
    <em>
     Psi4
    </em>
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     1.1. Basis Sets - Defining Vector Spaces
+     2.1. Basis Sets - Defining Vector Spaces
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex3.html">
-   2. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3.html">
-     2.1. Effects of Basis Set Size: The Molecular Case
+     3.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3Diss.html">
-     2.2. Recording a Dissociation Curve for H
+     3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
      </span>
@@ -164,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
-     2.3. Geometry optimization of
+     3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
      </span>
@@ -174,24 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex4b.html">
-   3. The hartree fock procedure in detail
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF.html">
-     3.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex4.html">
-   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+   4. The hartree fock procedure in detail
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -200,28 +210,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF.html">
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4.html">
+   5. Post-Hartree Fock Methods: MPn and Configuration Interaction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/Ex4Theory.html">
-     4.1. Møller-Plesset Perturbation Theory
+     5.1. Møller-Plesset Perturbation Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/BDE.html">
-     4.2. Homolytic Cleavage of the C-F Bond
+     5.2. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/HNO3_Correlation.html">
-     4.5. Correlation energy
+     5.5. Correlation energy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex5.html">
-   5. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -230,34 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex6.html">
-   6. Troubleshooting, Pitfalls, Traps
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
-     6.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
-     6.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
-     6.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex7.html">
-   7. Potential Energy Scans and Visualisation of Trajectories
+   7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -266,15 +266,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     7.1. Potential Energy Scans and Visualisation of Trajectories
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex8.html">
-   8. Finding Transition States and Barrier Heights: First Order Saddle Points
+  <a class="reference internal" href="../ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -283,28 +293,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8Theory.html">
-     8.1. Theory
+     9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     8.2. Locating Transition States: Constrained Optimisations
+     9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Backward.html">
-     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Forward.html">
-     8.5. Forward
+     9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     8.6. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -539,17 +566,17 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1.1. Basis Sets - Defining Vector Spaces
+   2.1. Basis Sets - Defining Vector Spaces
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#one-electron-wavefunctions-slater-type-orbitals">
-     1.1.1. One-Electron Wavefunctions: Slater-Type Orbitals
+     2.1.1. One-Electron Wavefunctions: Slater-Type Orbitals
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pople-type-split-valence-basis-sets">
-       1.1.1.1. Pople-Type Split-Valence Basis Sets
+       2.1.1.1. Pople-Type Split-Valence Basis Sets
       </a>
      </li>
     </ul>
@@ -558,7 +585,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#first-steps-in-psi4-the-hydrogen-atom">
-   1.2. First Steps in
+   2.2. First Steps in
    <em>
     Psi4
    </em>
@@ -567,17 +594,17 @@ title="Print to PDF"
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#electronic-structure-software">
-     1.2.1. Electronic Structure Software
+     2.2.1. Electronic Structure Software
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#preliminary-steps">
-     1.2.2. Preliminary steps
+     2.2.2. Preliminary steps
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">
-     1.2.3. Writing An Input For
+     2.2.3. Writing An Input For
      <em>
       Psi4
      </em>
@@ -588,12 +615,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rhf-vs-uhf">
-   1.3. RHF vs. UHF
+   2.3. RHF vs. UHF
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#output-files">
-   1.4. Output Files
+   2.4. Output Files
   </a>
  </li>
 </ul>
@@ -617,17 +644,17 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   1.1. Basis Sets - Defining Vector Spaces
+   2.1. Basis Sets - Defining Vector Spaces
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#one-electron-wavefunctions-slater-type-orbitals">
-     1.1.1. One-Electron Wavefunctions: Slater-Type Orbitals
+     2.1.1. One-Electron Wavefunctions: Slater-Type Orbitals
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h3 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pople-type-split-valence-basis-sets">
-       1.1.1.1. Pople-Type Split-Valence Basis Sets
+       2.1.1.1. Pople-Type Split-Valence Basis Sets
       </a>
      </li>
     </ul>
@@ -636,7 +663,7 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#first-steps-in-psi4-the-hydrogen-atom">
-   1.2. First Steps in
+   2.2. First Steps in
    <em>
     Psi4
    </em>
@@ -645,17 +672,17 @@ title="Print to PDF"
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#electronic-structure-software">
-     1.2.1. Electronic Structure Software
+     2.2.1. Electronic Structure Software
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#preliminary-steps">
-     1.2.2. Preliminary steps
+     2.2.2. Preliminary steps
     </a>
    </li>
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">
-     1.2.3. Writing An Input For
+     2.2.3. Writing An Input For
      <em>
       Psi4
      </em>
@@ -666,12 +693,12 @@ title="Print to PDF"
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#rhf-vs-uhf">
-   1.3. RHF vs. UHF
+   2.3. RHF vs. UHF
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#output-files">
-   1.4. Output Files
+   2.4. Output Files
   </a>
  </li>
 </ul>
@@ -685,7 +712,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="basis-sets-defining-vector-spaces">
-<h1><span class="section-number">1.1. </span>Basis Sets - Defining Vector Spaces<a class="headerlink" href="#basis-sets-defining-vector-spaces" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.1. </span>Basis Sets - Defining Vector Spaces<a class="headerlink" href="#basis-sets-defining-vector-spaces" title="Permalink to this headline">#</a></h1>
 <p>Three questions have to be addressed before tackling an electronic
 structure problem: Which computer code is best suited for a given
 problem, which computational method will give the most accurate results
@@ -699,25 +726,25 @@ one issue to be resolved: What is the basis in which we want to expand
 our wavefunction that is described by the in principle infinite
 expansion</p>
 <div class="math notranslate nohighlight" id="equation-wf-expansion">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-wf-expansion" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-wf-expansion" title="Permalink to this equation">#</a></span>\[
  \Psi(\mathbf{r}_1,\dots,\mathbf{r}_N) = \sum_j c_j \psi_j(\mathbf{r}_1,\dots,\mathbf{r}_N)
 \]</div>
 <section id="one-electron-wavefunctions-slater-type-orbitals">
-<h2><span class="section-number">1.1.1. </span>One-Electron Wavefunctions: Slater-Type Orbitals<a class="headerlink" href="#one-electron-wavefunctions-slater-type-orbitals" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.1.1. </span>One-Electron Wavefunctions: Slater-Type Orbitals<a class="headerlink" href="#one-electron-wavefunctions-slater-type-orbitals" title="Permalink to this headline">#</a></h2>
 <p>By defining a basis set, we define a <em>vector space</em> in which the
 Schrödinger equation is to be solved - and we wish this space to be as
 close as possible to the complete space that defines the accurate
 solution. You have already seen that the Hartree-Fock scheme makes a
 convenient (but not always accurate) approximation to <span class="math notranslate nohighlight">\(\Psi\)</span>, in that it
 is assumed that one Slater determinant is enough to accurately describe
-the problem. Therefore, in Hartree-Fock theory, the <a class="reference internal" href="#equation-wf-expansion">(1.1)</a> reduces to:</p>
+the problem. Therefore, in Hartree-Fock theory, the <a class="reference internal" href="#equation-wf-expansion">(2.1)</a> reduces to:</p>
 <div class="math notranslate nohighlight" id="equation-hf-wf">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-hf-wf" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-hf-wf" title="Permalink to this equation">#</a></span>\[
  \Psi(\mathbf{r}_1,\dots,\mathbf{r}_N) = \psi(\mathbf{r}_1,\dots,\mathbf{r}_N),
 \]</div>
 <p>where</p>
 <div class="math notranslate nohighlight" id="equation-slater-det">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-slater-det" title="Permalink to this equation">#</a></span>\[ 
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-slater-det" title="Permalink to this equation">#</a></span>\[ 
  \psi(\mathbf{r}_1,\dots,\mathbf{r}_N) = \det\left|\phi_1(\mathbf{r}_1),\dots,\phi_N(\mathbf{r}_N)\right|
 \]</div>
 <p>is a Slater determinant to account for the antisymmetry requirement as
@@ -731,7 +758,7 @@ one-particle atomic orbitals. This implies that <span class="math notranslate no
 will be expanded in terms of all <em>atomic one-particle orbitals</em> of the
 system, a set of <em>atomic basis functions</em></p>
 <div class="math notranslate nohighlight" id="equation-lcao">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-lcao" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-lcao" title="Permalink to this equation">#</a></span>\[
  \phi_m(\mathbf{r}_m) = \sum_n D_{mn} \chi_n(\mathbf{r}_m),
 \]</div>
 <p>where the <span class="math notranslate nohighlight">\(\left\{\chi\right\}\)</span> are the atomic orbitals and <span class="math notranslate nohighlight">\(D_{mn}\)</span> is
@@ -749,7 +776,7 @@ the nuclei and that the orbital fall off exponentially at large
 distances from the nuclei dictates a certain form. One suitable form was
 proposed by Slater in the 30ies of the last century:</p>
 <div class="math notranslate nohighlight" id="equation-sto">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-sto" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-sto" title="Permalink to this equation">#</a></span>\[
  \chi_{\xi,n,l,m}(\mathbf{r},\theta,\phi) = N \cdot Y_{lm}(\theta,\phi)\cdot r^{n-1}\cdot e^{-\zeta r}
 \]</div>
 <p>A Slater-type orbital is composed of an angular part that is taken from
@@ -768,7 +795,7 @@ basis function <span class="math notranslate nohighlight">\(\chi\)</span> is in 
 term contraction is chosen to avoid confusion between the atomic basis
 functions, and the linear combination of Gaussians they are based upon):</p>
 <div class="math notranslate nohighlight" id="equation-sto-3g">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-sto-3g" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-sto-3g" title="Permalink to this equation">#</a></span>\[
  \chi_{\xi,n,l,m}^{STO-3G}(\mathbf{r},\theta,\phi) = \sum_{i=1}^3 d_i \cdot N_i \cdot Y_{lm}(\theta,\phi) \cdot r^{2n-2-l} \cdot e^{-\xi_i r^2},
 \]</div>
 <p>where <span class="math notranslate nohighlight">\(N_i\)</span> is a normalisation constant, and <span class="math notranslate nohighlight">\(\xi_i\)</span> is the i<span class="math notranslate nohighlight">\(^{th}\)</span>
@@ -784,7 +811,7 @@ always a certain trade-off between the desired accuracy and the
 efficiency of a calculation. For more details, you may refer to the main
 course script.</p>
 <section id="pople-type-split-valence-basis-sets">
-<h3><span class="section-number">1.1.1.1. </span>Pople-Type Split-Valence Basis Sets<a class="headerlink" href="#pople-type-split-valence-basis-sets" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.1.1.1. </span>Pople-Type Split-Valence Basis Sets<a class="headerlink" href="#pople-type-split-valence-basis-sets" title="Permalink to this headline">#</a></h3>
 <p>Core and valence orbitals are equally important for the energetics of a
 system, but bonding is dictated by the valence electrons. One may
 therefore want to improve over the STO-3G basis by allowing for
@@ -809,21 +836,21 @@ two and one Gaussian contraction(s) respectively.</p>
 <figure class="align-default" id="orbitals">
 <img alt="../../_images/orbitals.png" src="../../_images/orbitals.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.1 </span><span class="caption-text">Explanation of what the numbers in the 3-21G basis set notation mean.</span><a class="headerlink" href="#orbitals" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Explanation of what the numbers in the 3-21G basis set notation mean.</span><a class="headerlink" href="#orbitals" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Consider, as a practical example, carbon with the electronic
 configuration <span class="math notranslate nohighlight">\(1s^22s^22p^2\)</span> in the 3-21G basis. The core orbital (1s)
 is given by a contraction over <span style="color:green">three</span> Gaussians.</p>
 <div class="math notranslate nohighlight" id="equation-example-c-core">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-example-c-core" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-example-c-core" title="Permalink to this equation">#</a></span>\[
  \chi(1s)=\sum_{k=1}^3 \alpha_{1s,k}\mathrm{e}^{-\zeta_{1s,k}\mathbf{r}^2}
 \]</div>
 <p>To every valence orbital (2s and 2p), one function containing <span style="color:blue"> two </span>
 Gaussians and one function containing
 <span style="color:red"> one </span> Gaussian is attributed.</p>
 <div class="math notranslate nohighlight" id="equation-example-c-valence1">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-example-c-valence1" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-example-c-valence1" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \begin{split}
 \chi(2s)^{(2)} &amp; = \sum_{k=1}^2 \alpha_{2s,k} \ \mathrm{e}^{-\zeta_{2s,k}\mathbf{r}^2} \\
@@ -832,7 +859,7 @@ Gaussians and one function containing
 \end{aligned}
 \end{split}\]</div>
 <div class="math notranslate nohighlight" id="equation-example-c-valence2">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-example-c-valence2" title="Permalink to this equation">#</a></span>\[\begin{split}
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-example-c-valence2" title="Permalink to this equation">#</a></span>\[\begin{split}
 \begin{aligned}
 \begin{split}
 \chi(2p)^{(2)}_{\Gamma} &amp; = \sum_{k=1}^2 \alpha_{2p,k} \ \Gamma_p(\mathbf{r}) \ \mathrm{e}^{-\zeta_{2p,k}\mathbf{r}^2} \\
@@ -856,7 +883,7 @@ parameters in the following format:</p>
 <figure class="align-default" id="basis-set-param">
 <img alt="../../_images/basis_set_param_noted.png" src="../../_images/basis_set_param_noted.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Example of a basis set parameter file</span><a class="headerlink" href="#basis-set-param" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 2.2 </span><span class="caption-text">Example of a basis set parameter file</span><a class="headerlink" href="#basis-set-param" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>which are the 3-21G basis set parameters for a carbon atom (from <a class="reference external" href="https://github.com/psi4/psi4/blob/master/psi4/share/psi4/basis/3-21g.gbs">https://github.com/psi4/psi4/blob/master/psi4/share/psi4/basis/3-21g.gbs</a>).<br />
@@ -912,13 +939,13 @@ Indicate the number of basis functions and the number of Gaussian primitives tha
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="first-steps-in-psi4-the-hydrogen-atom">
-<h1><span class="section-number">1.2. </span>First Steps in <em>Psi4</em>: The Hydrogen Atom<a class="headerlink" href="#first-steps-in-psi4-the-hydrogen-atom" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.2. </span>First Steps in <em>Psi4</em>: The Hydrogen Atom<a class="headerlink" href="#first-steps-in-psi4-the-hydrogen-atom" title="Permalink to this headline">#</a></h1>
 <p>You will learn how to use <em>Psi4</em> by putting your hands on a simple
 example: The total energy of the hydrogen atom in Hartree-Fock theory.
 This is a tutorial - you are not only invited to type the commands that
 are being introduced, you are obliged to.</p>
 <section id="electronic-structure-software">
-<h2><span class="section-number">1.2.1. </span>Electronic Structure Software<a class="headerlink" href="#electronic-structure-software" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.1. </span>Electronic Structure Software<a class="headerlink" href="#electronic-structure-software" title="Permalink to this headline">#</a></h2>
 <p><em>Ab initio</em> electronic structure software packages make it possible to
 calculate numerically a variety of properties of a given system, based
 only on physical constants and the system’s Hamiltonian. The only
@@ -934,7 +961,7 @@ programs.</p>
 <p>The current version of <em>Psi4</em>  that you will be using is v1.4rc1.</p>
 </section>
 <section id="preliminary-steps">
-<h2><span class="section-number">1.2.2. </span>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.2. </span>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">#</a></h2>
 <p>Before starting to work with <em>Psi4</em> we need to set up the environment, importing the required modules:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -965,7 +992,7 @@ programs.</p>
 </div>
 </section>
 <section id="writing-an-input-for-psi4-and-invoking-the-program">
-<h2><span class="section-number">1.2.3. </span>Writing An Input For <em>Psi4</em> and Invoking the Program<a class="headerlink" href="#writing-an-input-for-psi4-and-invoking-the-program" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.3. </span>Writing An Input For <em>Psi4</em> and Invoking the Program<a class="headerlink" href="#writing-an-input-for-psi4-and-invoking-the-program" title="Permalink to this headline">#</a></h2>
 <p>The geomety of the <span class="math notranslate nohighlight">\(H\)</span> atom can now be defined, passing it as a string into the <code class="docutils literal notranslate"><span class="pre">psi4.geometry()</span></code> function in either Z-matrix (see note below) or Cartesian format, where the triple-quote <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code> syntax is used to allow the string to break over multiple lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1044,7 +1071,7 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="rhf-vs-uhf">
-<h1><span class="section-number">1.3. </span>RHF vs. UHF<a class="headerlink" href="#rhf-vs-uhf" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.3. </span>RHF vs. UHF<a class="headerlink" href="#rhf-vs-uhf" title="Permalink to this headline">#</a></h1>
 <p>This exercise is already a preparation for the next set of exercises -
 you will now calculate a molecular structure, rather than an isolated
 atom. Using the same basis throughout (6-31G), you should compare <span class="math notranslate nohighlight">\(H_2\)</span>
@@ -1151,7 +1178,7 @@ even at very large distances, the spatial distribution would be the same, result
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="output-files">
-<h1><span class="section-number">1.4. </span>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.4. </span>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">#</a></h1>
 <p>So far we only focused on the energy given as ouput from the <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> function. However, for each calculation a .log file is produced, containing detailed information of the procedure.</p>
 <p>List the files in your directory (type <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your terminal) to see what new files have been generated. Indeed,
 you should find the .log files created by Psi4. As this files may be very large and we have no intention of editing it, you may use <code class="docutils literal notranslate"><span class="pre">less</span></code> to display it.</p>
@@ -1251,13 +1278,13 @@ Compare the number of cycles for the different basis sets.</p></li>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Hartree-Fock Calculations in <em>Psi4</em></p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../ex3.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Large Basis Sets, Dissociation Energy and Geometry Optimisation</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Large Basis Sets, Dissociation Energy and Geometry Optimisation</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

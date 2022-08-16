@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>4.2. Homolytic Cleavage of the C-F Bond &#8212; Introduction to Electronic Structure Methods</title>
+    <title>5.2. Homolytic Cleavage of the C-F Bond &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="4.5. Correlation energy" href="HNO3_Correlation.html" />
-    <link rel="prev" title="4.1. Møller-Plesset Perturbation Theory" href="Ex4Theory.html" />
+    <link rel="next" title="5.5. Correlation energy" href="HNO3_Correlation.html" />
+    <link rel="prev" title="5.1. Møller-Plesset Perturbation Theory" href="Ex4Theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -119,11 +119,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex2.html">
-   1. Hartree-Fock Calculations in
-   <em>
-    Psi4
-   </em>
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -132,15 +129,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2.html">
-     1.1. Basis Sets - Defining Vector Spaces
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex3.html">
-   2. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  <a class="reference internal" href="../ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -149,13 +159,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3.html">
-     2.1. Effects of Basis Set Size: The Molecular Case
+     3.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3Diss.html">
-     2.2. Recording a Dissociation Curve for H
+     3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
      </span>
@@ -164,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
-     2.3. Geometry optimization of
+     3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
      </span>
@@ -174,54 +201,54 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex4b.html">
-   3. The hartree fock procedure in detail
+   4. The hartree fock procedure in detail
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="HF.html">
-     3.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../ex4.html">
-   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+   5. Post-Hartree Fock Methods: MPn and Configuration Interaction
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Ex4Theory.html">
-     4.1. Møller-Plesset Perturbation Theory
+     5.1. Møller-Plesset Perturbation Theory
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     4.2. Homolytic Cleavage of the C-F Bond
+     5.2. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="HNO3_Correlation.html">
-     4.5. Correlation energy
+     5.5. Correlation energy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex5.html">
-   5. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -230,34 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex6.html">
-   6. Troubleshooting, Pitfalls, Traps
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
-     6.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
-     6.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
-     6.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex7.html">
-   7. Potential Energy Scans and Visualisation of Trajectories
+   7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -266,15 +266,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     7.1. Potential Energy Scans and Visualisation of Trajectories
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex8.html">
-   8. Finding Transition States and Barrier Heights: First Order Saddle Points
+  <a class="reference internal" href="../ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -283,28 +293,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8Theory.html">
-     8.1. Theory
+     9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     8.2. Locating Transition States: Constrained Optimisations
+     9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Backward.html">
-     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Forward.html">
-     8.5. Forward
+     9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     8.6. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -539,24 +566,24 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   4.2. Homolytic Cleavage of the C-F Bond
+   5.2. Homolytic Cleavage of the C-F Bond
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#practical-application-of-post-hartree-fock-methods">
-     4.2.1. Practical Application of Post-Hartree-Fock Methods
+     5.2.1. Practical Application of Post-Hartree-Fock Methods
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ch3-radical">
-   4.3. CH3· radical
+   5.3. CH3· radical
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#f-radical">
-   4.4. F · radical
+   5.4. F · radical
   </a>
  </li>
 </ul>
@@ -580,24 +607,24 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   4.2. Homolytic Cleavage of the C-F Bond
+   5.2. Homolytic Cleavage of the C-F Bond
   </a>
   <ul class="visible nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
     <a class="reference internal nav-link" href="#practical-application-of-post-hartree-fock-methods">
-     4.2.1. Practical Application of Post-Hartree-Fock Methods
+     5.2.1. Practical Application of Post-Hartree-Fock Methods
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ch3-radical">
-   4.3. CH3· radical
+   5.3. CH3· radical
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#f-radical">
-   4.4. F · radical
+   5.4. F · radical
   </a>
  </li>
 </ul>
@@ -611,7 +638,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="homolytic-cleavage-of-the-c-f-bond">
-<h1><span class="section-number">4.2. </span>Homolytic Cleavage of the C-F Bond<a class="headerlink" href="#homolytic-cleavage-of-the-c-f-bond" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.2. </span>Homolytic Cleavage of the C-F Bond<a class="headerlink" href="#homolytic-cleavage-of-the-c-f-bond" title="Permalink to this headline">#</a></h1>
 <p>In this exercise, you will investigate the influence of correlation on
 the BDE in a radical process by comparing Hartree-Fock to MPn results.
 Consider the reaction enthalpy of the homolytic cleavage of the H<span class="math notranslate nohighlight">\(_3\)</span>C-F
@@ -632,7 +659,7 @@ E^{BDE} =  E^{H_3C\cdot} + E^{F\cdot} - E^{CH_3F}\end{aligned}
 <span class="math notranslate nohighlight">\(E^{BDE}\)</span> was experimentally determined to be 109.2 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> (<em>J.
 Phys. Chem. A</em>, <strong>2000</strong>, 104, <em>436</em>).</p>
 <section id="practical-application-of-post-hartree-fock-methods">
-<h2><span class="section-number">4.2.1. </span>Practical Application of Post-Hartree-Fock Methods<a class="headerlink" href="#practical-application-of-post-hartree-fock-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.1. </span>Practical Application of Post-Hartree-Fock Methods<a class="headerlink" href="#practical-application-of-post-hartree-fock-methods" title="Permalink to this headline">#</a></h2>
 <p>Bond dissociation energies of large systems often require the use of
 large basis sets of triple-<span class="math notranslate nohighlight">\(\zeta\)</span> quality; you may either use Pople’s
 6-311+G* basis, or the larger aug-cc-pVTZ by Dunning and coworkers (the
@@ -886,7 +913,7 @@ viewer_16309378866940935.render();
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="ch3-radical">
-<h1><span class="section-number">4.3. </span>CH3· radical<a class="headerlink" href="#ch3-radical" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.3. </span>CH3· radical<a class="headerlink" href="#ch3-radical" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
@@ -1043,7 +1070,7 @@ viewer_16309380695813327.render();
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="f-radical">
-<h1><span class="section-number">4.4. </span>F · radical<a class="headerlink" href="#f-radical" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.4. </span>F · radical<a class="headerlink" href="#f-radical" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_radical</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -1145,13 +1172,13 @@ viewer_16309380695813327.render();
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.1. </span>Møller-Plesset Perturbation Theory</p>
+            <p class="prev-next-title"><span class="section-number">5.1. </span>Møller-Plesset Perturbation Theory</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="HNO3_Correlation.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4.5. </span>Correlation energy</p>
+        <p class="prev-next-title"><span class="section-number">5.5. </span>Correlation energy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

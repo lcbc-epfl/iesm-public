@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Geometry optimization of \(H_2O\) &#8212; Introduction to Electronic Structure Methods</title>
+    <title>3.3. Geometry optimization of \(H_2O\) &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. The hartree fock procedure in detail" href="../ex4b.html" />
-    <link rel="prev" title="2.2. Recording a Dissociation Curve for H\(_2\): RHF vs. UHF" href="Ex3Diss.html" />
+    <link rel="next" title="4. The hartree fock procedure in detail" href="../ex4b.html" />
+    <link rel="prev" title="3.2. Recording a Dissociation Curve for H\(_2\): RHF vs. UHF" href="Ex3Diss.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -119,11 +119,8 @@ const thebe_selector_output = ".output, .cell_output"
 </p>
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex2.html">
-   1. Hartree-Fock Calculations in
-   <em>
-    Psi4
-   </em>
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -132,30 +129,60 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex2/Ex2.html">
-     1.1. Basis Sets - Defining Vector Spaces
+     2.1. Basis Sets - Defining Vector Spaces
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../ex3.html">
-   2. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Ex3.html">
-     2.1. Effects of Basis Set Size: The Molecular Case
+     3.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex3Diss.html">
-     2.2. Recording a Dissociation Curve for H
+     3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
      </span>
@@ -164,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3. Geometry optimization of
+     3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
      </span>
@@ -174,24 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex4b.html">
-   3. The hartree fock procedure in detail
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF.html">
-     3.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex4.html">
-   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
+   4. The hartree fock procedure in detail
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -200,28 +210,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF.html">
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4.html">
+   5. Post-Hartree Fock Methods: MPn and Configuration Interaction
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/Ex4Theory.html">
-     4.1. Møller-Plesset Perturbation Theory
+     5.1. Møller-Plesset Perturbation Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/BDE.html">
-     4.2. Homolytic Cleavage of the C-F Bond
+     5.2. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/HNO3_Correlation.html">
-     4.5. Correlation energy
+     5.5. Correlation energy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex5.html">
-   5. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -230,34 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex6.html">
-   6. Troubleshooting, Pitfalls, Traps
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
-     6.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
-     6.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
-     6.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex7.html">
-   7. Potential Energy Scans and Visualisation of Trajectories
+   7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -266,15 +266,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     7.1. Potential Energy Scans and Visualisation of Trajectories
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex8.html">
-   8. Finding Transition States and Barrier Heights: First Order Saddle Points
+  <a class="reference internal" href="../ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -283,28 +293,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8Theory.html">
-     8.1. Theory
+     9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     8.2. Locating Transition States: Constrained Optimisations
+     9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Backward.html">
-     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Forward.html">
-     8.5. Forward
+     9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     8.6. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -539,7 +566,7 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-lets-visualize-this">
-   2.3.1. Now lets visualize this
+   3.3.1. Now lets visualize this
   </a>
  </li>
 </ul>
@@ -563,7 +590,7 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#now-lets-visualize-this">
-   2.3.1. Now lets visualize this
+   3.3.1. Now lets visualize this
   </a>
  </li>
 </ul>
@@ -577,7 +604,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="geometry-optimization-of-h-2o">
-<h1><span class="section-number">2.3. </span>Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span><a class="headerlink" href="#geometry-optimization-of-h-2o" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.3. </span>Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span><a class="headerlink" href="#geometry-optimization-of-h-2o" title="Permalink to this headline">#</a></h1>
 <p>Until now we have used fixed positions of the nuclei. This means we created a molecule with specified x,y,z coordinates for each atom, passed it to <code class="docutils literal notranslate"><span class="pre">psi4</span></code> and then we called <code class="docutils literal notranslate"><span class="pre">psi4.energy(method/basisset)</span></code>. By running such a single point energy calculation we find the lowest energy solution for the Schroedinger equation at the current geometry.</p>
 <p>Now, what if we do not know how our molecule looks like? E.g suppose the equilibrium bond length and the angle between the atoms of a triatomic molecule that you are looking at is unknown. How to find it?</p>
 <p>The procedue to start from a starting geometry and arrive at an optimal geometry is called <strong>geometry optimization</strong>.</p>
@@ -610,7 +637,7 @@ local minimum, but not neccessarily the global minimum.</p>
 <figure class="align-default" id="geoopt">
 <img alt="../../_images/GeoOpt.png" src="../../_images/GeoOpt.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 2.1 </span><span class="caption-text">Procedure of a geometry optimization.</span><a class="headerlink" href="#geoopt" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Procedure of a geometry optimization.</span><a class="headerlink" href="#geoopt" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <div class="cell docutils container">
@@ -746,7 +773,7 @@ finds a minimum.</p>
 <p>Why does the optimization finish after 8 steps?</p>
 </div>
 <section id="now-lets-visualize-this">
-<h2><span class="section-number">2.3.1. </span>Now lets visualize this<a class="headerlink" href="#now-lets-visualize-this" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.3.1. </span>Now lets visualize this<a class="headerlink" href="#now-lets-visualize-this" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -899,13 +926,13 @@ What do the points on the orange curve correspond to if you look at the flowchar
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span>Recording a Dissociation Curve for H<span class="math notranslate nohighlight">\(_2\)</span>: RHF vs. UHF</p>
+            <p class="prev-next-title"><span class="section-number">3.2. </span>Recording a Dissociation Curve for H<span class="math notranslate nohighlight">\(_2\)</span>: RHF vs. UHF</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../ex4b.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>The hartree fock procedure in detail</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>The hartree fock procedure in detail</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
