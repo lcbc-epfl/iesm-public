@@ -1,3 +1,0 @@
-# Troubleshooting, Pitfalls, Traps
-
-If you routinely use electronic structure methods, there is probably not one week passing without a run crashing, leaving you puzzled by a (sometimes mysterious) error message. Even if your run completes successfully, this will not necessarily mean that your results are meaningful (the principle garbage in, garbage out applies); the method that you used may in the end turn out to have been an inappropriate choice. This brief exercise deals with the most important error messages you may encounter.

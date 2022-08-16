@@ -9,36 +9,36 @@ parts:
       - file: Exercises/Ex1/Ex1Theory.md
       - file: Exercises/Ex1/Ex1Exercises.ipynb
       - file: Exercises/Ex1/Ex1.ipynb
-    - file: Exercises/ex2.md
+    - file: Exercises/Ex2/IESM_Ex2.ipynb
       sections:
       - file: Exercises/Ex2/Ex2.ipynb
-    - file: Exercises/ex3.md
+    - file: Exercises/Ex3/IESM_Ex3.ipynb
       sections:
       - file: Exercises/Ex3/Ex3.ipynb
       - file: Exercises/Ex3/Ex3Diss.ipynb
       - file: Exercises/Ex3/Ex3GeoOpt.ipynb
-    - file: Exercises/ex4b.md
+    - file: Exercises/Ex4/IESM_Ex4b.ipynb
       sections:
       - file: Exercises/Ex4/HF.ipynb
     - file: Exercises/Written_exam_2012.md
-    - file: Exercises/ex4.md
+    - file: Exercises/Ex4/IESM_Ex4.ipynb
       sections:
       - file: Exercises/Ex4/Ex4Theory.md
       - file: Exercises/Ex4/BDE.ipynb
       - file: Exercises/Ex4/HNO3_Correlation.ipynb
-    - file: Exercises/Ex5.md
+    - file: Exercises/Ex5/IESM_Ex5.ipynb
       sections: 
       - file: Exercises/Ex5/Ex5.ipynb
       - file: Exercises/Ex5/Ex5b.ipynb 
-    - file: Exercises/ex6.md
+    - file: Exercises/Ex6/IESM_Ex6.ipynb
       sections:
       - file: Exercises/Ex6/Ex6.ipynb
       - file: Exercises/Ex6/Ex6_DFT_Hard_Easy.ipynb
       - file: Exercises/Ex6/Ex6_DFT_integration_grid.ipynb  
-    - file: Exercises/ex7.md
+    - file: Exercises/Ex7/IESM_Ex7.ipynb
       sections:
       - file: Exercises/Ex7/Ex7.ipynb  
-    - file: Exercises/ex8.md
+    - file: Exercises/Ex8/IESM_Ex8.ipynb
       sections:
       - file: Exercises/Ex8/Ex8Theory.ipynb
       - file: Exercises/Ex8/Ex8.ipynb
