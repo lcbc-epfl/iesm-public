@@ -4,7 +4,7 @@ parts:
   - caption: Exercises
     numbered: true
     chapters:
-    - file: Exercises/Ex1/IESM_ex1
+    - file: Exercises/Ex1/IESM_ex1.ipynb
       sections:
       - file: Exercises/Ex1/Ex1Theory.md
       - file: Exercises/Ex1/Ex1Exercises.ipynb
