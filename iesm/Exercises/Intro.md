@@ -1,4 +1,0 @@
-# Exercises
-
-IESM exercises
-
