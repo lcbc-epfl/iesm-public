@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5. Post-Hartree Fock Methods: MPn and Configuration Interaction" href="../ex4.html" />
-    <link rel="prev" title="4. The hartree fock procedure in detail" href="../ex4b.html" />
+    <link rel="next" title="5. Post-Hartree Fock Methods: MPn and Configuration Interaction" href="IESM_Ex4.html" />
+    <link rel="prev" title="4. The hartree fock procedure in detail" href="IESM_Ex4b.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -146,7 +146,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex2.html">
+  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
    2. Hartree-Fock Calculations in
    <em>
     Psi4
@@ -166,7 +166,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex3.html">
+  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
    3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
@@ -200,7 +200,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../ex4b.html">
+  <a class="reference internal" href="IESM_Ex4b.html">
    4. The hartree fock procedure in detail
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
@@ -217,7 +217,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex4.html">
+  <a class="reference internal" href="IESM_Ex4.html">
    5. Post-Hartree Fock Methods: MPn and Configuration Interaction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -244,7 +244,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5.html">
+  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
    6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
@@ -256,7 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex6.html">
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -283,7 +283,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex7.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -300,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex8.html">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -1100,8 +1100,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5b29cbfa-2e2c-430c-b149-731996f2b12a">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-5b29cbfa-2e2c-430c-b149-731996f2b12a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6b61394f-f305-4a78-bbba-20f332f4609f">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-6b61394f-f305-4a78-bbba-20f332f4609f" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1133,8 +1133,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.9. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d3cd99a-7b0a-493e-879b-5c4afc9890e0">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-1d3cd99a-7b0a-493e-879b-5c4afc9890e0" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a888cacd-abfe-4872-80bc-13c9121d7540">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-a888cacd-abfe-4872-80bc-13c9121d7540" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1145,8 +1145,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2cf05fbe-a294-4c5d-b102-8f3fe973b5f3">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-2cf05fbe-a294-4c5d-b102-8f3fe973b5f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-32e4d6e4-57c3-41c8-bbb4-fc9aa9f7305c">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-32e4d6e4-57c3-41c8-bbb4-fc9aa9f7305c" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1501,14 +1501,14 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../ex4b.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="IESM_Ex4b.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">4. </span>The hartree fock procedure in detail</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../ex4.html" title="next page">
+    <a class='right-next' id="next-link" href="IESM_Ex4.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">5. </span>Post-Hartree Fock Methods: MPn and Configuration Interaction</p>
