@@ -718,10 +718,10 @@ structure problem: Which computer code is best suited for a given
 problem, which computational method will give the most accurate results
 in a reasonable time, and what basis set offers the best compromise of
 accuracy and efficiency? Throughout this course, you shall always be
-using the same code (<em>Psi4</em>) - but you will get to try out some
+using the same code (<a class="reference external" href="https://psicode.org/">Psi4</a>) - but you will get to try out some
 of the different approaches discussed in the lecture. Before the first
 practical example - applying the Hartree-Fock-Roothaan scheme (that you
-have just treated in the lecture) - to the hydrogen atom, there remains
+will treat in deatil in the lectures) - to the hydrogen atom, there remains
 one issue to be resolved: What is the basis in which we want to expand
 our wavefunction that is described by the in principle infinite
 expansion</p>
@@ -1145,37 +1145,6 @@ UHF:  -0.996465891927058
 <p>Include a table of the the calculated energies using the two reference wafefunctions. Compute also their difference, for both bond distances.<br />
 The energy to break a chemical bond is usually between 20 and 100 kcal/mol. Explain the roots and physical origin of the difference <span class="math notranslate nohighlight">\(E_{UHF-RHF}\)</span> (in your own words). Why is the energy gap between UHF and RHF larger at a larger bond distance?</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Solution</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Distance (A)</p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{RHF} (a.u.)\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{UHF} (a.u.)\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{UHF}-E_{RHF} (a.u.)\)</span></p></th>
-<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(E_{UHF}-E_{RHF} (kcal/mol)\)</span></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>0.7414</p></td>
-<td class="text-align:center"><p>-1.12674</p></td>
-<td class="text-align:center"><p>-1.12674</p></td>
-<td class="text-align:center"><p>0</p></td>
-<td class="text-align:center"><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>5.600</p></td>
-<td class="text-align:center"><p>-0.74511</p></td>
-<td class="text-align:center"><p>-0.99647</p></td>
-<td class="text-align:center"><p>-0.25136</p></td>
-<td class="text-align:center"><p>-157.73</p></td>
-</tr>
-</tbody>
-</table>
-<p>The ionization energy predicted by RHF and UHF is respectively 0.38163 a.u.(= 239.5 kcal/mol) and 0.13027  a.u.(= 81.7 kcal/mol). In particular, for the RHF case, this value is way larger than the 20-100 kcal/mol range.</p>
-<p>In UHF, the electrons of opposite spin are allowed to occupy different spatial orbitals, whereas in
-RHF this is not the case. At large internuclear separation each electron on the respective H-atom will behave more or less like an electron in 1s atomic orbital. Since in RHF both electrons have to occupy the same spatial orbital,
-even at very large distances, the spatial distribution would be the same, resulting in an unphysical ionic term. At equilibrium this effect is minimized, therefore both UHF and RHF give the same result.</p>
-</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="output-files">
 <h1><span class="section-number">2.4. </span>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">#</a></h1>
@@ -1256,16 +1225,16 @@ Compare the number of cycles for the different basis sets.</p></li>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "psi4"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "psi4",
+            kernelName: "compchem",
             path: "./Exercises/Ex2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'psi4'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               

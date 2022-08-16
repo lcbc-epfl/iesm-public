@@ -56,10 +56,3 @@ The course will be **Mon 10:15-12:00am** (Lectures in [BCH3303](https://plan.epf
 | 23.12. Fri (m)  | exam     | Oral exam                                                 | UR         |
 | 23.12. Fri (a)  | exam     | Oral exam                                                 | UR         |
 ---!>
-
-
-**References**
-
-```{bibliography}
-:style: plain
-```
