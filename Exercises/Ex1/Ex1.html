@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.3. Working with vectors using Numpy &#8212; Introduction to Electronic Structure Methods</title>
+    <title>Working with vectors using Numpy &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2. Hartree-Fock Calculations in Psi4" href="../ex2.html" />
-    <link rel="prev" title="1.2. Exercises" href="Ex1Exercises.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -117,40 +115,30 @@ const thebe_selector_output = ".output, .cell_output"
   Exercises
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../ex1.html">
-   1. Linear Algebra in Quantum Mechanics
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex2.html">
+   1. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1Theory.html">
-     1.1. Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex1Exercises.html">
-     1.2. Exercises
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.3. Working with vectors using Numpy
+    <a class="reference internal" href="../Ex2/Ex2.html">
+     1.1. Basis Sets - Defining Vector Spaces
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex2.html">
-   2. Hartree-Fock Calculations in
-   <em>
-    Psi4
-   </em>
+  <a class="reference internal" href="../ex3.html">
+   2. Large Basis Sets, Dissociation Energy and Geometry Optimisation
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -159,30 +147,13 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2.html">
-     2.1. Basis Sets - Defining Vector Spaces
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex3.html">
-   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3.html">
-     3.1. Effects of Basis Set Size: The Molecular Case
+     2.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3Diss.html">
-     3.2. Recording a Dissociation Curve for H
+     2.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
      </span>
@@ -191,7 +162,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
-     3.3. Geometry optimization of
+     2.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
      </span>
@@ -201,7 +172,24 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex4b.html">
-   4. The hartree fock procedure in detail
+   3. The hartree fock procedure in detail
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF.html">
+     3.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex4.html">
+   4. Post-Hartree Fock Methods: MPn and Configuration Interaction
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
   <label for="toctree-checkbox-4">
@@ -210,45 +198,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF.html">
-     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex4.html">
-   5. Post-Hartree Fock Methods: MPn and Configuration Interaction
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/Ex4Theory.html">
-     5.1. Møller-Plesset Perturbation Theory
+     4.1. Møller-Plesset Perturbation Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/BDE.html">
-     5.2. Homolytic Cleavage of the C-F Bond
+     4.2. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/HNO3_Correlation.html">
-     5.5. Correlation energy
+     4.5. Correlation energy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+   5. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -257,7 +228,34 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../ex6.html">
-   7. Troubleshooting, Pitfalls, Traps
+   6. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     6.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     6.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     6.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../ex7.html">
+   7. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -266,25 +264,15 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
-     7.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
-     7.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
-     7.3. Integration grids
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     7.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex7.html">
-   8. Potential Energy Scans and Visualisation of Trajectories
+  <a class="reference internal" href="../ex8.html">
+   8. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -293,45 +281,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     8.1. Potential Energy Scans and Visualisation of Trajectories
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../ex8.html">
-   9. Finding Transition States and Barrier Heights: First Order Saddle Points
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8Theory.html">
-     9.1. Theory
+     8.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     9.2. Locating Transition States: Constrained Optimisations
+     8.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Backward.html">
-     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Forward.html">
-     9.5. Forward
+     8.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     9.6. IRC analysis
+     8.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -566,15 +537,15 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="working-with-vectors-using-numpy">
+<h1>Working with vectors using Numpy<a class="headerlink" href="#working-with-vectors-using-numpy" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
 </div>
-<section class="tex2jax_ignore mathjax_ignore" id="working-with-vectors-using-numpy">
-<h1><span class="section-number">1.3. </span>Working with vectors using Numpy<a class="headerlink" href="#working-with-vectors-using-numpy" title="Permalink to this headline">#</a></h1>
 <p>The wavefunction, <span class="math notranslate nohighlight">\(\psi(x)\)</span> can be represented as a <em>column vector</em>, <span class="math notranslate nohighlight">\(|\psi\rangle\)</span> . The complex conjugate of the wavefunction, <span class="math notranslate nohighlight">\(\psi^*(x)\)</span> is also represented by a vector which is the complex conjugate transpose of <span class="math notranslate nohighlight">\(|\psi\rangle\)</span>.</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{align*}
@@ -596,15 +567,15 @@ title="Print to PDF"
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 21</p>
 <p>Define two vectors, <code class="docutils literal notranslate"><span class="pre">ϕ1</span></code> and <code class="docutils literal notranslate"><span class="pre">ϕ2</span></code>, with two elements each, that are normalized, in the sense <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_i\rangle=1\)</span>, and orthogonal in sense that <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_j\rangle=0\)</span>.</p>
+<p><strong>Hint:</strong> In <code class="docutils literal notranslate"><span class="pre">numpy</span></code> a vector <code class="docutils literal notranslate"><span class="pre">v</span></code> with the two elements <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> is defined through the command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
 </div>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>A vector v with the two elements 1 and 2 is defined through the command <code class="docutils literal notranslate"><span class="pre">v=np.array([1,2])</span></code>.</p>
-</aside>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with ϕ1</span>
-<span class="n">ϕ2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with ϕ2 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with your choice for ϕ1</span>
+<span class="n">ϕ2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with your choice for ϕ2 </span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ϕ1: </span><span class="si">{</span><span class="n">ϕ1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ϕ2: </span><span class="si">{</span><span class="n">ϕ2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
@@ -618,15 +589,15 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>inner product (scalar product) of two vectors: <code class="docutils literal notranslate"><span class="pre">v.dot(v)</span></code></p>
-<p>complex conjugate of a vector: <code class="docutils literal notranslate"><span class="pre">v.conj()</span></code></p>
-<p>inner product of <span class="math notranslate nohighlight">\(v^\dagger v\)</span>: <code class="docutils literal notranslate"><span class="pre">v.conj().dot(v)</span></code></p>
-</aside>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 22</p>
+<p class="admonition-title">Exercise 21</p>
 <p>Show that <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are normalized and orthonormal</p>
+<p><strong>Hint:</strong> Here are reported some useful <code class="docutils literal notranslate"><span class="pre">numpy</span></code> functions to work with vectors:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">v.dot(w)</span></code> - inner product (scalar product) of two vectors <code class="docutils literal notranslate"><span class="pre">v</span></code>, <code class="docutils literal notranslate"><span class="pre">w</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v.conj()</span></code> - complex conjugate of a vector <code class="docutils literal notranslate"><span class="pre">v</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">v.conj().dot(w)</span></code> - inner product of <span class="math notranslate nohighlight">\(v^\dagger w\)</span></p></li>
+</ul>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -654,6 +625,11 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ϕ1|ϕ2&gt; = 0
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 
@@ -666,16 +642,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "psi4"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "psi4",
+            kernelName: "compchem",
             path: "./Exercises/Ex1"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'psi4'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               
@@ -684,20 +660,6 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Ex1Exercises.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1.2. </span>Exercises</p>
-        </div>
-    </a>
-    <a class='right-next' id="next-link" href="../ex2.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
 </div>
             </footer>
         </div>
