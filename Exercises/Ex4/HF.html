@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.1. Hartree-Fock Procedure for Approximate Quantum Chemistry &#8212; Introduction to Electronic Structure Methods</title>
+    <title>4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Post-Hartree Fock Methods: MPn and Configuration Interaction" href="IESM_Ex4.html" />
-    <link rel="prev" title="6. The hartree fock procedure in detail" href="IESM_Ex4b.html" />
+    <link rel="next" title="5. Post-Hartree Fock Methods: MPn and Configuration Interaction" href="IESM_Ex4.html" />
+    <link rel="prev" title="4. The hartree fock procedure in detail" href="IESM_Ex4b.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -118,27 +118,9 @@ const thebe_selector_output = ".output, .cell_output"
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ex1/Ex1Theory.html">
-   1. Theory
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ex1/Ex1Exercises.html">
-   2. Exercises
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ex1/Ex1.html">
-   3. Working with vectors using Numpy
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
-   4. Hartree-Fock Calculations in
-   <em>
-    Psi4
-   </em>
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -147,15 +129,28 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2.html">
-     4.1. Basis Sets - Defining Vector Spaces
+    <a class="reference internal" href="../Ex1/Ex1Theory.html">
+     1.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1Exercises.html">
+     1.2. Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1.html">
+     1.3. Working with vectors using Numpy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
-   5. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
+   2. Hartree-Fock Calculations in
+   <em>
+    Psi4
+   </em>
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -164,13 +159,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3.html">
-     5.1. Effects of Basis Set Size: The Molecular Case
+     3.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3Diss.html">
-     5.2. Recording a Dissociation Curve for H
+     3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
      </span>
@@ -179,7 +191,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3GeoOpt.html">
-     5.3. Geometry optimization of
+     3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
      </span>
@@ -189,54 +201,54 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="IESM_Ex4b.html">
-   6. The hartree fock procedure in detail
+   4. The hartree fock procedure in detail
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="IESM_Ex4.html">
-   7. Post-Hartree Fock Methods: MPn and Configuration Interaction
+   5. Post-Hartree Fock Methods: MPn and Configuration Interaction
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex4Theory.html">
-     7.1. Møller-Plesset Perturbation Theory
+     5.1. Møller-Plesset Perturbation Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="BDE.html">
-     7.2. Homolytic Cleavage of the C-F Bond
+     5.2. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="HNO3_Correlation.html">
-     7.5. Correlation energy
+     5.5. Correlation energy
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   8. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -245,34 +257,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex6/IESM_Ex6.html">
-   9. Troubleshooting, Pitfalls, Traps
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
-     9.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
-     9.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
-     9.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
-   10. Potential Energy Scans and Visualisation of Trajectories
+   7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -281,15 +266,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     10.1. Potential Energy Scans and Visualisation of Trajectories
+    <a class="reference internal" href="../Ex6/Ex6.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+     7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
-   11. Finding Transition States and Barrier Heights: First Order Saddle Points
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -298,28 +293,45 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8Theory.html">
-     11.1. Theory
+     9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     11.2. Locating Transition States: Constrained Optimisations
+     9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Backward.html">
-     11.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Forward.html">
-     11.5. Forward
+     9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Visualize.html">
-     11.6. IRC analysis
+     9.6. IRC analysis
     </a>
    </li>
   </ul>
@@ -554,62 +566,62 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions-for-interview">
-   6.1.1. Questions for interview
+   4.1.1. Questions for interview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-hartree-fock-procedure">
-   6.1.2. The Hartree-Fock procedure
+   4.1.2. The Hartree-Fock procedure
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">
-   6.1.3. Orthogonalizing the AO basis set
+   4.1.3. Orthogonalizing the AO basis set
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iv-the-overlap-integrals">
-   6.1.4. IV. The overlap integrals
+   4.1.4. IV. The overlap integrals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#constructing-the-overlap-matrix">
-   6.1.5. Constructing the overlap matrix
+   4.1.5. Constructing the overlap matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#einstein-implicit-summation-notation">
-   6.1.6. Einstein implicit summation notation
+   4.1.6. Einstein implicit summation notation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">
-   6.1.7. Gaussian atomic orbital basis set
+   4.1.7. Gaussian atomic orbital basis set
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#an-orthogonalization-matrix">
-   6.1.8. An orthogonalization matrix
+   4.1.8. An orthogonalization matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">
-   6.1.9. The Fock Matrix Transformed to an Orthonormal Basis
+   4.1.9. The Fock Matrix Transformed to an Orthonormal Basis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
-   6.1.10. Initial guess for the Fock Matrix is the one electron Hamiltonian
+   4.1.10. Initial guess for the Fock Matrix is the one electron Hamiltonian
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-density-matrix">
-   6.1.11. The Density Matrix
+   4.1.11. The Density Matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">
-   6.1.12. Coulomb and Exchange Integrals and the SCF Energy
+   4.1.12. Coulomb and Exchange Integrals and the SCF Energy
   </a>
  </li>
 </ul>
@@ -633,62 +645,62 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#questions-for-interview">
-   6.1.1. Questions for interview
+   4.1.1. Questions for interview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-hartree-fock-procedure">
-   6.1.2. The Hartree-Fock procedure
+   4.1.2. The Hartree-Fock procedure
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">
-   6.1.3. Orthogonalizing the AO basis set
+   4.1.3. Orthogonalizing the AO basis set
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#iv-the-overlap-integrals">
-   6.1.4. IV. The overlap integrals
+   4.1.4. IV. The overlap integrals
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#constructing-the-overlap-matrix">
-   6.1.5. Constructing the overlap matrix
+   4.1.5. Constructing the overlap matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#einstein-implicit-summation-notation">
-   6.1.6. Einstein implicit summation notation
+   4.1.6. Einstein implicit summation notation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">
-   6.1.7. Gaussian atomic orbital basis set
+   4.1.7. Gaussian atomic orbital basis set
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#an-orthogonalization-matrix">
-   6.1.8. An orthogonalization matrix
+   4.1.8. An orthogonalization matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">
-   6.1.9. The Fock Matrix Transformed to an Orthonormal Basis
+   4.1.9. The Fock Matrix Transformed to an Orthonormal Basis
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
-   6.1.10. Initial guess for the Fock Matrix is the one electron Hamiltonian
+   4.1.10. Initial guess for the Fock Matrix is the one electron Hamiltonian
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-density-matrix">
-   6.1.11. The Density Matrix
+   4.1.11. The Density Matrix
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">
-   6.1.12. Coulomb and Exchange Integrals and the SCF Energy
+   4.1.12. Coulomb and Exchange Integrals and the SCF Energy
   </a>
  </li>
 </ul>
@@ -702,9 +714,9 @@ title="Print to PDF"
               <div>
                 
   <section id="hartree-fock-procedure-for-approximate-quantum-chemistry">
-<h1><span class="section-number">6.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry<a class="headerlink" href="#hartree-fock-procedure-for-approximate-quantum-chemistry" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry<a class="headerlink" href="#hartree-fock-procedure-for-approximate-quantum-chemistry" title="Permalink to this headline">#</a></h1>
 <section id="questions-for-interview">
-<h2><span class="section-number">6.1.1. </span>Questions for interview<a class="headerlink" href="#questions-for-interview" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.1. </span>Questions for interview<a class="headerlink" href="#questions-for-interview" title="Permalink to this headline">#</a></h2>
 <ol class="simple">
 <li><p>Is a Gaussian type basis set orthonormal? How did we test it? If not how did we treat this in the HF procedure?</p></li>
 <li><p>What is the accuracy of your script compared to psi4?  How is the closeness to the psi4 result related to E_Conv? What differences are acceptable?</p></li>
@@ -730,7 +742,7 @@ title="Print to PDF"
 <p>In this lab activity, you will build and diagonalize the Fock matrix to determine the MO coefficients and energies for a molecule.  We will be using the functions of the Psi4 quantum chemistry software package to compute the integrals we need.  The following notebook will lead you through setting up your molecule, establishing the basis set, and forming and diagonalizing the Fock matrix.  Be sure to run each cell as your proceed through the notebook.</p>
 </section>
 <section id="the-hartree-fock-procedure">
-<span id="hf"></span><h2><span class="section-number">6.1.2. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this headline">#</a></h2>
+<span id="hf"></span><h2><span class="section-number">4.1.2. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this headline">#</a></h2>
 <p>The Schrödinger equation has the structure of an eigenvalue equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -738,7 +750,7 @@ title="Print to PDF"
 \]</div>
 <p>In Hartree-Fock theory, this is reexpresed in terms of the Fock matrix, <span class="math notranslate nohighlight">\(F\)</span>, a matrix of wavefunction amplitudes for each MO, <span class="math notranslate nohighlight">\(C\)</span>, and the overlap matrix, <span class="math notranslate nohighlight">\(S\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-fockmatrix">
-<span class="eqno">(6.1)<a class="headerlink" href="#equation-fockmatrix" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-fockmatrix" title="Permalink to this equation">#</a></span>\[
 FC = SCE.
 \]</div>
 <p>The Fock matrix for a closed-shell system is</p>
@@ -759,7 +771,7 @@ F = H + 2J - K
 <p>It can be helpful to look back at <a class="reference internal" href="../Ex1/Ex1Theory.html#exercise1"><span class="std std-ref">Hilbert Space and Bra-Ket Notation</span></a></p>
 </section>
 <section id="orthogonalizing-the-ao-basis-set">
-<h2><span class="section-number">6.1.3. </span>Orthogonalizing the AO basis set<a class="headerlink" href="#orthogonalizing-the-ao-basis-set" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.3. </span>Orthogonalizing the AO basis set<a class="headerlink" href="#orthogonalizing-the-ao-basis-set" title="Permalink to this headline">#</a></h2>
 <p>Use the two orthonormal basis vector that we defined in Exercise 1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -772,7 +784,7 @@ F = H + 2J - K
 </div>
 </section>
 <section id="iv-the-overlap-integrals">
-<h2><span class="section-number">6.1.4. </span>IV. The overlap integrals<a class="headerlink" href="#iv-the-overlap-integrals" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.4. </span>IV. The overlap integrals<a class="headerlink" href="#iv-the-overlap-integrals" title="Permalink to this headline">#</a></h2>
 <p>For a set of basis functions, <span class="math notranslate nohighlight">\(\phi_i(\tau)\)</span>, where <span class="math notranslate nohighlight">\(\tau\)</span> is a shorthand for all the coordinates of all the particles, we can calculate the overlap integrals between the basis functions in the following way</p>
 <div class="math notranslate nohighlight">
 \[S_{ij}=\int {\rm d}\tau\; \phi_i^*(\tau)\phi_j(\tau).\]</div>
@@ -806,7 +818,7 @@ F = H + 2J - K
 </div>
 </section>
 <section id="constructing-the-overlap-matrix">
-<h2><span class="section-number">6.1.5. </span>Constructing the overlap matrix<a class="headerlink" href="#constructing-the-overlap-matrix" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.5. </span>Constructing the overlap matrix<a class="headerlink" href="#constructing-the-overlap-matrix" title="Permalink to this headline">#</a></h2>
 <p>These overlap integrals, <span class="math notranslate nohighlight">\(S_{ij}\)</span>, can be interpreted as the elements on the <span class="math notranslate nohighlight">\(i\)</span>-th row and <span class="math notranslate nohighlight">\(j\)</span>-th column of a matrix, <span class="math notranslate nohighlight">\(S\)</span>. Let’s propose a matrix, <span class="math notranslate nohighlight">\(S\)</span>, made of the overlap integrals <span class="math notranslate nohighlight">\(S_{ij}\)</span>. We can build <span class="math notranslate nohighlight">\(S\)</span> systematically in the following way. First, make a matrix, <span class="math notranslate nohighlight">\(B\)</span>, composed of our basis vectors as columns,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} B = \left(\begin{array}{ccc}|&amp; |&amp;|\\ \phi_1 &amp;\phi_2&amp;\phi_3\\|&amp;|&amp;|\end{array}\right).\end{split}\]</div>
@@ -856,7 +868,7 @@ F = H + 2J - K
 </div>
 </section>
 <section id="einstein-implicit-summation-notation">
-<h2><span class="section-number">6.1.6. </span>Einstein implicit summation notation<a class="headerlink" href="#einstein-implicit-summation-notation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.6. </span>Einstein implicit summation notation<a class="headerlink" href="#einstein-implicit-summation-notation" title="Permalink to this headline">#</a></h2>
 <p>Matrix multiplication is defined through</p>
 <div class="math notranslate nohighlight">
 \[(AB)_{pq}= \sum_i A_{p,i}B_{i,q}\qquad\text{explicit summation}\]</div>
@@ -905,7 +917,7 @@ Let’s try this with a simple basis set of two (perhaps) orthonormal vectors.</
 </div>
 </section>
 <section id="gaussian-atomic-orbital-basis-set">
-<h2><span class="section-number">6.1.7. </span>Gaussian atomic orbital basis set<a class="headerlink" href="#gaussian-atomic-orbital-basis-set" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.7. </span>Gaussian atomic orbital basis set<a class="headerlink" href="#gaussian-atomic-orbital-basis-set" title="Permalink to this headline">#</a></h2>
 <p>H<span class="math notranslate nohighlight">\(_2\)</span>O is a small but interesting molecule to use in our exploration.</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
@@ -1041,7 +1053,7 @@ The Hartree-Fock ground state energy of the water is: -74.94207989868094 Eh
 </div>
 </section>
 <section id="an-orthogonalization-matrix">
-<h2><span class="section-number">6.1.8. </span>An orthogonalization matrix<a class="headerlink" href="#an-orthogonalization-matrix" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.8. </span>An orthogonalization matrix<a class="headerlink" href="#an-orthogonalization-matrix" title="Permalink to this headline">#</a></h2>
 <p>Recall that if we had used the hydrogen atom wavefunctions as our basis set, the AO wavefunctions would all be orthonormal. Since we used a basis set of Gaussian wavefuctions, this may not be the case. We will now introduce some tools to fix it!</p>
 <p>Since our AO basis set was not orthonormal, we seek to construct an orthogonalization matrix, <span class="math notranslate nohighlight">\(A\)</span>, such that <span class="math notranslate nohighlight">\({\bf A}^{\dagger}{\bf SA} = {\bf 1}\)</span>.</p>
 <p><strong>Motivation:</strong> If <span class="math notranslate nohighlight">\({\bf A}\)</span> and <span class="math notranslate nohighlight">\({\bf S}\)</span> were real numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(s\)</span> (not matrices), this would be simple to solve. First, <span class="math notranslate nohighlight">\(a^\dagger=a\)</span> because a real number is the same as its hermitian transpose. By simple algebra we can solve for a,</p>
@@ -1088,8 +1100,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7e6ac3e-cb7f-4901-a019-b5df18384ec6">
-<span class="eqno">(6.2)<a class="headerlink" href="#equation-a7e6ac3e-cb7f-4901-a019-b5df18384ec6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-9e11b2d9-c09a-4724-8c55-e89761edfd2b">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-9e11b2d9-c09a-4724-8c55-e89761edfd2b" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1119,10 +1131,10 @@ a^\dagger s a=a s a=a^2s=1
 </div>
 </section>
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
-<h2><span class="section-number">6.1.9. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
-<p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(6.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df0b8ec5-f236-4d97-a5fe-17d9fae3d460">
-<span class="eqno">(6.3)<a class="headerlink" href="#equation-df0b8ec5-f236-4d97-a5fe-17d9fae3d460" title="Permalink to this equation">#</a></span>\[\begin{align}
+<h2><span class="section-number">4.1.9. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
+<p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-58639ab6-1e1e-4fde-8ec9-73f6e7a2be1c">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-58639ab6-1e1e-4fde-8ec9-73f6e7a2be1c" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1133,8 +1145,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6e8af64-37f8-48fa-a556-38cf0c76d1ac">
-<span class="eqno">(6.4)<a class="headerlink" href="#equation-f6e8af64-37f8-48fa-a556-38cf0c76d1ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e7cd2208-f761-4bc4-a4dd-d865004bbba3">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-e7cd2208-f761-4bc4-a4dd-d865004bbba3" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1149,7 +1161,7 @@ F'C'&amp;=S'C'E,\\
 </div>
 </section>
 <section id="initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
-<h2><span class="section-number">6.1.10. </span>Initial guess for the Fock Matrix is the one electron Hamiltonian<a class="headerlink" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.10. </span>Initial guess for the Fock Matrix is the one electron Hamiltonian<a class="headerlink" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian" title="Permalink to this headline">#</a></h2>
 <p>To get the Fock matrix, we need the coefficient matrix, but to compute the coefficient matrix we need the Fock matrix.  So we start with a guess for the Fock matrix, which is the core Hamiltonian matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1206,7 +1218,7 @@ F'C'&amp;=S'C'E,\\
 </div>
 </section>
 <section id="the-density-matrix">
-<h2><span class="section-number">6.1.11. </span>The Density Matrix<a class="headerlink" href="#the-density-matrix" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1.11. </span>The Density Matrix<a class="headerlink" href="#the-density-matrix" title="Permalink to this headline">#</a></h2>
 <p>Recall, the Fock matrix is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1219,12 +1231,12 @@ E_{HF} = \sum_i^{elec}\langle i|h_i|i\rangle + \sum_{i&gt;j}^{elec}[ii|jj]-[ij|j
 \]</div>
 <p>Expanding the orbitals in terms of basis functions, we find</p>
 <div class="math notranslate nohighlight" id="equation-coloumbintegral">
-<span class="eqno">(6.5)<a class="headerlink" href="#equation-coloumbintegral" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-coloumbintegral" title="Permalink to this equation">#</a></span>\[
 [ii|jj]=\sum_{pqrs}c^*_{pi}c_{qi}c^*_{rj}c_{sj}\int{\rm d}\tau\; \phi_p^*(1)\phi_q(1)\frac{1}{r_{ij}}\phi_r^*(2)\phi_s(2)
 \]</div>
-<p>First, look at the coefficients in <a class="reference internal" href="#equation-coloumbintegral">(6.5)</a>. They come in two pairs of complex-conjugates, <span class="math notranslate nohighlight">\(c^*_{pi}c_{qi}\)</span> and <span class="math notranslate nohighlight">\(c^*_{ri}c_{si}\)</span>. The diagonal terms, when <span class="math notranslate nohighlight">\(p=q\)</span> for example, are the probability of some basis function <span class="math notranslate nohighlight">\(p\)</span> contributing to the MO <span class="math notranslate nohighlight">\(i\)</span>. We will sum each term over the occupied orbitals, <span class="math notranslate nohighlight">\(i\)</span>, to form the “density matrix”</p>
+<p>First, look at the coefficients in <a class="reference internal" href="#equation-coloumbintegral">(4.5)</a>. They come in two pairs of complex-conjugates, <span class="math notranslate nohighlight">\(c^*_{pi}c_{qi}\)</span> and <span class="math notranslate nohighlight">\(c^*_{ri}c_{si}\)</span>. The diagonal terms, when <span class="math notranslate nohighlight">\(p=q\)</span> for example, are the probability of some basis function <span class="math notranslate nohighlight">\(p\)</span> contributing to the MO <span class="math notranslate nohighlight">\(i\)</span>. We will sum each term over the occupied orbitals, <span class="math notranslate nohighlight">\(i\)</span>, to form the “density matrix”</p>
 <div class="math notranslate nohighlight" id="equation-densitymatrix">
-<span class="eqno">(6.6)<a class="headerlink" href="#equation-densitymatrix" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-densitymatrix" title="Permalink to this equation">#</a></span>\[
 D_{pq}=\sum_i^{occ} c^*_{pi}c_{qi}.
 \]</div>
 <p>We are going to construct the density matrix from the occupied orbitals.  To get a matrix of just the occupied orbitals, use the coefficient matrix in the original AO basis, and take a slice to include all rows and just the columns that represent the occupied orbitals.</p>
@@ -1239,7 +1251,7 @@ D_{pq}=\sum_i^{occ} c^*_{pi}c_{qi}.
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 19</p>
-<p>Build the density matrix, <code class="docutils literal notranslate"><span class="pre">D</span></code>, from the occupied orbitals, <code class="docutils literal notranslate"><span class="pre">C_occ</span></code>, using the function <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>. <strong>Hint</strong> Look at <a class="reference internal" href="#equation-densitymatrix">(6.6)</a></p>
+<p>Build the density matrix, <code class="docutils literal notranslate"><span class="pre">D</span></code>, from the occupied orbitals, <code class="docutils literal notranslate"><span class="pre">C_occ</span></code>, using the function <code class="docutils literal notranslate"><span class="pre">np.einsum()</span></code>. <strong>Hint</strong> Look at <a class="reference internal" href="#equation-densitymatrix">(4.6)</a></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1252,10 +1264,10 @@ D_{pq}=\sum_i^{occ} c^*_{pi}c_{qi}.
 </div>
 </section>
 <section id="coulomb-and-exchange-integrals-and-the-scf-energy">
-<h2><span class="section-number">6.1.12. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this headline">#</a></h2>
-<p>The integral on the right of <a class="reference internal" href="#equation-electronrepuslionintrealtensor">(6.7)</a> is super important. It has four indicies, <span class="math notranslate nohighlight">\(p,q,r,s\)</span>, so formally it is a tensor. It accounts for the repulsion between pairs of electrons, so it is called the electron repulsion integral tensor, <span class="math notranslate nohighlight">\(I\)</span>,</p>
+<h2><span class="section-number">4.1.12. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this headline">#</a></h2>
+<p>The integral on the right of <a class="reference internal" href="#equation-electronrepuslionintrealtensor">(4.7)</a> is super important. It has four indicies, <span class="math notranslate nohighlight">\(p,q,r,s\)</span>, so formally it is a tensor. It accounts for the repulsion between pairs of electrons, so it is called the electron repulsion integral tensor, <span class="math notranslate nohighlight">\(I\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-electronrepuslionintrealtensor">
-<span class="eqno">(6.7)<a class="headerlink" href="#equation-electronrepuslionintrealtensor" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-electronrepuslionintrealtensor" title="Permalink to this equation">#</a></span>\[
 I_{pqrs} = \int{\rm d}\tau\; \phi_p^*(1)\phi_q(1)\frac{1}{r_{ij}}\phi_r^*(2)\phi_s(2).
 \]</div>
 <p>First, we can build the electron-repulsion integral (ERI) tensor, which calculates the electron repulsion between the atomic orbital wavefunctions, and the core Hamiltonian. Mints does all the work for us!</p>
@@ -1267,7 +1279,7 @@ I_{pqrs} = \int{\rm d}\tau\; \phi_p^*(1)\phi_q(1)\frac{1}{r_{ij}}\phi_r^*(2)\phi
 </div>
 </div>
 </div>
-<p><a class="reference internal" href="#equation-coloumbintegral">(6.5)</a> can be expressed in terms of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as</p>
+<p><a class="reference internal" href="#equation-coloumbintegral">(4.5)</a> can be expressed in terms of <span class="math notranslate nohighlight">\(I\)</span> and <span class="math notranslate nohighlight">\(D\)</span> as</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
@@ -1493,13 +1505,13 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>The hartree fock procedure in detail</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>The hartree fock procedure in detail</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="IESM_Ex4.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Post-Hartree Fock Methods: MPn and Configuration Interaction</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Post-Hartree Fock Methods: MPn and Configuration Interaction</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
