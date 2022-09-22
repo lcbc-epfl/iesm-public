@@ -6,8 +6,8 @@ parts:
     chapters:
     - file: Exercises/Ex1/IESM_Ex1.ipynb
       sections:
-      - file: Exercises/Ex1/Ex1Theory.md
-      - file: Exercises/Ex1/Ex1Exercises.ipynb
+      - file: Exercises/Ex1/Ex1_LinearAlgebra.ipynb
+      - file: Exercises/Ex1/Ex1_QM.ipynb
       - file: Exercises/Ex1/Ex1.ipynb
     - file: Exercises/Ex2/IESM_Ex2.ipynb
       sections:
