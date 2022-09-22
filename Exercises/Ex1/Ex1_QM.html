@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>1.1. Theory &#8212; Introduction to Electronic Structure Methods</title>
+    <title>1.2. Basic Concepts in Quantum Mechanics &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.2. Exercises" href="Ex1Exercises.html" />
-    <link rel="prev" title="1. Linear Algebra in Quantum Mechanics" href="IESM_Ex1.html" />
+    <link rel="next" title="1.3. Working with vectors using Numpy" href="Ex1.html" />
+    <link rel="prev" title="1.1. Review of Linear Algebra Basics" href="Ex1_LinearAlgebra.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -128,14 +128,14 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     1.1. Theory
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex1_LinearAlgebra.html">
+     1.1. Review of Linear Algebra Basics
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex1Exercises.html">
-     1.2. Exercises
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     1.2. Basic Concepts in Quantum Mechanics
     </a>
    </li>
    <li class="toctree-l2">
@@ -409,6 +409,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex1/Ex1_QM.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -448,7 +477,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex1/Ex1Theory.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex1/Ex1_QM.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -476,7 +505,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex1/Ex1Theory.md"
+        <a href="../../_sources/Exercises/Ex1/Ex1_QM.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -487,7 +516,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -537,69 +566,69 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   1.1.1. Operators
+   1.2.1. Operators
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#eigenfunctions-and-eigenvalues">
-     1.1.1.1. Eigenfunctions and eigenvalues
+     1.2.1.1. Eigenfunctions and eigenvalues
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#applying-several-operators-commutators">
-     1.1.1.2. Applying several operators: Commutators
+    <a class="reference internal nav-link" href="#commutator">
+     1.2.1.2. Commutator
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations">
-   1.1.2. Linear Algebra and Quantum Mechanics: Hermiticity and Matrix Representations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hilbert-space-and-bra-ket-notation">
-   1.1.3. Hilbert Space and Bra-Ket Notation
+  <a class="reference internal nav-link" href="#hermiticity-and-matrix-representations">
+   1.2.2. Hermiticity and Matrix Representations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valid-quantum-mechanical-operators-linearity-and-hermiticity">
-     1.1.3.1. Valid Quantum Mechanical Operators: Linearity and Hermiticity
+    <a class="reference internal nav-link" href="#hilbert-space-and-bra-ket-notation">
+     1.2.2.1. Hilbert Space and Bra-Ket Notation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linearity-and-hermiticity">
+     1.2.2.2. Linearity and Hermiticity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matrix-representation-of-operators">
-     1.1.3.2. Matrix Representation of Operators
+     1.2.2.3. Matrix Representation of Operators
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-wavefunction-and-its-properties-projections-out-of-hilbert-space">
-   1.1.4. The Wavefunction and its Properties - Projections out of Hilbert Space
+  <a class="reference internal nav-link" href="#the-wavefunction-and-its-properties">
+   1.2.3. The Wavefunction and its Properties
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-wavefunction-in-position-representation">
-     1.1.4.1. The Wavefunction in Position Representation
+     1.2.3.1. The Wavefunction in Position Representation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#probabilities-and-observables">
-     1.1.4.2. Probabilities and Observables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation">
-     1.1.4.3. Solving the Eigenvalue Problem of the Time-Independent Schrödinger Equation
+     1.2.3.2. Probabilities and Observables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions">
-     1.1.4.4. Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions
+     1.2.3.3. Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-independent-schrodinger-equation">
+   1.2.4. Time-Independent Schrödinger Equation
+  </a>
  </li>
 </ul>
 
@@ -610,7 +639,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Theory</h1>
+                <h1>Basic Concepts in Quantum Mechanics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -622,69 +651,69 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operators">
-   1.1.1. Operators
+   1.2.1. Operators
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#eigenfunctions-and-eigenvalues">
-     1.1.1.1. Eigenfunctions and eigenvalues
+     1.2.1.1. Eigenfunctions and eigenvalues
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#applying-several-operators-commutators">
-     1.1.1.2. Applying several operators: Commutators
+    <a class="reference internal nav-link" href="#commutator">
+     1.2.1.2. Commutator
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations">
-   1.1.2. Linear Algebra and Quantum Mechanics: Hermiticity and Matrix Representations
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#hilbert-space-and-bra-ket-notation">
-   1.1.3. Hilbert Space and Bra-Ket Notation
+  <a class="reference internal nav-link" href="#hermiticity-and-matrix-representations">
+   1.2.2. Hermiticity and Matrix Representations
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#valid-quantum-mechanical-operators-linearity-and-hermiticity">
-     1.1.3.1. Valid Quantum Mechanical Operators: Linearity and Hermiticity
+    <a class="reference internal nav-link" href="#hilbert-space-and-bra-ket-notation">
+     1.2.2.1. Hilbert Space and Bra-Ket Notation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linearity-and-hermiticity">
+     1.2.2.2. Linearity and Hermiticity
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matrix-representation-of-operators">
-     1.1.3.2. Matrix Representation of Operators
+     1.2.2.3. Matrix Representation of Operators
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-wavefunction-and-its-properties-projections-out-of-hilbert-space">
-   1.1.4. The Wavefunction and its Properties - Projections out of Hilbert Space
+  <a class="reference internal nav-link" href="#the-wavefunction-and-its-properties">
+   1.2.3. The Wavefunction and its Properties
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#the-wavefunction-in-position-representation">
-     1.1.4.1. The Wavefunction in Position Representation
+     1.2.3.1. The Wavefunction in Position Representation
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#probabilities-and-observables">
-     1.1.4.2. Probabilities and Observables
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation">
-     1.1.4.3. Solving the Eigenvalue Problem of the Time-Independent Schrödinger Equation
+     1.2.3.2. Probabilities and Observables
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions">
-     1.1.4.4. Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions
+     1.2.3.3. Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#time-independent-schrodinger-equation">
+   1.2.4. Time-Independent Schrödinger Equation
+  </a>
  </li>
 </ul>
 
@@ -696,13 +725,47 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="theory">
-<h1><span class="section-number">1.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h1>
+  <div class="exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Evaluate the matrix product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\mathbf{B}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A} =\begin{aligned}
+     \left(\begin{matrix}
+     6 &amp; 8 &amp;2 \\ 9 &amp; 1 &amp; 5 \\ 7 &amp; 4 &amp; 3
+     \end{matrix}\right),\quad\mathbf{B}=
+      \left(\begin{matrix}
+     9 &amp; 6 &amp; 7 \\ 5 &amp; 4 &amp; 4 \\  3 &amp; 2 &amp; 8
+     \end{matrix}\right).
+     \end{aligned}
+    \end{split}\]</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Evaluate the determinant for the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A}=\begin{aligned}
+     \left(\begin{matrix}
+     1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 2 \\ 2 &amp; 2 &amp; 3
+     \end{matrix}\right)
+     \end{aligned}
+ \end{split}\]</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 14</p>
+<p>Does the exponent of an operator always satisfy the relation
+<span class="math notranslate nohighlight">\(e^{\hat{A}+\hat{B}} = e^{\hat{A}}e^{\hat{B}}\)</span> ? Start from the
+definition of the matrix exponential.</p>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="basic-concepts-in-quantum-mechanics">
+<h1><span class="section-number">1.2. </span>Basic Concepts in Quantum Mechanics<a class="headerlink" href="#basic-concepts-in-quantum-mechanics" title="Permalink to this headline">#</a></h1>
+<p>We will now review basic concepts in quantum mechanics, focusing on the application of linear algebra to quantum mechanics formalism.</p>
 <section id="operators">
-<h2><span class="section-number">1.1.1. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">1.2.1. </span>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">#</a></h2>
 <p>In classical mechanics, an observable is described by a function.
 Instead, in quantum mechanics, an observable is represented by a linear
-operator that acts on a wavefunction. An operator is itself a function
+<strong>operator</strong> that acts on a wavefunction. An operator is itself a function
 that, when applied to the state of a system, returns another function. A
 simplified view would describe it as an instruction to carry out some
 <em>operation</em> on a function to obtain the desired result - this may be
@@ -711,40 +774,57 @@ integration etc. (Strictly speaking, the linear operators used in
 quantum mechanics are special cases of a linear mapping
 <span class="math notranslate nohighlight">\(V \rightarrow W\)</span> where <span class="math notranslate nohighlight">\(V = W\)</span> - linear algebra plays a crucial role in
 quantum mechanics.)</p>
+<p>In general, applying an operator <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> to some function <span class="math notranslate nohighlight">\(f\)</span> results
+in the function being changed to a new function, <span class="math notranslate nohighlight">\(g\)</span>
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\hat{\mathrm{A}} f = g.\end{aligned}\)</span><span class="math notranslate nohighlight">\(
+One example is differentiation: considering \)</span>\hat{\mathrm{A}} = d/dx<span class="math notranslate nohighlight">\(, and for example the function \)</span>f=x^2<span class="math notranslate nohighlight">\(, 
+the action of \)</span>\hat{\mathrm{A}}<span class="math notranslate nohighlight">\( on \)</span>f<span class="math notranslate nohighlight">\( is to transform it in a new function \)</span>g=2x<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(\begin{aligned}
+\frac{d}{dx}\,\left(x^2\right) = 2x.\end{aligned}\)</span>$</p>
 <section id="eigenfunctions-and-eigenvalues">
-<h3><span class="section-number">1.1.1.1. </span>Eigenfunctions and eigenvalues<a class="headerlink" href="#eigenfunctions-and-eigenvalues" title="Permalink to this headline">#</a></h3>
-<p>Applying an operator <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> to some function <span class="math notranslate nohighlight">\(f\)</span> can result
-in the function being changed, but it may also result in the operator
-returning the same function, multiplied by a scalar:</p>
+<h3><span class="section-number">1.2.1.1. </span>Eigenfunctions and eigenvalues<a class="headerlink" href="#eigenfunctions-and-eigenvalues" title="Permalink to this headline">#</a></h3>
+<p>A particular case is when the action of an operator <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>  of a function <span class="math notranslate nohighlight">\(f\)</span> does not change the function, but results in the same function, multiplied by a scalar <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
 \hat{\mathrm{A}} f = \lambda f.\end{aligned}\]</div>
 <p>The multiplicative
-constant <span class="math notranslate nohighlight">\(\lambda\)</span> is the <em>eigenvalue</em> of the equation, and the function
-<span class="math notranslate nohighlight">\(f\)</span> is referred to as the <em>eigenfunction</em> of the operator
+constant <span class="math notranslate nohighlight">\(\lambda\)</span> is the <strong>eigenvalue</strong> of the operator, and the function
+<span class="math notranslate nohighlight">\(f\)</span> is referred to as the <strong>eigenfunction</strong> of the operator
 <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>. These terms are derived from the German word
 “eigen”, meaning “its own”, <em>i.e.</em> an eigenfunction of an operator is
 implied to belong to said operator. (We note <em>en passant</em> that the set
 of eigenvalues of an operator is called its <em>spectrum</em>.)</p>
-<p>Together, the eigenfunctions form a <em>complete basis</em> such that any
+<p>Together, all the eigenfunctions form a <strong>complete basis</strong> such that any
 general function <span class="math notranslate nohighlight">\(g\)</span> may be expressed in terms of a linear combination
 of the eigenfunctions:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{aligned}
 \hat{\mathrm{A}} f_i &amp;= \lambda_i f_i\\
 g &amp;= \sum_i c_if_i,\end{aligned}\end{split}\]</div>
-<p>with <span class="math notranslate nohighlight">\(c_i\)</span> being the expansion
-coefficient and the sum running over all <span class="math notranslate nohighlight">\(f_i\)</span>. The effect of an
+<p>with <span class="math notranslate nohighlight">\(c_i\)</span> being the <strong>expansion
+coefficient</strong> of the function <span class="math notranslate nohighlight">\(g\)</span> in the complete basis of all the eigenfunctions <span class="math notranslate nohighlight">\(f_i\)</span>s.</p>
+<p>The effect of an
 operator on an arbitrary function <span class="math notranslate nohighlight">\(g\)</span> can thus be expressed by
 decomposing <span class="math notranslate nohighlight">\(g\)</span> in terms of its <em>basis functions</em>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
 \hat{\mathrm{A}}g = \hat{\mathrm{A}}\sum_i c_if_i = \sum_i c_i\hat{\mathrm{A}}f_i = \sum_i c_i \lambda_i f_i.\end{aligned}\]</div>
-<p>A quite comprehensive list of quantum mechanical operators can be found
-at the end of this chapter.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Find the eigenvalues and eigenvectors of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A} =\begin{aligned}
+     \left(\begin{matrix}
+     2 &amp; 1 \\ -1 &amp; 4
+     \end{matrix}\right)
+    \end{aligned}
+  \end{split}\]</div>
+</div>
 </section>
-<section id="applying-several-operators-commutators">
-<h3><span class="section-number">1.1.1.2. </span>Applying several operators: Commutators<a class="headerlink" href="#applying-several-operators-commutators" title="Permalink to this headline">#</a></h3>
+<section id="commutator">
+<h3><span class="section-number">1.2.1.2. </span>Commutator<a class="headerlink" href="#commutator" title="Permalink to this headline">#</a></h3>
 <p>For some operators such as simple multiplications, the order in which
 the operators are applied to the function does not matter. Consider this
 (trivial) example:</p>
@@ -757,13 +837,13 @@ derivatives, however, this is not the case anymore:</p>
 \[\begin{aligned}
 x\cdot \frac{\partial}{\partial x} f(x) \ne \frac{\partial}{\partial x} x\cdot f(x).\end{aligned}\]</div>
 <p>It is trivial to see that it is indeed relevant in which order operators
-are applied to a function. We therefore define the commutator of two
-operators as:</p>
+are applied to a function. We therefore define the <strong>commutator</strong> of two
+operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> and <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span> as:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
 \left[\hat{\mathrm{A}},\hat{\mathrm{B}}\right] = \hat{\mathrm{A}}\hat{\mathrm{B}} -\hat{\mathrm{B}}\hat{\mathrm{A}} .\end{aligned}\]</div>
-<p>Two operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}},\hat{\mathrm{B}}\)</span> are said to <em>commute</em>
-if <span class="math notranslate nohighlight">\(\left[\hat{\mathrm{A}},\hat{\mathrm{B}}\right]=0\)</span>; if they commute,
+<p>Where the two operators are said to <em>commute</em>
+if their commutator is zero, i.e. <span class="math notranslate nohighlight">\(\left[\hat{\mathrm{A}},\hat{\mathrm{B}}\right]=0\)</span>. If they commute,
 the order in which they are applied to a function does not matter - if
 they do not, i.e. if the commutator is nonzero, it does matter. Note
 that the commutator plays a crucial role in quantum mechanics, as it
@@ -771,19 +851,29 @@ determines whether two observables can be simultaneously determined
 (<em>cf.</em> the Heisenberg uncertainty principle). Commuting operators share
 the same eigenfunctions (or, <em>vice versa</em>, operators sharing the same
 eigenfunctions will commute).</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<p>Show that if the product <span class="math notranslate nohighlight">\(\mathbf{C}=\mathbf{A}\mathbf{B}\)</span> of two
+Hermitian matrices is also Hermitian, then <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and
+<span class="math notranslate nohighlight">\(\mathbf{B}\)</span> commute.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 11</p>
+<p>Explain the connection between the Heisenberg uncertainty principle and
+the commutation relation.</p>
+</div>
 </section>
 </section>
-<section id="linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations">
-<h2><span class="section-number">1.1.2. </span>Linear Algebra and Quantum Mechanics: Hermiticity and Matrix Representations<a class="headerlink" href="#linear-algebra-and-quantum-mechanics-hermiticity-and-matrix-representations" title="Permalink to this headline">#</a></h2>
+<section id="hermiticity-and-matrix-representations">
+<h2><span class="section-number">1.2.2. </span>Hermiticity and Matrix Representations<a class="headerlink" href="#hermiticity-and-matrix-representations" title="Permalink to this headline">#</a></h2>
 <p>From here on, operators will be applied to some (wave)function <span class="math notranslate nohighlight">\(\phi\)</span>,
 <span class="math notranslate nohighlight">\(\psi\)</span> rather than an arbitrary function <span class="math notranslate nohighlight">\(f\)</span>. This is just a matter of
 notation and goes, of course, without loss of generality. (Note that we
 chose not to write <span class="math notranslate nohighlight">\(\phi(x)\)</span> or the like, because it is not relevant
 whether we use the position or the momentum wavefunction, <em>cf.</em> the
 bra-ket notation that will be discussed below.)</p>
-</section>
 <section id="hilbert-space-and-bra-ket-notation">
-<span id="exercise1"></span><h2><span class="section-number">1.1.3. </span>Hilbert Space and Bra-Ket Notation<a class="headerlink" href="#hilbert-space-and-bra-ket-notation" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">1.2.2.1. </span>Hilbert Space and Bra-Ket Notation<a class="headerlink" href="#hilbert-space-and-bra-ket-notation" title="Permalink to this headline">#</a></h3>
 <p>Recalling that any arbitrary function can be expressed as a weighted
 superposition of eigenfunctions of their underlying operator, one needs
 to define a mathematical <em>functional space</em> in which these
@@ -792,31 +882,24 @@ to real numbers, but the eigenfunctions we are interested in may as well
 be complex valued (Cartesian space is just an example of a 3-dimensional euclidian space).</p>
 <p>The concept of euclidian space was generalised by Hilbert onto an
 infinite dimensional complex space of square integrable functions, the
-<em>Hilbert space</em>. (A Hilbert space is a <em>Banach space</em>; a vector space
+<strong>Hilbert space</strong>. (A Hilbert space is a <em>Banach space</em>; a vector space
 that has a well-defined metric such that the distance between two
 vectors as well as the magnitude of a vector can be computed.)</p>
-<p>Each instantaneous state is described by a unit vector (meaning of norm 1) or a <em>state
-vector</em> in Hilbert space. Just like a position vector in cartesian
-space, the state vector is expressed in terms of the orthogonal basis
-vectors that are formed by all the eigenfunctions. (The chapter on
-Hermitian operators will justify this. One should also note that ‘all
-eigenfunctions’ refers to all eigenfunctions of an operator to which the
-Hilbert space under consideration is associated.) All these
+<p>Each instantaneous state is described by a unit vector (meaning of norm 1) or a <em>state vector</em> in Hilbert space. Just like a position vector in cartesian space, the state vector is expressed in terms of the orthogonal basis vectors that are formed by all the eigenfunctions. (The chapter on Hermitian operators will justify this. One should also note that ‘all eigenfunctions’ refers to all eigenfunctions of an operator to which the Hilbert space under consideration is associated.) All these
 eigenfunctions taken together encode all the relevant information: Being
 a complete set (a <em>basis</em>), they are all that is needed to describe any
-arbitrary function <span class="math notranslate nohighlight">\(g\)</span> (<em>cf.</em> preceeding chapter).<br />
-<br />
-A proper notation that accurately describes vectors with an infinite
+arbitrary function <span class="math notranslate nohighlight">\(g\)</span>.</p>
+<p>A proper notation that accurately describes vectors with an infinite
 (but countable) number of elements - such as those in Hilbert space -
-was introduced by Paul Dirac. In <em>bra-ket (or Dirac) notation</em>, a vector
-in Hilbert space is denoted by a <em>ket</em></p>
+was introduced by Paul Dirac. In <strong>bra-ket (or Dirac) notation</strong>, a vector
+in Hilbert space is denoted by a <strong>ket</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  \Ket{\Psi} = \left(\vdots\right),
  \end{aligned}\]</div>
 <p>which is a column vector. In one-to-one correspondence
 to the space formed by the kets, there exists a dual space consisting of
-<em>bra</em> vectors:</p>
+<strong>bra</strong> vectors:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  \Bra{\Psi} = \left(\cdots\right),
@@ -824,8 +907,7 @@ to the space formed by the kets, there exists a dual space consisting of
 <p>which is the adjoint of the ket (<em>i.e.</em> a row vector
 that is the complex conjugate of the ket). As both bra and ket are normalized vectors, their norm is 1. In Hilbert space, an inner product of two
 vectors <span class="math notranslate nohighlight">\(\left&lt;\Phi,\Psi\right&gt;\)</span> is always defined. For <span class="math notranslate nohighlight">\(\Phi=\Psi\)</span>, the
-inner product defines the norm of the vectors - we will leave further
-specification as an exercise question. For two orthogonal basis vectors
+inner product defines the norm of the vectors: for two orthogonal basis vectors
 <span class="math notranslate nohighlight">\(\psi_i,\psi_j\)</span>, we have that:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -836,9 +918,8 @@ that bras and kets themselves are not specified as being dependent on
 position or momentum, simply because the position and momentum
 wavefunctions are obtained by <em>projecting</em> their representation out of a
 ket in Hilbert space, as will be shown later. (However, time dependence
-of a state is often implicit.)<br />
-<br />
-Applying bra-ket notation to the previously discussed description of any
+of a state is often implicit.)</p>
+<p>Applying bra-ket notation to the previously discussed description of any
 function in terms of eigenfunctions, any state of the system is given as
 a linear combination:</p>
 <div class="math notranslate nohighlight">
@@ -859,44 +940,124 @@ wavefunction expansion is the same).</p>
 <p>Because every state is normalised, just like the basis
 vectors it is built upon, any state <span class="math notranslate nohighlight">\(\Psi\)</span> must also be of the same
 norm. This requirement is conserved if and only if the normalisation
-<span class="math notranslate nohighlight">\(\sum_j c_j^2 = 1\)</span> is imposed.</p>
-<section id="valid-quantum-mechanical-operators-linearity-and-hermiticity">
-<h3><span class="section-number">1.1.3.1. </span>Valid Quantum Mechanical Operators: Linearity and Hermiticity<a class="headerlink" href="#valid-quantum-mechanical-operators-linearity-and-hermiticity" title="Permalink to this headline">#</a></h3>
-<p>In order for an operator to be a valid quantum mechanical operator, it
-must be <em>linear</em></p>
+<span class="math notranslate nohighlight">\(\sum_j |c_j|^2 = 1\)</span> is imposed.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 16</p>
+<p>What is the meaning of a multiplication of a bra and a ket</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
- \hat{\mathrm{A}}\left(\psi + \phi\right) = \hat{\mathrm{A}}\psi + \hat{\mathrm{A}}\phi.
- \end{aligned}\]</div>
-<p>For operators that describe a state that is physically
-observable, it is further required that the operator be <em>Hermitian</em>. (In
-the strict mathematical sense, this requirement implies linearity, but
-physicists use the less specific definition of hermiticity as given
-below.) A Hermitian operator is defined as an operator that is equal to
-its conjugate transpose:</p>
+\[
+    \begin{aligned}
+     \left&lt;a\middle|b\right&gt;,
+     \end{aligned}
+  \]</div>
+<p>and, conversely, an operator formed by a ket and a bra?</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
- \hat{\mathrm{A}}^T = \overline{\hat{\mathrm{A}}}.\end{aligned}\]</div>
-<p>(Strictly speaking, this is true for an operator in a finite vector
+\[
+    \begin{aligned}
+     \hat{\mathrm{O}} = \left|a\right&gt;\left&lt;b\right|
+     \end{aligned}
+  \]</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 17</p>
+<p>Given a basis <span class="math notranslate nohighlight">\(\left\{\psi\right\}\)</span> for which</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{aligned}
+     \left&lt;\psi_i\middle|\psi_j\right&gt; = \delta_{ij},
+     \end{aligned}
+   \]</div>
+<p>where <span class="math notranslate nohighlight">\(\delta_{ij}\)</span> is the Kronecker delta, for any  state <span class="math notranslate nohighlight">\(\Psi\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{aligned}
+     \Ket{\Psi} = \sum_j c_j\Ket{\psi_j},
+     \end{aligned}
+   \]</div>
+<p>the inner product is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+     \begin{aligned}
+     \left&lt;\Psi\middle|\Psi\right&gt; = 1.
+     \end{aligned}
+   \]</div>
+<p>Show that this holds only as long as</p>
+<div class="math notranslate nohighlight">
+\[
+    \begin{aligned}
+     \sum_j c_j^2 = 1,
+     \end{aligned}
+    \]</div>
+<p>where the <span class="math notranslate nohighlight">\(c_j\)</span> are the aforementioned expansion coefficients.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Bonus Exercise 18</p>
+<p>Prove that, given the above conditions,
+<span class="math notranslate nohighlight">\(c_j=\left&lt;\psi_j\middle|\Psi\right&gt;\)</span>.</p>
+</div>
+</section>
+<section id="linearity-and-hermiticity">
+<h3><span class="section-number">1.2.2.2. </span>Linearity and Hermiticity<a class="headerlink" href="#linearity-and-hermiticity" title="Permalink to this headline">#</a></h3>
+<p>In order for an operator to be a valid quantum mechanical operator, i.e. physically observable, it must possess some properties:</p>
+<ul class="simple">
+<li><p><strong>Linearity</strong>
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\hat{\mathrm{A}}\left(\psi + \phi\right) = \hat{\mathrm{A}}\psi + \hat{\mathrm{A}}\phi.
+\end{aligned}\)</span>$</p></li>
+<li><p><strong>Hermiticity</strong> (In the strict mathematical sense, this requirement implies linearity, but physicists often use the less specific definition of hermiticity as given below.) A Hermitian operator is defined as an operator that is equal to its conjugate transpose (Strictly speaking, this is true for an operator in a finite vector
 space <span class="math notranslate nohighlight">\(V\)</span>; a Hermitian operator being a special case of a self-adjoint
 operator. Hermitian operators are normal operators, whence the spectral
-theorem holds.) The eigenvalues of a Hermitian operator have some useful
-properties; they are <em>real</em> (which is a direct consequence of the
-definition of a Hermitian operator, as it shall be pointed out later
-again) and <em>orthogonal</em> to each other (this is why basis vectors in
-Hilbert space are orthogonal - and this is what allows for algebraic
-transformations in euclidian space to be easily extended onto the
-complex Hilbert space).</p>
+theorem holds.)
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+\hat{\mathrm{A}}^T = \overline{\hat{\mathrm{A}}}.\end{aligned}\)</span>$
+The eigenvalues of a Hermitian operator have some useful  properties; they are <em>real</em> (which is a direct consequence of the definition of a Hermitian operator, as it shall be pointed out  later again) and <em>orthogonal</em> to each other (this is why basis  vectors in Hilbert space are orthogonal - and this is what allows for algebraic transformations in euclidian space to be easily extended onto the complex Hilbert space).</p></li>
+</ul>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<p>Diagonalise the matrices <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Specify which one is Hermitian.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+    \mathbf{A}=\begin{aligned}
+     \left(\begin{matrix}
+     1 &amp; 1-i \\ 1+i &amp; 2
+     \end{matrix}\right)
+     , \quad
+     \mathbf{B} =\left(\begin{matrix}
+     1 &amp; 1 \\ 0 &amp; 1
+     \end{matrix}\right)
+     \end{aligned}
+ \end{split}\]</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Bonus Exercise 15</p>
+<p>Prove that the eigenvalues of a Hermitian operator are
+real.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 8</p>
+<p>Give the position and the momentum operators (consider only one
+dimension) in the position representation.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 9</p>
+<p>Give the commutator of the position and linear momentum operators in
+the position representation (consider one dimension only).</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 13</p>
+<p>Is the electronic Hamiltonian <span class="math notranslate nohighlight">\(\hat{H}_{el}\)</span> a linear operator and
+why (not)?</p>
+</div>
 </section>
 <section id="matrix-representation-of-operators">
-<h3><span class="section-number">1.1.3.2. </span>Matrix Representation of Operators<a class="headerlink" href="#matrix-representation-of-operators" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.2.3. </span>Matrix Representation of Operators<a class="headerlink" href="#matrix-representation-of-operators" title="Permalink to this headline">#</a></h3>
 <p>The definition of a Hermitian operator being based on properties known
 from matrices implies a link between the two. Indeed, any operator can
 be written in a matrix form.</p>
-<p>Consider another system <span class="math notranslate nohighlight">\(\Phi\)</span> that is defined analogously to <span class="math notranslate nohighlight">\(\Psi\)</span>:</p>
+<p>Consider another state <span class="math notranslate nohighlight">\(\Phi\)</span> that is defined analogously to <span class="math notranslate nohighlight">\(\Psi\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
- \Ket{\Psi} = \sum_j^{\infty} c_j\Ket{\psi_i} \quad ; \quad
+ \Ket{\Psi} = \sum_j^{\infty} c_j\Ket{\psi_j} \quad ; \quad
  \Ket{\Phi} = \sum_k^{\infty} d_k\Ket{\psi_k},
  \end{aligned}\]</div>
 <p>and an operator such that</p>
@@ -906,14 +1067,14 @@ be written in a matrix form.</p>
  \end{aligned}\]</div>
 <p>(Since a Hermitian operator is a linear map
 <span class="math notranslate nohighlight">\(V \rightarrow V\)</span>, the basis remains unchanged, but the expansion
-coefficients differ.) The <em>matrix elements</em> of the operator
+coefficients differ.) The <strong>matrix elements</strong> of the operator
 <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> in the basis <span class="math notranslate nohighlight">\(\left\{\psi\right\}\)</span> are now given as</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  A_{ij} = \Bra{\psi_i}\hat{\mathrm{A}}\Ket{\psi_j},
  \end{aligned}\]</div>
 <p>describing how the operator acts between the orthogonal
-basis vectors <span class="math notranslate nohighlight">\(\phi_i\)</span> and <span class="math notranslate nohighlight">\(\phi_j\)</span>.</p>
+basis vectors <span class="math notranslate nohighlight">\(\psi_i\)</span> and <span class="math notranslate nohighlight">\(\psi_j\)</span>.</p>
 <p>From the above, we deduce that</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
@@ -952,22 +1113,38 @@ in matrix form:</p>
  c_j
  \end{matrix}\right),
  \end{aligned}\end{split}\]</div>
-<p><span class="math notranslate nohighlight">\(c,d\)</span> are vectors of expansion coefficients of
-<span class="math notranslate nohighlight">\(\Phi,\Psi\)</span> respectively. Operators for which <span class="math notranslate nohighlight">\(A_{ij} = 0\)</span> are, just
+<p>where <span class="math notranslate nohighlight">\(c,d\)</span> are vectors of expansion coefficients of
+<span class="math notranslate nohighlight">\(\Psi,\Phi\)</span> respectively. Operators for which <span class="math notranslate nohighlight">\(A_{ij} = 0\)</span> for <span class="math notranslate nohighlight">\(i \neq j\)</span> are, just
 like their underlying matrix, <em>diagonal</em>.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 19</p>
+<p>Show that, if two operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>
+commute and if <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
+<span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\Ket{\psi}\)</span> is an eigenvector of
+<span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, too, with the same eigenvalue.</p>
+<p><strong>Bonus</strong>:  If <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is part of a set of degenerate
+eigenvectors, show that the subspace spanned by the eigenvalues of
+<span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> is invariant under the action of
+<span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 20</p>
+<p>Demonstrate that, if two hermitian operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
+<span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span> commute and <span class="math notranslate nohighlight">\({\Ket{\psi_1}}\)</span>, <span class="math notranslate nohighlight">\({\Ket{\psi_2}}\)</span>
+are eigenvectors of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> associated to different
+eigenvalues, then the matrix element
+<span class="math notranslate nohighlight">\(\Bra{\psi_1}\hat{\mathrm{B}}\Ket{\psi_2}\)</span> vanishes.</p>
+</div>
 </section>
 </section>
-<section id="the-wavefunction-and-its-properties-projections-out-of-hilbert-space">
-<h2><span class="section-number">1.1.4. </span>The Wavefunction and its Properties - Projections out of Hilbert Space<a class="headerlink" href="#the-wavefunction-and-its-properties-projections-out-of-hilbert-space" title="Permalink to this headline">#</a></h2>
+<section id="the-wavefunction-and-its-properties">
+<h2><span class="section-number">1.2.3. </span>The Wavefunction and its Properties<a class="headerlink" href="#the-wavefunction-and-its-properties" title="Permalink to this headline">#</a></h2>
 <p>So far, any state <span class="math notranslate nohighlight">\(\Psi\)</span> was discussed as an abstract unit vector in
-Hilbert space that is expanded over a basis of eigenfunctions. In this
-chapter, it will be demonstrated how the familiar picture of a
-wavefunction in position representation is extracted from Hilbert space
-and what properties such a wavefunction has. The theory outlined so far
+Hilbert space that is expanded over a basis of eigenfunctions. The familiar picture of a wavefunction in position representation can be  extracted from Hilbert space. The theory outlined so far
 will be applied to the energy eigenvalue problem of Schrödinger (the
-time-independent Schrödinger equation).</p>
+*<em>time-independent Schrödinger equation</em>).</p>
 <section id="the-wavefunction-in-position-representation">
-<h3><span class="section-number">1.1.4.1. </span>The Wavefunction in Position Representation<a class="headerlink" href="#the-wavefunction-in-position-representation" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.1. </span>The Wavefunction in Position Representation<a class="headerlink" href="#the-wavefunction-in-position-representation" title="Permalink to this headline">#</a></h3>
 <p>The more abstract bra-ket notation and the notation of the wavefunction
 as being position or momentum dependent are often used interchangeably.
 Position and momentum wavefunctions are obtained by <em>projecting</em> the
@@ -992,13 +1169,12 @@ function <span class="math notranslate nohighlight">\(\Ket{\mathbf{r}_0}\)</span
  \int \Ket{\mathbf{r}_0}\Bra{\mathbf{r}_0} \mathrm{d}\mathbf{r}_0 = \mathbb{1},
  \end{aligned}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mathbb{1}\)</span> is a unit matrix. Applying the projection
-operator onto the wavefunction, one has</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
- \Ket{\psi} =  \int \Ket{\mathbf{r}_0}\Braket{\mathbf{r}_0}{\Psi} \mathrm{d}\mathbf{r}.
- \end{aligned}\]</div>
+operator onto the wavefunction, one has
+$<span class="math notranslate nohighlight">\(\begin{aligned}
+ \Ket{\psi} =  \int \Ket{\mathbf{r}_0} \left&lt;\mathbf{r}_0\middle|\Psi\right&gt; \mathrm{d}\mathbf{r}.
+ \end{aligned}\)</span>$</p>
 <p>The representation in the momentum basis can be
-developed analogously. The inner product <span class="math notranslate nohighlight">\(\Braket{\mathbf{r}_0}{\Psi}\)</span>
+developed analogously. The inner product <span class="math notranslate nohighlight">\(\left&lt;\mathbf{r}_0\middle|\Psi\right&gt;\)</span>
 can be interpreted as the coefficient of the expansion of <span class="math notranslate nohighlight">\(\Ket{\Psi}\)</span>
 on the basis <span class="math notranslate nohighlight">\(\Ket{\mathbf{r}_0}\)</span>. After multiplication by a suitably
 chosen ket and making use of the orthogonality of the basis, one then
@@ -1015,25 +1191,37 @@ is used for coordinates. We will however resort to using <span class="math notra
 throughout this script to denote a vector of (cartesian) coordinates.)
 Position and momentum wavefunction still contain all the information we
 need, and they conserve the properties of unit vectors in Hilbert space
-as discussed in the preceeding sections. Specifically, the L<span class="math notranslate nohighlight">\(^2\)</span> norm in
+as discussed in the preceeding sections. Specifically, the <span class="math notranslate nohighlight">\(\text{L}^2\)</span> norm in
 real space is naturally given by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  \left&lt;\Psi\middle|\Psi\right&gt; = \int \Psi^\ast\left(\mathbf{r},t\right)\Psi\left(\mathbf{r},t\right)\mathrm{d}\mathbf{r}.
  \end{aligned}\]</div>
+<div class="exercise admonition">
+<p class="admonition-title">Bonus Exercise 10</p>
+<p>Show that the potential energy operator
+<span class="math notranslate nohighlight">\(\hat{\mathrm{V}}(\mathbf{r})\)</span> is multiplicative when applied to the
+real-space wavefunction.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Bonus Exercise 12</p>
+<p>The link between position and momentum representation is
+given by a Fourier transform. Explain how this relates to the Heisenberg
+uncertainty principle.</p>
+</div>
 </section>
 <section id="probabilities-and-observables">
-<h3><span class="section-number">1.1.4.2. </span>Probabilities and Observables<a class="headerlink" href="#probabilities-and-observables" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.2. </span>Probabilities and Observables<a class="headerlink" href="#probabilities-and-observables" title="Permalink to this headline">#</a></h3>
 <p>Whereas a wavefunction contains all the neccessary information, it lacks
 any direct physical interpretation. Its square, however, fulfills the
-requirements of a <em>probability distribution</em>. Namely, for a
-many-electron wavefunction, where N electrons are associated to N
+requirements of a <strong>probability distribution</strong>. Namely, for a
+many-electron wavefunction, where <span class="math notranslate nohighlight">\(N\)</span> electrons are associated to <span class="math notranslate nohighlight">\(N\)</span>
 coordinate vectors <span class="math notranslate nohighlight">\(\left\{\mathbf{r}_i\right\}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  P\left(\mathbf{r}_1,\mathrm{d}\mathbf{r}_1;\dots;\mathbf{r}_N,\mathrm{d}\mathbf{r}_N\right)
  = \left|\Psi\left(\mathbf{r}_1,\mathbf{r}_2,\dots,\mathbf{r}_N\right)\right|^2\mathrm{d}\mathbf{r}
- = \left|\Psi\left(\mathbf{r}_1,\mathbf{r}_2,\dots,\mathbf{r}_N\right)\right|^2\mathrm{d}\mathbf{r}_1,\mathrm{d}\mathbf{r}_2,\dots,
+ = \left|\Psi\left(\mathbf{r}_1,\mathbf{r}_2,\dots,\mathbf{r}_N\right)\right|^2\mathrm{d}\mathbf{r}_1\mathrm{d}\mathbf{r}_2\dots
  \mathbf{d}\mathbf{r}_N.
  \end{aligned}\]</div>
 <p>The square of the wavefunction corresponds to the
@@ -1047,13 +1235,12 @@ integral:</p>
 \[\begin{aligned}
  P\left(\mathbf{r}_1,\mathrm{d}\mathbf{r}_1\right) = \mathrm{d}\mathbf{r}_1
  \idotsint \Psi^\ast\left(\mathbf{r}_1,\mathbf{r}_2,\dots,\mathbf{r}_N\right)\Psi\left(\mathbf{r}_1,\mathbf{r}_2,\dots,\mathbf{r}_N\right)
- \mathrm{d}\mathbf{r}_2,\dots,\mathrm{d}\mathbf{r}_N
+ \mathrm{d}\mathbf{r}_2\dots\mathrm{d}\mathbf{r}_N
  \end{aligned}\]</div>
 <p>Similarly,
 <span class="math notranslate nohighlight">\(P\left(\mathbf{r}_1,\mathrm{d}\mathbf{r}_1;\mathbf{r}_2,\mathrm{d}\mathbf{r}_2\right)\)</span>
-will be given by a N-2 dimensional integral.<br />
- <br />
-All physically measurable quantities, the <em>observables</em>, are associated
+will be given by a N-2 dimensional integral.</p>
+<p>All physically measurable quantities, the <em>observables</em>, are associated
 to a corresponding Hermitian operator <span class="math notranslate nohighlight">\(\hat{\mathrm{O}}\)</span> (it is common
 to denote operators that correspond to an observable by the letter <span class="math notranslate nohighlight">\(O\)</span>).
 Applying this operator to the state function of a system returns its
@@ -1061,15 +1248,13 @@ eigenvalue if the state function is an eigenfunction of the operator;
 for a generic function <span class="math notranslate nohighlight">\(\Psi\)</span>, each eigenvalue of the underlying basis
 <span class="math notranslate nohighlight">\(\left\{\psi\right\}\)</span> may be obtained, with a probability depending on
 the expansion coefficient <span class="math notranslate nohighlight">\(c_i\)</span> of the eigenfunction. The mean or
-<em>expectation value</em> of an observable <span class="math notranslate nohighlight">\(O\)</span> is then given by:</p>
+<strong>expectation value</strong> of an observable <span class="math notranslate nohighlight">\(O\)</span> is then given by:</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  \left&lt;\hat{\mathrm{O}}\right&gt; = \frac{\Bra{\Psi}\hat{\mathrm{O}}\Ket{\Psi}}{\left&lt;\Psi\middle|\Psi\right&gt;} = \Bra{\Psi}\hat{\mathrm{O}}\Ket{\Psi}
  \end{aligned}\]</div>
-<p>because of the normalisation condition.</p>
-<p><br />
- <br />
-From the properties of a Hermitian operator, we have that</p>
+<p>where the last equation can be retrived considering the normalisation condition.</p>
+<p>From the properties of a Hermitian operator, we have that</p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
  \int \Phi^\ast\left(\mathbf{r}\right)\hat{\mathrm{O}}\Psi\left(\mathbf{r}\right)\mathrm{d}\mathbf{r}
@@ -1080,113 +1265,8 @@ earlier. This is a requirement for a physical observable and
 demonstrates why Hermitian operators are of great value in quantum
 mechanics.</p>
 </section>
-<section id="solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation">
-<h3><span class="section-number">1.1.4.3. </span>Solving the Eigenvalue Problem of the Time-Independent Schrödinger Equation<a class="headerlink" href="#solving-the-eigenvalue-problem-of-the-time-independent-schrodinger-equation" title="Permalink to this headline">#</a></h3>
-<p>The preceeding theoretical considerations shall now be put to good use.
-Until now, it has not been stated which operator of interest spans the
-Hilbert space. The time-independent Schrödinger equation is an
-eigenvalue problem that applies the system’s Hamiltonian (the sum of
-kinetic and potential energy)</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
- \hat{\mathrm{H}} = \hat{\mathrm{T}}+\hat{\mathrm{V}}
- \end{aligned}\]</div>
-<p>onto a wavefunction, returning the expectation value of
-the energy, the energy eigenvalue:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
- \hat{\mathrm{H}}\Ket{\Psi} = E\Ket{\Psi}.
- \end{aligned}\]</div>
-<p>The time evolution of the system at any point is given
-by the time-dependent Schrödinger equation:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
- \hat{\mathrm{H}}\Ket{\Psi} = i\hbar\frac{\partial}{\partial t}\Ket{\Psi}
- \end{aligned}\]</div>
-<p>The former is an eigenvalue problem, the latter is
-not.<br />
- <br />
-One may rewrite the time-independent Schrödinger equation for an
-arbitrary state <span class="math notranslate nohighlight">\(\Psi\)</span> in matrix form.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- \hat{\mathrm{H}}\Ket{\Psi} &amp;= E\Ket{\Psi} \\
- \sum_j c_j \hat{\mathrm{H}}\Ket{\psi_j} &amp;= E \sum_j c_j\Ket{\psi_j}
- \end{aligned}\end{split}\]</div>
-<p>All constants can be moved in front of the operator,
-and after multiplying by the bra <span class="math notranslate nohighlight">\(\bra{\psi_i}\)</span>, one obtains</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
- \sum_j c_j\Bra{\psi_i}\hat{\mathrm{H}}\Ket{\psi_j} = \sum_j H_{ij}c_j = Ec_i.
- \end{aligned}\]</div>
-<p>Consequently, one recovers an infinite-dimensional
-matrix eigenvalue problem:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- \left(\begin{matrix}
- H_{11}  &amp; H_{12} &amp; \cdots &amp; H_{1j} \\
- H_{21}  &amp; H_{22} &amp; \cdots &amp; H_{2j} \\
- \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
- H_{i1}  &amp; H_{i2} &amp; \cdots &amp; H_{ij}
- \end{matrix}\right)
- \left(\begin{matrix}
- c_1 \\
- c_2 \\
- \vdots \\
- c_j
- \end{matrix}\right)
- =
- E 
- \left(\begin{matrix}
- c_1 \\
- c_2 \\
- \vdots \\
- c_i
- \end{matrix}\right).
- \end{aligned}\end{split}\]</div>
-<p>For a general matrix eigenvalue problem, there exist
-<span class="math notranslate nohighlight">\(n\)</span> solutions with eigenvalues <span class="math notranslate nohighlight">\(E_k\)</span>. Generalising to the above problem
-results in:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
- \sum_i H_{ij}c_{jk} = c_{ik}E_k.
- \end{aligned}\]</div>
-<p>This introduces the additional index <span class="math notranslate nohighlight">\(k\)</span>, and the final
-eigenvalue problem that is to be solved is given by:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
- \left(\begin{matrix}
- H_{11}  &amp; H_{12} &amp; \cdots &amp; H_{1j} \\
- H_{21}  &amp; H_{22} &amp; \cdots &amp; H_{2j} \\
- \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
- H_{i1}  &amp; H_{i2} &amp; \cdots &amp; H_{ij}
- \end{matrix}\right)
- \left(\begin{matrix}
- c_{11}  &amp; c_{12} &amp; \cdots &amp; c_{1k} \\
- c_{21}  &amp; c_{22} &amp; \cdots &amp; c_{2k} \\
- \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
- c_{j1}  &amp; c_{j2} &amp; \cdots &amp; c_{jk}
- \end{matrix}\right)
- =
- \left(\begin{matrix}
- c_{11}  &amp; c_{12} &amp; \cdots &amp; c_{1k} \\
- c_{21}  &amp; c_{22} &amp; \cdots &amp; c_{2k} \\
- \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
- c_{i1}  &amp; c_{i2} &amp; \cdots &amp; c_{ik}
- \end{matrix}\right)
- \left(\begin{matrix}
- E_{1}  &amp; 0      &amp; \cdots &amp; 0 \\
- 0      &amp; E_{2}  &amp; \cdots &amp; 0 \\
- \vdots &amp; \vdots &amp; \ddots &amp; \vdots  \\
- 0      &amp; 0      &amp; \cdots &amp; E_{k}
- \end{matrix}\right).
- \end{aligned}\end{split}\]</div>
-<p>The eigenvalue problem of the time-independent
-Schrödinger equation <em>can now be solved as the classical eigenvalue
-problem of a matrix</em>, by resorting to simple linear algebra.</p>
-</section>
 <section id="bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions">
-<h3><span class="section-number">1.1.4.4. </span>Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions<a class="headerlink" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">1.2.3.3. </span>Bosons and Fermions: Use of Determinants to Describe Many-Body Wavefunctions<a class="headerlink" href="#bosons-and-fermions-use-of-determinants-to-describe-many-body-wavefunctions" title="Permalink to this headline">#</a></h3>
 <p>Quantum mechanics imposes certain symmetry constraints on permutations
 of indistinguishable particles. For bosons, the wavefunction must remain
 unchanged upon exchange of particles. For fermions (such as electrons)
@@ -1268,6 +1348,120 @@ wavefunction, this reduces to</p>
 <p>which is in agreement with the permutation requirement.</p>
 </section>
 </section>
+<section id="time-independent-schrodinger-equation">
+<h2><span class="section-number">1.2.4. </span>Time-Independent Schrödinger Equation<a class="headerlink" href="#time-independent-schrodinger-equation" title="Permalink to this headline">#</a></h2>
+<p>The preceeding theoretical considerations shall now be put to good use.
+Until now, it has not been stated which operator of interest spans the
+Hilbert space. The <strong>time-independent Schrödinger equation</strong> is an
+eigenvalue problem that applies the system’s Hamiltonian (the sum of
+kinetic and potential energy)</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \hat{\mathrm{H}} = \hat{\mathrm{T}}+\hat{\mathrm{V}}
+ \end{aligned}\]</div>
+<p>onto a wavefunction, returning the expectation value of
+the energy, the energy eigenvalue:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \hat{\mathrm{H}}\Ket{\Psi} = E\Ket{\Psi}.
+ \end{aligned}\]</div>
+<p>The time evolution of the system at any point is given
+by the <strong>time-dependent Schrödinger equation</strong>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \hat{\mathrm{H}}\Ket{\Psi} = i\hbar\frac{\partial}{\partial t}\Ket{\Psi}
+ \end{aligned}\]</div>
+<p>Note that the former is an eigenvalue problem, the latter is
+not.</p>
+<p>One may rewrite the time-independent Schrödinger equation for an
+arbitrary state <span class="math notranslate nohighlight">\(\Psi\)</span> in matrix form.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \hat{\mathrm{H}}\Ket{\Psi} &amp;= E\Ket{\Psi} \\
+ \sum_j c_j \hat{\mathrm{H}}\Ket{\psi_j} &amp;= E \sum_j c_j\Ket{\psi_j}
+ \end{aligned}\end{split}\]</div>
+<p>All constants can be moved in front of the operator,
+and after multiplying by the bra <span class="math notranslate nohighlight">\(\bra{\psi_i}\)</span>, one obtains</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \sum_j c_j\Bra{\psi_i}\hat{\mathrm{H}}\Ket{\psi_j} = \sum_j H_{ij}c_j = Ec_i.
+ \end{aligned}\]</div>
+<p>Consequently, one recovers an infinite-dimensional
+matrix eigenvalue problem:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \left(\begin{matrix}
+ H_{11}  &amp; H_{12} &amp; \cdots &amp; H_{1j} \\
+ H_{21}  &amp; H_{22} &amp; \cdots &amp; H_{2j} \\
+ \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
+ H_{i1}  &amp; H_{i2} &amp; \cdots &amp; H_{ij}
+ \end{matrix}\right)
+ \left(\begin{matrix}
+ c_1 \\
+ c_2 \\
+ \vdots \\
+ c_j
+ \end{matrix}\right)
+ =
+ E 
+ \left(\begin{matrix}
+ c_1 \\
+ c_2 \\
+ \vdots \\
+ c_i
+ \end{matrix}\right).
+ \end{aligned}\end{split}\]</div>
+<p>For a general matrix eigenvalue problem, there exist
+<span class="math notranslate nohighlight">\(n\)</span> solutions with eigenvalues <span class="math notranslate nohighlight">\(E_k\)</span>. Generalising to the above problem
+results in:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+ \sum_i H_{ij}c_{jk} = c_{ik}E_k.
+ \end{aligned}\]</div>
+<p>This introduces the additional index <span class="math notranslate nohighlight">\(k\)</span>, and the final
+eigenvalue problem that is to be solved is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+ \left(\begin{matrix}
+ H_{11}  &amp; H_{12} &amp; \cdots &amp; H_{1j} \\
+ H_{21}  &amp; H_{22} &amp; \cdots &amp; H_{2j} \\
+ \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
+ H_{i1}  &amp; H_{i2} &amp; \cdots &amp; H_{ij}
+ \end{matrix}\right)
+ \left(\begin{matrix}
+ c_{11}  &amp; c_{12} &amp; \cdots &amp; c_{1k} \\
+ c_{21}  &amp; c_{22} &amp; \cdots &amp; c_{2k} \\
+ \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
+ c_{j1}  &amp; c_{j2} &amp; \cdots &amp; c_{jk}
+ \end{matrix}\right)
+ =
+ \left(\begin{matrix}
+ c_{11}  &amp; c_{12} &amp; \cdots &amp; c_{1k} \\
+ c_{21}  &amp; c_{22} &amp; \cdots &amp; c_{2k} \\
+ \vdots  &amp; \vdots &amp; \ddots &amp; \vdots  \\
+ c_{i1}  &amp; c_{i2} &amp; \cdots &amp; c_{ik}
+ \end{matrix}\right)
+ \left(\begin{matrix}
+ E_{1}  &amp; 0      &amp; \cdots &amp; 0 \\
+ 0      &amp; E_{2}  &amp; \cdots &amp; 0 \\
+ \vdots &amp; \vdots &amp; \ddots &amp; \vdots  \\
+ 0      &amp; 0      &amp; \cdots &amp; E_{k}
+ \end{matrix}\right).
+ \end{aligned}\end{split}\]</div>
+<p>The eigenvalue problem of the time-independent
+Schrödinger equation <em>can now be solved as the classical eigenvalue
+problem of a matrix</em>, by resorting to simple linear algebra.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<p>In a system that consists of only two states (such as an electron spin
+in a magnetic field, where the electron spin can be in one of two
+orientations), the Hamiltonian has the following matrix elements:
+<span class="math notranslate nohighlight">\(H_{11}=a, \ H_{22}=b, \ H_{12}=d, \ H_{21}=d\)</span>. How would you determine
+the energy levels <span class="math notranslate nohighlight">\(E\)</span> and the eigenstates <span class="math notranslate nohighlight">\(\mathbf{\Psi}\)</span> of the system?
+(You do not need to solve this problem explicitly, merely outlining the
+procedure is sufficient.)</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1279,16 +1473,16 @@ wavefunction, this reduces to</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "python3",
+            kernelName: "compchem",
             path: "./Exercises/Ex1"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               
@@ -1297,17 +1491,17 @@ wavefunction, this reduces to</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="IESM_Ex1.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Ex1_LinearAlgebra.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">1. </span>Linear Algebra in Quantum Mechanics</p>
+            <p class="prev-next-title"><span class="section-number">1.1. </span>Review of Linear Algebra Basics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex1Exercises.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex1.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.2. </span>Exercises</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Working with vectors using Numpy</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
