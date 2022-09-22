@@ -34,10 +34,14 @@ This should only be done if you plan to adopt these notebooks for your own cours
 
 You can install the required packages in any linux environment using miniconda.
 
-1. `conda env create -f environment.yml`
+1. `conda env create -n iesm -f requirements.txt`
 2. `conda activate iesm`
 3. `python -m ipykernel install --user --name iesm`
 
+In case you face a `PackagesNotFoundError`, before creating the environment it may be necessary to manuallly adding the `conda-forge channel` to the list of channels
+```
+conda config --append channels conda-forge
+```
 ## Building a Jupyter Book
 
 Run the following command in your terminal:
