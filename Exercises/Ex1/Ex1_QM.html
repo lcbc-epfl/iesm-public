@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.3. Working with vectors using Numpy" href="Ex1.html" />
+    <link rel="next" title="1.3. Working with vectors using Numpy" href="Ex1_Numpy.html" />
     <link rel="prev" title="1.1. Review of Linear Algebra Basics" href="Ex1_LinearAlgebra.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -139,7 +139,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex1.html">
+    <a class="reference internal" href="Ex1_Numpy.html">
      1.3. Working with vectors using Numpy
     </a>
    </li>
@@ -725,40 +725,7 @@ title="Print to PDF"
                 
               <div>
                 
-  <div class="exercise admonition">
-<p class="admonition-title">Exercise 2</p>
-<p>Evaluate the matrix product <span class="math notranslate nohighlight">\(\mathbf{C} = \mathbf{A}\mathbf{B}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \mathbf{A} =\begin{aligned}
-     \left(\begin{matrix}
-     6 &amp; 8 &amp;2 \\ 9 &amp; 1 &amp; 5 \\ 7 &amp; 4 &amp; 3
-     \end{matrix}\right),\quad\mathbf{B}=
-      \left(\begin{matrix}
-     9 &amp; 6 &amp; 7 \\ 5 &amp; 4 &amp; 4 \\  3 &amp; 2 &amp; 8
-     \end{matrix}\right).
-     \end{aligned}
-    \end{split}\]</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 3</p>
-<p>Evaluate the determinant for the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-    \mathbf{A}=\begin{aligned}
-     \left(\begin{matrix}
-     1 &amp; 1 &amp; 2 \\ 1 &amp; 0 &amp; 2 \\ 2 &amp; 2 &amp; 3
-     \end{matrix}\right)
-     \end{aligned}
- \end{split}\]</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 14</p>
-<p>Does the exponent of an operator always satisfy the relation
-<span class="math notranslate nohighlight">\(e^{\hat{A}+\hat{B}} = e^{\hat{A}}e^{\hat{B}}\)</span> ? Start from the
-definition of the matrix exponential.</p>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="basic-concepts-in-quantum-mechanics">
+  <section class="tex2jax_ignore mathjax_ignore" id="basic-concepts-in-quantum-mechanics">
 <h1><span class="section-number">1.2. </span>Basic Concepts in Quantum Mechanics<a class="headerlink" href="#basic-concepts-in-quantum-mechanics" title="Permalink to this headline">#</a></h1>
 <p>We will now review basic concepts in quantum mechanics, focusing on the application of linear algebra to quantum mechanics formalism.</p>
 <section id="operators">
@@ -811,7 +778,7 @@ decomposing <span class="math notranslate nohighlight">\(g\)</span> in terms of 
 \[\begin{aligned}
 \hat{\mathrm{A}}g = \hat{\mathrm{A}}\sum_i c_if_i = \sum_i c_i\hat{\mathrm{A}}f_i = \sum_i c_i \lambda_i f_i.\end{aligned}\]</div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 4</p>
+<p class="admonition-title">Exercise 5</p>
 <p>Find the eigenvalues and eigenvectors of the matrix <span class="math notranslate nohighlight">\(\mathbf{A}\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -852,13 +819,13 @@ determines whether two observables can be simultaneously determined
 the same eigenfunctions (or, <em>vice versa</em>, operators sharing the same
 eigenfunctions will commute).</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 5</p>
+<p class="admonition-title">Exercise 6</p>
 <p>Show that if the product <span class="math notranslate nohighlight">\(\mathbf{C}=\mathbf{A}\mathbf{B}\)</span> of two
 Hermitian matrices is also Hermitian, then <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and
 <span class="math notranslate nohighlight">\(\mathbf{B}\)</span> commute.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 11</p>
+<p class="admonition-title">Exercise 7</p>
 <p>Explain the connection between the Heisenberg uncertainty principle and
 the commutation relation.</p>
 </div>
@@ -942,7 +909,7 @@ vectors it is built upon, any state <span class="math notranslate nohighlight">\
 norm. This requirement is conserved if and only if the normalisation
 <span class="math notranslate nohighlight">\(\sum_j |c_j|^2 = 1\)</span> is imposed.</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 16</p>
+<p class="admonition-title">Exercise 8</p>
 <p>What is the meaning of a multiplication of a bra and a ket</p>
 <div class="math notranslate nohighlight">
 \[
@@ -959,7 +926,7 @@ norm. This requirement is conserved if and only if the normalisation
   \]</div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 17</p>
+<p class="admonition-title">Exercise 9</p>
 <p>Given a basis <span class="math notranslate nohighlight">\(\left\{\psi\right\}\)</span> for which</p>
 <div class="math notranslate nohighlight">
 \[
@@ -991,7 +958,7 @@ norm. This requirement is conserved if and only if the normalisation
 <p>where the <span class="math notranslate nohighlight">\(c_j\)</span> are the aforementioned expansion coefficients.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 18</p>
+<p class="admonition-title">Bonus Exercise 10</p>
 <p>Prove that, given the above conditions,
 <span class="math notranslate nohighlight">\(c_j=\left&lt;\psi_j\middle|\Psi\right&gt;\)</span>.</p>
 </div>
@@ -1013,7 +980,7 @@ $<span class="math notranslate nohighlight">\(\begin{aligned}
 The eigenvalues of a Hermitian operator have some useful  properties; they are <em>real</em> (which is a direct consequence of the definition of a Hermitian operator, as it shall be pointed out  later again) and <em>orthogonal</em> to each other (this is why basis  vectors in Hilbert space are orthogonal - and this is what allows for algebraic transformations in euclidian space to be easily extended onto the complex Hilbert space).</p></li>
 </ul>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 6</p>
+<p class="admonition-title">Exercise 11</p>
 <p>Diagonalise the matrices <span class="math notranslate nohighlight">\(\mathbf{A}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{B}\)</span>. Specify which one is Hermitian.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1029,22 +996,22 @@ The eigenvalues of a Hermitian operator have some useful  properties; they are <
  \end{split}\]</div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 15</p>
+<p class="admonition-title">Bonus Exercise 12</p>
 <p>Prove that the eigenvalues of a Hermitian operator are
 real.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 8</p>
+<p class="admonition-title">Exercise 13</p>
 <p>Give the position and the momentum operators (consider only one
 dimension) in the position representation.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 9</p>
+<p class="admonition-title">Exercise 14</p>
 <p>Give the commutator of the position and linear momentum operators in
 the position representation (consider one dimension only).</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 13</p>
+<p class="admonition-title">Exercise 15</p>
 <p>Is the electronic Hamiltonian <span class="math notranslate nohighlight">\(\hat{H}_{el}\)</span> a linear operator and
 why (not)?</p>
 </div>
@@ -1117,7 +1084,7 @@ in matrix form:</p>
 <span class="math notranslate nohighlight">\(\Psi,\Phi\)</span> respectively. Operators for which <span class="math notranslate nohighlight">\(A_{ij} = 0\)</span> for <span class="math notranslate nohighlight">\(i \neq j\)</span> are, just
 like their underlying matrix, <em>diagonal</em>.</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 19</p>
+<p class="admonition-title">Exercise 16</p>
 <p>Show that, if two operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>, <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>
 commute and if <span class="math notranslate nohighlight">\(\Ket{\psi}\)</span> is an eigenvector of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
 <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\Ket{\psi}\)</span> is an eigenvector of
@@ -1128,7 +1095,7 @@ eigenvectors, show that the subspace spanned by the eigenvalues of
 <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span>.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 20</p>
+<p class="admonition-title">Exercise 17</p>
 <p>Demonstrate that, if two hermitian operators <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span>,
 <span class="math notranslate nohighlight">\(\hat{\mathrm{B}}\)</span> commute and <span class="math notranslate nohighlight">\({\Ket{\psi_1}}\)</span>, <span class="math notranslate nohighlight">\({\Ket{\psi_2}}\)</span>
 are eigenvectors of <span class="math notranslate nohighlight">\(\hat{\mathrm{A}}\)</span> associated to different
@@ -1198,13 +1165,13 @@ real space is naturally given by:</p>
  \left&lt;\Psi\middle|\Psi\right&gt; = \int \Psi^\ast\left(\mathbf{r},t\right)\Psi\left(\mathbf{r},t\right)\mathrm{d}\mathbf{r}.
  \end{aligned}\]</div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 10</p>
+<p class="admonition-title">Bonus Exercise 18</p>
 <p>Show that the potential energy operator
 <span class="math notranslate nohighlight">\(\hat{\mathrm{V}}(\mathbf{r})\)</span> is multiplicative when applied to the
 real-space wavefunction.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise 12</p>
+<p class="admonition-title">Bonus Exercise 19</p>
 <p>The link between position and momentum representation is
 given by a Fourier transform. Explain how this relates to the Heisenberg
 uncertainty principle.</p>
@@ -1452,7 +1419,7 @@ eigenvalue problem that is to be solved is given by:</p>
 Schrödinger equation <em>can now be solved as the classical eigenvalue
 problem of a matrix</em>, by resorting to simple linear algebra.</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 7</p>
+<p class="admonition-title">Exercise 20</p>
 <p>In a system that consists of only two states (such as an electron spin
 in a magnetic field, where the electron spin can be in one of two
 orientations), the Hamiltonian has the following matrix elements:
@@ -1498,7 +1465,7 @@ procedure is sufficient.)</p>
             <p class="prev-next-title"><span class="section-number">1.1. </span>Review of Linear Algebra Basics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex1.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex1_Numpy.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">1.3. </span>Working with vectors using Numpy</p>
