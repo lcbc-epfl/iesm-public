@@ -1,7 +1,7 @@
 Introduction to Electronic Structure Methods
 ==============================================
 
-This book contains the script and exercises for the course CHE-351 `Introduction to Electronic Structure Methods` (IESM) given at EPFL. 
+This book contains the script and exercises for the course [CHE-351](https://edu.epfl.ch/coursebook/en/introduction-to-electronic-structure-methods-CH-353)  `Introduction to Electronic Structure Methods` (IESM) given at EPFL. 
 
 **Contributors**
 
@@ -22,10 +22,14 @@ Over the years many people have contributed to the improvement of the course mat
 * Andrea Levy [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-1255-859X)
 * Sophie Johnson [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-4207-4350)
 
-<!---## Time Table Fall Semester 2022
-The course will be **Mon 10:15-12:00am** (Lectures in [BCH3303](https://plan.epfl.ch/?room==BCH%203303), Exercises in [BCH1113](https://plan.epfl.ch/?room==BCH%201113)) and **Fri: 10:15-12:00am, 1:15-3:00 pm** (Exercises in [BCH1113](https://plan.epfl.ch/?room==BCH%201113), Lectures in [BCH4310](https://plan.epfl.ch/?room==BCH%204310)).
+## Time Table Fall Semester 2022
+⚠️ Note that this timetable is still tentative, expecially for the last part of the course: once the number of students will be definitive, we will finalize it in order to have enough slots for oral exams.
 
-| date            | type     | description                                               |            |
+The course will be on
+* **Mon 10:15-12:00am** (Lectures in [BCH3303](https://plan.epfl.ch/?room==BCH%203303), Exercises in [BCH1113](https://plan.epfl.ch/?room==BCH%201113))
+* **Fri: 10:15-12:00am, 1:15-3:00 pm** (Lectures in [BCH4310](https://plan.epfl.ch/?room==BCH%204310), Exercises in [BCH1113](https://plan.epfl.ch/?room==BCH%201113))
+
+| Date            | Type     | Description                                               |            |
 |-----------------|----------|-----------------------------------------------------------|------------|
 | 19.09. Mon      |          | jeûne fédéral                                             |            |
 | 26.09. Mon      | course   | Practical info                                            | UR         |
@@ -55,4 +59,3 @@ The course will be **Mon 10:15-12:00am** (Lectures in [BCH3303](https://plan.epf
 | 19.12. Mon      | exercise | Question hour                                             | assistants |
 | 23.12. Fri (m)  | exam     | Oral exam                                                 | UR         |
 | 23.12. Fri (a)  | exam     | Oral exam                                                 | UR         |
----!>
