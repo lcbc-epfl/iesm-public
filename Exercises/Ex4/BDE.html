@@ -742,18 +742,35 @@ approach justified?</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 4</p>
+<p>Psi4 uses density-fitted MP2 by default. Density-fitting (DF) is
+sometimes referred to as Resolution-of-Identity (RI). DF or RI allows
+for more efficient MP2 calculations by describing the quadratic
+products of the electron repulsion integrals (two electron integrals)
+via a linear-scaling auxiliary basis set. This is done with a
+least-squares fitting method. Resulting MP2 calculations are more
+efficient with a prefactor reduction of MP2. For more information,
+you may refer to the Psi4 manual on DF-MP2: <a class="reference external" href="https://psicode.org/psi4manual/master/dfmp2.html">https://psicode.org/psi4manual/master/dfmp2.html</a>.
+This is also a nice theory resource: <a class="reference external" href="https://manual.q-chem.com/5.2/Ch6.S6.html">https://manual.q-chem.com/5.2/Ch6.S6.html</a>.
+Without any approximations, the number of four-center two-electron integrals
+grows as O(n^4) as the number of basis functions per atom, n,
+increases. Based on your understanding of the auxiliary basis set used in
+the DF approximation, provide an estimate of the improved scaling order of
+DF-MP2 compared to CONV-MP2.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 5</p>
 <p>What is the trend in energies when moving from HF over MP2 to MP3?
 Does this series converge?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 5</p>
+<p class="admonition-title">Exercise 6</p>
 <p>Comment on the accuracy of the HF approach for this system. If the
 difference between HF and MPn is large, how is the use of MPn still
 justified? (Hint: Think in terms of the scale of the absolute energy
 of the system, rather than the reaction.)</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 6</p>
+<p class="admonition-title">Exercise 7</p>
 <p>Why did we choose not to carry out a geometry optimisation for mp3?</p>
 </div>
 <div class="cell docutils container">
