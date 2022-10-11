@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3. Large Basis Sets, Dissociation Energy and Geometry Optimisation" href="../Ex3/IESM_Ex3.html" />
+    <link rel="next" title="2.2. First Steps in Psi4: The Hydrogen Atom" href="Ex2_hydrogen_atom.html" />
     <link rel="prev" title="2. Hartree-Fock Calculations in Psi4" href="IESM_Ex2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -161,6 +161,24 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex2_hydrogen_atom.html">
+     2.2. First Steps in
+     <em>
+      Psi4
+     </em>
+     : The Hydrogen Atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex2_water-molecule.html">
+     2.3. A more complex system: H
+     <span class="math notranslate nohighlight">
+      \(_{2}\)
+     </span>
+     O
     </a>
    </li>
   </ul>
@@ -417,7 +435,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex2/Ex2.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex2/Ex2_theory.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -477,7 +495,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex2/Ex2.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex2/Ex2_theory.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -505,7 +523,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex2/Ex2.ipynb"
+        <a href="../../_sources/Exercises/Ex2/Ex2_theory.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -564,64 +582,17 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2.1. Basis Sets - Defining Vector Spaces
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-electron-wavefunctions-slater-type-orbitals-stos">
+   2.1.1. One-Electron Wavefunctions: Slater-Type Orbitals (STOs)
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-electron-wavefunctions-slater-type-orbitals">
-     2.1.1. One-Electron Wavefunctions: Slater-Type Orbitals
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pople-type-split-valence-basis-sets">
-       2.1.1.1. Pople-Type Split-Valence Basis Sets
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-steps-in-psi4-the-hydrogen-atom">
-   2.2. First Steps in
-   <em>
-    Psi4
-   </em>
-   : The Hydrogen Atom
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#electronic-structure-software">
-     2.2.1. Electronic Structure Software
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preliminary-steps">
-     2.2.2. Preliminary steps
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">
-     2.2.3. Writing An Input For
-     <em>
-      Psi4
-     </em>
-     and Invoking the Program
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pople-type-split-valence-basis-sets">
+     2.1.1.1. Pople-Type Split-Valence Basis Sets
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rhf-vs-uhf">
-   2.3. RHF vs. UHF
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#output-files">
-   2.4. Output Files
-  </a>
  </li>
 </ul>
 
@@ -642,64 +613,17 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   2.1. Basis Sets - Defining Vector Spaces
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#one-electron-wavefunctions-slater-type-orbitals-stos">
+   2.1.1. One-Electron Wavefunctions: Slater-Type Orbitals (STOs)
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#one-electron-wavefunctions-slater-type-orbitals">
-     2.1.1. One-Electron Wavefunctions: Slater-Type Orbitals
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pople-type-split-valence-basis-sets">
-       2.1.1.1. Pople-Type Split-Valence Basis Sets
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#first-steps-in-psi4-the-hydrogen-atom">
-   2.2. First Steps in
-   <em>
-    Psi4
-   </em>
-   : The Hydrogen Atom
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#electronic-structure-software">
-     2.2.1. Electronic Structure Software
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#preliminary-steps">
-     2.2.2. Preliminary steps
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">
-     2.2.3. Writing An Input For
-     <em>
-      Psi4
-     </em>
-     and Invoking the Program
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pople-type-split-valence-basis-sets">
+     2.1.1.1. Pople-Type Split-Valence Basis Sets
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rhf-vs-uhf">
-   2.3. RHF vs. UHF
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#output-files">
-   2.4. Output Files
-  </a>
  </li>
 </ul>
 
@@ -714,14 +638,15 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="basis-sets-defining-vector-spaces">
 <h1><span class="section-number">2.1. </span>Basis Sets - Defining Vector Spaces<a class="headerlink" href="#basis-sets-defining-vector-spaces" title="Permalink to this headline">#</a></h1>
 <p>Three questions have to be addressed before tackling an electronic
-structure problem: Which computer code is best suited for a given
-problem, which computational method will give the most accurate results
-in a reasonable time, and what basis set offers the best compromise of
-accuracy and efficiency? Throughout this course, you shall always be
-using the same code (<a class="reference external" href="https://psicode.org/">Psi4</a>) - but you will get to try out some
-of the different approaches discussed in the lecture. Before the first
+structure problem:</p>
+<ol class="simple">
+<li><p>Which computer code is best suited for a given problem</p></li>
+<li><p>Which computational method will give the most accurate results in a reasonable time</p></li>
+<li><p>What basis set offers the best compromise of accuracy and efficiency?</p></li>
+</ol>
+<p>Throughout this course, you shall always be using the same code (<a class="reference external" href="https://psicode.org/">Psi4</a>) - but you will get to try out some of the different approaches discussed in the lecture. Before the first
 practical example - applying the Hartree-Fock-Roothaan scheme (that you
-will treat in deatil in the lectures) - to the hydrogen atom, there remains
+will treat in deatil in the lectures) - to symple systems, there remains
 one issue to be resolved: What is the basis in which we want to expand
 our wavefunction that is described by the in principle infinite
 expansion</p>
@@ -729,8 +654,8 @@ expansion</p>
 <span class="eqno">(2.1)<a class="headerlink" href="#equation-wf-expansion" title="Permalink to this equation">#</a></span>\[
  \Psi(\mathbf{r}_1,\dots,\mathbf{r}_N) = \sum_j c_j \psi_j(\mathbf{r}_1,\dots,\mathbf{r}_N)
 \]</div>
-<section id="one-electron-wavefunctions-slater-type-orbitals">
-<h2><span class="section-number">2.1.1. </span>One-Electron Wavefunctions: Slater-Type Orbitals<a class="headerlink" href="#one-electron-wavefunctions-slater-type-orbitals" title="Permalink to this headline">#</a></h2>
+<section id="one-electron-wavefunctions-slater-type-orbitals-stos">
+<h2><span class="section-number">2.1.1. </span>One-Electron Wavefunctions: Slater-Type Orbitals (STOs)<a class="headerlink" href="#one-electron-wavefunctions-slater-type-orbitals-stos" title="Permalink to this headline">#</a></h2>
 <p>By defining a basis set, we define a <em>vector space</em> in which the
 Schrödinger equation is to be solved - and we wish this space to be as
 close as possible to the complete space that defines the accurate
@@ -938,290 +863,6 @@ Indicate the number of basis functions and the number of Gaussian primitives tha
 </section>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="first-steps-in-psi4-the-hydrogen-atom">
-<h1><span class="section-number">2.2. </span>First Steps in <em>Psi4</em>: The Hydrogen Atom<a class="headerlink" href="#first-steps-in-psi4-the-hydrogen-atom" title="Permalink to this headline">#</a></h1>
-<p>You will learn how to use <em>Psi4</em> by putting your hands on a simple
-example: The total energy of the hydrogen atom in Hartree-Fock theory.
-This is a tutorial - you are not only invited to type the commands that
-are being introduced, you are obliged to.</p>
-<section id="electronic-structure-software">
-<h2><span class="section-number">2.2.1. </span>Electronic Structure Software<a class="headerlink" href="#electronic-structure-software" title="Permalink to this headline">#</a></h2>
-<p><em>Ab initio</em> electronic structure software packages make it possible to
-calculate numerically a variety of properties of a given system, based
-only on physical constants and the system’s Hamiltonian. The only
-approximations that need to be made are in the method and basis set that
-have to be chosen, in order to allow for a reasonable computational
-time. (The stronger your workstation, the more approximations you may
-drop, and the more elaborate your approach can be.) There are plenty of
-<em>ab initio</em> quantum chemical packages on the market; they differ in
-their capabilities, license policy and pricing. Widley used packages
-include GAMESS US, turbomole, DALTON, CP2K, CPMD and the Gaussian set of
-programs.</p>
-<p><em>Psi4</em> is a free and open-source ab initio electronic structure program providing implementations of Hartree–Fock, density functional theory, many-body perturbation theory, configuration interaction, density cumulant theory, symmetry-adapted perturbation theory, and coupled-cluster theory. Most of the methods are quite efficient, thanks to density fitting and multi-core parallelism. The program is a hybrid of C++ and Python, and calculations may be run with very simple text files or using the Python API, facilitating post-processing and complex workflows. [Reference: Smith DG, <em>et al.</em> PSI4 1.4: Open-source software for high-throughput quantum chemistry. <em>The Journal of chemical physics</em> (2020) DOI: <a class="reference external" href="https://doi.org/10.1063/5.0006002">https://doi.org/10.1063/5.0006002</a> ]</p>
-<p>The current version of <em>Psi4</em>  that you will be using is v1.4rc1.</p>
-</section>
-<section id="preliminary-steps">
-<h2><span class="section-number">2.2.2. </span>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">#</a></h2>
-<p>Before starting to work with <em>Psi4</em> we need to set up the environment, importing the required modules:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;seaborn-poster&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-ticks&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>then we can also set the maximum resources that can be used, specifying the available memory for <em>Psi4</em> to use with the <code class="docutils literal notranslate"><span class="pre">psi4.set_memory()</span></code> function, and the number of threads to use in SMP parallel computations with the <code class="docutils literal notranslate"><span class="pre">psi4.set_num_threads()</span></code> function</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
-  Threads set to 2 by Python driver.
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="writing-an-input-for-psi4-and-invoking-the-program">
-<h2><span class="section-number">2.2.3. </span>Writing An Input For <em>Psi4</em> and Invoking the Program<a class="headerlink" href="#writing-an-input-for-psi4-and-invoking-the-program" title="Permalink to this headline">#</a></h2>
-<p>The geomety of the <span class="math notranslate nohighlight">\(H\)</span> atom can now be defined, passing it as a string into the <code class="docutils literal notranslate"><span class="pre">psi4.geometry()</span></code> function in either Z-matrix (see note below) or Cartesian format, where the triple-quote <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code> syntax is used to allow the string to break over multiple lines.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 2</span>
-<span class="s2">H 0.0 0.0 0.0</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Where the first line contains the total charge of the system (0), followed by the spin multiplicity (2), and the following lines contain all the atoms of your system, one atom per line.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Atomic coordinates representation</p>
-<ul class="simple">
-<li><p><strong>Z-matrix</strong>: each line gives the coordinates of a single atom in terms of its internal coordinates (atomic number, bond length, bond angle, and dihedral angle). As example, the Z-matrix for hydrogen peroxide is reported:</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span>
-<span class="n">O</span> <span class="mi">1</span> <span class="mf">0.9</span>
-<span class="n">O</span> <span class="mi">2</span> <span class="mf">1.4</span> <span class="mi">1</span> <span class="mf">105.0</span>
-<span class="n">H</span> <span class="mi">3</span> <span class="mf">0.9</span> <span class="mi">2</span> <span class="mf">105.0</span> <span class="mi">1</span> <span class="mf">120.0</span>
-</pre></div>
-</div>
-<p>The first line defines the fistr atom, a H in this case. The next line defines the second atom, an O, and specifies the internuclear distance (0.9Å) with the first atom (1). The next line defines the third atom, another O, and specifies the internuclear distance (1.4Å) with the second atom (2) and the angle (105.0°) with atom 2 and atom 1 (O-O-H angle). The last line defines the fourth atom, another H,  and specifies the internuclear distance (0.9Å) with the third atom (3), the angle (105.0°) with atom 3 and atom 2 (H-O-O angle), and the dihedral angle  (120.0°) with atom 3, 2, and 1 (H-O-O-H angle).<br />
-Note that if more atoms would be present, it would be needed to specify for each of them the value for  internuclear distance, angle and dihedral with other atoms previously defined.</p>
-<ul class="simple">
-<li><p><strong>Cartesian coordinates</strong>: each line gives the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> coordinates of a single atom, with respect to the origin of the cartesian axes. The Cartesian coordinates for hydrogen peroxide result:\</p></li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="mf">0.000</span> <span class="mf">0.000</span> <span class="mf">0.000</span>
-<span class="n">O</span> <span class="mf">0.900</span> <span class="mf">0.000</span> <span class="mf">0.000</span>
-<span class="n">O</span> <span class="mf">1.262</span> <span class="mf">1.352</span> <span class="mf">0.000</span>
-<span class="n">H</span> <span class="mf">1.742</span> <span class="mf">1.465</span> <span class="mf">0.753</span>
-</pre></div>
-</div>
-<p>Note that Z-matrices can be converted to Cartesian coordinates and back, as the structural information content is identical.</p>
-</div>
-<p>The energy of the system can be computed using the function <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code>, passing as first argument a string with the desired method and the basis set (<code class="docutils literal notranslate"><span class="pre">'METHOD/BASIS'</span></code>), and the target molecule as second argument. The ouput is the total electronic energy in Hartree.</p>
-<p>Calling <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> will perform a so called single point calculation and will not change the geometry. During the calculation the program will perform a wavefunction optimization to find the lowest energy combination of wavefunction coefficients.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
-
-<span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
-    <span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hf/</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>  <span class="c1"># we do the single point energy calculation once per basis set</span>
-
-    <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STO-3G -0.46658184955727544
-6-31G -0.4982329107290702
-6-311G -0.49980981527328194
-</pre></div>
-</div>
-</div>
-</div>
-<p>To verify the number of basis sets used, navigate to the appropriate output log file located in your file directory (lefthand side of page). You can use the CTRL+F search function to look for the phrase “Number of basis functions” and read under the section called “Primary Basis.”</p>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 7</p>
-<p>Include a table of the the calculated energies using the three different basis sets, specifying the number of basis functions used. Compare the energies with the analytical value for the H atom, given by the analytical expression:</p>
-<div class="math notranslate nohighlight">
-\[
- E = \frac{1}{2} m_e c^2\alpha^2,
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fine structure constant.</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-m_e = 0.910953\cdot10^{-30} kg\\
-c = 2.99792458\cdot10^8 m s^{-1}\\
-\alpha = 7.2973525376\cdot10^{-3}\\
-N_A = 6.0221367\cdot10^{23}mol^{-1}
-\end{align}\end{split}\]</div>
-<p>Pay attention to the units - use atomic units or kcal<span class="math notranslate nohighlight">\(\cdot\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> throughout!</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 8</p>
-<p>What is the influence of the basis set size on the accuracy of the result? How do the split-valence bases compare to STO-3G?</p>
-</div>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="rhf-vs-uhf">
-<h1><span class="section-number">2.3. </span>RHF vs. UHF<a class="headerlink" href="#rhf-vs-uhf" title="Permalink to this headline">#</a></h1>
-<p>This exercise is already a preparation for the next set of exercises -
-you will now calculate a molecular structure, rather than an isolated
-atom. Using the same basis throughout (6-31G), you should compare <span class="math notranslate nohighlight">\(H_2\)</span>
-at equilibrium distance (0.7414 Å) and at a larger distance of 5.6 Å at
-two different levels of Hartree-Fock: Restricted Hartree-Fock (RHF) and
-Unrestricted Hartree-Fock (UHF).</p>
-<p>Define the geometry for the <span class="math notranslate nohighlight">\(H_2\)</span> molecule at the equilibrium distance and at the larger distance. Note the change in  the spin multiplicity, from 2 to 1.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2_eq</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2">symmetry c1</span>
-<span class="s2">H 0.0 0.0 0.0</span>
-<span class="s2">H 0.0 0.0 0.7414</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="n">h2_large</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2">symmetry c1</span>
-<span class="s2">H 0.0 0.0 0.0</span>
-<span class="s2">H 0.0 0.0 5.6000</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>The energy of the system can be computed as before (for each new calculation, be sure to have always a new output file to avoid overwriting files).</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#h2_eq</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Equilibrium distance:&#39;</span><span class="p">)</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;eq_RHF-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;rhf&#39;</span><span class="p">,</span> <span class="s1">&#39;guess_mix&#39;</span><span class="p">:</span><span class="s2">&quot;False&quot;</span><span class="p">})</span>
-<span class="n">E_RHF</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2_eq</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RHF: &#39;</span><span class="p">,</span> <span class="n">E_RHF</span><span class="p">)</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;eq_UHF-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">,</span> <span class="s1">&#39;guess&#39;</span><span class="p">:</span><span class="s1">&#39;gwh&#39;</span><span class="p">,</span> <span class="s1">&#39;guess_mix&#39;</span><span class="p">:</span><span class="s2">&quot;True&quot;</span><span class="p">})</span>
-<span class="n">E_UHF</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2_eq</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UHF: &#39;</span><span class="p">,</span> <span class="n">E_UHF</span><span class="p">)</span>
-    
-    
-<span class="c1">#h2_large</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Large distance:&#39;</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;large_RHF-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;rhf&#39;</span><span class="p">,</span> <span class="s1">&#39;guess_mix&#39;</span><span class="p">:</span><span class="s2">&quot;False&quot;</span><span class="p">})</span>
-<span class="n">E_RHF</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2_large</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;RHF: &#39;</span><span class="p">,</span> <span class="n">E_RHF</span><span class="p">)</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;large_UHF-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">,</span> <span class="s1">&#39;guess&#39;</span><span class="p">:</span><span class="s1">&#39;gwh&#39;</span><span class="p">,</span> <span class="s1">&#39;guess_mix&#39;</span><span class="p">:</span><span class="s2">&quot;True&quot;</span><span class="p">})</span>
-<span class="n">E_UHF</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2_large</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;UHF: &#39;</span><span class="p">,</span> <span class="n">E_UHF</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Equilibrium distance:
-RHF:  -1.1267350944766377
-UHF:  -1.1267350944528827
-Large distance:
-RHF:  -0.7451120298600025
-UHF:  -0.9964658919270591
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 9</p>
-<p>Include a table of the the calculated energies using the two reference wafefunctions. Compute also their difference, for both bond distances.<br />
-The energy to break a chemical bond is usually between 20 and 100 kcal/mol. Explain the roots and physical origin of the difference <span class="math notranslate nohighlight">\(E_{UHF-RHF}\)</span> (in your own words). Why is the energy gap between UHF and RHF larger at a larger bond distance?</p>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="output-files">
-<h1><span class="section-number">2.4. </span>Output Files<a class="headerlink" href="#output-files" title="Permalink to this headline">#</a></h1>
-<p>So far we only focused on the energy given as ouput from the <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> function. However, for each calculation a .log file is produced, containing detailed information of the procedure.</p>
-<p>List the files in your directory (type <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your terminal) to see what new files have been generated. Indeed,
-you should find the .log files created by Psi4. As this files may be very large and we have no intention of editing it, you may use <code class="docutils literal notranslate"><span class="pre">less</span></code> to display it.</p>
-<p>As example, type <code class="docutils literal notranslate"><span class="pre">less</span></code> followed by the name of the last .log file created (<em>large_UHF-output.log</em>):</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>less large_UHF-output.log
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7[?47h[?1h=
-Scratch directory: /tmp/
-
-Scratch directory: /tmp/
-
-*** tstart() called on noto.epfl.ch
-*** at Mon Aug 22 09:54:02 2022
-
-   =&gt; Loading Basis Set &lt;=
-
-    Name: 6-31G
-    Role: ORBITAL
-    Keyword: BASIS
-    atoms 1-2 entry H          line    26 file /opt/CompChem/psi4conda-1.5/share/psi4/basis/6-31g.gbs 
-
-
-         ---------------------------------------------------------
-                                   SCF
-               by Justin Turney, Rob Parrish, Andy Simmonett
-                          and Daniel G. A. Smith
-                              UHF Reference
-                        2 Threads,   1907 MiB Core
-[K:[Kge_UHF-output.log[m[K
-</pre></div>
-</div>
-</div>
-</div>
-<p>When using the terminal, after typing <code class="docutils literal notranslate"><span class="pre">less</span></code> you may ‘jump’ through the file using the enter key, or you may directly drop to its end using a capital <code class="docutils literal notranslate"><span class="pre">G</span></code> (i.e. shift and g). Pop back to the top by typing a lowercase <code class="docutils literal notranslate"><span class="pre">g</span></code>. For a more finely tuned navigation, simply resort to the arrow keys. Typing <code class="docutils literal notranslate"><span class="pre">/</span></code> followed by a word will jump to said word in the file and pressing <code class="docutils literal notranslate"><span class="pre">n</span></code> will make you go through all the occurrences of that word in the file.</p>
-<p>If you are interested in extracting the lines of a file containing one particular keyword another useful command is <code class="docutils literal notranslate"><span class="pre">grep</span></code>.
-For example, considering again the last .log file created, it is possible to extract the final energy with the command:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep <span class="s1">&#39;Final Energy&#39;</span> large_UHF-output.log
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-UHF Final Energy:    -0.99646589192706
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 10</p>
-<p>Have a look at the log files produced so far and answer the following questions:</p>
-<ol class="simple">
-<li><p>What is the significance of the statement <em>Energy and wave function converged</em>?</p></li>
-<li><p>What is the meaning of the different <em>iter</em> preceding <em>Energy and wave function converged</em>?
-Compare the number of cycles for the different basis sets.</p></li>
-</ol>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 11</p>
-<p>Why did we have to change the spin multiplicity when moving from an atom to a molecule? How do you calculate the spin multiplicity of a species?</p>
-</div>
-</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1232,16 +873,16 @@ Compare the number of cycles for the different basis sets.</p></li>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "compchem"
+            mode: "iesm"
         },
         kernelOptions: {
-            kernelName: "compchem",
+            kernelName: "iesm",
             path: "./Exercises/Ex2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'compchem'</script>
+    <script>kernelName = 'iesm'</script>
 
               </div>
               
@@ -1257,10 +898,10 @@ Compare the number of cycles for the different basis sets.</p></li>
             <p class="prev-next-title"><span class="section-number">2. </span>Hartree-Fock Calculations in <em>Psi4</em></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Ex3/IESM_Ex3.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex2_hydrogen_atom.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>Large Basis Sets, Dissociation Energy and Geometry Optimisation</p>
+        <p class="prev-next-title"><span class="section-number">2.2. </span>First Steps in <em>Psi4</em>: The Hydrogen Atom</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

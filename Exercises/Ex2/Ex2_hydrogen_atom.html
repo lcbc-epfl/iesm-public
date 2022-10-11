@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.2. Locating Transition States: Constrained Optimisations &#8212; Introduction to Electronic Structure Methods</title>
+    <title>2.2. First Steps in Psi4: The Hydrogen Atom &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
-    <link rel="prev" title="9.1. Theory" href="Ex8Theory.html" />
+    <link rel="next" title="2.3. A more complex system: H\(_{2}\)O" href="Ex2_water-molecule.html" />
+    <link rel="prev" title="2.1. Basis Sets - Defining Vector Spaces" href="Ex2_theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -143,26 +145,26 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="IESM_Ex2.html">
    2. Hartree-Fock Calculations in
    <em>
     Psi4
    </em>
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2_theory.html">
+    <a class="reference internal" href="Ex2_theory.html">
      2.1. Basis Sets - Defining Vector Spaces
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      2.2. First Steps in
      <em>
       Psi4
@@ -171,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
+    <a class="reference internal" href="Ex2_water-molecule.html">
      2.3. A more complex system: H
      <span class="math notranslate nohighlight">
       \(_{2}\)
@@ -315,38 +317,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="IESM_Ex8.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8Theory.html">
+    <a class="reference internal" href="../Ex8/Ex8Theory.html">
      9.1. Theory
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Backward.html">
+    <a class="reference internal" href="../Ex8/Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Forward.html">
+    <a class="reference internal" href="../Ex8/Forward.html">
      9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Visualize.html">
+    <a class="reference internal" href="../Ex8/Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -433,7 +435,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Ex8.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex2/Ex2_hydrogen_atom.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -493,7 +495,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Ex8.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex2/Ex2_hydrogen_atom.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -521,7 +523,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex8/Ex8.ipynb"
+        <a href="../../_sources/Exercises/Ex2/Ex2_hydrogen_atom.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -581,18 +583,22 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-a-guess">
-   9.2.1. Constructing a Guess
+  <a class="reference internal nav-link" href="#electronic-structure-software">
+   2.2.1. Electronic Structure Software
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constrained-optimization">
-   9.2.2. Constrained optimization
+  <a class="reference internal nav-link" href="#preliminary-steps">
+   2.2.2. Preliminary steps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-the-transition-state">
-   9.2.3. Finding the Transition State
+  <a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">
+   2.2.3. Writing An Input For
+   <em>
+    Psi4
+   </em>
+   and Invoking the Program
   </a>
  </li>
 </ul>
@@ -604,7 +610,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Locating Transition States: Constrained Optimisations</h1>
+                <h1>First Steps in Psi4: The Hydrogen Atom</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -615,18 +621,22 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-a-guess">
-   9.2.1. Constructing a Guess
+  <a class="reference internal nav-link" href="#electronic-structure-software">
+   2.2.1. Electronic Structure Software
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constrained-optimization">
-   9.2.2. Constrained optimization
+  <a class="reference internal nav-link" href="#preliminary-steps">
+   2.2.2. Preliminary steps
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-the-transition-state">
-   9.2.3. Finding the Transition State
+  <a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">
+   2.2.3. Writing An Input For
+   <em>
+    Psi4
+   </em>
+   and Invoking the Program
   </a>
  </li>
 </ul>
@@ -639,282 +649,177 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="locating-transition-states-constrained-optimisations">
-<h1><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations<a class="headerlink" href="#locating-transition-states-constrained-optimisations" title="Permalink to this headline">#</a></h1>
-<p>Unlike a geometry optimisation, a transition state search requires more
-than just <em>some</em> guess. Finding the transition state from a reactant or
-a product structure will be computationally unfeasible, as those
-structures are given by local minima on the PES. Hence, all possible
-paths originating from these minima will go uphill (recall the
-mathematical definition of a minimum with respect to its derivatives),
-and it cannot be clear in advance which paths will actually connect
-reactants and products, or which path(s) will proceed <em>via</em> the lowest
-lying transition state. Instead, one needs a guess that is reasonably
-close to the real transition state, such that the <em>curvature</em> of the
-potential energy surface close to the TS is known, making it possible to
-proceed uphill along the reaction coordinate until the transition state
-is reached. The general procedure for a transition state search includes
-the construction of a guess geometry that should be reasonably close to
-the expected TS, followed by a <em>constrained optimisation</em> (<em>cf.</em> figure
-3).</p>
-<figure class="align-default" id="tssearch">
-<img alt="../../_images/miniumenergypath.png" src="../../_images/miniumenergypath.png" />
-<figcaption>
-<p><span class="caption-number">Fig. 9.3 </span><span class="caption-text">Finding a transition state from an initial guess by performing a
-constrained optimisation followed by a TS
-search.</span><a class="headerlink" href="#tssearch" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>In a constrained optimisation, all degrees of freedom which are not
-deemed relevant for the reaction are relaxed, whereas the relevant
-degree(s) of freedom is (are) kept fixed. After the optimisation, the
-curvature of the PES is evaluated at the chosen geometry (either
-analytically or numerically, <em>cf.</em> the following section). If the
-constrained degree(s) of freedom was (were) suitably chosen, the paths
-associated to the unconstrained N-1 degrees of freedom will go uphill in
-both directions, indicating that the corresponding structural parameters
-were properly relaxed. There should be one degree of freedom remaining
-that is associated to a path that goes downhill on one side and uphill
-on the other side: This will be the path that leads uphill to the
-transition state. As the associated degree of freedom is then known, the
-geometry can then be optimised to a transition state by selectively
-‘walking uphill’ along this specific path.</p>
-<section id="constructing-a-guess">
-<h2><span class="section-number">9.2.1. </span>Constructing a Guess<a class="headerlink" href="#constructing-a-guess" title="Permalink to this headline">#</a></h2>
-<p>You can find below the Z-matrix for the chloropropanoate (2-Chloro-1-propanol) already set, obtained using the Open Source Software <a class="reference external" href="https://avogadro.cc/">Avogadro</a>. We want to set the Z-matrix for the transition state editing this matrix. Correct the parameters adapting the conformation to be reasonably close to the transition state: for the TS, one expects that the C-Cl bond will already be elongated, whereas the oxygen atom will start to form the epoxide ring. Change the bond angle of the oxygen atom to something smaller than the original value, such as 80◦, and modify the bond length for the C-Cl bond to an elongated conformation, such as 2.40 Å. Moreover, you need to delete the hydrogen bond to the oxygen atom, and edit the Z-matrix accordingly.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="first-steps-in-psi4-the-hydrogen-atom">
+<h1><span class="section-number">2.2. </span>First Steps in <em>Psi4</em>: The Hydrogen Atom<a class="headerlink" href="#first-steps-in-psi4-the-hydrogen-atom" title="Permalink to this headline">#</a></h1>
+<p>You will learn how to use <em>Psi4</em> by putting your hands on a simple
+example: The total energy of the hydrogen atom in Hartree-Fock theory.
+This is a tutorial - you are not only invited to type the commands that
+are being introduced, you are obliged to.</p>
+<section id="electronic-structure-software">
+<h2><span class="section-number">2.2.1. </span>Electronic Structure Software<a class="headerlink" href="#electronic-structure-software" title="Permalink to this headline">#</a></h2>
+<p><em>Ab initio</em> electronic structure software packages make it possible to
+calculate numerically a variety of properties of a given system, based
+only on physical constants and the system’s Hamiltonian. The only
+approximations that need to be made are in the method and basis set that
+have to be chosen, in order to allow for a reasonable computational
+time. (The stronger your workstation, the more approximations you may
+drop, and the more elaborate your approach can be.) There are plenty of
+<em>ab initio</em> quantum chemical packages on the market; they differ in
+their capabilities, license policy and pricing. Widley used packages
+include GAMESS US, turbomole, DALTON, CP2K, CPMD and the Gaussian set of
+programs.</p>
+<p><em>Psi4</em> is a free and open-source ab initio electronic structure program providing implementations of Hartree–Fock, density functional theory, many-body perturbation theory, configuration interaction, density cumulant theory, symmetry-adapted perturbation theory, and coupled-cluster theory. Most of the methods are quite efficient, thanks to density fitting and multi-core parallelism. The program is a hybrid of C++ and Python, and calculations may be run with very simple text files or using the Python API, facilitating post-processing and complex workflows. [Reference: Smith DG, <em>et al.</em> PSI4 1.4: Open-source software for high-throughput quantum chemistry. <em>The Journal of chemical physics</em> (2020) DOI: <a class="reference external" href="https://doi.org/10.1063/5.0006002">https://doi.org/10.1063/5.0006002</a> ]</p>
+<p>The current version of <em>Psi4</em>  that you will be using on <a class="reference external" href="https://noto.epfl.ch/">noto.epfl</a> is v1.5.</p>
+<p><strong>! Always remember to select the <code class="docutils literal notranslate"><span class="pre">Computational</span> <span class="pre">Chemistry</span></code> kernel to have psi4 and other useful packages available</strong>.</p>
+</section>
+<section id="preliminary-steps">
+<h2><span class="section-number">2.2.2. </span>Preliminary steps<a class="headerlink" href="#preliminary-steps" title="Permalink to this headline">#</a></h2>
+<p>Before starting to work with <em>Psi4</em> we need to set up the environment, importing the required modules:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;seaborn-poster&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-ticks&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">psi4</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-  Memory set to   1.863 GiB by Python driver.
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;psi4&#39;
 </pre></div>
 </div>
 </div>
 </div>
+<p>then we can also set the maximum resources that can be used, specifying the available memory for <em>Psi4</em> to use with the <code class="docutils literal notranslate"><span class="pre">psi4.set_memory()</span></code> function, and the number of threads to use in SMP parallel computations with the <code class="docutils literal notranslate"><span class="pre">psi4.set_num_threads()</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Z-matrix for the chloropropanoate</span>
-<span class="n">chloropropanoate</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2"> symmetry c1</span>
-<span class="s2"> c</span>
-<span class="s2"> c    1 cc2</span>
-<span class="s2"> cl   1 clc3        2 clcc3</span>
-<span class="s2"> h    1 hc4         2 hcc4          3 dih4</span>
-<span class="s2"> c    1 cc5         2 ccc5          3 dih5</span>
-<span class="s2"> o    2 oc6         1 occ6          3 dih6</span>
-<span class="s2"> h    2 hc7         1 hcc7          6 dih7</span>
-<span class="s2"> h    2 hc8         1 hcc8          6 dih8</span>
-<span class="s2"> h    5 hc9         1 hcc9          2 dih9</span>
-<span class="s2"> h    5 hc10        1 hcc10         9 dih10</span>
-<span class="s2"> h    5 hc11        1 hcc11         9 dih11</span>
-<span class="s2"> h    6 ho          2 hoc2          1 dih12</span>
-<span class="s2"> </span>
-<span class="s2">cc2     =    1.500000</span>
-<span class="s2">clc3    =    1.790000 </span>
-<span class="s2">clcc3   =    109.471</span>
-<span class="s2">hc4     =    1.089000</span>
-<span class="s2">hcc4    =    109.471</span>
-<span class="s2">dih4    =    100.000</span>
-<span class="s2">cc5     =    1.500000</span>
-<span class="s2">ccc5    =    109.471</span>
-<span class="s2">dih5    =   -100.000</span>
-<span class="s2">oc6     =    1.430000</span>
-<span class="s2">occ6    =    110.600  </span>
-<span class="s2">dih6    =    180.000</span>
-<span class="s2">hc7     =    1.070000</span>
-<span class="s2">hcc7    =    109.471</span>
-<span class="s2">dih7    =    120.000</span>
-<span class="s2">hc8     =    1.070000</span>
-<span class="s2">hcc8    =    109.471</span>
-<span class="s2">dih8    =    240.000</span>
-<span class="s2">hc9     =    1.070000</span>
-<span class="s2">hcc9    =    109.471</span>
-<span class="s2">dih9    =    180.000</span>
-<span class="s2">hc10    =    1.070000</span>
-<span class="s2">hcc10   =    109.471</span>
-<span class="s2">dih10   =    120.000</span>
-<span class="s2">hc11    =    1.070000</span>
-<span class="s2">hcc11   =    109.471</span>
-<span class="s2">dih11   =    240.000</span>
-<span class="s2">ho      =    0.97       </span>
-<span class="s2">hoc2    =    109.471    </span>
-<span class="s2">dih12   =    180.0      </span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="c1">#Edit the Z-matrix to obtain the TS guess according to the requests above</span>
-<span class="n">ts_guess</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2"> symmetry c1</span>
-<span class="s2"> c</span>
-<span class="s2"> c    1 cc2</span>
-<span class="s2"> cl   1 clc3        2 clcc3</span>
-<span class="s2"> h    1 hc4         2 hcc4          3 dih4</span>
-<span class="s2"> c    1 cc5         2 ccc5          3 dih5</span>
-<span class="s2"> o    2 oc6         1 occ6          3 dih6</span>
-<span class="s2"> h    2 hc7         1 hcc7          6 dih7</span>
-<span class="s2"> h    2 hc8         1 hcc8          6 dih8</span>
-<span class="s2"> h    5 hc9         1 hcc9          2 dih9</span>
-<span class="s2"> h    5 hc10        1 hcc10         9 dih10</span>
-<span class="s2"> h    5 hc11        1 hcc11         9 dih11</span>
-<span class="s2"> h    6 ho          2 hoc2          1 dih12</span>
-<span class="s2"> </span>
-<span class="s2">cc2     =    1.500000</span>
-<span class="s2">clc3    =    1.790000 </span>
-<span class="s2">clcc3   =    109.471</span>
-<span class="s2">hc4     =    1.089000</span>
-<span class="s2">hcc4    =    109.471</span>
-<span class="s2">dih4    =    100.000</span>
-<span class="s2">cc5     =    1.500000</span>
-<span class="s2">ccc5    =    109.471</span>
-<span class="s2">dih5    =   -100.000</span>
-<span class="s2">oc6     =    1.430000</span>
-<span class="s2">occ6    =    110.600  </span>
-<span class="s2">dih6    =    180.000</span>
-<span class="s2">hc7     =    1.070000</span>
-<span class="s2">hcc7    =    109.471</span>
-<span class="s2">dih7    =    120.000</span>
-<span class="s2">hc8     =    1.070000</span>
-<span class="s2">hcc8    =    109.471</span>
-<span class="s2">dih8    =    240.000</span>
-<span class="s2">hc9     =    1.070000</span>
-<span class="s2">hcc9    =    109.471</span>
-<span class="s2">dih9    =    180.000</span>
-<span class="s2">hc10    =    1.070000</span>
-<span class="s2">hcc10   =    109.471</span>
-<span class="s2">dih10   =    120.000</span>
-<span class="s2">hc11    =    1.070000</span>
-<span class="s2">hcc11   =    109.471</span>
-<span class="s2">dih11   =    240.000</span>
-<span class="s2">ho      =    0.97       </span>
-<span class="s2">hoc2    =    109.471    </span>
-<span class="s2">dih12   =    180.0 </span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">chloropropanoate</span><span class="p">,</span> <span class="n">ts_guess</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 3</p>
-<p>Include a screenshot of the transition state in your report that you obtained and the corresponding Z-matrix for the transition state guess</p>
-</div>
-</section>
-<section id="constrained-optimization">
-<h2><span class="section-number">9.2.2. </span>Constrained optimization<a class="headerlink" href="#constrained-optimization" title="Permalink to this headline">#</a></h2>
-<p>We will first optimize our transition state guess keeping the C-Cl distance fixed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_guess_opt</span> <span class="o">=</span> <span class="n">ts_guess</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;poxide.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;frozen_distance&quot;</span><span class="p">:</span><span class="s2">&quot;1 3&quot;</span><span class="p">})</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts_guess_opt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">ts_guess</span><span class="p">,</span> <span class="n">ts_guess_opt</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
+  Threads set to 2 by Python driver.
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="finding-the-transition-state">
-<h2><span class="section-number">9.2.3. </span>Finding the Transition State<a class="headerlink" href="#finding-the-transition-state" title="Permalink to this headline">#</a></h2>
-<p>Now that we have our  transition state guess optimized, we want to find out whether this guess is close to the transition state (meaning it has one imaginary frequency) and then optimize to the actual transition state.</p>
-<p>If we set <code class="docutils literal notranslate"><span class="pre">full_hess_every</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>, a frequency calculation will be performed at the begining (you could also do it seperately using <code class="docutils literal notranslate"><span class="pre">psi4.frequency([..])</span></code>. By setting <code class="docutils literal notranslate"><span class="pre">opt_type</span></code> to <code class="docutils literal notranslate"><span class="pre">ts</span></code> the optimization will try to find the 1st order saddlepoint that is the transition state.</p>
-<p>We will write the normal modes to a file for visualization.</p>
+<section id="writing-an-input-for-psi4-and-invoking-the-program">
+<h2><span class="section-number">2.2.3. </span>Writing An Input For <em>Psi4</em> and Invoking the Program<a class="headerlink" href="#writing-an-input-for-psi4-and-invoking-the-program" title="Permalink to this headline">#</a></h2>
+<p>The geomety of the <span class="math notranslate nohighlight">\(H\)</span> atom can now be defined, passing it as a string into the <code class="docutils literal notranslate"><span class="pre">psi4.geometry()</span></code> function in either Z-matrix (see note below) or Cartesian format, where the triple-quote <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code> syntax is used to allow the string to break over multiple lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts_guess_opt</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ts.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
-    <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span> 
-    <span class="s2">&quot;normal_modes_write&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span> <span class="c1">#0 compute the initial Hessian only</span>
-    <span class="p">})</span>
-
-<span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
-
-
-<span class="c1">#print out TS in case something goes wrong</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 2</span>
+<span class="s2">H 0.0 0.0 0.0</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We can also compare the TS with the guess to see how far we are.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Atomic coordinates representation</p>
+<ul class="simple">
+<li><p><strong>Z-matrix</strong>: each line gives the coordinates of a single atom in terms of its internal coordinates (atomic number, bond length, bond angle, and dihedral angle). As example, the Z-matrix for hydrogen peroxide is reported:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span>
+<span class="n">O</span> <span class="mi">1</span> <span class="mf">0.9</span>
+<span class="n">O</span> <span class="mi">2</span> <span class="mf">1.4</span> <span class="mi">1</span> <span class="mf">105.0</span>
+<span class="n">H</span> <span class="mi">3</span> <span class="mf">0.9</span> <span class="mi">2</span> <span class="mf">105.0</span> <span class="mi">1</span> <span class="mf">120.0</span>
+</pre></div>
+</div>
+<p>The first line defines the first atom, a H in this case. The next line defines the second atom, an O, and specifies the internuclear distance (0.9Å) with the first atom (1). The next line defines the third atom, another O, and specifies the internuclear distance (1.4Å) with the second atom (2) and the angle (105.0°) with atom 2 and atom 1 (O-O-H angle). The last line defines the fourth atom, another H,  and specifies the internuclear distance (0.9Å) with the third atom (3), the angle (105.0°) with atom 3 and atom 2 (H-O-O angle), and the dihedral angle  (120.0°) with atom 3, 2, and 1 (H-O-O-H angle).<br />
+Note that if more atoms would be present, it would be needed to specify for each of them the value for  internuclear distance, angle and dihedral with other atoms previously defined.</p>
+<ul class="simple">
+<li><p><strong>Cartesian coordinates</strong>: each line gives the <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>, and <span class="math notranslate nohighlight">\(z\)</span> coordinates of a single atom, with respect to the origin of the cartesian axes. The Cartesian coordinates for hydrogen peroxide result:\</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="mf">0.000</span> <span class="mf">0.000</span> <span class="mf">0.000</span>
+<span class="n">O</span> <span class="mf">0.900</span> <span class="mf">0.000</span> <span class="mf">0.000</span>
+<span class="n">O</span> <span class="mf">1.262</span> <span class="mf">1.352</span> <span class="mf">0.000</span>
+<span class="n">H</span> <span class="mf">1.742</span> <span class="mf">1.465</span> <span class="mf">0.753</span>
+</pre></div>
+</div>
+<p>Note that Z-matrices can be converted to Cartesian coordinates and back, as the structural information content is identical.</p>
+</div>
+<p>Where the first line contains the total charge of the system (0), followed by the spin multiplicity (2), and the following lines contain all the atoms of your system, one atom per line. In this case our moleule is composed of a single hydrogen atom, so we have a single line.</p>
+<p>You can visualize a 3D representation of your molecule using the <code class="docutils literal notranslate"><span class="pre">drawXYZ</span></code> function imported from the <code class="docutils literal notranslate"><span class="pre">helpers</span></code> we provide. In this case you will not see something particularly exciting, but it is always a good practice to have a visual look at your structures, to check that everythin is as expected.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">ts_guess_opt</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">drawXYZ</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;drawXYZ&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 4</p>
-<p>Take a screenshot of the optimised transition state structure. How did the structure change with respect to the constrained-optimised guess?</p>
-</div>
-<p>We can now have a look at the normal model that we obtained, for that we need to first check how the file is named. Then you can visualize one normal mode at time.</p>
+<p>We can compute the energy of the system the function <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code>, passing as first argument a string with the desired method and the basis set (<code class="docutils literal notranslate"><span class="pre">'METHOD/BASIS'</span></code>), and the target molecule as second argument. The ouput is the total electronic energy in Hartree. For this exercise we will use the unrestricted Hartree Fock method. You will see that in detail during next lectures and exercises and you will get familiar with it (for now it is sufficient to know we are using <em>a method</em>, with a particular basis set).</p>
+<p>Calling <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> will perform a so called <strong>single point calculation</strong> and will not change the geometry. During the calculation the program will perform a wavefunction optimization to find the lowest energy combination of wavefunction coefficients.</p>
+<p>We will save in separate log files the output of the calculations and we will store the energy value and print it in the next cell.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how the file is named, this is a bash command</span>
-<span class="c1"># ls means list all the files in the current directory</span>
-<span class="c1"># -ltrh are flags that print output as a detailed list (-l) in reversed order(-r) by time (-t) with human readable units (-h)</span>
-<span class="o">!</span>ls -lrth ts.*.molden_normal_modes 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock method</span>
+
+<span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-h-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hf/</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>  <span class="c1"># we do the single point energy calculation once per basis set</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>STO-3G -0.46658184955727544
+6-31G -0.4982329107290702
+6-311G -0.49980981527328194
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to use the right file in the show_normal_modes</span>
-<span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;FILENAME.XX.molden_normal_modes&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>To verify the number of basis sets used, navigate to the appropriate output log file located in your file directory (lefthand side of page). You can use the CTRL+F search function to look for the phrase “Number of basis functions” and read under the section called “Primary Basis.”</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<p>Include a table of the the calculated energies using the three different basis sets, specifying for each of them the number of basis functions used. Compare the energies with the analytical value for the H atom, given by the analytical expression:</p>
+<div class="math notranslate nohighlight">
+\[
+ E = \frac{1}{2} m_e c^2\alpha^2,
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\alpha\)</span> is the fine structure constant.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+m_e = 0.910953\cdot10^{-30} kg\\
+c = 2.99792458\cdot10^8 m s^{-1}\\
+\alpha = 7.2973525376\cdot10^{-3}\\
+N_A = 6.0221367\cdot10^{23}mol^{-1}
+\end{align}\end{split}\]</div>
+<p>Pay attention to the units - use atomic units or kcal<span class="math notranslate nohighlight">\(\cdot\)</span>mol<span class="math notranslate nohighlight">\(^{-1}\)</span> throughout!</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 4</p>
-<p>Report the value of the negative frequency that you obtain.  What motion is this mode related to?
-What motions are associated with low and high vibrational frequencies? Choose two positive vibrational modes and desribe their particular associated motion.</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 5</p>
-<p>Is the transition state you predicted an early or a late transition state? What about the guess?</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 6</p>
-<p>Having found a transition state, how would you now obtain the barrier height for your reaction? Are there ways of verifying whether you have found a meaningful
-transition state? <strong>Bonus:</strong> How would you define ‘meaningful’ in
-this context?</p>
+<p class="admonition-title">Exercise 8</p>
+<p>What is the influence of the basis set size on the accuracy of the result? How do the split-valence bases compare to STO-3G?</p>
 </div>
 </section>
 </section>
@@ -928,16 +833,16 @@ this context?</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "psi4"
+            mode: "iesm"
         },
         kernelOptions: {
-            kernelName: "psi4",
-            path: "./Exercises/Ex8"
+            kernelName: "iesm",
+            path: "./Exercises/Ex2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'psi4'</script>
+    <script>kernelName = 'iesm'</script>
 
               </div>
               
@@ -946,17 +851,17 @@ this context?</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Ex8Theory.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Ex2_theory.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9.1. </span>Theory</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span>Basis Sets - Defining Vector Spaces</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Backward.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex2_water-molecule.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
+        <p class="prev-next-title"><span class="section-number">2.3. </span>A more complex system: H<span class="math notranslate nohighlight">\(_{2}\)</span>O</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
