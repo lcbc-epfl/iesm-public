@@ -11,7 +11,9 @@ parts:
       - file: Exercises/Ex1/Ex1_Numpy.ipynb
     - file: Exercises/Ex2/IESM_Ex2.ipynb
       sections:
-      - file: Exercises/Ex2/Ex2.ipynb
+      - file: Exercises/Ex2/Ex2_theory.ipynb
+      - file: Exercises/Ex2/Ex2_hydrogen_atom.ipynb
+      - file: Exercises/Ex2/Ex2_water-molecule.ipynb
     - file: Exercises/Ex3/IESM_Ex3.ipynb
       sections:
       - file: Exercises/Ex3/Ex3.ipynb
