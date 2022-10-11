@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="3. Large Basis Sets, Dissociation Energy and Geometry Optimisation" href="../Ex3/IESM_Ex3.html" />
-    <link rel="prev" title="2.2. First Steps in Psi4: The Hydrogen Atom" href="Ex2_hydrogen_atom.html" />
+    <link rel="prev" title="2.2. The Hydrogen Atom" href="Ex2_hydrogen_atom.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -147,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="IESM_Ex2.html">
-   2. Hartree-Fock Calculations in
+   2. First steps in
    <em>
     Psi4
    </em>
@@ -165,11 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex2_hydrogen_atom.html">
-     2.2. First Steps in
-     <em>
-      Psi4
-     </em>
-     : The Hydrogen Atom
+     2.2. The Hydrogen Atom
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -674,6 +670,12 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
+  Threads set to 2 by Python driver.
+</pre></div>
+</div>
+</div>
 </div>
 <section id="building-the-geometry">
 <h2><span class="section-number">2.3.1. </span>Building the Geometry<a class="headerlink" href="#building-the-geometry" title="Permalink to this headline">#</a></h2>
@@ -684,18 +686,6 @@ title="Print to PDF"
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">## FILL HERE</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> ## FILL HERE</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> &quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;psi4&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -722,7 +712,7 @@ title="Print to PDF"
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311+G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G*&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311++G**&#39;</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;STO-3G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311+G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G*&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311++G**&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31++G*&#39;</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
 
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
 
@@ -763,11 +753,6 @@ For example, considering again the last <code class="docutils literal notranslat
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-UHF Final Energy:    -0.99646589192706
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 12</p>
@@ -789,16 +774,16 @@ Compare the number of cycles for the different basis sets.</p></li>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "compchem",
             path: "./Exercises/Ex2"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               
@@ -811,7 +796,7 @@ Compare the number of cycles for the different basis sets.</p></li>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span>First Steps in <em>Psi4</em>: The Hydrogen Atom</p>
+            <p class="prev-next-title"><span class="section-number">2.2. </span>The Hydrogen Atom</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Ex3/IESM_Ex3.html" title="next page">
