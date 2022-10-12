@@ -748,8 +748,8 @@ Note that if more atoms would be present, it would be needed to specify for each
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16655054293567252"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16655054293567252" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_1665585409062793"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_1665585409062793" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
@@ -772,18 +772,18 @@ $3Dmolpromise = null;
   $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
 }
 
-var viewer_16655054293567252 = null;
-var warn = document.getElementById("3dmolwarning_16655054293567252");
+var viewer_1665585409062793 = null;
+var warn = document.getElementById("3dmolwarning_1665585409062793");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16655054293567252 = $3Dmol.createViewer($("#3dmolviewer_16655054293567252"),{backgroundColor:"white"});
-viewer_16655054293567252.zoomTo();
-	viewer_16655054293567252.addModel("1\n\n H    0.000000000000    0.000000000000    0.000000000000\n","xyz");
-	viewer_16655054293567252.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16655054293567252.zoomTo();
-viewer_16655054293567252.render();
+viewer_1665585409062793 = $3Dmol.createViewer($("#3dmolviewer_1665585409062793"),{backgroundColor:"white"});
+viewer_1665585409062793.zoomTo();
+	viewer_1665585409062793.addModel("1\n\n H    0.000000000000    0.000000000000    0.000000000000\n","xyz");
+	viewer_1665585409062793.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_1665585409062793.zoomTo();
+viewer_1665585409062793.render();
 });
 </script></div></div>
 </div>
