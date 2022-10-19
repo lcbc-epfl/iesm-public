@@ -17,8 +17,8 @@ parts:
     - file: Exercises/Ex3/IESM_Ex3.ipynb
       sections:
       - file: Exercises/Ex3/Ex3_H2molecule.ipynb
-      - file: Exercises/Ex3/Ex3Diss.ipynb
-      - file: Exercises/Ex3/Ex3GeoOpt.ipynb
+      - file: Exercises/Ex3/Ex3_Dissociation.ipynb
+      - file: Exercises/Ex3/Ex3_GeometryOpt.ipynb
     - file: Exercises/Ex4/IESM_Ex4b.ipynb
       sections:
       - file: Exercises/Ex4/HF.ipynb

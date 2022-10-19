@@ -218,7 +218,7 @@ def drawXYZSideBySide(mol1, mol2):
     view = py3Dmol.view(viewergrid=(1,2))
     view.addModel(mol1.save_string_xyz_file(), "xyz", viewer=(0,0))
     view.addModel(mol2.save_string_xyz_file(), "xyz", viewer=(0,1))
-    view.setStyle({'stick':{}})
+    view.setStyle({'stick':{}, 'sphere':{'scale':0.1}})
     view.zoomTo()
     return(view.show())
 
