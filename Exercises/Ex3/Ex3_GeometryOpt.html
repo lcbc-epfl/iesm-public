@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="4. The hartree fock procedure in detail" href="../Ex4/IESM_Ex4b.html" />
-    <link rel="prev" title="3.2. Recording a Dissociation Curve for H\(_2\): RHF vs. UHF" href="Ex3Diss.html" />
+    <link rel="prev" title="3.2. Recording a Dissociation Curve for H\(_2\): RHF vs. UHF" href="Ex3_Dissociation.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -195,7 +195,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex3Diss.html">
+    <a class="reference internal" href="Ex3_Dissociation.html">
      3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
@@ -431,7 +431,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex3/Ex3GeoOpt.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex3/Ex3_GeometryOpt.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -491,7 +491,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex3/Ex3GeoOpt.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex3/Ex3_GeometryOpt.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -519,7 +519,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex3/Ex3GeoOpt.ipynb"
+        <a href="../../_sources/Exercises/Ex3/Ex3_GeometryOpt.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -579,8 +579,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-lets-visualize-this">
-   3.3.1. Now lets visualize this
+  <a class="reference internal nav-link" href="#visualization-if-the-optimization-procedure">
+   3.3.1. Visualization if the optimization procedure
   </a>
  </li>
 </ul>
@@ -603,8 +603,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#now-lets-visualize-this">
-   3.3.1. Now lets visualize this
+  <a class="reference internal nav-link" href="#visualization-if-the-optimization-procedure">
+   3.3.1. Visualization if the optimization procedure
   </a>
  </li>
 </ul>
@@ -629,9 +629,7 @@ energy of every possible configuration is given by a two-dimensional
 geometry, one may follow the curvature of the PES down to the minimal
 energy, which will correspond to the equilibrium geometry. In a
 practical geometry optimisation, this will be done in discrete steps of
-a certain size, as illustrated in figure 1. At each iteration, the
-energy of the corresponding geometry is calculated in a SCF calculation
-(<em>cf.</em> figure 2).</p>
+a certain size. At each iteration, the energy of the corresponding geometry is calculated in a SCF calculation.</p>
 <p>Then, the gradient with respect to the nuclear
 coordinates is determined, and the nuclei are moved to a new position on
 the PES that lies in the direction of the steepest gradient. The
@@ -654,12 +652,19 @@ local minimum, but not neccessarily the global minimum.</p>
 <p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Procedure of a geometry optimization.</span><a class="headerlink" href="#geoopt" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
+<p>First again we again import the required modules:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">sys</span> 
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;seaborn-poster&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-ticks&#39;</span><span class="p">])</span>
 </pre></div>
@@ -682,40 +687,8 @@ local minimum, but not neccessarily the global minimum.</p>
 </div>
 </div>
 <p>You will carry out a geometry optimisation on a bad guess for H<span class="math notranslate nohighlight">\(_2\)</span>O
-with an unrealistic H-O-H angle of 90<span class="math notranslate nohighlight">\(^\circ\)</span>. During the optimisation,
-Psi4 will move downhill on the potential energy surface until it
-finds a minimum.</p>
-<p>This time we will visualize our molecule, so we need to import further packages.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For interact and 3D molecule viewing</span>
-<span class="kn">import</span> <span class="nn">ipywidgets</span>
-<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interact</span><span class="p">,</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">widgets</span>
-<span class="kn">import</span> <span class="nn">py3Dmol</span> <span class="k">as</span> <span class="nn">p3d</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>rm -f geoms.xyz
-<span class="o">!</span>rm -r h2o-opt.log
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rm: cannot remove &#39;h2o-opt.log&#39;: No such file or directory
-</pre></div>
-</div>
-</div>
-</div>
+with an unrealistic H-O-H angle of 90<span class="math notranslate nohighlight">\(^\circ\)</span> and a O-H distance of 1.5Å. During the optimisation,
+Psi4 will move the positions of the atoms in the molecule, moving downhill on the potential energy surface, until it finds a minimum.</p>
 <p>First, we define our suboptimal geometry. Again, we use a UHF reference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -728,6 +701,8 @@ finds a minimum.</p>
 <span class="s2">H2 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">H3 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> 2 </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2"></span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="n">h2o_suboptimal_start</span> <span class="o">=</span> <span class="n">h2o_suboptimal</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="c1"># we store here the starting geometry for comparison</span>
 </pre></div>
 </div>
 </div>
@@ -755,6 +730,58 @@ finds a minimum.</p>
 </pre></div>
 </div>
 </div>
+</div>
+<p>Let’s have a look at the initial and final conformation after the geometry optimization. We can use the <code class="docutils literal notranslate"><span class="pre">drawXYZSideBySide</span></code> helper funciton, which allows to show two molecules.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide</span><span class="p">(</span><span class="n">h2o_suboptimal_start</span><span class="p">,</span> <span class="n">h2o_suboptimal</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_1666192042198287"  style="position: relative; width: 640px; height: 480px">
+        <p id="3dmolwarning_1666192042198287" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+}
+
+var viewer_1666192042198287 = null;
+var warn = document.getElementById("3dmolwarning_1666192042198287");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+var viewergrid_1666192042198287 = null;
+viewergrid_1666192042198287 = $3Dmol.createViewerGrid($("#3dmolviewer_1666192042198287"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
+viewer_1666192042198287 = viewergrid_1666192042198287[0][0];
+viewergrid_1666192042198287[0][0].zoomTo();viewergrid_1666192042198287[0][1].zoomTo();	viewergrid_1666192042198287[0][0].addModel("3\n\n O    0.000000000000    0.000000000000   -0.118703648726\n H    0.000000000000   -1.060660171780    0.941956523053\n H    0.000000000000    1.060660171780    0.941956523053\n","xyz");
+	viewergrid_1666192042198287[0][1].addModel("3\n\n O    0.000000000000    0.000000000000   -0.059769658215\n H    0.000000000000   -0.785050601293    0.474293924749\n H    0.000000000000    0.785050601293    0.474293924749\n","xyz");
+	viewergrid_1666192042198287[0][0].setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewergrid_1666192042198287[0][1].setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewergrid_1666192042198287[0][0].zoomTo();
+	viewergrid_1666192042198287[0][1].zoomTo();
+viewergrid_1666192042198287[0][1].render();
+viewergrid_1666192042198287[0][0].render();
+});
+</script></div></div>
 </div>
 <p>Lets have a look at the output file and see what is happening. Lets grep again the <code class="docutils literal notranslate"><span class="pre">iter</span></code> keyword as before and also check the convergence of the geometry optimization using <code class="docutils literal notranslate"><span class="pre">Convergence</span> <span class="pre">Check</span></code>.</p>
 <div class="cell docutils container">
@@ -786,27 +813,13 @@ finds a minimum.</p>
 <p class="admonition-title">Exercise 8</p>
 <p>Why does the optimization finish after 8 steps?</p>
 </div>
-<section id="now-lets-visualize-this">
-<h2><span class="section-number">3.3.1. </span>Now lets visualize this<a class="headerlink" href="#now-lets-visualize-this" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="n">readXYZ</span><span class="p">,</span> <span class="n">read_coordinates</span><span class="p">,</span> <span class="n">angle_distances</span><span class="p">,</span> <span class="n">drawXYZGeomNum</span><span class="p">,</span> <span class="n">drawXYZGeomSlider</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="visualization-if-the-optimization-procedure">
+<h2><span class="section-number">3.3.1. </span>Visualization if the optimization procedure<a class="headerlink" href="#visualization-if-the-optimization-procedure" title="Permalink to this headline">#</a></h2>
+<p>Now we want to visualize how the geometry is changed during the optimization procedure. Ler’s save the coordinates first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_geos</span> <span class="o">=</span> <span class="n">readXYZ</span><span class="p">(</span><span class="s1">&#39;geoms.xyz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span>  <span class="n">read_coordinates</span><span class="p">(</span><span class="s1">&#39;geoms.xyz&#39;</span><span class="p">)</span>
+<span class="n">coordinates</span> <span class="o">=</span>  <span class="n">read_coordinates</span><span class="p">(</span><span class="s1">&#39;geoms.xyz&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -836,7 +849,7 @@ You can use the little helper function <code class="docutils literal notranslate
 </div>
 </div>
 </div>
-<p>We have prepared a full potential energy surface of water at the HF/6-31G level. We will load the full potential energy surface and the plot the path our geometry optimization takes based on the angle and the distance we extracted from the trajectory using Plotly (a plotting library with 3D capabilities).</p>
+<p>To help you visualizing the result, we have prepared a full potential energy surface of water at the HF/6-31G level. We will load it and the plot the path our geometry optimization takes based on the angle and the distance we extracted from the trajectory (for this we will use  Plotly, a plotting library with 3D capabilities which we imported at the beginning).</p>
 <p>The potential energy function that is plotted was calculated by performing single point energy calculations for water in 40 steps ffor all angles between 20 and 170° and distances between 0.6 and 2 Å.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -898,13 +911,13 @@ You can use the little helper function <code class="docutils literal notranslate
 </div>
 <div class="cell_output docutils container">
 <script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "8df76f663fea4603a4a949a824c6c247", "version_major": 2, "version_minor": 0}
+{"model_id": "b41ee07713b746fba936304070f70bd6", "version_major": 2, "version_minor": 0}
 </script></div>
 </div>
 <div class="excercise admonition">
 <p class="admonition-title">Exercise 9</p>
-<p>Try two different suboptimal geometries of water and include the plots of the potential energy surface in the report.
-What do the points on the orange curve correspond to if you look at the flowchart <a href="#id1"><span class="problematic" id="id2">:fig:`geoopt`</span></a>?</p>
+<p>Try to start from two (or more!) different suboptimal geometries of water and include the plots of the potential energy surface in the report, together with a screenshot of the starting and final geometry and/or the values of the O-H bond and H-O-H angle.</p>
+<p>What do the points on the orange curve correspond to? Connect them to the flowchart at the beginning of this exercise?</p>
 </div>
 </section>
 </section>
@@ -918,16 +931,16 @@ What do the points on the orange curve correspond to if you look at the flowchar
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "psi4"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "psi4",
+            kernelName: "compchem",
             path: "./Exercises/Ex3"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'psi4'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               
@@ -936,7 +949,7 @@ What do the points on the orange curve correspond to if you look at the flowchar
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Ex3Diss.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Ex3_Dissociation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>

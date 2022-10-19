@@ -56,7 +56,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="3.3. Geometry optimization of \(H_2O\)" href="Ex3GeoOpt.html" />
+    <link rel="next" title="3.3. Geometry optimization of \(H_2O\)" href="Ex3_GeometryOpt.html" />
     <link rel="prev" title="3.1. Effects of Basis Set Size: The Molecular Case" href="Ex3_H2molecule.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
@@ -204,7 +204,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex3GeoOpt.html">
+    <a class="reference internal" href="Ex3_GeometryOpt.html">
      3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
@@ -431,7 +431,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex3/Ex3Diss.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex3/Ex3_Dissociation.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -491,7 +491,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex3/Ex3Diss.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex3/Ex3_Dissociation.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -519,7 +519,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex3/Ex3Diss.ipynb"
+        <a href="../../_sources/Exercises/Ex3/Ex3_Dissociation.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -582,12 +582,18 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="recording-a-dissociation-curve-for-h-2-rhf-vs-uhf">
 <h1><span class="section-number">3.2. </span>Recording a Dissociation Curve for H<span class="math notranslate nohighlight">\(_2\)</span>: RHF vs. UHF<a class="headerlink" href="#recording-a-dissociation-curve-for-h-2-rhf-vs-uhf" title="Permalink to this headline">#</a></h1>
+<p>In this exercise you will calculate the dissociation curve for the H<span class="math notranslate nohighlight">\(_2\)</span> molecule. So far, we focused on the choice of the basis set and on the effect of the basis set size. However, together with the choice of the basis set, another fundamental choice in computational chemistry calculations is what computational method will give you the most accurate results (in a reasonable time). In this exercise you will be introduced to two similar methods, both related to Hartree-Fock (HF) method: <strong>Restricted HF (RHF)</strong> and <strong>Unrestricted HF (UHF)</strong>.</p>
+<p>First again we again import the required modules:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">([</span><span class="s1">&#39;seaborn-poster&#39;</span><span class="p">,</span> <span class="s1">&#39;seaborn-ticks&#39;</span><span class="p">])</span>
 </pre></div>
@@ -609,29 +615,31 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Calculate the energy of H<span class="math notranslate nohighlight">\(_2\)</span> at the following internuclear distances at
-both the RHF/6-31G and UHF/6-31G level of theory.</p>
+<p>We want to calculate the energy of H<span class="math notranslate nohighlight">\(_2\)</span> at the following internuclear distances at
+both the RHF/6-31G and UHF/6-31G level of theory, i.e. we use two different energy methods with the same basis set.</p>
 <p>You are given the example for RHF and you need to modify the UHF calculation.</p>
-<p>The calcuation works by creating a list of the distances we want to try and then by iterating over it:
-* we create a <code class="docutils literal notranslate"><span class="pre">h2</span></code> molecule replacing the z coordinate with our desired distance.
-* we specify the logfile and set appending to <code class="docutils literal notranslate"><span class="pre">True</span></code>
-* we specify the reference we want to use and set <code class="docutils literal notranslate"><span class="pre">guess_mix</span></code> to false and use <code class="docutils literal notranslate"><span class="pre">'guess':'sad'</span></code> for the guess
-* we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specificing the desired method, basis and molecule
-* we clean up temporary files and add our calculated energy to a list for the plotting</p>
+<p>The calcuation works by creating a list of the distances we want to try and then by iterating over it:</p>
+<ul class="simple">
+<li><p>we create a <code class="docutils literal notranslate"><span class="pre">h2</span></code> molecule replacing the z coordinate in the XYZ matrix with our desired distance.</p></li>
+<li><p>we specify the logfile and set appending to <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p>we specify the reference we want to use and set</p>
+<ul>
+<li><p>for the guess in the RHF calculation: <code class="docutils literal notranslate"><span class="pre">'guess_mix':False</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'sad'</span></code></p></li>
+<li><p>for the guess in the UHF calculation: <code class="docutils literal notranslate"><span class="pre">'guess_mix':True</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'gwh'</span></code></p></li>
+</ul>
+</li>
+<li><p>we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specificing the desired method (i.e. RHF or UHF), basis and molecule</p></li>
+<li><p>we clean up temporary files and add our calculated energy to a list for the plotting</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we provide the example for the RHF case. Run this cell and copy it below, adapting it to the UHF case</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.60</span><span class="p">,</span><span class="mf">0.80</span><span class="p">,</span><span class="mf">1.00</span><span class="p">,</span><span class="mf">1.50</span><span class="p">,</span><span class="mf">2.50</span><span class="p">,</span><span class="mf">4.00</span><span class="p">,</span> <span class="mf">5.00</span><span class="p">,</span> <span class="mf">6.00</span><span class="p">]</span>
 
-
-<span class="n">energies_RHF</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">distances</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.50</span><span class="p">,</span><span class="mf">0.60</span><span class="p">,</span><span class="mf">0.80</span><span class="p">,</span><span class="mf">1.00</span><span class="p">,</span><span class="mf">1.50</span><span class="p">,</span><span class="mf">2.50</span><span class="p">,</span><span class="mf">4.00</span><span class="p">,</span> <span class="mf">5.00</span><span class="p">,</span> <span class="mf">6.00</span><span class="p">]</span> <span class="c1"># distances along which we will record the dissociation curve</span>
+                                                             <span class="c1"># For each distance, a single point energy calculation is performed</span>
+<span class="n">energies_RHF</span> <span class="o">=</span> <span class="p">[]</span> 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R(Å) |  E_RHF [a.u]&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span> <span class="s1">&#39;-----|-------------&#39;</span><span class="p">)</span>
       
@@ -640,53 +648,56 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 <span class="s2">    0 1</span>
 <span class="s2">    symmetry c1</span>
 <span class="s2">    H 0.0 0.0 0.0</span>
-<span class="s2">    H 0.0 0.0 </span><span class="si">{</span><span class="n">dist</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">    H 0.0 0.0 </span><span class="si">{</span><span class="n">dist</span><span class="si">}</span><span class="s2"> </span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">)</span> <span class="c1"># for each iteration, we define a new h2 molecule, changing the z coordinate of the second H atom </span>
  
     <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;dissociationcurve_RHF.log&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;rhf&#39;</span><span class="p">,</span> <span class="s1">&#39;guess_mix&#39;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="p">})</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;rhf&#39;</span><span class="p">,</span> <span class="s1">&#39;guess_mix&#39;</span><span class="p">:</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span> <span class="s1">&#39;guess&#39;</span><span class="p">:</span><span class="s1">&#39;sad&#39;</span><span class="p">})</span>
     <span class="n">E_RHF</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2</span><span class="p">)</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">dist</span><span class="si">}</span><span class="s1">  | </span><span class="si">{</span><span class="n">E_RHF</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
     <span class="n">energies_RHF</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">E_RHF</span><span class="p">)</span>
-    
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Now plot the interaction energy</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># perform another set of calculations, now using UHF</span>
+<span class="c1"># copy and adapt the above cell here</span>
+<span class="c1"># remember to update the method and also the guess and guess_mix options as explained above! </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we want to plot the interaction energy against the interatomic distance, where for a given distance <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>, the interaction energy <span class="math notranslate nohighlight">\(E_{inter}(\mathbf{R})\)</span> can be calculated as:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{aligned}
           E_{inter}^{6-31G}(\mathbf{R}) = E_{H_2}^{6-31G}(\mathbf{R})-2\cdot E_H^{6-31G}
           \end{aligned}
 \]</div>
-<p>against the interatomic distance <span class="math notranslate nohighlight">\(\mathbf{R}\)</span>.</p>
-<p>The value for the <span class="math notranslate nohighlight">\(E_H^{6-31G}\)</span> you can calculate as described below:</p>
+<p>We need the value of the hydrogen atom <span class="math notranslate nohighlight">\(E_H^{6-31G}\)</span>. In particular, we will use as reference value for the H atom the UHF one. This is because RHF method for closed-shell singlet systems, which is not the case for a single H atom.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 2</span>
 <span class="s2">H 0.0 0.0 0.0</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">})</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;single_UHF.log&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">E_H_UHF</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h</span><span class="p">)</span>
+
+<span class="n">E_H_UHF</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Psi4 comes with a handy set of <a class="reference external" href="https://psicode.org/psi4manual/master/autodoc_physconst.html">conversion factors</a> e.g to convert a.u into kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p>
+<p>We would like to can convert our lists of energies from Hartree to  kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> to interpret easily the results. Psi4 comes with a handy set of <a class="reference external" href="https://psicode.org/psi4manual/master/autodoc_physconst.html">conversion factors</a> e.g to convert a.u into kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
@@ -699,19 +710,16 @@ both the RHF/6-31G and UHF/6-31G level of theory.</p>
 </div>
 </div>
 </div>
-<p>we can convert our lists of energies to numpy arrays and use broadcasting to quickly substract the energy of the single H atoms from each list item to get the interaction energy.</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
+<p>We can convert the list of energies to numpy arrays and use broadcasting to quickly substract the energy of the single H atoms from each list item to get the interaction energy.</p>
 <p>We have to use <code class="docutils literal notranslate"><span class="pre">np.array</span></code> as standard python lists (defined using <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2]</span></code>) do not support broadcasting.
-Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a for loop to perform aritemethic for each element we can simply substract the single H energy once and the operation is broadcast.</p>
-</aside>
+Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a for loop to perform aritemethic for each element we can simply substract the single H energy and conver to kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> once and the operation is broadcast.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Complete formula below</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Complete the interaction energy</span>
 
-<span class="c1">#E_inter_RHF =  (np.array(energies_RHF) #### insert here #### )*psi4.constants.hartree2kcalmol</span>
+<span class="n">E_inter_RHF</span> <span class="o">=</span>  <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energies_RHF</span><span class="p">)</span> <span class="c1">#### FILL HERE #### )*psi4.constants.hartree2kcalmol</span>
 
-<span class="c1">#E_inter_UHF = ...</span>
+<span class="n">E_inter_UHF</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energies_UHF</span><span class="p">)</span> <span class="c1">#### FILL HERE #### )*psi4.constants.hartree2kcalmol</span>
 </pre></div>
 </div>
 </div>
@@ -720,8 +728,8 @@ Broadcasting is an efficient way to perform arithmetics on vectors and matrices 
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1">#ax.plot(distances,E_inter_RHF, label=&#39;RHF&#39;)</span>
-<span class="c1">#ax.plot(distances,E_inter_UHF,label=&#39;UHF&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span><span class="n">E_inter_RHF</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;RHF&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span><span class="n">E_inter_UHF</span><span class="p">,</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;UHF&#39;</span><span class="p">)</span>
 
 <span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
 
@@ -740,9 +748,9 @@ dissociation curves. Discuss how important this difference is by
 comparing to the energy that is normally required to break a bond.</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 6</p>
-<p>Try to find out why we are using <code class="docutils literal notranslate"><span class="pre">guess_mix:True</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'gwh'</span></code>. What happend when you used the same settings as for the RHF calculation.
-You can look at the Psi4 manual to find out about the different options for the initial guess.</p>
+<p class="admonition-title">Exercise 6 - Bonus</p>
+<p>Try to find out why we are using <code class="docutils literal notranslate"><span class="pre">guess_mix:True</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'gwh'</span></code>. <strong>Hint</strong>: What happend if you use the same settings as for the RHF calculation?</p>
+<p>You can also look at the Psi4 manual to find out about the different options for the initial guess.</p>
 </div>
 </section>
 
@@ -755,16 +763,16 @@ You can look at the Psi4 manual to find out about the different options for the 
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "psi4"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "psi4",
+            kernelName: "compchem",
             path: "./Exercises/Ex3"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'psi4'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               
@@ -780,7 +788,7 @@ You can look at the Psi4 manual to find out about the different options for the 
             <p class="prev-next-title"><span class="section-number">3.1. </span>Effects of Basis Set Size: The Molecular Case</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex3GeoOpt.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex3_GeometryOpt.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">3.3. </span>Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span></p>
