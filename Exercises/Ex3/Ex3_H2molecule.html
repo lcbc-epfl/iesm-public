@@ -699,10 +699,6 @@ viewer_16661649220145373.render();
 <p class="admonition-title">Exercise 1</p>
 <p>Include a table of the the calculated energies using the three different basis sets</p>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Solution - Exercise 1</p>
-<p>See code above.</p>
-</div>
 <p>Lets have a look at one of the outputs (e.g for the <code class="docutils literal notranslate"><span class="pre">6-31G</span></code> basis). We can use the shell command <code class="docutils literal notranslate"><span class="pre">!grep</span> <span class="pre">-options</span> <span class="pre">SEARCHTERM</span> <span class="pre">FILENAME</span></code> for this. (Remember: The <code class="docutils literal notranslate"><span class="pre">!</span></code> denotes that this is not a python command but a bash program.)</p>
 <p>As the SCF procedure is iterative we can search for the word <code class="docutils literal notranslate"><span class="pre">iter</span></code> in the output. By including <code class="docutils literal notranslate"><span class="pre">-A</span> <span class="pre">1</span> <span class="pre">-B</span> <span class="pre">3</span></code> we get 1 line after the last find and 3 lines before the first find, which contain some helpful context to make sense of the results.</p>
 <div class="cell docutils container">
@@ -788,15 +784,12 @@ viewer_16661649220145373.render();
 <p>Use your knowledge on the Hartree-Fock SCF procedure and the
 Psi4 output to derive a flow chart/bullet point scheme of how a wavefunction
 optimisation is carried out.</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Use $\Psi_{guess}$ for the first trial
-wavefunction (`SCF Guess` in the Psi4 output), $\Psi_{opt}$ for the
-optimised wavefunction (`@DF-UHF Final Energy:  ` in the Gaussian output) and think
-of appropriate naming schemes for the intermediate steps.
-
-Clarify whether, during an iteration, the Fock operator acts on the previous
-$\Psi$ or on the new one. Include checks for convergence at the     appropriate points.
-</pre></div>
-</div>
+<p>Use <span class="math notranslate nohighlight">\(\Psi_{guess}\)</span> for the first trial
+wavefunction (<code class="docutils literal notranslate"><span class="pre">SCF</span> <span class="pre">Guess</span></code> in the Psi4 output), <span class="math notranslate nohighlight">\(\Psi_{opt}\)</span> for the
+optimised wavefunction (<code class="docutils literal notranslate"><span class="pre">&#64;DF-UHF</span> <span class="pre">Final</span> <span class="pre">Energy:</span>&#160; </code> in the Gaussian output) and think
+of appropriate naming schemes for the intermediate steps.</p>
+<p>Clarify whether, during an iteration, the Fock operator acts on the previous
+<span class="math notranslate nohighlight">\(\Psi\)</span> or on the new one. Include checks for convergence at the     appropriate points.</p>
 </div>
 </section>
 
