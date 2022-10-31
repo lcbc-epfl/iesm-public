@@ -736,7 +736,7 @@ viewer_16661649220145373.render();
 
 <span class="c1"># we use the table index and the Total Energy column for plotting</span>
 <span class="c1"># repeat the following command once per basis set to have all on the same plot</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">&#39;Total Energy&#39;</span><span class="p">],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">&#39;Total Energy&#39;</span><span class="p">],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> 
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SCF Iteration&#39;</span><span class="p">)</span> <span class="c1"># set axis labels and title</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;E [a.u]&#39;</span><span class="p">)</span>
@@ -749,27 +749,14 @@ viewer_16661649220145373.render();
 <span class="c1"># Subplot 2: excluding first SCF point to focus on the difference along SCF cycles</span>
 <span class="c1"># you can exclud the first point of an array just by [1:]. This will select all point from 1 (so excluding 0) to the end</span>
 <span class="c1"># example: array DATA --&gt; DATA[1:]</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">&#39;Total Energy&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> 
-
+<span class="c1"># repeat the following command once per basis set to have all on the same plot</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">&#39;Total Energy&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> 
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SCF Iteration&#39;</span><span class="p">)</span> <span class="c1"># set axis labels</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;E [a.u]&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;SCF convergence - restricted range&#39;</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># show legend</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span> <span class="c1"># create figure</span>
-
-
-
-<span class="c1">#plot horizontal line with exact value</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="o">-</span><span class="mf">1.174474</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact value&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span> <span class="c1"># horizontal line for the exact energy</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SCF Iteration&#39;</span><span class="p">)</span> <span class="c1"># set axis labels</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;E [a.u]&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># show legend</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
