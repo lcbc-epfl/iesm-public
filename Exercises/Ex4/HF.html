@@ -1089,8 +1089,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-20cc5200-f921-4740-9141-0e88b9330756">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-20cc5200-f921-4740-9141-0e88b9330756" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fa639836-dab7-4c41-9dcc-293ba88f1b42">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-fa639836-dab7-4c41-9dcc-293ba88f1b42" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1122,8 +1122,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1496a96d-3acb-44fa-b595-c812822fc3df">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-1496a96d-3acb-44fa-b595-c812822fc3df" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-903adb55-5968-4a57-80cb-6bfe0b8eb5ed">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-903adb55-5968-4a57-80cb-6bfe0b8eb5ed" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1134,8 +1134,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fd9c2871-fbbf-472f-8b23-08e75059b259">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-fd9c2871-fbbf-472f-8b23-08e75059b259" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cc5adb97-37a2-468f-8e62-36088653f27a">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-cc5adb97-37a2-468f-8e62-36088653f27a" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1358,7 +1358,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 25</p>
-<p>Describe a procedure (i.e. identify the steps/commands) that will updated coefficients and compute a new density matrix based on the new definition of the Fock matrix.</p>
+<p>Describe a procedure (i.e. identify the steps) that will update coefficients and compute a new density matrix based on the updated values of the Fock matrix.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 26</p>
@@ -1367,6 +1367,13 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># insert remaining steps here, you should end with a new C</span>
+<span class="c1"># transform F to the orthonormal basis</span>
+<span class="n">F_p</span> <span class="o">=</span> 
+
+<span class="c1"># find e and C_p</span>
+<span class="n">e</span><span class="p">,</span> <span class="n">C_p</span> <span class="o">=</span> <span class="n">n</span>
+<span class="c1"># find C</span>
+<span class="n">C</span> <span class="o">=</span> 
 
 <span class="c1"># Select the occupied MOs</span>
 <span class="n">C_occ</span> <span class="o">=</span> <span class="n">C</span><span class="p">[:,</span> <span class="p">:</span><span class="n">ndocc</span><span class="p">]</span>
@@ -1410,11 +1417,11 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 <span class="c1"># Begin Iterations</span>
 <span class="k">for</span> <span class="n">scf_iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAXITER</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     
-    <span class="c1"># Build Fock matrix </span>
+    <span class="c1"># Build Fock matrix (meaning define J, K with density matrix and then define F with J and k) </span>
     
     <span class="c1"># &lt;your code here&gt;</span>
 
-    <span class="c1"># Compute SCF energy</span>
+    <span class="c1"># Compute SCF energy (don&#39;t forget E_nuc!)</span>
     
     <span class="n">SCF_E</span> <span class="o">=</span> <span class="c1">#&lt;your formula here&gt;</span>
     
