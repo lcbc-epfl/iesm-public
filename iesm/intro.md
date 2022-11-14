@@ -42,11 +42,11 @@ The course will be on
 | 11.11. Fri (m)  | exercise | Exercise 4: Hartree Fock procedure in detail              | assistants |
 | 11.11. Fri (a)  | course   | Hartree Fock II                                           | UR         |
 | 14.11. Mon      | exercise | Mock exam with old written exam                           | assistants |
-| 18.11. Fri (m)  | exercise | Solutions of mock exam & questioning hour                 | assistants |
-| 18.11. Fri (a)  | course   | CI & Many-Body Perturbation Theory                        | UR         |
+| 18.11. Fri (m)  | course   | CI (questions concerning exam, repetition HF if requested)| UR         |
+| 18.11. Fri (a)  | exercise | Solutions of mock exam & questioning hour                 | assistants |
 | 21.11. Mon      | exam     | Written exam                                              | UR         |
-| 25.11. Fri (m)  | course   | CI & Many-Body Perturbation Theory - Continued            | UR         |
-| 25.11. Fri (a)  | exercise | Exercise 5: Post HF: MPn & CI                             | assistants |
+| 25.11. Fri (m)  | exercise | Exercise 5: Post HF: MPn & CI                             | assistants |
+| 25.11. Fri (a)  | course   | CI & Many-Body Perturbation Theory - Continued            | UR         |
 | 28.11. Mon      | course   | Coupled cluster                                           | UR         |
 | 02.12. Fri (m)  | course   | DFT I                                                     | UR         |
 | 02.12. Fri (a)  | exercise | Exercise 6: DFT vs HF/MP2                                 | assistants |
