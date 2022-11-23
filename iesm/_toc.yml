@@ -23,11 +23,11 @@ parts:
       sections:
       - file: Exercises/Ex4/HF.ipynb
     - file: Exercises/Written_exam_2012.md
-    - file: Exercises/Ex4/IESM_Ex4.ipynb
+    - file: Exercises/Ex5MP/IESM_Ex5.ipynb
       sections:
-      - file: Exercises/Ex4/Ex4Theory.md
-      - file: Exercises/Ex4/BDE.ipynb
-      - file: Exercises/Ex4/HNO3_Correlation.ipynb
+      - file: Exercises/Ex5MP/Ex5Theory.md
+      - file: Exercises/Ex5MP/BDE.ipynb
+      - file: Exercises/Ex5MP/HNO3_Correlation.ipynb
     - file: Exercises/Ex5/IESM_Ex5.ipynb
       sections: 
       - file: Exercises/Ex5/Ex5.ipynb
