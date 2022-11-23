@@ -18,11 +18,14 @@ In the case of HF theory, this expansion had a single element ($M=1$), i.e. a si
 In general, there are $M$ possible $N$-electron basis functions to be used, where a complete basis is reached if $M$ is infinite.
 
 To better the idea behind CI theory, we can express the $N$-electron basis function as an expansion of "excitations" from the HF "reference" determinant:
+
+
+
 $$\begin{aligned}
-\left|\Psi_j\right>=c_0|\Phi_0\right>+\sum_{ra} c_{a}^{r}\left|\Phi_{a}^{r}\right>+\sum_{a<b,r<s} c_{ab}^{rs}\left|\Phi_{ab}^{rs}\right> + \dots
-\end{aligned}
-$$
-where $\left|\Phi_{a}^{r}\right>$ indicates the Slater determinants formed by replacing the spin-orbital $a$ in $|\Phi_0\right>$ with the spin orital $r$, and so on. Every $N$-electron Slater determinant can be described by the set of $N$ spin orbitals from which it is formed, and this set is often referred to as **configuration**. Thus, the **configuration interaction** methods is nothing more than the matrix solution of the time-independent non-relativistic Schrödinger equation, using the (truncated) expression for $\left|\Psi_j\right>$, as expressed above.
+\left| \Psi_j \right> = c_0 \left|\Phi_0 \right> +\sum_{ra} c_{a}^{r}\left|\Phi_{a}^{r}\right>+\sum_{a<b,r<s} c_{ab}^{rs}\left|\Phi_{ab}^{rs}\right> + \dots
+\end{aligned}$$
+
+where $\left|\Phi_{a}^{r}\right>$ indicates the Slater determinants formed by replacing the spin-orbital $a$ in $\left|\Phi_0\right>$ with the spin orital $r$, and so on. Every $N$-electron Slater determinant can be described by the set of $N$ spin orbitals from which it is formed, and this set is often referred to as **configuration**. Thus, the **configuration interaction** methods is nothing more than the matrix solution of the time-independent non-relativistic Schrödinger equation, using the (truncated) expression for $\left|\Psi_j\right>$, as expressed above.
 
 In practice, the CI expansion is typically truncated according to excitation level for computational tractability. **CIS** will include all excitations where one electron is promoted from an occupied orbital to an unoccupied one. Similarly, **CISD** will include all single and double excitations, and so on for **CISDT**, **CISDTQ**, etc. If all possible $N$-electrons excitations are taken into account, the porocedure is called **full CI**. If the one-electron basis is also complete (never in practice since we are using a computer, but it may be in theory), we have **complete CI**.
 
