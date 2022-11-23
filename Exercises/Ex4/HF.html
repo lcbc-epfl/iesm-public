@@ -246,8 +246,22 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex5MP/HNO3_Correlation.html">
-     5.2. Correlation energy
+    <a class="reference internal" href="../Ex5MP/Ex5_Boron.html">
+     5.2. Recovering Correlation Energy: B atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_BDE.html">
+     5.3. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_HNO3.html">
+     5.4. Influence of correlation on geometry: HNO
+     <span class="math notranslate nohighlight">
+      \(_3\)
+     </span>
+     molecule
     </a>
    </li>
   </ul>
@@ -1084,8 +1098,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c4674ac-4eb8-49fe-b5e3-1e4f42920159">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-3c4674ac-4eb8-49fe-b5e3-1e4f42920159" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-037e25d5-f1b0-4741-9e50-d1dc2aaa609b">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-037e25d5-f1b0-4741-9e50-d1dc2aaa609b" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1117,8 +1131,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c338c88-e8ad-4f21-9fe4-f89ba33a0d05">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-8c338c88-e8ad-4f21-9fe4-f89ba33a0d05" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ba14dcaa-7cf2-428a-9e55-feed598ff39e">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-ba14dcaa-7cf2-428a-9e55-feed598ff39e" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1129,8 +1143,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a96e3f7-affe-4b5d-bd48-026c276bb027">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-8a96e3f7-affe-4b5d-bd48-026c276bb027" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d445ce08-088a-4ae3-9299-f4285d487e80">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-d445ce08-088a-4ae3-9299-f4285d487e80" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
