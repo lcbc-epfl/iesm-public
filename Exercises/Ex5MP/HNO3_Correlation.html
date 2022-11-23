@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.5. Correlation energy &#8212; Introduction to Electronic Structure Methods</title>
+    <title>5.2. Correlation energy &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods" href="../Ex5/IESM_Ex5.html" />
-    <link rel="prev" title="5.2. Homolytic Cleavage of the C-F Bond" href="BDE.html" />
+    <link rel="prev" title="5.1. Post-Hartree Fock Methods: Theory Recap" href="Ex5Theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -245,14 +245,9 @@ const thebe_selector_output = ".output, .cell_output"
      5.1. Post-Hartree Fock Methods: Theory Recap
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="BDE.html">
-     5.2. Homolytic Cleavage of the C-F Bond
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5.5. Correlation energy
+     5.2. Correlation energy
     </a>
    </li>
   </ul>
@@ -580,12 +575,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#influence-of-correlation-on-geometry">
-   5.5.1. Influence of correlation on geometry
+   5.2.1. Influence of correlation on geometry
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recovering-correlation-energy">
-   5.5.2. Recovering Correlation Energy
+   5.2.2. Recovering Correlation Energy
   </a>
  </li>
 </ul>
@@ -609,12 +604,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#influence-of-correlation-on-geometry">
-   5.5.1. Influence of correlation on geometry
+   5.2.1. Influence of correlation on geometry
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#recovering-correlation-energy">
-   5.5.2. Recovering Correlation Energy
+   5.2.2. Recovering Correlation Energy
   </a>
  </li>
 </ul>
@@ -628,7 +623,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="correlation-energy">
-<h1><span class="section-number">5.5. </span>Correlation energy<a class="headerlink" href="#correlation-energy" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.2. </span>Correlation energy<a class="headerlink" href="#correlation-energy" title="Permalink to this headline">#</a></h1>
 <p>The influence of electron correlation on structural parameters such as
 bond lengths and angles is not negligible. Hartree-Fock calculations may
 give bond lengths that deviate considerably from the experimental value.
@@ -642,7 +637,7 @@ effects of correlation are captured well enough in such a truncation.
 However, such truncations introduce size-consistency problems.</p>
 <p><img alt="image" src="../../_images/HNO3.png" /></p>
 <section id="influence-of-correlation-on-geometry">
-<h2><span class="section-number">5.5.1. </span>Influence of correlation on geometry<a class="headerlink" href="#influence-of-correlation-on-geometry" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.1. </span>Influence of correlation on geometry<a class="headerlink" href="#influence-of-correlation-on-geometry" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
 <p>Assess and comment on the performance of HF, MP2 and MP3 with respect to the prediction of bond lengths and bond angles in HNO<span class="math notranslate nohighlight">\(_3\)</span> in reference to the experimental values <a class="footnote-reference brackets" href="#no3" id="id1">1</a></p>
@@ -831,7 +826,7 @@ viewer_16309395087760777.render();
 </div>
 </section>
 <section id="recovering-correlation-energy">
-<h2><span class="section-number">5.5.2. </span>Recovering Correlation Energy<a class="headerlink" href="#recovering-correlation-energy" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.2.2. </span>Recovering Correlation Energy<a class="headerlink" href="#recovering-correlation-energy" title="Permalink to this headline">#</a></h2>
 <p>At the Hartree Fock level of theory, each electron experiences an average potential field of all the other electrons. In essence, it is a “mean field” approach that neglects individual electron-electron interactions or “electron correlation”. Thus, we define the difference between the self-consistent field energy and the exact energy as the correlation energy. Two fundamentally different approaches to account for electron correlation effects are available by selecting a Correlation method: Moller Plesset (MP) Perturbation theory and Coupled Cluster (CC) theory.</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 8</p>
@@ -949,11 +944,11 @@ MP4 will require the use of the following options: <code class="docutils literal
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="BDE.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Ex5Theory.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.2. </span>Homolytic Cleavage of the C-F Bond</p>
+            <p class="prev-next-title"><span class="section-number">5.1. </span>Post-Hartree Fock Methods: Theory Recap</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../Ex5/IESM_Ex5.html" title="next page">
