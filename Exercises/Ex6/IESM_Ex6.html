@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>7. Troubleshooting, Pitfalls, Traps &#8212; Introduction to Electronic Structure Methods</title>
+    <title>6. DFT vs (Post) HF Methods &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7.1. Fixing errors in the calculations" href="Ex6.html" />
-    <link rel="prev" title="6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods" href="../Ex5/IESM_Ex5.html" />
+    <link rel="next" title="6.1. Methylcyclohexane A-value" href="Ex6_aval.html" />
+    <link rel="prev" title="5.4. Influence of correlation on geometry: HNO\(_3\) molecule" href="../Ex5MP/Ex5_HNO3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -264,47 +266,61 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="simple">
-  </ul>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   7. Troubleshooting, Pitfalls, Traps
+   6. DFT vs (Post) HF Methods
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex6.html">
-     7.1. Fixing errors in the calculations
+    <a class="reference internal" href="Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex6_DFT_Hard_Easy.html">
-     7.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex6_DFT_integration_grid.html">
-     7.3. Integration grids
+    <a class="reference internal" href="Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -314,14 +330,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
+    <a class="reference internal" href="../Ex8/Ex8.html">
      8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -331,27 +347,27 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8Theory.html">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8.html">
+    <a class="reference internal" href="../Ex9/Ex9.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Backward.html">
+    <a class="reference internal" href="../Ex9/Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Forward.html">
+    <a class="reference internal" href="../Ex9/Forward.html">
      9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Visualize.html">
+    <a class="reference internal" href="../Ex9/Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -575,7 +591,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Troubleshooting, Pitfalls, Traps</h1>
+                <h1>DFT vs (Post) HF Methods</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -587,10 +603,23 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="troubleshooting-pitfalls-traps">
-<h1><span class="section-number">7. </span>Troubleshooting, Pitfalls, Traps<a class="headerlink" href="#troubleshooting-pitfalls-traps" title="Permalink to this headline">#</a></h1>
-<p>If you routinely use electronic structure methods, there is probably not one week passing without a run crashing, leaving you puzzled by a (sometimes mysterious) error message. Even if your run completes successfully, this will not necessarily mean that your results are meaningful (the principle garbage in, garbage out applies); the method that you used may in the end turn out to have been an inappropriate choice. This brief exercise deals with the most important error messages you may encounter.</p>
-<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/raw/main/iesm/Exercises/Ex6/Slides_Ex6.pdf">📥 Download introductory slides</a></button></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="dft-vs-post-hf-methods">
+<h1><span class="section-number">6. </span>DFT vs (Post) HF Methods<a class="headerlink" href="#dft-vs-post-hf-methods" title="Permalink to this headline">#</a></h1>
+<p>All methods discussed so far evaluate the energy of a system based on
+its wavefunction <span class="math notranslate nohighlight">\(\Psi\)</span>; a purely mathematical object that lacks any
+direct physical interpretation. In the next two sets of exercises, you
+will explore a formalism that is based on a physical observable, called
+<strong>Density Functional Theory</strong> (<strong>DFT</strong>). Rather than linking observables to
+abstract wavefunctions, DFT relates any observable to a physical,
+measurable quantity, the electron density <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<p>In the next two sets of exercises, you will assess the performance of
+various state-of-the-art density functionals in the prediction of
+reaction enthalpies and geometric properties, and you will compare your
+results to both wavefunction theory and experimental data. The first
+exercise constitutes more of a practical introduction; you will be
+provided with more ample theoretical information on DFT in the following
+week.</p>
+<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/raw/main/iesm/Exercises/Ex5/Slides_Ex5.pdf">📥 Download introductory slides</a></button></p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -635,16 +664,16 @@ title="Print to PDF"
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "compchem"
+            mode: "python"
         },
         kernelOptions: {
-            kernelName: "compchem",
+            kernelName: "python3",
             path: "./Exercises/Ex6"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'compchem'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
@@ -653,17 +682,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Ex5/IESM_Ex5.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Ex5MP/Ex5_HNO3.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">6. </span>Density Functional Theory - Comparison with (Post) Hartree-Fock Methods</p>
+            <p class="prev-next-title"><span class="section-number">5.4. </span>Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex6.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex6_aval.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7.1. </span>Fixing errors in the calculations</p>
+        <p class="prev-next-title"><span class="section-number">6.1. </span>Methylcyclohexane A-value</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

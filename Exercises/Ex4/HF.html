@@ -267,19 +267,33 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -289,24 +303,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
+    <a class="reference internal" href="../Ex7/Ex7.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
      7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -316,14 +330,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
+    <a class="reference internal" href="../Ex8/Ex8.html">
      8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -333,27 +347,27 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8Theory.html">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8.html">
+    <a class="reference internal" href="../Ex9/Ex9.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Backward.html">
+    <a class="reference internal" href="../Ex9/Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Forward.html">
+    <a class="reference internal" href="../Ex9/Forward.html">
      9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Visualize.html">
+    <a class="reference internal" href="../Ex9/Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -1098,8 +1112,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34c76056-0b60-47e4-b1ce-9dde96a36958">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-34c76056-0b60-47e4-b1ce-9dde96a36958" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e0f4935f-8ca3-483a-8b05-e72fc5cccc14">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-e0f4935f-8ca3-483a-8b05-e72fc5cccc14" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1131,8 +1145,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e8ee4a4-a7d7-4130-b2ba-64e8b25afc5f">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-6e8ee4a4-a7d7-4130-b2ba-64e8b25afc5f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-aee7147f-948c-45e6-aa74-f214506a8b04">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-aee7147f-948c-45e6-aa74-f214506a8b04" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1143,8 +1157,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edfba38b-1e45-49dd-96d6-97050925b8f4">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-edfba38b-1e45-49dd-96d6-97050925b8f4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-34a8cbc4-99f6-42eb-8762-1c4ed479b949">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-34a8cbc4-99f6-42eb-8762-1c4ed479b949" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>

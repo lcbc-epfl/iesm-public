@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods &#8212; Introduction to Electronic Structure Methods</title>
+    <title>9.5. Forward &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,12 +52,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="7. Troubleshooting, Pitfalls, Traps" href="../Ex6/IESM_Ex6.html" />
-    <link rel="prev" title="5.4. Influence of correlation on geometry: HNO\(_3\) molecule" href="../Ex5MP/Ex5_HNO3.html" />
+    <link rel="next" title="9.6. IRC analysis" href="Visualize.html" />
+    <link rel="prev" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -266,20 +264,34 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -289,24 +301,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
+    <a class="reference internal" href="../Ex7/Ex7.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
      7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -316,44 +328,44 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
+    <a class="reference internal" href="../Ex8/Ex8.html">
      8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="IESM_Ex9.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8Theory.html">
+    <a class="reference internal" href="Ex9Theory.html">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8.html">
+    <a class="reference internal" href="Ex9.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Backward.html">
+    <a class="reference internal" href="Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Forward.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Visualize.html">
+    <a class="reference internal" href="Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -440,7 +452,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5/IESM_Ex5.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex9/Forward.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -500,7 +512,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5/IESM_Ex5.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex9/Forward.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -528,7 +540,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex5/IESM_Ex5.ipynb"
+        <a href="../../_sources/Exercises/Ex9/Forward.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -577,7 +589,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Density Functional Theory - Comparison with (Post) Hartree-Fock Methods</h1>
+                <h1>Forward</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -589,55 +601,85 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="density-functional-theory-comparison-with-post-hartree-fock-methods">
-<h1><span class="section-number">6. </span>Density Functional Theory - Comparison with (Post) Hartree-Fock Methods<a class="headerlink" href="#density-functional-theory-comparison-with-post-hartree-fock-methods" title="Permalink to this headline">#</a></h1>
-<p>All methods discussed so far evaluate the energy of a system based on
-its wavefunction <span class="math notranslate nohighlight">\(\Psi\)</span>; a purely mathematical object that lacks any
-direct physical interpretation. In the next two sets of exercises, you
-will explore a formalism that is based on a physical observable, called
-<em>Density Functional Theory</em> (DFT). Rather than linking observables to
-abstract wavefunctions, DFT relates any observable to a physical,
-measurable quantity, the electron density <span class="math notranslate nohighlight">\(\rho\)</span> . In
-the next two sets of exercises, you will assess the performance of
-various state-of-the-art density functionals in the prediction of
-reaction enthalpies and geometric properties, and you will compare your
-results to both wavefunction theory and experimental data. The first
-exercise constitutes more of a practical introduction; you will be
-provided with more ample theoretical information on DFT in the following
-week.</p>
-<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/raw/main/iesm/Exercises/Ex5/Slides_Ex5.pdf">📥 Download introductory slides</a></button></p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">🎯 <strong>Learning goals</strong></p>
-</div>
-<div class="sd-card-body docutils">
+  <section class="tex2jax_ignore mathjax_ignore" id="forward">
+<h1><span class="section-number">9.5. </span>Forward<a class="headerlink" href="#forward" title="Permalink to this headline">#</a></h1>
+<p>For optimizing towards the product.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pickle</span>
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
 </div>
 </div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">📖 <strong>Chapter in script</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">forward</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">-1 1</span>
+<span class="s2">symmetry c1</span>
+<span class="s2">C    0.161365681713   -0.511276706871   -0.065673009935</span>
+<span class="s2">C    0.161365681713   -0.511276706871    1.410165317053</span>
+<span class="s2">CL    0.161365681713    1.675115213693   -0.830233244286</span>
+<span class="s2">H    1.132477277417   -0.697571103690   -0.509045086116</span>
+<span class="s2">C   -1.040798213810   -1.016790788061   -0.814550748460</span>
+<span class="s2">O    0.357772074988   -1.868713449198    1.405962676748</span>
+<span class="s2">H    0.974243696079    0.103536536446    1.848363511315</span>
+<span class="s2">H   -0.802563630608   -0.159387482769    1.838649009148</span>
+<span class="s2">H   -0.947705950347   -0.799141876667   -1.882566051513</span>
+<span class="s2">H   -1.132438474569   -2.098248457383   -0.668277590228</span>
+<span class="s2">H   -1.951177110115   -0.531277272596   -0.443805926449&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="sd-card-body docutils">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc_forward_new.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+     <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
+     <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+     <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;irc&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;irc_step_size&quot;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
+     <span class="s2">&quot;ensure_bt_convergence&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+     <span class="s2">&quot;irc_direction&quot;</span><span class="p">:</span><span class="s2">&quot;forward&quot;</span><span class="p">,</span>
+     <span class="p">})</span>
+
+<span class="n">E</span><span class="p">,</span> <span class="n">history_forward</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">forward</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="c1">#, )</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
+ 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
+Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.3714i&#39;]
+Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0283&#39; &#39;199.5642&#39; &#39;200.4680&#39; &#39;278.6674&#39; &#39;310.2934&#39; &#39;399.1543&#39;]
+Optimizer: Optimization complete!
+</pre></div>
 </div>
 </div>
 </div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">📚 <strong>Resources</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates_forward</span> <span class="o">=</span> <span class="n">history_forward</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
+<span class="n">energies_forward</span> <span class="o">=</span> <span class="n">history_forward</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
+
+<span class="n">forward_e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies_forward</span><span class="p">]</span>
+<span class="n">forward_e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="sd-card-body docutils">
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We print out the numpy array of energies, list of xyz,  list of numpy arrays of xyz coordinates</span>
+<span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">((</span><span class="n">forward_e</span><span class="p">,</span> <span class="n">mol2traj</span><span class="p">(</span><span class="n">forward</span><span class="p">,</span> <span class="n">coordinates_forward</span><span class="p">),</span> <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_forward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;forward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
 </div>
 </div>
-</div>
-<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -650,16 +692,16 @@ week.</p>
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "python3",
-            path: "./Exercises/Ex5"
+            kernelName: "psi4",
+            path: "./Exercises/Ex9"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'psi4'</script>
 
               </div>
               
@@ -668,17 +710,17 @@ week.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Ex5MP/Ex5_HNO3.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Backward.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.4. </span>Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</p>
+            <p class="prev-next-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../Ex6/IESM_Ex6.html" title="next page">
+    <a class='right-next' id="next-link" href="Visualize.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Troubleshooting, Pitfalls, Traps</p>
+        <p class="prev-next-title"><span class="section-number">9.6. </span>IRC analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

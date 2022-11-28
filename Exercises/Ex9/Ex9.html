@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC) &#8212; Introduction to Electronic Structure Methods</title>
+    <title>9.2. Locating Transition States: Constrained Optimisations &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.5. Forward" href="Forward.html" />
-    <link rel="prev" title="9.2. Locating Transition States: Constrained Optimisations" href="Ex8.html" />
+    <link rel="next" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
+    <link rel="prev" title="9.1. Theory" href="Ex9Theory.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -265,19 +265,33 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -287,24 +301,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
+    <a class="reference internal" href="../Ex7/Ex7.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
      7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -314,14 +328,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
+    <a class="reference internal" href="../Ex8/Ex8.html">
      8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="IESM_Ex8.html">
+  <a class="reference internal" href="IESM_Ex9.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -331,17 +345,17 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8Theory.html">
+    <a class="reference internal" href="Ex9Theory.html">
      9.1. Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex8.html">
-     9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
+     9.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
@@ -438,7 +452,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Backward.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex9/Ex9.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -498,7 +512,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Backward.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex9/Ex9.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -526,7 +540,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex8/Backward.ipynb"
+        <a href="../../_sources/Exercises/Ex9/Ex9.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -585,14 +599,19 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-guess">
+   9.2.1. Constructing a Guess
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-a-direction">
-   9.4. Choose a direction
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constrained-optimization">
+   9.2.2. Constrained optimization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-transition-state">
+   9.2.3. Finding the Transition State
   </a>
  </li>
 </ul>
@@ -604,7 +623,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</h1>
+                <h1>Locating Transition States: Constrained Optimisations</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -614,14 +633,19 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-a-guess">
+   9.2.1. Constructing a Guess
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#choose-a-direction">
-   9.4. Choose a direction
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constrained-optimization">
+   9.2.2. Constrained optimization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-transition-state">
+   9.2.3. Finding the Transition State
   </a>
  </li>
 </ul>
@@ -634,31 +658,58 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc">
-<h1><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)<a class="headerlink" href="#recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc" title="Permalink to this headline">#</a></h1>
-<p>A transition state search merely guarantees that one reaches a
-first-order saddle point on the PES; there is, however, no guarantee
-that it is really linked to the reactant and product. (For instance,
-there may be further transition states lying in between.) Although the
-visualisation of the imaginary vibrational mode may give some hint as to
-whether one has found a reasonable saddle point, this information is not
-sufficient to guarantee a connection to the reactant and product well.
-Following the negative Hessian eigenvalues from the transition state to
-the next local minimum, on the other hand, will immediately reveal
-whether such a connection exists. This Hessian-following in
-mass-weighted coordinates is referred to as a search along the
-<em>Intrinsic Reaction Coordinate</em> (IRC). This search will create a
-potential energy profile for the reaction, as well as a trajectory that
-visualises the lowest energy path from reactant to TS to product or reactant (depending on the direction that one chooses).</p>
-<p>As psi4 automatically performs a frequency calculation we can verify whether the transition state that was computed is the proper transition state.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You do not need to run this notebook. The outputs <code class="docutils literal notranslate"><span class="pre">forward.p</span></code> and <code class="docutils literal notranslate"><span class="pre">backward.p</span></code> are provided to you in the next notebook. This is here for completeness. The calculation takes about 30 - 45 minutes depending on the direction you choose.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="locating-transition-states-constrained-optimisations">
+<h1><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations<a class="headerlink" href="#locating-transition-states-constrained-optimisations" title="Permalink to this headline">#</a></h1>
+<p>Unlike a geometry optimisation, a transition state search requires more
+than just <em>some</em> guess. Finding the transition state from a reactant or
+a product structure will be computationally unfeasible, as those
+structures are given by local minima on the PES. Hence, all possible
+paths originating from these minima will go uphill (recall the
+mathematical definition of a minimum with respect to its derivatives),
+and it cannot be clear in advance which paths will actually connect
+reactants and products, or which path(s) will proceed <em>via</em> the lowest
+lying transition state. Instead, one needs a guess that is reasonably
+close to the real transition state, such that the <em>curvature</em> of the
+potential energy surface close to the TS is known, making it possible to
+proceed uphill along the reaction coordinate until the transition state
+is reached. The general procedure for a transition state search includes
+the construction of a guess geometry that should be reasonably close to
+the expected TS, followed by a <em>constrained optimisation</em> (<em>cf.</em> figure
+3).</p>
+<figure class="align-default" id="tssearch">
+<img alt="../../_images/miniumenergypath.png" src="../../_images/miniumenergypath.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9.3 </span><span class="caption-text">Finding a transition state from an initial guess by performing a
+constrained optimisation followed by a TS
+search.</span><a class="headerlink" href="#tssearch" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In a constrained optimisation, all degrees of freedom which are not
+deemed relevant for the reaction are relaxed, whereas the relevant
+degree(s) of freedom is (are) kept fixed. After the optimisation, the
+curvature of the PES is evaluated at the chosen geometry (either
+analytically or numerically, <em>cf.</em> the following section). If the
+constrained degree(s) of freedom was (were) suitably chosen, the paths
+associated to the unconstrained N-1 degrees of freedom will go uphill in
+both directions, indicating that the corresponding structural parameters
+were properly relaxed. There should be one degree of freedom remaining
+that is associated to a path that goes downhill on one side and uphill
+on the other side: This will be the path that leads uphill to the
+transition state. As the associated degree of freedom is then known, the
+geometry can then be optimised to a transition state by selectively
+‘walking uphill’ along this specific path.</p>
+<section id="constructing-a-guess">
+<h2><span class="section-number">9.2.1. </span>Constructing a Guess<a class="headerlink" href="#constructing-a-guess" title="Permalink to this headline">#</a></h2>
+<p>You can find below the Z-matrix for the chloropropanoate (2-Chloro-1-propanol) already set, obtained using the Open Source Software <a class="reference external" href="https://avogadro.cc/">Avogadro</a>. We want to set the Z-matrix for the transition state editing this matrix. Correct the parameters adapting the conformation to be reasonably close to the transition state: for the TS, one expects that the C-Cl bond will already be elongated, whereas the oxygen atom will start to form the epoxide ring. Change the bond angle of the oxygen atom to something smaller than the original value, such as 80◦, and modify the bond length for the C-Cl bond to an elongated conformation, such as 2.40 Å. Moreover, you need to delete the hydrogen bond to the oxygen atom, and edit the Z-matrix accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
@@ -666,108 +717,225 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 </pre></div>
 </div>
 </div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the transition state coordinates from disk</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">ts_string</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># this is the xyz file as a string</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">ts_string</span><span class="p">)</span>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+
+  Memory set to   1.863 GiB by Python driver.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">-1 1</span>
-<span class="s2">symmetry c1</span>
-<span class="s2"> C    0.169891741896   -0.303396542243   -0.246565081910</span>
-<span class="s2"> C    0.191012418901   -0.532643890512    1.275916186757</span>
-<span class="s2">CL    0.143804012854    1.566013819697   -0.686628413220</span>
-<span class="s2"> H    1.120024392980   -0.636063203527   -0.672877892311</span>
-<span class="s2"> C   -1.016755132582   -0.934703159138   -0.942141431016</span>
-<span class="s2"> O    0.339535270596   -1.849728813088    1.472891387260</span>
-<span class="s2"> H    1.010561961934    0.121411357267    1.686229845174</span>
-<span class="s2"> H   -0.762913236261   -0.079611519921    1.679061412831</span>
-<span class="s2"> H   -0.957983639113   -0.847359581313   -2.033892804890</span>
-<span class="s2"> H   -1.031376458892   -1.990374831218   -0.649080196171</span>
-<span class="s2"> H   -1.947496420408   -0.464044585762   -0.599503342745&quot;&quot;&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Z-matrix for the chloropropanoate</span>
+<span class="n">chloropropanoate</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2"> symmetry c1</span>
+<span class="s2"> c</span>
+<span class="s2"> c    1 cc2</span>
+<span class="s2"> cl   1 clc3        2 clcc3</span>
+<span class="s2"> h    1 hc4         2 hcc4          3 dih4</span>
+<span class="s2"> c    1 cc5         2 ccc5          3 dih5</span>
+<span class="s2"> o    2 oc6         1 occ6          3 dih6</span>
+<span class="s2"> h    2 hc7         1 hcc7          6 dih7</span>
+<span class="s2"> h    2 hc8         1 hcc8          6 dih8</span>
+<span class="s2"> h    5 hc9         1 hcc9          2 dih9</span>
+<span class="s2"> h    5 hc10        1 hcc10         9 dih10</span>
+<span class="s2"> h    5 hc11        1 hcc11         9 dih11</span>
+<span class="s2"> h    6 ho          2 hoc2          1 dih12</span>
+<span class="s2"> </span>
+<span class="s2">cc2     =    1.500000</span>
+<span class="s2">clc3    =    1.790000 </span>
+<span class="s2">clcc3   =    109.471</span>
+<span class="s2">hc4     =    1.089000</span>
+<span class="s2">hcc4    =    109.471</span>
+<span class="s2">dih4    =    100.000</span>
+<span class="s2">cc5     =    1.500000</span>
+<span class="s2">ccc5    =    109.471</span>
+<span class="s2">dih5    =   -100.000</span>
+<span class="s2">oc6     =    1.430000</span>
+<span class="s2">occ6    =    110.600  </span>
+<span class="s2">dih6    =    180.000</span>
+<span class="s2">hc7     =    1.070000</span>
+<span class="s2">hcc7    =    109.471</span>
+<span class="s2">dih7    =    120.000</span>
+<span class="s2">hc8     =    1.070000</span>
+<span class="s2">hcc8    =    109.471</span>
+<span class="s2">dih8    =    240.000</span>
+<span class="s2">hc9     =    1.070000</span>
+<span class="s2">hcc9    =    109.471</span>
+<span class="s2">dih9    =    180.000</span>
+<span class="s2">hc10    =    1.070000</span>
+<span class="s2">hcc10   =    109.471</span>
+<span class="s2">dih10   =    120.000</span>
+<span class="s2">hc11    =    1.070000</span>
+<span class="s2">hcc11   =    109.471</span>
+<span class="s2">dih11   =    240.000</span>
+<span class="s2">ho      =    0.97       </span>
+<span class="s2">hoc2    =    109.471    </span>
+<span class="s2">dih12   =    180.0      </span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="c1">#Edit the Z-matrix to obtain the TS guess according to the requests above</span>
+<span class="n">ts_guess</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2"> symmetry c1</span>
+<span class="s2"> c</span>
+<span class="s2"> c    1 cc2</span>
+<span class="s2"> cl   1 clc3        2 clcc3</span>
+<span class="s2"> h    1 hc4         2 hcc4          3 dih4</span>
+<span class="s2"> c    1 cc5         2 ccc5          3 dih5</span>
+<span class="s2"> o    2 oc6         1 occ6          3 dih6</span>
+<span class="s2"> h    2 hc7         1 hcc7          6 dih7</span>
+<span class="s2"> h    2 hc8         1 hcc8          6 dih8</span>
+<span class="s2"> h    5 hc9         1 hcc9          2 dih9</span>
+<span class="s2"> h    5 hc10        1 hcc10         9 dih10</span>
+<span class="s2"> h    5 hc11        1 hcc11         9 dih11</span>
+<span class="s2"> h    6 ho          2 hoc2          1 dih12</span>
+<span class="s2"> </span>
+<span class="s2">cc2     =    1.500000</span>
+<span class="s2">clc3    =    1.790000 </span>
+<span class="s2">clcc3   =    109.471</span>
+<span class="s2">hc4     =    1.089000</span>
+<span class="s2">hcc4    =    109.471</span>
+<span class="s2">dih4    =    100.000</span>
+<span class="s2">cc5     =    1.500000</span>
+<span class="s2">ccc5    =    109.471</span>
+<span class="s2">dih5    =   -100.000</span>
+<span class="s2">oc6     =    1.430000</span>
+<span class="s2">occ6    =    110.600  </span>
+<span class="s2">dih6    =    180.000</span>
+<span class="s2">hc7     =    1.070000</span>
+<span class="s2">hcc7    =    109.471</span>
+<span class="s2">dih7    =    120.000</span>
+<span class="s2">hc8     =    1.070000</span>
+<span class="s2">hcc8    =    109.471</span>
+<span class="s2">dih8    =    240.000</span>
+<span class="s2">hc9     =    1.070000</span>
+<span class="s2">hcc9    =    109.471</span>
+<span class="s2">dih9    =    180.000</span>
+<span class="s2">hc10    =    1.070000</span>
+<span class="s2">hcc10   =    109.471</span>
+<span class="s2">dih10   =    120.000</span>
+<span class="s2">hc11    =    1.070000</span>
+<span class="s2">hcc11   =    109.471</span>
+<span class="s2">dih11   =    240.000</span>
+<span class="s2">ho      =    0.97       </span>
+<span class="s2">hoc2    =    109.471    </span>
+<span class="s2">dih12   =    180.0 </span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">chloropropanoate</span><span class="p">,</span> <span class="n">ts_guess</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Include a screenshot of the transition state in your report that you obtained and the corresponding Z-matrix for the transition state guess</p>
+</div>
+</section>
+<section id="constrained-optimization">
+<h2><span class="section-number">9.2.2. </span>Constrained optimization<a class="headerlink" href="#constrained-optimization" title="Permalink to this headline">#</a></h2>
+<p>We will first optimize our transition state guess keeping the C-Cl distance fixed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_guess_opt</span> <span class="o">=</span> <span class="n">ts_guess</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;poxide.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;frozen_distance&quot;</span><span class="p">:</span><span class="s2">&quot;1 3&quot;</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts_guess_opt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">ts_guess</span><span class="p">,</span> <span class="n">ts_guess_opt</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="choose-a-direction">
-<h1><span class="section-number">9.4. </span>Choose a direction<a class="headerlink" href="#choose-a-direction" title="Permalink to this headline">#</a></h1>
-<p>Start from the TS that we optimized and run the IRC calculation in one direction.</p>
-<p>You can choose <code class="docutils literal notranslate"><span class="pre">forward</span></code> or <code class="docutils literal notranslate"><span class="pre">backward</span></code> for the <code class="docutils literal notranslate"><span class="pre">irc_direction</span></code></p>
+<section id="finding-the-transition-state">
+<h2><span class="section-number">9.2.3. </span>Finding the Transition State<a class="headerlink" href="#finding-the-transition-state" title="Permalink to this headline">#</a></h2>
+<p>Now that we have our  transition state guess optimized, we want to find out whether this guess is close to the transition state (meaning it has one imaginary frequency) and then optimize to the actual transition state.</p>
+<p>If we set <code class="docutils literal notranslate"><span class="pre">full_hess_every</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>, a frequency calculation will be performed at the begining (you could also do it seperately using <code class="docutils literal notranslate"><span class="pre">psi4.frequency([..])</span></code>. By setting <code class="docutils literal notranslate"><span class="pre">opt_type</span></code> to <code class="docutils literal notranslate"><span class="pre">ts</span></code> the optimization will try to find the 1st order saddlepoint that is the transition state.</p>
+<p>We will write the normal modes to a file for visualization.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">irc_direction</span> <span class="o">=</span>  <span class="s1">&#39;forward&#39;</span> <span class="c1"># &#39;backward&#39;</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts_guess_opt</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ts.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
-     <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
-     <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-     <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;irc&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;irc_step_size&quot;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
-     <span class="s2">&quot;ensure_bt_convergence&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-     <span class="s2">&quot;irc_direction&quot;</span><span class="p">:</span><span class="n">irc_direction</span><span class="p">,</span>
-     <span class="p">})</span>
+    <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span> 
+    <span class="s2">&quot;normal_modes_write&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span> <span class="c1">#0 compute the initial Hessian only</span>
+    <span class="p">})</span>
 
-<span class="n">E</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
+
+
+<span class="c1">#print out TS in case something goes wrong</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
- 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
-Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.3714i&#39;]
-Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0283&#39; &#39;199.5642&#39; &#39;200.4680&#39; &#39;278.6674&#39; &#39;310.2934&#39; &#39;399.1543&#39;]
-Optimizer: Optimization complete!
+</div>
+<p>We can also compare the TS with the guess to see how far we are.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">ts_guess_opt</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Take a screenshot of the optimised transition state structure. How did the structure change with respect to the constrained-optimised guess?</p>
+</div>
+<p>We can now have a look at the normal model that we obtained, for that we need to first check how the file is named. Then you can visualize one normal mode at time.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how the file is named, this is a bash command</span>
+<span class="c1"># ls means list all the files in the current directory</span>
+<span class="c1"># -ltrh are flags that print output as a detailed list (-l) in reversed order(-r) by time (-t) with human readable units (-h)</span>
+<span class="o">!</span>ls -lrth ts.*.molden_normal_modes 
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
-<span class="n">energies</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
-
-
-<span class="c1"># Convert to kcal mol-1</span>
-
-<span class="c1"># Convert to kcal mol-1</span>
-<span class="n">e</span> <span class="o">=</span> <span class="p">[</span><span class="n">energy</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span> <span class="k">for</span> <span class="n">energy</span> <span class="ow">in</span> <span class="n">energies</span><span class="p">]</span>
-<span class="c1"># set highest value to 0</span>
-<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to use the right file in the show_normal_modes</span>
+<span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;FILENAME.XX.molden_normal_modes&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">json</span>
-</pre></div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Report the value of the negative frequency that you obtain.  What motion is this mode related to?
+What motions are associated with low and high vibrational frequencies? Choose two positive vibrational modes and desribe their particular associated motion.</p>
 </div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<p>Is the transition state you predicted an early or a late transition state? What about the guess?</p>
 </div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<p>Having found a transition state, how would you now obtain the barrier height for your reaction? Are there ways of verifying whether you have found a meaningful
+transition state? <strong>Bonus:</strong> How would you define ‘meaningful’ in
+this context?</p>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">((</span><span class="n">backward_e</span><span class="p">,</span> 
-             <span class="n">mol2traj</span><span class="p">(</span><span class="n">backward</span><span class="p">,</span> <span class="n">coordinates_backward</span><span class="p">),</span> 
-             <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_backward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">irc_direction</span><span class="si">}</span><span class="s2">.p&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -783,7 +951,7 @@ Optimizer: Optimization complete!
         },
         kernelOptions: {
             kernelName: "psi4",
-            path: "./Exercises/Ex8"
+            path: "./Exercises/Ex9"
         },
         predefinedOutput: true
     }
@@ -797,17 +965,17 @@ Optimizer: Optimization complete!
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Ex8.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Ex9Theory.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations</p>
+            <p class="prev-next-title"><span class="section-number">9.1. </span>Theory</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Forward.html" title="next page">
+    <a class='right-next' id="next-link" href="Backward.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.5. </span>Forward</p>
+        <p class="prev-next-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

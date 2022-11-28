@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9. Finding Transition States and Barrier Heights: First Order Saddle Points &#8212; Introduction to Electronic Structure Methods</title>
+    <title>8. Potential Energy Scans and Visualisation of Trajectories &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,12 +52,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.1. Theory" href="Ex8Theory.html" />
-    <link rel="prev" title="8.1. Potential Energy Scans and Visualisation of Trajectories" href="../Ex7/Ex7.html" />
+    <link rel="next" title="8.1. Potential Energy Scans and Visualisation of Trajectories" href="Ex8.html" />
+    <link rel="prev" title="7.3. Integration grids" href="../Ex7/Ex7_DFT_integration_grid.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -267,19 +265,33 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -289,71 +301,71 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
+    <a class="reference internal" href="../Ex7/Ex7.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
      7.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
-   8. Potential Energy Scans and Visualisation of Trajectories
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
+   8. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex8.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8Theory.html">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8.html">
+    <a class="reference internal" href="../Ex9/Ex9.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Backward.html">
+    <a class="reference internal" href="../Ex9/Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Forward.html">
+    <a class="reference internal" href="../Ex9/Forward.html">
      9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Visualize.html">
+    <a class="reference internal" href="../Ex9/Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -577,7 +589,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Finding Transition States and Barrier Heights: First Order Saddle Points</h1>
+                <h1>Potential Energy Scans and Visualisation of Trajectories</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -589,23 +601,14 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="finding-transition-states-and-barrier-heights-first-order-saddle-points">
-<h1><span class="section-number">9. </span>Finding Transition States and Barrier Heights: First Order Saddle Points<a class="headerlink" href="#finding-transition-states-and-barrier-heights-first-order-saddle-points" title="Permalink to this headline">#</a></h1>
-<p>So far, you have already considered several systems that did not reside
-in a minimum of the potential energy surface. Both the bond breaking in
-the dissociation of H<span class="math notranslate nohighlight">\(_2\)</span> as well as the internal rotation of butane
-were examples of off-equilibrium processes, where the system moves from
-one equilibrium conformer, <em>i.e.</em> from one minimum, to another. It is
-intuitively clear that the likelihood of two equilibrium conformers to
-be transformed into each other by moving along <em>some</em> random path is
-negligible, and different methods have been established to find
-reasonable paths for such transitions. A frequently used approach is
-<em>transition state theory</em>, which is concerned with finding a realistic
-path between potential energy minima. In this set of exercises, you will
-search for the transition state for a the cyclisation of a deprotonated
-chloropropanol to propylene oxide, and you will find the minimum energy
-path that connects reactants to products via this transition state.</p>
-<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/raw/main/iesm/Exercises/Ex8/Slides_Ex8.pdf">📥 Download introductory slides</a></button></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="potential-energy-scans-and-visualisation-of-trajectories">
+<h1><span class="section-number">8. </span>Potential Energy Scans and Visualisation of Trajectories<a class="headerlink" href="#potential-energy-scans-and-visualisation-of-trajectories" title="Permalink to this headline">#</a></h1>
+<p>The range of problems that can be tackled with Psi4 or other electronic structure packages is not limited
+to wavefunction or geometry optimisations. We can use python to create complex inputs, adjusting various settings, or making specific modifications of
+some variables.</p>
+<p>In this set of exercises, you will instruct Psi4 to
+selectively scan one degree of freedom of a potential energy surface.</p>
+<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/raw/main/iesm/Exercises/Ex7/Slides_Ex7.pdf">📥 Download introductory slides</a></button></p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -668,17 +671,17 @@ path that connects reactants to products via this transition state.</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Ex7/Ex7.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../Ex7/Ex7_DFT_integration_grid.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8.1. </span>Potential Energy Scans and Visualisation of Trajectories</p>
+            <p class="prev-next-title"><span class="section-number">7.3. </span>Integration grids</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex8Theory.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex8.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.1. </span>Theory</p>
+        <p class="prev-next-title"><span class="section-number">8.1. </span>Potential Energy Scans and Visualisation of Trajectories</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

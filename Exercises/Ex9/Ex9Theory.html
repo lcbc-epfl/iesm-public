@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.6. IRC analysis &#8212; Introduction to Electronic Structure Methods</title>
+    <title>9.1. Theory &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Basis functions in quantum chemistry" href="../../Lecture/BasisFunctions.html" />
-    <link rel="prev" title="9.5. Forward" href="Forward.html" />
+    <link rel="next" title="9.2. Locating Transition States: Constrained Optimisations" href="Ex9.html" />
+    <link rel="prev" title="9. Finding Transition States and Barrier Heights: First Order Saddle Points" href="IESM_Ex9.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -265,19 +267,33 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -287,24 +303,24 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
+    <a class="reference internal" href="../Ex7/Ex7.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
      7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
    8. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
@@ -314,14 +330,14 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
+    <a class="reference internal" href="../Ex8/Ex8.html">
      8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="IESM_Ex8.html">
+  <a class="reference internal" href="IESM_Ex9.html">
    9. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
@@ -330,13 +346,13 @@ const thebe_selector_output = ".output, .cell_output"
    </i>
   </label>
   <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex8Theory.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      9.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8.html">
+    <a class="reference internal" href="Ex9.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
@@ -350,8 +366,8 @@ const thebe_selector_output = ".output, .cell_output"
      9.5. Forward
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -438,7 +454,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex8/Visualize.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex9/Ex9Theory.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -498,7 +514,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex8/Visualize.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex9/Ex9Theory.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -526,7 +542,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex8/Visualize.ipynb"
+        <a href="../../_sources/Exercises/Ex9/Ex9Theory.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -586,23 +602,23 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-other-part-of-the-trajectory-from-your-colleague">
-   9.6.1. Download the other part of the trajectory from your colleague
+  <a class="reference internal nav-link" href="#synthesis-of-propylene-oxide">
+   9.1.1. Synthesis of Propylene Oxide
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-the-trajectory">
-   9.6.2. Visualize the trajectory
+  <a class="reference internal nav-link" href="#transition-state-theory">
+   9.1.2. Transition State Theory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-the-minium-energy-path">
-   9.6.3. Plot the minium energy path
+  <a class="reference internal nav-link" href="#a-minimum-potential-energy-path">
+   9.1.3. A Minimum (Potential) Energy Path
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-bonds">
-   9.6.4. Analyse Bonds
+  <a class="reference internal nav-link" href="#from-curvature-to-vibrational-frequencies-the-hessian">
+   9.1.4. From Curvature to Vibrational Frequencies: The Hessian
   </a>
  </li>
 </ul>
@@ -614,7 +630,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>IRC analysis</h1>
+                <h1>Theory</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -625,23 +641,23 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#download-the-other-part-of-the-trajectory-from-your-colleague">
-   9.6.1. Download the other part of the trajectory from your colleague
+  <a class="reference internal nav-link" href="#synthesis-of-propylene-oxide">
+   9.1.1. Synthesis of Propylene Oxide
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#visualize-the-trajectory">
-   9.6.2. Visualize the trajectory
+  <a class="reference internal nav-link" href="#transition-state-theory">
+   9.1.2. Transition State Theory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plot-the-minium-energy-path">
-   9.6.3. Plot the minium energy path
+  <a class="reference internal nav-link" href="#a-minimum-potential-energy-path">
+   9.1.3. A Minimum (Potential) Energy Path
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analyse-bonds">
-   9.6.4. Analyse Bonds
+  <a class="reference internal nav-link" href="#from-curvature-to-vibrational-frequencies-the-hessian">
+   9.1.4. From Curvature to Vibrational Frequencies: The Hessian
   </a>
  </li>
 </ul>
@@ -654,196 +670,130 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="irc-analysis">
-<h1><span class="section-number">9.6. </span>IRC analysis<a class="headerlink" href="#irc-analysis" title="Permalink to this headline">#</a></h1>
-<p>In this notebook, we combine the both the forward and backward irc search into one trajectory and one list of energy values so that we can plot/analyze the minimum free energy path for converting the chloro-alcohol into the epoxide.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pickle</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="kn">import</span> <span class="nn">psi4</span>
-
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> 
-</pre></div>
+  <section class="tex2jax_ignore mathjax_ignore" id="theory">
+<h1><span class="section-number">9.1. </span>Theory<a class="headerlink" href="#theory" title="Permalink to this headline">#</a></h1>
+<section id="synthesis-of-propylene-oxide">
+<h2><span class="section-number">9.1.1. </span>Synthesis of Propylene Oxide<a class="headerlink" href="#synthesis-of-propylene-oxide" title="Permalink to this headline">#</a></h2>
+<p>Corrosive propylene oxide is the simplest chiral
+epoxide and of great industrial importance. The historically most
+important synthesis is based on hydrochlorination and ring closure of
+the resulting chloropropanols in a basic environment:</p>
+<figure class="align-default" id="epoxide-reaction-scheme">
+<img alt="../../_images/reaction_epoxide4.png" src="../../_images/reaction_epoxide4.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9.1 </span><span class="caption-text">Epoxide reaction.</span><a class="headerlink" href="#epoxide-reaction-scheme" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The resulting epoxide is most often directly used as a racemate.</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>What kind of reaction mechanism would you expect? Would you expect
+the stereochemistry at the chiral carbon to be preserved? Identify
+the chirality centre in the chloropropanoate and the product
+epoxide.</p>
 </div>
-</div>
-</div>
-<section id="download-the-other-part-of-the-trajectory-from-your-colleague">
-<h2><span class="section-number">9.6.1. </span>Download the other part of the trajectory from your colleague<a class="headerlink" href="#download-the-other-part-of-the-trajectory-from-your-colleague" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Copy the code that you got from your colleague</span>
-<span class="n">key</span> <span class="o">=</span>  <span class="s1">&#39;adz9IoTVAFHh&#39;</span>
-
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;forward&#39;</span> <span class="c1">#backward</span>
-
-<span class="o">!</span>curl https://file.io/<span class="nv">$key</span> --output <span class="nv">$name</span>.p
-</pre></div>
-</div>
-</div>
-</div>
-<p>This load the pickled objects from disk</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">backward_e</span><span class="p">,</span> <span class="n">traj_backward</span><span class="p">,</span> <span class="n">traj_backward_np</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;backward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">)</span> <span class="p">)</span>
-<span class="n">forward_e</span><span class="p">,</span> <span class="n">traj_forward</span><span class="p">,</span> <span class="n">traj_forward_np</span><span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span> <span class="nb">open</span><span class="p">(</span> <span class="s2">&quot;forward.p&quot;</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span> <span class="p">)</span> <span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Look at the energy list and find out which you need to reverse.</p>
-<p>Remember that we substracted the highest energy from all the values. Think about which point is the highest energy point on the minimum energy path connecting reactant and products.</p>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">variablename.reverse()</span></code> to reverse the list.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">backward_e</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">backward_e</span><span class="p">)</span>
-<span class="n">forward_e</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">forward_e</span><span class="p">)</span>
-
-<span class="c1">#list.reverse() #this is an inplace operation meaning you do not need to reassign the variable</span>
-
-<span class="c1"># combine the energies </span>
-<span class="c1"># Note that we need exclude the ts point from one of the trajectories</span>
-<span class="c1"># You can remove one index from the lists using list1[:-1] </span>
-<span class="c1"># Lists can be combined using lists = l1 + l2</span>
-<span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span> 
-
-<span class="c1"># combine the trajectories which are lists</span>
-<span class="n">traj</span> <span class="o">=</span> <span class="kc">None</span>
-</pre></div>
-</div>
-</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Suggest possible transition state structures.</p>
 </div>
 </section>
-<section id="visualize-the-trajectory">
-<h2><span class="section-number">9.6.2. </span>Visualize the trajectory<a class="headerlink" href="#visualize-the-trajectory" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZGeomSlider</span><span class="p">(</span><span class="n">traj</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ed6f4bfd18ca48298cc52ee5d3f324a0", "version_major": 2, "version_minor": 0}
-</script></div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 8</p>
-<p>Is the stereochemistry at the carbon at which the reaction takes
-place retained?</p>
-</div>
+<section id="transition-state-theory">
+<h2><span class="section-number">9.1.2. </span>Transition State Theory<a class="headerlink" href="#transition-state-theory" title="Permalink to this headline">#</a></h2>
+<p>Any chemical reaction is nothing but a mere rearrangement of nuclei, and
+all the possible ways the nuclei could rearrange span a plethora of
+possible paths. Hence, there are usually many paths on the potential
+energy surface (PES) that connect reactants and products, and depending
+on the energy of the system, more or less of these paths will be
+accessible for the chemical transformation. Finding all of these paths
+is a daunting task, as all the involved degrees of freedom have to be
+mapped out of the full PES onto a reduced - but still multidimensional -
+PES. The study of these <em>rare events</em> using various mapping techniques
+is an involved subject; various elaborate techniques exist for
+elucidating possible paths. They are, however, often linked to
+computationally expensive molecular dynamics simulations (MD) and are
+more concerned with studying the free energy surface (FES; including
+entropic effects) rather than just the PES. For the study of the latter,
+simpler models exist, often yielding a qualitatively sufficient picture
+to explain many chemical transformations.</p>
 </section>
-<section id="plot-the-minium-energy-path">
-<h2><span class="section-number">9.6.3. </span>Plot the minium energy path<a class="headerlink" href="#plot-the-minium-energy-path" title="Permalink to this headline">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span>  <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">energies</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Pot Energy (kcal mol$^{-1}$)&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 7</p>
-<p>Take a screenshot of the graph of the potential energy profile you
-recorded.
-Why is the barrier for the epoxide formation so low? Will this be
-the overall barrier for the reaction as depicted in the previous section?</p>
-</div>
+<section id="a-minimum-potential-energy-path">
+<h2><span class="section-number">9.1.3. </span>A Minimum (Potential) Energy Path<a class="headerlink" href="#a-minimum-potential-energy-path" title="Permalink to this headline">#</a></h2>
+<figure class="align-default" id="pes-extended">
+<img alt="../../_images/PES_extended.png" src="../../_images/PES_extended.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 9.2 </span><span class="caption-text">Visualisation of transition state theory in a ficticious 2D PES. Dark
+areas correspond to high-energy regions, whereas brightly coloured areas
+correspond to energetically lower lying states. Reactants and products
+are connected through a minimum energy path via a first-order saddle
+point, the transition state.</span><a class="headerlink" href="#pes-extended" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The fundamental concepts that greatly simplify the problem of finding
+reactive pathways on the PES were introduced as early as the nineteenth
+century, and in the 1930ies, their development culminated in a model
+called <em>Transition State Theory</em>. Assuming that the most likely path is
+also the unique path by which a reaction proceeds, one searches for the
+<em>minimum energy path</em> connecting reactants and products along the
+reaction coordinate. The energetically highest point along this path is
+a stationary point, the <em>transition state</em> (<em>cf.</em> figure 2). There is a
+striking analogy with lazy hikers that want to get from one valley to
+another: They will not choose the steepest path across a peak of 4000 m
+altitude, but they will rather choose a mountain pass (a <em>col</em>) to reach
+their destination with least effort. The villages in the valleys
+correspond to reactant and product states: In all directions, the path
+goes uphill.<br />
+It is straightforward to see from this analogy that the transition state
+is given by a <em>first order saddle point</em>. Along all possible coordinates
+except the reaction coordinate, the potential energy surface goes
+uphill; along the reaction coordinate, it goes downhill. This implies
+that the transition state is the highest energy point <em>along</em> the
+reaction coordinate, but the lowest energy point <em>perpendicular</em> to the
+reaction coordinate. This gives raise to the typical transition state
+diagrams that are frequently used to describe simple reactions in
+organic chemistry.</p>
 </section>
-<section id="analyse-bonds">
-<h2><span class="section-number">9.6.4. </span>Analyse Bonds<a class="headerlink" href="#analyse-bonds" title="Permalink to this headline">#</a></h2>
-<p>For the visualization we used a list of xyz file formated strings.
-For the analysis it is more convenient to work with a list of numpy arrays.</p>
-<p>Let’s have a look at different bond distances involving different atoms in the molecule.</p>
-<p>We can fist have a look at the first and last conformations, which correspond to the starting and ending point of the IRC that we performed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">traj</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">traj</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traj_array</span> <span class="o">=</span> <span class="n">traj_backward_np</span> <span class="o">+</span> <span class="n">traj_forward_np</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bond_length_XX</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">traj_array</span><span class="p">:</span>
-    <span class="c1"># collect bond length between atom 0 and 1 over the trajectory</span>
-    <span class="n">bond_length_XX</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coord</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise  9</p>
-<p>How do the C-Cl and the two relevant C-O bond lengths change during
-the trajectory? Does the C-C bond in the ring contract as the
-epoxide is formed? Show a graph depicting the evolution of these
-parameters as the reaction progresses.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="c1"># add a call to ax.plot for each distance that you want to plot </span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bond_length_XX</span><span class="p">)</span>
-
-<span class="c1"># add an entry to the list of labels for each distance that you want to plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;label&quot;</span><span class="p">])</span> 
-
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;bond [A]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 10</p>
-<p>What is happening to the methyl group as the reaction proceeds? Find
-a suitable parameter (angle, dihedral) to describe and characterise
-possible changes you observe, change the code below. Explain in your report what atoms you considered and take and include the evolutions of the chosen parameters during the IRC procedure.</p>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Modify the code below, chosing proper atoms to monitor the changes of the methyl group </span>
-<span class="n">methyl_angle</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">methyl_dihedral</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="k">for</span> <span class="n">coord</span> <span class="ow">in</span> <span class="n">traj_array</span><span class="p">:</span>
-    <span class="c1">#modify here</span>
-    <span class="n">methyl_angle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="c1">#], coord[#], coord[#])) </span>
-    <span class="n">methyl_dihedral</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_dihedral</span><span class="p">(</span><span class="n">coord</span><span class="p">[</span><span class="c1">#], coord[#], coord[#], coord[#])) </span>
-
-<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methyl_angle</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">methyl_dihedral</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s2">&quot;angle (#-#-#)&quot;</span><span class="p">,</span> <span class="s2">&quot;dihedral (#-#-#-#)&quot;</span><span class="p">])</span>
-        
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;IRC step&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;angle [deg]&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
+<section id="from-curvature-to-vibrational-frequencies-the-hessian">
+<h2><span class="section-number">9.1.4. </span>From Curvature to Vibrational Frequencies: The Hessian<a class="headerlink" href="#from-curvature-to-vibrational-frequencies-the-hessian" title="Permalink to this headline">#</a></h2>
+<p>(Local) Minima and saddle points of any order are all <em>stationary
+points</em>, stable points on the potential energy surface where the
+curvature is zero. This implies that the first derivative matrix of the
+nuclear coordinates vanishes at any stationary point. However, this
+information will not be sufficient to classify the nature of the
+stationary point. The matrix of second derivatives, the <em>Hessian</em>, has
+to be used instead. The Hessian matrix can be diagonalised, and the
+resulting eigenvalues contain the desired information on the stationary
+point: If all eigenvalues are negative, the corresponding geometry
+constitutes a local maximum; if they are all positive, the geometry
+corresponds to a local minimum. If positive and negative eigenvalues
+occur, one is dealing with an N<span class="math notranslate nohighlight">\(^{th}\)</span> order saddle point. The task of
+finding a transition state using the Hessian matrix of the system is
+therefore easy: One searches for the geometry that yields a Hessian with
+exactly one negative eigenvalue, <em>i.e.</em> a first-order saddle point - the
+transition state. (Similarly, the eigenvalue test can also be used to
+check whether a geometry optimisation has found a true minimum, or
+whether it is blocked in a flat region of the PES.)<br />
+The Hessian of the system contains further useful information. For
+instance, in the approximation of a <em>harmonic oscillator</em> in a quadratic
+potential, the vibrational eigenvalues are known:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+E_\nu = \left(\nu+\frac{1}{2}\right)\hbar\omega \quad ; \quad \omega = \sqrt{\frac{k}{m}},\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(k\)</span> is a force constant and <span class="math notranslate nohighlight">\(m\)</span> is the (reduced) mass of the
+oscillator. By locally approximating the PES to be harmonic, the
+(decoupled) vibrational frequencies for the corresponding geometries can
+be calculated from the Hessian matrix: It turns out that <span class="math notranslate nohighlight">\(k\)</span> is simply
+given by the eigenvalues of the Hessian evaluated in mass-weighted
+coordinates. For equilibrium geometries with positive Hessian
+eigenvalues, the molecular vibrational frequencies <span class="math notranslate nohighlight">\(\omega\)</span> (as observed
+in IR spectroscopy) can easily be calculated, and the corresponding
+vibrational modes can be visualised. The possiblity of visualising the
+frequencies opens up a valuable tool in the transition state search: As
+a first order saddle point will have one negative eigenvalue, the
+corresponding frequency will be imaginary. By visualising this imaginary
+frequency, one can immediately verify whether one has found a TS of
+interest, or just another, non-relevant first-order saddle point on the
+TS: If the imaginary vibrational node corresponds to a motion that
+transfers reactants to products, the search was successful.</p>
 </section>
 </section>
 
@@ -856,16 +806,16 @@ possible changes you observe, change the code below. Explain in your report what
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "psi4"
+            mode: "iesm2"
         },
         kernelOptions: {
-            kernelName: "psi4",
-            path: "./Exercises/Ex8"
+            kernelName: "iesm2",
+            path: "./Exercises/Ex9"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'psi4'</script>
+    <script>kernelName = 'iesm2'</script>
 
               </div>
               
@@ -874,17 +824,17 @@ possible changes you observe, change the code below. Explain in your report what
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Forward.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="IESM_Ex9.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9.5. </span>Forward</p>
+            <p class="prev-next-title"><span class="section-number">9. </span>Finding Transition States and Barrier Heights: First Order Saddle Points</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../../Lecture/BasisFunctions.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex9.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Basis functions in quantum chemistry</p>
+        <p class="prev-next-title"><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

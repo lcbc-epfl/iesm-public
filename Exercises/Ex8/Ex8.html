@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.2. Locating Transition States: Constrained Optimisations &#8212; Introduction to Electronic Structure Methods</title>
+    <title>8.1. Potential Energy Scans and Visualisation of Trajectories &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,10 +52,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)" href="Backward.html" />
-    <link rel="prev" title="9.1. Theory" href="Ex8Theory.html" />
+    <link rel="next" title="9. Finding Transition States and Barrier Heights: First Order Saddle Points" href="../Ex9/IESM_Ex9.html" />
+    <link rel="prev" title="8. Potential Energy Scans and Visualisation of Trajectories" href="IESM_Ex8.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -265,19 +267,33 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   6. Density Functional Theory - Comparison with (Post) Hartree-Fock Methods
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="simple">
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
    7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
@@ -287,71 +303,71 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6.html">
+    <a class="reference internal" href="../Ex7/Ex7.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_Hard_Easy.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
      7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex6/Ex6_DFT_integration_grid.html">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
      7.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
-   8. Potential Energy Scans and Visualisation of Trajectories
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7.html">
-     8.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="IESM_Ex8.html">
-   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+   8. Potential Energy Scans and Visualisation of Trajectories
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex8Theory.html">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
      9.1. Theory
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
      9.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Backward.html">
+    <a class="reference internal" href="../Ex9/Backward.html">
      9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Forward.html">
+    <a class="reference internal" href="../Ex9/Forward.html">
      9.5. Forward
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="Visualize.html">
+    <a class="reference internal" href="../Ex9/Visualize.html">
      9.6. IRC analysis
     </a>
    </li>
@@ -586,19 +602,26 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-a-guess">
-   9.2.1. Constructing a Guess
+  <a class="reference internal nav-link" href="#scanning-a-potential-energy-surface-dihedral-scan-of-butane">
+   8.1.1. Scanning a Potential Energy Surface: Dihedral Scan of Butane
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constrained-optimization">
-   9.2.2. Constrained optimization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-the-transition-state">
-   9.2.3. Finding the Transition State
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starting-geometry">
+     8.1.1.1. Starting geometry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pes-scan">
+     8.1.1.2. PES scan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization-of-the-results">
+     8.1.1.3. Visualization of the Results
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -609,7 +632,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Locating Transition States: Constrained Optimisations</h1>
+                <h1>Potential Energy Scans and Visualisation of Trajectories</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -620,19 +643,26 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constructing-a-guess">
-   9.2.1. Constructing a Guess
+  <a class="reference internal nav-link" href="#scanning-a-potential-energy-surface-dihedral-scan-of-butane">
+   8.1.1. Scanning a Potential Energy Surface: Dihedral Scan of Butane
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#constrained-optimization">
-   9.2.2. Constrained optimization
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#finding-the-transition-state">
-   9.2.3. Finding the Transition State
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#starting-geometry">
+     8.1.1.1. Starting geometry
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pes-scan">
+     8.1.1.2. PES scan
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualization-of-the-results">
+     8.1.1.3. Visualization of the Results
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -644,66 +674,66 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="locating-transition-states-constrained-optimisations">
-<h1><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations<a class="headerlink" href="#locating-transition-states-constrained-optimisations" title="Permalink to this headline">#</a></h1>
-<p>Unlike a geometry optimisation, a transition state search requires more
-than just <em>some</em> guess. Finding the transition state from a reactant or
-a product structure will be computationally unfeasible, as those
-structures are given by local minima on the PES. Hence, all possible
-paths originating from these minima will go uphill (recall the
-mathematical definition of a minimum with respect to its derivatives),
-and it cannot be clear in advance which paths will actually connect
-reactants and products, or which path(s) will proceed <em>via</em> the lowest
-lying transition state. Instead, one needs a guess that is reasonably
-close to the real transition state, such that the <em>curvature</em> of the
-potential energy surface close to the TS is known, making it possible to
-proceed uphill along the reaction coordinate until the transition state
-is reached. The general procedure for a transition state search includes
-the construction of a guess geometry that should be reasonably close to
-the expected TS, followed by a <em>constrained optimisation</em> (<em>cf.</em> figure
-3).</p>
-<figure class="align-default" id="tssearch">
-<img alt="../../_images/miniumenergypath.png" src="../../_images/miniumenergypath.png" />
+  <section class="tex2jax_ignore mathjax_ignore" id="potential-energy-scans-and-visualisation-of-trajectories">
+<h1><span class="section-number">8.1. </span>Potential Energy Scans and Visualisation of Trajectories<a class="headerlink" href="#potential-energy-scans-and-visualisation-of-trajectories" title="Permalink to this headline">#</a></h1>
+<p>The range of problems that can be tackled with Psi4 or other electronic structure packages is not limited
+to wavefunction or geometry optimisations. We can use python to create complex inputs, adjusting various settings, or making specific modifications of
+some variables.</p>
+<p>In this set of exercises, you will instruct Psi4 to
+selectively scan one degree of freedom of a potential energy surface.</p>
+<section id="scanning-a-potential-energy-surface-dihedral-scan-of-butane">
+<h2><span class="section-number">8.1.1. </span>Scanning a Potential Energy Surface: Dihedral Scan of Butane<a class="headerlink" href="#scanning-a-potential-energy-surface-dihedral-scan-of-butane" title="Permalink to this headline">#</a></h2>
+<p>Potential energy surfaces (PES) are complex objects which are, in
+general, 3N-6 dimensional, where N is the number of atoms. Therefore, obtaining the complete topology of
+a PES is not feasible for most molecules. However, one may limit the
+sampling of the surface to a few degrees of freedom that are of interest
+and relevant to the problem under examination (<em>cf.</em> figure 1). Scans
+along limited degrees of freedom may be helpful if one needs information
+about various possible (local) minima, for example if (or whether) one
+is trapped in one of them. In practice, the degrees of freedom can be
+defined by a Z-matrix, such as the one that you have already been using
+in the previous exercises.</p>
+<figure class="align-default" id="pes">
+<img alt="../../_images/pesslize.jpg" src="../../_images/pesslize.jpg" />
 <figcaption>
-<p><span class="caption-number">Fig. 9.3 </span><span class="caption-text">Finding a transition state from an initial guess by performing a
-constrained optimisation followed by a TS
-search.</span><a class="headerlink" href="#tssearch" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 8.1 </span><span class="caption-text">Example of a 2D PES (right) and a 1D potential energy profile (left)
+obtained by considering only one degree of freedom.</span><a class="headerlink" href="#pes" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
-<p>In a constrained optimisation, all degrees of freedom which are not
-deemed relevant for the reaction are relaxed, whereas the relevant
-degree(s) of freedom is (are) kept fixed. After the optimisation, the
-curvature of the PES is evaluated at the chosen geometry (either
-analytically or numerically, <em>cf.</em> the following section). If the
-constrained degree(s) of freedom was (were) suitably chosen, the paths
-associated to the unconstrained N-1 degrees of freedom will go uphill in
-both directions, indicating that the corresponding structural parameters
-were properly relaxed. There should be one degree of freedom remaining
-that is associated to a path that goes downhill on one side and uphill
-on the other side: This will be the path that leads uphill to the
-transition state. As the associated degree of freedom is then known, the
-geometry can then be optimised to a transition state by selectively
-‘walking uphill’ along this specific path.</p>
-<section id="constructing-a-guess">
-<h2><span class="section-number">9.2.1. </span>Constructing a Guess<a class="headerlink" href="#constructing-a-guess" title="Permalink to this headline">#</a></h2>
-<p>You can find below the Z-matrix for the chloropropanoate (2-Chloro-1-propanol) already set, obtained using the Open Source Software <a class="reference external" href="https://avogadro.cc/">Avogadro</a>. We want to set the Z-matrix for the transition state editing this matrix. Correct the parameters adapting the conformation to be reasonably close to the transition state: for the TS, one expects that the C-Cl bond will already be elongated, whereas the oxygen atom will start to form the epoxide ring. Change the bond angle of the oxygen atom to something smaller than the original value, such as 80◦, and modify the bond length for the C-Cl bond to an elongated conformation, such as 2.40 Å. Moreover, you need to delete the hydrogen bond to the oxygen atom, and edit the Z-matrix accordingly.</p>
+<p>In a <em>relaxed PES scan</em>, all degrees of freedom that are not under
+consideration are optimised, and one obtains a minimum energy path along
+the chosen degree(s) of freedom. This implies that a constrained
+optimisation is carried out for each desired value of the degree of
+freedom that is being sampled.
+Instead, one may freeze the remaining degrees of
+freedom, keeping them fixed at their initial values, lowering the computational cost. This procedure is
+referred to as a <em>rigid PES scan</em>. For simple scans of bond angles or
+lengths in a pre-optimised structure, this is often sufficient (and more
+efficient).</p>
+<p>In this exercise, you will perform a relaxed potential energy
+scan of the dihedral in butane in order to determine the possible
+configurational minima, and the rotational barrier.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 <span class="kn">import</span> <span class="nn">py3Dmol</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
-<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
 
   Memory set to   1.863 GiB by Python driver.
@@ -713,102 +743,32 @@ geometry can then be optimised to a transition state by selectively
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Z-matrix for the chloropropanoate</span>
-<span class="n">chloropropanoate</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2"> symmetry c1</span>
-<span class="s2"> c</span>
-<span class="s2"> c    1 cc2</span>
-<span class="s2"> cl   1 clc3        2 clcc3</span>
-<span class="s2"> h    1 hc4         2 hcc4          3 dih4</span>
-<span class="s2"> c    1 cc5         2 ccc5          3 dih5</span>
-<span class="s2"> o    2 oc6         1 occ6          3 dih6</span>
-<span class="s2"> h    2 hc7         1 hcc7          6 dih7</span>
-<span class="s2"> h    2 hc8         1 hcc8          6 dih8</span>
-<span class="s2"> h    5 hc9         1 hcc9          2 dih9</span>
-<span class="s2"> h    5 hc10        1 hcc10         9 dih10</span>
-<span class="s2"> h    5 hc11        1 hcc11         9 dih11</span>
-<span class="s2"> h    6 ho          2 hoc2          1 dih12</span>
-<span class="s2"> </span>
-<span class="s2">cc2     =    1.500000</span>
-<span class="s2">clc3    =    1.790000 </span>
-<span class="s2">clcc3   =    109.471</span>
-<span class="s2">hc4     =    1.089000</span>
-<span class="s2">hcc4    =    109.471</span>
-<span class="s2">dih4    =    100.000</span>
-<span class="s2">cc5     =    1.500000</span>
-<span class="s2">ccc5    =    109.471</span>
-<span class="s2">dih5    =   -100.000</span>
-<span class="s2">oc6     =    1.430000</span>
-<span class="s2">occ6    =    110.600  </span>
-<span class="s2">dih6    =    180.000</span>
-<span class="s2">hc7     =    1.070000</span>
-<span class="s2">hcc7    =    109.471</span>
-<span class="s2">dih7    =    120.000</span>
-<span class="s2">hc8     =    1.070000</span>
-<span class="s2">hcc8    =    109.471</span>
-<span class="s2">dih8    =    240.000</span>
-<span class="s2">hc9     =    1.070000</span>
-<span class="s2">hcc9    =    109.471</span>
-<span class="s2">dih9    =    180.000</span>
-<span class="s2">hc10    =    1.070000</span>
-<span class="s2">hcc10   =    109.471</span>
-<span class="s2">dih10   =    120.000</span>
-<span class="s2">hc11    =    1.070000</span>
-<span class="s2">hcc11   =    109.471</span>
-<span class="s2">dih11   =    240.000</span>
-<span class="s2">ho      =    0.97       </span>
-<span class="s2">hoc2    =    109.471    </span>
-<span class="s2">dih12   =    180.0      </span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-
-<span class="c1">#Edit the Z-matrix to obtain the TS guess according to the requests above</span>
-<span class="n">ts_guess</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">0 1</span>
-<span class="s2"> symmetry c1</span>
-<span class="s2"> c</span>
-<span class="s2"> c    1 cc2</span>
-<span class="s2"> cl   1 clc3        2 clcc3</span>
-<span class="s2"> h    1 hc4         2 hcc4          3 dih4</span>
-<span class="s2"> c    1 cc5         2 ccc5          3 dih5</span>
-<span class="s2"> o    2 oc6         1 occ6          3 dih6</span>
-<span class="s2"> h    2 hc7         1 hcc7          6 dih7</span>
-<span class="s2"> h    2 hc8         1 hcc8          6 dih8</span>
-<span class="s2"> h    5 hc9         1 hcc9          2 dih9</span>
-<span class="s2"> h    5 hc10        1 hcc10         9 dih10</span>
-<span class="s2"> h    5 hc11        1 hcc11         9 dih11</span>
-<span class="s2"> h    6 ho          2 hoc2          1 dih12</span>
-<span class="s2"> </span>
-<span class="s2">cc2     =    1.500000</span>
-<span class="s2">clc3    =    1.790000 </span>
-<span class="s2">clcc3   =    109.471</span>
-<span class="s2">hc4     =    1.089000</span>
-<span class="s2">hcc4    =    109.471</span>
-<span class="s2">dih4    =    100.000</span>
-<span class="s2">cc5     =    1.500000</span>
-<span class="s2">ccc5    =    109.471</span>
-<span class="s2">dih5    =   -100.000</span>
-<span class="s2">oc6     =    1.430000</span>
-<span class="s2">occ6    =    110.600  </span>
-<span class="s2">dih6    =    180.000</span>
-<span class="s2">hc7     =    1.070000</span>
-<span class="s2">hcc7    =    109.471</span>
-<span class="s2">dih7    =    120.000</span>
-<span class="s2">hc8     =    1.070000</span>
-<span class="s2">hcc8    =    109.471</span>
-<span class="s2">dih8    =    240.000</span>
-<span class="s2">hc9     =    1.070000</span>
-<span class="s2">hcc9    =    109.471</span>
-<span class="s2">dih9    =    180.000</span>
-<span class="s2">hc10    =    1.070000</span>
-<span class="s2">hcc10   =    109.471</span>
-<span class="s2">dih10   =    120.000</span>
-<span class="s2">hc11    =    1.070000</span>
-<span class="s2">hcc11   =    109.471</span>
-<span class="s2">dih11   =    240.000</span>
-<span class="s2">ho      =    0.97       </span>
-<span class="s2">hoc2    =    109.471    </span>
-<span class="s2">dih12   =    180.0 </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="starting-geometry">
+<h3><span class="section-number">8.1.1.1. </span>Starting geometry<a class="headerlink" href="#starting-geometry" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">butane</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">C       </span>
+<span class="s2">C    1    1.450000</span>
+<span class="s2">C    1    1.450000      2  109.471000</span>
+<span class="s2">H    1 1.089         2 109.471000         3 120</span>
+<span class="s2">H    1 1.089        2 109.471000          3 -120</span>
+<span class="s2">C    2 1.45         1 109.471000         3 180</span>
+<span class="s2">H    2 1.089        1 109.471000        6 120</span>
+<span class="s2">H    2 1.089         1 109.471000          6 240</span>
+<span class="s2">H    3 1.089         1 109.471000          2 180</span>
+<span class="s2">H    3 1.089        1 109.471000         9 120</span>
+<span class="s2">H    3 1.089        1 109.471000         9 240</span>
+<span class="s2">H    6 1.089        2 109.471000         1 180</span>
+<span class="s2">H    6 1.089       2 109.471000        12 120</span>
+<span class="s2">H    6 1.089        2 109.471000        12 240</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -816,111 +776,289 @@ geometry can then be optimised to a transition state by selectively
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">chloropropanoate</span><span class="p">,</span> <span class="n">ts_guess</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ_labeled</span><span class="p">(</span><span class="n">butane</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16309159503493316"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309159503493316" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_16309159503493316 = null;
+var warn = document.getElementById("3dmolwarning_16309159503493316");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16309159503493316 = $3Dmol.createViewer($("#3dmolviewer_16309159503493316"),{backgroundColor:"white"});
+viewer_16309159503493316.zoomTo();
+	viewer_16309159503493316.addModel("14\n\n C    0.000000000000    0.773534000000    0.000000000000\n C    0.000000000000   -0.773534000000    0.000000000000\n C   -1.416736300374    1.389201068020    0.000000000000\n H    0.558366218163    1.136226796671    0.885329818893\n H    0.558366218163    1.136226796671   -0.885329818893\n C    1.416736300374   -1.389201068020    0.000000000000\n H   -0.558366218163   -1.136226796671    0.885329818893\n H   -0.558366218163   -1.136226796671   -0.885329818893\n H   -1.376626888385    2.493019581309    0.000000000000\n H   -1.990268077677    1.075434307189   -0.891478057070\n H   -1.990268077677    1.075434307189    0.891478057070\n H    1.376626888385   -2.493019581309    0.000000000000\n H    1.990268077677   -1.075434307189   -0.891478057070\n H    1.990268077677   -1.075434307189    0.891478057070\n","xyz");
+	viewer_16309159503493316.addLabel("0",{"position": {"x": 0.0, "y": 0.7735340000017686, "z": 0.0}, "inFront": true});
+	viewer_16309159503493316.addLabel("1",{"position": {"x": 0.0, "y": -0.7735340000017686, "z": 0.0}, "inFront": true});
+	viewer_16309159503493316.addLabel("2",{"position": {"x": -1.4167363003770228, "y": 1.3892010680230642, "z": 0.0}, "inFront": true});
+	viewer_16309159503493316.addLabel("3",{"position": {"x": 0.5583662181646449, "y": 1.1362267966736745, "z": 0.885329818894876}, "inFront": true});
+	viewer_16309159503493316.addLabel("4",{"position": {"x": 0.5583662181646449, "y": 1.1362267966736745, "z": -0.8853298188948759}, "inFront": true});
+	viewer_16309159503493316.addLabel("5",{"position": {"x": 1.4167363003770228, "y": -1.389201068023064, "z": 0.0}, "inFront": true});
+	viewer_16309159503493316.addLabel("6",{"position": {"x": -0.5583662181646449, "y": -1.1362267966736745, "z": 0.8853298188948759}, "inFront": true});
+	viewer_16309159503493316.addLabel("7",{"position": {"x": -0.5583662181646449, "y": -1.1362267966736745, "z": -0.8853298188948759}, "inFront": true});
+	viewer_16309159503493316.addLabel("8",{"position": {"x": -1.3766268883884514, "y": 2.4930195813143166, "z": 0.0}, "inFront": true});
+	viewer_16309159503493316.addLabel("9",{"position": {"x": -1.9902680776814123, "y": 1.075434307191404, "z": -0.8914780570719983}, "inFront": true});
+	viewer_16309159503493316.addLabel("10",{"position": {"x": -1.9902680776814121, "y": 1.075434307191404, "z": 0.8914780570719983}, "inFront": true});
+	viewer_16309159503493316.addLabel("11",{"position": {"x": 1.3766268883884514, "y": -2.4930195813143166, "z": 0.0}, "inFront": true});
+	viewer_16309159503493316.addLabel("12",{"position": {"x": 1.9902680776814123, "y": -1.075434307191404, "z": -0.8914780570719983}, "inFront": true});
+	viewer_16309159503493316.addLabel("13",{"position": {"x": 1.9902680776814123, "y": -1.075434307191404, "z": 0.8914780570719983}, "inFront": true});
+	viewer_16309159503493316.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309159503493316.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewer_16309159503493316.zoomTo();
+viewer_16309159503493316.render();
+});
+</script></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">butane</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16309146880341885"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16309146880341885" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+}
+
+var viewer_16309146880341885 = null;
+var warn = document.getElementById("3dmolwarning_16309146880341885");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16309146880341885 = $3Dmol.createViewer($("#3dmolviewer_16309146880341885"),{backgroundColor:"white"});
+viewer_16309146880341885.zoomTo();
+	viewer_16309146880341885.addModel("14\n\n C    0.000000000000    0.725000000000    0.000000000000\n C    0.000000000000   -0.725000000000    0.000000000000\n C   -1.367074971503    1.208328069007    0.000000000000\n H    0.513360222058    1.087996046309    0.889165987188\n H    0.513360222058    1.087996046309   -0.889165987188\n C    1.367074971503   -1.208328069007    0.000000000000\n H   -0.513360222058   -1.087996046309    0.889165987188\n H   -0.513360222058   -1.087996046309   -0.889165987188\n H   -1.367074971503    2.297328069007    0.000000000000\n H   -1.880429602190    0.845324115338   -0.889165987188\n H   -1.880429602190    0.845324115338    0.889165987188\n H    1.367074971503   -2.297328069007    0.000000000000\n H    1.880429602190   -0.845324115338   -0.889165987188\n H    1.880429602190   -0.845324115338    0.889165987188\n","xyz");
+	viewer_16309146880341885.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16309146880341885.zoomTo();
+viewer_16309146880341885.render();
+});
+</script></div></div>
+</div>
+</section>
+<section id="pes-scan">
+<h3><span class="section-number">8.1.1.2. </span>PES scan<a class="headerlink" href="#pes-scan" title="Permalink to this headline">#</a></h3>
+<p>Now that we had a look at the butane molecule, let’s perform the rigid PES scan. We will fix the dihedral angle at different values and do single point calculations.
+First, we need to optimize the the geometry provided above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_variables</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do Something HERE</span>
+<span class="c1"># optimize the butane molecule from the starting geometry provided</span>
+<span class="c1"># use the blyp method and the 6-31+G* basis set</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dihedrals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span> <span class="mi">37</span><span class="p">)</span> <span class="c1">#We set here the dihedrals that we are going to use for the scan</span>
+<span class="n">PES</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the optimized energy for each dihedral. This is a dictionary</span>
+<span class="n">geometries</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1">#Here we will store the optimized geometries. This is a list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">butane</span><span class="o">.</span><span class="n">print_in_input_format</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The geometry optimization will print you the optimized coordinates in the format you provided them at the end if you call <code class="docutils literal notranslate"><span class="pre">butane.print_in_input_format()</span></code>. Here, this is the z-matrix format. Use these coordinates below and create a python f-string where you replace the dihedral that we want to scan with a variable.</p>
+<p>Save the molecules in the <code class="docutils literal notranslate"><span class="pre">geometries</span></code> list (use <code class="docutils literal notranslate"><span class="pre">butane.clone()</span></code>) and save the calculated energies in the <code class="docutils literal notranslate"><span class="pre">PES</span></code> dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;output.dat&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do something HERE </span>
+<span class="c1">#for dihedral in dihedrals:</span>
+<span class="c1">#    print(f&quot;optimizing {dihedral}&quot;)</span>
+<span class="c1">#    butane = psi4.geometry(f&quot;&quot;&quot;  #you get this geometry from the print_in_input_format() command</span>
+<span class="c1">#    x i bond k angle j {dihedral} #this is the dihedral we want to optimize</span>
+<span class="c1">#    x i bond k angle j dihedral</span>
+<span class="c1">#    &quot;&quot;&quot;)</span>
+<span class="c1">#    E = .... # the energy should be calculated using the same method and basis set above</span>
+<span class="c1">#    PES[dihedral] =  set to energy just calculated</span>
+<span class="c1">#    geometries.append( insert clone of molecule here   )</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert the energy units to kcal/mol</span>
+<span class="c1"># you can use psi4.constants.hartree2kcalmol for the unit conversion </span>
+<span class="c1"># in python you can use list comprehensions e.g [x+1 for x in lst] will increase every value in lst by 1.</span>
+<span class="c1"># to access the values in the dictionary PES you can use PES.values() which return a list.</span>
+<span class="c1"># to construct the list comprehensions set energies equal to... .</span>
+<span class="c1"># [e*conversionfactor for e in list(insert the call to the list of PES values here)].</span>
+<span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1">#Rescale the energy scale by setting the minimum value as the zero of the scale</span>
+<span class="c1">#and change everything accordingly</span>
+<span class="c1"># the function np.min(lst) returns the lowest value of a list. </span>
+<span class="c1"># to use broadcasting you need to convert the list into a np.array by calling np.array(energies)</span>
+<span class="n">energies</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 180.,  170.,  160.,  150.,  140.,  130.,  120.,  110.,  100.,
+         90.,   80.,   70.,   60.,   50.,   40.,   30.,   20.,   10.,
+          0.,  -10.,  -20.,  -30.,  -40.,  -50.,  -60.,  -70.,  -80.,
+        -90., -100., -110., -120., -130., -140., -150., -160., -170.,
+       -180.])
+</pre></div>
+</div>
+</div>
+</div>
+<p>For relaxed scans you can use such a input structure. However, in the interest of time we perform a rigid scan here.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dihedral</span> <span class="ow">in</span> <span class="n">dihedrals</span><span class="p">:</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
+        <span class="s2">&quot;fixed_dihedral&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;4 2 1 3 </span><span class="si">{</span><span class="n">dihedral</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="c1">#This option specifies the dihedral angles between atoms to be fixed </span>
+    <span class="p">})</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;blyp/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">butane</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="visualization-of-the-results">
+<h3><span class="section-number">8.1.1.3. </span>Visualization of the Results<a class="headerlink" href="#visualization-of-the-results" title="Permalink to this headline">#</a></h3>
+<p>Now, let’s plot the PES at the different dihedral considered. You can use a little helper function which will read in the optimized geometries just calculated and the dihedrals and return the PES and the corresponding geometry at each dihedral value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">traj</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">()</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">geometries</span><span class="p">]</span>
+<span class="n">traj_arrays</span> <span class="o">=</span> <span class="p">[</span><span class="n">geom</span><span class="o">.</span><span class="n">to_arrays</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">geometries</span><span class="p">]</span>
+
+<span class="n">drawXYZGeomSliderMolecularProperty</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">dihedrals</span><span class="p">,</span> <span class="n">energies</span><span class="p">,</span> <span class="s1">&#39;dihedral&#39;</span><span class="p">)</span>
+<span class="c1"># for the slider to function properly you must have dihedral angles of exact integers. </span>
+<span class="c1"># If that is not the case, adjust the number of dihedrals to divide -180 to 180 degrees into even steps (including the zero value).</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "f3bc489d6be8430f9bb97e2328e1a27b", "version_major": 2, "version_minor": 0}
+</script></div>
+</div>
+<p>Now, we can monitor different quantities during the rigid PES scan, to understand how the different dihedrals affect the overall geometry. One example is the bond length between C atoms 1 and 2, the central atoms of the dihedral for which we performed the scan. Having a look at the fluctuations of this bond legth during the scan can be easily done using one of the helper functions, which will read the coordinates of the two atoms and calculate their distance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bond_length</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">geom</span> <span class="ow">in</span> <span class="n">traj_arrays</span><span class="p">:</span>
+    <span class="n">bond_length</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">geom</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">geom</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="c1">#Here the bond length is calculated and saved in the list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dihedrals</span><span class="p">,</span> <span class="n">bond_length</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;dihedral&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;bond [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">dihedrals</span><span class="p">,</span> <span class="n">bond_length</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;dihedral&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;bond [A]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Ex8_26_0.png" src="../../_images/Ex8_26_0.png" />
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Does the bond length of the <span class="math notranslate nohighlight">\(H_3CH_2C-CH_2CH_3\)</span> bond fluctuate as
+the dihedral is changed? Why (not)?</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 3</p>
-<p>Include a screenshot of the transition state in your report that you obtained and the corresponding Z-matrix for the transition state guess</p>
-</div>
-</section>
-<section id="constrained-optimization">
-<h2><span class="section-number">9.2.2. </span>Constrained optimization<a class="headerlink" href="#constrained-optimization" title="Permalink to this headline">#</a></h2>
-<p>We will first optimize our transition state guess keeping the C-Cl distance fixed.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts_guess_opt</span> <span class="o">=</span> <span class="n">ts_guess</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;poxide.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;frozen_distance&quot;</span><span class="p">:</span><span class="s2">&quot;1 3&quot;</span><span class="p">})</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts_guess_opt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">ts_guess</span><span class="p">,</span> <span class="n">ts_guess_opt</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="finding-the-transition-state">
-<h2><span class="section-number">9.2.3. </span>Finding the Transition State<a class="headerlink" href="#finding-the-transition-state" title="Permalink to this headline">#</a></h2>
-<p>Now that we have our  transition state guess optimized, we want to find out whether this guess is close to the transition state (meaning it has one imaginary frequency) and then optimize to the actual transition state.</p>
-<p>If we set <code class="docutils literal notranslate"><span class="pre">full_hess_every</span></code> to <code class="docutils literal notranslate"><span class="pre">0</span></code>, a frequency calculation will be performed at the begining (you could also do it seperately using <code class="docutils literal notranslate"><span class="pre">psi4.frequency([..])</span></code>. By setting <code class="docutils literal notranslate"><span class="pre">opt_type</span></code> to <code class="docutils literal notranslate"><span class="pre">ts</span></code> the optimization will try to find the 1st order saddlepoint that is the transition state.</p>
-<p>We will write the normal modes to a file for visualization.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">ts_guess_opt</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
-
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ts.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
-    <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span> 
-    <span class="s2">&quot;normal_modes_write&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span> <span class="c1">#0 compute the initial Hessian only</span>
-    <span class="p">})</span>
-
-<span class="n">E</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">)</span>
-
-
-<span class="c1">#print out TS in case something goes wrong</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">ts</span><span class="o">.</span><span class="n">save_string_xyz_file</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>We can also compare the TS with the guess to see how far we are.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">ts_guess_opt</span><span class="p">,</span> <span class="n">ts</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+<p>Create a potential energy profile along the dihedral by plotting the
+energies of the system as a function of the scanned dihedral angle as done above.
+Then, to each maximum and minimum, assign the corresponding
+conformation from your trajectory. Show these conformations in your
+report.
+Assign also names to the conformations according to the <em>Newman
+projections</em> you know from organic chemistry (where possible).</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 4</p>
-<p>Take a screenshot of the optimised transition state structure. How did the structure change with respect to the constrained-optimised guess?</p>
+<p>The rotational barrier of butane lies between 5 and 6 kcal
+mol<span class="math notranslate nohighlight">\(^{-1}\)</span> [^Murcko1996]. Compare this value with the one you calculated and explain possible sources of error, leading to higher or lower barriers.</p>
 </div>
-<p>We can now have a look at the normal model that we obtained, for that we need to first check how the file is named. Then you can visualize one normal mode at time.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how the file is named, this is a bash command</span>
-<span class="c1"># ls means list all the files in the current directory</span>
-<span class="c1"># -ltrh are flags that print output as a detailed list (-l) in reversed order(-r) by time (-t) with human readable units (-h)</span>
-<span class="o">!</span>ls -lrth ts.*.molden_normal_modes 
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># be sure to use the right file in the show_normal_modes</span>
-<span class="n">show_normal_modes</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">&#39;FILENAME.XX.molden_normal_modes&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 4</p>
-<p>Report the value of the negative frequency that you obtain.  What motion is this mode related to?
-What motions are associated with low and high vibrational frequencies? Choose two positive vibrational modes and desribe their particular associated motion.</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 5</p>
-<p>Is the transition state you predicted an early or a late transition state? What about the guess?</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 6</p>
-<p>Having found a transition state, how would you now obtain the barrier height for your reaction? Are there ways of verifying whether you have found a meaningful
-transition state? <strong>Bonus:</strong> How would you define ‘meaningful’ in
-this context?</p>
-</div>
+<p>[^Murcko1996] : Murcko M. A., Castejon H., Wiberg K.B., J. Phys. Chem., 1996, 100, 16162</p>
+</section>
 </section>
 </section>
 
@@ -951,17 +1089,17 @@ this context?</p>
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Ex8Theory.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="IESM_Ex8.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9.1. </span>Theory</p>
+            <p class="prev-next-title"><span class="section-number">8. </span>Potential Energy Scans and Visualisation of Trajectories</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Backward.html" title="next page">
+    <a class='right-next' id="next-link" href="../Ex9/IESM_Ex9.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>Finding Transition States and Barrier Heights: First Order Saddle Points</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

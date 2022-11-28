@@ -1,0 +1,1131 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>6.2. Geometric properties: NO\(_3\cdot\) radical &#8212; Introduction to Electronic Structure Methods</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7. Troubleshooting, Pitfalls, Traps" href="../Ex7/IESM_Ex7.html" />
+    <link rel="prev" title="6.1. Methylcyclohexane A-value" href="Ex6_aval.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction to Electronic Structure Methods
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_LinearAlgebra.html">
+     1.1. Review of Linear Algebra Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_QM.html">
+     1.2. Basic Concepts in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_Numpy.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
+   2. First steps in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_theory.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
+     2.2. The Hydrogen Atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
+     2.3. A more complex system: H
+     <span class="math notranslate nohighlight">
+      \(_{2}\)
+     </span>
+     O
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_H2molecule.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_Dissociation.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex4/IESM_Ex4b.html">
+   4. The hartree fock procedure in detail
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF.html">
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex5MP/IESM_Ex5.html">
+   5. Post-Hartree Fock Methods: CI and MPn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5Theory.html">
+     5.1. Post-Hartree Fock Methods: Theory Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_Boron.html">
+     5.2. Recovering Correlation Energy: B atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_BDE.html">
+     5.3. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_HNO3.html">
+     5.4. Influence of correlation on geometry: HNO
+     <span class="math notranslate nohighlight">
+      \(_3\)
+     </span>
+     molecule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   8. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8.html">
+     8.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
+     9.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
+     9.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Backward.html">
+     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Forward.html">
+     9.5. Forward
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Visualize.html">
+     9.6. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/BasisFunctions.html">
+   Basis functions in quantum chemistry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/CC.html">
+   Coupled cluster
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/FAQ.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex6/Ex6_geo.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex6/Ex6_geo.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Exercises/Ex6/Ex6_geo.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structural-parameters-of-no-3-cdot-performance-of-dft-hf-and-mp2">
+   6.2.1. Structural Parameters of NO
+   <span class="math notranslate nohighlight">
+    \(_3\cdot\)
+   </span>
+   : Performance of DFT, HF and MP2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hf">
+     6.2.1.1. HF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mp2">
+     6.2.1.2. MP2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geometrical-parameters">
+     6.2.1.3. Geometrical parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-orbitals">
+     6.2.1.4. Visualizing the orbitals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dft">
+     6.2.1.5. DFT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results-comparison">
+   6.2.2. Results comparison
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Geometric properties:  NO_3\cdot radical</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#structural-parameters-of-no-3-cdot-performance-of-dft-hf-and-mp2">
+   6.2.1. Structural Parameters of NO
+   <span class="math notranslate nohighlight">
+    \(_3\cdot\)
+   </span>
+   : Performance of DFT, HF and MP2
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hf">
+     6.2.1.1. HF
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mp2">
+     6.2.1.2. MP2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geometrical-parameters">
+     6.2.1.3. Geometrical parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#visualizing-the-orbitals">
+     6.2.1.4. Visualizing the orbitals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dft">
+     6.2.1.5. DFT
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results-comparison">
+   6.2.2. Results comparison
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="geometric-properties-no-3-cdot-radical">
+<h1><span class="section-number">6.2. </span>Geometric properties:  NO<span class="math notranslate nohighlight">\(_3\cdot\)</span> radical<a class="headerlink" href="#geometric-properties-no-3-cdot-radical" title="Permalink to this headline">#</a></h1>
+<p>In this set of exercises, you will assess the performance of various
+state-of-the-art density functionals in the prediction of geometric
+properties, and you will again compare your results to both wavefunction
+theory and experimental data.</p>
+<section id="structural-parameters-of-no-3-cdot-performance-of-dft-hf-and-mp2">
+<h2><span class="section-number">6.2.1. </span>Structural Parameters of NO<span class="math notranslate nohighlight">\(_3\cdot\)</span>: Performance of DFT, HF and MP2<a class="headerlink" href="#structural-parameters-of-no-3-cdot-performance-of-dft-hf-and-mp2" title="Permalink to this headline">#</a></h2>
+<p>Before diving into the theoretical aspects of exchange-correlation
+functionals, you will put a representative selection of functionals to
+good use in a notoriously tricky system, the NO<span class="math notranslate nohighlight">\(_3\cdot\)</span> radical.
+Nitrite radicals are highly reactive species that are rapidly destroyed
+by sunlight, but as the sun sets, they start to play an important role
+in chemical transformations (in what is called the night-time chemistry
+of the atmosphere). [Ref: <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2014/cp/c4cp02792b"><em>Phys. Chem. Chem. Phys.</em>, <strong>2014</strong>, 16, <em>19437-19445</em></a>]</p>
+<p>There exist various experimental and theoretical
+studies of NO<span class="math notranslate nohighlight">\(_3\cdot\)</span> , with the experiment indicating a fully symmetric D<span class="math notranslate nohighlight">\(_3^h\)</span>
+structure with equal N-O bond lengths of 1.24 Å and O-N-O bond angles of
+120<span class="math notranslate nohighlight">\(^\circ\)</span>.</p>
+<p>In this exercise, you will be comparing the performance of
+various DFT exchange-correlation functionals, Hartree-Fock theory and
+MP2 in predicting these structural parameters.</p>
+<p>First, we’ll import the required modules and set Psi4 parameters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+
+  Memory set to   1.863 GiB by Python driver.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is our starting geometry.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">radical</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">symmetry c1</span>
+<span class="s2">0 2</span>
+<span class="s2"> N     0.000000     0.000000     0.000000</span>
+<span class="s2"> O     1.400000     0.000000     0.000000</span>
+<span class="s2"> O    -1.000000     1.000000     0.000000</span>
+<span class="s2"> O    -1.000000    -1.000000     0.000000</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16696478703548574"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16696478703548574" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+}
+
+var viewer_16696478703548574 = null;
+var warn = document.getElementById("3dmolwarning_16696478703548574");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16696478703548574 = $3Dmol.createViewer($("#3dmolviewer_16696478703548574"),{backgroundColor:"white"});
+viewer_16696478703548574.zoomTo();
+	viewer_16696478703548574.addModel("4\n\n N    0.000000000000   -0.000000000000    0.154819916277\n O    0.000000000000   -0.000000000000    1.554819916277\n O    0.000000000000   -1.000000000000   -0.845180083723\n O    0.000000000000    1.000000000000   -0.845180083723\n","xyz");
+	viewer_16696478703548574.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16696478703548574.zoomTo();
+viewer_16696478703548574.render();
+});
+</script></div></div>
+</div>
+<p>We will perform calculations at HF, MP2 and DFT level. We will also visualize MP2 and DFT orbitals and compare them (see <strong>Visualizing the orbitals</strong> subsections of <strong>MP2</strong> and <strong>DFT</strong> sections).</p>
+<section id="hf">
+<h3><span class="section-number">6.2.1.1. </span>HF<a class="headerlink" href="#hf" title="Permalink to this headline">#</a></h3>
+<p>First, we’ll do a Hartree Fock calculation. As this is a difficult system we make use of a second order SCF (SOSCF) convergence method implemented in Psi4.</p>
+<p>SOSCF makes use of the fact that the energy that we want to minimize in the SCF calculation has a gradient (and a hessian) both with respect to geometry changes and orbital changes.
+In a standard SCF calculation as you get close to convergence the orbital changes will be very small.  When using SOSCF, Psi4 uses the orbital hessian to make the next orbital step when performing the SCF calculation. In the code, the energy is written as a taylor expansion of orbitals and truncated for all terms higher than second order. This helps in converging tricky systems but requires that one is already close to a minimum. So by setting <code class="docutils literal notranslate"><span class="pre">soscf</span></code> to <code class="docutils literal notranslate"><span class="pre">true</span></code> by default the soscf procedure is switched on when the gradient RMS is below <span class="math notranslate nohighlight">\(1.0 \times 10^{-2}\)</span>. By specifying <code class="docutils literal notranslate"><span class="pre">soscf_max_iter</span></code> we increase the number of SOSCF steps from the default of 5 to 20.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;hf&quot;</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;radical_opt_</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s1">.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">,</span><span class="s1">&#39;guess&#39;</span><span class="p">:</span><span class="s1">&#39;gwh&#39;</span><span class="p">,</span> <span class="s1">&#39;soscf&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;soscf_max_iter&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;maxiter&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">})</span>
+<span class="n">E_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;hf/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">radical</span><span class="p">)</span>
+<span class="n">E_hf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mp2">
+<h3><span class="section-number">6.2.1.2. </span>MP2<a class="headerlink" href="#mp2" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">method</span> <span class="o">=</span> <span class="s2">&quot;mp2&quot;</span>
+
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;radical_opt_</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s1">.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">,</span><span class="s1">&#39;guess&#39;</span><span class="p">:</span><span class="s1">&#39;read&#39;</span><span class="p">,</span> <span class="s1">&#39;mp2_type&#39;</span><span class="p">:</span><span class="s1">&#39;conv&#39;</span><span class="p">,</span> <span class="s1">&#39;maxiter&#39;</span><span class="p">:</span><span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;soscf&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;soscf_max_iter&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">})</span>
+<span class="n">E_mp2</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s1">/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">radical</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">E_mp2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="geometrical-parameters">
+<h3><span class="section-number">6.2.1.3. </span>Geometrical parameters<a class="headerlink" href="#geometrical-parameters" title="Permalink to this headline">#</a></h3>
+<p>Let’s have a look at the geomtrical paramters predicted by MP2 calculation. The following cell uses the <code class="docutils literal notranslate"><span class="pre">calculate_bond</span></code> and <code class="docutils literal notranslate"><span class="pre">calculate_angle</span></code> helper functions for that. The atom numbering can be checked with another helper function, <code class="docutils literal notranslate"><span class="pre">drawXYZ_labeled</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert molecule coordinates to numpy array</span>
+<span class="n">r_numpy</span> <span class="o">=</span> <span class="n">radical</span><span class="o">.</span><span class="n">to_arrays</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">hartree2A</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;MP2 values&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r1: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r2: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r3: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O-N-O angle: </span><span class="si">{</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O-N-O angle: </span><span class="si">{</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ_labeled</span><span class="p">(</span><span class="n">radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16696487402565973"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16696487402565973" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+}
+
+var viewer_16696487402565973 = null;
+var warn = document.getElementById("3dmolwarning_16696487402565973");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16696487402565973 = $3Dmol.createViewer($("#3dmolviewer_16696487402565973"),{backgroundColor:"white"});
+viewer_16696487402565973.zoomTo();
+	viewer_16696487402565973.addModel("4\n\n N   -0.000000000523    0.000000000000    0.107190999173\n O   -0.000000000002    0.000000000000   -1.281165577292\n O    1.116078441703    0.000000000000    0.593661514904\n O   -1.116078441244    0.000000000000    0.593661517446\n","xyz");
+	viewer_16696487402565973.addLabel("0",{"position": {"x": -5.233422280271299e-10, "y": 0.0, "z": 0.10719099917342248}, "inFront": true});
+	viewer_16696487402565973.addLabel("1",{"position": {"x": -1.66770949868278e-12, "y": 0.0, "z": -1.281165577294602}, "inFront": true});
+	viewer_16696487402565973.addLabel("2",{"position": {"x": 1.116078441706032, "y": 0.0, "z": 0.5936615149050014}, "inFront": true});
+	viewer_16696487402565973.addLabel("3",{"position": {"x": -1.1160784412461937, "y": 0.0, "z": 0.5936615174473645}, "inFront": true});
+	viewer_16696487402565973.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16696487402565973.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewer_16696487402565973.zoomTo();
+viewer_16696487402565973.render();
+});
+</script></div></div>
+</div>
+</section>
+<section id="visualizing-the-orbitals">
+<h3><span class="section-number">6.2.1.4. </span>Visualizing the orbitals<a class="headerlink" href="#visualizing-the-orbitals" title="Permalink to this headline">#</a></h3>
+<p>In order to assess the reliability of an electronic structure
+calculation, it is usually not sufficient to simply glance at the
+optimised structure and energies. One should as well examine the
+orbitals. This is also valid for DFT: Although the Kohn-Sham orbitals
+lack, in a strict sense, any physical interpretation, experience shows
+that they are <em>very close</em> to wavefunction-based single particle
+orbitals. Thus, the DFT Kohn-Sham orbitals provide a
+useful interpretative tool to visualise changes in the electronic
+structure between different species (or in a chemical transformation),
+but one should bear in mind that they have to be interpreted with care.</p>
+<p>In Psi4 we will use the <code class="docutils literal notranslate"><span class="pre">frontier_orbitals</span></code> setting, which produces <code class="docutils literal notranslate"><span class="pre">cube</span></code> representations of the frontier molecular orbitals. For closed shell species, the highest occupied (HOMO) and the lowest unoccupied (LUMO) alpha orbitals (ie. <span class="math notranslate nohighlight">\(\psi_\alpha(r)\)</span>) are printed, while for open shell species a total of (<span class="math notranslate nohighlight">\(4+M_s\)</span>) orbitals are printed (<span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> spin for both lowest virtual (LVMO) and highest doubly occupied orbitals (DOMO), along with all singly occupied (SOMO) orbitals).
+The plot below will print <span class="math notranslate nohighlight">\(\alpha\)</span> spin orbitals in red and <span class="math notranslate nohighlight">\(\beta\)</span> spin orbitals in blue.</p>
+<p>Unfortuneately, there is a bug in psi4 1.4rc2 when printing cube files for MP2 wavefunctions. We therefore provide you with the necessary cube files which you can visualize using the commands <code class="docutils literal notranslate"><span class="pre">findCubeFiles(pathToDirectory)</span></code> and <code class="docutils literal notranslate"><span class="pre">showOrbitals(pathToDirectory)</span></code></p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">cubeprop</span></code> you can also acces the electron density (<code class="docutils literal notranslate"><span class="pre">density</span></code>), the basis functions (<code class="docutils literal notranslate"><span class="pre">basis_functions</span></code>), the electrostatic potential (<code class="docutils literal notranslate"><span class="pre">esp</span></code>) and the a descriptor calculated from the frontier orbitals which is <span class="math notranslate nohighlight">\(f^2(r) = \rho_{\text{LUMO}}(r) - \rho_{\text{HOMO}}(r)\)</span> (<code class="docutils literal notranslate"><span class="pre">dual_descriptor</span></code>). This descriptor is a good measure of nucleophilicity and electrophilicity and is like both Fukui functions combined.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;cubeprop_tasks&#39;</span><span class="p">:[</span><span class="s1">&#39;frontier_orbitals&#39;</span><span class="p">]})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">cubeprop</span><span class="p">(</span><span class="n">wfn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbitals</span> <span class="o">=</span> <span class="n">findCubeFiles</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">show_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="o">=</span><span class="n">radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="dft">
+<h3><span class="section-number">6.2.1.5. </span>DFT<a class="headerlink" href="#dft" title="Permalink to this headline">#</a></h3>
+<p>Run the same geometry optimization for two of the following density functionals: BLYP, BP86, PBE, B3LYP, B97-2, M06-L, M06-2X, TPSS, mPW1PW91, wb97x-d.</p>
+<p>For this small system, Hartree-Fock and MP2 were surprisingly fast; however, you may rest assured that for larger molecules and basis sets, all the DFT methods will outperform MP2 in computational efficiency, with some of them even beating Hartree-Fock</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;radical_opt_</span><span class="si">{</span><span class="n">method</span><span class="si">}</span><span class="s1">.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;&#39;</span><span class="p">})</span> <span class="c1"># Choose a reference here, for DFT it can be Unrestricted KS (uks), restricted (rks) or restricted open shell (roks)</span>
+<span class="n">E_dft</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;method/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">radical</span><span class="p">,</span> <span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert molecule coordinates to numpy array</span>
+<span class="n">r_numpy</span> <span class="o">=</span> <span class="n">radical</span><span class="o">.</span><span class="n">to_arrays</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">hartree2A</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;DFT: Method&#39;</span><span class="p">)</span> <span class="c1">#insert your method here (used just for printing)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r1: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r2: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r3: </span><span class="si">{</span><span class="n">calculate_bond</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O-N-O angle: </span><span class="si">{</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;O-N-O angle: </span><span class="si">{</span><span class="n">calculate_angle</span><span class="p">(</span><span class="n">r_numpy</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">r_numpy</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;cubeprop_tasks&#39;</span><span class="p">:[</span><span class="s1">&#39;frontier_orbitals&#39;</span><span class="p">]})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">cubeprop</span><span class="p">(</span><span class="n">wfn</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">orbitals</span> <span class="o">=</span> <span class="n">findCubeFiles</span><span class="p">()</span>
+<span class="n">show_orbitals</span><span class="p">(</span><span class="n">mol</span><span class="o">=</span><span class="n">radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="results-comparison">
+<h2><span class="section-number">6.2.2. </span>Results comparison<a class="headerlink" href="#results-comparison" title="Permalink to this headline">#</a></h2>
+<p>Now that you have performed the required calculations for HF, MP2 and (some) DFT case, let’s compare the performances of the different methods You can find a table with the experimental values for the different geometrical parameters below</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Method:</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\phi_1\)</span> [<span class="math notranslate nohighlight">\(^\circ\)</span>]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\phi_2\)</span> [<span class="math notranslate nohighlight">\(^\circ\)</span>]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathbf{r}_1 (O-N)\)</span> [Å]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathbf{r}_2 (O-N)\)</span> [Å]</p></th>
+<th class="head"><p><span class="math notranslate nohighlight">\(\mathbf{r}_3 (O-N)\)</span> [Å]</p></th>
+<th class="head"><p>Symmetry</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Exp.</p></td>
+<td><p>120</p></td>
+<td><p>120</p></td>
+<td><p>1.24</p></td>
+<td><p>1.24</p></td>
+<td><p>1.24</p></td>
+<td><p>D<span class="math notranslate nohighlight">\(_3^h\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 5</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Fill the above table with the results of your calculations. Compare the performance of the methods in predicting accurate
+structures.     Is there a trend relating the complexity of the exchange-correlation functional (LDA, GGA, hybrid, ...) to the quality of your results?
+
+**Bonus**: For the DFT methods, specify what approximations are
+used in the exchange functional (you may refer to {ref}`dfttheory`). 
+</pre></div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 6</p>
+<p>Take a screenshot of the MP2 and DFT SOMOs. How do the orbitals differ from each other? How does the symmetry of the SOMO relate to the predicted structure?</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 7</p>
+<p>Explain the difference between static and dynamic correlation. Relate this to the different results you obtained for the nitrate radical. What kind of correlation do HF, MP2 and DFT take into account?</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 8</p>
+<p>If you needed a highly accurate structure and energy for  NO<span class="math notranslate nohighlight">\(_3\cdot\)</span>, which method would you use? Why?</p>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "compchem"
+        },
+        kernelOptions: {
+            kernelName: "compchem",
+            path: "./Exercises/Ex6"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'compchem'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Ex6_aval.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">6.1. </span>Methylcyclohexane A-value</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../Ex7/IESM_Ex7.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Troubleshooting, Pitfalls, Traps</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+  
+    <div class="extra_footer">
+      <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
