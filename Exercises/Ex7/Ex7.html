@@ -705,7 +705,7 @@ title="Print to PDF"
 <section id="allyl-radical">
 <h2><span class="section-number">7.1.1. </span>Allyl radical<a class="headerlink" href="#allyl-radical" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 1</p>
 <p>Fix the error in the single-point wavefunction optimization for the allyl radical using the BLYP exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -789,7 +789,8 @@ fm: [2]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uks&#39;</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;allyl_radical.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uks&#39;</span><span class="p">})</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;blyp/3-21G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">allyl_radical</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -845,7 +846,7 @@ viewer_1626161323725347.render();
 <section id="copper-water-complex">
 <h2><span class="section-number">7.1.2. </span>Copper Water complex<a class="headerlink" href="#copper-water-complex" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 2</p>
 <p>Fix the error in the single-point wavefunction optimisation of the Cu[HO] aqua complex (as observed in the gas phase) using the PBE exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -916,7 +917,7 @@ viewer_16261614771358273.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;pbe/3-21G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">cu_h2o_2plus</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;copper_water.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;pbe/3-21G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">cu_h2o_2plus</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -992,7 +993,7 @@ viewer_16261614771358273.render();
 <section id="n2-geometry-optimization">
 <h2><span class="section-number">7.1.3. </span>N2 Geometry optimization<a class="headerlink" href="#n2-geometry-optimization" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 3</p>
 <p>Fix the error in the geometry optimisation of <span class="math notranslate nohighlight">\(N_2\)</span> using the BP86 exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -1008,7 +1009,9 @@ viewer_16261614771358273.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;BP86/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">n2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;n2_opt.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;BP86/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">n2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1022,7 +1025,7 @@ viewer_16261614771358273.render();
 <section id="o-single-point-optimization">
 <h2><span class="section-number">7.1.4. </span><span class="math notranslate nohighlight">\(^3 O\)</span> Single point optimization<a class="headerlink" href="#o-single-point-optimization" title="Permalink to this headline">#</a></h2>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 4</p>
 <p>Fix the error in the single point calculation of  <span class="math notranslate nohighlight">\(^3 O\)</span> using the B97-2 exchange-correlation functional.</p>
 </div>
 <div class="cell docutils container">
@@ -1045,7 +1048,8 @@ viewer_16261614771358273.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;b97-2/6-31+G*&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;o3_singlept.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;b97-2/6-31+G*&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

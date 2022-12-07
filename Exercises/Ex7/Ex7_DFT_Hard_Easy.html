@@ -710,26 +710,23 @@ A popular dispersion correction is DFT-D3 by Grimme and coworkers. Like other co
 <li><p>Interaction energy of two ethane molecules (taken from GMTKN55 database, -1.34 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span>)</p></li>
 <li><p>Energy difference between the staggered and eclipsed methanol conformations (taken from GMTKN55 database, -1.01 kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span>)</p></li>
 </ol>
-<p>Note, that one of the reactions is contained in the training data of one of the functionals that we will be using.</p>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>These exercises are based on  <span id="id1"></span>.</p>
-</aside>
+<p>Note, that one of the reactions is contained in the training data of one of the functionals that we will be using.<br />
+These exercises are based on Pierpaolo Morgante and Roberto Peverati’s 2020 Review: (<a class="reference external" href="https://doi.org/10.1002/qua.26332">https://doi.org/10.1002/qua.26332</a>).</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
-<p>Which of the reaction energies (i.e. the energy difference between product and reactants) do you think is most “difficult” to calculate? Rank them in order of increasing difficulty.</p>
+<p class="admonition-title">Exercise 5</p>
+<p>Which of the reaction energies (i.e. the energy difference between product and reactants) do you think is most “difficult” to calculate? Rank them in order of increasing difficulty and explain your choices.</p>
 <p>Difficult in this case refers to getting an accurate reaction energy with low absolute error to true energy (reference energy from the dataset). As chemical accuracy we usually use 1 kcal mol<span class="math notranslate nohighlight">\(^-1\)</span></p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise</p>
+<p class="admonition-title">Exercise 6</p>
 <p>Run the calculations below and check whether your assessment of the hard, medium and easy reactions is correct. Include the tables containing the calculated energies for the three problems in your report. Which functional do you think contained the reaction in its training data?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise</p>
+<p class="admonition-title">Bonus Exercise 7</p>
 <p>How could fortitous error cancellation help in getting good results when calculating reaction energies?</p>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Bonus Exercise</p>
+<p class="admonition-title">Exercise 8</p>
 <p>What is the impact of using the dispersion correction for the ethane complex? For what phenomena are such corrections relevant? Give a real world example system.</p>
 </div>
 <div class="cell docutils container">
@@ -796,6 +793,7 @@ A popular dispersion correction is DFT-D3 by Grimme and coworkers. Like other co
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span><span class="p">[</span> <span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;mn15&#39;</span><span class="p">,</span><span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;scan&#39;</span><span class="p">]</span> <span class="c1">#These are the methods that we are going to use</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the energies</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;dft_cao.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span>
     <span class="c1"># we clone all the molecules as we want to start the geometry optimization from the same starting structure</span>
@@ -937,6 +935,7 @@ viewergrid_16268584519424098[0][0].render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp-d3(bj)&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp-nl&#39;</span> <span class="p">,</span><span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;pbe-d3&#39;</span><span class="p">,</span> <span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;svwn&#39;</span><span class="p">]</span> <span class="c1">#These are the methods that we are going to compare</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the energies</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;dft_ethane.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span>
     <span class="c1"># we clone all the molecules as we want to start the geometry optimization from the same starting structure</span>
@@ -1066,6 +1065,7 @@ viewergrid_16268543724381888[0][0].render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">methods</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;pbe&#39;</span><span class="p">,</span> <span class="s1">&#39;b3lyp&#39;</span><span class="p">,</span> <span class="s1">&#39;mn15&#39;</span><span class="p">,</span><span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;scan&#39;</span><span class="p">]</span><span class="c1">#These are the methods that we are going to compare</span>
 <span class="n">energies</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1">#Here we will store the energies</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;dft_methanol.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">methods</span><span class="p">:</span> 
     <span class="c1"># we clone all the molecules as we want to start the geometry optimization from the same starting structure</span>
