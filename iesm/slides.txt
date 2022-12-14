@@ -1,0 +1,7 @@
+Ex1/Slides_Ex1_instructor.md
+Ex2/Slides_Ex2_instructor.md
+Ex3/Slides_Ex3_instructor.md
+Ex4/Slides_Ex4_instructor.md
+Ex5/Slides_Ex5_instructor.md
+Ex6/Slides_Ex6_instructor.md
+Ex7/Slides_Ex7_instructor.md
