@@ -25,4 +25,3 @@ target:
     - "iesm/Exercises/Ex*/*_instructor*"
     - "iesm/Exercises/*_instructor*"
     - "iesm/images/solution*"
-    - "iesm/Exercises/ExerciseSlides_instructor/"
