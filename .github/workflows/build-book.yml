@@ -32,7 +32,7 @@ jobs:
         jupyter-book build iesm
     - name: Move slides to publish dir
       run: | 
-        while read f;do mv "./iesm/Exercises/${f%}.pdf" "./iesm/_build/html/Exercises/${f%}.pdf"; done< ./iesm/slides.txt
+        while read f; do mv "./iesm/Exercises/${f%}.pdf" "./iesm/_build/html/Exercises/${f%}.pdf"; done< ./iesm/slides.txt
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1

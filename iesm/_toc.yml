@@ -38,17 +38,17 @@ parts:
       - file: Exercises/Ex7/Ex7.ipynb
       - file: Exercises/Ex7/Ex7_DFT_Hard_Easy.ipynb
       - file: Exercises/Ex7/Ex7_DFT_integration_grid.ipynb  
-    - file: Exercises/Ex8/IESM_Ex8.ipynb
-      sections:
-      - file: Exercises/Ex8/Ex8.ipynb  
     - file: Exercises/Ex9/IESM_Ex9.ipynb
       sections:
       - file: Exercises/Ex9/Ex9Theory.ipynb
       - file: Exercises/Ex9/Ex9.ipynb
       - file: Exercises/Ex9/Backward.ipynb
-      - file: Exercises/Ex9/Forward.ipynb
+      #- file: Exercises/Ex9/Forward.ipynb
       - file: Exercises/Ex9/Visualize.ipynb
-  - caption: Lecture
+   - file: Exercises/Ex8/IESM_Ex8.ipynb
+      sections:
+      - file: Exercises/Ex8/Ex8.ipynb  
+- caption: Lecture
     chapters:
     - file: Lecture/BasisFunctions.md
     - file: Lecture/CC.md
