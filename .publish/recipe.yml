@@ -1,0 +1,28 @@
+source:
+  copy_from:
+    - "README.md"
+    - "CITATION.cff"
+    - "LICENSE"
+    - ".gitignore"
+    - "build-book.yml"
+    - "requirements.txt"
+    - "iesm"
+    - ".publish"
+target:
+  repo: "lcbc-epfl/iesm-public"
+  maxsize_commit_MB: 1000
+  commit_message: "publish student version"
+  copy_to:
+    - "README.md"
+    - "CITATION.cff"
+    - "LICENSE"
+    - ".gitignore"
+    - ".github/workflows/build-book.yml"
+    - "requirements.txt"
+    - "iesm"
+    - ".publish"
+  remove_after_copy:
+    - "iesm/Exercises/Ex*/*_instructor*"
+    - "iesm/Exercises/*_instructor*"
+    - "iesm/images/solution*"
+    - "iesm/Exercises/ExerciseSlides_instructor/"

@@ -1,0 +1,174 @@
+\mode<presentation>
+\beamertemplatenavigationsymbolsempty
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\makeatletter
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+
+% Remove caption name in figures
+\usepackage{caption}
+\captionsetup[figure]{labelformat=empty}
+ 
+% palette colors
+\definecolor{palette_primary}{cmyk}{1,.25,0,.35}
+\definecolor{palette_secondary}{cmyk}{1,.25,0,.55}
+\definecolor{palette_tertiary}{cmyk}{1,.25,0,.75}
+\definecolor{link_color}{cmyk}{1,.25,0,.15}
+
+\hypersetup{colorlinks,linkcolor=,urlcolor=link_color}
+
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.3333333\paperwidth,ht=2.25ex,dp=1ex,center]{palette primary}%
+  \usebeamerfont{author in head/foot}\scalebox{.65}{\insertshortauthor}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{palette tertiary}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{palette secondary}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatother
+
+\setbeamertemplate{headline}{
+\ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \leavevmode%
+  \hbox{%
+ \begin{beamercolorbox}[wd=.85\paperwidth,ht=5ex,dp=1.125ex,leftskip=-2.3pt]{palette tertiary}%
+\insertnavigation{.85\paperwidth}\vspace{.01cm}
+    \end{beamercolorbox}%
+     \begin{beamercolorbox}[wd=.15\paperwidth,ht=5ex,dp=1.125ex]{palette tertiary}%
+\begin{center}
+	\includegraphics[width=.1\paperwidth]{/data/iesm/img_slides/logo.pdf}\hfill
+\end{center}
+%\begin{center}
+	%\vspace{-1.05cm}
+%\end{center}
+    \end{beamercolorbox}%
+}
+}
+
+\setbeamertemplate{frametitle}{
+\ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=5pt]{palette secondary}%
+   \insertframetitle
+    \end{beamercolorbox}%
+}
+}
+
+\setbeamertemplate{title page}{%
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true, shadow=true]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip1em\par
+    \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true]{author}
+    \usebeamerfont{author}\scalebox{.95}{\insertauthor}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=8pt,center,colsep=-4bp,rounded=true]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    {\usebeamercolor[fg]{titlegraphic}\begin{center}
+        \inserttitlegraphic
+    \end{center}}
+  \endgroup
+  \vfill
+}
+\makeatother
+
+
+\newenvironment{titleslideframe}{%
+\setbeamertemplate{frametitle}{
+\ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=5pt]{palette secondary}%
+   \insertframetitle
+    \end{beamercolorbox}%
+}
+}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{palette primary}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{palette tertiary}%
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{palette secondary}%
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamertemplate{headline}{
+\ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \leavevmode%
+  \hbox{%
+ \begin{beamercolorbox}[wd=.85\paperwidth,ht=5ex,dp=1.125ex,leftskip=-2.3pt]{palette tertiary}%
+\hfill
+    \end{beamercolorbox}%
+     \begin{beamercolorbox}[wd=.15\paperwidth,ht=5ex,dp=1.125ex]{palette tertiary}%
+\begin{center}
+	\includegraphics[width=.1\paperwidth]{../ExerciseSlides_instructor/fig/logo.pdf}\hfill
+\end{center}
+%\begin{center}
+%	\vspace{-1.05cm}
+%\end{center}
+    \end{beamercolorbox}%
+}
+}
+\begin{frame}
+}
+{
+\end{frame}
+}
+
+
+\setbeamertemplate{itemize items}[circle] %bullet points for itemize
+\renewcommand{\thefootnote}{\fnsymbol{footnote}} %symbols for footnotes
+
+\setbeamercolor{footline}{bg=palette_secondary}
+\setbeamercolor{frametitle}{bg=palette_secondary,fg=white}
+\setbeamerfont{frametitle}{size=\large}
+\setbeamertemplate{bibliography item}[text]
+\setbeamertemplate{caption}[numbered]
+
+\setbeamercolor{palette primary}{use=structure,fg=white,bg=palette_primary}
+\setbeamercolor{palette secondary}{use=structure,fg=white,bg=palette_secondary}
+\setbeamercolor{palette tertiary}{use=structure,fg=white,bg=palette_tertiary}
+\setbeamercolor{titlelike}{parent=palette primary}
+
+\setbeamercolor{fine separation line}{}
+\setbeamercolor{item projected}{fg=white}
+\setbeamercolor{palette sidebar primary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{palette sidebar secondary}{use=structure,fg=structure.fg}
+\setbeamercolor{palette sidebar tertiary}{use=normal text,fg=normal text.fg}
+\setbeamercolor{section in sidebar}{fg=brown}
+\setbeamercolor{section in sidebar shaded}{fg=grey}
+\setbeamercolor{separation line}{}
+\setbeamercolor{sidebar}{bg=palette_secondary}
+\setbeamercolor{sidebar}{parent=palette primary}
+\setbeamercolor{structure}{fg=palette_secondary}
+
+\setbeamercolor{section in head/foot}{fg=white}
+\setbeamercolor{subsection in head/foot}{fg=white}
+
+\mode
+<all>
