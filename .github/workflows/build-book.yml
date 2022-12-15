@@ -23,12 +23,16 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-
+    - name: convert md to slides
+      run: |
+        docker run -v $(pwd):/data --user $(id -u):$(id -g) pandoc/latex:2.9 sh -c 'while read f; do pandoc -t beamer /data/iesm/Exercises/"$f" -H /data/.publish/template.tex -o "/data/iesm/Exercises/${f%}.pdf"; done< iesm/slides.txt'
     # Build the book
     - name: Build the book
       run: |
         jupyter-book build iesm
-
+    - name: Move slides to publish dir
+      run: | 
+        while read f; mv "./iesm/Exercises/${f%}.pdf" "./iesm/_build/html/Exercises/${f%}.pdf"; done< ./iesm/slides.txt
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
       uses: peaceiris/actions-gh-pages@v3.6.1
