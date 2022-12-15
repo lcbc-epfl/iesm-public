@@ -320,8 +320,8 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
-   8. Potential Energy Scans and Visualisation of Trajectories
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   8. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -330,15 +330,30 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8.html">
-     8.1. Potential Energy Scans and Visualisation of Trajectories
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
+     8.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
+     8.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Backward.html">
+     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Visualize.html">
+     8.5. IRC analysis
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
-   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   9. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
   <label for="toctree-checkbox-9">
@@ -347,28 +362,8 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Ex9Theory.html">
-     9.1. Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Ex9.html">
-     9.2. Locating Transition States: Constrained Optimisations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Backward.html">
-     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Forward.html">
-     9.5. Forward
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Visualize.html">
-     9.6. IRC analysis
+    <a class="reference internal" href="../Ex8/Ex8.html">
+     9.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
@@ -1112,8 +1107,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-30567035-3fa8-4a58-87a6-e9dd44f939e4">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-30567035-3fa8-4a58-87a6-e9dd44f939e4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5571a79-fae7-44d2-ab41-564f8ebde4e3">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-e5571a79-fae7-44d2-ab41-564f8ebde4e3" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1145,8 +1140,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ff1a275d-2f07-4807-91fd-e247aba5b27a">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-ff1a275d-2f07-4807-91fd-e247aba5b27a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-71f171ee-f84e-4a87-8b40-71b5152d9088">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-71f171ee-f84e-4a87-8b40-71b5152d9088" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1157,8 +1152,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f232066b-0921-4a5e-bfc1-9c20a2872018">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-f232066b-0921-4a5e-bfc1-9c20a2872018" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5db767d-98cc-434a-b049-4125e43a687b">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-e5db767d-98cc-434a-b049-4125e43a687b" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>

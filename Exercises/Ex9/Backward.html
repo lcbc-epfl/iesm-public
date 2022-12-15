@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC) &#8212; Introduction to Electronic Structure Methods</title>
+    <title>8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC) &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="9.5. Forward" href="Forward.html" />
-    <link rel="prev" title="9.2. Locating Transition States: Constrained Optimisations" href="Ex9.html" />
+    <link rel="next" title="8.5. IRC analysis" href="Visualize.html" />
+    <link rel="prev" title="8.2. Locating Transition States: Constrained Optimisations" href="Ex9.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -317,56 +317,51 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
-   8. Potential Energy Scans and Visualisation of Trajectories
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex8/Ex8.html">
-     8.1. Potential Energy Scans and Visualisation of Trajectories
-    </a>
-   </li>
-  </ul>
- </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="IESM_Ex9.html">
-   9. Finding Transition States and Barrier Heights: First Order Saddle Points
+   8. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="Ex9Theory.html">
-     9.1. Theory
+     8.1. Theory
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex9.html">
-     9.2. Locating Transition States: Constrained Optimisations
+     8.2. Locating Transition States: Constrained Optimisations
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Forward.html">
-     9.5. Forward
+     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Visualize.html">
-     9.6. IRC analysis
+     8.5. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   9. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8.html">
+     9.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
@@ -601,12 +596,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+   8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choose-a-direction">
-   9.4. Choose a direction
+   8.4. Choose a direction
   </a>
  </li>
 </ul>
@@ -630,12 +625,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   9.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+   8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
   </a>
  </li>
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#choose-a-direction">
-   9.4. Choose a direction
+   8.4. Choose a direction
   </a>
  </li>
 </ul>
@@ -649,7 +644,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc">
-<h1><span class="section-number">9.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)<a class="headerlink" href="#recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">8.3. </span>Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)<a class="headerlink" href="#recording-a-potential-energy-profile-the-intrinsic-reaction-coordinate-irc" title="Permalink to this headline">#</a></h1>
 <p>A transition state search merely guarantees that one reaches a
 first-order saddle point on the PES; there is, however, no guarantee
 that it is really linked to the reactant and product. (For instance,
@@ -713,7 +708,7 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="choose-a-direction">
-<h1><span class="section-number">9.4. </span>Choose a direction<a class="headerlink" href="#choose-a-direction" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">8.4. </span>Choose a direction<a class="headerlink" href="#choose-a-direction" title="Permalink to this headline">#</a></h1>
 <p>Start from the TS that we optimized and run the IRC calculation in one direction.</p>
 <p>You can choose <code class="docutils literal notranslate"><span class="pre">forward</span></code> or <code class="docutils literal notranslate"><span class="pre">backward</span></code> for the <code class="docutils literal notranslate"><span class="pre">irc_direction</span></code></p>
 <div class="cell docutils container">
@@ -815,13 +810,13 @@ Optimizer: Optimization complete!
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">9.2. </span>Locating Transition States: Constrained Optimisations</p>
+            <p class="prev-next-title"><span class="section-number">8.2. </span>Locating Transition States: Constrained Optimisations</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Forward.html" title="next page">
+    <a class='right-next' id="next-link" href="Visualize.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">9.5. </span>Forward</p>
+        <p class="prev-next-title"><span class="section-number">8.5. </span>IRC analysis</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
