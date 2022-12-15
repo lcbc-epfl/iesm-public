@@ -25,7 +25,7 @@ In this set of exercises, we will learn how to traverse the potential energy lan
 
 # Intrinsic Reaction Path
 
-![](/data/iesm/images/minimumenergypath.png){width=75%}
+![](/data/iesm/images/miniumenergypath.png){width=75%}
 
 # Reaction
 * We look at the synthesis of propylene oxide
