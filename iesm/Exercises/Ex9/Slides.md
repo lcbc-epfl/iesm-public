@@ -15,7 +15,7 @@ Course Reminders:
 # Exercise 8 Finding transition states
 In this set of exercises, we will learn how to traverse the potential energy landscape in interesting directions toward transition states.
 
-![](/data/iesm/img_slides/Ex7/ex7_goals.png) 
+![](/data/iesm/img_slides/Ex9/learninggoals.png) 
 
 # Minimum Energy Path
 
