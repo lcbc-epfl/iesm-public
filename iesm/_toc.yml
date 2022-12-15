@@ -44,7 +44,7 @@ parts:
       - file: Exercises/Ex9/Ex9.ipynb
       - file: Exercises/Ex9/Backward.ipynb
       - file: Exercises/Ex9/Visualize.ipynb
-   - file: Exercises/Ex8/IESM_Ex8.ipynb
+    - file: Exercises/Ex8/IESM_Ex8.ipynb
       sections:
       - file: Exercises/Ex8/Ex8.ipynb  
 - caption: Lecture
