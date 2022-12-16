@@ -1,5 +1,5 @@
 ---
-title: Exercise Session 7
+title: Exercise Session 8
 subtitle: IESM Fall 2022-2023
 date: December 16, 2022
 author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
@@ -9,7 +9,10 @@ output: beamer_presentation
 # Course Reminders
 
 Course Reminders:
-* Exercises 8 and 9 will not have interviews and will have due date **31. January**. Plus, we only keep the best grades of 8 of 9 reports : )
+
+* Exercises 8 and 9 will not have interviews and will have due date **31. January**
+* Plus, we only keep the best grades of 8 of 9 reports : )
+* Feel free to contact us via email or forum for questions about Ex8 and Ex9 !
 
 
 # Exercise 8 Finding transition states
