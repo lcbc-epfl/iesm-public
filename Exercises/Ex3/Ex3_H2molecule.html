@@ -721,7 +721,7 @@ viewer_16661649220145373.render();
 <p>As the SCF procedure is iterative we can search for the word <code class="docutils literal notranslate"><span class="pre">iter</span></code> in the output. By including <code class="docutils literal notranslate"><span class="pre">-A</span> <span class="pre">1</span> <span class="pre">-B</span> <span class="pre">3</span></code> we get 1 line after the last find and 3 lines before the first find, which contain some helpful context to make sense of the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep -A <span class="m">1</span> -B <span class="m">3</span> iter <span class="m">6</span>-31G-output.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span>-B<span class="w"> </span><span class="m">3</span><span class="w"> </span>iter<span class="w"> </span><span class="m">6</span>-31G-output.log
 </pre></div>
 </div>
 </div>
@@ -798,7 +798,7 @@ viewer_16661649220145373.render();
             mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "compchem",
+            name: "compchem",
             path: "./Exercises/Ex3"
         },
         predefinedOutput: true

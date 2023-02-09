@@ -798,7 +798,7 @@ you should find the <code class="docutils literal notranslate"><span class="pre"
 <p>As example, you can use the command <code class="docutils literal notranslate"><span class="pre">head</span></code> followed by the name of the last <code class="docutils literal notranslate"><span class="pre">.log</span></code> file created (<code class="docutils literal notranslate"><span class="pre">6-31++G*-output.log</span></code>) to see the last lines of that file. By using the option <code class="docutils literal notranslate"><span class="pre">-20</span></code>, the last 20 lines will be printed (where you can use any number instad of 50). Make sure to specify the file name as <code class="docutils literal notranslate"><span class="pre">6-31++G\*\*-h2o-output.log</span></code>, where the <code class="docutils literal notranslate"><span class="pre">*</span></code>needs to be preceded by a <code class="docutils literal notranslate"><span class="pre">\</span></code> symbol. This is because otherwise in Linux syntax the <code class="docutils literal notranslate"><span class="pre">*</span></code> is a special character that will be interpreted as ‘zero or more characters’, i.e. by typing <code class="docutils literal notranslate"><span class="pre">6-31++G**-h2o-output.log</span></code> the system will look for all files which have zero or more characters between <code class="docutils literal notranslate"><span class="pre">6-31++G</span></code> and <code class="docutils literal notranslate"><span class="pre">-h2o-output.log</span></code>. However, in our case we want to use <code class="docutils literal notranslate"><span class="pre">*</span></code> as a proper character (which is the file name), that’s the reason of using <code class="docutils literal notranslate"><span class="pre">\*</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tail -20  <span class="m">6</span>-31++G<span class="se">\*\*</span>-h2o-output.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>tail<span class="w"> </span>-20<span class="w">  </span><span class="m">6</span>-31++G<span class="se">\*\*</span>-h2o-output.log
 </pre></div>
 </div>
 </div>
@@ -830,7 +830,7 @@ Total time:
 For example, considering again the last <code class="docutils literal notranslate"><span class="pre">.log</span></code> file created, it is possible to extract the final energy with the command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep <span class="s1">&#39;Final Energy&#39;</span> <span class="m">6</span>-31++G<span class="se">\*\*</span>-h2o-output.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span><span class="s1">&#39;Final Energy&#39;</span><span class="w"> </span><span class="m">6</span>-31++G<span class="se">\*\*</span>-h2o-output.log
 </pre></div>
 </div>
 </div>
@@ -863,7 +863,7 @@ Compare the number of cycles for the different basis sets.</p></li>
             mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "compchem",
+            name: "compchem",
             path: "./Exercises/Ex2"
         },
         predefinedOutput: true

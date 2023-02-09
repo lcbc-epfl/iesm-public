@@ -1107,8 +1107,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-11404f15-1d07-4852-a535-a6ab5d04c4d1">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-11404f15-1d07-4852-a535-a6ab5d04c4d1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-6e0534c9-e06b-4bd7-a097-0bdf00d87957">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-6e0534c9-e06b-4bd7-a097-0bdf00d87957" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -1140,8 +1140,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad8a1fb4-fb36-4d11-8c2d-f9bcf14723f4">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-ad8a1fb4-fb36-4d11-8c2d-f9bcf14723f4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e63b24ec-c953-4f54-97b1-ceb86187a425">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-e63b24ec-c953-4f54-97b1-ceb86187a425" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -1152,8 +1152,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-58287f2f-9696-4b8b-aff6-801e3766eb90">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-58287f2f-9696-4b8b-aff6-801e3766eb90" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b9a9410e-72a1-4fb2-bca9-e215f460bce6">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-b9a9410e-72a1-4fb2-bca9-e215f460bce6" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1443,7 +1443,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
     
     <span class="n">SCF_E</span> <span class="o">=</span> <span class="c1">#&lt;your formula here&gt;</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;SCF Iteration </span><span class="si">{</span><span class="n">scf_iter</span><span class="si">}</span><span class="s1">: Energy = </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1"> dE = </span><span class="si">{</span><span class="n">SCF_E</span> <span class="o">-</span> <span class="n">E_old</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s1">&#39;SCF Iteration </span><span class="si">{</span><span class="n">scf_iter</span><span class="si">}</span><span class="s1">: Energy = </span><span class="si">{</span><span class="n">SCF_E</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1"> dE = </span><span class="si">{</span><span class="n">SCF_E</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">E_old</span><span class="si">:</span><span class="s1">.8f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     
     <span class="c1"># Check to see if the energy is converged.  If it is break out of the loop.</span>
     <span class="c1"># If it is not, set the current energy E_old</span>
@@ -1500,7 +1500,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
             mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "psi4",
+            name: "psi4",
             path: "./Exercises/Ex4"
         },
         predefinedOutput: true

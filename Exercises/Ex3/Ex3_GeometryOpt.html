@@ -716,8 +716,8 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 <span class="c1"># Water Z-Matrix</span>
 <span class="n">h2o_suboptimal</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">O1</span>
-<span class="s2">H2 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"></span>
-<span class="s2">H3 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> 2 </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span><span class="s2"></span>
+<span class="s2">H2 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span>
+<span class="s2">H3 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> 2 </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 
 <span class="n">h2o_suboptimal_start</span> <span class="o">=</span> <span class="n">h2o_suboptimal</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="c1"># we store here the starting geometry for comparison</span>
@@ -804,7 +804,7 @@ viewergrid_1666338149900045[0][0].render();
 <p>Lets have a look at the output file and see what is happening. Lets grep again the <code class="docutils literal notranslate"><span class="pre">iter</span></code> keyword as before and also check the convergence of the geometry optimization using <code class="docutils literal notranslate"><span class="pre">Convergence</span> <span class="pre">Check</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep -A <span class="m">1</span> -B <span class="m">4</span> <span class="s1">&#39;@DF-UHF iter&#39;</span> h2o-opt.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span>-B<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s1">&#39;@DF-UHF iter&#39;</span><span class="w"> </span>h2o-opt.log
 </pre></div>
 </div>
 </div>
@@ -815,14 +815,14 @@ viewergrid_1666338149900045[0][0].render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep -A <span class="m">10</span> <span class="s1">&#39;Convergence Check&#39;</span> h2o-opt.log 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="s1">&#39;Convergence Check&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep -A <span class="m">17</span> <span class="s1">&#39;Optimization Summary&#39;</span> h2o-opt.log 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">17</span><span class="w"> </span><span class="s1">&#39;Optimization Summary&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -860,7 +860,7 @@ You can use the little helper function <code class="docutils literal notranslate
 <p>Let’s also extract the energies after each SCF cycle. We can use grep for this</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="o">!</span>grep -a <span class="s1">&#39;@DF-UHF Final Energy&#39;</span> h2o-opt.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span>-a<span class="w"> </span><span class="s1">&#39;@DF-UHF Final Energy&#39;</span><span class="w"> </span>h2o-opt.log
 <span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;  @DF-UHF Final Energy:   &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">geo_opt_energies</span><span class="p">]</span> <span class="c1"># this is some formatting to get the values from the text file</span>
 <span class="n">geo_opt_energies</span>
 </pre></div>
@@ -1055,7 +1055,7 @@ if (outputEl) {{
             mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "compchem",
+            name: "compchem",
             path: "./Exercises/Ex3"
         },
         predefinedOutput: true

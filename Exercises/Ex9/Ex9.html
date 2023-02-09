@@ -902,7 +902,7 @@ geometry can then be optimised to a transition state by selectively
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># check how the file is named, this is a bash command</span>
 <span class="c1"># ls means list all the files in the current directory</span>
 <span class="c1"># -ltrh are flags that print output as a detailed list (-l) in reversed order(-r) by time (-t) with human readable units (-h)</span>
-<span class="o">!</span>ls -lrth ts.*.molden_normal_modes 
+<span class="o">!</span>ls<span class="w"> </span>-lrth<span class="w"> </span>ts.*.molden_normal_modes<span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -945,7 +945,7 @@ this context?</p>
             mode: "psi4"
         },
         kernelOptions: {
-            kernelName: "psi4",
+            name: "psi4",
             path: "./Exercises/Ex9"
         },
         predefinedOutput: true
