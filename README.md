@@ -15,7 +15,7 @@ Over the years many people have contributed to this material:
 * Esra Bozkurt 
 * Nicholas Browning 
 * Thibaud von Erlach 
-* Franccois Mouvet
+* François Mouvet
 * Justin Villard
 * Simon Duerr
 * Andrea Levy
