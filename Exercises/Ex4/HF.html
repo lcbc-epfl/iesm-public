@@ -1,61 +1,50 @@
 
-
 <!DOCTYPE html>
 
-
-<html lang="en" >
-
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry &#8212; Introduction to Electronic Structure Methods</title>
-  
-  
-  
-  <script data-cfasync="false">
-    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
-  </script>
-  
+    
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
-  
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -65,87 +54,56 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Exercises/Ex4/HF';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="5. Post-Hartree Fock Methods: CI and MPn" href="../Ex5MP/IESM_Ex5.html" />
     <link rel="prev" title="4. The hartree fock procedure in detail" href="IESM_Ex4b.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="en"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
   </head>
-  
-  
-  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
 
-  
-  
-  <a class="skip-link" href="#main-content">Skip to main content</a>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
-  
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
-  
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
-<form class="bd-search d-flex align-items-center"
-      action="../../search.html"
-      method="get">
-  <i class="fa-solid fa-magnifying-glass"></i>
-  <input type="search"
-         class="form-control"
-         name="q"
-         id="search-input"
-         placeholder="Search this book..."
-         aria-label="Search this book..."
-         autocomplete="off"
-         autocorrect="off"
-         autocapitalize="off"
-         spellcheck="false"/>
-  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
-  
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
-  
-  <div class="bd-container">
-    <div class="bd-container__inner bd-page-width">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
-      <div class="bd-sidebar-primary bd-sidebar">
-        
-
-  
-  <div class="sidebar-header-items sidebar-primary__section">
-    
-    
-    
-    
-  </div>
-  
-    <div class="sidebar-primary-items__start sidebar-primary__section">
-        <div class="sidebar-primary-item">
-  
-
-<a class="navbar-brand logo" href="../../intro.html">
-  
-  
-  
-  
-  
-    <p class="title logo__title">Introduction to Electronic Structure Methods</p>
-  
-</a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item navbar-nav active">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -154,315 +112,631 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex1/IESM_Ex1.html">1. Linear Algebra in Quantum Mechanics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex1/Ex1_LinearAlgebra.html">1.1. Review of Linear Algebra Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex1/Ex1_QM.html">1.2. Basic Concepts in Quantum Mechanics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex1/Ex1_Numpy.html">1.3. Working with vectors using Numpy</a></li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_LinearAlgebra.html">
+     1.1. Review of Linear Algebra Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_QM.html">
+     1.2. Basic Concepts in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_Numpy.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
+   2. First steps in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_theory.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
+     2.2. The Hydrogen Atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
+     2.3. A more complex system: H
+     <span class="math notranslate nohighlight">
+      \(_{2}\)
+     </span>
+     O
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_H2molecule.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_Dissociation.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="IESM_Ex4b.html">
+   4. The hartree fock procedure in detail
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex5MP/IESM_Ex5.html">
+   5. Post-Hartree Fock Methods: CI and MPn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5Theory.html">
+     5.1. Post-Hartree Fock Methods: Theory Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_Boron.html">
+     5.2. Recovering Correlation Energy: B atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_BDE.html">
+     5.3. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5MP/Ex5_HNO3.html">
+     5.4. Influence of correlation on geometry: HNO
+     <span class="math notranslate nohighlight">
+      \(_3\)
+     </span>
+     molecule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex7/IESM_Ex7.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7.html">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   8. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
+     8.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
+     8.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Backward.html">
+     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Visualize.html">
+     8.5. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   9. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8.html">
+     9.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex2/IESM_Ex2.html">2. First steps in <em>Psi4</em></a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex2/Ex2_theory.html">2.1. Basis Sets - Defining Vector Spaces</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">2.2. The Hydrogen Atom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex2/Ex2_water-molecule.html">2.3. A more complex system: H<span class="math notranslate nohighlight">\(_{2}\)</span>O</a></li>
-
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex3/IESM_Ex3.html">3. Large Basis Sets, Dissociation Energy and Geometry Optimisation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex3/Ex3_H2molecule.html">3.1. Effects of Basis Set Size: The Molecular Case</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex3/Ex3_Dissociation.html">3.2. Recording a Dissociation Curve for H<span class="math notranslate nohighlight">\(_2\)</span>: RHF vs. UHF</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">3.3. Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
-</ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="IESM_Ex4b.html">4. The hartree fock procedure in detail</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex5MP/IESM_Ex5.html">5. Post-Hartree Fock Methods: CI and MPn</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex5MP/Ex5Theory.html">5.1. Post-Hartree Fock Methods: Theory Recap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex5MP/Ex5_Boron.html">5.2. Recovering Correlation Energy: B atom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex5MP/Ex5_BDE.html">5.3. Homolytic Cleavage of the C-F Bond</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex5MP/Ex5_HNO3.html">5.4. Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex6/IESM_Ex6.html">6. DFT vs (Post) HF Methods</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex6/Ex6_aval.html">6.1. Methylcyclohexane A-value</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex6/Ex6_geo.html">6.2. Geometric properties:  NO<span class="math notranslate nohighlight">\(_3\cdot\)</span> radical</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex7/IESM_Ex7.html">7. Troubleshooting, Pitfalls, Traps</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex7/Ex7.html">7.1. Fixing errors in the calculations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">7.2. Hard and easy cases for DFT</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">7.3. Integration grids</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex9/IESM_Ex9.html">8. Finding Transition States and Barrier Heights: First Order Saddle Points</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex9/Ex9Theory.html">8.1. Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex9/Ex9.html">8.2. Locating Transition States: Constrained Optimisations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Ex9/Backward.html">8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)</a></li>
-
-<li class="toctree-l2"><a class="reference internal" href="../Ex9/Visualize.html">8.5. IRC analysis</a></li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex8/IESM_Ex8.html">9. Potential Energy Scans and Visualisation of Trajectories</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex8/Ex8.html">9.1. Potential Energy Scans and Visualisation of Trajectories</a></li>
-</ul>
-</li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Lecture</span></p>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Lecture/BasisFunctions.html">Basis functions in quantum chemistry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lecture/CC.html">Coupled cluster</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Lecture/FAQ.html">FAQ</a></li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/BasisFunctions.html">
+   Basis functions in quantum chemistry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/CC.html">
+   Coupled cluster
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/FAQ.html">
+   FAQ
+  </a>
+ </li>
 </ul>
 
     </div>
 </nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
     </div>
-  
-  
-  <div class="sidebar-primary-items__end sidebar-primary__section">
-  </div>
-  
-  <div id="rtd-footer-container"></div>
+    <div id="rtd-footer-container"></div>
+</div>
 
 
-      </div>
-      
-      <main id="main-content" class="bd-main">
-        
-        
+          
 
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-
-          <div class="bd-content">
-            <div class="bd-article-container">
-              
-              <div class="bd-header-article">
-<div class="header-article-items header-article__inner">
-  
-    <div class="header-article-items__start">
-      
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <span class="fa-solid fa-bars"></span>
-</label></div>
-      
-    </div>
-  
-  
-    <div class="header-article-items__end">
-      
-        <div class="header-article-item">
-
-<div class="article-header-buttons">
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
 
 
 
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/HF.ipynb&branch=main" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch onJupyterHub"
-   data-bs-placement="left" data-bs-toggle="tooltip"
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/HF.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
   
     <img src="../../_static/images/logo_jupyterhub.svg">
   </span>
-<span class="btn__text-container">JupyterHub</span>
+<span class="headerbtn__text-container">JupyterHub</span>
 </a>
-</li>
+
+      </li>
       
-  </ul>
+    </ul>
+  </div>
 </div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/lcbc-epfl/iesm-public" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex4/HF.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-download-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
-    <i class="fas fa-download"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="../../_sources/Exercises/Ex4/HF.ipynb" target="_blank"
-   class="btn btn-sm btn-download-source-button dropdown-item"
-   title="Download source file"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="btn__text-container">.ipynb</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li>
-<button onclick="window.print()"
-  class="btn btn-sm btn-download-pdf-button dropdown-item"
-  title="Print to PDF"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="btn__text-container">.pdf</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
-  title="Fullscreen mode"
-  data-bs-placement="bottom" data-bs-toggle="tooltip"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
 >
   
 
-<span class="btn__icon-container">
+<span class="headerbtn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
   </button>
-`);
-</script>
-
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
-</div></div>
-      
-    </div>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
   
-</div>
-</div>
-              
-              
 
-<div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hartree-Fock Procedure for Approximate Quantum Chemistry</h1>
-    <!-- Table of contents -->
-    <div id="print-main-content">
-        <div id="jb-print-toc">
-            
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hartree-fock-procedure">4.1.1. The Hartree-Fock procedure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">4.1.2. Orthogonalizing the AO basis set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-the-overlap-integrals">4.1.3. IV. The overlap integrals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-overlap-matrix">4.1.4. Constructing the overlap matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-implicit-summation-notation">4.1.5. Einstein implicit summation notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">4.1.6. Gaussian atomic orbital basis set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-orthogonalization-matrix">4.1.7. An orthogonalization matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">4.1.8. The Fock Matrix Transformed to an Orthonormal Basis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">4.1.9. Initial guess for the Fock Matrix is the one electron Hamiltonian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-density-matrix">4.1.10. The Density Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">4.1.11. Coulomb and Exchange Integrals and the SCF Energy</a></li>
-</ul>
-            </nav>
-        </div>
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex4/HF.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Exercises/Ex4/HF.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
     </div>
 </div>
 
-              
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-hartree-fock-procedure">
+   4.1.1. The Hartree-Fock procedure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">
+   4.1.2. Orthogonalizing the AO basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iv-the-overlap-integrals">
+   4.1.3. IV. The overlap integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-the-overlap-matrix">
+   4.1.4. Constructing the overlap matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einstein-implicit-summation-notation">
+   4.1.5. Einstein implicit summation notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">
+   4.1.6. Gaussian atomic orbital basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-orthogonalization-matrix">
+   4.1.7. An orthogonalization matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">
+   4.1.8. The Fock Matrix Transformed to an Orthonormal Basis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
+   4.1.9. Initial guess for the Fock Matrix is the one electron Hamiltonian
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-density-matrix">
+   4.1.10. The Density Matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">
+   4.1.11. Coulomb and Exchange Integrals and the SCF Energy
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Hartree-Fock Procedure for Approximate Quantum Chemistry</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-hartree-fock-procedure">
+   4.1.1. The Hartree-Fock procedure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">
+   4.1.2. Orthogonalizing the AO basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iv-the-overlap-integrals">
+   4.1.3. IV. The overlap integrals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#constructing-the-overlap-matrix">
+   4.1.4. Constructing the overlap matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#einstein-implicit-summation-notation">
+   4.1.5. Einstein implicit summation notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">
+   4.1.6. Gaussian atomic orbital basis set
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-orthogonalization-matrix">
+   4.1.7. An orthogonalization matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">
+   4.1.8. The Fock Matrix Transformed to an Orthonormal Basis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
+   4.1.9. Initial guess for the Fock Matrix is the one electron Hamiltonian
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-density-matrix">
+   4.1.10. The Density Matrix
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">
+   4.1.11. Coulomb and Exchange Integrals and the SCF Energy
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
                 
-<div id="searchbox"></div>
-                <article class="bd-article" role="main">
-                  
+              <div>
+                
   <section id="hartree-fock-procedure-for-approximate-quantum-chemistry">
-<h1><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry<a class="headerlink" href="#hartree-fock-procedure-for-approximate-quantum-chemistry" title="Permalink to this heading">#</a></h1>
+<h1><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry<a class="headerlink" href="#hartree-fock-procedure-for-approximate-quantum-chemistry" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
@@ -480,7 +754,7 @@ document.write(`
 <p>To solve many-electron systems we need to use  Hartree-Fock molecular orbital theory. Just as a test case, let’s use Psi4 to compute the Hartree-Fock wavefunction and energy for the Hydrogen atom:</p>
 <p>In this lab activity, you will build and diagonalize the Fock matrix to determine the MO coefficients and energies for a molecule.  We will be using the functions of the Psi4 quantum chemistry software package to compute the integrals we need.  The following notebook will lead you through setting up your molecule, establishing the basis set, and forming and diagonalizing the Fock matrix.  Be sure to run each cell as your proceed through the notebook.</p>
 <section id="the-hartree-fock-procedure">
-<span id="hf"></span><h2><span class="section-number">4.1.1. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this heading">#</a></h2>
+<span id="hf"></span><h2><span class="section-number">4.1.1. </span>The Hartree-Fock procedure<a class="headerlink" href="#the-hartree-fock-procedure" title="Permalink to this headline">#</a></h2>
 <p>The Schrödinger equation has the structure of an eigenvalue equation</p>
 <div class="math notranslate nohighlight">
 \[
@@ -509,7 +783,7 @@ F = H + 2J - K
 <p>It can be helpful to look back at <span class="xref std std-ref">exercise1</span></p>
 </section>
 <section id="orthogonalizing-the-ao-basis-set">
-<h2><span class="section-number">4.1.2. </span>Orthogonalizing the AO basis set<a class="headerlink" href="#orthogonalizing-the-ao-basis-set" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.2. </span>Orthogonalizing the AO basis set<a class="headerlink" href="#orthogonalizing-the-ao-basis-set" title="Permalink to this headline">#</a></h2>
 <p>Use the two orthonormal basis vector that we defined in Exercise 1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +796,7 @@ F = H + 2J - K
 </div>
 </section>
 <section id="iv-the-overlap-integrals">
-<h2><span class="section-number">4.1.3. </span>IV. The overlap integrals<a class="headerlink" href="#iv-the-overlap-integrals" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.3. </span>IV. The overlap integrals<a class="headerlink" href="#iv-the-overlap-integrals" title="Permalink to this headline">#</a></h2>
 <p>For a set of basis functions, <span class="math notranslate nohighlight">\(\phi_i(\tau)\)</span>, where <span class="math notranslate nohighlight">\(\tau\)</span> is a shorthand for all the coordinates of all the particles, we can calculate the overlap integrals between the basis functions in the following way</p>
 <div class="math notranslate nohighlight">
 \[S_{ij}=\int {\rm d}\tau\; \phi_i^*(\tau)\phi_j(\tau).\]</div>
@@ -551,7 +825,7 @@ F = H + 2J - K
 </div>
 </section>
 <section id="constructing-the-overlap-matrix">
-<h2><span class="section-number">4.1.4. </span>Constructing the overlap matrix<a class="headerlink" href="#constructing-the-overlap-matrix" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.4. </span>Constructing the overlap matrix<a class="headerlink" href="#constructing-the-overlap-matrix" title="Permalink to this headline">#</a></h2>
 <p>These overlap integrals, <span class="math notranslate nohighlight">\(S_{ij}\)</span>, can be interpreted as the elements on the <span class="math notranslate nohighlight">\(i\)</span>-th row and <span class="math notranslate nohighlight">\(j\)</span>-th column of a matrix, <span class="math notranslate nohighlight">\(S\)</span>. Let’s propose a matrix, <span class="math notranslate nohighlight">\(S\)</span>, made of the overlap integrals <span class="math notranslate nohighlight">\(S_{ij}\)</span>. We can build <span class="math notranslate nohighlight">\(S\)</span> systematically in the following way. First, make a matrix, <span class="math notranslate nohighlight">\(B\)</span>, composed of our basis vectors as columns,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split} B = \left(\begin{array}{ccc}|&amp; |&amp;|\\ \phi_1 &amp;\phi_2&amp;\phi_3\\|&amp;|&amp;|\end{array}\right).\end{split}\]</div>
@@ -601,7 +875,7 @@ F = H + 2J - K
 </div>
 </section>
 <section id="einstein-implicit-summation-notation">
-<h2><span class="section-number">4.1.5. </span>Einstein implicit summation notation<a class="headerlink" href="#einstein-implicit-summation-notation" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.5. </span>Einstein implicit summation notation<a class="headerlink" href="#einstein-implicit-summation-notation" title="Permalink to this headline">#</a></h2>
 <p>Matrix multiplication is defined through</p>
 <div class="math notranslate nohighlight">
 \[(AB)_{pq}= \sum_i A_{p,i}B_{i,q}\qquad\text{explicit summation}\]</div>
@@ -650,7 +924,7 @@ Let’s try this with a simple basis set of two (perhaps) orthonormal vectors.</
 </div>
 </section>
 <section id="gaussian-atomic-orbital-basis-set">
-<h2><span class="section-number">4.1.6. </span>Gaussian atomic orbital basis set<a class="headerlink" href="#gaussian-atomic-orbital-basis-set" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.6. </span>Gaussian atomic orbital basis set<a class="headerlink" href="#gaussian-atomic-orbital-basis-set" title="Permalink to this headline">#</a></h2>
 <p>H<span class="math notranslate nohighlight">\(_2\)</span>O is a small but interesting molecule to use in our exploration.</p>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 7</p>
@@ -765,7 +1039,7 @@ The Hartree-Fock ground state energy of the water is: -74.94207989868094 Eh
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 9</p>
 <p>Based on your observations of <code class="docutils literal notranslate"><span class="pre">S</span></code> in the AO basis, answer the following questions</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>What do the diagonal elements of <code class="docutils literal notranslate"><span class="pre">S</span></code> indicate?</p></li>
 <li><p>What do the off-diagonal elements of <code class="docutils literal notranslate"><span class="pre">S</span></code> indicate?</p></li>
 <li><p>Does the Gaussian atomic orbital basis set form an orthonormal basis?</p></li>
@@ -786,7 +1060,7 @@ The Hartree-Fock ground state energy of the water is: -74.94207989868094 Eh
 </div>
 </section>
 <section id="an-orthogonalization-matrix">
-<h2><span class="section-number">4.1.7. </span>An orthogonalization matrix<a class="headerlink" href="#an-orthogonalization-matrix" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.7. </span>An orthogonalization matrix<a class="headerlink" href="#an-orthogonalization-matrix" title="Permalink to this headline">#</a></h2>
 <p>Recall that if we had used the hydrogen atom wavefunctions as our basis set, the AO wavefunctions would all be orthonormal. Since we used a basis set of Gaussian wavefuctions, this may not be the case. We will now introduce some tools to fix it!</p>
 <p>Since our AO basis set was not orthonormal, we seek to construct an orthogonalization matrix, <span class="math notranslate nohighlight">\(A\)</span>, such that <span class="math notranslate nohighlight">\({\bf A}^{\dagger}{\bf SA} = {\bf 1}\)</span>.</p>
 <p><strong>Motivation:</strong> If <span class="math notranslate nohighlight">\({\bf A}\)</span> and <span class="math notranslate nohighlight">\({\bf S}\)</span> were real numbers <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(s\)</span> (not matrices), this would be simple to solve. First, <span class="math notranslate nohighlight">\(a^\dagger=a\)</span> because a real number is the same as its hermitian transpose. By simple algebra we can solve for a,</p>
@@ -833,8 +1107,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f3e00e5e-838b-46a1-be26-0658d52e63c9">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-f3e00e5e-838b-46a1-be26-0658d52e63c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eed50d99-800e-40cc-b3c3-7d8707460526">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-eed50d99-800e-40cc-b3c3-7d8707460526" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -864,10 +1138,10 @@ a^\dagger s a=a s a=a^2s=1
 </div>
 </section>
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
-<h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Permalink to this headline">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fe441e3-f3cb-4249-a6ac-1810ae9c51ef">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-9fe441e3-f3cb-4249-a6ac-1810ae9c51ef" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2b780472-141b-47d7-bd35-16cef07f2b2e">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-2b780472-141b-47d7-bd35-16cef07f2b2e" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -878,8 +1152,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c88d0bbf-8b41-477e-a868-df3176359cc6">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-c88d0bbf-8b41-477e-a868-df3176359cc6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8b1b0948-eb85-4246-9e70-f6f48db722f8">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-8b1b0948-eb85-4246-9e70-f6f48db722f8" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -894,7 +1168,7 @@ F'C'&amp;=S'C'E,\\
 </div>
 </section>
 <section id="initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">
-<h2><span class="section-number">4.1.9. </span>Initial guess for the Fock Matrix is the one electron Hamiltonian<a class="headerlink" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.9. </span>Initial guess for the Fock Matrix is the one electron Hamiltonian<a class="headerlink" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian" title="Permalink to this headline">#</a></h2>
 <p>To get the Fock matrix, we need the coefficient matrix, but to compute the coefficient matrix we need the Fock matrix.  So we start with a guess for the Fock matrix, which is the core Hamiltonian matrix.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -951,7 +1225,7 @@ F'C'&amp;=S'C'E,\\
 </div>
 </section>
 <section id="the-density-matrix">
-<h2><span class="section-number">4.1.10. </span>The Density Matrix<a class="headerlink" href="#the-density-matrix" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.10. </span>The Density Matrix<a class="headerlink" href="#the-density-matrix" title="Permalink to this headline">#</a></h2>
 <p>Recall, the Fock matrix is</p>
 <div class="math notranslate nohighlight">
 \[
@@ -997,7 +1271,7 @@ D_{pq}=\sum_i^{occ} c^*_{pi}c_{qi}.
 </div>
 </section>
 <section id="coulomb-and-exchange-integrals-and-the-scf-energy">
-<h2><span class="section-number">4.1.11. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">4.1.11. </span>Coulomb and Exchange Integrals and the SCF Energy<a class="headerlink" href="#coulomb-and-exchange-integrals-and-the-scf-energy" title="Permalink to this headline">#</a></h2>
 <p>The integral on the right of <a class="reference internal" href="#equation-electronrepuslionintrealtensor">(4.7)</a> is super important. It has four indicies, <span class="math notranslate nohighlight">\(p,q,r,s\)</span>, so formally it is a tensor. It accounts for the repulsion between pairs of electrons, so it is called the electron repulsion integral tensor, <span class="math notranslate nohighlight">\(I\)</span>,</p>
 <div class="math notranslate nohighlight" id="equation-electronrepuslionintrealtensor">
 <span class="eqno">(4.7)<a class="headerlink" href="#equation-electronrepuslionintrealtensor" title="Permalink to this equation">#</a></span>\[
@@ -1130,7 +1404,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 </div>
 <p>You have just completed one cycle of the SCF calculation!</p>
 <p>Now we will use the density matrix to build the Fock matrix.  The code block below sets up a skeleton of the Hartree-Fock procedure.  The basic steps are:</p>
-<ol class="arabic simple">
+<ol class="simple">
 <li><p>Calculate the Fock Matrix based on the density matrix previously defined from a one electron hamiltonian</p></li>
 <li><p>Calculate the energy from the Fock matrix.</p></li>
 <li><p>Check and see if the energy has converged by comparing the current energy to the previous energy and seeing if it is within the convergence threshold.</p></li>
@@ -1226,7 +1500,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
             mode: "psi4"
         },
         kernelOptions: {
-            name: "psi4",
+            kernelName: "psi4",
             path: "./Exercises/Ex4"
         },
         predefinedOutput: true
@@ -1234,112 +1508,53 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
     </script>
     <script>kernelName = 'psi4'</script>
 
-                </article>
+              </div>
               
-
-              
-              
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
-<div class="prev-next-area">
-    <a class="left-prev"
-       href="IESM_Ex4b.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>The hartree fock procedure in detail</p>
-      </div>
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="IESM_Ex4b.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>The hartree fock procedure in detail</p>
+        </div>
     </a>
-    <a class="right-next"
-       href="../Ex5MP/IESM_Ex5.html"
-       title="next page">
-      <div class="prev-next-info">
+    <a class='right-next' id="next-link" href="../Ex5MP/IESM_Ex5.html" title="next page">
+    <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">5. </span>Post-Hartree Fock Methods: CI and MPn</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
-</div>
-
-                </footer>
-              
-            </div>
-            
-            
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-hartree-fock-procedure">4.1.1. The Hartree-Fock procedure</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonalizing-the-ao-basis-set">4.1.2. Orthogonalizing the AO basis set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iv-the-overlap-integrals">4.1.3. IV. The overlap integrals</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#constructing-the-overlap-matrix">4.1.4. Constructing the overlap matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#einstein-implicit-summation-notation">4.1.5. Einstein implicit summation notation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gaussian-atomic-orbital-basis-set">4.1.6. Gaussian atomic orbital basis set</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#an-orthogonalization-matrix">4.1.7. An orthogonalization matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-fock-matrix-transformed-to-an-orthonormal-basis">4.1.8. The Fock Matrix Transformed to an Orthonormal Basis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-guess-for-the-fock-matrix-is-the-one-electron-hamiltonian">4.1.9. Initial guess for the Fock Matrix is the one electron Hamiltonian</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-density-matrix">4.1.10. The Density Matrix</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#coulomb-and-exchange-integrals-and-the-scf-energy">4.1.11. Coulomb and Exchange Integrals and the SCF Energy</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
-              
-            
-          </div>
-          <footer class="bd-footer-content">
-            
-<div class="bd-footer-content__inner container">
-  
-  <div class="footer-item">
-    
-<p class="component-author">
-By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger
-</p>
-
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-  </div>
-  
-  <div class="footer-item">
-    
-<div class="extra_footer">
-  <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
-</div>
-  </div>
-  
-</div>
-          </footer>
-        
-
-      </main>
     </div>
-  </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+  
+    <div class="extra_footer">
+      <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
-  <footer class="bd-footer">
-  </footer>
+
   </body>
 </html>
