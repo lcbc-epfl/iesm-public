@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 1
-subtitle: IESM Fall 2022-2023
-date: October 3, 2022
-author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024
+date: October 2, 2023
+author: "Andrej Antalik, Simon Dürr, Sophia Johnson, Andrea Levy" 
 output: beamer_presentation
 ---
 
@@ -28,7 +28,7 @@ output: beamer_presentation
 
 # Exercise structure
 ## Theory section
-- Useful theory for the exercise
+- Relevant theory for the exercise
 - Theoretical exercises
 
 
@@ -39,21 +39,20 @@ output: beamer_presentation
 - Interpretation of results
 
 # Exercise evaluation
-
-- Submit report 
-	- `pdf` document answering the questions and relevant output
-	- Due date is usually the next exercise session (check Moodle!) 
-	- Interviewis during next exercise session
-		- Test your understanding of the exercise
-		- Good occasion to discuss your doubts and questions
-	- Detailed feedback via Moodle after the interview
-		- No grade
-		- Overall comment and detailed correction of the exercises
-
 - Examples: 
 ![](/data/iesm/img_slides/Ex1/ex_example.png) \
 
 - Exercises contribute to 1/3 of final grade
+
+- Submit report 
+	- `pdf` document answering the questions completely with relevant results
+		- Handwritten portions ok (please verify legibility) 
+		- You can type responses in the noto notebook and save as a pdf
+	- Due date is usually the next exercise session (check Moodle!) 
+	- Interviews during next exercise session
+		- Test your understanding and discuss your doubts/questions
+	- Detailed feedback via Moodle after the interview
+		- No grade, but comments and detailed corrections
 
 # Computer environment
 - We will use a virtual environment that you can directly launch from the [exercise website](https://lcbc-epfl.github.io/iesm-public/intro.html)
@@ -75,6 +74,12 @@ output: beamer_presentation
 - `.iynb` files organized in cells
 	- Markdown (text)
 	- Code 
+
+- Run a code cell by pressing :arrow_forward: (or `Ctrl`+`Enter`)
+![](/data/iesm/img_slides/Ex1/jn_2.png) \
+
+# Saving Jupyter notebooks as PDFs
+![](/data/iesm/img_slides/Ex1/saving_notebook_to_pdf.png) \
 
 - Run a code cell by pressing :arrow_forward: (or `Ctrl`+`Enter`)
 ![](/data/iesm/img_slides/Ex1/jn_2.png) \
