@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 3
-subtitle: IESM Fall 2022-2023 ![](https://github.githubassets.com/images/icons/emoji/unicode/1f383.png){width=16px}
-date: October 31, 2022  
-author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024 ![](https://github.githubassets.com/images/icons/emoji/unicode/1f383.png){width=16px}
+date: October 30, 2022  
+author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
 
@@ -11,14 +11,13 @@ Interviews:
 
 * ~10 minutes discussion with one of the TAs to review exercise report from last session
 * When you have interview schedule conflicts please let us know as soon as possible!
-* Interview schedule for today was posted on Moodle.
+* Interview schedule for today was posted on Moodle under Announcements
 
 Reports:
 
-* A detailed feedback of your report will be available on Moodle few days after the interview 
-* You should have all received the feedback for report about Exercise 1 (for which we had no interview)
-
-**!!!** Note that from next week we'll start to have **Lectures/Ex also on Fridays** -- Ex4 (deadline Ex3 report) on 11/11 (morning)
+* A detailed feedback of your report will be available on Moodle few days-week after the interview 
+* You should have all received the feedback for report about Exercise 1
+* Any questions about the reports or interviews?
 
 # Exercise 3 
 Large Basis Sets, Dissociation Energy and Geometry Optimisation
@@ -31,7 +30,7 @@ Large Basis Sets, Dissociation Energy and Geometry Optimisation
 
 	![](/data/iesm/img_slides/Ex3/H2mol.png){width=64px} \ 
 
-* You will compute the equilibrium energy molecule using  different basis sets
+* You will compute the equilibrium energy of the molecule using different basis sets
 	* 6-31G 
 	* 6-311G 
 	* aug-cc-pVTZ (Dunning’s correlation-consistent basis, defined such that systematic improvement over total energies and molecular properties is possible)
