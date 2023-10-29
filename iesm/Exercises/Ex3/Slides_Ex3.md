@@ -1,7 +1,7 @@
 ---
 title: Exercise Session 3
 subtitle: IESM Fall 2023-2024 ![](https://github.githubassets.com/images/icons/emoji/unicode/1f383.png){width=16px}
-date: October 30, 2022  
+date: October 30, 2023  
 author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
