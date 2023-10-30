@@ -1,27 +1,22 @@
 ---
 title: Exercise Session 3
-subtitle: IESM Fall 2023-2024 ![](https://github.githubassets.com/images/icons/emoji/unicode/1f383.png){width=16px}
+subtitle: IESM Fall 2023-2024 
 date: October 30, 2023  
 author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
 
-# Interview/Reports Reminders
+# Reports Feedback
 Interviews:
 
-* ~10 minutes discussion with one of the TAs to review exercise report from last session
-* When you have interview schedule conflicts please let us know as soon as possible!
-* Interview schedule for today was posted on Moodle under Announcements
-
-Reports:
-
-* A detailed feedback of your report will be available on Moodle few days-week after the interview 
-* You should have all received the feedback for report about Exercise 1
-* Any questions about the reports or interviews?
+* All of you should have recived a detailed feedback on Moodle for reports of Ex1
+* If everything is correct, simple checkmarks are added ✅
+* Comments added when something is wrong/unclear/uncomplete
+* Overall comment added to the report
 
 # Exercise 3 
 Large Basis Sets, Dissociation Energy and Geometry Optimisation
-(Reminder: you can download these slides from the [Exercise page](https://lcbc-epfl.github.io/iesm-public/Exercises/Ex3/IESM_Ex3.html))
+(Reminder: you can download these slides from the [Exercise page](https://github.com/lcbc-epfl/iesm-public/blob/gh-pages/Exercises/Ex3/Slides_Ex3.md.pdf))
 
 ![](/data/iesm/img_slides/Ex3/ex3_goals.png) \
 
