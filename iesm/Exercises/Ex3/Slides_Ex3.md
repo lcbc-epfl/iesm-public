@@ -10,7 +10,7 @@ output: beamer_presentation
 Interviews:
 
 * All of you should have recived a detailed feedback on Moodle for reports of Ex1
-* If everything is correct, simple checkmarks are added ✅
+* If everything is correct, simple checkmarks are added
 * Comments added when something is wrong/unclear/uncomplete
 * Overall comment added to the report
 
