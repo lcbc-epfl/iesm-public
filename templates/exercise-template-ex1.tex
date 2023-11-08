@@ -1,0 +1,328 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+\title{Exercise Ex1}
+\begin{document}
+\maketitle\maketitle
+Student:  Firstname Lastname    Sciper: 000000
+
+\begin{mdframed}
+\textbf{Please use this template to submit your answers.}\\
+If you had to modify code from the notebook, please include the modified code in your submission either as screenshot or in a
+
+\begin{verbatim}
+\begin{lstlisting}[language=Python]
+\end{lstlisting}
+\end{verbatim}
+
+environment.
+
+You only need to include the code cells that you modified.
+
+Note, that references to other parts of the documents aren't resolved in this template and will show as \texttt{??}. Check the text of the exercises on website for the reference
+\end{mdframed}
+
+\begin{mdframed}
+\textbf{Exercise 1}\\
+Calculate the vector product $\mathbf{c}=\mathbf{a}\times\mathbf{b}$
+with
+
+\begin{equation}
+\begin{aligned}
+     \mathbf{a} = \left(\begin{matrix}
+     2 \\ 6 \\ 4
+     \end{matrix}\right)
+     \quad
+     \mathbf{b} = \left(\begin{matrix}
+     5 \\ 1 \\ 7
+     \end{matrix}\right)
+     \end{aligned}
+\end{equation}
+
+and, for the same $\mathbf{a},\mathbf{b}$, the scalar product
+
+\begin{equation}
+\begin{aligned}
+     d = \mathbf{a}\cdot \mathbf{b}
+     \end{aligned}
+\end{equation}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 2}\\
+Evaluate the matrix product $\mathbf{C} = \mathbf{A}\mathbf{B}$.
+
+\begin{equation}
+\mathbf{A} =\begin{aligned}
+     \left(\begin{matrix}
+     6 & 8 &2 \\ 9 & 1 & 5 \\ 7 & 4 & 3
+     \end{matrix}\right),\quad\mathbf{B}=
+      \left(\begin{matrix}
+     9 & 6 & 7 \\ 5 & 4 & 4 \\  3 & 2 & 8
+     \end{matrix}\right).
+     \end{aligned}
+\end{equation}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 3}\\
+Evaluate the determinant for the matrix $\mathbf{A}$.
+
+\begin{equation}
+\mathbf{A}=\begin{aligned}
+     \left(\begin{matrix}
+     1 & 1 & 2 \\ 1 & 0 & 2 \\ 2 & 2 & 3
+     \end{matrix}\right)
+     \end{aligned}
+\end{equation}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 4}\\
+Does the exponent of an operator always satisfy the relation
+$e^{\hat{A}+\hat{B}} = e^{\hat{A}}e^{\hat{B}}$ ? Start from the
+definition of the matrix exponential.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 5}\\
+Find the eigenvalues and eigenvectors of the matrix $\mathbf{A}$.
+
+\begin{equation}
+\mathbf{A} =\begin{aligned}
+     \left(\begin{matrix}
+     2 & 1 \\ -1 & 4
+     \end{matrix}\right)
+    \end{aligned}
+\end{equation}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 6}\\
+Show that if the product $\mathbf{C}=\mathbf{A}\mathbf{B}$ of two
+Hermitian matrices is also Hermitian, then $\mathbf{A}$ and
+$\mathbf{B}$ commute.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 7}\\
+Explain the connection between the Heisenberg uncertainty principle and
+the commutation relation.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 8}\\
+What is the meaning of a multiplication of a bra and a ket
+
+\begin{equation}
+\begin{aligned}
+     \left<a\middle|b\right>,
+     \end{aligned}
+\end{equation}
+
+and, conversely, an operator formed by a ket and a bra?
+
+\begin{equation}
+\begin{aligned}
+     \hat{\mathrm{O}} = \left|a\right>\left<b\right|
+     \end{aligned}
+\end{equation}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 9}\\
+Given a basis $\left\{\psi\right\}$ for which
+
+\begin{equation}
+\begin{aligned}
+     \left<\psi_i\middle|\psi_j\right> = \delta_{ij},
+     \end{aligned}
+\end{equation}
+
+where $\delta_{ij}$ is the Kronecker delta, for any  state $\Psi$
+
+\begin{equation}
+\begin{aligned}
+     \Ket{\Psi} = \sum_j c_j\Ket{\psi_j},
+     \end{aligned}
+\end{equation}
+
+the inner product is defined as
+
+\begin{equation}
+\begin{aligned}
+     \left<\Psi\middle|\Psi\right> = 1.
+     \end{aligned}
+\end{equation}
+
+Show that this holds only as long as
+
+\begin{equation}
+\begin{aligned}
+     \sum_j c_j^2 = 1,
+     \end{aligned}
+\end{equation}
+
+where the $c_j$ are the aforementioned expansion coefficients.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 11}\\
+Diagonalise the matrices $\mathbf{A}$ and $\mathbf{B}$. Specify which one is Hermitian.
+
+\begin{equation}
+\mathbf{A}=\begin{aligned}
+     \left(\begin{matrix}
+     1 & 1-i \\ 1+i & 2
+     \end{matrix}\right)
+     , \quad
+     \mathbf{B} =\left(\begin{matrix}
+     1 & 1 \\ 0 & 1
+     \end{matrix}\right)
+     \end{aligned}
+\end{equation}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 13}\\
+Give the position and the momentum operators (consider only one
+dimension) in the position representation.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 14}\\
+Give the commutator of the position and linear momentum operators in
+the position representation (consider one dimension only).
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 15}\\
+Is the electronic Hamiltonian $\hat{H}_{el}$ a linear operator and
+why (not)?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 16}\\
+Show that, if two operators $\hat{\mathrm{A}}$, $\hat{\mathrm{B}}$
+commute and if $\Ket{\psi}$ is an eigenvector of $\hat{\mathrm{A}}$,
+$\hat{\mathrm{B}}\Ket{\psi}$ is an eigenvector of
+$\hat{\mathrm{A}}$, too, with the same eigenvalue.
+
+\textbf{Bonus}:  If $\Ket{\psi}$ is part of a set of degenerate
+eigenvectors, show that the subspace spanned by the eigenvalues of
+$\hat{\mathrm{A}}$ is invariant under the action of
+$\hat{\mathrm{B}}$.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 17}\\
+Demonstrate that, if two hermitian operators $\hat{\mathrm{A}}$,
+$\hat{\mathrm{B}}$ commute and ${\Ket{\psi_1}}$, ${\Ket{\psi_2}}$
+are eigenvectors of $\hat{\mathrm{A}}$ associated to different
+eigenvalues, then the matrix element
+$\Bra{\psi_1}\hat{\mathrm{B}}\Ket{\psi_2}$ vanishes.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 20}\\
+In a system that consists of only two states (such as an electron spin
+in a magnetic field, where the electron spin can be in one of two
+orientations), the Hamiltonian has the following matrix elements:
+$H_{11}=a, \ H_{22}=b, \ H_{12}=d, \ H_{21}=d$. How would you determine
+the energy levels $E$ and the eigenstates $\mathbf{\Psi}$ of the system?
+(You do not need to solve this problem explicitly, merely outlining the
+procedure is sufficient.)
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 21}\\
+Define two vectors, \texttt{$\phi$1} and \texttt{$\phi$2}, with two elements each, that are normalized, in the sense $\langle\phi_i|\phi_i\rangle=1$, and orthogonal in sense that $\langle\phi_i|\phi_j\rangle=0$.
+
+\textbf{Hint:} In \texttt{numpy} a vector \texttt{v} with the two elements \texttt{1} and \texttt{2} is defined through the command
+
+\begin{verbatim}
+v=np.array([1,2])
+\end{verbatim}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 21}\\
+Show that $\phi_1$ and $\phi_2$ are normalized and orthonormal
+
+\textbf{Hint:} Here are reported some useful \texttt{numpy} functions to work with vectors:
+
+\begin{itemize}
+\item \texttt{v.dot(w)} - inner product (scalar product) of two vectors \texttt{v}, \texttt{w}
+\item \texttt{v.conj()} - complex conjugate of a vector \texttt{v}
+\item \texttt{v.conj().dot(w)} - inner product of $v^\dagger w$
+\end{itemize}
+\end{mdframed}
+
+Your answer here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  acronyms & glossary  %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+
+\end{document}

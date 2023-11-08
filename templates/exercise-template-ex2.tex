@@ -1,0 +1,186 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+\title{Exercise Ex2}
+\begin{document}
+\maketitle\maketitle
+Student:  Firstname Lastname    Sciper: 000000
+
+\begin{mdframed}
+\textbf{Please use this template to submit your answers.}\\
+If you had to modify code from the notebook, please include the modified code in your submission either as screenshot or in a
+
+\begin{verbatim}
+\begin{lstlisting}[language=Python]
+\end{lstlisting}
+\end{verbatim}
+
+environment.
+
+You only need to include the code cells that you modified.
+
+Note, that references to other parts of the documents aren't resolved in this template and will show as \texttt{??}. Check the text of the exercises on website for the reference
+\end{mdframed}
+
+\begin{mdframed}
+\textbf{Exercise 1}\\
+A minimal basis set...\newline
+a) ...always gives the lowest energy.\newline
+b) ...is optimized for small molecules.\newline
+c) ...contains one basis function for each atomic orbital only.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 2}\\
+A split-valence basis set...\newline
+a) ...contains two basis functions for each valence atomic orbital.\newline
+b) ...doubles the CPU time of the calculation.\newline
+c) ...attributes a different number of basis functions to valence and
+core orbtials.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 3}\\
+Which of the following basis sets does not contain polarisation functions?\newline
+a) 6-31G$^\ast$\newline
+b) 6-31G(d,p)\newline
+c) 3-21+G\newline
+d) DZP
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 4}\\
+Diffuse functions are added to a basis set to...\newline
+a) ...save CPU time.\newline
+b) ...better represent electronic effects at larger distances from the nuclei.\newline
+c) ...take polarisation into account.\newline
+d) ...enhance the description of core orbitals.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 5}\\
+Using the information given about the 3-21G contraction coefficients:\newline
+a) Give the basis functions corresponding to the 1s, 2s and 2p orbitals of Carbon (\textbf{Hint}: use information from \textbf{Fig. 2.2} ).\newline
+b) If you wish to calculate the Hartree-Fock energy of a carbon atom,
+how many coefficients are \textit{optimised} during the calculation?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 6}\\
+You wish to calculate the wavefunction of ethylene C$_2$H$_2$ using the 6-31G* basis. \newline
+Indicate the number of basis functions and the number of Gaussian primitives that will be used in the calculation.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 7}\\
+Include a table of the the calculated energies using the three different basis sets, specifying for each of them the number of basis functions used. Compare the energies with the analytical value for the H atom, given by the analytical expression:
+
+\begin{equation}
+E = \frac{1}{2} m_e c^2\alpha^2,
+\end{equation}
+
+where $\alpha$ is the fine structure constant.
+
+\begin{equation}
+\begin{align}
+m_e = 0.910953\cdot10^{-30} kg\\
+c = 2.99792458\cdot10^8 m s^{-1}\\
+\alpha = 7.2973525376\cdot10^{-3}\\
+N_A = 6.0221367\cdot10^{23}mol^{-1}
+\end{align}
+\end{equation}
+
+Pay attention to the units - use atomic units or kcal$\cdot$mol$^{ -1}$ throughout!
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 8}\\
+What is the influence of the basis set size on the accuracy of the result? How do the split-valence bases compare to STO-3G?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 9}\\
+Include in your report the coordinates you set for your water molecules and a screenshot of how it looks like in 3D representation.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 10}\\
+How do you calculate the spin multiplicity of a species? Compare the case of the water molecule to the previous example of the hydrogen atom.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 11}\\
+Compute energy calculations for the different basis sets indicated below with a loop similar to the one used before.  Include a table of the the calculated energies. Specify what is the difference between the basis sets that we used.
+
+\textbf{Bonus:} which of the additional functions introduced with respect to the \texttt{6-31G} basis set are more reasonable for the present case, i.e. a water molecule? Why?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 12}\\
+Have a look at the log files produced so far and answer the following questions:
+
+\begin{enumerate}
+\item What is the significance of the statement \textit{Energy and wave function converged}?
+
+
+\item What is the meaning of the different \textit{iter} preceding \textit{Energy and wave function converged}?
+Compare the number of cycles for the different basis sets.
+\end{enumerate}
+\end{mdframed}
+
+Your answer here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  acronyms & glossary  %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+
+\end{document}

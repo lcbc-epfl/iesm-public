@@ -1,0 +1,149 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{listings}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+\title{Exercise Ex6}
+\begin{document}
+\maketitle\maketitle
+Student:  Firstname Lastname    Sciper: 000000
+
+\begin{mdframed}
+\textbf{Please use this template to submit your answers.}\\
+If you had to modify code from the notebook, please include the modified code in your submission either as screenshot or in a
+
+\begin{verbatim}
+\begin{lstlisting}[language=Python]
+\end{lstlisting}
+\end{verbatim}
+
+environment.
+
+You only need to include the code cells that you modified.
+
+Note, that references to other parts of the documents aren't resolved in this template and will show as \texttt{??}. Check the text of the exercises on website for the reference
+\end{mdframed}
+
+\begin{mdframed}
+\textbf{Exercise 1}\\
+Why is it important to construct the starting structures in a specific conformation, although one is carrying out a geometry optimisation? Don't we risk to end up in the same conformation after the optimization, since we are dealing in both cases with the same molecule, i.e. methylcyclohexane?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 2}\\
+Compute the energy of the two conformations and calculate the energy difference at 0 K, $\Delta E_{0K} = E_{\text{axial}} - E_{\text{equatorial}}$, i.e. the A-value, filling the table below. Compare the results of different methods with the experimental value for the  A-Value of the methil group in a methylcyclohexane molecule, \textbf{1.74 kcal/mol}. For each method, use both 6-31+G* and 6-31+G** basis sets.
+
+By adding \texttt{\%\%time} at the beginning of each cell, the execution time will be printed out. This quantity is related to the computational cost of the calculation and can help you to compare the different methods.
+
+\textbf{You can split up the calculations among yourselves to speed up the process.}
+
+\bigskip\noindent
+\begin{tabular}{p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}p{\dimexpr 0.125\linewidth-2\tabcolsep}}
+\toprule
+Method & E\_equatorial (Hartrees) & E\_axial (Hartrees) & $\Delta$E(0K) (kcal/mol) & Relative error \% & Basis set & Remark ($\psi$ /$\rho$ based ?) & Wall time \\
+\hline
+HF &  &  &  &  &  &  &  \\
+MP2 &  &  &  &  &  &  &  \\
+BLYP &  &  &  &  &  &  &  \\
+MPW1PW91 &  &  &  &  &  &  &  \\
+B97-2 &  &  &  &  &  &  &  \\
+PBE &  &  &  &  &  &  &  \\
+TPSS &  &  &  &  &  &  &  \\
+M06-L &  &  &  &  &  &  &  \\
+M06-2X &  &  &  &  &  &  &  \\
+B3LYP-D3BJ &  &  &  &  &  &  &  \\
+Reference & // & // & 1.74 & Experimental &  &  &  \\
+\bottomrule
+\end{tabular}
+
+\bigskip
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 3}\\
+What kind of basis sets were used for $\psi$ based calculations? On which atoms will polarization and diffuse functions be included? Are we close to the basis set limit? Why, or why not?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 4}\\
+Comment on the performance of the wavefunction based methods and DFT, comparing both accuracy and computational time.
+
+Can you imagine why some DFT methods perform better than others? How does DFT compare to MP2 and HF?
+Would you expect the exchange-correlation functionals to give similar errors in different systems?
+
+An often cited target for the development of exchange-correlation functionals is an error below \textit{chemical accuracy}, \textit{i.e.} within 1
+kcal mol $^{ -1}$ of the accurate result. Explain the accuracy of the results also in light of this.
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 5}\\
+Fill the above table with the results of your calculations. Compare the performance of the methods in predicting accurate
+structures.     Is there a trend relating the complexity of the exchange-correlation functional (LDA, GGA, hybrid, ...) to the quality of your results?
+
+\begin{verbatim}
+**Bonus**: For the DFT methods, specify what approximations are
+used in the exchange functional (you may refer to {ref}`dfttheory`).
+\end{verbatim}
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 6}\\
+Take a screenshot of the MP2 and DFT SOMOs. How do the orbitals differ from each other? How does the symmetry of the SOMO relate to the predicted structure?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 7}\\
+Explain the difference between static and dynamic correlation. Relate this to the different results you obtained for the nitrate radical. What kind of correlation do HF, MP2 and DFT take into account?
+\end{mdframed}
+
+Your answer here
+
+\begin{mdframed}
+\textbf{Exercise 8}\\
+If you needed a highly accurate structure and energy for  NO$_3\cdot$, which method would you use? Why?
+\end{mdframed}
+
+Your answer here
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%  acronyms & glossary  %%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+
+
+\end{document}
