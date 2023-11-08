@@ -68,6 +68,8 @@ Note, that references to other parts of the documents aren't resolved in this te
 \\usepackage{xcolor}
 \\usepackage{mdframed}
 \\usepackage{listings}
+\\usepackage{graphicx}
+\\usepackage{hyperref}
 \\definecolor{codegreen}{rgb}{0,0.6,0}
 \\definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \\definecolor{codepurple}{rgb}{0.58,0,0.82}
