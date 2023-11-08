@@ -3,6 +3,6 @@ matplotlib
 numpy
 ghp-import
 pandoc
-pypandoc
+pypandoc-binary
 nbformat
 mystmd
