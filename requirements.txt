@@ -3,3 +3,5 @@ matplotlib
 numpy
 ghp-import
 pandoc
+pypandoc
+nbformat

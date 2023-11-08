@@ -23,6 +23,9 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+    - name: Build templates
+      run: |
+        python .publish/extract_exercise.py
     - name: convert md to slides
       run: |
         docker run -v $(pwd):/data --user $(id -u):$(id -g) pandoc/latex:2.9 sh -c 'while read f; do pandoc -t beamer /data/iesm/Exercises/"$f" -H /data/.publish/template.tex -o "/data/iesm/Exercises/${f%}.pdf"; done< iesm/slides.txt'
@@ -30,6 +33,9 @@ jobs:
     - name: Build the book
       run: |
         jupyter-book build iesm
+    - name: Move templates to publish dir
+      run: |
+        mv templates iesm/_build/html
     - name: Move slides to publish dir
       run: | 
         while read f; do mv "./iesm/Exercises/${f%}.pdf" "./iesm/_build/html/Exercises/${f%}.pdf"; done< ./iesm/slides.txt
