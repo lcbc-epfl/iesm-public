@@ -10,7 +10,7 @@ def extract_exercises(exercise_folders, output_file, Ex_name):
     # Initialize a list to store extracted cells
     extracted_cells = []
     
-    extracted_cells.append(f"# Exercise {Ex_name.replace("Ex","")}")
+    extracted_cells.append(f"# Exercise {Ex_name.replace('Ex','')}")
     extracted_cells.append(f'Student:  Firstname Lastname    Sciper: 000000')
     extracted_cells.append(""":::{admonition} Please use this template to submit your answers. \n
 If you had to modify code from the notebook, please include the modified code in your submission either as screenshot or in a \n
