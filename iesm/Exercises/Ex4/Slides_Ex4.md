@@ -1,19 +1,24 @@
 ---
 title: Exercise Session 4
-subtitle: IESM Fall 2022-2023 
-date: November 11, 2022  
-author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024 
+date: November 10, 2023  
+author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
 
 # Course Reminders
-* Welcome Simon!
-* From this week we'll start to have **Lectures/Ex also on Fridays** with deadlines for exercise reports on morning of next exercise session 
-* Friday lectures in BCH 4310
-* Monday 14.11: mock written exam during the lecture time
-* Friday 18.11: mock exam solutions and Q&A session (we'll gather questions on the moodle forum by Wednesday 16.11)
-* **Monday 21.11:** written exam
-* Friday 25.11: report for exercise 4 due by 9am; session for exercise 5
+* From this week we'll start to have **Lectures/Ex also on Fridays** exercise reports are due 1 hour before the next session
+* Monday 13.11: mock written exam during the lecture time
+* Friday 17.11: mock exam solutions and Q&A session (we'll gather questions on the moodle forum by Wednesday 15.11)
+* **Monday 20.11:** written exam
+* Friday 24.11: report for exercise 4 due by noon; session for exercise 5
+
+# Report Templates 
+* To assist in making easily uploadable/readable reports, Simon created Report Templates 
+* Google Doc or Overleaf (preferable) format
+* Whenever you modify code, screenshot the cell/output using the Snipping Tool or use the code environment in latex as described in the hints at the top of the template
+
+![](/data/iesm/img_slides/Ex4/report_template.png) 
 
 # Exercise 4 
 The Hartree-Fock procedure in detail
