@@ -81,8 +81,6 @@ The einsum function in numpy allows for efficient matrix multiplication.
 ![](/data/iesm/img_slides/Ex4/summation.png){width=55%}
 ![](/data/iesm/img_slides/Ex4/einsum_examples.png)
 
-# Exercise 4 - Tips
-**Tips!**
 
 * If needed, search for commands and variable types in the [Psi4 manual](https://psicode.org/psi4manual/master/index.html) 
 * Some code blocks just need to be executed. Typically, we use a comment (#) in a code block to indicate where edits should be made. 
