@@ -604,17 +604,17 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Calculate the HF energy for Boron using the 6-311+G** basis set, then determine the value of the correlation energy for boron assuming an “experimental” energy of -24.608 Hartrees (<a class="reference external" href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.167.67">Schaefer III, Henry F., and Frank E. Harris. “Electronic Structure of Atomic Boron.” Physical Review 167.1 (1968): 67</a>).</p></li>
 <li><p>Using the same basis set, perform an energy calculation with CISD and full CI.</p></li>
-<li><p>Using the same basis set, perform an energy calculation with MP2, MP3 and MP4.</p></li>
+<li><p>Using the same basis set, perform an energy calculation with MP2, MP3 and MP5.</p></li>
 <li><p>Using the same basis set, perform an energy calculation with CCSD and CCSD(T).</p></li>
 </ul>
-<p>Determine the percentage of the correlation energy recovered for HF, MP2, MP4, CCSD, CCSD(T).</p>
+<p>Determine the percentage of the correlation energy recovered for HF, MP2, MP5, CCSD, CCSD(T).</p>
 <p>Compare the performances of the different methods. In particular, you will see that some of the methods seem to overestimate the correlation recovered. How is it possible? (<em>Hint:</em> Think both about the theoretical aspects of the methods and <em>how</em> we are computing the recovered correlation energy).</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">CCSD energy/mp2 energy</p>
 <p>You may recover the CCSD energy from the CCSD(T) calculation, but you will have to look at the output file or by calculating both. In any case, the calculations for a single atom are quick.</p>
-<p>The same is true for the MP2 energy which can be extracted from the MP4 calculation.
-MP4 will require the use of the following options: <code class="docutils literal notranslate"><span class="pre">psi4.set_options({&quot;reference&quot;</span> <span class="pre">:&quot;rohf&quot;,</span> <span class="pre">&quot;qc_module&quot;:&quot;detci&quot;})</span></code> as Psi4 does not have MP4 implemented using a RHF reference.</p>
+<p>The same is true for the MP2 energy which can be extracted from the MP5 calculation.
+MP5 will require the use of the following options: <code class="docutils literal notranslate"><span class="pre">psi4.set_options({&quot;reference&quot;</span> <span class="pre">:&quot;rohf&quot;,</span> <span class="pre">&quot;qc_module&quot;:&quot;detci&quot;})</span></code> as Psi4 does not have MP5 implemented using a RHF reference.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -734,10 +734,10 @@ viewer_16692178319808886.render();
 <span class="n">e_ccsd</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="c1">#CCSD(T)</span>
 <span class="n">e_ccsd_t</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="c1">#MP4</span>
+<span class="c1">#MP5</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;rohf&quot;</span><span class="p">,</span> 
                    <span class="s2">&quot;qc_module&quot;</span><span class="p">:</span><span class="s2">&quot;detci&quot;</span><span class="p">})</span>
-<span class="n">e_mp4</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">e_mp5</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="c1">#CISD</span>
 <span class="n">e_cisd</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="c1">#FCI</span>
@@ -752,7 +752,7 @@ viewer_16692178319808886.render();
 <span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">]</span><span class="o">=</span> <span class="mi">0</span>
 <span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>
 <span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>
-<span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;mp4&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>
+<span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;mp5&#39;</span><span class="p">]</span>    <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>
 <span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;ccsd&#39;</span><span class="p">]</span>   <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>
 <span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;ccsd(t)&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>
 <span class="n">correlations</span><span class="p">[</span><span class="s1">&#39;cisd&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># calculate the % of correlation energy recovered here</span>

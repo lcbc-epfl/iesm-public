@@ -25,10 +25,10 @@ Note, that references to other parts of the documents aren't resolved in this te
 
 * Calculate the HF energy for Boron using the 6-311+G** basis set, then determine the value of the correlation energy for boron assuming an "experimental" energy of -24.608 Hartrees ([Schaefer III, Henry F., and Frank E. Harris. "Electronic Structure of Atomic Boron." Physical Review 167.1 (1968): 67](https://journals.aps.org/pr/abstract/10.1103/PhysRev.167.67)).  
 * Using the same basis set, perform an energy calculation with CISD and full CI. 
-* Using the same basis set, perform an energy calculation with MP2, MP3 and MP4. 
+* Using the same basis set, perform an energy calculation with MP2, MP3 and MP5. 
 * Using the same basis set, perform an energy calculation with CCSD and CCSD(T).
 
-Determine the percentage of the correlation energy recovered for HF, MP2, MP4, CCSD, CCSD(T). 
+Determine the percentage of the correlation energy recovered for HF, MP2, MP5, CCSD, CCSD(T). 
 
 Compare the performances of the different methods. In particular, you will see that some of the methods seem to overestimate the correlation recovered. How is it possible? (*Hint:* Think both about the theoretical aspects of the methods and *how* we are computing the recovered correlation energy).
 :::
