@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 5
-subtitle: IESM Fall 2022-2023
-date: November 25, 2022
-author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024 
+date: November 24, 2023
+author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
 
@@ -44,8 +44,6 @@ $$\left| \Psi_j \right> = c_0 \left|\Phi_0 \right> +\sum_{ra} c_{a}^{r}\left|\Ph
 	* In general, CI method not often used because it is too expensive and other methods give results of comparable quality at lower cost
 
 # MPn basics
-*Note: this will be treated only this afternoon during Lectures, use this exercise to get some familiarity with it in practice and don't stress too much on the theory for now*
-
 * MPn is a **perturbation method**, i.e. the problem under investigation is assumed to only differ slightly from a problem which has already been solved, exactly or approximately
 * In QM, the perturbation of a system with Hamiltonian $\hat{\mathrm{H}}_0$
 is described by the perturbed Hamiltonian 
@@ -103,4 +101,13 @@ $$
 * This is probably the first exercise where calculations are completed in minutes and not second - it is always a good idea to monitor their status, this can be done using the terminal \texttt{tail -f} command
 
 ![](/data/iesm/img_slides/Ex5/tailcommand.png){width=90%}
- 
+
+# Moodle Annoucement
+
+As mentioned in yesterday's announcement on Moodle, from this exercise session you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools
+
+* More details about the project: https://drive.google.com/file/d/1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing.
+* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9
+* Your decision to participate will have no influences on your grades in any way. We will remain unaware of your consent status.
+
+
