@@ -654,28 +654,19 @@ However, such truncations introduce size-consistency problems.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_17008120135613043"  style="position: relative; width: 400px; height: 400px;">
-        <p id="3dmolwarning_17008120135613043" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_16692193574285905"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16692193574285905" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
-    //this is to ignore the existence of requirejs amd
-    var savedexports, savedmodule;
-    if (typeof exports !== 'undefined') savedexports = exports;
-    else exports = {}
-    if (typeof module !== 'undefined') savedmodule = module;
-    else module = {}
-
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-        exports = savedexports;
-        module = savedmodule;
-        resolve();
+      resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -684,21 +675,21 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
 }
 
-var viewer_17008120135613043 = null;
-var warn = document.getElementById("3dmolwarning_17008120135613043");
+var viewer_16692193574285905 = null;
+var warn = document.getElementById("3dmolwarning_16692193574285905");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_17008120135613043 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17008120135613043"),{backgroundColor:"white"});
-viewer_17008120135613043.zoomTo();
-	viewer_17008120135613043.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_17008120135613043.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_17008120135613043.zoomTo();
-viewer_17008120135613043.render();
+viewer_16692193574285905 = $3Dmol.createViewer($("#3dmolviewer_16692193574285905"),{backgroundColor:"white"});
+viewer_16692193574285905.zoomTo();
+	viewer_16692193574285905.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_16692193574285905.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16692193574285905.zoomTo();
+viewer_16692193574285905.render();
 });
 </script></div></div>
 </div>
@@ -758,21 +749,6 @@ viewer_17008120135613043.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#save last optimized coordinates in a dictionary</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">opt_coord</span> <span class="o">=</span> <span class="p">{</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="s1">&#39;hf&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_hf</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
-<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="s1">&#39;mp2&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_mp2</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;mp3&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_mp3</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">}</span>
-
-<span class="ne">TypeError</span>: &#39;NoneType&#39; object is not subscriptable
-</pre></div>
-</div>
-</div>
 </div>
 <p>You can calculate the distance between two points is the L2 norm (Euclidean distance) as</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
@@ -797,6 +773,51 @@ The calculation for the angle is also possible using numpy. You can use the foll
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_16692199545666447"  style="position: relative; width: 400px; height: 400px">
+        <p id="3dmolwarning_16692199545666447" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+      resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+}
+
+var viewer_16692199545666447 = null;
+var warn = document.getElementById("3dmolwarning_16692199545666447");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_16692199545666447 = $3Dmol.createViewer($("#3dmolviewer_16692199545666447"),{backgroundColor:"white"});
+viewer_16692199545666447.zoomTo();
+	viewer_16692199545666447.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_16692199545666447.addLabel("0",{"position": {"x": 1.33818170834342, "y": -0.3441480621560101, "z": -0.11947710580699746}, "inFront": true});
+	viewer_16692199545666447.addLabel("1",{"position": {"x": 0.02718170834042214, "y": 0.013851937844808478, "z": 0.4225228941942418}, "inFront": true});
+	viewer_16692199545666447.addLabel("2",{"position": {"x": -0.3168182916603645, "y": 1.3208519378477972, "z": -0.13747710580703862}, "inFront": true});
+	viewer_16692199545666447.addLabel("3",{"position": {"x": -0.9318182916617707, "y": -0.944148062157382, "z": -0.12747710580701577}, "inFront": true});
+	viewer_16692199545666447.addLabel("4",{"position": {"x": -1.7988182916637532, "y": -0.7091480621568447, "z": 0.23052289419380287}, "inFront": true});
+	viewer_16692199545666447.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_16692199545666447.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewer_16692199545666447.zoomTo();
+viewer_16692199545666447.render();
+});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
