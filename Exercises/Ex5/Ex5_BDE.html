@@ -449,7 +449,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5MP/Ex5_BDE.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5/Ex5_BDE.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -509,7 +509,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5MP/Ex5_BDE.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5/Ex5_BDE.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -537,7 +537,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex5MP/Ex5_BDE.ipynb"
+        <a href="../../_sources/Exercises/Ex5/Ex5_BDE.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -825,19 +825,28 @@ high.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692155728389642"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692155728389642" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_17008120232941172"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_17008120232941172" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -846,21 +855,21 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
 }
 
-var viewer_16692155728389642 = null;
-var warn = document.getElementById("3dmolwarning_16692155728389642");
+var viewer_17008120232941172 = null;
+var warn = document.getElementById("3dmolwarning_17008120232941172");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16692155728389642 = $3Dmol.createViewer($("#3dmolviewer_16692155728389642"),{backgroundColor:"white"});
-viewer_16692155728389642.zoomTo();
-	viewer_16692155728389642.addModel("5\n\n F   -0.642381967195    0.000000095800   -0.000000000108\n C    0.742340417015   -0.000000119001    0.000000000132\n H    1.090184715481   -1.027287458657    0.000000000131\n H    1.090184841794    0.513643534810   -0.889656896780\n H    1.090184842203    0.513643534859    0.889656897127\n","xyz");
-	viewer_16692155728389642.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692155728389642.zoomTo();
-viewer_16692155728389642.render();
+viewer_17008120232941172 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17008120232941172"),{backgroundColor:"white"});
+viewer_17008120232941172.zoomTo();
+	viewer_17008120232941172.addModel("5\n\n F   -0.642381967195    0.000000095800   -0.000000000108\n C    0.742340417015   -0.000000119001    0.000000000132\n H    1.090184715481   -1.027287458657    0.000000000131\n H    1.090184841794    0.513643534810   -0.889656896780\n H    1.090184842203    0.513643534859    0.889656897127\n","xyz");
+	viewer_17008120232941172.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_17008120232941172.zoomTo();
+viewer_17008120232941172.render();
 });
 </script></div></div>
 </div>
@@ -922,19 +931,28 @@ approach justified?</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_166921579256644"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_166921579256644" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_17008122977912064"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_17008122977912064" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -943,21 +961,21 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
 }
 
-var viewer_166921579256644 = null;
-var warn = document.getElementById("3dmolwarning_166921579256644");
+var viewer_17008122977912064 = null;
+var warn = document.getElementById("3dmolwarning_17008122977912064");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_166921579256644 = $3Dmol.createViewer($("#3dmolviewer_166921579256644"),{backgroundColor:"white"});
-viewer_166921579256644.zoomTo();
-	viewer_166921579256644.addModel("5\n\n F    0.652123810953   -0.000000071765    0.000000000364\n C   -0.755115976279    0.000000082967   -0.000000000539\n H   -1.100693373745    1.041608449843    0.000000000081\n H   -1.100693549039   -0.520804042642   -0.902059273546\n H   -1.100693548261   -0.520804042244    0.902059273020\n","xyz");
-	viewer_166921579256644.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_166921579256644.zoomTo();
-viewer_166921579256644.render();
+viewer_17008122977912064 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17008122977912064"),{backgroundColor:"white"});
+viewer_17008122977912064.zoomTo();
+	viewer_17008122977912064.addModel("5\n\n F   -0.000000036103    0.652204051871   -0.000000000032\n C    0.000000041757   -0.755178394763    0.000000000097\n H    0.520765747178   -1.100949930598   -0.901992627206\n H    0.520765747599   -1.100949930241    0.901992627151\n H   -1.041531311398   -1.100950017084   -0.000000000490\n","xyz");
+	viewer_17008122977912064.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_17008122977912064.zoomTo();
+viewer_17008122977912064.render();
 });
 </script></div></div>
 </div>
@@ -993,19 +1011,28 @@ viewer_166921579256644.render();
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692158019781544"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692158019781544" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_17008122980987382"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_17008122980987382" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -1014,21 +1041,21 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
 }
 
-var viewer_16692158019781544 = null;
-var warn = document.getElementById("3dmolwarning_16692158019781544");
+var viewer_17008122980987382 = null;
+var warn = document.getElementById("3dmolwarning_17008122980987382");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16692158019781544 = $3Dmol.createViewer($("#3dmolviewer_16692158019781544"),{backgroundColor:"white"});
-viewer_16692158019781544.zoomTo();
-	viewer_16692158019781544.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
-	viewer_16692158019781544.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692158019781544.zoomTo();
-viewer_16692158019781544.render();
+viewer_17008122980987382 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17008122980987382"),{backgroundColor:"white"});
+viewer_17008122980987382.zoomTo();
+	viewer_17008122980987382.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
+	viewer_17008122980987382.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_17008122980987382.zoomTo();
+viewer_17008122980987382.render();
 });
 </script></div></div>
 </div>
@@ -1059,11 +1086,6 @@ viewer_16692158019781544.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1078,45 +1100,6 @@ viewer_16692158019781544.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_1669215797514664"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_1669215797514664" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_1669215797514664 = null;
-var warn = document.getElementById("3dmolwarning_1669215797514664");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_1669215797514664 = $3Dmol.createViewer($("#3dmolviewer_1669215797514664"),{backgroundColor:"white"});
-viewer_1669215797514664.zoomTo();
-	viewer_1669215797514664.addModel("4\n\n C    0.000004358475   -0.000000133316   -0.000000000003\n H   -0.000007787374    1.086882376415   -0.000000000116\n H   -0.000022053527   -0.543440394675   -0.941268452604\n H   -0.000022054710   -0.543440394367    0.941268452756\n","xyz");
-	viewer_1669215797514664.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_1669215797514664.zoomTo();
-viewer_1669215797514664.render();
-});
-</script></div></div>
 </div>
 </section>
 <section id="f-radical">
@@ -1146,45 +1129,6 @@ viewer_1669215797514664.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692158083678055"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692158083678055" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_16692158083678055 = null;
-var warn = document.getElementById("3dmolwarning_16692158083678055");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16692158083678055 = $3Dmol.createViewer($("#3dmolviewer_16692158083678055"),{backgroundColor:"white"});
-viewer_16692158083678055.zoomTo();
-	viewer_16692158083678055.addModel("1\n\n F   -0.000000000000    0.000000000000    0.000000000000\n","xyz");
-	viewer_16692158083678055.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692158083678055.zoomTo();
-viewer_16692158083678055.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1200,21 +1144,11 @@ viewer_16692158083678055.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;guess&quot;</span><span class="p">:</span><span class="s2">&quot;gwh&quot;</span><span class="p">,</span> <span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;both&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -1310,7 +1244,7 @@ of the system, rather than the reaction.)</p>
         },
         kernelOptions: {
             kernelName: "compchem",
-            path: "./Exercises/Ex5MP"
+            path: "./Exercises/Ex5"
         },
         predefinedOutput: true
     }

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5. Post-Hartree Fock Methods: CI and MPn &#8212; Introduction to Electronic Structure Methods</title>
+    <title>5.1. Post-Hartree Fock Methods: Theory Recap &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.1. Post-Hartree Fock Methods: Theory Recap" href="Ex5Theory.html" />
-    <link rel="prev" title="4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry" href="../Ex4/HF.html" />
+    <link rel="next" title="5.2. Recovering Correlation Energy: B atom" href="Ex5_Boron.html" />
+    <link rel="prev" title="5. Post-Hartree Fock Methods: CI and MPn" href="IESM_Ex5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -231,7 +231,7 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="IESM_Ex5.html">
    5. Post-Hartree Fock Methods: CI and MPn
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
@@ -239,9 +239,9 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="Ex5Theory.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      5.1. Post-Hartree Fock Methods: Theory Recap
     </a>
    </li>
@@ -441,35 +441,6 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5MP/IESM_Ex5.ipynb&branch=main"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on JupyterHub"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_jupyterhub.svg">
-  </span>
-<span class="headerbtn__text-container">JupyterHub</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -509,7 +480,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5MP/IESM_Ex5.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5/Ex5Theory.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -537,7 +508,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex5MP/IESM_Ex5.ipynb"
+        <a href="../../_sources/Exercises/Ex5/Ex5Theory.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -548,7 +519,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.ipynb</span>
+<span class="headerbtn__text-container">.md</span>
 </a>
 
       </li>
@@ -574,23 +545,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-interaction-theory">
+   5.1.1. Configuration Interaction Theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moller-plesset-perturbation-theory">
+   5.1.2. Møller-Plesset Perturbation Theory
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Post-Hartree Fock Methods: CI and MPn</h1>
+                <h1>Post-Hartree Fock Methods: Theory Recap</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#configuration-interaction-theory">
+   5.1.1. Configuration Interaction Theory
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#moller-plesset-perturbation-theory">
+   5.1.2. Møller-Plesset Perturbation Theory
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -598,74 +616,80 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="post-hartree-fock-methods-ci-and-mpn">
-<h1><span class="section-number">5. </span>Post-Hartree Fock Methods: CI and MPn<a class="headerlink" href="#post-hartree-fock-methods-ci-and-mpn" title="Permalink to this headline">#</a></h1>
-<p>In the limit of a complete basis, the Hartree-Fock (HF) energy in the
-complete basis set limit (<span class="math notranslate nohighlight">\(E_{CBS}^{HF}\)</span>) yields an upper boundary to
-the physical energy of the system:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="post-hartree-fock-methods-theory-recap">
+<h1><span class="section-number">5.1. </span>Post-Hartree Fock Methods: Theory Recap<a class="headerlink" href="#post-hartree-fock-methods-theory-recap" title="Permalink to this headline">#</a></h1>
+<p>This section give a brief summary of the theory behind two <em>Post-Hartree-Fock methods</em>: <em>Configuration
+Interaction</em> (CI) and <em>Møller Plesset Perturbation Theory</em> (MPn, where <span class="math notranslate nohighlight">\(n\)</span> indicates the order of MP theory).</p>
+<section id="configuration-interaction-theory">
+<h2><span class="section-number">5.1.1. </span>Configuration Interaction Theory<a class="headerlink" href="#configuration-interaction-theory" title="Permalink to this headline">#</a></h2>
+<p>Of all the <em>ab initio</em> methods, CI is probably the easiest to understand, and perhaps one of the
+hardest to implement efficiently on a computer! The basic idea of CI is to improve the HF solution by increasing the space
+of all possible many-electron wavefunctions from a single Slater determinant (as in HF theory), to a set of many, in principle infinite, Slater determinants.</p>
+<p>An arbitrary <span class="math notranslate nohighlight">\(N\)</span>-electron wavefunction <span class="math notranslate nohighlight">\(\left|\Psi_j\right&gt;\)</span> can be expanded as a linear combination of <span class="math notranslate nohighlight">\(N\)</span>-electron basis functions <span class="math notranslate nohighlight">\(\left|\Phi_i\right&gt;\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{aligned}
-E^{total} = E^{HF}_{CBS} + E^{corr},\end{aligned}\]</div>
-<p>where the difference
-between the total and the Hartree-Fock energy is given by effects due to
-<em>electron correlation</em>, <span class="math notranslate nohighlight">\(E^{corr}\)</span>. The neglect of electron correlation
-in Hartree-Fock is a consequence of the restriction to a single Slater
-determinant. In weakly correlated systems, this may be a reasonable
-approximation; in the majority of the cases, however, this approximation
-breaks down more or less drastically. In such cases, it is inevitable to
-include electron correlation; Hartree-Fock results may, in the worst
-case, be almost (or even totally) meaningless, since the the contribution of correlation
-is significant in these systems.</p>
-<p>Inclusion of correlation can be based
-on <em>e.g.</em> <em>Post-Hartree-Fock methods</em>, such as <em>Configuration
-Interaction</em> (CI) or <em>Møller Plesset Perturbation Theory</em> of n<span class="math notranslate nohighlight">\(^{th}\)</span>
-order (MPn). In this set of exercises, you will compare the performance
-of HF, CI and MPn in describing a bond dissociation energy, and you will
-assess the influence of electron correlation on structural parameters
-(bond lengths and angles).</p>
-<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/blob/gh-pages/Exercises/Ex5MP/Slides_Ex5.md.pdf">📥 Download introductory slides</a></button></p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">🎯 <strong>Learning goals</strong></p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">Understanding what is correlation energy</p>
-<p class="sd-card-text">Getting familiar with some Post-HF method and their advantages/disadvantages</p>
-</div>
-</div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">📖 <strong>Chapter in script</strong></p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text">Chapter 5 - An introduction to configuration interaction theory</p>
-<p class="sd-card-text">Chapter 6 - Many-body perturbation theory</p>
-</div>
-</div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
-<div class="sd-card-header docutils">
-<p class="sd-card-text">📚 <strong>Resources</strong></p>
-</div>
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><a class="reference external" href="http://vergil.chemistry.gatech.edu/notes/ci.pdf">An Introduction to Configuration Interaction Theory - David Sherrill</a></p>
-<p class="sd-card-text">Jensen, F. (2017). Introduction to computational chemistry. John wiley &amp; sons.</p>
-<ul class="simple">
-<li><p class="sd-card-text">Chapter 4.8.1 - Møller–Plesset perturbation theory</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
+\left|\Psi_j\right&gt;=\sum_{i=1}^M c_{ij}\left|\Phi_j\right&gt;
+\end{aligned}
+\]</div>
+<p>In the case of HF theory, this expansion had a single element (<span class="math notranslate nohighlight">\(M=1\)</span>), i.e. a single Slater determinant made of the occupied HF one-electron orbitals.
+In general, there are <span class="math notranslate nohighlight">\(M\)</span> possible <span class="math notranslate nohighlight">\(N\)</span>-electron basis functions to be used, where a complete basis is reached if <span class="math notranslate nohighlight">\(M\)</span> is infinite.</p>
+<p>To better the idea behind CI theory, we can express the <span class="math notranslate nohighlight">\(N\)</span>-electron basis function as an expansion of “excitations” from the HF “reference” determinant:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\left| \Psi_j \right&gt; = c_0 \left|\Phi_0 \right&gt; +\sum_{ra} c_{a}^{r}\left|\Phi_{a}^{r}\right&gt;+\sum_{a&lt;b,r&lt;s} c_{ab}^{rs}\left|\Phi_{ab}^{rs}\right&gt; + \dots
+\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\left|\Phi_{a}^{r}\right&gt;\)</span> indicates the Slater determinants formed by replacing the spin-orbital <span class="math notranslate nohighlight">\(a\)</span> in <span class="math notranslate nohighlight">\(\left|\Phi_0\right&gt;\)</span> with the spin orital <span class="math notranslate nohighlight">\(r\)</span>, and so on. Every <span class="math notranslate nohighlight">\(N\)</span>-electron Slater determinant can be described by the set of <span class="math notranslate nohighlight">\(N\)</span> spin orbitals from which it is formed, and this set is often referred to as <strong>configuration</strong>. Thus, the <strong>configuration interaction</strong> methods is nothing more than the matrix solution of the time-independent non-relativistic Schrödinger equation, using the (truncated) expression for <span class="math notranslate nohighlight">\(\left|\Psi_j\right&gt;\)</span>, as expressed above.</p>
+<p>In practice, the CI expansion is typically truncated according to excitation level for computational tractability. <strong>CIS</strong> will include all excitations where one electron is promoted from an occupied orbital to an unoccupied one. Similarly, <strong>CISD</strong> will include all single and double excitations, and so on for <strong>CISDT</strong>, <strong>CISDTQ</strong>, etc. If all possible <span class="math notranslate nohighlight">\(N\)</span>-electrons excitations are taken into account, the porocedure is called <strong>full CI</strong>. If the one-electron basis is also complete (never in practice since we are using a computer, but it may be in theory), we have <strong>complete CI</strong>.</p>
+<p>In practice, Full CI has been performed for very small molecules for benchmarks studies. CIS is sometimes used for approximate excited state calculations, while otherwise CI method is not often used because it is too expensive  and other methods give results of comparable quality at lower cost.</p>
+</section>
+<section id="moller-plesset-perturbation-theory">
+<h2><span class="section-number">5.1.2. </span>Møller-Plesset Perturbation Theory<a class="headerlink" href="#moller-plesset-perturbation-theory" title="Permalink to this headline">#</a></h2>
+<p>Perturbation methods assume that the problem under investigation only differs slightly from a problem which has already been solved, exactly or approximately.
+In quantum mechanics, perturbation methods can be used to add corrections to solutions which employ an independent particle approximation, and the theoretical framework is then called Many-Body Perturbation Theory (MBPT).</p>
+<p>According to Rayleigh-Schrödinger perturbation theory, an instantaneous
+perturbation of a system described by a Hamiltonian <span class="math notranslate nohighlight">\(\hat{\mathrm{H}}_0\)</span>
+is described by the perturbed Hamiltonian</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\hat{\mathrm{H}} = \hat{\mathrm{H}}_0 + \lambda V.\end{aligned}\]</div>
+<p>For a
+sufficiently weak perturbation, the eigenstates and eigenvalues may then
+be expanded in a power series:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+&amp; \bra{\Psi} = \bra{\Psi^{(0)}} + \lambda\bra{\Psi^{(1)}} + \lambda^2 \bra{\Psi^{(2)}} + \dots\\
+ &amp; E_\Psi = E_\Psi^{(0)} + \lambda E_\Psi^{(1)} + \lambda^2 E_\Psi^{(2)} + \dots\end{aligned}\end{split}\]</div>
+<p>The perturbing operator <span class="math notranslate nohighlight">\(\hat{\mathrm{V}}\)</span> which is introduced in
+Møller-Plesset perturbation theory is the difference between the true
+ground state Hamiltonian and the Hartree-Fock Hamiltonian; hence, the
+perturbation may be written in terms of excited Slater determinants
+(which also imposes orthonormality). By carrying out the expansion,
+collecting terms of the same order and applying the Slater-Condon rules
+(see chapter 5.4 of the course script), one concludes that only
+doubly-excited Slater determinants can contribute to the second- and
+third-order term. Only the fourth-order energy will include up to
+quadruply excited determinants. By truncating the expansion at second
+order, one arrives at the MP2 expression for the energy, where electron
+correlation is now included as a perturbation to the uncorrelated
+Hartree-Fock wavefunction:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+E_0^{(2)} = \frac{1}{4} \sum_a \sum_b \sum_r \sum_s \frac{\left|\Bra{ab}\Ket{rs}\right|^2}{\epsilon_a+\epsilon_b-\epsilon_r-\epsilon_s},\end{aligned}\]</div>
+<p>where <span class="math notranslate nohighlight">\(a,b\)</span> denote occupied, <span class="math notranslate nohighlight">\(r,s\)</span> denote virtual orbitals and
+<span class="math notranslate nohighlight">\(\epsilon\)</span> are the respective energy eigenvalues.</p>
+<p>The total energy is
+given by the perturbative contribution and the Hartree-Fock energy:</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+E_0^{total} = E_0^{HF} + \sum_{n=1} E_0^{(n)}.\end{aligned}\]</div>
+<p>(We note
+<em>en passant</em> that the first-order Møller Plesset energy is nothing but
+the expression for the total Hartree Fock energy, such that the
+zero-order term is given by a sum over orbital eigenvalues.) The MP
+approach is often accurate enough; however, it is not variational,
+<em>i.e.</em> the resulting MPn energy may be lower than the true ground-state
+energy.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -681,7 +705,7 @@ assess the influence of electron correlation on structural parameters
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./Exercises/Ex5MP"
+            path: "./Exercises/Ex5"
         },
         predefinedOutput: true
     }
@@ -695,17 +719,17 @@ assess the influence of electron correlation on structural parameters
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../Ex4/HF.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="IESM_Ex5.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Post-Hartree Fock Methods: CI and MPn</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Ex5Theory.html" title="next page">
+    <a class='right-next' id="next-link" href="Ex5_Boron.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.1. </span>Post-Hartree Fock Methods: Theory Recap</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Recovering Correlation Energy: B atom</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

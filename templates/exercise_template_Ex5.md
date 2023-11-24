@@ -1,4 +1,4 @@
-# Exercise 5MP
+# Exercise 5
 
 Student:  Firstname Lastname    Sciper: 000000
 

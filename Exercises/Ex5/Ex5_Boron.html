@@ -447,7 +447,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5MP/Ex5_Boron.ipynb&branch=main"
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5/Ex5_Boron.ipynb&branch=main"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -507,7 +507,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5MP/Ex5_Boron.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5/Ex5_Boron.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -535,7 +535,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/Exercises/Ex5MP/Ex5_Boron.ipynb"
+        <a href="../../_sources/Exercises/Ex5/Ex5_Boron.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -662,6 +662,12 @@ MP5 will require the use of the following options: <code class="docutils literal
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning: There are no quantum mechanical atoms in this molecule.
+Warning: There are no quantum mechanical atoms in this molecule.
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -670,19 +676,28 @@ MP5 will require the use of the following options: <code class="docutils literal
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692178319808886"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692178319808886" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_1700812059379526"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_1700812059379526" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -691,21 +706,21 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
 }
 
-var viewer_16692178319808886 = null;
-var warn = document.getElementById("3dmolwarning_16692178319808886");
+var viewer_1700812059379526 = null;
+var warn = document.getElementById("3dmolwarning_1700812059379526");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16692178319808886 = $3Dmol.createViewer($("#3dmolviewer_16692178319808886"),{backgroundColor:"white"});
-viewer_16692178319808886.zoomTo();
-	viewer_16692178319808886.addModel("1\n\n B    0.000000000000    0.000000000000    0.000000000000\n","xyz");
-	viewer_16692178319808886.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692178319808886.zoomTo();
-viewer_16692178319808886.render();
+viewer_1700812059379526 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1700812059379526"),{backgroundColor:"white"});
+viewer_1700812059379526.zoomTo();
+	viewer_1700812059379526.addModel("1\n\n B    0.000000000000    0.000000000000    0.000000000000\n","xyz");
+	viewer_1700812059379526.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_1700812059379526.zoomTo();
+viewer_1700812059379526.render();
 });
 </script></div></div>
 </div>
@@ -718,6 +733,11 @@ viewer_16692178319808886.render();
 <span class="n">correlation</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># Calculate the total amount of correlation energy that should be recovered using the B_exact_e</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">F</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> Electron correlation: </span><span class="si">{</span><span class="n">correlation</span><span class="si">}</span><span class="s2"> Hartrees&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Electron correlation: None Hartrees
 </pre></div>
 </div>
 </div>
@@ -783,7 +803,7 @@ viewer_16692178319808886.render();
         },
         kernelOptions: {
             kernelName: "compchem",
-            path: "./Exercises/Ex5MP"
+            path: "./Exercises/Ex5"
         },
         predefinedOutput: true
     }
