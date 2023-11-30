@@ -7,16 +7,9 @@ output: beamer_presentation
 ---
 # Last Week's Annoucement
 
-As mentioned last week, during your work on exercises for this course you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools
-* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9
-* Your decision to participate will have no influences on your grades in any way. We will remain unaware of your consent status.
-* If you previously said "no" to cotnirbuting but wish to change your answer, let him know so he can re-launch your permissions
-* Thanks for considering! 
-
-More details about the project:
-https://drive.google.com/file/d/
-1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing
-
+* As mentioned last week, during your work on exercises for this course you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools. It's your decision to participate and there is no influence on your grades in any way. We will remain unaware of your consent status. If you previously said "no" but wish to change your response, let him know so he can re-launch your permissions. Thanks for considering!
+* More details about the project: https://drive.google.com/file/d/ 1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing
+* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9 
 
 # Exercise 6 - DFT vs (Post) HF Methods
 
