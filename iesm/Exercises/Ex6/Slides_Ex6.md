@@ -8,8 +8,9 @@ output: beamer_presentation
 # Last Week's Annoucement
 
 As mentioned last week, during your work on exercises for this course you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools
-
-* More details about the project: https://drive.google.com/file/d/1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing.
+* More details about the project:
+  https://drive.google.com/file/d/
+  1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing
 * Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9
 * Your decision to participate will have no influences on your grades in any way. We will remain unaware of your consent status.
 * If you previously said "no" to cotnirbuting but wish to change your answer, let him know so he can re-launch your permissions
@@ -27,7 +28,7 @@ As mentioned last week, during your work on exercises for this course you have t
 * DFT shifts the focus: we need to find the ground-state charge density
 * Why? For N electrons, wavefunction is a complex function of 3N variables, but the ground-state charge density is a function of 3 variables
 
-* The universal functional of DFT is not known, but proven to exist
+* The universal functional not known, but proven to exist
 * Everything that is unknown is contained in $E_{XC}$
 $$E(\rho) = T_{0}(\rho) + J(\rho) + \int v_{ext}\rho + E_{XC}$$
 * Each functional will treat the XC part differently
@@ -55,18 +56,17 @@ DFT is the workhorse of electronic structure methods:
 # Comments on DFT - downsides
 
 * DFT also has some downsides - we will see this in practice
-	* Difficulties with dispersion
-	* Band gap problem - LUMO cannot be associated with KS orbitals (derivative discontinuity, deviation from piecewise linearity) [ref](https://pubs.acs.org/doi/full/10.1021/ct2009363)
-
-![](/data/iesm/img_slides/Ex6/pwl.jpeg){width=100%}
+	* Difficulties with capturing systems dispersion
+	* Band gap problem - LUMO cannot be associated with KS orbitals (derivative discontinuity, deviation from piecewise linearity)
+ 	* No magic solutions :( we must make approximations and test our decisions
 
 
 # Comments on orbitals
 
-* Orbitals are spatial wavefunctions, essentially probability amplitudes
-* We work with approximations, orbitals are mathematical formulations that approximate reality
+* Orbitals are spatial wave functions, essentially probability amplitudes
+* In practice, our calculated orbitals are mathematical formulations which approximate our true system
 * Different calculations of orbtials (KS orbitals, canoncial HF orbitals, Dyson orbitals) can disagree qualitatively 
-*TAKE-HOME MESSAGE: be careful with overinterpreting orbitals in practice
+* Be careful with overinterpreting orbitals
 
 
 # Exercise 6.1 - Methylcyclohexane A-value
@@ -93,7 +93,7 @@ DFT is the workhorse of electronic structure methods:
 
 * You will visualize the KS orbitals - what can they tell us?
 	* Changes in the electronic structure between different species 
-	* Changes in a chemical transformation
+	* General size, shape of expected one-electron orbitals (hopefully)
 
 
 # Exercise 6 - Tips
