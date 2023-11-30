@@ -1,10 +1,19 @@
 ---
 title: Exercise Session 6
-subtitle: IESM Fall 2022-2023
-date: December 02, 2022
-author: "Andrea Levy, Beatriz Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024
+date: December 01, 2023
+author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
+# Last Week's Annoucement
+
+As mentioned last week, during your work on exercises for this course you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools
+
+* More details about the project: https://drive.google.com/file/d/1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing.
+* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9
+* Your decision to participate will have no influences on your grades in any way. We will remain unaware of your consent status.
+* If you previously said "no" to cotnirbuting but wish to change your answer, let him know so he can re-launch your permissions
+* Thanks for considering! 
 
 # Exercise 6 - DFT vs (Post) HF Methods
 
@@ -54,14 +63,10 @@ DFT is the workhorse of electronic structure methods:
 
 # Comments on orbitals
 
-* Orbitals are spatial wavefunctions/probability amplitudes
+* Orbitals are spatial wavefunctions, essentially probability amplitudes
 * We work with approximations, orbitals are mathematical formulations that approximate reality
-* *"Dyson orbitals"* show how electronic distribution varies with ionization
-	* Can be measured in some ionization experiments
-* Koopman's theorem associates the Dyson orbital of an ionization process with the canonical HF orbital of the unionized state (for systems where we don't have static correlation)
-* Dyson and canonical HF orbitals can even disagree qualitatively (*the same goes for KS orbitals*)
-
-**TAKE-HOME MESSAGE: be careful with overinterpreting orbitals!**
+* Different calculations of orbtials (KS orbitals, canoncial HF orbitals, Dyson orbitals) can disagree qualitatively 
+*TAKE-HOME MESSAGE: be careful with overinterpreting orbitals in practice
 
 
 # Exercise 6.1 - Methylcyclohexane A-value
@@ -92,8 +97,6 @@ DFT is the workhorse of electronic structure methods:
 
 
 # Exercise 6 - Tips
-**Tips!**
-
 * DFT will be further explored during lectures and the next exercises
 * Here we used as reference papers that can be useful for further understanding [DFT1](https://www.nature.com/articles/s41563-021-01013-3), [DFT2](https://aip.scitation.org/doi/10.1063/1.4869598#_i15), [orbitals](https://onlinelibrary.wiley.com/doi/full/10.1002/anie.201904609)
 * Calculations for Exercise 6.1 will be done in a collaborative way to speed up the exercise, add your results to [collaborative spreadsheet](https://docs.google.com/spreadsheets/d/1Yv4AvdKp-8laRF9-oGNbqaUAOvYGqgJF-sCjOWPguEw/edit#gid=0) (linked also on Moodle)
