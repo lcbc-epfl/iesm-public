@@ -301,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex7.html">
+    <a class="reference internal" href="Ex7_errors.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
@@ -572,12 +572,46 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blyp-functional">
+   7.3.1. BLYP functional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#m06-hf-functional">
+   7.3.2. M06-HF functional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison">
+   7.3.3. Comparison
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -589,6 +623,29 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blyp-functional">
+   7.3.1. BLYP functional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#m06-hf-functional">
+   7.3.2. M06-HF functional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparison">
+   7.3.3. Comparison
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -630,6 +687,8 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
 </div>
 </div>
 </div>
+<section id="blyp-functional">
+<h2><span class="section-number">7.3.1. </span>BLYP functional<a class="headerlink" href="#blyp-functional" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
@@ -677,14 +736,6 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
 </div>
 </div>
 </div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 9</p>
-<p>Which grid size should you use for this kind of problem? Are the fluctuations observed with the SG1 grid physical? Evaluate plots you create below.</p>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 10</p>
-<p>Compare the two functionals regarding convergence with respect to the integration grid. Which functional shows concerning behavior in this regard? Evaluate plots you create below</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -692,8 +743,11 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
 <span class="c1"># we plot the curves for each grid we used </span>
 <span class="k">for</span> <span class="n">grid</span> <span class="ow">in</span> <span class="n">grid_options</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="c1"># the interaction energy is the E_dimer - 2*E_single</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energies</span><span class="p">[</span><span class="n">grid</span><span class="p">])</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">E_ar</span><span class="p">)</span><span class="o">*</span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
+    <span class="c1"># you can use psi4.constants.hartree2kcalmol for the unit conversion    </span>
+    <span class="c1"># you can access the energy for gridpoint X by using</span>
+    <span class="c1">#   np.array(energies[X]), where X is the gridpoint you are interested in </span>
+    <span class="n">Interaction_Energy</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">Interaction_Energy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">reference</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Separation (A)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy (kcal/mol)&#39;</span><span class="p">)</span>
@@ -704,6 +758,9 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
 </div>
 </div>
 </div>
+</section>
+<section id="m06-hf-functional">
+<h2><span class="section-number">7.3.2. </span>M06-HF functional<a class="headerlink" href="#m06-hf-functional" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
@@ -758,8 +815,11 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
 <span class="c1"># we plot the curves for each grid we used </span>
 <span class="k">for</span> <span class="n">grid</span> <span class="ow">in</span> <span class="n">grid_options</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     <span class="c1"># the interaction energy is the E_dimer - 2*E_single</span>
-    <span class="n">e</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">energies</span><span class="p">[</span><span class="n">grid</span><span class="p">])</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">E_ar</span><span class="p">)</span><span class="o">*</span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">e</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
+    <span class="c1"># you can use psi4.constants.hartree2kcalmol for the unit conversion    </span>
+    <span class="c1"># you can access the energy for gridpoint X by using</span>
+    <span class="c1">#   np.array(energies[X]), where X is the gridpoint you are interested in </span>
+    <span class="n">Interaction_Energy</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">Interaction_Energy</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">grid</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">distances</span><span class="p">,</span> <span class="n">reference</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;reference&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Separation (A)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy (kcal/mol)&#39;</span><span class="p">)</span>
@@ -771,6 +831,19 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
 </div>
 </div>
 </section>
+<section id="comparison">
+<h2><span class="section-number">7.3.3. </span>Comparison<a class="headerlink" href="#comparison" title="Permalink to this headline">#</a></h2>
+<p>Compare the plots you obtained with the two funcitonals using different grids, and answer the following questions:</p>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 9</p>
+<p>Which grid size should you use for this kind of problem? Are the fluctuations observed with the SG1 grid physical? Evaluate plots you create above.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 10</p>
+<p>Compare the two functionals regarding convergence with respect to the integration grid. Which functional shows concerning behavior in this regard? Evaluate plots you create below</p>
+</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -781,16 +854,16 @@ This is also true when imaginary vibrational frequencies or PES curves of non-bo
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "python3710jvsc74a57bd041014d9ef4f1575fd00aab395420944c5c4814a3cabc0b1373f73a24b67da32e",
+            kernelName: "compchem",
             path: "./Exercises/Ex7"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3710jvsc74a57bd041014d9ef4f1575fd00aab395420944c5c4814a3cabc0b1373f73a24b67da32e'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               

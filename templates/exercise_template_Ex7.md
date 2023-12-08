@@ -73,7 +73,7 @@ Your answer here
 
 ```{admonition} Exercise 9
 :class: exercise
-Which grid size should you use for this kind of problem? Are the fluctuations observed with the SG1 grid physical? Evaluate plots you create below.
+Which grid size should you use for this kind of problem? Are the fluctuations observed with the SG1 grid physical? Evaluate plots you create above.
 ```
 
 

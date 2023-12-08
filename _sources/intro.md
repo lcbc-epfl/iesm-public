@@ -21,6 +21,7 @@ Over the years many people have contributed to the improvement of the course mat
 * Simon Dürr  [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-4304-8106)
 * Andrea Levy [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-1255-859X)
 * Sophie Johnson [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0003-4207-4350)
+* Andrej Antalík [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-8422-8410)
 
 ## Time Table Fall Semester 2023
 ⚠️ This timetable was updated at 19h on Sunday 24.09.2023

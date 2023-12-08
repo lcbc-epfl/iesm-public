@@ -57,7 +57,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="7.3. Integration grids" href="Ex7_DFT_integration_grid.html" />
-    <link rel="prev" title="7.1. Fixing errors in the calculations" href="Ex7.html" />
+    <link rel="prev" title="7.1. Fixing errors in the calculations" href="Ex7_errors.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -303,7 +303,7 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="Ex7.html">
+    <a class="reference internal" href="Ex7_errors.html">
      7.1. Fixing errors in the calculations
     </a>
    </li>
@@ -745,6 +745,11 @@ These exercises are based on Pierpaolo Morgante and Roberto Peverati’s 2020 Re
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+
+  Memory set to   1.863 GiB by Python driver.
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
 </pre></div>
 </div>
@@ -799,12 +804,12 @@ These exercises are based on Pierpaolo Morgante and Roberto Peverati’s 2020 Re
     <span class="c1"># call psi4  single point energy calculation once per method</span>
     <span class="c1"># use def2-QZVP basis set    </span>
     <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;dft_radial_points&#39;</span><span class="p">:</span><span class="mi">99</span><span class="p">,</span> <span class="s1">&#39;dft_spherical_points&#39;</span><span class="p">:</span> <span class="mi">590</span><span class="p">,</span> <span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uks&#39;</span><span class="p">})</span>
-    <span class="n">E_cao</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="n">method</span><span class="o">+</span><span class="s1">&#39;/def2-QZVP&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">cao_opt</span><span class="p">)</span>
-    <span class="n">E_o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="n">method</span><span class="o">+</span><span class="s1">&#39;/def2-QZVP&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">o_opt</span><span class="p">)</span>
-    <span class="n">E_ca</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="n">method</span><span class="o">+</span><span class="s1">&#39;/def2-QZVP&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ca_opt</span><span class="p">)</span>
+    <span class="n">E_cao</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">E_o</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">E_ca</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="c1"># calculate the raction energy in kcal/mol </span>
     <span class="c1"># you can use psi4.constants.hartree2kcalmol for the unit conversion    </span>
-    <span class="n">E_reaction</span> <span class="o">=</span> <span class="p">(</span><span class="n">E_o</span> <span class="o">+</span> <span class="n">E_ca</span> <span class="o">-</span> <span class="n">E_cao</span><span class="p">)</span><span class="o">*</span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
+    <span class="n">E_reaction</span> <span class="o">=</span> <span class="kc">None</span> 
 
     <span class="n">energies</span><span class="p">[</span><span class="n">method</span><span class="p">]</span><span class="o">=</span> <span class="p">[</span><span class="n">E_cao</span><span class="p">,</span> <span class="n">E_o</span><span class="p">,</span> <span class="n">E_ca</span><span class="p">,</span> <span class="n">E_reaction</span><span class="p">]</span>
 </pre></div>
@@ -825,6 +830,77 @@ These exercises are based on Pierpaolo Morgante and Roberto Peverati’s 2020 Re
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>E_CaO</th>
+      <th>E_O</th>
+      <th>E_Ca</th>
+      <th>E_reaction (kcal/mol)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pbe</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>b3lyp</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mn15</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mp2</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>scan</th>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>reference</th>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>96.15</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -882,19 +958,28 @@ These exercises are based on Pierpaolo Morgante and Roberto Peverati’s 2020 Re
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16268584519424098"  style="position: relative; width: 640px; height: 480px">
-        <p id="3dmolwarning_16268584519424098" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_17020219422485862"  style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_17020219422485862" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -903,26 +988,26 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
 }
 
-var viewer_16268584519424098 = null;
-var warn = document.getElementById("3dmolwarning_16268584519424098");
+var viewer_17020219422485862 = null;
+var warn = document.getElementById("3dmolwarning_17020219422485862");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-var viewergrid_16268584519424098 = null;
-viewergrid_16268584519424098 = $3Dmol.createViewerGrid($("#3dmolviewer_16268584519424098"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
-viewer_16268584519424098 = viewergrid_16268584519424098[0][0];
-viewergrid_16268584519424098[0][0].zoomTo();viewergrid_16268584519424098[0][1].zoomTo();	viewergrid_16268584519424098[0][0].addModel("8\n\n C    0.000000000000    0.762988243308    0.000000000000\n C    0.000000000000   -0.762988243308    0.000000000000\n H    0.509690071425    1.158040198300    0.882809099823\n H    0.509690071425    1.158040198300   -0.882809099821\n H   -1.019380142852    1.158040198300   -0.000000000000\n H   -0.509690071425   -1.158040198300   -0.882809099823\n H    1.019380142852   -1.158040198300    0.000000000000\n H   -0.509690071425   -1.158040198300    0.882809099821\n","xyz");
-	viewergrid_16268584519424098[0][1].addModel("16\n\n C    0.684160244353    0.337751120631   -1.911482682700\n C   -0.684160244353   -0.337751120631   -1.911482682700\n H    1.489645532040   -0.401434143375   -1.911482682700\n H    0.812773290289    0.969660346322   -2.794291998000\n H    0.812773290289    0.969660346322   -1.028673367400\n H   -1.489645532040    0.401434143375   -1.911482682700\n H   -0.812773290289   -0.969660346322   -2.794291998000\n H   -0.812773290289   -0.969660346322   -1.028673367400\n C    0.684160244353   -0.337751120631    1.911482682700\n C   -0.684160244353    0.337751120631    1.911482682700\n H    1.489645532040    0.401434143375    1.911482682700\n H    0.812773290289   -0.969660346322    2.794291998000\n H    0.812773290289   -0.969660346322    1.028673367400\n H   -1.489645532040   -0.401434143375    1.911482682700\n H   -0.812773290289    0.969660346322    2.794291998000\n H   -0.812773290289    0.969660346322    1.028673367400\n","xyz");
-	viewergrid_16268584519424098[0][0].setStyle({"stick": {}});
-	viewergrid_16268584519424098[0][1].setStyle({"stick": {}});
-	viewergrid_16268584519424098[0][0].zoomTo();
-	viewergrid_16268584519424098[0][1].zoomTo();
-viewergrid_16268584519424098[0][1].render();
-viewergrid_16268584519424098[0][0].render();
+var viewergrid_17020219422485862 = null;
+viewergrid_17020219422485862 = $3Dmol.createViewerGrid(document.getElementById("3dmolviewer_17020219422485862"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
+viewer_17020219422485862 = viewergrid_17020219422485862[0][0];
+viewergrid_17020219422485862[0][0].zoomTo();viewergrid_17020219422485862[0][1].zoomTo();	viewergrid_17020219422485862[0][0].addModel("8\n\n C    0.000000000000    0.762988243308    0.000000000000\n C    0.000000000000   -0.762988243308    0.000000000000\n H    0.509690071425    1.158040198300    0.882809099823\n H    0.509690071425    1.158040198300   -0.882809099821\n H   -1.019380142852    1.158040198300   -0.000000000000\n H   -0.509690071425   -1.158040198300   -0.882809099823\n H    1.019380142852   -1.158040198300    0.000000000000\n H   -0.509690071425   -1.158040198300    0.882809099821\n","xyz");
+	viewergrid_17020219422485862[0][1].addModel("16\n\n C    0.684160244353    0.337751120631   -1.911482682700\n C   -0.684160244353   -0.337751120631   -1.911482682700\n H    1.489645532040   -0.401434143375   -1.911482682700\n H    0.812773290289    0.969660346322   -2.794291998000\n H    0.812773290289    0.969660346322   -1.028673367400\n H   -1.489645532040    0.401434143375   -1.911482682700\n H   -0.812773290289   -0.969660346322   -2.794291998000\n H   -0.812773290289   -0.969660346322   -1.028673367400\n C    0.684160244353   -0.337751120631    1.911482682700\n C   -0.684160244353    0.337751120631    1.911482682700\n H    1.489645532040    0.401434143375    1.911482682700\n H    0.812773290289   -0.969660346322    2.794291998000\n H    0.812773290289   -0.969660346322    1.028673367400\n H   -1.489645532040   -0.401434143375    1.911482682700\n H   -0.812773290289    0.969660346322    2.794291998000\n H   -0.812773290289    0.969660346322    1.028673367400\n","xyz");
+	viewergrid_17020219422485862[0][0].setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewergrid_17020219422485862[0][1].setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewergrid_17020219422485862[0][0].zoomTo();
+	viewergrid_17020219422485862[0][1].zoomTo();
+viewergrid_17020219422485862[0][1].render();
+viewergrid_17020219422485862[0][0].render();
 });
 </script></div></div>
 </div>
@@ -964,6 +1049,82 @@ viewergrid_16268584519424098[0][0].render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>E_dimer</th>
+      <th>E_monomer</th>
+      <th>E_interaction (kcal/mol)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>b3lyp</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>b3lyp-d3(bj)</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>b3lyp-nl</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>pbe</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>pbe-d3</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mp2</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>svwn</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>reference</th>
+      <td></td>
+      <td></td>
+      <td>-1.34</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1012,19 +1173,28 @@ viewergrid_16268584519424098[0][0].render();
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16268543724381888"  style="position: relative; width: 640px; height: 480px">
-        <p id="3dmolwarning_16268543724381888" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+<div class="output text_html"><div id="3dmolviewer_17020229273637311"  style="position: relative; width: 640px; height: 480px;">
+        <p id="3dmolwarning_17020229273637311" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
         <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -1033,26 +1203,26 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://3dmol.org/build/3Dmol.js');
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
 }
 
-var viewer_16268543724381888 = null;
-var warn = document.getElementById("3dmolwarning_16268543724381888");
+var viewer_17020229273637311 = null;
+var warn = document.getElementById("3dmolwarning_17020229273637311");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-var viewergrid_16268543724381888 = null;
-viewergrid_16268543724381888 = $3Dmol.createViewerGrid($("#3dmolviewer_16268543724381888"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
-viewer_16268543724381888 = viewergrid_16268543724381888[0][0];
-viewergrid_16268543724381888[0][0].zoomTo();viewergrid_16268543724381888[0][1].zoomTo();	viewergrid_16268543724381888[0][0].addModel("6\n\n C    0.007316057723    0.723251161055    0.000000000000\n O    0.046333257723   -0.687701238945    0.000000000000\n H    0.515781457723    1.109999561055    0.879445000000\n H    0.515781457723    1.109999561055   -0.879445000000\n H   -1.009338242277    1.110477961055    0.000000000000\n H   -0.844678142277   -1.027787038945    0.000000000000\n","xyz");
-	viewergrid_16268543724381888[0][1].addModel("6\n\n O    0.042025923269    0.686693095375    0.000000000000\n C    0.009848223269   -0.721462704625    0.000000000000\n H    1.039153123269   -1.066346604625    0.000000000000\n H   -0.482625676731   -1.126009704625    0.885858200000\n H   -0.482625676731   -1.126009704625   -0.885858200000\n H   -0.858144776731    1.010381095375    0.000000000000\n","xyz");
-	viewergrid_16268543724381888[0][0].setStyle({"stick": {}});
-	viewergrid_16268543724381888[0][1].setStyle({"stick": {}});
-	viewergrid_16268543724381888[0][0].zoomTo();
-	viewergrid_16268543724381888[0][1].zoomTo();
-viewergrid_16268543724381888[0][1].render();
-viewergrid_16268543724381888[0][0].render();
+var viewergrid_17020229273637311 = null;
+viewergrid_17020229273637311 = $3Dmol.createViewerGrid(document.getElementById("3dmolviewer_17020229273637311"),{rows: 1, cols: 2, control_all: true},{backgroundColor:"white"});
+viewer_17020229273637311 = viewergrid_17020229273637311[0][0];
+viewergrid_17020229273637311[0][0].zoomTo();viewergrid_17020229273637311[0][1].zoomTo();	viewergrid_17020229273637311[0][0].addModel("6\n\n C    0.007316057723    0.723251161055    0.000000000000\n O    0.046333257723   -0.687701238945    0.000000000000\n H    0.515781457723    1.109999561055    0.879445000000\n H    0.515781457723    1.109999561055   -0.879445000000\n H   -1.009338242277    1.110477961055    0.000000000000\n H   -0.844678142277   -1.027787038945    0.000000000000\n","xyz");
+	viewergrid_17020229273637311[0][1].addModel("6\n\n O    0.042025923269    0.686693095375    0.000000000000\n C    0.009848223269   -0.721462704625    0.000000000000\n H    1.039153123269   -1.066346604625    0.000000000000\n H   -0.482625676731   -1.126009704625    0.885858200000\n H   -0.482625676731   -1.126009704625   -0.885858200000\n H   -0.858144776731    1.010381095375    0.000000000000\n","xyz");
+	viewergrid_17020229273637311[0][0].setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewergrid_17020229273637311[0][1].setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewergrid_17020229273637311[0][0].zoomTo();
+	viewergrid_17020229273637311[0][1].zoomTo();
+viewergrid_17020229273637311[0][1].render();
+viewergrid_17020229273637311[0][0].render();
 });
 </script></div></div>
 </div>
@@ -1095,6 +1265,70 @@ viewergrid_16268543724381888[0][0].render();
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>E_eclipsed</th>
+      <th>E_staggered</th>
+      <th>E_reaction (kcal/mol)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>pbe</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>b3lyp</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mn15</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>mp2</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>scan</th>
+      <td>None</td>
+      <td>None</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>reference</th>
+      <td></td>
+      <td></td>
+      <td>-1.01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1108,16 +1342,16 @@ viewergrid_16268543724381888[0][0].render();
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "iesm"
+            mode: "compchem"
         },
         kernelOptions: {
-            kernelName: "iesm",
+            kernelName: "compchem",
             path: "./Exercises/Ex7"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'iesm'</script>
+    <script>kernelName = 'compchem'</script>
 
               </div>
               
@@ -1126,7 +1360,7 @@ viewergrid_16268543724381888[0][0].render();
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="Ex7.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Ex7_errors.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>

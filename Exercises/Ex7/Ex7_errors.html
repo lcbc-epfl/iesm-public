@@ -1,0 +1,1183 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>7.1. Fixing errors in the calculations &#8212; Introduction to Electronic Structure Methods</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="7.2. Hard and easy cases for DFT" href="Ex7_DFT_Hard_Easy.html" />
+    <link rel="prev" title="7. Troubleshooting, Pitfalls, Traps" href="IESM_Ex7.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Electronic Structure Methods</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction to Electronic Structure Methods
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Exercises
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex1/IESM_Ex1.html">
+   1. Linear Algebra in Quantum Mechanics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_LinearAlgebra.html">
+     1.1. Review of Linear Algebra Basics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_QM.html">
+     1.2. Basic Concepts in Quantum Mechanics
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex1/Ex1_Numpy.html">
+     1.3. Working with vectors using Numpy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
+   2. First steps in
+   <em>
+    Psi4
+   </em>
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_theory.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
+     2.2. The Hydrogen Atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
+     2.3. A more complex system: H
+     <span class="math notranslate nohighlight">
+      \(_{2}\)
+     </span>
+     O
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_H2molecule.html">
+     3.1. Effects of Basis Set Size: The Molecular Case
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_Dissociation.html">
+     3.2. Recording a Dissociation Curve for H
+     <span class="math notranslate nohighlight">
+      \(_2\)
+     </span>
+     : RHF vs. UHF
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">
+     3.3. Geometry optimization of
+     <span class="math notranslate nohighlight">
+      \(H_2O\)
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex4/IESM_Ex4b.html">
+   4. The hartree fock procedure in detail
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex4/HF.html">
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
+   5. Post-Hartree Fock Methods: CI and MPn
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5Theory.html">
+     5.1. Post-Hartree Fock Methods: Theory Recap
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5_Boron.html">
+     5.2. Recovering Correlation Energy: B atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5_BDE.html">
+     5.3. Homolytic Cleavage of the C-F Bond
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex5/Ex5_HNO3.html">
+     5.4. Influence of correlation on geometry: HNO
+     <span class="math notranslate nohighlight">
+      \(_3\)
+     </span>
+     molecule
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex6/IESM_Ex6.html">
+   6. DFT vs (Post) HF Methods
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_aval.html">
+     6.1. Methylcyclohexane A-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex6/Ex6_geo.html">
+     6.2. Geometric properties:  NO
+     <span class="math notranslate nohighlight">
+      \(_3\cdot\)
+     </span>
+     radical
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="IESM_Ex7.html">
+   7. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     7.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex7_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Ex7_DFT_integration_grid.html">
+     7.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   8. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
+     8.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
+     8.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Backward.html">
+     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Visualize.html">
+     8.5. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   9. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex8/Ex8.html">
+     9.1. Potential Energy Scans and Visualisation of Trajectories
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Lecture
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/BasisFunctions.html">
+   Basis functions in quantum chemistry
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/CC.html">
+   Coupled cluster
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../Lecture/FAQ.html">
+   FAQ
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex7/Ex7_errors.ipynb&branch=main"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on JupyterHub"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="headerbtn__text-container">JupyterHub</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex7/Ex7_errors.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../_sources/Exercises/Ex7/Ex7_errors.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#allyl-radical">
+   7.1.1. Allyl radical
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copper-water-complex">
+   7.1.2. Copper Water complex
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#n2-geometry-optimization">
+   7.1.3. N2 Geometry optimization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#o-single-point-optimization">
+   7.1.4.
+   <span class="math notranslate nohighlight">
+    \(^3 O\)
+   </span>
+   Single point optimization
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Fixing errors in the calculations</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#allyl-radical">
+   7.1.1. Allyl radical
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#copper-water-complex">
+   7.1.2. Copper Water complex
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#n2-geometry-optimization">
+   7.1.3. N2 Geometry optimization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#o-single-point-optimization">
+   7.1.4.
+   <span class="math notranslate nohighlight">
+    \(^3 O\)
+   </span>
+   Single point optimization
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="fixing-errors-in-the-calculations">
+<h1><span class="section-number">7.1. </span>Fixing errors in the calculations<a class="headerlink" href="#fixing-errors-in-the-calculations" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+<span class="kn">import</span> <span class="nn">py3Dmol</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">helpers</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Threads set to 2 by Python driver.
+
+  Memory set to   1.863 GiB by Python driver.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
+</div>
+</div>
+<section id="allyl-radical">
+<h2><span class="section-number">7.1.1. </span>Allyl radical<a class="headerlink" href="#allyl-radical" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 1</p>
+<p>Fix the error in the single-point wavefunction optimization for the allyl radical using the BLYP exchange-correlation functional.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">allyl_radical</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">symmetry c1</span>
+<span class="s2">1 2</span>
+<span class="s2"> C     1.307894    -0.292412     0.050945</span>
+<span class="s2"> C     0.000000     0.443183     0.200966</span>
+<span class="s2"> C    -1.307894    -0.292412     0.050945</span>
+<span class="s2"> H     2.171777     0.390984     0.102354</span>
+<span class="s2"> H     1.440837    -1.062338     0.844942</span>
+<span class="s2"> H     1.356754    -0.838161    -0.914887</span>
+<span class="s2"> H     0.000000     1.488670     0.522326</span>
+<span class="s2"> H    -2.171777     0.390984     0.102354</span>
+<span class="s2"> H    -1.356754    -0.838161    -0.914887</span>
+<span class="s2"> H    -1.440837    -1.062338     0.844942&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c: [1.0]
+fc: [1.0]
+m: [2]
+fm: [2]
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValidationError</span><span class="g g-Whitespace">                           </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">allyl_radical</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2"> symmetry c1</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> 1 2</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2">  C     1.307894    -0.292412     0.050945</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2">  C     0.000000     0.443183     0.200966</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2">  C    -1.307894    -0.292412     0.050945</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2">  H     2.171777     0.390984     0.102354</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">  H     1.440837    -1.062338     0.844942</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">  H     1.356754    -0.838161    -0.914887</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">  H     0.000000     1.488670     0.522326</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2">  H    -2.171777     0.390984     0.102354</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s2">  H    -1.356754    -0.838161    -0.914887</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2">  H    -1.440837    -1.062338     0.844942&quot;&quot;&quot;</span><span class="p">)</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/molutil.py:259,</span> in <span class="ni">geometry</span><span class="nt">(geom, name)</span>
+<span class="g g-Whitespace">    </span><span class="mi">252</span> <span class="k">def</span> <span class="nf">geometry</span><span class="p">(</span><span class="n">geom</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">core</span><span class="o">.</span><span class="n">Molecule</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">253</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Function to create a molecule object of name *name* from the</span>
+<span class="g g-Whitespace">    </span><span class="mi">254</span><span class="sd">     geometry in string *geom*. Permitted for user use but deprecated</span>
+<span class="g g-Whitespace">    </span><span class="mi">255</span><span class="sd">     in driver in favor of explicit molecule-passing. Comments within</span>
+<span class="g g-Whitespace">    </span><span class="mi">256</span><span class="sd">     the string are filtered.</span>
+<span class="g g-Whitespace">    </span><span class="mi">257</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">258</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">259</span>     <span class="n">molrec</span> <span class="o">=</span> <span class="n">qcel</span><span class="o">.</span><span class="n">molparse</span><span class="o">.</span><span class="n">from_string</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">260</span>         <span class="n">geom</span><span class="p">,</span> <span class="n">enable_qm</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">missing_enabled_return_qm</span><span class="o">=</span><span class="s1">&#39;minimal&#39;</span><span class="p">,</span> <span class="n">enable_efp</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">missing_enabled_return_efp</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">262</span>     <span class="n">molecule</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">Molecule</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">molrec</span><span class="p">[</span><span class="s1">&#39;qm&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">    </span><span class="mi">263</span>     <span class="k">if</span> <span class="s2">&quot;geom&quot;</span> <span class="ow">in</span> <span class="n">molrec</span><span class="p">[</span><span class="s2">&quot;qm&quot;</span><span class="p">]:</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/qcelemental/molparse/from_string.py:276,</span> in <span class="ni">from_string</span><span class="nt">(molstr, dtype, name, fix_com, fix_orientation, fix_symmetry, return_processed, enable_qm, enable_efp, missing_enabled_return_qm, missing_enabled_return_efp, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">273</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&gt;&gt;&gt;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">275</span> <span class="c1"># &lt;&lt; 4 &gt;&gt;  dict--&gt;molspec</span>
+<span class="ne">--&gt; </span><span class="mi">276</span> <span class="n">molrec</span> <span class="o">=</span> <span class="n">from_input_arrays</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>     <span class="n">speclabel</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>     <span class="n">enable_qm</span><span class="o">=</span><span class="n">enable_qm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">279</span>     <span class="n">enable_efp</span><span class="o">=</span><span class="n">enable_efp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>     <span class="n">missing_enabled_return_qm</span><span class="o">=</span><span class="n">missing_enabled_return_qm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>     <span class="n">missing_enabled_return_efp</span><span class="o">=</span><span class="n">missing_enabled_return_efp</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">282</span>     <span class="o">**</span><span class="n">molinit</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">283</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">285</span> <span class="c1"># replace from_arrays stamp with from_string stamp</span>
+<span class="g g-Whitespace">    </span><span class="mi">286</span> <span class="k">if</span> <span class="s2">&quot;qm&quot;</span> <span class="ow">in</span> <span class="n">molrec</span> <span class="ow">and</span> <span class="n">molrec</span><span class="p">[</span><span class="s2">&quot;qm&quot;</span><span class="p">]:</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/qcelemental/molparse/from_arrays.py:97,</span> in <span class="ni">from_input_arrays</span><span class="nt">(enable_qm, enable_efp, missing_enabled_return_qm, missing_enabled_return_efp, geom, elea, elez, elem, mass, real, elbl, name, units, input_units_to_au, fix_com, fix_orientation, fix_symmetry, fragment_separators, fragment_charges, fragment_multiplicities, molecular_charge, molecular_multiplicity, fragment_files, hint_types, geom_hints, geom_unsettled, variables, speclabel, tooclose, zero_ghost_fragments, nonphysical, mtol, copy, verbose)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="k">if</span> <span class="n">enable_qm</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="n">dm</span> <span class="o">=</span> <span class="s2">&quot;qmvz&quot;</span> <span class="k">if</span> <span class="n">geom_unsettled</span> <span class="k">else</span> <span class="s2">&quot;qm&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>     <span class="n">processed</span> <span class="o">=</span> <span class="n">from_arrays</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>         <span class="n">domain</span><span class="o">=</span><span class="n">dm</span><span class="p">,</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="n">missing_enabled_return</span><span class="o">=</span><span class="n">missing_enabled_return_qm</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="n">geom</span><span class="o">=</span><span class="n">geom</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>         <span class="n">elea</span><span class="o">=</span><span class="n">elea</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>         <span class="n">elez</span><span class="o">=</span><span class="n">elez</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span>         <span class="n">elem</span><span class="o">=</span><span class="n">elem</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="n">mass</span><span class="o">=</span><span class="n">mass</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>         <span class="n">real</span><span class="o">=</span><span class="n">real</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span>         <span class="n">elbl</span><span class="o">=</span><span class="n">elbl</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">107</span>         <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="n">input_units_to_au</span><span class="o">=</span><span class="n">input_units_to_au</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="n">fix_com</span><span class="o">=</span><span class="n">fix_com</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">fix_orientation</span><span class="o">=</span><span class="n">fix_orientation</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">fix_symmetry</span><span class="o">=</span><span class="n">fix_symmetry</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span>         <span class="n">fragment_separators</span><span class="o">=</span><span class="n">fragment_separators</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>         <span class="n">fragment_charges</span><span class="o">=</span><span class="n">fragment_charges</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="n">fragment_multiplicities</span><span class="o">=</span><span class="n">fragment_multiplicities</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="n">molecular_charge</span><span class="o">=</span><span class="n">molecular_charge</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>         <span class="n">molecular_multiplicity</span><span class="o">=</span><span class="n">molecular_multiplicity</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>         <span class="n">geom_unsettled</span><span class="o">=</span><span class="n">geom_unsettled</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>         <span class="n">variables</span><span class="o">=</span><span class="n">variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span>         <span class="c1"># processing details</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>         <span class="n">speclabel</span><span class="o">=</span><span class="n">speclabel</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>         <span class="n">tooclose</span><span class="o">=</span><span class="n">tooclose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">123</span>         <span class="n">zero_ghost_fragments</span><span class="o">=</span><span class="n">zero_ghost_fragments</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="n">nonphysical</span><span class="o">=</span><span class="n">nonphysical</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="n">mtol</span><span class="o">=</span><span class="n">mtol</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>         <span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="n">update_with_error</span><span class="p">(</span><span class="n">molinit</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;qm&quot;</span><span class="p">:</span> <span class="n">processed</span><span class="p">})</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="k">if</span> <span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;qm&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="p">{}:</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/qcelemental/molparse/from_arrays.py:380,</span> in <span class="ni">from_arrays</span><span class="nt">(geom, elea, elez, elem, mass, real, elbl, name, units, input_units_to_au, fix_com, fix_orientation, fix_symmetry, fragment_separators, fragment_charges, fragment_multiplicities, molecular_charge, molecular_multiplicity, comment, provenance, connectivity, fragment_files, hint_types, geom_hints, geom_unsettled, variables, domain, missing_enabled_return, np_out, speclabel, tooclose, zero_ghost_fragments, nonphysical, mtol, copy, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span> <span class="n">update_with_error</span><span class="p">(</span><span class="n">molinit</span><span class="p">,</span> <span class="n">processed</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="n">Z_available</span> <span class="o">=</span> <span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;elez&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;real&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mf">1.0</span>
+<span class="ne">--&gt; </span><span class="mi">380</span> <span class="n">processed</span> <span class="o">=</span> <span class="n">validate_and_fill_chgmult</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span>     <span class="n">zeff</span><span class="o">=</span><span class="n">Z_available</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">382</span>     <span class="n">fragment_separators</span><span class="o">=</span><span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;fragment_separators&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">383</span>     <span class="n">molecular_charge</span><span class="o">=</span><span class="n">molecular_charge</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>     <span class="n">fragment_charges</span><span class="o">=</span><span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;fragment_charges&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>     <span class="n">molecular_multiplicity</span><span class="o">=</span><span class="n">molecular_multiplicity</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>     <span class="n">fragment_multiplicities</span><span class="o">=</span><span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;fragment_multiplicities&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="n">zero_ghost_fragments</span><span class="o">=</span><span class="n">zero_ghost_fragments</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>     <span class="n">verbose</span><span class="o">=</span><span class="n">verbose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">del</span> <span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;fragment_charges&quot;</span><span class="p">]</span>  <span class="c1"># sometimes safe update is too picky about overwriting v_a_f_fragments values</span>
+<span class="g g-Whitespace">    </span><span class="mi">391</span> <span class="k">del</span> <span class="n">molinit</span><span class="p">[</span><span class="s2">&quot;fragment_multiplicities&quot;</span><span class="p">]</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/qcelemental/molparse/chgmult.py:501,</span> in <span class="ni">validate_and_fill_chgmult</span><span class="nt">(zeff, fragment_separators, molecular_charge, fragment_charges, molecular_multiplicity, fragment_multiplicities, zero_ghost_fragments, verbose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>     <span class="k">return</span> <span class="n">fcgmp</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">final</span><span class="p">)</span> <span class="k">if</span> <span class="n">final</span> <span class="o">==</span> <span class="n">start</span> <span class="k">else</span> <span class="n">fcgmp</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;(&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">final</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span> <span class="c1"># TODO could winnow down the exact_* lists a bit by ruling out</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span> <span class="c1">#      independent values. do this if many-frag molecular systems take too</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span> <span class="c1">#      long in the itertools.product</span>
+<span class="ne">--&gt; </span><span class="mi">501</span> <span class="n">c_final</span><span class="p">,</span> <span class="n">fc_final</span><span class="p">,</span> <span class="n">m_final</span><span class="p">,</span> <span class="n">fm_final</span> <span class="o">=</span> <span class="n">reconcile</span><span class="p">(</span><span class="n">cgmp_exact_c</span><span class="p">,</span> <span class="n">cgmp_exact_fc</span><span class="p">,</span> <span class="n">cgmp_exact_m</span><span class="p">,</span> <span class="n">cgmp_exact_fm</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span> <span class="n">c_text</span> <span class="o">=</span> <span class="n">stringify</span><span class="p">(</span><span class="n">molecular_charge</span><span class="p">,</span> <span class="n">c_final</span><span class="p">)</span>
+<span class="nn">    504 fc_text = &quot;, &quot;.join((stringify(fs, ff) for fs, ff</span> in <span class="ni">zip</span><span class="nt">(fragment_charges, fc_final)))</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/qcelemental/molparse/chgmult.py:491,</span> in <span class="ni">validate_and_fill_chgmult.&lt;locals&gt;.reconcile</span><span class="nt">(exact_c, exact_fc, exact_m, exact_fm)</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span> <span class="k">if</span> <span class="n">verbose</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">490</span>     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+<span class="ne">--&gt; </span><span class="mi">491</span> <span class="k">raise</span> <span class="n">ValidationError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+
+<span class="ne">ValidationError</span>: Inconsistent or unspecified chg/mult: sys chg: None, frag chg: [1.0], sys mult: None, frag mult: [2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;allyl_radical.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uks&#39;</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;blyp/3-21G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">allyl_radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">allyl_radical</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="copper-water-complex">
+<h2><span class="section-number">7.1.2. </span>Copper Water complex<a class="headerlink" href="#copper-water-complex" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 2</p>
+<p>Fix the error in the single-point wavefunction optimisation of the <span class="math notranslate nohighlight">\(Cu[H_{2}O]^{2+}\)</span> aqua complex (as observed in the gas phase) using the PBE exchange-correlation functional.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cu_h2o_2plus</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">2 2</span>
+<span class="s2"> Cu        0.009000        0.015000        0.004000</span>
+<span class="s2"> O         0.043000        1.451000       -0.430000</span>
+<span class="s2"> H         0.050000        1.450000       -1.397000</span>
+<span class="s2"> H        -0.798000        1.844000       -0.158000</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">cu_h2o_2plus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div id="3dmolviewer_1702021297719387"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_1702021297719387" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
+        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+        </div>
+<script>
+
+var loadScriptAsync = function(uri){
+  return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
+    var tag = document.createElement('script');
+    tag.src = uri;
+    tag.async = true;
+    tag.onload = () => {
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
+    };
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+});
+};
+
+if(typeof $3Dmolpromise === 'undefined') {
+$3Dmolpromise = null;
+  $3Dmolpromise = loadScriptAsync('https://cdnjs.cloudflare.com/ajax/libs/3Dmol/2.0.3/3Dmol-min.js');
+}
+
+var viewer_1702021297719387 = null;
+var warn = document.getElementById("3dmolwarning_1702021297719387");
+if(warn) {
+    warn.parentNode.removeChild(warn);
+}
+$3Dmolpromise.then(function() {
+viewer_1702021297719387 = $3Dmol.createViewer(document.getElementById("3dmolviewer_1702021297719387"),{backgroundColor:"white"});
+viewer_1702021297719387.zoomTo();
+	viewer_1702021297719387.addModel("4\n\nCU    0.002818957497   -0.324415438751    0.105226172240\n O    0.036818957497    1.111584561249   -0.328773827760\n H    0.043818957497    1.110584561249   -1.295773827760\n H   -0.804181042503    1.504584561249   -0.056773827760\n","xyz");
+	viewer_1702021297719387.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_1702021297719387.zoomTo();
+viewer_1702021297719387.render();
+});
+</script></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;copper_water.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uks&#39;</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;pbe/3-21G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">cu_h2o_2plus</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;copper_water.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uks&#39;</span><span class="p">})</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;pbe/3-21G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">cu_h2o_2plus</span><span class="p">)</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/driver.py:526,</span> in <span class="ni">energy</span><span class="nt">(name, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compute energy(): method=</span><span class="si">{</span><span class="n">lowername</span><span class="si">}</span><span class="s2">, basis=</span><span class="si">{</span><span class="n">core</span><span class="o">.</span><span class="n">get_global_option</span><span class="p">(</span><span class="s1">&#39;BASIS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">, molecule=</span><span class="si">{</span><span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">, nre=</span><span class="si">{</span><span class="s1">&#39;w/EFP&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EFP&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">molecule</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;w/EFP&quot;</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="s2">&quot;EFP&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">pp</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()))</span>
+<span class="ne">--&gt; </span><span class="mi">526</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">procedures</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">lowername</span><span class="p">](</span><span class="n">lowername</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">molecule</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Return energy(): </span><span class="si">{</span><span class="n">core</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="s1">&#39;CURRENT ENERGY&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="k">for</span> <span class="n">postcallback</span> <span class="ow">in</span> <span class="n">hooks</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="s1">&#39;post&#39;</span><span class="p">]:</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py:2571,</span> in <span class="ni">run_scf</span><span class="nt">(name, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2568</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">has_global_option_changed</span><span class="p">(</span><span class="s1">&#39;SCF_TYPE&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2569</span>     <span class="n">core</span><span class="o">.</span><span class="n">set_global_option</span><span class="p">(</span><span class="s1">&#39;SCF_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;DF&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2571</span> <span class="n">scf_wfn</span> <span class="o">=</span> <span class="n">scf_helper</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">post_scf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2572</span> <span class="n">returnvalue</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2574</span> <span class="n">ssuper</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">functional</span><span class="p">()</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py:1767,</span> in <span class="ni">scf_helper</span><span class="nt">(name, post_scf, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1764</span>     <span class="n">core</span><span class="o">.</span><span class="n">print_out</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">         ---------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span>     <span class="n">core</span><span class="o">.</span><span class="n">print_out</span><span class="p">(</span><span class="s2">&quot;         &quot;</span> <span class="o">+</span> <span class="n">banner</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">58</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1767</span> <span class="n">scf_wfn</span> <span class="o">=</span> <span class="n">scf_wavefunction_factory</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">base_wfn</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">get_option</span><span class="p">(</span><span class="s1">&#39;SCF&#39;</span><span class="p">,</span> <span class="s1">&#39;REFERENCE&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1769</span> <span class="c1"># The wfn from_file routine adds the npy suffix if needed, but we add it here so that</span>
+<span class="g g-Whitespace">   </span><span class="mi">1770</span> <span class="c1"># we can use os.path.isfile to query whether the file exists before attempting to read</span>
+<span class="g g-Whitespace">   </span><span class="mi">1771</span> <span class="n">read_filename</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">get_scratch_filename</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py:1435,</span> in <span class="ni">scf_wavefunction_factory</span><span class="nt">(name, ref_wfn, reference, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1433</span> <span class="n">core</span><span class="o">.</span><span class="n">prepare_options_for_module</span><span class="p">(</span><span class="s2">&quot;SCF&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1434</span> <span class="k">if</span> <span class="n">reference</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RHF&quot;</span><span class="p">,</span> <span class="s2">&quot;RKS&quot;</span><span class="p">]:</span>
+<span class="ne">-&gt; </span><span class="mi">1435</span>     <span class="n">wfn</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">ref_wfn</span><span class="p">,</span> <span class="n">superfunc</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1436</span> <span class="k">elif</span> <span class="n">reference</span> <span class="o">==</span> <span class="s2">&quot;ROHF&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1437</span>     <span class="n">wfn</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">ref_wfn</span><span class="p">,</span> <span class="n">superfunc</span><span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="n">Fatal</span> <span class="n">Error</span><span class="p">:</span> <span class="n">RHF</span><span class="p">:</span> <span class="n">RHF</span> <span class="n">reference</span> <span class="ow">is</span> <span class="n">only</span> <span class="k">for</span> <span class="n">singlets</span><span class="o">.</span>
+<span class="n">Error</span> <span class="n">occurred</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">psilocaluser</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">builds</span><span class="o">/</span><span class="n">psi4</span><span class="o">-</span><span class="n">multiout_1670993662927</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">psi4</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">psi4</span><span class="o">/</span><span class="n">libscf_solver</span><span class="o">/</span><span class="n">rhf</span><span class="o">.</span><span class="n">cc</span> <span class="n">on</span> <span class="n">line</span><span class="p">:</span> <span class="mi">92</span>
+<span class="n">The</span> <span class="n">most</span> <span class="n">recent</span> <span class="mi">5</span> <span class="n">function</span> <span class="n">calls</span> <span class="n">were</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="n2-geometry-optimization">
+<h2><span class="section-number">7.1.3. </span>N2 Geometry optimization<a class="headerlink" href="#n2-geometry-optimization" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 3</p>
+<p>Fix the error in the geometry optimisation of <span class="math notranslate nohighlight">\(N_2\)</span> using the BP86 exchange-correlation functional.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n2</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2">N 0.000 0.000 0.000</span>
+<span class="s2">N 0.000 0.000 1.098</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;n2_opt.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;BP86/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">n2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="o-single-point-optimization">
+<h2><span class="section-number">7.1.4. </span><span class="math notranslate nohighlight">\(^3 O\)</span> Single point optimization<a class="headerlink" href="#o-single-point-optimization" title="Permalink to this headline">#</a></h2>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 4</p>
+<p>Fix the error in the single point calculation of  <span class="math notranslate nohighlight">\(^3 O\)</span> using the B97-2 exchange-correlation functional.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean</span><span class="p">()</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 3</span>
+<span class="s2">O 0.0 0.0 0.0</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;o3_singlept.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;b97-2/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">o</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">RuntimeError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="s1">&#39;o3_singlept.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;b97-2/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">o</span><span class="p">)</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/driver.py:526,</span> in <span class="ni">energy</span><span class="nt">(name, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">524</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Compute energy(): method=</span><span class="si">{</span><span class="n">lowername</span><span class="si">}</span><span class="s2">, basis=</span><span class="si">{</span><span class="n">core</span><span class="o">.</span><span class="n">get_global_option</span><span class="p">(</span><span class="s1">&#39;BASIS&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">, molecule=</span><span class="si">{</span><span class="n">molecule</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">, nre=</span><span class="si">{</span><span class="s1">&#39;w/EFP&#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;EFP&#39;</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">molecule</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">525</span> <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;w/EFP&quot;</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">molecule</span><span class="p">,</span> <span class="s2">&quot;EFP&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="n">pp</span><span class="o">.</span><span class="n">pformat</span><span class="p">(</span><span class="n">molecule</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()))</span>
+<span class="ne">--&gt; </span><span class="mi">526</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">procedures</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="n">lowername</span><span class="p">](</span><span class="n">lowername</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">molecule</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">527</span> <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Return energy(): </span><span class="si">{</span><span class="n">core</span><span class="o">.</span><span class="n">variable</span><span class="p">(</span><span class="s1">&#39;CURRENT ENERGY&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="k">for</span> <span class="n">postcallback</span> <span class="ow">in</span> <span class="n">hooks</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">][</span><span class="s1">&#39;post&#39;</span><span class="p">]:</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py:2571,</span> in <span class="ni">run_scf</span><span class="nt">(name, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2568</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">core</span><span class="o">.</span><span class="n">has_global_option_changed</span><span class="p">(</span><span class="s1">&#39;SCF_TYPE&#39;</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">2569</span>     <span class="n">core</span><span class="o">.</span><span class="n">set_global_option</span><span class="p">(</span><span class="s1">&#39;SCF_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;DF&#39;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">2571</span> <span class="n">scf_wfn</span> <span class="o">=</span> <span class="n">scf_helper</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">post_scf</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2572</span> <span class="n">returnvalue</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">energy</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2574</span> <span class="n">ssuper</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">functional</span><span class="p">()</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py:1767,</span> in <span class="ni">scf_helper</span><span class="nt">(name, post_scf, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1764</span>     <span class="n">core</span><span class="o">.</span><span class="n">print_out</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">         ---------------------------------------------------------</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1765</span>     <span class="n">core</span><span class="o">.</span><span class="n">print_out</span><span class="p">(</span><span class="s2">&quot;         &quot;</span> <span class="o">+</span> <span class="n">banner</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">58</span><span class="p">))</span>
+<span class="ne">-&gt; </span><span class="mi">1767</span> <span class="n">scf_wfn</span> <span class="o">=</span> <span class="n">scf_wavefunction_factory</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">base_wfn</span><span class="p">,</span> <span class="n">core</span><span class="o">.</span><span class="n">get_option</span><span class="p">(</span><span class="s1">&#39;SCF&#39;</span><span class="p">,</span> <span class="s1">&#39;REFERENCE&#39;</span><span class="p">),</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1769</span> <span class="c1"># The wfn from_file routine adds the npy suffix if needed, but we add it here so that</span>
+<span class="g g-Whitespace">   </span><span class="mi">1770</span> <span class="c1"># we can use os.path.isfile to query whether the file exists before attempting to read</span>
+<span class="g g-Whitespace">   </span><span class="mi">1771</span> <span class="n">read_filename</span> <span class="o">=</span> <span class="n">scf_wfn</span><span class="o">.</span><span class="n">get_scratch_filename</span><span class="p">(</span><span class="mi">180</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.npy&#39;</span>
+
+<span class="nn">File /opt/CompChem/psi4conda-1.7/lib/python3.10/site-packages/psi4/driver/procrouting/proc.py:1435,</span> in <span class="ni">scf_wavefunction_factory</span><span class="nt">(name, ref_wfn, reference, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1433</span> <span class="n">core</span><span class="o">.</span><span class="n">prepare_options_for_module</span><span class="p">(</span><span class="s2">&quot;SCF&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1434</span> <span class="k">if</span> <span class="n">reference</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;RHF&quot;</span><span class="p">,</span> <span class="s2">&quot;RKS&quot;</span><span class="p">]:</span>
+<span class="ne">-&gt; </span><span class="mi">1435</span>     <span class="n">wfn</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">ref_wfn</span><span class="p">,</span> <span class="n">superfunc</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1436</span> <span class="k">elif</span> <span class="n">reference</span> <span class="o">==</span> <span class="s2">&quot;ROHF&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1437</span>     <span class="n">wfn</span> <span class="o">=</span> <span class="n">core</span><span class="o">.</span><span class="n">ROHF</span><span class="p">(</span><span class="n">ref_wfn</span><span class="p">,</span> <span class="n">superfunc</span><span class="p">)</span>
+
+<span class="ne">RuntimeError</span>: 
+<span class="n">Fatal</span> <span class="n">Error</span><span class="p">:</span> <span class="n">RHF</span><span class="p">:</span> <span class="n">RHF</span> <span class="n">reference</span> <span class="ow">is</span> <span class="n">only</span> <span class="k">for</span> <span class="n">singlets</span><span class="o">.</span>
+<span class="n">Error</span> <span class="n">occurred</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span> <span class="o">/</span><span class="n">scratch</span><span class="o">/</span><span class="n">psilocaluser</span><span class="o">/</span><span class="n">conda</span><span class="o">-</span><span class="n">builds</span><span class="o">/</span><span class="n">psi4</span><span class="o">-</span><span class="n">multiout_1670993662927</span><span class="o">/</span><span class="n">work</span><span class="o">/</span><span class="n">psi4</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">psi4</span><span class="o">/</span><span class="n">libscf_solver</span><span class="o">/</span><span class="n">rhf</span><span class="o">.</span><span class="n">cc</span> <span class="n">on</span> <span class="n">line</span><span class="p">:</span> <span class="mi">92</span>
+<span class="n">The</span> <span class="n">most</span> <span class="n">recent</span> <span class="mi">5</span> <span class="n">function</span> <span class="n">calls</span> <span class="n">were</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "compchem"
+        },
+        kernelOptions: {
+            kernelName: "compchem",
+            path: "./Exercises/Ex7"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'compchem'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="IESM_Ex7.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">7. </span>Troubleshooting, Pitfalls, Traps</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Ex7_DFT_Hard_Easy.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">7.2. </span>Hard and easy cases for DFT</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Laboratory of Computational Biochemistry and Chemistry  - Prof. Ursula Roethlisberger<br/>
+  
+    <div class="extra_footer">
+      <div class="container-lg mt-3 footer"> <div class="row"> <div class="col-xl-9 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+</div> <div class="col-6 d-flex" style="justify-content:center"> <ul style="list-style:none"> <li> <a href="https://github.com/lcbc-epfl/iesm-public">GitHub </a> </li> </li> <!--<li> <a href="https://doi.org/10.5281/zenodo.0000000"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.00000000.svg" alt="DOI"></a> </li>--> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise) </div>
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
