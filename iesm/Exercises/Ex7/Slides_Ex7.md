@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 7
-subtitle: IESM Fall 2022-2023
-date: December 9, 2022
-author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024
+date: December 8, 2023
+author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
 
@@ -10,10 +10,10 @@ output: beamer_presentation
 
 Course Reminders:
 
-* No interviews today! Report and interviews for Exercise 6 will be due Monday 12.12. 
-* Exercise 7 will extend over two sessions: Friday 09.12 and Monday 12.12. 
 * Exercises 8 and 9 will not have interviews and will have due dates in January. Plus, we only keep the best grades of 8 of 9 reports : )
-* Oral exam schedule will be sent on Moodle today
+* Q&A session on Friday 15 December. Please send questions in advance via email/forum to help us prepare the Q&A session
+* Written exam on Monday 18 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
+
 
 # Exercise 7 - Troubleshooting, Pitfalls, Traps
 In this set of exercises, we will practice recognizing and accounting for common problems we face in computational chemistry. Get excited for error messages.
@@ -22,9 +22,10 @@ In this set of exercises, we will practice recognizing and accounting for common
 
 # Coding & Input Errors
 * In the first part of exercise 7, we’ll hunt for output mistakes which typically arrive via two vectors: the coding or the system input.
+* By the end of the session we will take ~10 min to discuss this part together! So try to solve and think about it, but don't spent the full 2h on this part if you get stuck ;)
 
 
-	![](/data/iesm/img_slides/Ex7/ex7_errors.png){width=75%}
+	![](/data/iesm/img_slides/Ex7/ex7_errors.png){width=65%}
 
 
 # Accounting for Dispersion Effects
@@ -61,6 +62,11 @@ Images and quoted text from: Morgante, M and Peverati, R. Int. J. Quantum Chem. 
 Some suggestions:
 
 * Troubleshoot together. It's more fun and effective! And realistic!
-* Some calculations make take time to run. Calculations for the second part of Ex 7 can be done collaboratively using the [same sheet](https://docs.google.com/spreadsheets/d/1Yv4AvdKp-8laRF9-oGNbqaUAOvYGqgJF-sCjOWPguEw/edit) as we did for exercise 6 (also posted on Moodle).
 * For the first part of the exercises, you can write the report by describing or showing the error and then describing how you solved it. 
+* Some calculations make take time to run. Calculations for the second part of Ex 7 can be done collaboratively using the [same sheet](https://docs.google.com/spreadsheets/d/114XbjjAA1b2JGtrkCULZi6yVn2QGEHVyx3Y_HifhEH8/edit#gid=548091578) as we did for exercise 6 (also posted on Moodle).
 
+# Help developing teaching tools
+
+* As mentioned in the past weeks, during your work on exercises for this course you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools. It's your decision to participate and there is no influence on your grades in any way. We will remain unaware of your consent status. If you previously said "no" but wish to change your response, let him know so he can re-launch your permissions. Thanks for considering!
+* More details about the project: https://drive.google.com/file/d/ 1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing
+* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9 

@@ -35,7 +35,7 @@ parts:
       - file: Exercises/Ex6/Ex6_geo.ipynb 
     - file: Exercises/Ex7/IESM_Ex7.ipynb
       sections:
-      - file: Exercises/Ex7/Ex7.ipynb
+      - file: Exercises/Ex7/Ex7_errors.ipynb
       - file: Exercises/Ex7/Ex7_DFT_Hard_Easy.ipynb
       - file: Exercises/Ex7/Ex7_DFT_integration_grid.ipynb  
     - file: Exercises/Ex9/IESM_Ex9.ipynb
