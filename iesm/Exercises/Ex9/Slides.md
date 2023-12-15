@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 8
-subtitle: IESM Fall 2022-2023
-date: December 16, 2022
-author: "Andrea Levy, Beatriz Bueno Mouriño, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2023-2024
+date: December 15, 2023
+author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
 output: beamer_presentation
 ---
 
@@ -20,7 +20,14 @@ In this set of exercises, we will learn how to traverse the potential energy lan
 
 ![](/data/iesm/img_slides/Ex9/learninggoals.png) 
 
-# Minimum Energy Path
+#Reaction Mechanisms & Stereochemistry 
+* The formation of propylene oxide takes place in a couple of steps
+* Nucleophilic substitution occurs, binding O to C, and removing Cl- (leaving group)
+* What is the name of such a mechanism and what is the orientation of O with respect to Cl as the ring begins to form?
+* What might possible trnasition states look like as the ring begins to form?
+![](/data/iesm/images/reaction_epoxide4.png){width=75%}
+
+#Minimum Energy Path
 
 ![](/data/iesm/images/PES_extended.png){width=75%}
 
@@ -30,8 +37,9 @@ In this set of exercises, we will learn how to traverse the potential energy lan
 
 ![](/data/iesm/images/miniumenergypath.png){width=75%}
 
-# Reaction
-* We look at the synthesis of propylene oxide
-
-	![](/data/iesm/images/reaction_epoxide4.png){width=75%}
+# Tips
+* You do not need to run all notebooks! We provide some data to you (we are the "colleague" in this case) while writing out the code if you're interested.
+* Read instructions carefully on how to generate a "guess" transition state
+* Calculations may take time, please don't be alarmed!
+* Notebooks are named Ex 9 based on past ordering, but this is Ex 8
 
