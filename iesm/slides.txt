@@ -5,4 +5,4 @@ Ex4/Slides_Ex4.md
 Ex5/Slides_Ex5.md
 Ex6/Slides_Ex6.md
 Ex7/Slides_Ex7.md
-Ex9/Slides.md
+Ex9/Slides_Ex9.md

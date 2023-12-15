@@ -20,14 +20,14 @@ In this set of exercises, we will learn how to traverse the potential energy lan
 
 ![](/data/iesm/img_slides/Ex9/learninggoals.png) 
 
-#Reaction Mechanisms & Stereochemistry 
+# Reaction Mechanisms & Stereochemistry 
 * The formation of propylene oxide takes place in a couple of steps
 * Nucleophilic substitution occurs, binding O to C, and removing Cl- (leaving group)
 * What is the name of such a mechanism and what is the orientation of O with respect to Cl as the ring begins to form?
 * What might possible trnasition states look like as the ring begins to form?
 ![](/data/iesm/images/reaction_epoxide4.png){width=75%}
 
-#Minimum Energy Path
+# Minimum Energy Path
 
 ![](/data/iesm/images/PES_extended.png){width=75%}
 
