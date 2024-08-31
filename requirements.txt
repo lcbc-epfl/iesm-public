@@ -6,3 +6,4 @@ pandoc
 pypandoc-binary
 nbformat
 mystmd
+lxml[html_clean]
