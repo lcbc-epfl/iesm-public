@@ -66,6 +66,7 @@ Note, that references to other parts of the documents aren't resolved in this te
     #replace everythin before \maketitle with replace text
     replace_text = """\\documentclass{article}
 \\usepackage{xcolor}
+\\usepackage{amsmath}
 \\usepackage{mdframed}
 \\usepackage{listings}
 \\usepackage{graphicx}
