@@ -628,7 +628,7 @@ title="Print to PDF"
 \[\langle\psi_i|\psi_j\rangle=0.\]</div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 21</p>
-<p>Define two vectors, <code class="docutils literal notranslate"><span class="pre">ϕ1</span></code> and <code class="docutils literal notranslate"><span class="pre">ϕ2</span></code>, with two elements each, that are normalized, in the sense <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_i\rangle=1\)</span>, and orthogonal in sense that <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_j\rangle=0\)</span>.</p>
+<p>Define two vectors, <code class="docutils literal notranslate"><span class="pre">ϕ1</span></code> and <code class="docutils literal notranslate"><span class="pre">ϕ2</span></code>, with two elements each, that are normalized, in the sense <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_i\rangle=1\)</span>, and orthogonal in the sense that <span class="math notranslate nohighlight">\(\langle\phi_i|\phi_j\rangle=0\)</span>.</p>
 <p><strong>Hint:</strong> In <code class="docutils literal notranslate"><span class="pre">numpy</span></code> a vector <code class="docutils literal notranslate"><span class="pre">v</span></code> with the two elements <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">2</span></code> is defined through the command</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
@@ -644,15 +644,9 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ϕ1: []
-ϕ2: []
-</pre></div>
-</div>
-</div>
 </div>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 21</p>
+<p class="admonition-title">Exercise 22</p>
 <p>Show that <span class="math notranslate nohighlight">\(\phi_1\)</span> and <span class="math notranslate nohighlight">\(\phi_2\)</span> are normalized and orthonormal</p>
 <p><strong>Hint:</strong> Here are reported some useful <code class="docutils literal notranslate"><span class="pre">numpy</span></code> functions to work with vectors:</p>
 <ul class="simple">
@@ -671,11 +665,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ϕ1|ϕ1&gt; = 0
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -684,11 +673,6 @@ title="Print to PDF"
 <span class="n">ϕ1ϕ2</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Replace with vector operation</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;ϕ1|ϕ2&gt; = </span><span class="si">{</span><span class="n">ϕ1ϕ2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;ϕ1|ϕ2&gt; = 0
 </pre></div>
 </div>
 </div>

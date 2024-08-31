@@ -280,7 +280,7 @@ Your answer here
 
 :::{admonition} Exercise 21
 :class: exercise
-Define two vectors, `ϕ1` and `ϕ2`, with two elements each, that are normalized, in the sense $\langle\phi_i|\phi_i\rangle=1$, and orthogonal in sense that $\langle\phi_i|\phi_j\rangle=0$.
+Define two vectors, `ϕ1` and `ϕ2`, with two elements each, that are normalized, in the sense $\langle\phi_i|\phi_i\rangle=1$, and orthogonal in the sense that $\langle\phi_i|\phi_j\rangle=0$.
 
 **Hint:** In `numpy` a vector `v` with the two elements `1` and `2` is defined through the command
 ```
@@ -290,7 +290,7 @@ v=np.array([1,2])
 
 Your answer here
 
-:::{admonition} Exercise 21
+:::{admonition} Exercise 22
 :class: exercise
 Show that $\phi_1$ and $\phi_2$ are normalized and orthonormal
 
