@@ -1,10 +1,29 @@
 ---
 title: Exercise Session 1
-subtitle: IESM Fall 2023-2024
-date: October 2, 2023
-author: "Andrej Antalik, Simon Dürr, Sophia Johnson, Andrea Levy" 
+subtitle: IESM Fall 2024-2025
+date: September 9, 2024
+author: "Yuri Cho, Salomé Guilbert, Sophia Johnson, Andrea Levy, Víctor Sabanza Gil, Qihao Zhang" 
 output: beamer_presentation
 ---
+
+# Introduction to Electronic Structure Methods
+Welcome to the IESM course!
+
+- Lecturer: Prof. Ursula Röthlisberger
+- TAs:
+	- Yuri Cho
+	- Salomé Guilbert
+	- Sophia Johnson
+	- Andrea Levy
+	- Víctor Sabanza Gil
+	- Qihao Zhang
+ 	- Different PostDocs from LCBC lab 	
+
+# Introduction to Electronic Structure Methods
+- Mondays and Tuesdays from 10h15 to 12hoo
+- Course schedule for the semester available on Moodle
+- Tomorrow we'll have the first lecture (BCH3303) with more practical details on the course
+- 
 
 # Exercise sessions
 - [Moodle page](https://moodle.epfl.ch/course/view.php?id=14818)
@@ -46,8 +65,8 @@ output: beamer_presentation
 
 - Submit report 
 	- `pdf` document answering the questions completely with relevant results
-		- Handwritten portions ok (please verify legibility) 
-		- You can type responses in the noto notebook and save as a pdf
+		- Handwritten portions ok (please verify legibility)
+		- We provide report templates on Overleaf and Google Docs 
 	- Due date is usually the next exercise session (check Moodle!) 
 	- Interviews during next exercise session
 		- Test your understanding and discuss your doubts/questions
@@ -109,3 +128,9 @@ output: beamer_presentation
 	  ![](/data/iesm/img_slides/Ex1/slides_from_jn.png){width=50%} \
 
 	* Will be uploaded on the [Moodle page](https://moodle.epfl.ch/course/view.php?id=14818)
+
+# Exercise 1 - Tips
+* We provide templates for the exercise reports, you can access them from the [exercise page](https://lcbc-epfl.github.io/iesm-public/Exercises/Ex1/IESM_Ex1.html) 
+
+  ![](/data/iesm/img_slides/Ex1/template_button.png){width=30%} \
+
