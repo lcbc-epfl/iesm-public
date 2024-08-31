@@ -2,7 +2,7 @@
 title: Exercise Session 1
 subtitle: IESM Fall 2024-2025
 date: September 9, 2024
-author: "Yuri Cho, Salomé Guilbert, Sophia Johnson, Andrea Levy, Víctor Sabanza Gil, Qihao Zhang" 
+author: "Yuri, Salomé, Sophia, Andrea, Víctor, Qihao" 
 output: beamer_presentation
 ---
 
@@ -20,10 +20,9 @@ Welcome to the IESM course!
  	- Different PostDocs from LCBC lab 	
 
 # Introduction to Electronic Structure Methods
-- Mondays and Tuesdays from 10h15 to 12hoo
-- Course schedule for the semester available on Moodle
-- Tomorrow we'll have the first lecture (BCH3303) with more practical details on the course
-- 
+- Mondays and Tuesdays from 10h15 to 12h00
+- Course schedule for the semester available on Moodle and the exercise webpage
+- Tomorrow we'll have the first lecture (in BCH3303) with more practical details on the course
 
 # Exercise sessions
 - [Moodle page](https://moodle.epfl.ch/course/view.php?id=14818)
@@ -133,4 +132,16 @@ Welcome to the IESM course!
 * We provide templates for the exercise reports, you can access them from the [exercise page](https://lcbc-epfl.github.io/iesm-public/Exercises/Ex1/IESM_Ex1.html) 
 
   ![](/data/iesm/img_slides/Ex1/template_button.png){width=30%} \
+* The answers can be short, for a full mark we don't expect more than what is explicitly asked
+* You can ask for help anytime on the exercises and also the theory!
+	* During the exercise session
+ 	* During the week, on the Moodle Forum (public, so everyone can benefit from the answers and in principle you can help each other!)
+  	* At least one of us will be always present at the lectures, you can ask us questions before/after or during the break
+ 
 
+# Exercise Sessions - Important Information
+* The final grade from the exercises will be given by the best 8 out of 9 exercises. Hence in principle, you have a "free" exercise that you can decide to skip
+* We will send a schedule for the interviews before each exercise session
+* Please let us know in advance if you will not be able to be there for the interview
+* In case of overlaps with other courses, we can schedule interviews also outside the exercise hours
+* In case you don't show up at the interview and you don't contact us via email to reschedule the interview, the grade for that report will be 0 
