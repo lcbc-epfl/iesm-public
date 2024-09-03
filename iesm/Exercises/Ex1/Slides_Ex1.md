@@ -60,7 +60,7 @@ Welcome to the IESM course!
 - Examples: 
 ![](/data/iesm/img_slides/Ex1/ex_example.png) \
 
-- Exercises contribute to 1/3 of final grade
+- Exercises account for 1/3 of the final grade (2/3 from two written exams)
 
 - Submit report 
 	- `pdf` document answering the questions completely with relevant results
@@ -95,13 +95,6 @@ Welcome to the IESM course!
 
 - Run a code cell by pressing :arrow_forward: (or `Ctrl`+`Enter`)
 ![](/data/iesm/img_slides/Ex1/jn_2.png) \
-
-# Saving Jupyter notebooks as PDFs
-![](/data/iesm/img_slides/Ex1/saving_notebook_to_pdf.png) \
-
-- Run a code cell by pressing :arrow_forward: (or `Ctrl`+`Enter`)
-![](/data/iesm/img_slides/Ex1/jn_2.png) \
-
 
 # Exercise 1 - Overview
 **Linear Algebra in Quantum Mechanics** - [Exercise page](https://lcbc-epfl.github.io/iesm-public/Exercises/Ex1/IESM_Ex1.html)
