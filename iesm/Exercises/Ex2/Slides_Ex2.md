@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 2
-subtitle: IESM Fall 2023-2024
-date: October 23, 2023
-author: "Andrej Antalik, Simon Dürr, Sophia Johnson, Andrea Levy" 
+subtitle: IESM Fall 2024-2025
+date: September 24, 2024
+author: "Yuri, Salomé, Sophia, Andrea, Víctor, Qihao" 
 output: beamer_presentation
 ---
 
