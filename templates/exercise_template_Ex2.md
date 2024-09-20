@@ -86,7 +86,7 @@ Your answer here
 Include a table of the the calculated energies using the three different basis sets, specifying for each of them the number of basis functions used. Compare the energies with the analytical value for the H atom, given by the analytical expression: 
 
 $$
- E = \frac{1}{2} m_e c^2\alpha^2,
+ E = -\frac{1}{2} m_e c^2\alpha^2,
 $$
 
 where $\alpha$ is the fine structure constant. 
