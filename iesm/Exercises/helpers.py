@@ -14,9 +14,13 @@ def psi4_read_scf(file):
         for line in file:
             if re.search('iter', line):
                 cycles.append(line)
-    cycles = [ cycle.replace('@DF-UHF iter ','').replace(' DIIS', '').split('   ') for cycle in cycles]
+    cycles = [ cycle.replace('@DF-UHF iter ','').replace(' DIIS', '').replace('/', '').replace('ADIIS', '').replace('DIIS', '').replace('\n', '').split(' ') for cycle in cycles]
+    new_cycles=[]
+    for cycle in cycles:
+        new_cycles.append([i for i in cycle if i != ''])
+    cycles=new_cycles
     cycles = np.array(cycles)
-    scf = pd.DataFrame(cycles[:,1:], columns=['iteration', 'Total Energy', 'Delta E', 'RMS |[F,P]|'])
+    scf = pd.DataFrame(cycles[:,:], columns=['iteration', 'Total Energy', 'Delta E', 'RMS |[F,P]|'])
     scf['Total Energy'] = scf['Total Energy'].astype(float)
     scf['Delta E'] = scf['Delta E'].astype(float)
     scf['RMS |[F,P]|'] = scf['RMS |[F,P]|'].astype(float)
