@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6. DFT vs (Post) HF Methods &#8212; Introduction to Electronic Structure Methods</title>
+    <title>11. DFT vs (Post) HF Methods &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.1. Methylcyclohexane A-value" href="Ex6_aval.html" />
-    <link rel="prev" title="5.4. Influence of correlation on geometry: HNO\(_3\) molecule" href="../Ex5/Ex5_HNO3.html" />
+    <link rel="next" title="11.1. Methylcyclohexane A-value" href="Ex6_aval.html" />
+    <link rel="prev" title="10.4. Influence of correlation on geometry: HNO\(_3\) molecule" href="../Ex5/Ex5_HNO3.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -145,12 +145,50 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex2/Ex2_theory.html">
+   2. Basis Sets - Defining Vector Spaces
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
+   3. The Hydrogen Atom
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
+   4. A more complex system: H
+   <span class="math notranslate nohighlight">
+    \(_{2}\)
+   </span>
+   O
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex3/Ex3_H2molecule.html">
+   6. Effects of Basis Set Size: The Molecular Case
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex3/Ex3_Dissociation.html">
+   7. Recording a Dissociation Curve for H
+   <span class="math notranslate nohighlight">
+    \(_2\)
+   </span>
+   : RHF vs. UHF
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">
+   8. Geometry optimization of
+   <span class="math notranslate nohighlight">
+    \(H_2O\)
+   </span>
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
-   2. First steps in
-   <em>
-    Psi4
-   </em>
+  <a class="reference internal" href="../Ex4/IESM_Ex4b.html">
+   9. The hartree fock procedure in detail
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -159,29 +197,15 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2_theory.html">
-     2.1. Basis Sets - Defining Vector Spaces
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
-     2.2. The Hydrogen Atom
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
-     2.3. A more complex system: H
-     <span class="math notranslate nohighlight">
-      \(_{2}\)
-     </span>
-     O
+    <a class="reference internal" href="../Ex4/HF.html">
+     9.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
-   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
+   10. Post-Hartree Fock Methods: CI and MPn
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
@@ -190,74 +214,23 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex3/Ex3_H2molecule.html">
-     3.1. Effects of Basis Set Size: The Molecular Case
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex3/Ex3_Dissociation.html">
-     3.2. Recording a Dissociation Curve for H
-     <span class="math notranslate nohighlight">
-      \(_2\)
-     </span>
-     : RHF vs. UHF
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">
-     3.3. Geometry optimization of
-     <span class="math notranslate nohighlight">
-      \(H_2O\)
-     </span>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex4/IESM_Ex4b.html">
-   4. The hartree fock procedure in detail
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex4/HF.html">
-     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex5/IESM_Ex5.html">
-   5. Post-Hartree Fock Methods: CI and MPn
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5Theory.html">
-     5.1. Post-Hartree Fock Methods: Theory Recap
+     10.1. Post-Hartree Fock Methods: Theory Recap
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5_Boron.html">
-     5.2. Recovering Correlation Energy: B atom
+     10.2. Recovering Correlation Energy: B atom
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5_BDE.html">
-     5.3. Homolytic Cleavage of the C-F Bond
+     10.3. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex5/Ex5_HNO3.html">
-     5.4. Influence of correlation on geometry: HNO
+     10.4. Influence of correlation on geometry: HNO
      <span class="math notranslate nohighlight">
       \(_3\)
      </span>
@@ -268,22 +241,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   6. DFT vs (Post) HF Methods
+   11. DFT vs (Post) HF Methods
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex6_aval.html">
-     6.1. Methylcyclohexane A-value
+     11.1. Methylcyclohexane A-value
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex6_geo.html">
-     6.2. Geometric properties:  NO
+     11.2. Geometric properties:  NO
      <span class="math notranslate nohighlight">
       \(_3\cdot\)
      </span>
@@ -294,7 +267,66 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex7/IESM_Ex7.html">
-   7. Troubleshooting, Pitfalls, Traps
+   12. Troubleshooting, Pitfalls, Traps
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_errors.html">
+     12.1. Fixing errors in the calculations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
+     12.2. Hard and easy cases for DFT
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
+     12.3. Integration grids
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   13. Finding Transition States and Barrier Heights: First Order Saddle Points
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
+     13.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
+     13.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Backward.html">
+     13.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Visualize.html">
+     13.5. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   14. Potential Energy Scans and Visualisation of Trajectories
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -303,67 +335,8 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7_errors.html">
-     7.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
-     7.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
-     7.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
-   8. Finding Transition States and Barrier Heights: First Order Saddle Points
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Ex9Theory.html">
-     8.1. Theory
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Ex9.html">
-     8.2. Locating Transition States: Constrained Optimisations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Backward.html">
-     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Visualize.html">
-     8.5. IRC analysis
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
-   9. Potential Energy Scans and Visualisation of Trajectories
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     9.1. Potential Energy Scans and Visualisation of Trajectories
+     14.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
@@ -599,7 +572,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="dft-vs-post-hf-methods">
-<h1><span class="section-number">6. </span>DFT vs (Post) HF Methods<a class="headerlink" href="#dft-vs-post-hf-methods" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">11. </span>DFT vs (Post) HF Methods<a class="headerlink" href="#dft-vs-post-hf-methods" title="Permalink to this headline">#</a></h1>
 <p>All methods discussed so far evaluate the energy of a system based on
 its wavefunction <span class="math notranslate nohighlight">\(\Psi\)</span>; a purely mathematical object that lacks any
 direct physical interpretation. In the next two sets of exercises, you
@@ -689,13 +662,13 @@ week.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.4. </span>Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</p>
+            <p class="prev-next-title"><span class="section-number">10.4. </span>Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Ex6_aval.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.1. </span>Methylcyclohexane A-value</p>
+        <p class="prev-next-title"><span class="section-number">11.1. </span>Methylcyclohexane A-value</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
