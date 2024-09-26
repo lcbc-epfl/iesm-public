@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>8.1. Post-Hartree Fock Methods: Theory Recap &#8212; Introduction to Electronic Structure Methods</title>
+    <title>5.1. Post-Hartree Fock Methods: Theory Recap &#8212; Introduction to Electronic Structure Methods</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -56,8 +56,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="8.2. Recovering Correlation Energy: B atom" href="Ex5_Boron.html" />
-    <link rel="prev" title="8. Post-Hartree Fock Methods: CI and MPn" href="IESM_Ex5.html" />
+    <link rel="next" title="5.2. Recovering Correlation Energy: B atom" href="Ex5_Boron.html" />
+    <link rel="prev" title="5. Post-Hartree Fock Methods: CI and MPn" href="IESM_Ex5.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en">
     
@@ -145,28 +145,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ex2/Ex2_theory.html">
-   2. Basis Sets - Defining Vector Spaces
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
-   3. The Hydrogen Atom
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
-   4. A more complex system: H
-   <span class="math notranslate nohighlight">
-    \(_{2}\)
-   </span>
-   O
-  </a>
- </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
-   6. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  <a class="reference internal" href="../Ex2/IESM_Ex2.html">
+   2. First steps in
+   <em>
+    Psi4
+   </em>
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -175,13 +159,44 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_theory.html">
+     2.1. Basis Sets - Defining Vector Spaces
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_hydrogen_atom.html">
+     2.2. The Hydrogen Atom
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex2/Ex2_water-molecule.html">
+     2.3. A more complex system: H
+     <span class="math notranslate nohighlight">
+      \(_{2}\)
+     </span>
+     O
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex3/IESM_Ex3.html">
+   3. Large Basis Sets, Dissociation Energy and Geometry Optimisation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3_H2molecule.html">
-     6.1. Effects of Basis Set Size: The Molecular Case
+     3.1. Effects of Basis Set Size: The Molecular Case
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3_Dissociation.html">
-     6.2. Recording a Dissociation Curve for H
+     3.2. Recording a Dissociation Curve for H
      <span class="math notranslate nohighlight">
       \(_2\)
      </span>
@@ -190,7 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">
-     6.3. Geometry optimization of
+     3.3. Geometry optimization of
      <span class="math notranslate nohighlight">
       \(H_2O\)
      </span>
@@ -200,49 +215,49 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex4/IESM_Ex4b.html">
-   7. The hartree fock procedure in detail
+   4. The hartree fock procedure in detail
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex4/HF.html">
-     7.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
+     4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="IESM_Ex5.html">
-   8. Post-Hartree Fock Methods: CI and MPn
+   5. Post-Hartree Fock Methods: CI and MPn
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     8.1. Post-Hartree Fock Methods: Theory Recap
+     5.1. Post-Hartree Fock Methods: Theory Recap
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex5_Boron.html">
-     8.2. Recovering Correlation Energy: B atom
+     5.2. Recovering Correlation Energy: B atom
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex5_BDE.html">
-     8.3. Homolytic Cleavage of the C-F Bond
+     5.3. Homolytic Cleavage of the C-F Bond
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="Ex5_HNO3.html">
-     8.4. Influence of correlation on geometry: HNO
+     5.4. Influence of correlation on geometry: HNO
      <span class="math notranslate nohighlight">
       \(_3\)
      </span>
@@ -253,22 +268,22 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex6/IESM_Ex6.html">
-   9. DFT vs (Post) HF Methods
+   6. DFT vs (Post) HF Methods
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex6/Ex6_aval.html">
-     9.1. Methylcyclohexane A-value
+     6.1. Methylcyclohexane A-value
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../Ex6/Ex6_geo.html">
-     9.2. Geometric properties:  NO
+     6.2. Geometric properties:  NO
      <span class="math notranslate nohighlight">
       \(_3\cdot\)
      </span>
@@ -279,34 +294,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../Ex7/IESM_Ex7.html">
-   10. Troubleshooting, Pitfalls, Traps
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7_errors.html">
-     10.1. Fixing errors in the calculations
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
-     10.2. Hard and easy cases for DFT
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
-     10.3. Integration grids
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
-   11. Finding Transition States and Barrier Heights: First Order Saddle Points
+   7. Troubleshooting, Pitfalls, Traps
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
   <label for="toctree-checkbox-7">
@@ -315,30 +303,25 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Ex9Theory.html">
-     11.1. Theory
+    <a class="reference internal" href="../Ex7/Ex7_errors.html">
+     7.1. Fixing errors in the calculations
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Ex9.html">
-     11.2. Locating Transition States: Constrained Optimisations
+    <a class="reference internal" href="../Ex7/Ex7_DFT_Hard_Easy.html">
+     7.2. Hard and easy cases for DFT
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Backward.html">
-     11.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../Ex9/Visualize.html">
-     11.5. IRC analysis
+    <a class="reference internal" href="../Ex7/Ex7_DFT_integration_grid.html">
+     7.3. Integration grids
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
-   12. Potential Energy Scans and Visualisation of Trajectories
+  <a class="reference internal" href="../Ex9/IESM_Ex9.html">
+   8. Finding Transition States and Barrier Heights: First Order Saddle Points
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
   <label for="toctree-checkbox-8">
@@ -347,8 +330,40 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9Theory.html">
+     8.1. Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Ex9.html">
+     8.2. Locating Transition States: Constrained Optimisations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Backward.html">
+     8.3. Recording a Potential Energy Profile: The Intrinsic Reaction Coordinate (IRC)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../Ex9/Visualize.html">
+     8.5. IRC analysis
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../Ex8/IESM_Ex8.html">
+   9. Potential Energy Scans and Visualisation of Trajectories
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
     <a class="reference internal" href="../Ex8/Ex8.html">
-     12.1. Potential Energy Scans and Visualisation of Trajectories
+     9.1. Potential Energy Scans and Visualisation of Trajectories
     </a>
    </li>
   </ul>
@@ -554,12 +569,12 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configuration-interaction-theory">
-   8.1.1. Configuration Interaction Theory
+   5.1.1. Configuration Interaction Theory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#moller-plesset-perturbation-theory">
-   8.1.2. Møller-Plesset Perturbation Theory
+   5.1.2. Møller-Plesset Perturbation Theory
   </a>
  </li>
 </ul>
@@ -583,12 +598,12 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#configuration-interaction-theory">
-   8.1.1. Configuration Interaction Theory
+   5.1.1. Configuration Interaction Theory
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#moller-plesset-perturbation-theory">
-   8.1.2. Møller-Plesset Perturbation Theory
+   5.1.2. Møller-Plesset Perturbation Theory
   </a>
  </li>
 </ul>
@@ -602,11 +617,11 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="post-hartree-fock-methods-theory-recap">
-<h1><span class="section-number">8.1. </span>Post-Hartree Fock Methods: Theory Recap<a class="headerlink" href="#post-hartree-fock-methods-theory-recap" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">5.1. </span>Post-Hartree Fock Methods: Theory Recap<a class="headerlink" href="#post-hartree-fock-methods-theory-recap" title="Permalink to this headline">#</a></h1>
 <p>This section give a brief summary of the theory behind two <em>Post-Hartree-Fock methods</em>: <em>Configuration
 Interaction</em> (CI) and <em>Møller Plesset Perturbation Theory</em> (MPn, where <span class="math notranslate nohighlight">\(n\)</span> indicates the order of MP theory).</p>
 <section id="configuration-interaction-theory">
-<h2><span class="section-number">8.1.1. </span>Configuration Interaction Theory<a class="headerlink" href="#configuration-interaction-theory" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1.1. </span>Configuration Interaction Theory<a class="headerlink" href="#configuration-interaction-theory" title="Permalink to this headline">#</a></h2>
 <p>Of all the <em>ab initio</em> methods, CI is probably the easiest to understand, and perhaps one of the
 hardest to implement efficiently on a computer! The basic idea of CI is to improve the HF solution by increasing the space
 of all possible many-electron wavefunctions from a single Slater determinant (as in HF theory), to a set of many, in principle infinite, Slater determinants.</p>
@@ -628,7 +643,7 @@ In general, there are <span class="math notranslate nohighlight">\(M\)</span> po
 <p>In practice, Full CI has been performed for very small molecules for benchmarks studies. CIS is sometimes used for approximate excited state calculations, while otherwise CI method is not often used because it is too expensive  and other methods give results of comparable quality at lower cost.</p>
 </section>
 <section id="moller-plesset-perturbation-theory">
-<h2><span class="section-number">8.1.2. </span>Møller-Plesset Perturbation Theory<a class="headerlink" href="#moller-plesset-perturbation-theory" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.1.2. </span>Møller-Plesset Perturbation Theory<a class="headerlink" href="#moller-plesset-perturbation-theory" title="Permalink to this headline">#</a></h2>
 <p>Perturbation methods assume that the problem under investigation only differs slightly from a problem which has already been solved, exactly or approximately.
 In quantum mechanics, perturbation methods can be used to add corrections to solutions which employ an independent particle approximation, and the theoretical framework is then called Many-Body Perturbation Theory (MBPT).</p>
 <p>According to Rayleigh-Schrödinger perturbation theory, an instantaneous
@@ -708,13 +723,13 @@ energy.</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">8. </span>Post-Hartree Fock Methods: CI and MPn</p>
+            <p class="prev-next-title"><span class="section-number">5. </span>Post-Hartree Fock Methods: CI and MPn</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Ex5_Boron.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">8.2. </span>Recovering Correlation Energy: B atom</p>
+        <p class="prev-next-title"><span class="section-number">5.2. </span>Recovering Correlation Energy: B atom</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
