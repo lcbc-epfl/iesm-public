@@ -1,17 +1,16 @@
 ---
 title: Exercise Session 4
-subtitle: IESM Fall 2023-2024 
-date: November 10, 2023  
-author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2024-2025 
+date: October 8, 2024  
+author: "Yuri, Salomé, Sophia, Andrea, Qihao, Junwu" 
 output: beamer_presentation
 ---
 
 # Course Reminders
-* From this week we'll start to have **Lectures/Ex also on Fridays** exercise reports are due 1 hour before the next session
-* Monday 13.11: mock written exam during the lecture time
-* Friday 17.11: mock exam solutions and Q&A session (we'll gather questions on the moodle forum by Wednesday 15.11)
-* **Monday 20.11:** written exam
-* Friday 24.11: report for exercise 4 due by noon; session for exercise 5
+* Monday 14.10: mock written exam during the lecture time
+* Tuesday 15.10: mock exam solutions and Q&A session (we'll gather questions on the Moodle forum by Monday 22:00 14.10)
+* **Monday 28.10:** written exam
+* Tuesday 05.11: report for exercise 4 due by noon; session for exercise 5
 
 # Report Templates 
 * To assist in making easily uploadable/readable reports, Simon created Report Templates 
