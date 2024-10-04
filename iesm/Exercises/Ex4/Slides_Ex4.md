@@ -10,7 +10,7 @@ output: beamer_presentation
 * Monday 14.10: mock written exam during the lecture time
 * Tuesday 15.10: mock exam solutions and Q&A session (we'll gather questions on the Moodle forum by Monday 22:00 14.10)
 * **Monday 28.10:** written exam
-* Tuesday 05.11: report for exercise 4 due by noon; session for exercise 5
+* Tuesday 05.11: report for exercise 4 due by 09:00; session for exercise 5
 
 # Report Templates 
 * To assist in making easily uploadable/readable reports, Simon created Report Templates 
