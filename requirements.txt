@@ -1,4 +1,4 @@
-jupyter-book==0.13
+jupyter-book==1.0
 matplotlib
 numpy
 ghp-import
