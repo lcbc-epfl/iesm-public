@@ -49,13 +49,12 @@ html:
   use_issues_button: true
   use_multitoc_numbering: false
   use_repository_button: true
-  extra_footer              : |
-    <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
-    <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a>
-    <p>
-      Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise)
-    </p>
-
+  # extra_footer              : |
+  #   <a href="https://lcbc.epfl.ch"> Laboratory of Computational Biochemistry and Chemistry</a></li>
+  #   <a href="https://epfl.ch"><img src="https://www.epfl.ch/wp/5.5/wp-content/themes/wp-theme-2018/assets/svg/epfl-logo.svg?refresh=now" alt="EPFL Logo" style="padding:5px;height:33px;"></a>
+  #   <p>
+  #     Dual licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution Share Alike 4.0 International</a> (CC BY SA 4.0) and MIT license. (Except where indicated otherwise)
+  #   </p>
 #<div class="container-lg mt-3 footer">
 #   <div class="row">
 #     <div class="col-xl-9 d-flex">
@@ -88,7 +87,7 @@ sphinx:
         html_js_files:
         - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js
         bibtex_reference_style: super
-        html_show_copyright: false
+        html_show_copyright: true
         mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
         mathjax_config:
             TeX:
