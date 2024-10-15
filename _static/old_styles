@@ -1,4 +1,4 @@
-html,
+/* html,
 body {
     scroll-behavior: smooth;
 }
@@ -11,7 +11,7 @@ img.emoji {
     margin-bottom: 0.25em;
 }
 
-/** FONT FAMILIES **/
+ 
 nav.c-textbook__sidebar,
 a,
 a.reference.external,
