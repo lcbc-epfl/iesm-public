@@ -619,45 +619,6 @@ high.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692155728389642"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692155728389642" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_16692155728389642 = null;
-var warn = document.getElementById("3dmolwarning_16692155728389642");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16692155728389642 = $3Dmol.createViewer($("#3dmolviewer_16692155728389642"),{backgroundColor:"white"});
-viewer_16692155728389642.zoomTo();
-	viewer_16692155728389642.addModel("5\n\n F   -0.642381967195    0.000000095800   -0.000000000108\n C    0.742340417015   -0.000000119001    0.000000000132\n H    1.090184715481   -1.027287458657    0.000000000131\n H    1.090184841794    0.513643534810   -0.889656896780\n H    1.090184842203    0.513643534859    0.889656897127\n","xyz");
-	viewer_16692155728389642.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692155728389642.zoomTo();
-viewer_16692155728389642.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -673,21 +634,11 @@ viewer_16692155728389642.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -716,45 +667,6 @@ approach justified?</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_166921579256644"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_166921579256644" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_166921579256644 = null;
-var warn = document.getElementById("3dmolwarning_166921579256644");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_166921579256644 = $3Dmol.createViewer($("#3dmolviewer_166921579256644"),{backgroundColor:"white"});
-viewer_166921579256644.zoomTo();
-	viewer_166921579256644.addModel("5\n\n F    0.652123810953   -0.000000071765    0.000000000364\n C   -0.755115976279    0.000000082967   -0.000000000539\n H   -1.100693373745    1.041608449843    0.000000000081\n H   -1.100693549039   -0.520804042642   -0.902059273546\n H   -1.100693548261   -0.520804042244    0.902059273020\n","xyz");
-	viewer_166921579256644.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_166921579256644.zoomTo();
-viewer_166921579256644.render();
-});
-</script></div></div>
 </div>
 </section>
 <section id="ch3-radical">
@@ -787,45 +699,6 @@ viewer_166921579256644.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692158019781544"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692158019781544" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_16692158019781544 = null;
-var warn = document.getElementById("3dmolwarning_16692158019781544");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16692158019781544 = $3Dmol.createViewer($("#3dmolviewer_16692158019781544"),{backgroundColor:"white"});
-viewer_16692158019781544.zoomTo();
-	viewer_16692158019781544.addModel("4\n\n C    0.073053767723   -0.000000000000   -0.000000000000\n H   -0.289946232277    1.028000000000   -0.000000000000\n H   -0.289946232277   -0.514000000000   -0.890000000000\n H   -0.289946232277   -0.514000000000    0.890000000000\n","xyz");
-	viewer_16692158019781544.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692158019781544.zoomTo();
-viewer_16692158019781544.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -841,21 +714,11 @@ viewer_16692158019781544.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;guess&quot;</span><span class="p">:</span><span class="s2">&quot;gwh&quot;</span><span class="p">,</span> <span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;both&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">ch3_radical</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -873,45 +736,6 @@ viewer_16692158019781544.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_1669215797514664"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_1669215797514664" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_1669215797514664 = null;
-var warn = document.getElementById("3dmolwarning_1669215797514664");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_1669215797514664 = $3Dmol.createViewer($("#3dmolviewer_1669215797514664"),{backgroundColor:"white"});
-viewer_1669215797514664.zoomTo();
-	viewer_1669215797514664.addModel("4\n\n C    0.000004358475   -0.000000133316   -0.000000000003\n H   -0.000007787374    1.086882376415   -0.000000000116\n H   -0.000022053527   -0.543440394675   -0.941268452604\n H   -0.000022054710   -0.543440394367    0.941268452756\n","xyz");
-	viewer_1669215797514664.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_1669215797514664.zoomTo();
-viewer_1669215797514664.render();
-});
-</script></div></div>
 </div>
 </section>
 <section id="f-radical">
@@ -941,45 +765,6 @@ viewer_1669215797514664.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692158083678055"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692158083678055" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_16692158083678055 = null;
-var warn = document.getElementById("3dmolwarning_16692158083678055");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16692158083678055 = $3Dmol.createViewer($("#3dmolviewer_16692158083678055"),{backgroundColor:"white"});
-viewer_16692158083678055.zoomTo();
-	viewer_16692158083678055.addModel("1\n\n F   -0.000000000000    0.000000000000    0.000000000000\n","xyz");
-	viewer_16692158083678055.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692158083678055.zoomTo();
-viewer_16692158083678055.render();
-});
-</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -995,21 +780,11 @@ viewer_16692158083678055.render();
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s2">&quot;reference&quot;</span> <span class="p">:</span><span class="s2">&quot;uhf&quot;</span><span class="p">,</span><span class="s2">&quot;guess&quot;</span><span class="p">:</span><span class="s2">&quot;gwh&quot;</span><span class="p">,</span> <span class="s2">&quot;mp2_type&quot;</span><span class="p">:</span><span class="s2">&quot;conv&quot;</span><span class="p">,</span> <span class="s2">&quot;opt_coordinates&quot;</span><span class="p">:</span> <span class="s2">&quot;both&quot;</span><span class="p">})</span>
 <span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;mp2/aug-cc-pvdz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
 </div>
@@ -1056,25 +831,28 @@ BDE that you calculated? (Think of radical processes in general.)</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">constrained_layout</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span><span class="n">ax2</span><span class="p">,</span><span class="n">ax3</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">constrained_layout</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">],</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">],</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">][</span><span class="s1">&#39;ch3f&#39;</span><span class="p">]],</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Method&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy (kcal/mol)&#39;</span><span class="p">)</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;HF&#39;</span><span class="p">,</span> <span class="s1">&#39;MP2&#39;</span><span class="p">,</span> <span class="s1">&#39;MP3&#39;</span><span class="p">])</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;CH$_3$F&#39;</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;ch3&#39;</span><span class="p">],</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;ch3&#39;</span><span class="p">],</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">][</span><span class="s1">&#39;ch3&#39;</span><span class="p">]],</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Method&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy (kcal/mol)&#39;</span><span class="p">)</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;HF&#39;</span><span class="p">,</span> <span class="s1">&#39;MP2&#39;</span><span class="p">,</span> <span class="s1">&#39;MP3&#39;</span><span class="p">])</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;CH$_3$&#39;</span><span class="p">)</span>
 
 <span class="n">ax3</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp2&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">],</span><span class="n">energies</span><span class="p">[</span><span class="s1">&#39;mp3&#39;</span><span class="p">][</span><span class="s1">&#39;f&#39;</span><span class="p">]],</span><span class="s1">&#39;o-&#39;</span><span class="p">)</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Method&#39;</span><span class="p">)</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Energy (kcal/mol)&#39;</span><span class="p">)</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([</span><span class="s1">&#39;HF&#39;</span><span class="p">,</span> <span class="s1">&#39;MP2&#39;</span><span class="p">,</span> <span class="s1">&#39;MP3&#39;</span><span class="p">])</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">)</span>
 
 <span class="c1">#plt.gcf().set_dpi(300)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
