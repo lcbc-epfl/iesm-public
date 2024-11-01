@@ -102,12 +102,4 @@ $$
 
 ![](/data/iesm/img_slides/Ex5/tailcommand.png){width=90%}
 
-# Moodle Annoucement
-
-As mentioned in yesterday's announcement on Moodle, from this exercise session you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools
-
-* More details about the project: https://drive.google.com/file/d/1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing.
-* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9
-* Your decision to participate will have no influences on your grades in any way. We will remain unaware of your consent status.
-
 
