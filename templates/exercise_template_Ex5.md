@@ -86,9 +86,9 @@ Your answer here
 :::{admonition} Exercise 7
 :class: exercise 
 Comment on the accuracy of the HF approach for this system. If the
-    difference between HF and MPn is large, how is the use of MPn still
-    justified? (*Hint*: Think in terms of the scale of the absolute energy
-    of the system, rather than the reaction.)
+    error associated with HF or with MPn bigger, and why?
+    (*Hint*: Think in terms of the scale of the absolute energy of the
+    reaction, as well as of the different components of the system.)
 :::
 
 Your answer here
