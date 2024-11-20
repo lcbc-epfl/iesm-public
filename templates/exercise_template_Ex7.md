@@ -20,17 +20,17 @@ Note, that references to other parts of the documents aren't resolved in this te
 
 :::
 
-```{admonition} Exercise 1
+:::{admonition} Exercise 1
 :class: exercise
 Fix the error in the single-point wavefunction optimization for the allyl radical using the BLYP exchange-correlation functional.
-```
+:::
 
 Your answer here
 
-```{admonition} Exercise 2
+:::{admonition} Exercise 2
 :class: exercise
 Fix the error in the single-point wavefunction optimisation of the $Cu[H_{2}O]^{2+}$ aqua complex (as observed in the gas phase) using the PBE exchange-correlation functional.
-```
+:::
 
 Your answer here
 
@@ -81,7 +81,7 @@ Your answer here
 
 ```{admonition} Exercise 10
 :class: exercise
-Compare the two functionals regarding convergence with respect to the integration grid. Which functional shows concerning behavior in this regard? Evaluate plots you create below
+Compare the two functionals regarding convergence with respect to the integration grid. Which functional shows concerning behavior in this regard? Evaluate plots you create below.
 ```
 
 
