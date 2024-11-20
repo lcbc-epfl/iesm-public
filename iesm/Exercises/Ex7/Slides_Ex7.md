@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 7
-subtitle: IESM Fall 2023-2024
-date: December 8, 2023
-author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2024-2025
+date: November 26, 2024
+author: "Yuri, Salomé, Sophia, Andrea, Qihao, Junwu" 
 output: beamer_presentation
 ---
 
@@ -10,9 +10,9 @@ output: beamer_presentation
 
 Course Reminders:
 
-* Exercises 8 and 9 will not have interviews and will have due dates in January. Plus, we only keep the best grades of 8 of 9 reports : )
-* Q&A session on Friday 15 December. Please send questions in advance via email/forum to help us prepare the Q&A session
-* Written exam on Monday 18 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
+* Exercises 9 will not have interviews and will have due dates in January. Plus, we only keep the best grades of 8 of 9 reports : )
+* Q&A session on Tuesday 10 December. Please send questions in advance via email/forum to help us prepare the Q&A session
+* Written exam on Monday 16 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
 
 
 # Exercise 7 - Troubleshooting, Pitfalls, Traps
