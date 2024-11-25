@@ -65,8 +65,4 @@ Some suggestions:
 * For the first part of the exercises, you can write the report by describing or showing the error and then describing how you solved it. 
 * Some calculations make take time to run. Calculations for the second part of Ex 7 can be done collaboratively using the [same sheet](https://docs.google.com/spreadsheets/d/114XbjjAA1b2JGtrkCULZi6yVn2QGEHVyx3Y_HifhEH8/edit#gid=548091578) as we did for exercise 6 (also posted on Moodle).
 
-# Help developing teaching tools
 
-* As mentioned in the past weeks, during your work on exercises for this course you have the opportunity to help Zhenyu Cai, a PhD student in the CHILI lab who is developing new teaching tools. It's your decision to participate and there is no influence on your grades in any way. We will remain unaware of your consent status. If you previously said "no" but wish to change your response, let him know so he can re-launch your permissions. Thanks for considering!
-* More details about the project: https://drive.google.com/file/d/ 1GNR9NSpvh3s0nmvWXwMBONjNC3mAAW53/view?usp=sharing
-* Consent form (if you agree to participate): https://forms.gle/hc6K8f5yRUA5T9Lz9 
