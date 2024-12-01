@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 8
-subtitle: IESM Fall 2023-2024
-date: December 15, 2024
-author: "Andrea Levy, Andrej Antalik, Simon Dürr, Sophia Johnson" 
+subtitle: IESM Fall 2024-2025
+date: December 3, 2024
+author: "Salomé, Junwu, Qihao, Yuri, Andrea, Sophia" 
 output: beamer_presentation
 ---
 
@@ -10,8 +10,8 @@ output: beamer_presentation
 
 Course Reminders:
 
-* Exercises 8 and 9 will not have interviews and will have due date **31. January**
-* Plus, we only keep the best grades of 8 of 9 reports : )
+* Exercise 8 interview will be next week (Dec 9) and exercise 9 will not have interviews and will have due date **31. January**
+* We only keep the best 8 grades out of the 9 reports : )
 * Feel free to contact us via email or forum for questions about Ex8 and Ex9 !
 
 
