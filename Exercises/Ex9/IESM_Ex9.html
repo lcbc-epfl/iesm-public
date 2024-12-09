@@ -508,16 +508,16 @@ path that connects reactants to products via this transition state.</p>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Questions for the Interview</p>
-<ul class="simple">
-<li><p><em>What kind of reaction mechanism would you expect for Ex8 Q1? Would you expect the stereochemistry at the chiral carbon to be preserved?</em></p></li>
-</ul>
-<p><strong>A:</strong> The reaction mechanism is a intramolecular S
+<ol class="arabic simple">
+<li><p><em><strong>What kind of reaction mechanism would you expect for Ex8 Q1? Would you expect the stereochemistry at the chiral carbon to be preserved?</strong></em></p></li>
+</ol>
+<p>The reaction mechanism is a intramolecular S
 2 reaction (nucleophilic substitution), where the stereochemistry is inverted: the nucleophile attacks the electrophilic center on the side that is opposite to the leaving group, and during a backside attack, the stereochemistry at the carbon atom changes.</p>
-<p>Chirality centre: carbon bound to Cl, CH2, and CH3 for the chloropropanoates, carbon bound to O, CH3, and CH2 for the propylene oxide.</p>
-<ul class="simple">
-<li><p><em>How to obtain the barrier height of reaction from found transition state? How to verify whether you have found a meaningful transition state?</em></p></li>
-</ul>
-<p><strong>A:</strong> Forward Barrier Height: Compute the electronic energy (or Gibbs free energy if considering temperature effects) of the transition state (TS) and the reactants.</p>
+<p>Chirality centre = carbon has 4 individual (different) substituents ; show them on the molecule.</p>
+<ol class="arabic simple" start="2">
+<li><p><em><strong>How to obtain the barrier height of reaction from found transition state? How to verify whether you have found a meaningful transition state?</strong></em></p></li>
+</ol>
+<p>Forward Barrier Height: Compute the electronic energy (or Gibbs free energy if considering temperature effects) of the transition state (TS) and the reactants.</p>
 <p>From the TS it is necessary to find a minimum energy reaction path on the PES joining the reactants with the TS and the TS with the products. TS corresponds to a saddle point of the PES, this can be verified through the eigenvalues of the Hessian matrix. The TS found should be a maximum of the PES over the reaction coordinate.</p>
 <p>Verify the Found Transition State:</p>
 <ul class="simple">
@@ -527,19 +527,30 @@ Perform a vibrational frequency analysis on the TS structure. A true transition 
 Visualize the vibrational mode corresponding to the imaginary frequency.
 Ensure that this mode represents the movement along the expected reaction coordinate (e.g., bond-breaking or bond-forming).</p></li>
 <li><p>Intrinsic Reaction Coordinate (IRC) Calculation:
-Perform an IRC calculation starting from the TS. The IRC should connect the TS to the correct reactants and products, confirming it is on the reaction pathway.</p></li>
+Perform an IRC calculation starting from the TS. Following the negative Hessian eigenvalues from the transition state to the next local minimum, the IRC should connect the TS to the correct reactants and products, confirming it is on the reaction pathway.</p></li>
 </ul>
+<ol class="arabic simple" start="3">
+<li><p><em><strong>In Exercise 7, why is the barrier for the epoxide formation so low?</strong></em></p></li>
+</ol>
 <ul class="simple">
-<li><p><em>please list some popular methods to find transition states in quantum chemistry</em></p></li>
+<li><p>The barrier is low because with the IRC profile we are joining the intermediate state of the epoxide formation (where the H in the OH group is already removed) with the final state.</p></li>
+<li><p>Moreover, we are calculating the potential energy, and not the free energy. This also influence the result since the proper PES (using the free energy) is smoother than the one that would be obtained with the energy alone. Thermal energy might help the reaction overcome the barrier easily.</p></li>
 </ul>
-<p><strong>A:</strong></p>
+<ol class="arabic simple" start="4">
+<li><p><em><strong>In the course, we have seen many methods to calculate the electronic structures. Can you list them all ?</strong></em></p></li>
+</ol>
+<p>HF, MPn, Truncated CI and Full CI, CASSCF, CC, Exact DFT, Orbital-free DFT, KS-DFT.</p>
+<ol class="arabic simple" start="5">
+<li><p><em><strong>Which ones include (some, exact) electron correlation ?</strong></em></p></li>
+</ol>
+<p>Some: all of them except HF / Exact: exact DFT.</p>
+<p><strong>If there is time</strong></p>
+<ol class="arabic simple" start="6">
+<li><p><em><strong>What is size-consistency? Which methods are size-consistent?</strong></em></p></li>
+</ol>
 <ul class="simple">
-<li><p>Linear and Quadratic Synchronous Transit (LST/QST). These methods interpolate between reactant and product geometries. These methods are ideal for locating TSs when the reactant and product geometries are known. e.g., LST, QST2</p></li>
-<li><p>Nudged Elastic Band (NEB) and Variants. These are pathway-finding methods that map out the minimum energy path (MEP) between reactants and products. e.g., Climbing Image NEB (CI-NEB)</p></li>
-<li><p>String Methods. Similar to NEB, the string method generates a smooth path connecting reactant and product, using interpolated images. e.g., Zero-Temperature String (ZTS), Finite-Temperature String (FTS)</p></li>
-<li><p>Eigenvector Following (EF) Methods. Explores the potential energy surface (PES) by following the direction of negative curvature (lowest eigenvalue of the Hessian).</p></li>
-<li><p>Gradient Extremal Techniques. Locate the TS by identifying a saddle point on the PES where the gradient is zero and curvature is negative along one mode.</p></li>
-<li><p>Single-Ended Methods. Start from a single geometry (usually a reactant or an approximate TS).</p></li>
+<li><p>Size-consistency = can break up the Hamiltonian per system part E(AB) = E(A) + E(B)</p></li>
+<li><p>HF, MPn, CC, Full CI, all DFT methods</p></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
