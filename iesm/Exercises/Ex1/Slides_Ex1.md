@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 1
-subtitle: IESM Fall 2024-2025
-date: September 9, 2024
-author: "Yuri, Salomé, Sophia, Andrea, Víctor, Qihao" 
+subtitle: IESM Fall 2025-2026
+date: September 9, 2025
+author: "Salomé, Qihao, Thibault, Evan" 
 output: beamer_presentation
 ---
 
