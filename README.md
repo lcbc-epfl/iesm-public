@@ -19,6 +19,7 @@ Over the years many people have contributed to this material:
 * Justin Villard
 * Simon Duerr
 * Andrea Levy
+* Thibault Kläy
 
 
 ## How to use it (easy)
