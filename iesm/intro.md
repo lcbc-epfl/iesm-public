@@ -1,7 +1,7 @@
 Introduction to Electronic Structure Methods
 ==============================================
 
-This book contains the script and exercises for the course [CHE-353](https://edu.epfl.ch/coursebook/en/introduction-to-electronic-structure-methods-CH-353)  `Introduction to Electronic Structure Methods` (IESM) given at EPFL. 
+This book contains the script and exercises for the course [CH-353](https://edu.epfl.ch/coursebook/en/introduction-to-electronic-structure-methods-CH-353)  `Introduction to Electronic Structure Methods` (IESM) given at EPFL. 
 
 **Contributors**
 
