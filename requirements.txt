@@ -7,3 +7,5 @@ pypandoc-binary
 nbformat
 mystmd
 lxml[html_clean]
+sphinx>=5.0,<8.0
+snowballstemmer<3
