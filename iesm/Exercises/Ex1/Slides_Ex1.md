@@ -11,18 +11,15 @@ Welcome to the IESM course!
 
 - Lecturer: Prof. Ursula Röthlisberger
 - TAs:
-	- Yuri Cho
 	- Salomé Guilbert
-	- Sophia Johnson
-	- Andrea Levy
-	- Víctor Sabanza Gil
 	- Qihao Zhang
+    - Thibault Kläy
+    - Evan Vasey
  	- Different PostDocs from LCBC lab 	
 
 # Introduction to Electronic Structure Methods
-- Mondays and Tuesdays from 10h15 to 12h00
+- Mondays from 8:15 to 10:00 and Tuesdays from 10:15 to 12:00
 - Course schedule for the semester available on Moodle and the exercise webpage
-- Tomorrow we'll have the first lecture (in BCH3303) with more practical details on the course
 
 # Exercise sessions
 - [Moodle page](https://moodle.epfl.ch/course/view.php?id=14818)
@@ -60,7 +57,7 @@ Welcome to the IESM course!
 - Examples: 
 ![](/data/iesm/img_slides/Ex1/ex_example.png) \
 
-- Exercises account for 1/3 of the final grade (2/3 from two written exams)
+- Exercises account for 1/3 of the final grade (2/3 from exams, 1 written 1 oral)
 
 - Submit report 
 	- `pdf` document answering the questions completely with relevant results
