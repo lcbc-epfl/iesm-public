@@ -33,6 +33,7 @@ Over the years many people have contributed to the improvement of the course mat
 The course will be on
 * **Mon 08:15-10:00am**
 * **Tue 10:15-12:00am**
+
 Course rooms
 * Lectures in [BCH 3303](https://plan.epfl.ch/?room==BCH%203303)
 * Exercises in [BCH 1113](https://plan.epfl.ch/?room==BCH%201113)
