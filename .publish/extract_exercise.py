@@ -48,6 +48,20 @@ Note, that references to other parts of the documents aren't resolved in this te
                             admonition_end = source.rindex('```')
                             extracted_cells.append(source[admonition_start:admonition_end+4])
                             extracted_cells.append('Your answer here')
+                    if ':::{admonition} Bonus Exercise' in source:
+                        if 'solution' not in cell.metadata.get('tags', []):
+                            # Strip out content outside of the admonition
+                            admonition_start = source.index(':::{admonition} Bonus Exercise')
+                            admonition_end = source.rindex(':::')
+                            extracted_cells.append(source[admonition_start:admonition_end+4])
+                            extracted_cells.append('Your answer here')
+                    if '```{admonition} Bonus Exercise' in source:
+                        if 'solution' not in cell.metadata.get('tags', []):
+                            # Strip out content outside of the admonition
+                            admonition_start = source.index('```{admonition} Bonus Exercise')
+                            admonition_end = source.rindex('```')
+                            extracted_cells.append(source[admonition_start:admonition_end+4])
+                            extracted_cells.append('Your answer here')
        
 
     # Write the extracted cells to the output file
