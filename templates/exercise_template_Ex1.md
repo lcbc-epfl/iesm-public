@@ -190,6 +190,16 @@ Your answer here
 
 Your answer here
 
+:::{admonition} Bonus Exercise 10
+:class: exercise
+
+ Prove that, given the above conditions,
+    $c_j=\left<\psi_j\middle|\Psi\right>$.
+
+:::
+
+Your answer here
+
 :::{admonition} Exercise 11
 :class: exercise
  Diagonalise the matrices $\mathbf{A}$ and $\mathbf{B}$. Specify which one is Hermitian.
@@ -206,6 +216,14 @@ Your answer here
      \end{aligned}
  $$
 
+:::
+
+Your answer here
+
+:::{admonition} Bonus Exercise 12
+:class: exercise
+ Prove that the eigenvalues of a Hermitian operator are
+    real.
 :::
 
 Your answer here
@@ -259,6 +277,25 @@ Your answer here
     are eigenvectors of $\hat{\mathrm{A}}$ associated to different
     eigenvalues, then the matrix element
     $\Bra{\psi_1}\hat{\mathrm{B}}\Ket{\psi_2}$ vanishes.
+:::
+
+Your answer here
+
+:::{admonition} Bonus Exercise 18
+:class: exercise
+Show that the potential energy operator
+    $\hat{\mathrm{V}}(\mathbf{r})$ is multiplicative when applied to the
+    real-space wavefunction.
+:::
+
+Your answer here
+
+:::{admonition} Bonus Exercise 19
+:class: exercise
+
+The link between position and momentum representation is
+given by a Fourier transform. Explain how this relates to the Heisenberg
+uncertainty principle.
 :::
 
 Your answer here

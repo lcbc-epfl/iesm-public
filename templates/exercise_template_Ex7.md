@@ -64,6 +64,13 @@ Run the calculations below and check whether your assessment of the hard, medium
 
 Your answer here
 
+```{admonition} Bonus Exercise 7
+:class: exercise
+How could fortitous error cancellation help in getting good results when calculating reaction energies?
+```
+
+Your answer here
+
 ```{admonition} Exercise 8
 :class: exercise
 What is the impact of using the dispersion correction for the ethane complex? For what phenomena are such corrections relevant? Give a real world example system. 
