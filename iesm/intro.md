@@ -65,7 +65,7 @@ Course rooms
 | 24.11. Mon      | exercise | Exercise 7: Trouble Shooting, Pitfalls, traps             |   assistants  |
 | 25.11. Tue      |  course  | DFT II                                                    |       UR      |
 | 01.12. Mon      | exercise | Exercise 8: Transition States                             |   assistants  |
-| 02.12. Tue      |  course  | DFT III                                                   |       UR      |
+| 02.12. Tue      |  course  | DFT III (CP, QM/MM, Demos) & Summary                      |       UR      |
 | 08.12. Mon      | exercise | Exercise 9: PES Scans                                     |   assistants  |
 | 09.12. Tue      | exercise | Q&A Session                                               |   assistants  |
 | 15.12. Mon      |   exam   | Written Exam II                                           |   assistants  |
