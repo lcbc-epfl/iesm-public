@@ -263,7 +263,7 @@ Your answer here
     $\hat{\mathrm{A}}$, too, with the same eigenvalue.
 
 **Bonus**:  If $\Ket{\psi}$ is part of a set of degenerate
-    eigenvectors, show that the subspace spanned by the eigenvalues of
+    eigenvectors, show that the subspace spanned by the eigenvectors of
     $\hat{\mathrm{A}}$ is invariant under the action of
     $\hat{\mathrm{B}}$.
 :::
