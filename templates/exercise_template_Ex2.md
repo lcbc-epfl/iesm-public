@@ -75,7 +75,7 @@ Your answer here
 
 ```{admonition} Exercise 6
 :class: exercise 
-You wish to calculate the wavefunction of ethylene C$_2$H$_2$ using the 6-31G\* basis. \
+You wish to calculate the wavefunction of acetylene C$_2$H$_2$ using the 6-31G\* basis. \
    Indicate the number of basis functions and the number of Gaussian primitives that will be used in the calculation.
 ```
 
