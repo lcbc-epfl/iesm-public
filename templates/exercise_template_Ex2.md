@@ -43,7 +43,7 @@ Your answer here
 
 ```{admonition} Exercise 3
 :class: exercise 
-Which of the following basis sets does not contain polarisation functions?\
+Which of the following basis sets does not contain polarization functions?\
     a) 6-31G$^\ast$\
     b) 6-31G(d,p)\
     c) 3-21+G\
@@ -57,7 +57,7 @@ Your answer here
 Diffuse functions are added to a basis set to...\
     a) ...save CPU time.\
     b) ...better represent electronic effects at larger distances from the nuclei.\
-    c) ...take polarisation into account.\
+    c) ...take polarization into account.\
     d) ...enhance the description of core orbitals.
 ```
 
