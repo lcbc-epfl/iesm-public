@@ -189,6 +189,7 @@
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.2. The Hydrogen Atom</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Ex2_water-molecule.html">2.3. A more complex system: H<span class="math notranslate nohighlight">\(_{2}\)</span>O</a></li>
 
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Ex3/IESM_Ex3.html">3. Large Basis Sets, Dissociation Energy and Geometry Optimisation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -466,6 +467,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-structure-software">2.2.1. Electronic Structure Software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-steps">2.2.2. Preliminary steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">2.2.3. Writing An Input For <em>Psi4</em> and Invoking the Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">2.2.4. Your turn: Compute the Hartree Fock energy of the helium atom</a></li>
 </ul>
             </nav>
         </div>
@@ -480,9 +482,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="the-hydrogen-atom">
 <h1><span class="section-number">2.2. </span>The Hydrogen Atom<a class="headerlink" href="#the-hydrogen-atom" title="Link to this heading">#</a></h1>
 <p>You will learn how to use <em>Psi4</em> by putting your hands on a simple
-example: The total energy of the hydrogen atom in Hartree-Fock theory.
-This is a tutorial - you are not only invited to type the commands that
-are being introduced, you are obliged to.</p>
+example: The total energy of the hydrogen atom in Hartree-Fock theory.</p>
 <section id="electronic-structure-software">
 <h2><span class="section-number">2.2.1. </span>Electronic Structure Software<a class="headerlink" href="#electronic-structure-software" title="Link to this heading">#</a></h2>
 <p><em>Ab initio</em> electronic structure software packages make it possible to
@@ -494,7 +494,7 @@ time. (The stronger your workstation, the more approximations you may
 drop, and the more elaborate your approach can be.) There are plenty of
 <em>ab initio</em> quantum chemical packages on the market; they differ in
 their capabilities, license policy and pricing. Widley used packages
-include GAMESS US, turbomole, DALTON, CP2K, CPMD and the Gaussian set of
+include GAMESS US, turbomole, DALTON, ORCA, CP2K, CPMD and the Gaussian set of
 programs.</p>
 <p><em>Psi4</em> is a free and open-source ab initio electronic structure program providing implementations of Hartree–Fock, density functional theory, many-body perturbation theory, configuration interaction, density cumulant theory, symmetry-adapted perturbation theory, and coupled-cluster theory. Most of the methods are quite efficient, thanks to density fitting and multi-core parallelism. The program is a hybrid of C++ and Python, and calculations may be run with very simple text files or using the Python API, facilitating post-processing and complex workflows. [Reference: Smith DG, <em>et al.</em> PSI4 1.4: Open-source software for high-throughput quantum chemistry. <em>The Journal of chemical physics</em> (2020) DOI: <a class="reference external" href="https://doi.org/10.1063/5.0006002">https://doi.org/10.1063/5.0006002</a> ]</p>
 <p>The current version of <em>Psi4</em>  that you will be using on <a class="reference external" href="https://noto.epfl.ch/">noto.epfl</a> is v1.9.1.</p>
@@ -524,17 +524,11 @@ programs.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
-  Threads set to 2 by Python driver.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="writing-an-input-for-psi4-and-invoking-the-program">
 <h2><span class="section-number">2.2.3. </span>Writing An Input For <em>Psi4</em> and Invoking the Program<a class="headerlink" href="#writing-an-input-for-psi4-and-invoking-the-program" title="Link to this heading">#</a></h2>
-<p>The geomety of the <span class="math notranslate nohighlight">\(H\)</span> atom can now be defined, passing it as a string into the <code class="docutils literal notranslate"><span class="pre">psi4.geometry()</span></code> function in either Z-matrix (see note below) or Cartesian format, where the triple-quote <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code> syntax is used to allow the string to break over multiple lines.</p>
+<p>The geometry of the <span class="math notranslate nohighlight">\(H\)</span> atom can now be defined, passing it as a string into the <code class="docutils literal notranslate"><span class="pre">psi4.geometry()</span></code> function in either Z-matrix (see note below) or Cartesian format, where the triple-quote <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;string&quot;&quot;&quot;</span></code> syntax is used to allow the string to break over multiple lines.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -577,47 +571,8 @@ Note that if more atoms would be present, it would be needed to specify for each
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_1665585409062793"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_1665585409062793" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_1665585409062793 = null;
-var warn = document.getElementById("3dmolwarning_1665585409062793");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_1665585409062793 = $3Dmol.createViewer($("#3dmolviewer_1665585409062793"),{backgroundColor:"white"});
-viewer_1665585409062793.zoomTo();
-	viewer_1665585409062793.addModel("1\n\n H    0.000000000000    0.000000000000    0.000000000000\n","xyz");
-	viewer_1665585409062793.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_1665585409062793.zoomTo();
-viewer_1665585409062793.render();
-});
-</script></div></div>
 </div>
-<p>We can compute the energy of the system using the function <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code>, passing as first argument a string with the desired method and the basis set (<code class="docutils literal notranslate"><span class="pre">'METHOD/BASIS'</span></code>), and the target molecule as second argument. The ouput is the total electronic energy in Hartree. For this exercise we will use the unrestricted Hartree Fock method. You will see this method in detail during future lectures and exercises and you will get familiar with it (for now it is sufficient to know we are using <em>a method</em>, with a particular basis set).</p>
+<p>We can compute the energy of the system using the function <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code>, passing as first argument a string with the desired method and the basis set (<code class="docutils literal notranslate"><span class="pre">'METHOD/BASIS'</span></code>), and the target molecule as second argument. The ouput is the total electronic energy in Hartree. For this exercise we will use the unrestricted Hartree Fock (UHF) method. You will see this method in detail during future lectures and exercises and you will get familiar with it (for now it is sufficient to know we are using <em>a method</em>, with a particular basis set).</p>
 <p>Calling <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> will perform a so-called <strong>single point calculation</strong> and will not change the geometry. During the calculation the program will perform a wavefunction optimization to find the lowest energy combination of wavefunction coefficients.</p>
 <p>We will save in separate log files the output of the calculations and we will store the energy value and print it in the next cell.</p>
 <div class="cell docutils container">
@@ -657,6 +612,47 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 <p class="admonition-title">Exercise 8</p>
 <p>What is the influence of the basis set size on the accuracy of the result? How do the split-valence bases compare to STO-3G?</p>
 </div>
+</section>
+<section id="your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">
+<h2><span class="section-number">2.2.4. </span>Your turn: Compute the Hartree Fock energy of the helium atom<a class="headerlink" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom" title="Link to this heading">#</a></h2>
+<p>Similarly as just seen for the hydrogen atom, you will now need to compute the energy for a single helium atom. We will use the same UHF method and the same basis sets so that we can compare the resulting energies with the ones from the hydrogen case. First, you will need to define the geometry information of your single helium atom:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">he</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2"># Define the geometry of a single helium atom</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">he</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can calculate the Hartree Fock energy using the same basis sets as before and the same method (UHF):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="c1">###INCLUDE HERE YOUR BASIS SETS] # these are the basis sets we are going to use</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+
+<span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-he-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="c1">#COMPUTE HERE YOUR ENERGIES  # we do the single point energy calculation once per basis set</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 9</p>
+<p>How does the resulting energies for helium compare to the hydrogen case? And why?</p>
+</div>
+<p>Feel free to play with different atom types to see how the energies change, together with the number of basis functions required by the system (related to exercise 7). But we will now move on and start studying molecules from the next section.</p>
 </section>
 </section>
 
@@ -727,6 +723,7 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-structure-software">2.2.1. Electronic Structure Software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-steps">2.2.2. Preliminary steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">2.2.3. Writing An Input For <em>Psi4</em> and Invoking the Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">2.2.4. Your turn: Compute the Hartree Fock energy of the helium atom</a></li>
 </ul>
   </nav></div>
 

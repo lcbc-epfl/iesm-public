@@ -189,6 +189,7 @@
 <li class="toctree-l2"><a class="reference internal" href="Ex2_hydrogen_atom.html">2.2. The Hydrogen Atom</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">2.3. A more complex system: H<span class="math notranslate nohighlight">\(_{2}\)</span>O</a></li>
 
+
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Ex3/IESM_Ex3.html">3. Large Basis Sets, Dissociation Energy and Geometry Optimisation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -467,7 +468,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-geometry">2.3.1. Building the Geometry</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">2.4. Output Files</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-water-molecule-and-bh-2">2.4. Linear water molecule and BH<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">2.5. Output Files</a></li>
 </ul>
 
             </nav>
@@ -499,17 +501,11 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Memory set to   1.863 GiB by Python driver.
-  Threads set to 2 by Python driver.
-</pre></div>
-</div>
-</div>
 </div>
 <section id="building-the-geometry">
 <h2><span class="section-number">2.3.1. </span>Building the Geometry<a class="headerlink" href="#building-the-geometry" title="Link to this heading">#</a></h2>
 <p>In the previous example the geometry file was quite trivial since we had a single atom. Now we will need to set up the geometry for a slightly more complicated system: a water molecule.</p>
-<p>Define the geometry for a water molecule in the next cell, making sure to use the right syntax. Remember that you can use either Z-matrix or Cartesian format (one of the two will make your life easier!) and that information about the total charge of the system and spin multiplicity also need to be provided. It may be useful to refer to the dropdown menu in the previous section about atomic coordinates representation.</p>
+<p>Define the geometry for a water molecule in the next cell, making sure to use the right syntax. Remember that you can use either Z-matrix or Cartesian format (one of the two will make your life easier!) and remember that information about the total charge of the system and spin multiplicity also need to be provided. It may be useful to refer to the dropdown menu in the previous section about atomic coordinates representation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -525,57 +521,18 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16655853984277906"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16655853984277906" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
-        </div>
-<script>
-
-var loadScriptAsync = function(uri){
-  return new Promise((resolve, reject) => {
-    var tag = document.createElement('script');
-    tag.src = uri;
-    tag.async = true;
-    tag.onload = () => {
-      resolve();
-    };
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-});
-};
-
-if(typeof $3Dmolpromise === 'undefined') {
-$3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
-}
-
-var viewer_16655853984277906 = null;
-var warn = document.getElementById("3dmolwarning_16655853984277906");
-if(warn) {
-    warn.parentNode.removeChild(warn);
-}
-$3Dmolpromise.then(function() {
-viewer_16655853984277906 = $3Dmol.createViewer($("#3dmolviewer_16655853984277906"),{backgroundColor:"white"});
-viewer_16655853984277906.zoomTo();
-	viewer_16655853984277906.addModel("3\n\n O    0.000000000000    0.000000000000   -0.066834625719\n H    0.000000000000   -0.764370430999    0.530357005346\n H    0.000000000000    0.764370430999    0.530357005346\n","xyz");
-	viewer_16655853984277906.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16655853984277906.zoomTo();
-viewer_16655853984277906.render();
-});
-</script></div></div>
-</div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 9</p>
-<p>Include in your report the coordinates you set for your water molecules and a screenshot of how it looks like in 3D representation.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 10</p>
-<p>How do you calculate the spin multiplicity of a species? Compare the case of the water molecule to the previous example of the hydrogen atom.</p>
+<p>Include in your report the coordinates you set for your water molecules and a screenshot of how it looks like in 3D representation.</p>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 11</p>
+<p>How do you calculate the spin multiplicity of a species? Compare the case of the water molecule to the previous examples of the hydrogen atom and the helium atom.</p>
 </div>
 <p>Extending what we have seen with the hydrogen atom, we will now investigate the effect of the choice of the basis sets when we have <em>heavy</em> atoms (remember that in the context of computational chemsitry, we consider as <em>heavy</em> each atom other than hydrogen).</p>
 <div class="exercise admonition">
-<p class="admonition-title">Exercise 11</p>
+<p class="admonition-title">Exercise 12</p>
 <p>Compute energy calculations for the different basis sets indicated below with a loop similar to the one used before.  Include a table of the the calculated energies. Specify what is the difference between the basis sets that we used.</p>
 <p><strong>Bonus:</strong> which of the additional functions introduced with respect to the <code class="docutils literal notranslate"><span class="pre">6-31G</span></code> basis set are more reasonable for the present case, i.e. a water molecule? Why?</p>
 </div>
@@ -597,12 +554,96 @@ viewer_16655853984277906.render();
 <p>Few things important to keep in mind:</p>
 <ul class="simple">
 <li><p>As you have seen, and will see in the next exercises, the value of total energy is highly dependent on the method and the basis set. In the hydrogen example, we were lucky to have an exact solution to compare with, but most time it is useless to discuss about total energy! What we are usually interested in are energies changes for the same systems with different states, or  binding energy.</p></li>
-<li><p>All the calculations performed so far on the water molecule are referred to the geometry that you defined. By running such a single point energy calculation we find the lowest energy solution for the Schrödinger equation at the <strong>current</strong> geometry. This however does not guarantee it is the lowest-energy conformation, i.e. our calculations may refer to a geometry in practice never observed in nature. What we usually do is performing a <strong>geometry optimization</strong>, i.e.  starting from a given geometry and arriving an optimal geometry. This is extremely important expecially when we are dealing with complex molecules, for which it is possible we don’t know how the molecule looks like, for example not knowing the equilibrium bond length or the angle between the atoms. This concept will be used a lot in this course, and one of the sections of the next exercise session will focus on geometry optimization.</p></li>
+<li><p>All the calculations performed so far on the water molecule are referred to the geometry that you defined. By running such a single point energy calculation we find the lowest energy solution for the Schrödinger equation at the <strong>current</strong> geometry. This however does not guarantee it is the lowest-energy conformation, i.e. our calculations may refer to a geometry in practice never observed in nature. What we usually do is performing a <strong>geometry optimization</strong>, i.e.  starting from a given geometry and arriving an optimal geometry. This is extremely important expecially when we are dealing with complex molecules, for which it is possible we don’t know how the molecule looks like, for example not knowing the equilibrium bond length or the angle between the atoms. This concept will be used a lot in this course, and one of the sections of the next exercise session will focus on geometry optimization. But for now we still can play with different geometries of the water molecule.</p></li>
 </ul>
 </section>
 </section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-water-molecule-and-bh-2">
+<h1><span class="section-number">2.4. </span>Linear water molecule and BH<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#linear-water-molecule-and-bh-2" title="Link to this heading">#</a></h1>
+<p>It is assumed that the water molecule you created previously has the usual bent geometry we are familiar with. But would it be possible to compute the energy of a linear water molecule? Well, let’s figure it out. First, try to modify the water geometry so that it has a linear conformation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">## FILL HERE</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">h2o_linear</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Funny shape right? Now we can use it as an input for our energy calculation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31+G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G**&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31++G**&#39;</span><span class="p">]</span>  <span class="c1"># these are the basis sets we are going to use</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+
+<span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-h2o-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 13</p>
+<p>What can you say about the energies and stability of a linear water molecule compared to our original bent case? And why?</p>
+</div>
+<p>And now we can reproduce the same procedure to gaseous beryllium hydride BH<span class="math notranslate nohighlight">\(_{2}\)</span>. Can you predict the results of the calculation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bh2_bent</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">## FILL HERE</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="n">bh2_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">## FILL HERE</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">h2o_linear</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will compare only the energy using one specific basis sets but feel free to try different ones if you are curious.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;6-31++G**&#39;</span>  <span class="c1"># these are the basis sets we are going to use</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-bh2_bent-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the bent case</span>
+<span class="n">E_bent</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations for the bent case</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-bh2_linear-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the linear case</span>
+<span class="n">E_linear</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations for the linear case</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The bent molecule has the energy:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E_bent</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The linear molecule has the energy:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E_linear</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="exercise admonition">
+<p class="admonition-title">Exercise 14</p>
+<p>What can you say about the stability of the bent and linear beryllium hydride conformations? How does it compare to the water case and why?</p>
+</div>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="output-files">
-<h1><span class="section-number">2.4. </span>Output Files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">2.5. </span>Output Files<a class="headerlink" href="#output-files" title="Link to this heading">#</a></h1>
 <p>So far we only focused on the energy given as ouput from the <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> function. However, for each calculation a .log file is produced, containing detailed information of the procedure.</p>
 <p>You can list the files in your directory (by typing <code class="docutils literal notranslate"><span class="pre">ls</span></code> in your terminal) to see what new files have been generated. Indeed,
 you should find the <code class="docutils literal notranslate"><span class="pre">.log</span></code> files created by Psi4. As these files may be very large and we have no intention of editing it.</p>
@@ -614,25 +655,26 @@ you should find the <code class="docutils literal notranslate"><span class="pre"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Electronic Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.0864
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Multipole            Electronic (a.u.)      Nuclear  (a.u.)        Total (a.u.)
+ ------------------------------------------------------------------------------------
 
-  Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:     0.9077     Total:     0.9077
+ L = 1.  Multiply by 2.5417464519 to convert [e a0] to [Debye]
+ Dipole X            :          0.0000000            0.0000000            0.0000000
+ Dipole Y            :          0.0000000            0.0000000            0.0000000
+ Dipole Z            :         -0.0825639            0.9840423            0.9014784
+ Magnitude           :                                                    0.9014784
 
-  Dipole Moment: [D]
-     X:     0.0000      Y:     0.0000      Z:     2.3071     Total:     2.3071
+ ------------------------------------------------------------------------------------
 
-
-*** tstop() called on noto.epfl.ch at Wed Oct 12 16:46:05 2022
+*** tstop() called on noto.epfl.ch at Mon Sep 22 19:33:56 2025
 Module time:
-	user time   =       0.65 seconds =       0.01 minutes
-	system time =       0.03 seconds =       0.00 minutes
+	user time   =       0.29 seconds =       0.00 minutes
+	system time =       0.01 seconds =       0.00 minutes
 	total time  =          0 seconds =       0.00 minutes
 Total time:
-	user time   =      18.78 seconds =       0.31 minutes
-	system time =       0.91 seconds =       0.02 minutes
-	total time  =        493 seconds =       8.22 minutes
+	user time   =       3.68 seconds =       0.06 minutes
+	system time =       0.20 seconds =       0.00 minutes
+	total time  =         11 seconds =       0.18 minutes
 </pre></div>
 </div>
 </div>
@@ -646,20 +688,12 @@ For example, considering again the last <code class="docutils literal notranslat
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-UHF Final Energy:   -76.02966176454109
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  @DF-UHF Final Energy:   -76.02974219694876
 </pre></div>
 </div>
 </div>
 </div>
-<div class="exercise admonition">
-<p class="admonition-title">Exercise 12</p>
-<p>Have a look at the log files produced so far and answer the following questions:</p>
-<ol class="arabic simple">
-<li><p>What is the significance of the statement <em>Energy and wave function converged</em>?</p></li>
-<li><p>What is the meaning of the different <em>iter</em> preceding <em>Energy and wave function converged</em>?
-Compare the number of cycles for the different basis sets.</p></li>
-</ol>
-</div>
+<p>These commands allow us to extract important information from the output file that can be used for analysis for instance. We will usually have a look at the output files during the next exercises, but for now it is sufficient if you get a feeling of what kind of information there is inside it.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -730,7 +764,8 @@ Compare the number of cycles for the different basis sets.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-geometry">2.3.1. Building the Geometry</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">2.4. Output Files</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-water-molecule-and-bh-2">2.4. Linear water molecule and BH<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">2.5. Output Files</a></li>
 </ul>
 
   </nav></div>

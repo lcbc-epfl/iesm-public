@@ -67,7 +67,7 @@ Your answer here
 :class: exercise 
 Using the information given about the 3-21G contraction coefficients:\
     a) Give the basis functions corresponding to the 1s, 2s and 2p orbitals of Carbon (**Hint**: use information from **Fig. 2.2** ).\
-    b) If you wish to calculate the Hartree-Fock energy of a carbon atom,
+    b) If you wish to calculate the Hartree-Fock energy of a carbon atom (in a molecular system),
     how many coefficients are *optimised* during the calculation?
 ```
 
@@ -109,21 +109,28 @@ What is the influence of the basis set size on the accuracy of the result? How d
 
 Your answer here
 
-:::{admonition} Exercise 9
+```{admonition} Exercise 9
+:class: exercise 
+How does the resulting energies for helium compare to the hydrogen case? And why?
+```
+
+Your answer here
+
+:::{admonition} Exercise 10
 :class: exercise 
 Include in your report the coordinates you set for your water molecules and a screenshot of how it looks like in 3D representation.
 :::
 
 Your answer here
 
-```{admonition} Exercise 10
+```{admonition} Exercise 11
 :class: exercise
-How do you calculate the spin multiplicity of a species? Compare the case of the water molecule to the previous example of the hydrogen atom.
+How do you calculate the spin multiplicity of a species? Compare the case of the water molecule to the previous examples of the hydrogen atom and the helium atom.
 ```
 
 Your answer here
 
-:::{admonition} Exercise 11
+:::{admonition} Exercise 12
 :class: exercise 
 Compute energy calculations for the different basis sets indicated below with a loop similar to the one used before.  Include a table of the the calculated energies. Specify what is the difference between the basis sets that we used.
 
@@ -132,13 +139,16 @@ Compute energy calculations for the different basis sets indicated below with a 
 
 Your answer here
 
-```{admonition} Exercise 12
+```{admonition} Exercise 13
 :class: exercise
-Have a look at the log files produced so far and answer the following questions:
-1.  What is the significance of the statement *Energy and wave function converged*?
+What can you say about the energies and stability of a linear water molecule compared to our original bent case? And why?
+```
 
-2.  What is the meaning of the different *iter* preceding *Energy and wave function converged*? 
-    Compare the number of cycles for the different basis sets.
+Your answer here
+
+```{admonition} Exercise 14
+:class: exercise
+What can you say about the stability of the bent and linear beryllium hydride conformations? How does it compare to the water case and why?
 ```
 
 Your answer here
