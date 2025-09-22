@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 2
-subtitle: IESM Fall 2024-2025
-date: September 24, 2024
-author: "Yuri, Salomé, Sophia, Andrea, Víctor, Qihao" 
+subtitle: IESM Fall 2025-2026
+date: September 23, 2025
+author: "Qihao, Salomé, Evan, Thibault" 
 output: beamer_presentation
 ---
 
@@ -23,7 +23,7 @@ output: beamer_presentation
 
 # Psi4 Introduction
 - [Psi4 Manual](https://psicode.org/psi4manual/master/index.html)
-- Open-Source ab initio electronic structure software package
+- Open-Source *ab initio* electronic structure software package
 - Allows for calculations such as: HF, CI, DFT, molecular energies/structures, reaction mechanisms, transition state search, vibrational frequencies, molecular orbitals/densities, geometry optimization, atomic charges, electrostatic potentials, NMR properties, and more 
 - Other electronic structure software you may know: Gaussian, CP2K, CPMD, Quantum Espresso, ORCA, NWChem 
 
@@ -52,7 +52,7 @@ output: beamer_presentation
 
 
 # Jupyter Servers
-- *"Noto can run up to 15 parallel Jupyter backend servers to provide a total of up to 240 GB of RAM and 240 CPU, shared between all users. Our current policy is to allocate up to a maximum of 2 GB of RAM and 2 CPUs per user." *
+- *"Noto can run up to 20 parallel Jupyter backend servers to provide a total of up to 320 GB of RAM and 320 CPU, shared between all users. Our current policy is to allocate up to a maximum of 2 GB of RAM and 2 CPUs per user." *
 
 ![](/data/iesm/img_slides/Ex2/HPC_architecture.png){width=90%} 
 *(Images from [TACC HPC textbook](https://zenodo.org/record/49897)*)
@@ -67,12 +67,19 @@ output: beamer_presentation
 * Get familiar with molecular geometries
 ![](/data/iesm/img_slides/Ex2/ex2_goals.png) \
 
+# Exercise 2 - New exercise questions
+**New exercise questions!**
+
+* The two parts of the exercise on the helium atom (section 2.2.4) and on beryllium hydride (section 2.4) are new.
+* Therefore, please let us now if something is unclear in the text, questions or the tasks we ask you to perform : )
+* These modifications include questions 9, 13, and 14.
+
 # Exercise 2 - Tips
 **Tips!**
 
 * Please focus on understanding basis sets well first and then getting familiar with Psi4 : ) 
-* Practice single-point calculations for an H-atom and water molecule with `psi4.energy()` commands
+* Practice single-point calculations for an single atom and simple molecule with `psi4.energy()` commands
 	* Requires input geometry (Z-matrix or Cartesian coordinates)
 	* Psi4 finds lowest energy combination of wavefunction coefficients for the given geometry
 	* By comparing energy values with different basis sets we can discuss the effect of basis set selections on accuracy and cost (Additional note: is the total energy always meaningful? -- think about that expecially in the H$_2$O exercise)
-	* We will compute the energy of the system with the selected basis set **and** a method of choice. In this exercise we will always be UHF (unrestricted Hartree Fock), but don't worry too much about it for now: you will get familiar with this and other methods in the next lecutres/exercises!
+	* We will compute the energy of the system with the selected basis set **and** a method of choice, here only UHF (unrestricted Hartree Fock). But don't worry too much about it for now: you will get familiar with this and other methods in the next lectures/exercises!
