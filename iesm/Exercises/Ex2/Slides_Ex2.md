@@ -73,6 +73,8 @@ output: beamer_presentation
 * The two parts of the exercise on the helium atom (section 2.2.4) and on beryllium hydride (section 2.4) are new.
 * Therefore, please let us now if something is unclear in the text, questions or the tasks we ask you to perform : )
 * These modifications include questions 9, 13, and 14.
+* **Total of 14 questions**
+* **Due date for the written report next Tuesday (September 30, 10am)**
 
 # Exercise 2 - Tips
 **Tips!**
