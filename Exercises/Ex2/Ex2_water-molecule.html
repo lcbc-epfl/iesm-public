@@ -468,7 +468,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-geometry">2.3.1. Building the Geometry</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-water-molecule-and-bh-2">2.4. Linear water molecule and BH<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-water-molecule-and-beh-2">2.4. Linear water molecule and BeH<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">2.5. Output Files</a></li>
 </ul>
 
@@ -558,8 +558,8 @@ document.write(`
 </ul>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="linear-water-molecule-and-bh-2">
-<h1><span class="section-number">2.4. </span>Linear water molecule and BH<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#linear-water-molecule-and-bh-2" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-water-molecule-and-beh-2">
+<h1><span class="section-number">2.4. </span>Linear water molecule and BeH<span class="math notranslate nohighlight">\(_{2}\)</span><a class="headerlink" href="#linear-water-molecule-and-beh-2" title="Link to this heading">#</a></h1>
 <p>It is assumed that the water molecule you created previously has the usual bent geometry we are familiar with. But would it be possible to compute the energy of a linear water molecule? Well, let’s figure it out. First, try to modify the water geometry so that it has a linear conformation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -597,13 +597,13 @@ document.write(`
 <p class="admonition-title">Exercise 13</p>
 <p>What can you say about the energies and stability of a linear water molecule compared to our original bent case? And why?</p>
 </div>
-<p>And now we can reproduce the same procedure to gaseous beryllium hydride BH<span class="math notranslate nohighlight">\(_{2}\)</span>. Can you predict the results of the calculation?</p>
+<p>And now we can reproduce the same procedure to gaseous beryllium hydride BeH<span class="math notranslate nohighlight">\(_{2}\)</span>. Can you predict the results of the calculation?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bh2_bent</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beh2_bent</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">## FILL HERE</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="n">bh2_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">beh2_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">## FILL HERE</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
 </pre></div>
@@ -612,21 +612,22 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">h2o_linear</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">beh2_bent</span><span class="p">)</span>
+<span class="n">drawXYZ</span><span class="p">(</span><span class="n">beh2_linear</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>We will compare only the energy using one specific basis sets but feel free to try different ones if you are curious.</p>
+<p>We will compare only the energy using one specific basis set but feel free to try different ones if you are curious.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;6-31++G**&#39;</span>  <span class="c1"># these are the basis sets we are going to use</span>
 
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-bh2_bent-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the bent case</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-beh2_bent-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the bent case</span>
 <span class="n">E_bent</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations for the bent case</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-bh2_linear-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the linear case</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-beh2_linear-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the linear case</span>
 <span class="n">E_linear</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations for the linear case</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The bent molecule has the energy:&quot;</span><span class="p">)</span>
@@ -764,7 +765,7 @@ For example, considering again the last <code class="docutils literal notranslat
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-geometry">2.3.1. Building the Geometry</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-water-molecule-and-bh-2">2.4. Linear water molecule and BH<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-water-molecule-and-beh-2">2.4. Linear water molecule and BeH<span class="math notranslate nohighlight">\(_{2}\)</span></a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#output-files">2.5. Output Files</a></li>
 </ul>
 
