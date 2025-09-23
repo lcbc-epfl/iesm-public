@@ -111,7 +111,7 @@ Your answer here
 
 ```{admonition} Exercise 9
 :class: exercise 
-How does the resulting energies for helium compare to the hydrogen case? And why?
+How does the resulting relative energies for helium compare to the hydrogen case? And why?
 ```
 
 Your answer here
