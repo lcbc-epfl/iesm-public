@@ -141,7 +141,7 @@ Your answer here
 
 ```{admonition} Exercise 13
 :class: exercise
-What can you say about the energies and stability of a linear water molecule compared to our original bent case? And why?
+What can you say about the relative energies and stability of a linear water molecule compared to our original bent case? And why?
 ```
 
 Your answer here
