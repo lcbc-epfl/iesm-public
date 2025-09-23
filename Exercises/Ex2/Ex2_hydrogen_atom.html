@@ -467,7 +467,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-structure-software">2.2.1. Electronic Structure Software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-steps">2.2.2. Preliminary steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">2.2.3. Writing An Input For <em>Psi4</em> and Invoking the Program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">2.2.4. Your turn: Compute the Hartree Fock energy of the helium atom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">2.2.4. Your turn: Compute the Hartree-Fock energy of the helium atom</a></li>
 </ul>
             </nav>
         </div>
@@ -614,8 +614,8 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 </div>
 </section>
 <section id="your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">
-<h2><span class="section-number">2.2.4. </span>Your turn: Compute the Hartree Fock energy of the helium atom<a class="headerlink" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom" title="Link to this heading">#</a></h2>
-<p>Similarly as just seen for the hydrogen atom, you will now need to compute the energy for a single helium atom. We will use the same UHF method and the same basis sets so that we can compare the resulting energies with the ones from the hydrogen case. First, you will need to define the geometry information of your single helium atom:</p>
+<h2><span class="section-number">2.2.4. </span>Your turn: Compute the Hartree-Fock energy of the helium atom<a class="headerlink" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom" title="Link to this heading">#</a></h2>
+<p>Similarly as just seen for the hydrogen atom, you will now compute the energy for a single helium atom. We will use the same UHF method and the same basis sets, enabling us to compare the resulting energies with the ones from the hydrogen case. First, you will need to define the geometry information of your single helium atom:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">he</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
@@ -632,7 +632,7 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 </div>
 </div>
 </div>
-<p>Now we can calculate the Hartree Fock energy using the same basis sets as before and the same method (UHF):</p>
+<p>Using this geometry input, we can calculate the Hartree-Fock energy using the same basis sets as before and the same method (UHF):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="c1">###INCLUDE HERE YOUR BASIS SETS] # these are the basis sets we are going to use</span>
@@ -652,7 +652,7 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 <p class="admonition-title">Exercise 9</p>
 <p>How does the resulting energies for helium compare to the hydrogen case? And why?</p>
 </div>
-<p>Feel free to play with different atom types to see how the energies change, together with the number of basis functions required by the system (related to exercise 7). But we will now move on and start studying molecules from the next section.</p>
+<p>Feel free to play with different atom types to see how the energies and the number of basis functions change for the system (related to exercise 7). From the next section, we will deal with slightly more complex systems, namely simple molecules.</p>
 </section>
 </section>
 
@@ -723,7 +723,7 @@ N_A = 6.0221367\cdot10^{23}mol^{-1}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#electronic-structure-software">2.2.1. Electronic Structure Software</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-steps">2.2.2. Preliminary steps</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-an-input-for-psi4-and-invoking-the-program">2.2.3. Writing An Input For <em>Psi4</em> and Invoking the Program</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">2.2.4. Your turn: Compute the Hartree Fock energy of the helium atom</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn-compute-the-hartree-fock-energy-of-the-helium-atom">2.2.4. Your turn: Compute the Hartree-Fock energy of the helium atom</a></li>
 </ul>
   </nav></div>
 
