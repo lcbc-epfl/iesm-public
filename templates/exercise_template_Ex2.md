@@ -67,7 +67,7 @@ Your answer here
 :class: exercise 
 Using the information given about the 3-21G contraction coefficients:\
     a) Give the basis functions corresponding to the 1s, 2s and 2p orbitals of Carbon (**Hint**: use information from **Fig. 2.2** ).\
-    b) If we wish to construct a single molecular orbital $\phi_m(\mathbf{r}_m)$ (which is a one-particle molecular orbital) for a carbon atom with a spin multiplicity *S=5* using the 3-21G basis set (so that our 1s, 2s, and 2p orbitals are all occupied with at least one electron and included in the construction of $\phi_m(\mathbf{r}_m)$), how many coefficients and exponents coming from contracted GTOs are unchanged during a Hartree Fock calculation? And which expansion coefficients will vary for the calculation of the Hartree-Fock energy? 
+    b) We wish to construct a single molecular orbital $\phi_m(\mathbf{r}_m)$ (which is a one-particle molecular orbital) for a carbon atom using the 3-21G basis set (so that our 1s, 2s, and 2p orbitals are all occupied with at least one electron and included in the construction of $\phi_m(\mathbf{r}_m)$). How many coefficients and exponents coming from contracted GTOs are unchanged during a Hartree Fock calculation (i.e. give the number of fixed coefficients, the ones that are not optimized)? Which expansion coefficients will vary for the calculation of the Hartree-Fock energy (i.e. explain the kind of coefficients that will be optimized during the calculation)? 
 ```
 
 Your answer here
