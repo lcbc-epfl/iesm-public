@@ -509,34 +509,6 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="tip admonition">
-<p class="admonition-title">Questions for the Interview</p>
-<ul class="simple">
-<li><p><em>Please explain how you decided which of the reactions was the most difficult for DFT to calculate.</em></p></li>
-</ul>
-<p><strong>A:</strong> Homolytic bond dissociation energy of CaO is the most difficult for DFT to calculate. From the calculation results in the notebook, the energies calculated by DFT methods are significantly different from the reference energy (greater than 5 kcal/mol)</p>
-<p>The methanol reaction (energy difference between the staggered and eclipsed methanol conformations) should be the easy one because the electronic density and the character of the molecules does not change. The ethane interaction should in principle not be difficult but we know that DFT has difficulties with dispersion energies. For the atomization of CaO we have a triplet species in one of the products, which is considerably more difficult.</p>
-<ul class="simple">
-<li><p><em>Which functionals gave the most accurate values in each case (CaO, ethane dimer, methanol) and why?</em></p></li>
-</ul>
-<p><strong>A:</strong> MN15 functional</p>
-<p>The MN15 functional contained the BDE CaO into atomic calcium and oxygen reaction in the its training data, therefore it is the only one among the functionals used giving a very good result on it.</p>
-<ul class="simple">
-<li><p><em>Compare the two functionals (B3LYP, M06-HF) regarding convergence with respect to the integration grid. Which functional shows concerning behavior in this regard?</em></p></li>
-</ul>
-<p><strong>A:</strong> The M06-HF (minnesota functionals) are know to exhibit problematic dependence on the integration grid. The B3LYP functional produces almost exactly the same behavior for the medium-quality and high-quality integration grid, whereas MN06-HF shows no convergence behavior with respect to the integration grid. We are not guaranteed to get better results by choosing a finer integration grid.</p>
-<ul class="simple">
-<li><p><em>Based on what you know now about DFT now, how might you respond to a classmate who asked if DFT is “always the best” computational chemistry method?</em></p></li>
-</ul>
-<p><strong>A:</strong> DFT is a widely used computational chemistry method due to its balance between accuracy and computational cost. However, it is not “always the best” method, and its suitability depends on the specific system and property of interest. For example,</p>
-<ol class="arabic simple">
-<li><p>Poor Description of Dispersion (van der Waals) Interactions. While dispersion-corrected DFT methods (e.g., DFT-D, vdW-DF) exist, their performance depends on the parameterization and system.</p></li>
-<li><p>Challenges with Strongly Correlated Systems (e.g., Mott insulators and transition metal oxides). Such cases often require advanced approaches like DFT+U or multireference methods.</p></li>
-<li><p>Dependence on Exchange-Correlation Functionals. The accuracy of DFT is governed by the exchange-correlation functional used. No universal functional exists that performs well for all systems or properties.</p></li>
-<li><p>Band Gap Underestimation of semiconductors and insulators due to its approximate nature. Hybrid functionals (e.g., HSE06) or methods like GW are often used to improve band gap predictions.</p></li>
-<li><p>Excited States and Time-Dependent Properties. Ground-state DFT is inherently a ground-state theory and is not suitable for describing excited states, optical properties, or time-dependent phenomena. Extensions like Time-Dependent DFT (TD-DFT) address this, but they may fail for systems with significant charge transfer or multi-configurational character.</p></li>
-</ol>
-</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
