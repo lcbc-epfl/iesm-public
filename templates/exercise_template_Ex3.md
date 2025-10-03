@@ -69,7 +69,7 @@ Your answer here
 
 ```{admonition} Exercise 7
 :class: exercise
-Why does the optimization finish after 8 steps? 
+Why does the optimization finish after several steps? 
 ```
 
 Your answer here
