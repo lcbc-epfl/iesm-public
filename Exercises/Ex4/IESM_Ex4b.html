@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. Post-Hartree Fock Methods: CI and MPn &#8212; Introduction to Electronic Structure Methods</title>
+    <title>4. The hartree fock procedure in detail &#8212; Introduction to Electronic Structure Methods</title>
   
   
   
@@ -59,12 +59,12 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"TeX": {"Macros": {"ket": ["\\lvert #1 \\rangle", 1], "bra": ["\\langle #1 \\lvert", 1], "Ket": ["\\lvert #1 \\rangle", 1], "Bra": ["\\langle #1 \\lvert", 1], "braket": ["\\langle #1 \\lvert #2 \\rangle", 2], "hop": "\\hat{\\mathcal{H}}", "unit": "\\mathbbm{1}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Exercises/Ex5/IESM_Ex5';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Exercises/Ex4/IESM_Ex4b';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.1. Post-Hartree Fock Methods: Theory Recap" href="Ex5Theory.html" />
-    <link rel="prev" title="4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry" href="../Ex4/HF.html" />
+    <link rel="next" title="4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry" href="HF.html" />
+    <link rel="prev" title="3.3. Geometry optimization of \(H_2O\)" href="../Ex3/Ex3_GeometryOpt.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -198,15 +198,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../Ex3/Ex3_GeometryOpt.html">3.3. Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span></a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex4/IESM_Ex4b.html">4. The hartree fock procedure in detail</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Ex4/HF.html">4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">4. The hartree fock procedure in detail</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="HF.html">4.1. Hartree-Fock Procedure for Approximate Quantum Chemistry</a></li>
 </ul>
 </details></li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">5. Post-Hartree Fock Methods: CI and MPn</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
-<li class="toctree-l2"><a class="reference internal" href="Ex5Theory.html">5.1. Post-Hartree Fock Methods: Theory Recap</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ex5_Boron.html">5.2. Recovering Correlation Energy: B atom</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ex5_BDE.html">5.3. Homolytic Cleavage of the C-F Bond</a></li>
-<li class="toctree-l2"><a class="reference internal" href="Ex5_HNO3.html">5.4. Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Ex5/IESM_Ex5.html">5. Post-Hartree Fock Methods: CI and MPn</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Ex5/Ex5Theory.html">5.1. Post-Hartree Fock Methods: Theory Recap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ex5/Ex5_Boron.html">5.2. Recovering Correlation Energy: B atom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ex5/Ex5_BDE.html">5.3. Homolytic Cleavage of the C-F Bond</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Ex5/Ex5_HNO3.html">5.4. Influence of correlation on geometry: HNO<span class="math notranslate nohighlight">\(_3\)</span> molecule</a></li>
 </ul>
 </details></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Ex6/IESM_Ex6.html">6. DFT vs (Post) HF Methods</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
@@ -292,7 +292,7 @@
       
       
       
-      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex5/IESM_Ex5.ipynb&branch=main" target="_blank"
+      <li><a href="https://noto.epfl.ch/hub/user-redirect/git-pull?repo=https%3A//github.com/lcbc-epfl/iesm-public&urlpath=lab/tree/iesm-public/iesm/Exercises/Ex4/IESM_Ex4b.ipynb&branch=main" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on JupyterHub"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -340,7 +340,7 @@
       
       
       
-      <li><a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex5/IESM_Ex5.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/lcbc-epfl/iesm-public/issues/new?title=Issue%20on%20page%20%2FExercises/Ex4/IESM_Ex4b.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -370,7 +370,7 @@
       
       
       
-      <li><a href="../../_sources/Exercises/Ex5/IESM_Ex5.ipynb" target="_blank"
+      <li><a href="../../_sources/Exercises/Ex4/IESM_Ex4b.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -452,7 +452,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Post-Hartree Fock Methods: CI and MPn</h1>
+    <h1>The hartree fock procedure in detail</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,34 +466,13 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="post-hartree-fock-methods-ci-and-mpn">
-<h1><span class="section-number">5. </span>Post-Hartree Fock Methods: CI and MPn<a class="headerlink" href="#post-hartree-fock-methods-ci-and-mpn" title="Link to this heading">#</a></h1>
-<p>In the limit of a complete basis, the Hartree-Fock (HF) energy in the
-complete basis set limit (<span class="math notranslate nohighlight">\(E_{CBS}^{HF}\)</span>) yields an upper boundary to
-the physical energy of the system:</p>
-<div class="math notranslate nohighlight">
-\[\begin{aligned}
-E^{total} = E^{HF}_{CBS} + E^{corr},\end{aligned}\]</div>
-<p>where the difference
-between the total and the Hartree-Fock energy is given by effects due to
-<em>electron correlation</em>, <span class="math notranslate nohighlight">\(E^{corr}\)</span>. The neglect of electron correlation
-in Hartree-Fock is a consequence of the restriction to a single Slater
-determinant. In weakly correlated systems, this may be a reasonable
-approximation; in the majority of the cases, however, this approximation
-breaks down more or less drastically. In such cases, it is inevitable to
-include electron correlation; Hartree-Fock results may, in the worst
-case, be almost (or even totally) meaningless, since the the contribution of correlation
-is significant in these systems.</p>
-<p>Inclusion of correlation can be based
-on <em>e.g.</em> <em>Post-Hartree-Fock methods</em>, such as <em>Configuration
-Interaction</em> (CI) or <em>Møller Plesset Perturbation Theory</em> of n<span class="math notranslate nohighlight">\(^{th}\)</span>
-order (MPn). In this set of exercises, you will compare the performance
-of HF, CI and MPn in describing a bond dissociation energy, and you will
-assess the influence of electron correlation on structural parameters
-(bond lengths and angles).</p>
-<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/blob/gh-pages/Exercises/Ex5/Slides_Ex5.md.pdf">📥 Download introductory slides</a></button></p>
-<p><a class="reference external" href="https://drive.google.com/viewer?url=https://lcbc-epfl.github.io/iesm-public/templates/exercise-template-ex5.docx"> <img alt="https://badgen.net/static/Report%20Template/Google%20Docs/yellow" src="https://badgen.net/static/Report%20Template/Google%20Docs/yellow" /></a></p>
-<p><a class="reference external" href="https://www.overleaf.com/docs?snip_uri=https://lcbc-epfl.github.io/iesm-public/templates/exercise-template-ex5.tex"><img alt="https://badgen.net/static/Report%20Template/Overleaf/green" src="https://badgen.net/static/Report%20Template/Overleaf/green" /></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="the-hartree-fock-procedure-in-detail">
+<h1><span class="section-number">4. </span>The hartree fock procedure in detail<a class="headerlink" href="#the-hartree-fock-procedure-in-detail" title="Link to this heading">#</a></h1>
+<p>So far you have run some Hartree Fock calculations using Psi4 and in the lectures we have seen the theoretical derivation of the scheme.</p>
+<p>In this exercise, we will recapitulate the HF scheme by implementing it on our own using Psi4. That means we will go through the steps of the HF procedure but we will let Psi4 evaluate the integrals for us.</p>
+<p><button name="button" class="btn px-3 py-1 enc-btn"><a class="reference external" href="https://github.com/lcbc-epfl/iesm-public/blob/gh-pages/Exercises/Ex4/Slides_Ex4.md.pdf">📥 Download introductory slides</a></button></p>
+<p><a class="reference external" href="https://drive.google.com/viewer?url=https://lcbc-epfl.github.io/iesm-public/templates/exercise-template-ex4.docx"> <img alt="https://badgen.net/static/Report%20Template/Google%20Docs/yellow" src="https://badgen.net/static/Report%20Template/Google%20Docs/yellow" /></a></p>
+<p><a class="reference external" href="https://www.overleaf.com/docs?snip_uri=https://lcbc-epfl.github.io/iesm-public/templates/exercise-template-ex4.tex"><img alt="https://badgen.net/static/Report%20Template/Overleaf/green" src="https://badgen.net/static/Report%20Template/Overleaf/green" /></a></p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
 <div class="sd-col sd-d-flex-row docutils">
@@ -502,8 +481,9 @@ assess the influence of electron correlation on structural parameters
 <p class="sd-card-text">🎯 <strong>Learning goals</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Understanding what is correlation energy</p>
-<p class="sd-card-text">Getting familiar with some Post-HF method and their advantages/disadvantages</p>
+<p class="sd-card-text">Build and diagonalize the Fock matrix</p>
+<p class="sd-card-text">Understand the steps in a HF SCF calculation</p>
+<p class="sd-card-text">Practice implicit summation in numpy</p>
 </div>
 </div>
 </div>
@@ -513,8 +493,8 @@ assess the influence of electron correlation on structural parameters
 <p class="sd-card-text">📖 <strong>Chapter in script</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Chapter 5 - An introduction to configuration interaction theory</p>
-<p class="sd-card-text">Chapter 6 - Many-body perturbation theory</p>
+<p class="sd-card-text">Chapter 4 - An introduction to Hartree Fock theory</p>
+<p class="sd-card-text">Appendix C</p>
 </div>
 </div>
 </div>
@@ -524,11 +504,7 @@ assess the influence of electron correlation on structural parameters
 <p class="sd-card-text">📚 <strong>Resources</strong></p>
 </div>
 <div class="sd-card-body docutils">
-<p class="sd-card-text"><a class="reference external" href="http://vergil.chemistry.gatech.edu/notes/ci.pdf">An Introduction to Configuration Interaction Theory - David Sherrill</a></p>
-<p class="sd-card-text">Jensen, F. (2017). Introduction to computational chemistry. John wiley &amp; sons.</p>
-<ul class="simple">
-<li><p class="sd-card-text">Chapter 4.8.1 - Møller–Plesset perturbation theory</p></li>
-</ul>
+<p class="sd-card-text">Introduction to Hartree-Fock Molecular Orbital Theory  by the Sherrill group: <a class="reference external" href="http://vergil.chemistry.gatech.edu/courses/chem6485/pdf/Hartree-Fock-Intro.pdf">slides</a> and videos (<a class="reference external" href="http://www.youtube.com/watch?v=6XFOF8-QkAM&amp;amp;feature=relmfu">part 1</a>, <a class="reference external" href="http://www.youtube.com/watch?v=1jHkt1Qzv1A&amp;amp;feature=relmfu">part 2</a>)</p>
 </div>
 </div>
 </div>
@@ -551,7 +527,7 @@ assess the influence of electron correlation on structural parameters
         },
         kernelOptions: {
             name: "python3",
-            path: "./Exercises/Ex5"
+            path: "./Exercises/Ex4"
         },
         predefinedOutput: true
     }
@@ -569,20 +545,20 @@ assess the influence of electron correlation on structural parameters
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Ex4/HF.html"
+       href="../Ex3/Ex3_GeometryOpt.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry</p>
+        <p class="prev-next-title"><span class="section-number">3.3. </span>Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span></p>
       </div>
     </a>
     <a class="right-next"
-       href="Ex5Theory.html"
+       href="HF.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.1. </span>Post-Hartree Fock Methods: Theory Recap</p>
+        <p class="prev-next-title"><span class="section-number">4.1. </span>Hartree-Fock Procedure for Approximate Quantum Chemistry</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
