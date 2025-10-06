@@ -219,7 +219,7 @@ Your answer here
 
 :::{admonition} Bonus Exercise 27
 :class: exercise
-Modify the value of E_conv and describe its effect the number of iterations.
+Modify the value of E_conv and describe its effect the number of iterations.Provide your code, the output of the SCF calculation and the number of iterations.
 :::
 
 Your answer here

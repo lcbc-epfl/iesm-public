@@ -854,8 +854,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-411818e4-fb15-49e1-89c8-caf13d092855">
-<span class="eqno">()<a class="headerlink" href="#equation-411818e4-fb15-49e1-89c8-caf13d092855" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c0f35fd8-974b-433c-b3dd-c6598f1dbe8a">
+<span class="eqno">()<a class="headerlink" href="#equation-c0f35fd8-974b-433c-b3dd-c6598f1dbe8a" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -887,8 +887,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Link to this heading">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">()</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b096758c-0f4a-408f-8b78-bde7a6af732c">
-<span class="eqno">()<a class="headerlink" href="#equation-b096758c-0f4a-408f-8b78-bde7a6af732c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0062b59a-ae97-44e6-ac62-6f7fbe5aa6e3">
+<span class="eqno">()<a class="headerlink" href="#equation-0062b59a-ae97-44e6-ac62-6f7fbe5aa6e3" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -899,8 +899,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-782e6c55-d9ad-47e5-a7fb-06291a84144e">
-<span class="eqno">()<a class="headerlink" href="#equation-782e6c55-d9ad-47e5-a7fb-06291a84144e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-97de4c85-7cb7-48ef-9ed9-a578ec353adc">
+<span class="eqno">()<a class="headerlink" href="#equation-97de4c85-7cb7-48ef-9ed9-a578ec353adc" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1231,7 +1231,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Bonus Exercise 27</p>
-<p>Modify the value of E_conv and describe its effect the number of iterations.</p>
+<p>Modify the value of E_conv and describe its effect the number of iterations.Provide your code, the output of the SCF calculation and the number of iterations.</p>
 </div>
 </section>
 </section>
