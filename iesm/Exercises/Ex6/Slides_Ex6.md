@@ -19,8 +19,8 @@ output: beamer_presentation
 * Why? For N electrons, the system wavefunction is a complex function of 3N variables, but the electron density is a function of 3 variables
 
 * The universal functional not known, but proven to exist
-* Everything that is unknown is contained in $E_{XC}$
-$$E[\rho] = T_{0}[\rho] + J[\rho] + \int v_{ext}(r)\rho(r)dr + E_{XC}[\rho]$$
+* Everything that is unknown is contained in $E_{XC}[\rho]$
+$$E[\rho] = T_{s}[\rho] + J[\rho] + \int v_{ext}(r)\rho(r)dr + E_{XC}[\rho]$$
 * Each computational functional will treat the XC part differently
 
 # Exercise 6 - DFT (continued)
