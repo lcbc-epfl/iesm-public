@@ -501,7 +501,7 @@ in chemical transformations (in what is called the night-time chemistry
 of the atmosphere). [Ref: <a class="reference external" href="https://pubs.rsc.org/en/content/articlehtml/2014/cp/c4cp02792b"><em>Phys. Chem. Chem. Phys.</em>, <strong>2014</strong>, 16, <em>19437-19445</em></a>]</p>
 <p>There exist various experimental and theoretical
 studies of NO<span class="math notranslate nohighlight">\(_3\cdot\)</span> , with the experiment indicating a fully symmetric D<span class="math notranslate nohighlight">\(_3^h\)</span>
-structure with equal N-O bond lengths of 1.24 Å and O-N-O bond angles of
+structure with equal N-O bond lengths of 1.24 Å and angles O-N-O of
 120<span class="math notranslate nohighlight">\(^\circ\)</span>.</p>
 <p>In this exercise, you will be comparing the performance of
 various DFT exchange-correlation functionals, Hartree-Fock theory and
@@ -705,9 +705,9 @@ viewer_16696487402565973.render();
 <h3><span class="section-number">6.2.1.4. </span>Visualizing the orbitals<a class="headerlink" href="#visualizing-the-orbitals" title="Link to this heading">#</a></h3>
 <p>In order to assess the reliability of an electronic structure
 calculation, it is usually not sufficient to simply glance at the
-optimised structure and energies. One should as well examine the
-orbitals. This is also valid for DFT: Although the Kohn-Sham orbitals
-lack, in a strict sense, any physical interpretation, experience shows
+optimized structure and energies. One should as well examine the
+orbitals. This is also valid for DFT, although the Kohn-Sham orbitals
+lack, in a strict sense, any physical interpretation. Fortunately, experience shows
 that they are <em>very close</em> to wavefunction-based single particle
 orbitals. Thus, the DFT Kohn-Sham orbitals provide a
 useful interpretative tool to visualise changes in the electronic
@@ -716,7 +716,7 @@ but one should bear in mind that they have to be interpreted with care.</p>
 <p>In Psi4 we will use the <code class="docutils literal notranslate"><span class="pre">frontier_orbitals</span></code> setting, which produces <code class="docutils literal notranslate"><span class="pre">cube</span></code> representations of the frontier molecular orbitals. For closed shell species, the highest occupied (HOMO) and the lowest unoccupied (LUMO) alpha orbitals (ie. <span class="math notranslate nohighlight">\(\psi_\alpha(r)\)</span>) are printed, while for open shell species a total of (<span class="math notranslate nohighlight">\(4+M_s\)</span>) orbitals are printed (<span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> spin for both lowest virtual (LVMO) and highest doubly occupied orbitals (DOMO), along with all singly occupied (SOMO) orbitals).
 The plot below will print <span class="math notranslate nohighlight">\(\alpha\)</span> spin orbitals in red and <span class="math notranslate nohighlight">\(\beta\)</span> spin orbitals in blue.</p>
 <p>You can visualize the cube files using the commands <code class="docutils literal notranslate"><span class="pre">findCubeFiles(pathToDirectory)</span></code> and <code class="docutils literal notranslate"><span class="pre">showOrbitals(pathToDirectory)</span></code></p>
-<p>Using <code class="docutils literal notranslate"><span class="pre">cubeprop</span></code> you can also access the electron density (<code class="docutils literal notranslate"><span class="pre">density</span></code>), the basis functions (<code class="docutils literal notranslate"><span class="pre">basis_functions</span></code>), the electrostatic potential (<code class="docutils literal notranslate"><span class="pre">esp</span></code>) and a descriptor calculated from the frontier orbitals which is <span class="math notranslate nohighlight">\(f^2(r) = \rho_{\text{LUMO}}(r) - \rho_{\text{HOMO}}(r)\)</span> (<code class="docutils literal notranslate"><span class="pre">dual_descriptor</span></code>). This descriptor is a good measure of nucleophilicity and electrophilicity and is like both Fukui functions combined.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">cubeprop</span></code> you can also access the electron density (<code class="docutils literal notranslate"><span class="pre">density</span></code>), the basis functions (<code class="docutils literal notranslate"><span class="pre">basis_functions</span></code>), the electrostatic potential (<code class="docutils literal notranslate"><span class="pre">esp</span></code>) and a descriptor calculated from the frontier orbitals which is <span class="math notranslate nohighlight">\(f^2(r) = \rho_{\text{LUMO}}(r) - \rho_{\text{HOMO}}(r)\)</span> (<code class="docutils literal notranslate"><span class="pre">dual_descriptor</span></code>). This descriptor is a good measure of nucleophilicity and electrophilicity, and can be viewed as a combination of two Fukui functions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;cubeprop_tasks&#39;</span><span class="p">:[</span><span class="s1">&#39;frontier_orbitals&#39;</span><span class="p">]})</span>
@@ -783,7 +783,7 @@ The plot below will print <span class="math notranslate nohighlight">\(\alpha\)<
 </section>
 <section id="results-comparison">
 <h2><span class="section-number">6.2.2. </span>Results comparison<a class="headerlink" href="#results-comparison" title="Link to this heading">#</a></h2>
-<p>Now that you have performed the required calculations for HF, MP2 and (some) DFT case, let’s compare the performances of the different methods You can find a table with the experimental values for the different geometrical parameters below</p>
+<p>Now that you have performed the required calculations for HF, MP2 and (some) DFT cases, let’s compare the performances of the different methods You can find a table with the experimental values for the different geometrical parameters below</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Method:</p></th>
@@ -809,13 +809,8 @@ The plot below will print <span class="math notranslate nohighlight">\(\alpha\)<
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 5</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Fill the above table with the results of your calculations. Compare the performance of the methods in predicting accurate
-structures.     Is there a trend relating the complexity of the exchange-correlation functional (LDA, GGA, hybrid, ...) to the quality of your results?
-
-**Bonus**: For the DFT methods, specify what approximations are
-used in the exchange functional (you may refer to {ref}`dfttheory`). 
-</pre></div>
-</div>
+<p>Fill the above table with the results of your calculations. Compare the performance of the methods in predicting accurate structures. Is there a trend relating the complexity of the exchange-correlation functional (LDA, GGA, hybrid, …) to the quality of your results?</p>
+<p><strong>Bonus</strong>: For the DFT methods, specify what approximations are used in the exchange functional (you may refer to <span class="xref std std-ref">dfttheory</span>).</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 6</p>
@@ -827,7 +822,7 @@ used in the exchange functional (you may refer to {ref}`dfttheory`).
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 8</p>
-<p>If you needed a highly accurate structure and energy for  NO<span class="math notranslate nohighlight">\(_3\cdot\)</span>, which method would you use? Why?</p>
+<p>If you needed a highly accurate structure and energy for  NO<span class="math notranslate nohighlight">\(_3\cdot\)</span>, which method would you use (from all methods seen in the class)? Why?</p>
 </div>
 </section>
 </section>
