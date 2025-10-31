@@ -36,17 +36,17 @@ DFT is the workhorse of electronic structure methods:
 # Comments on DFT
 
 * Kohn-Sham formulation: ficticious molecular orbitals (non-interacting)
-* If the exact XC functional is known - ground state energies, charge densities and HOMO (Koopman's theorem) are known
+* If the exact XC functional is known - ground-state energies, electron/charge density and HOMO (Koopman's theorem) are known
 * Usually fast and widely available
 * What can DFT do?
 	* Atomic and cell geometries (fixed V,P)
 	* Formation energy
-	* Properties related to ground state
+	* Properties related to the ground state
 
 # Comments on DFT - downsides
 
 * DFT also has some downsides - we will see this in practice
-	* Difficulties with capturing systems dispersion
+	* Difficulties capturing systems with dispersion
 	* Band gap problem - LUMO cannot be associated with KS orbitals (derivative discontinuity, deviation from piecewise linearity)
  	* No magic solutions :( we must make approximations and test our decisions
 
