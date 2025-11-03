@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 5
 subtitle: IESM Fall 2024-2025 
-date: November 5, 2024
-author: "Yuri, Qihao, Junwu, Salomé, Andrea, Sophia" 
+date: November 4, 2025
+author: "Qihao, Salomé, Evan, Thibault" 
 output: beamer_presentation
 ---
 
@@ -96,9 +96,9 @@ $$
 # Exercise 5 - Tips
 **Tips!**
 
-* MPn theory will be treated in detail during lectures 
-* Same for CC method used for B atom - take it as just *another* post-HF  method for now
-* This is probably the first exercise where calculations are completed in minutes and not second - it is always a good idea to monitor their status, this can be done using the terminal \texttt{tail -f} command
+* MPn theory was treated in detail during the lecture yesterday 
+* CC method used for B atom will be treated in future lectures - take it as just *another* post-HF  method for now
+* This is probably the first exercise where calculations are completed in minutes and not second - it is always a good idea to monitor their status, this can be done using the terminal \texttt{tail -f file.log} command
 
 ![](/data/iesm/img_slides/Ex5/tailcommand.png){width=90%}
 
