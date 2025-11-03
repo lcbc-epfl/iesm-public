@@ -17,7 +17,7 @@ $$
 In the case of HF theory, this expansion had a single element ($M=1$), i.e. a single Slater determinant made of the occupied HF one-electron orbitals.
 In general, there are $M$ possible $N$-electron basis functions to be used, where a complete basis is reached if $M$ is infinite.
 
-To better the idea behind CI theory, we can express the $N$-electron basis function as an expansion of "excitations" from the HF "reference" determinant:
+To better understand the idea behind CI theory, we can express the $N$-electron basis function as an expansion of "excitations" from the HF "reference" determinant:
 
 
 
