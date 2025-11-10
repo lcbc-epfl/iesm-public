@@ -500,6 +500,8 @@ However, such truncations introduce size-consistency problems.</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "1513b1c59ad34a9f991de3ea2e18b6fe", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,19 +524,27 @@ However, such truncations introduce size-consistency problems.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692193574285905"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692193574285905" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+<div class="output text_html"><div id="3dmolviewer_17627633516945267"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_17627633516945267" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -543,21 +553,21 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@2.5.2/build/3Dmol-min.js');
 }
 
-var viewer_16692193574285905 = null;
-var warn = document.getElementById("3dmolwarning_16692193574285905");
+var viewer_17627633516945267 = null;
+var warn = document.getElementById("3dmolwarning_17627633516945267");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16692193574285905 = $3Dmol.createViewer($("#3dmolviewer_16692193574285905"),{backgroundColor:"white"});
-viewer_16692193574285905.zoomTo();
-	viewer_16692193574285905.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_16692193574285905.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692193574285905.zoomTo();
-viewer_16692193574285905.render();
+viewer_17627633516945267 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17627633516945267"),{backgroundColor:"white"});
+viewer_17627633516945267.zoomTo();
+	viewer_17627633516945267.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_17627633516945267.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_17627633516945267.zoomTo();
+viewer_17627633516945267.render();
 });
 </script></div></div>
 </div>
@@ -583,6 +593,56 @@ viewer_16692193574285905.render();
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	Change in internal coordinate of 5.72e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 2.
+	Energy ratio indicates iffy step.
+	Intrafrag trust radius decreased to   0.25.
+	Change in internal coordinate of 6.13e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 1.
+	Change in internal coordinate of 5.12e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 2.
+	Change in internal coordinate of 7.09e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 1.
+	Change in internal coordinate of 5.98e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 2.
+	Change in internal coordinate of 7.95e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 1.
+	Change in internal coordinate of 5.85e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 6.
+	Change in internal coordinate of 6.91e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 5.
+	Change in internal coordinate of 8.18e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 4.
+	Change in internal coordinate of 8.34e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 3.
+	Change in internal coordinate of 1.18e+00 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 2.
+	Previous geometry is closer to target in internal coordinates, so using that one.
+
+	Best geometry has RMS(Delta(q)) = 4.41e-04
+
+	Change in internal coordinate of 5.04e-01 exceeds limit of 5.00e-01.
+	Skipping Hessian update for step 7.
+	Energy has increased in a minimization.
+	Energy ratio indicates iffy step.
+	Intrafrag trust radius decreased to  0.188.
+	Previous geometry is closer to target in internal coordinates, so using that one.
+
+	Best geometry has RMS(Delta(q)) = 2.61e-07
+
+	Unable to completely converge to displaced geometry.
+	RMS(dx):  3.156e-06 	Max(dx):  8.093e-06 	RMS(dq):  4.063e-06
+	Previous geometry is closer to target in internal coordinates, so using that one.
+
+	Best geometry has RMS(Delta(q)) = 4.06e-06
+
+	Unable to completely converge to displaced geometry.
+	RMS(dx):  3.007e-06 	Max(dx):  6.698e-06 	RMS(dq):  4.336e-06
+	Previous geometry is closer to target in internal coordinates, so using that one.
+
+	Best geometry has RMS(Delta(q)) = 4.34e-06
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
 </pre></div>
 </div>
@@ -601,7 +661,7 @@ viewer_16692193574285905.render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_mp3</span> <span class="o">=</span> <span class="n">hno3_mp2</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_mp3.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">E_mp2</span><span class="p">,</span> <span class="n">history_mp2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span> <span class="c1"># run MP3 calculation here, need to use return_history=True to return the history as output (used later)</span>
+<span class="n">E_mp3</span><span class="p">,</span> <span class="n">history_mp3</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span> <span class="c1"># run MP3 calculation here, need to use return_history=True to return the history as output (used later)</span>
 </pre></div>
 </div>
 </div>
@@ -642,19 +702,27 @@ The calculation for the angle is also possible using numpy. You can use the foll
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="3dmolviewer_16692199545666447"  style="position: relative; width: 400px; height: 400px">
-        <p id="3dmolwarning_16692199545666447" style="background-color:#ffcccc;color:black">You appear to be running in JupyterLab (or JavaScript failed to load for some other reason).  You need to install the 3dmol extension: <br>
-        <tt>jupyter labextension install jupyterlab_3dmol</tt></p>
+<div class="output text_html"><div id="3dmolviewer_17627639162787254"  style="position: relative; width: 400px; height: 400px;">
+        <p id="3dmolwarning_17627639162787254" style="background-color:#ffcccc;color:black">3Dmol.js failed to load for some reason.  Please check your browser console for error messages.<br></p>
         </div>
 <script>
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
+    //this is to ignore the existence of requirejs amd
+    var savedexports, savedmodule;
+    if (typeof exports !== 'undefined') savedexports = exports;
+    else exports = {}
+    if (typeof module !== 'undefined') savedmodule = module;
+    else module = {}
+
     var tag = document.createElement('script');
     tag.src = uri;
     tag.async = true;
     tag.onload = () => {
-      resolve();
+        exports = savedexports;
+        module = savedmodule;
+        resolve();
     };
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -663,27 +731,27 @@ var loadScriptAsync = function(uri){
 
 if(typeof $3Dmolpromise === 'undefined') {
 $3Dmolpromise = null;
-  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@latest/build/3Dmol-min.min.js');
+  $3Dmolpromise = loadScriptAsync('https://cdn.jsdelivr.net/npm/3dmol@2.5.2/build/3Dmol-min.js');
 }
 
-var viewer_16692199545666447 = null;
-var warn = document.getElementById("3dmolwarning_16692199545666447");
+var viewer_17627639162787254 = null;
+var warn = document.getElementById("3dmolwarning_17627639162787254");
 if(warn) {
     warn.parentNode.removeChild(warn);
 }
 $3Dmolpromise.then(function() {
-viewer_16692199545666447 = $3Dmol.createViewer($("#3dmolviewer_16692199545666447"),{backgroundColor:"white"});
-viewer_16692199545666447.zoomTo();
-	viewer_16692199545666447.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
-	viewer_16692199545666447.addLabel("0",{"position": {"x": 1.33818170834342, "y": -0.3441480621560101, "z": -0.11947710580699746}, "inFront": true});
-	viewer_16692199545666447.addLabel("1",{"position": {"x": 0.02718170834042214, "y": 0.013851937844808478, "z": 0.4225228941942418}, "inFront": true});
-	viewer_16692199545666447.addLabel("2",{"position": {"x": -0.3168182916603645, "y": 1.3208519378477972, "z": -0.13747710580703862}, "inFront": true});
-	viewer_16692199545666447.addLabel("3",{"position": {"x": -0.9318182916617707, "y": -0.944148062157382, "z": -0.12747710580701577}, "inFront": true});
-	viewer_16692199545666447.addLabel("4",{"position": {"x": -1.7988182916637532, "y": -0.7091480621568447, "z": 0.23052289419380287}, "inFront": true});
-	viewer_16692199545666447.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
-	viewer_16692199545666447.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
-	viewer_16692199545666447.zoomTo();
-viewer_16692199545666447.render();
+viewer_17627639162787254 = $3Dmol.createViewer(document.getElementById("3dmolviewer_17627639162787254"),{backgroundColor:"white"});
+viewer_17627639162787254.zoomTo();
+	viewer_17627639162787254.addModel("5\n\n O    1.338181708340   -0.344148062155   -0.119477105807\n N    0.027181708340    0.013851937845    0.422522894193\n O   -0.316818291660    1.320851937845   -0.137477105807\n O   -0.931818291660   -0.944148062155   -0.127477105807\n H   -1.798818291660   -0.709148062155    0.230522894193\n","xyz");
+	viewer_17627639162787254.addLabel("0",{"position": {"x": 1.3381817083434198, "y": -0.34414806215601007, "z": -0.11947710580699747}, "inFront": true});
+	viewer_17627639162787254.addLabel("1",{"position": {"x": 0.02718170834042214, "y": 0.013851937844808522, "z": 0.4225228941942418}, "inFront": true});
+	viewer_17627639162787254.addLabel("2",{"position": {"x": -0.31681829166036446, "y": 1.3208519378477972, "z": -0.13747710580703862}, "inFront": true});
+	viewer_17627639162787254.addLabel("3",{"position": {"x": -0.9318182916617707, "y": -0.944148062157382, "z": -0.12747710580701577}, "inFront": true});
+	viewer_17627639162787254.addLabel("4",{"position": {"x": -1.7988182916637532, "y": -0.7091480621568447, "z": 0.23052289419380287}, "inFront": true});
+	viewer_17627639162787254.setStyle({"stick": {}, "sphere": {"scale": 0.1}});
+	viewer_17627639162787254.setStyle({"model": 0},{"stick": {"colorscheme": "yellowCarbon"}, "sphere": {"scale": 0.1}});
+	viewer_17627639162787254.zoomTo();
+viewer_17627639162787254.render();
 });
 </script></div></div>
 </div>
