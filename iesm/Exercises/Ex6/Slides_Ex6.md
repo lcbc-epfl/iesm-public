@@ -35,7 +35,7 @@ DFT is the workhorse of electronic structure methods:
 
 # Comments on DFT
 
-* Kohn-Sham formulation: ficticious molecular orbitals (non-interacting)
+* Kohn-Sham formulation: fictitious molecular orbitals (non-interacting)
 * If the exact XC functional is known - ground-state energies, electron/charge density and HOMO (Koopman's theorem) are known
 * Usually fast and widely available
 * What can DFT do?
@@ -90,4 +90,4 @@ DFT is the workhorse of electronic structure methods:
 * Calculations for Exercise 6.1 will be done in a collaborative way to speed up the exercise, add your results to [collaborative spreadsheet](https://docs.google.com/spreadsheets/d/1hRvOyKqIaylOZ2Wi_LpAPN8oX3J3SucC7WuGmkPImn0/edit?usp=sharing) (linked also on Moodle)
 * You can monitor your calculations by opening a terminal window in noto and typing "tail -f name_output_log"
 * DFT will be further explored during lectures and the next exercises
-* Here we used as reference papers that can be useful for further understanding [DFT1](https://www.nature.com/articles/s41563-021-01013-3), [DFT2](https://aip.scitation.org/doi/10.1063/1.4869598#_i15), [orbitals](https://onlinelibrary.wiley.com/doi/full/10.1002/anie.201904609)
+* Here we used as reference some papers that can be useful for further understanding [DFT1](https://www.nature.com/articles/s41563-021-01013-3), [DFT2](https://aip.scitation.org/doi/10.1063/1.4869598#_i15), [orbitals](https://onlinelibrary.wiley.com/doi/full/10.1002/anie.201904609)
