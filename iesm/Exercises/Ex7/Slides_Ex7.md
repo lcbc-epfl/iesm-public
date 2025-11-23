@@ -2,7 +2,7 @@
 title: Exercise Session 7
 subtitle: IESM Fall 2024-2025
 date: November 26, 2024
-author: "Yuri, Salomé, Sophia, Andrea, Qihao, Junwu" 
+author: "Salomé, Qihao, Evan, Thibault" 
 output: beamer_presentation
 ---
 
@@ -11,8 +11,8 @@ output: beamer_presentation
 Course Reminders:
 
 * Exercises 9 will not have interviews and will have due dates in January. Plus, we only keep the best grades of 8 of 9 reports : )
-* Q&A session on Tuesday 10 December. Please send questions in advance via email/forum to help us prepare the Q&A session
-* Written exam on Monday 16 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
+* Q&A session on Tuesday 9 December. Please send questions in advance via email/forum to help us prepare the Q&A session
+* Written exam on Monday 15 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
 
 
 # Exercise 7 - Troubleshooting, Pitfalls, Traps
@@ -63,6 +63,6 @@ Some suggestions:
 
 * Troubleshoot together. It's more fun and effective! And realistic!
 * For the first part of the exercises, you can write the report by describing or showing the error and then describing how you solved it. 
-* Some calculations make take time to run. Calculations for the second part of Ex 7 can be done collaboratively using the [same sheet](https://docs.google.com/spreadsheets/d/114XbjjAA1b2JGtrkCULZi6yVn2QGEHVyx3Y_HifhEH8/edit#gid=548091578) as we did for exercise 6 (also posted on Moodle).
+* Some calculations make take time to run. Calculations for the second part of Ex 7 can be done collaboratively using the [same sheet](https://docs.google.com/spreadsheets/d/1hRvOyKqIaylOZ2Wi_LpAPN8oX3J3SucC7WuGmkPImn0/edit?gid=772802825#gid=772802825) as we did for exercise 6 (also posted on Moodle).
 
 
