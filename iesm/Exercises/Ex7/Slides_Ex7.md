@@ -1,7 +1,7 @@
 ---
 title: Exercise Session 7
-subtitle: IESM Fall 2024-2025
-date: November 26, 2024
+subtitle: IESM Fall 2025-2026
+date: November 24, 2025
 author: "Salomé, Qihao, Evan, Thibault" 
 output: beamer_presentation
 ---
