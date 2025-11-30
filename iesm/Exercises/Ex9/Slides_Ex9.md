@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 8
-subtitle: IESM Fall 2024-2025
-date: December 3, 2024
-author: "Salomé, Junwu, Qihao, Yuri, Andrea, Sophia" 
+subtitle: IESM Fall 2025-2026
+date: December 1, 2025
+author: "Salomé,  Qihao, Evan, Thibault, Amina" 
 output: beamer_presentation
 ---
 
@@ -10,7 +10,7 @@ output: beamer_presentation
 
 Course Reminders:
 
-* Exercise 8 interview will be next week (Dec 9) and exercise 9 will not have interviews and will have due date **31. January**
+* Exercise 8 interview will be next week (Dec 8) and exercise 9 will not have interviews and will have due date **31. January**
 * We only keep the best 8 grades out of the 9 reports : )
 * Feel free to contact us via email or forum for questions about Ex8 and Ex9 !
 
@@ -24,7 +24,7 @@ In this set of exercises, we will learn how to traverse the potential energy lan
 * The formation of propylene oxide takes place in a couple of steps
 * Nucleophilic substitution occurs, binding O to C, and removing Cl- (leaving group)
 * What is the name of such a mechanism and what is the orientation of O with respect to Cl as the ring begins to form?
-* What might possible trnasition states look like as the ring begins to form?
+* What might possible transition states look like as the ring begins to form?
 ![](/data/iesm/images/reaction_epoxide4.png){width=75%}
 
 # Minimum Energy Path
