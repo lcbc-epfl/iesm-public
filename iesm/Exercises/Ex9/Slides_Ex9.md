@@ -10,7 +10,7 @@ output: beamer_presentation
 
 Course Reminders:
 
-* Exercise 8 interview will be next week (Dec 8) and exercise 9 will not have interviews and will have due date **31. January**
+* Exercise 8 interview will be next week (Dec 8) and exercise 9 will not have interviews and will have due date estimatedly around **31. January**
 * We only keep the best 8 grades out of the 9 reports : )
 * Feel free to contact us via email or forum for questions about Ex8 and Ex9 !
 
