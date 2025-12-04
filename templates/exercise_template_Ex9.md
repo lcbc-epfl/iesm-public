@@ -24,7 +24,7 @@ Note, that references to other parts of the documents aren't resolved in this te
 :class: exercise 
 What kind of reaction mechanism would you expect? Would you expect
     the stereochemistry at the chiral carbon to be preserved? Identify
-    the chirality centre in the chloropropanoate and the product
+    the chirality centre in the chloropropanolate and the product
     epoxide.
 ```
 
