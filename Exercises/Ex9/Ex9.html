@@ -518,7 +518,7 @@ geometry can then be optimised to a transition state by selectively
 ‘walking uphill’ along this specific path.</p>
 <section id="constructing-a-guess">
 <h2><span class="section-number">8.2.1. </span>Constructing a Guess<a class="headerlink" href="#constructing-a-guess" title="Link to this heading">#</a></h2>
-<p>You can find below the Z-matrix for the chloropropanoate (2-Chloro-1-propanol) already set, obtained using the Open Source Software <a class="reference external" href="https://avogadro.cc/">Avogadro</a>. We want to set the Z-matrix for the transition state editing this matrix. Correct the parameters adapting the conformation to be reasonably close to the transition state: for the TS, one expects that the C-Cl bond will already be elongated, whereas the oxygen atom will start to form the epoxide ring. Change the bond angle of the oxygen atom to something smaller than the original value, such as 80◦, and modify the bond length for the C-Cl bond to an elongated conformation, such as 2.40 Å. Moreover, you need to delete the hydrogen bond to the oxygen atom, and edit the Z-matrix accordingly.</p>
+<p>You can find below the Z-matrix for the chloropropanolate (2-Chloro-1-propanol) already set, obtained using the Open Source Software <a class="reference external" href="https://avogadro.cc/">Avogadro</a>. We want to set the Z-matrix for the transition state editing this matrix. Correct the parameters adapting the conformation to be reasonably close to the transition state: for the TS, one expects that the C-Cl bond will already be elongated, whereas the oxygen atom will start to form the epoxide ring. Change the bond angle of the oxygen atom to something smaller than the original value, such as 80◦, and modify the bond length for the C-Cl bond to an elongated conformation, such as 2.40 Å. Moreover, you need to delete the hydrogen bond to the oxygen atom, and edit the Z-matrix accordingly.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psi4</span>
@@ -545,7 +545,7 @@ geometry can then be optimised to a transition state by selectively
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Z-matrix for the chloropropanoate</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Z-matrix for the chloropropanolate</span>
 <span class="n">chloropropanoate</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">0 1</span>
 <span class="s2"> symmetry c1</span>
@@ -648,7 +648,7 @@ geometry can then be optimised to a transition state by selectively
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">chloropropanoate</span><span class="p">,</span> <span class="n">ts_guess</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide_labeled</span><span class="p">(</span><span class="n">chloropropanolate</span><span class="p">,</span> <span class="n">ts_guess</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
