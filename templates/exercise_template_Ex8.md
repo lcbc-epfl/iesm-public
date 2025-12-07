@@ -20,7 +20,7 @@ Note, that references to other parts of the documents aren't resolved in this te
 
 :::
 
-```{admonition} Exercise 2
+```{admonition} Exercise 1
 :class: exercise
 Does the bond length of the $H_3CH_2C-CH_2CH_3$ bond fluctuate as
     the dihedral is changed? Why (not)?
@@ -29,7 +29,7 @@ Does the bond length of the $H_3CH_2C-CH_2CH_3$ bond fluctuate as
 
 Your answer here
 
-```{admonition} Exercise 3
+```{admonition} Exercise 2
 :class: exercise
 Create a potential energy profile along the dihedral by plotting the
     energies of the system as a function of the scanned dihedral angle as done above.
@@ -44,7 +44,7 @@ Create a potential energy profile along the dihedral by plotting the
 
 Your answer here
 
-```{admonition} Exercise 4
+```{admonition} Exercise 3
 :class: exercise
 The rotational barrier of butane lies between 5 and 6 kcal
     mol$^{-1}$ [^Murcko1996]. Compare this value with the one you calculated and explain possible sources of error, leading to higher or lower barriers.
