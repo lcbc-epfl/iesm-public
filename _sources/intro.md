@@ -24,8 +24,10 @@ Over the years many people have contributed to the improvement of the course mat
 * Andrej Antalík [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-8422-8410)
 * Qihao Zhang
 * Salomé Guilbert
-* Thibault Kläy
+* Thibault Kläy [![Orcid](./images/orcid.png)]((https://orcid.org/0009-0007-5508-524X)
 * Evan Vasey
+* Amina Menhour
+* Alice Piantavigna
 
 ## Time Table Fall Semester 2026
 ⚠️ This timetable was last updated on Monday 08.09.2025
