@@ -24,7 +24,7 @@ Over the years many people have contributed to the improvement of the course mat
 * Andrej Antalík [![Orcid](./images/orcid.png)]( https://orcid.org/0000-0002-8422-8410)
 * Qihao Zhang
 * Salomé Guilbert
-* Thibault Kläy [![Orcid](./images/orcid.png)]((https://orcid.org/0009-0007-5508-524X)
+* Thibault Kläy [![Orcid](./images/orcid.png)](https://orcid.org/0009-0007-5508-524X)
 * Evan Vasey
 * Amina Menhour
 * Alice Piantavigna
