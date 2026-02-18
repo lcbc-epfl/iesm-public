@@ -27,7 +27,7 @@ Over the years many people have contributed to the improvement of the course mat
 * Thibault Kläy
 * Evan Vasey
 
-## Time Table Fall Semester 2025
+## Time Table Fall Semester 2026
 ⚠️ This timetable was last updated on Monday 08.09.2025
 
 The course will be on
