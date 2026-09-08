@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -493,7 +493,7 @@ However, such truncations introduce size-consistency problems.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">helpers</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
 <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
@@ -505,14 +505,14 @@ However, such truncations introduce size-consistency problems.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">0 1</span>
 <span class="s2">symmetry c1</span>
 <span class="s2">O           1.326  -0.373  -0.127</span>
 <span class="s2">N           0.015  -0.015   0.415</span>
 <span class="s2">O          -0.329   1.292  -0.145</span>
 <span class="s2">O          -0.944  -0.973  -0.135</span>
-<span class="s2">H          -1.811  -0.738   0.223&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">H          -1.811  -0.738   0.223"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -573,7 +573,7 @@ viewer_17627633516945267.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">,</span><span class="s1">&#39;guess&#39;</span><span class="p">:</span><span class="s1">&#39;gwh&#39;</span><span class="p">})</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'uhf'</span><span class="p">,</span><span class="s1">'guess'</span><span class="p">:</span><span class="s1">'gwh'</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -587,8 +587,8 @@ viewer_17627633516945267.render();
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_hf.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">E_hf</span><span class="p">,</span> <span class="n">history_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;scf/6-31+G*&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">hno3_hf</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'hno3_hf.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">E_hf</span><span class="p">,</span> <span class="n">history_hf</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">'scf/6-31+G*'</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">hno3_hf</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -651,7 +651,7 @@ viewer_17627633516945267.render();
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_mp2</span> <span class="o">=</span> <span class="n">hno3_hf</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_mp2.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'hno3_mp2.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">E_mp2</span><span class="p">,</span> <span class="n">history_mp2</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span> <span class="c1"># run MP2 calculation here, need to use return_history=True to return the history as output (used later)</span>
 </pre></div>
 </div>
@@ -660,7 +660,7 @@ viewer_17627633516945267.render();
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">hno3_mp3</span> <span class="o">=</span> <span class="n">hno3_mp2</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;hno3_mp3.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'hno3_mp3.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">E_mp3</span><span class="p">,</span> <span class="n">history_mp3</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span> <span class="c1"># run MP3 calculation here, need to use return_history=True to return the history as output (used later)</span>
 </pre></div>
 </div>
@@ -670,9 +670,9 @@ viewer_17627633516945267.render();
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#save last optimized coordinates in a dictionary</span>
 <span class="n">opt_coord</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;hf&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_hf</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
-    <span class="s1">&#39;mp2&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_mp2</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
-    <span class="s1">&#39;mp3&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_mp3</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+    <span class="s1">'hf'</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_hf</span><span class="p">[</span><span class="s1">'coordinates'</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+    <span class="s1">'mp2'</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_mp2</span><span class="p">[</span><span class="s1">'coordinates'</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+    <span class="s1">'mp3'</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">history_mp3</span><span class="p">[</span><span class="s1">'coordinates'</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -760,13 +760,13 @@ viewer_17627639162787254.render();
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># we use the opt_coord dictionary to calculate the properties using python </span>
 <span class="c1"># the central N has index 1, the oxygens have index 0,2,3</span>
 <span class="c1"># the units are in bohr, we convert to Å</span>
-<span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;hf&#39;</span><span class="p">:{},</span><span class="s1">&#39;mp2&#39;</span><span class="p">:{},</span><span class="s1">&#39;mp3&#39;</span><span class="p">:{},</span><span class="s1">&#39;exp&#39;</span><span class="p">:{</span><span class="s1">&#39;r(O0-N) Å&#39;</span><span class="p">:</span><span class="mf">1.198</span><span class="p">,</span> <span class="s1">&#39;r(O2-N) Å&#39;</span><span class="p">:</span><span class="mf">1.213</span><span class="p">,</span> <span class="s1">&#39;r(O3-N) Å&#39;</span><span class="p">:</span><span class="mf">1.410</span><span class="p">,</span> <span class="s1">&#39;φ(O-N-O) °&#39;</span><span class="p">:</span><span class="mf">130.2</span><span class="p">},</span> <span class="p">}</span>
-<span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;hf&#39;</span><span class="p">,</span> <span class="s1">&#39;mp2&#39;</span><span class="p">,</span> <span class="s1">&#39;mp3&#39;</span><span class="p">]:</span>
+<span class="n">results</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'hf'</span><span class="p">:{},</span><span class="s1">'mp2'</span><span class="p">:{},</span><span class="s1">'mp3'</span><span class="p">:{},</span><span class="s1">'exp'</span><span class="p">:{</span><span class="s1">'r(O0-N) Å'</span><span class="p">:</span><span class="mf">1.198</span><span class="p">,</span> <span class="s1">'r(O2-N) Å'</span><span class="p">:</span><span class="mf">1.213</span><span class="p">,</span> <span class="s1">'r(O3-N) Å'</span><span class="p">:</span><span class="mf">1.410</span><span class="p">,</span> <span class="s1">'φ(O-N-O) °'</span><span class="p">:</span><span class="mf">130.2</span><span class="p">},</span> <span class="p">}</span>
+<span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">'hf'</span><span class="p">,</span> <span class="s1">'mp2'</span><span class="p">,</span> <span class="s1">'mp3'</span><span class="p">]:</span>
     <span class="n">xyz</span> <span class="o">=</span> <span class="n">opt_coord</span><span class="p">[</span><span class="n">method</span><span class="p">]</span> <span class="c1"># store the geometry array optimized with the current method in a temp variable</span>
-    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">&#39;r(O0-N) Å&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_bond</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">bohr2angstroms</span>
-    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">&#39;r(O2-N) Å&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_bond</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">bohr2angstroms</span>
-    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">&#39;r(O3-N) Å&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_bond</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">bohr2angstroms</span>
-    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">&#39;φ(O-N-O) °&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_angle</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">'r(O0-N) Å'</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_bond</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">bohr2angstroms</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">'r(O2-N) Å'</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_bond</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">bohr2angstroms</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">'r(O3-N) Å'</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_bond</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">*</span> <span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">bohr2angstroms</span>
+    <span class="n">results</span><span class="p">[</span><span class="n">method</span><span class="p">][</span><span class="s1">'φ(O-N-O) °'</span><span class="p">]</span> <span class="o">=</span> <span class="n">calculate_angle</span><span class="p">(</span><span class="n">xyz</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">xyz</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>

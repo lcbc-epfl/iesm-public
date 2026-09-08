@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -503,7 +503,7 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">helpers</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
@@ -512,7 +512,7 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the transition state coordinates from disk</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;ts.xyz&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">'ts.xyz'</span><span class="p">,</span> <span class="s1">'r'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">ts_string</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>  <span class="c1"># this is the xyz file as a string</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ts_string</span><span class="p">)</span>
 </pre></div>
@@ -521,7 +521,7 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""</span>
 <span class="s2">-1 1</span>
 <span class="s2">symmetry c1</span>
 <span class="s2"> C    0.169891741896   -0.303396542243   -0.246565081910</span>
@@ -534,7 +534,7 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 <span class="s2"> H   -0.762913236261   -0.079611519921    1.679061412831</span>
 <span class="s2"> H   -0.957983639113   -0.847359581313   -2.033892804890</span>
 <span class="s2"> H   -1.031376458892   -1.990374831218   -0.649080196171</span>
-<span class="s2"> H   -1.947496420408   -0.464044585762   -0.599503342745&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2"> H   -1.947496420408   -0.464044585762   -0.599503342745"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -546,32 +546,32 @@ visualises the lowest energy path from reactant to TS to product or reactant (de
 <p>You can choose <code class="docutils literal notranslate"><span class="pre">forward</span></code> or <code class="docutils literal notranslate"><span class="pre">backward</span></code> for the <code class="docutils literal notranslate"><span class="pre">irc_direction</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">irc_direction</span> <span class="o">=</span>  <span class="s1">&#39;forward&#39;</span> <span class="c1"># &#39;backward&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">irc_direction</span> <span class="o">=</span>  <span class="s1">'forward'</span> <span class="c1"># 'backward'</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;irc.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'irc.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span>
-     <span class="s2">&quot;geom_maxiter&quot;</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
-     <span class="s2">&quot;full_hess_every&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
-     <span class="s2">&quot;opt_type&quot;</span><span class="p">:</span><span class="s2">&quot;irc&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;irc_step_size&quot;</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
-     <span class="s2">&quot;ensure_bt_convergence&quot;</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
-     <span class="s2">&quot;irc_direction&quot;</span><span class="p">:</span><span class="n">irc_direction</span><span class="p">,</span>
+     <span class="s2">"geom_maxiter"</span><span class="p">:</span><span class="mi">500</span><span class="p">,</span>
+     <span class="s2">"full_hess_every"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+     <span class="s2">"opt_type"</span><span class="p">:</span><span class="s2">"irc"</span><span class="p">,</span>
+     <span class="s2">"irc_step_size"</span><span class="p">:</span><span class="mf">0.25</span><span class="p">,</span>
+     <span class="s2">"ensure_bt_convergence"</span><span class="p">:</span><span class="kc">True</span><span class="p">,</span>
+     <span class="s2">"irc_direction"</span><span class="p">:</span><span class="n">irc_direction</span><span class="p">,</span>
      <span class="p">})</span>
 
-<span class="n">E</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;b3pw91/6-31+G*&#39;</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">E</span><span class="p">,</span> <span class="n">history</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">'b3pw91/6-31+G*'</span><span class="p">,</span><span class="n">molecule</span><span class="o">=</span><span class="n">ts</span><span class="p">,</span> <span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 55 displacements needed.
  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55
-Warning: thermodynamics relations excluded imaginary frequencies: [&#39;312.3714i&#39;]
-Warning: used thermodynamics relations inappropriate for low-frequency modes: [&#39;123.0283&#39; &#39;199.5642&#39; &#39;200.4680&#39; &#39;278.6674&#39; &#39;310.2934&#39; &#39;399.1543&#39;]
+Warning: thermodynamics relations excluded imaginary frequencies: ['312.3714i']
+Warning: used thermodynamics relations inappropriate for low-frequency modes: ['123.0283' '199.5642' '200.4680' '278.6674' '310.2934' '399.1543']
 Optimizer: Optimization complete!
 </pre></div>
 </div>
@@ -579,8 +579,8 @@ Optimizer: Optimization complete!
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]</span>
-<span class="n">energies</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">&#39;energy&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">coordinates</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">'coordinates'</span><span class="p">]</span>
+<span class="n">energies</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s1">'energy'</span><span class="p">]</span>
 
 
 <span class="c1"># Convert to kcal mol-1</span>
@@ -605,7 +605,7 @@ Optimizer: Optimization complete!
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">((</span><span class="n">backward_e</span><span class="p">,</span> 
              <span class="n">mol2traj</span><span class="p">(</span><span class="n">backward</span><span class="p">,</span> <span class="n">coordinates_backward</span><span class="p">),</span> 
-             <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_backward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">irc_direction</span><span class="si">}</span><span class="s2">.p&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span> <span class="p">)</span> <span class="p">)</span>
+             <span class="n">coord2traj_array</span><span class="p">(</span><span class="n">coordinates_backward</span><span class="p">)),</span> <span class="nb">open</span><span class="p">(</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">irc_direction</span><span class="si">}</span><span class="s2">.p"</span><span class="p">,</span> <span class="s2">"wb"</span> <span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>

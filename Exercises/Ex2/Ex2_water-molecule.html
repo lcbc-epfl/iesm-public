@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -493,10 +493,10 @@ document.write(`
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">helpers</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">'2 GB'</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -508,9 +508,9 @@ document.write(`
 <p>Define the geometry for a water molecule in the next cell, making sure to use the right syntax. Remember that you can use either Z-matrix or Cartesian format (one of the two will make your life easier!) and remember that information about the total charge of the system and spin multiplicity also need to be provided. It may be useful to refer to the dropdown menu in the previous section about atomic coordinates representation.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">## FILL HERE</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -538,12 +538,12 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31+G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G**&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31++G**&#39;</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'6-31G'</span><span class="p">,</span> <span class="s1">'6-311G'</span><span class="p">,</span> <span class="s1">'6-31+G'</span><span class="p">,</span> <span class="s1">'6-31G**'</span><span class="p">,</span> <span class="s1">'6-31++G**'</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'UHF'</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
 
 <span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-h2o-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-h2o-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
     <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
@@ -563,9 +563,9 @@ document.write(`
 <p>It is assumed that the water molecule you created previously has the usual bent geometry we are familiar with. But would it be possible to compute the energy of a linear water molecule? Well, let’s figure it out. First, try to modify the water geometry so that it has a linear conformation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">## FILL HERE</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -580,12 +580,12 @@ document.write(`
 <p>Funny shape right? Now we can use it as an input for our energy calculation:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31+G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31G**&#39;</span><span class="p">,</span> <span class="s1">&#39;6-31++G**&#39;</span><span class="p">]</span>  <span class="c1"># these are the basis sets we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'6-31G'</span><span class="p">,</span> <span class="s1">'6-311G'</span><span class="p">,</span> <span class="s1">'6-31+G'</span><span class="p">,</span> <span class="s1">'6-31G**'</span><span class="p">,</span> <span class="s1">'6-31++G**'</span><span class="p">]</span>  <span class="c1"># these are the basis sets we are going to use</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'UHF'</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
 
 <span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-h2o_linear-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-h2o_linear-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
     <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations</span>
 
     <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
@@ -600,12 +600,12 @@ document.write(`
 <p>And now we can reproduce the same procedure to gaseous beryllium hydride BeH<span class="math notranslate nohighlight">\(_{2}\)</span>. Can you predict the results of the calculation?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beh2_bent</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">beh2_bent</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">## FILL HERE</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
-<span class="n">beh2_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">"""</span><span class="p">)</span>
+<span class="n">beh2_linear</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">## FILL HERE</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -621,18 +621,18 @@ document.write(`
 <p>We will compare only the relative energy using one specific basis set but feel free to try different ones if you are curious.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="s1">&#39;6-31++G**&#39;</span>  <span class="c1"># these are the basis sets we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basis</span> <span class="o">=</span> <span class="s1">'6-31++G**'</span>  <span class="c1"># these are the basis sets we are going to use</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'UHF'</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-beh2_bent-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the bent case</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-beh2_bent-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the bent case</span>
 <span class="n">E_bent</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations for the bent case</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-beh2_linear-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the linear case</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-beh2_linear-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files for the linear case</span>
 <span class="n">E_linear</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># define here the energy calculation with psi4 for single point calculations for the linear case</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The bent molecule has the energy:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The bent molecule has the energy:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E_bent</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The linear molecule has the energy:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"The linear molecule has the energy:"</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">basis</span><span class="p">,</span> <span class="n">E_linear</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -684,7 +684,7 @@ Total time:
 For example, considering again the last <code class="docutils literal notranslate"><span class="pre">.log</span></code> file created, it is possible to extract the final energy with the command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span><span class="s1">&#39;Final Energy&#39;</span><span class="w"> </span><span class="m">6</span>-31++G<span class="se">\*\*</span>-h2o-output.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span><span class="s1">'Final Energy'</span><span class="w"> </span><span class="m">6</span>-31++G<span class="se">\*\*</span>-h2o-output.log
 </pre></div>
 </div>
 </div>

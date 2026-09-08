@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -482,7 +482,7 @@ and molecular properties is possible.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span> 
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">helpers</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
@@ -491,7 +491,7 @@ and molecular properties is possible.</p>
 <p>then we set the maximum ressources that can be used</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">'2 GB'</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -500,11 +500,11 @@ and molecular properties is possible.</p>
 <p>next we define our <span class="math notranslate nohighlight">\(H_2\)</span> geometry, setting the H molecules at equilibrium distance of each other, i.e. 0.7414Å. We are using XYZ coordinates for the <code class="docutils literal notranslate"><span class="pre">psi4.geometry</span></code>, but as you saw last week also Z-matrix geometries can be used here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
 <span class="s2">0 1</span>
 <span class="s2">H 0.0 0.0 0.0</span>
 <span class="s2">H 0.0 0.0 0.7414</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -520,12 +520,12 @@ and molecular properties is possible.</p>
 <p>Edit the code cell below to compute the energy (using <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> funciton) for the different basis sets selected</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;6-31G&#39;</span><span class="p">,</span> <span class="s1">&#39;6-311G&#39;</span><span class="p">,</span> <span class="s1">&#39;aug-cc-pvtz&#39;</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'6-31G'</span><span class="p">,</span> <span class="s1">'6-311G'</span><span class="p">,</span> <span class="s1">'aug-cc-pvtz'</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;UHF&#39;</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'UHF'</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
 
 <span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-output.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
     <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>    <span class="c1"># EDIT HERE</span>
                 <span class="c1"># we want to perform a single point energy calculation once per basis set</span>
 
@@ -557,7 +557,7 @@ and molecular properties is possible.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in scf table like so:</span>
 
 <span class="c1"># Syntax of psi4_read_scf function:</span>
-<span class="n">nameOfDataFrame</span> <span class="o">=</span> <span class="n">psi4_read_scf</span><span class="p">(</span><span class="s1">&#39;nameOfOutputFile.log&#39;</span><span class="p">)</span>
+<span class="n">nameOfDataFrame</span> <span class="o">=</span> <span class="n">psi4_read_scf</span><span class="p">(</span><span class="s1">'nameOfOutputFile.log'</span><span class="p">)</span>
 
 <span class="c1"># to view the table you can simply type the name of the DataFrame, i.e.:</span>
 <span class="n">nameOfDataFrame</span>
@@ -575,13 +575,13 @@ and molecular properties is possible.</p>
 
 <span class="c1"># we use the table index and the Total Energy column for plotting</span>
 <span class="c1"># repeat the following command once per basis set to have all on the same plot</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">&#39;Total Energy&#39;</span><span class="p">],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> 
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">'Total Energy'</span><span class="p">],</span> <span class="s1">'.-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'label'</span><span class="p">)</span> 
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SCF Iteration&#39;</span><span class="p">)</span> <span class="c1"># set axis labels and title</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;E [a.u]&#39;</span><span class="p">)</span>
-<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;SCF convergence&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'SCF Iteration'</span><span class="p">)</span> <span class="c1"># set axis labels and title</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'E [a.u]'</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'SCF convergence'</span><span class="p">)</span>
 
-<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="o">-</span><span class="mf">1.174474</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact value&#39;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span> <span class="c1"># horizontal line for the exact energy</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="o">-</span><span class="mf">1.174474</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'Exact value'</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'gray'</span><span class="p">)</span> <span class="c1"># horizontal line for the exact energy</span>
 
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># show legend</span>
 
@@ -589,11 +589,11 @@ and molecular properties is possible.</p>
 <span class="c1"># you can exclud the first point of an array just by [1:]. This will select all point from 1 (so excluding 0) to the end</span>
 <span class="c1"># example: array DATA --&gt; DATA[1:]</span>
 <span class="c1"># repeat the following command once per basis set to have all on the same plot</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">&#39;Total Energy&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span> <span class="s1">&#39;.-&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;label&#39;</span><span class="p">)</span> 
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">'Total Energy'</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span> <span class="s1">'.-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'label'</span><span class="p">)</span> 
 
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;SCF Iteration&#39;</span><span class="p">)</span> <span class="c1"># set axis labels</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;E [a.u]&#39;</span><span class="p">)</span>
-<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;SCF convergence - restricted range&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">'SCF Iteration'</span><span class="p">)</span> <span class="c1"># set axis labels</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'E [a.u]'</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">'SCF convergence - restricted range'</span><span class="p">)</span>
 
 <span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># show legend</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>

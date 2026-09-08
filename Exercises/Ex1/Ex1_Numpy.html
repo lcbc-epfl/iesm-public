@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -468,7 +468,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-vectors-using-numpy">
 <h1><span class="section-number">1.3. </span>Working with vectors using Numpy<a class="headerlink" href="#working-with-vectors-using-numpy" title="Link to this heading">#</a></h1>
-<p>This simple exercises allow you to connect what we have seen before to some basic coding problem. In particular, we will use the <a class="reference external" href="https://numpy.org/">NumPy Python library</a> to perform basic operations with vectors.</p>
+<p>aThis simple exercises allow you to connect what we have seen before to some basic coding problem. In particular, we will use the <a class="reference external" href="https://numpy.org/">NumPy Python library</a> to perform basic operations with vectors.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -507,8 +507,8 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ϕ1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with your choice for ϕ1</span>
 <span class="n">ϕ2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span> <span class="c1"># replace with your choice for ϕ2 </span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ϕ1: </span><span class="si">{</span><span class="n">ϕ1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ϕ2: </span><span class="si">{</span><span class="n">ϕ2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'ϕ1: </span><span class="si">{</span><span class="n">ϕ1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'ϕ2: </span><span class="si">{</span><span class="n">ϕ2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -529,7 +529,7 @@ document.write(`
 
 <span class="n">ϕ1_norm</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Replace with vector operation</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;ϕ1|ϕ1&gt; = </span><span class="si">{</span><span class="n">ϕ1_norm</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;ϕ1|ϕ1&gt; = </span><span class="si">{</span><span class="n">ϕ1_norm</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -540,7 +540,7 @@ document.write(`
 
 <span class="n">ϕ1ϕ2</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Replace with vector operation</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;&lt;ϕ1|ϕ2&gt; = </span><span class="si">{</span><span class="n">ϕ1ϕ2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;ϕ1|ϕ2&gt; = </span><span class="si">{</span><span class="n">ϕ1ϕ2</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

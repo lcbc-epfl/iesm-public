@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -50,7 +50,7 @@
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=1ae7504c"></script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -522,7 +522,7 @@ local minimum, but not neccessarily the global minimum.</p>
 <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sys</span> 
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">".."</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">helpers</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
 </pre></div>
 </div>
@@ -531,7 +531,7 @@ local minimum, but not neccessarily the global minimum.</p>
 <p>then we set the maximum ressources that can be used</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">&#39;2 GB&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s1">'2 GB'</span><span class="p">)</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_num_threads</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -547,11 +547,11 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 <span class="n">angle</span> <span class="o">=</span> <span class="mi">90</span>
 
 <span class="c1"># Water Z-Matrix</span>
-<span class="n">h2o_suboptimal</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="n">h2o_suboptimal</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="sa">f</span><span class="s2">"""</span>
 <span class="s2">O1</span>
 <span class="s2">H2 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span>
 <span class="s2">H3 1 </span><span class="si">{</span><span class="n">r</span><span class="si">}</span><span class="s2"> 2 </span><span class="si">{</span><span class="n">angle</span><span class="si">}</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+<span class="s2">"""</span><span class="p">)</span>
 
 <span class="n">h2o_suboptimal_start</span> <span class="o">=</span> <span class="n">h2o_suboptimal</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span> <span class="c1"># we store here the starting geometry for comparison</span>
 </pre></div>
@@ -561,10 +561,10 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># setting the options to write out the xyz files of the optimization</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;reference&#39;</span><span class="p">:</span><span class="s1">&#39;uhf&#39;</span><span class="p">})</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;h2o-opt.log&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;write_trajectory&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">&#39;PRINT_TRAJECTORY_XYZ_FILE&#39;</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'uhf'</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'h2o-opt.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'write_trajectory'</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'PRINT_TRAJECTORY_XYZ_FILE'</span><span class="p">:</span><span class="kc">True</span><span class="p">})</span>
 </pre></div>
 </div>
 </div>
@@ -572,16 +572,16 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start the geometry optimization</span>
-<span class="n">E</span><span class="p">,</span><span class="n">hist</span><span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">&#39;hf/6-31G&#39;</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2o_suboptimal</span><span class="p">,</span><span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">E</span><span class="p">,</span><span class="n">hist</span><span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">optimize</span><span class="p">(</span><span class="s1">'hf/6-31G'</span><span class="p">,</span> <span class="n">molecule</span><span class="o">=</span><span class="n">h2o_suboptimal</span><span class="p">,</span><span class="n">return_history</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">symbols</span> <span class="o">=</span> <span class="p">[</span><span class="n">h2o_suboptimal</span><span class="o">.</span><span class="n">symbol</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">h2o_suboptimal</span><span class="o">.</span><span class="n">natom</span><span class="p">())]</span>
 <span class="n">bohr_to_ang</span> <span class="o">=</span> <span class="mf">0.52917721092</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;geoms.xyz&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">istep</span><span class="p">,</span> <span class="n">coords</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="s1">&#39;coordinates&#39;</span><span class="p">]):</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"geoms.xyz"</span><span class="p">,</span> <span class="s2">"w"</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">istep</span><span class="p">,</span> <span class="n">coords</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">hist</span><span class="p">[</span><span class="s1">'coordinates'</span><span class="p">]):</span>
         <span class="n">coords_ang</span> <span class="o">=</span> <span class="n">coords</span> <span class="o">*</span> <span class="n">bohr_to_ang</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span><span class="si">}</span><span class="s2">  </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Geometry for iteration </span><span class="si">{</span><span class="n">istep</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">symbols</span><span class="p">)</span><span class="si">}</span><span class="s2">  </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Geometry for iteration </span><span class="si">{</span><span class="n">istep</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">sym</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">symbols</span><span class="p">,</span> <span class="n">coords_ang</span><span class="p">):</span>
-            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sym</span><span class="si">:</span><span class="s2">2s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">15.10f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">15.10f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="s2">15.10f</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">sym</span><span class="si">:</span><span class="s2">2s</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">15.10f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">15.10f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">z</span><span class="si">:</span><span class="s2">15.10f</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -597,7 +597,7 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 <p>Lets have a look at the output file and see what is happening. Lets grep again the <code class="docutils literal notranslate"><span class="pre">iter</span></code> keyword as before and also check the convergence of the geometry optimization using <code class="docutils literal notranslate"><span class="pre">Convergence</span> <span class="pre">Check</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span>-B<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s1">&#39;@DF-UHF iter&#39;</span><span class="w"> </span>h2o-opt.log
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span>-B<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s1">'@DF-UHF iter'</span><span class="w"> </span>h2o-opt.log
 </pre></div>
 </div>
 </div>
@@ -608,17 +608,17 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="s1">&#39;Convergence Check&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="s1">'Convergence Check'</span><span class="w"> </span>h2o-opt.log<span class="w"> </span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span><span class="s1">&#39;Measures of convergence&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
-<span class="o">!</span>grep<span class="w"> </span><span class="s1">&#39;Criteria marked as inactive&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
-<span class="o">!</span>grep<span class="w"> </span><span class="s1">&#39;Step    Total Energy     Delta E&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
-<span class="o">!</span>grep<span class="w"> </span><span class="s1">&#39;~&#39;</span><span class="w"> </span>h2o-opt.log<span class="w"> </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span><span class="s1">'Measures of convergence'</span><span class="w"> </span>h2o-opt.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<span class="o">!</span>grep<span class="w"> </span><span class="s1">'Criteria marked as inactive'</span><span class="w"> </span>h2o-opt.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<span class="o">!</span>grep<span class="w"> </span><span class="s1">'Step    Total Energy     Delta E'</span><span class="w"> </span>h2o-opt.log<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span>
+<span class="o">!</span>grep<span class="w"> </span><span class="s1">'~'</span><span class="w"> </span>h2o-opt.log<span class="w"> </span>
 </pre></div>
 </div>
 </div>
@@ -632,8 +632,8 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 <p>Now we want to visualize how the geometry is changed during the optimization procedure. Ler’s save the coordinates first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_geos</span> <span class="o">=</span> <span class="n">readXYZ</span><span class="p">(</span><span class="s1">&#39;geoms.xyz&#39;</span><span class="p">)</span>
-<span class="n">coordinates</span> <span class="o">=</span>  <span class="n">read_coordinates</span><span class="p">(</span><span class="s1">&#39;geoms.xyz&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_geos</span> <span class="o">=</span> <span class="n">readXYZ</span><span class="p">(</span><span class="s1">'geoms.xyz'</span><span class="p">)</span>
+<span class="n">coordinates</span> <span class="o">=</span>  <span class="n">read_coordinates</span><span class="p">(</span><span class="s1">'geoms.xyz'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -656,8 +656,8 @@ You can use the little helper function <code class="docutils literal notranslate
 <p>Let’s also extract the energies after each SCF cycle. We can use grep for this</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span>-a<span class="w"> </span><span class="s1">&#39;@DF-UHF Final Energy&#39;</span><span class="w"> </span>h2o-opt.log
-<span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;  @DF-UHF Final Energy:   &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">))</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">geo_opt_energies</span><span class="p">]</span> <span class="c1"># this is some formatting to get the values from the text file</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="o">!</span>grep<span class="w"> </span>-a<span class="w"> </span><span class="s1">'@DF-UHF Final Energy'</span><span class="w"> </span>h2o-opt.log
+<span class="n">geo_opt_energies</span> <span class="o">=</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'  @DF-UHF Final Energy:   '</span><span class="p">,</span><span class="s1">''</span><span class="p">))</span>  <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">geo_opt_energies</span><span class="p">]</span> <span class="c1"># this is some formatting to get the values from the text file</span>
 <span class="n">geo_opt_energies</span>
 </pre></div>
 </div>
@@ -668,9 +668,9 @@ You can use the little helper function <code class="docutils literal notranslate
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load in files for PES</span>
-<span class="n">PES_water</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;PES_water/water-hf-6-31G-energies.npy&#39;</span><span class="p">)</span>
-<span class="n">PES_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;PES_water/water-hf-6-31G-distances.npy&#39;</span><span class="p">)</span>
-<span class="n">PES_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;PES_water/water-hf-6-31G-angle.npy&#39;</span><span class="p">)</span>
+<span class="n">PES_water</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'PES_water/water-hf-6-31G-energies.npy'</span><span class="p">)</span>
+<span class="n">PES_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'PES_water/water-hf-6-31G-distances.npy'</span><span class="p">)</span>
+<span class="n">PES_angle</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">'PES_water/water-hf-6-31G-angle.npy'</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -681,10 +681,10 @@ You can use the little helper function <code class="docutils literal notranslate
 <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">go</span><span class="o">.</span><span class="n">Surface</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">PES_water</span><span class="p">,</span> 
                                  <span class="n">x</span><span class="o">=</span><span class="n">PES_r</span><span class="p">,</span>
                                  <span class="n">y</span><span class="o">=</span><span class="n">PES_angle</span><span class="p">,</span>
-                                 <span class="n">colorscale</span><span class="o">=</span><span class="s1">&#39;RdBu&#39;</span><span class="p">,</span>
+                                 <span class="n">colorscale</span><span class="o">=</span><span class="s1">'RdBu'</span><span class="p">,</span>
                                  <span class="n">reversescale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                                 <span class="n">hoverinfo</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
-                                 <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Full PES&#39;</span><span class="p">,</span>
+                                 <span class="n">hoverinfo</span><span class="o">=</span><span class="s1">'none'</span><span class="p">,</span>
+                                 <span class="n">name</span><span class="o">=</span><span class="s1">'Full PES'</span><span class="p">,</span>
                                  <span class="n">contours</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">Contours</span><span class="p">(</span>
                                     <span class="n">x</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">contours</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
                                     <span class="n">y</span><span class="o">=</span><span class="n">go</span><span class="o">.</span><span class="n">surface</span><span class="o">.</span><span class="n">contours</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="n">highlight</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
@@ -694,19 +694,19 @@ You can use the little helper function <code class="docutils literal notranslate
                      <span class="p">])</span>
 <span class="c1"># here we plot our geometry optimization results</span>
 <span class="c1"># change the z, x, y options if you plot multiple lines, you can also change the colors</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">add_scatter3d</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">geo_opt_energies</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">h2o_angles_dist</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">h2o_angles_dist</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers+lines&#39;</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-                   <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkorange&#39;</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
-                   <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Geometry Optimization&quot;</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_scatter3d</span><span class="p">(</span><span class="n">z</span><span class="o">=</span><span class="n">geo_opt_energies</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">h2o_angles_dist</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="n">h2o_angles_dist</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span><span class="n">mode</span><span class="o">=</span><span class="s1">'markers+lines'</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">'orange'</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+                   <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">'darkorange'</span><span class="p">,</span><span class="n">width</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span>
+                   <span class="n">name</span><span class="o">=</span><span class="s2">"Geometry Optimization"</span>
                  <span class="p">)</span>
 
 <span class="c1"># this is comesmetics to add labeles etc.</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Water Potential Energy Surface&#39;</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                  <span class="n">template</span><span class="o">=</span><span class="s1">&#39;simple_white&#39;</span><span class="p">,</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Water Potential Energy Surface'</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                  <span class="n">template</span><span class="o">=</span><span class="s1">'simple_white'</span><span class="p">,</span>
                   <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
                   <span class="n">scene</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
-                      <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">&quot;O-H [A]&quot;</span><span class="p">,</span>
-                      <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">&quot;Angle H-O-H&quot;</span><span class="p">,</span>
-                      <span class="n">zaxis_title</span><span class="o">=</span><span class="s1">&#39;Energy [a.u]&#39;</span><span class="p">,</span>
+                      <span class="n">xaxis_title</span><span class="o">=</span><span class="s2">"O-H [A]"</span><span class="p">,</span>
+                      <span class="n">yaxis_title</span><span class="o">=</span><span class="s2">"Angle H-O-H"</span><span class="p">,</span>
+                      <span class="n">zaxis_title</span><span class="o">=</span><span class="s1">'Energy [a.u]'</span><span class="p">,</span>
                       <span class="n">xaxis_showspikes</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                       <span class="n">yaxis_showspikes</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
                    <span class="n">margin</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">l</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">65</span><span class="p">,</span> <span class="n">t</span><span class="o">=</span><span class="mi">90</span><span class="p">))</span>
