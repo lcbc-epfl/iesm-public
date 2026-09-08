@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 1
-subtitle: IESM Fall 2025-2026
-date: September 9, 2025
-author: "Salomé, Qihao, Thibault, Evan" 
+subtitle: IESM Fall 2026-2027
+date: September 9, 2026
+author: "Alice, Amina, Thibault, Evan" 
 output: beamer_presentation
 ---
 
@@ -11,8 +11,8 @@ Welcome to the IESM course!
 
 - Lecturer: Prof. Ursula Röthlisberger
 - TAs:
-	- Salomé Guilbert
-	- Qihao Zhang
+	- Alice Piantavigna
+	- Amina Menhour
     - Thibault Kläy
     - Evan Vasey
  	- Different PostDocs from LCBC lab 	
