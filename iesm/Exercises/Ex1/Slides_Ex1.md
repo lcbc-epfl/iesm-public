@@ -57,7 +57,7 @@ Welcome to the IESM course!
 - Examples: 
 ![](/data/iesm/img_slides/Ex1/ex_example.png) \
 
-- Exercises account for 1/3 of the final grade (2/3 from exams, 1 written 1 oral)
+- Exercises account for 1/3 of the final grade and 2/3 from written exams (1/3 from exam I on 26.10 , and 1/3 from exam II on 14.12)
 
 - Submit report 
 	- `pdf` document answering the questions completely with relevant results
