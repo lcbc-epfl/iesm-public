@@ -15,7 +15,7 @@ Welcome to the IESM course!
 	- Amina Menhour
     - Thibault Kläy
     - Evan Vasey
- 	- Different PostDocs from LCBC lab 	
+ 	- Various PostDocs from LCBC lab 	
 
 # Introduction to Electronic Structure Methods
 - Mondays from 8:15 to 10:00 and Tuesdays from 10:15 to 12:00
