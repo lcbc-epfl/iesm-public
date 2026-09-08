@@ -1,7 +1,7 @@
 ---
 title: Exercise Session 1
 subtitle: IESM Fall 2026-2027
-date: September 9, 2026
+date: September 8, 2026
 author: "Alice, Amina, Thibault, Evan" 
 output: beamer_presentation
 ---
