@@ -30,7 +30,7 @@ Over the years many people have contributed to the improvement of the course mat
 * Alice Piantavigna
 
 ## Time Table Fall Semester 2026
-⚠️ This timetable was last updated on Monday 08.09.2025
+⚠️ This timetable was last updated on Wednesday 09.09.2026
 
 The course will be on
 * **Mon 08:15-10:00am**
@@ -42,33 +42,33 @@ Course rooms
   
 | date            | type     | description                                               |               |
 |-----------------|----------|-----------------------------------------------------------|---------------|
-| 08.9. Mon       |  theory  | Revision of Linear Algebra and Quantum Mechanics          |   assistants  |
-| 09.9. Tue       | exercise | Exercise 1: Linear Algebra in Quantum Mechanics           |   assistants  |
-| 15.9. Mon       |  course  | Basis Sets I                                              |       UR      |
-| 16.9. Tue       |  course  | Basis Sets II                                             |       UR      |
-| 22.9. Mon       |  ------  | Jeûne Fédéral                                             |       --      |
-| 23.9. Tue       | exercise | Exercise 2: Intro & HF calcs in Psi4                      |   assistants  |
-| 29.9. Mon       |  course  | Hartree-Fock I                                            |       UR      |
-| 30.9. Tue       | exercise | Exercise 3:  Basis sets, De, geom opt.                    |   assistants  |
-| 06.10. Mon      |  course  | Hartree-Fock II                                           |       UR      |
-| 07.10. Tue      | exercise | Exercise 4: Hartree Fock procedure in detail              |   assistants  |
-| 13.10. Mon      | exercise | Mock Exam with Old Written Exam                           |   assistants  |
-| 14.10. Tue      | exercise | Solutions of Mock Exam + Q&A Session                      |   assistants  |
-| 20.10. Mon      |  ------  | Fall Break - No Classes                                   |       --      |
-| 21.10. Tue      |  ------  | Fall Break - No Classes                                   |       --      |
-| 27.10. Mon      |   exam   | Written Exam I                                            |   assistants  |
-| 28.10. Tue      |  course  | Configuration Interaction                                 |       UR      |
-| 03.11. Mon      |  course  | Many-Body Perturbation Theory                             |       UR      |
-| 04.11. Tue      | exercise | Exercise 5: Post HF: MPn & CI                             |   assistants  |
-| 10.11. Mon      |  course  | Coupled Cluster Theory                                    |       UR      |
-| 11.11. Tue      | exercise | Exercise 6: DFT vs HF/MP2                                 |   assistants  |
-| 17.11. Mon      |  course  | Multireference Methods                                    | Andrej Antalík|
-| 18.11. Tue      |  course  | Density Functional Theory (DFT) I                         |       UR      |
-| 24.11. Mon      | exercise | Exercise 7: Trouble Shooting, Pitfalls, traps             |   assistants  |
-| 25.11. Tue      |  course  | DFT II                                                    |       UR      |
-| 01.12. Mon      | exercise | Exercise 8: Transition States                             |   assistants  |
-| 02.12. Tue      |  course  | DFT III (CP, QM/MM, Demos) & Summary                      |       UR      |
-| 08.12. Mon      | exercise | Exercise 9: PES Scans                                     |   assistants  |
-| 09.12. Tue      | exercise | Q&A Session                                               |   assistants  |
-| 15.12. Mon      |   exam   | Written Exam II                                           |   assistants  |
-| 16.12. Tue      |  ------  |                                                           |       --      |
+| 07.9. Mon       |  theory  | Intro                                                     |       UR      |
+| 08.9. Tue       | exercise | Exercise 1: Linear Algebra in Quantum Mechanics           |   assistants  |
+| 14.9. Mon       |  course  | Basis Sets I                                              |       UR      |
+| 15.9. Tue       |  course  | Basis Sets II                                             |       UR      |
+| 21.9. Mon       |  ------  | Jeûne Fédéral                                             |       --      |
+| 22.9. Tue       |  course  | Hartree-Fock I                                            |       UR      |
+| 28.9. Mon       | exercise | Exercise 2: Intro & HF calcs in Psi4                      |   assistants  |
+| 29.9. Tue       |  course  | Hartree-Fock II                                           |       UR      |
+| 05.10. Mon      | exercise | Exercise 3:  Basis sets, De, geom opt.                    |   assistants  |
+| 06.10. Tue      | exercise | Mock Exam with Old Written Exam                           |   assistants  |
+| 12.10. Mon      | exercise | Exercise 4: Hartree Fock procedure in detail              |   assistants  |
+| 13.10. Tue      | exercise | Solutions of Mock Exam + Q&A Session                      |   assistants  |
+| 19.10. Mon      |  ------  | Fall Break - No Classes                                   |       --      |
+| 20.10. Tue      |  ------  | Fall Break - No Classes                                   |       --      |
+| 26.10. Mon      |   exam   | Written Exam I                                            |   assistants  |
+| 27.10. Tue      |  course  | Configuration Interaction                                 |       UR      |
+| 02.11. Mon      |  course  | Many-Body Perturbation Theory                             |       UR      |
+| 03.11. Tue      |  course  | Coupled Cluster Theory                                    |       UR      |
+| 09.11. Mon      | exercise | Exercise 5: Post HF: MPn & CI                             |   assistants  |
+| 10.11. Tue      |  course  | Multireference Methods                                    | Andrej Antalík|
+| 16.11. Mon      |  course  | Density Functional Theory (DFT) I                         |       UR      |
+| 17.11. Tue      | exercise | Exercise 6: DFT vs HF/MP2                                 |   assistants  |
+| 23.11. Mon      | exercise | Exercise 7: Trouble Shooting, Pitfalls, traps             |   assistants  |
+| 24.11. Tue      |  course  | DFT II                                                    |       UR      |
+| 30.11. Mon      | exercise | Exercise 8: PES Scans                                     |   assistants  |
+| 01.12. Tue      |  course  | DFT III (CP, QM/MM, Demos) & Summary                      |       UR      |
+| 07.12. Mon      | exercise | Exercise 9: Transition States                             |   assistants  |
+| 08.12. Tue      | exercise | Q&A Session                                               |   assistants  |
+| 14.12. Mon      |   exam   | Written Exam II                                           |   assistants  |
+| 15.12. Tue      |  ------  |                                                           |       --      |
