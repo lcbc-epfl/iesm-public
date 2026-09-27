@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 2
-subtitle: IESM Fall 2025-2026
-date: September 23, 2025
-author: "Qihao, Salomé, Evan, Thibault" 
+subtitle: IESM Fall 2026-2027
+date: September 27, 2026
+author: "Thibault, Evan, Amina, Alice" 
 output: beamer_presentation
 ---
 
