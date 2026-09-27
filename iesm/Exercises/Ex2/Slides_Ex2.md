@@ -1,7 +1,7 @@
 ---
 title: Exercise Session 2
 subtitle: IESM Fall 2026-2027
-date: September 27, 2026
+date: September 28, 2026
 author: "Thibault, Evan, Amina, Alice" 
 output: beamer_presentation
 ---
@@ -74,7 +74,7 @@ output: beamer_presentation
 * Therefore, please let us now if something is unclear in the text, questions or the tasks we ask you to perform : )
 * These modifications include questions 9, 13, and 14.
 * **Total of 14 questions**
-* **Due date for the written report next Tuesday (September 30, 10am)**
+* **Due date for the written report next Tuesday (October 5, 10am)**
 
 # Exercise 2 - Tips
 **Tips!**
