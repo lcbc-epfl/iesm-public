@@ -74,7 +74,7 @@ output: beamer_presentation
 * Therefore, please let us know if something is unclear in the text, questions or the tasks we ask you to perform : )
 * These modifications include questions 9, 13, and 14.
 * **Total of 14 questions**
-* **Due date for the written report next Tuesday (October 5, 10am)**
+* **Due date for the written report next Monday (October 5, 8am)**
 
 # Exercise 2 - Tips
 **Tips!**
