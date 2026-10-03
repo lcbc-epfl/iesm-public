@@ -478,40 +478,40 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="geometry-optimization-of-h-2o">
 <h1><span class="section-number">3.3. </span>Geometry optimization of <span class="math notranslate nohighlight">\(H_2O\)</span><a class="headerlink" href="#geometry-optimization-of-h-2o" title="Link to this heading">#</a></h1>
-<p>Until now we have used fixed positions of the nuclei. This means we created a molecule with specified x,y,z coordinates for each atom, passed it to <code class="docutils literal notranslate"><span class="pre">psi4</span></code> and then we called <code class="docutils literal notranslate"><span class="pre">psi4.energy(method/basisset)</span></code>. By running such a single point energy calculation we find the lowest energy solution for the Schroedinger equation at the current geometry.</p>
-<p>Now, what if we do not know how our molecule looks like? E.g suppose the equilibrium bond length and the angle between the atoms of a triatomic molecule that you are looking at is unknown. How to find it?</p>
-<p>The procedue to start from a starting geometry and arrive at an optimal geometry is called <strong>geometry optimization</strong>.</p>
+<p>Until now we have used fixed positions of the nuclei. This means we created a molecule with specified x,y,z coordinates for each atom, passed it to <code class="docutils literal notranslate"><span class="pre">psi4</span></code> and then we called <code class="docutils literal notranslate"><span class="pre">psi4.energy(method/basisset)</span></code>. By running such a single point energy calculation, we find the lowest energy solution for the Schroedinger equation at the current geometry.</p>
+<p>Now, what if we do not know how our molecule looks like? E.g, suppose the equilibrium bond length and the angle between the atoms of a triatomic molecule that you are looking at are unknown. How to find it?</p>
+<p>The procedure to start from an initial geometry and arrive at an optimal geometry is called <strong>geometry optimization</strong>.</p>
 <p>Consider the simple case of the hydrogen molecule, where the only
-parameter that can be optimised is the distance between the nuclei. The
+parameter that can be optimized is the distance between the nuclei. The
 energy of every possible configuration is given by a two-dimensional
 <em>potential energy surface</em> (PES): Starting from an initial guess for the
 geometry, one may follow the curvature of the PES down to the minimal
 energy, which will correspond to the equilibrium geometry. In a
-practical geometry optimisation, this will be done in discrete steps of
+practical geometry optimization, this will be done in discrete steps of
 a certain size. At each iteration, the energy of the corresponding geometry is calculated in a SCF calculation.</p>
 <p>Then, the gradient with respect to the nuclear
 coordinates is determined, and the nuclei are moved to a new position on
 the PES that lies in the direction of the steepest gradient. The
-geometry optimisation converges once the minimum is attained. In
+geometry optimization converges once the minimum is attained. In
 practice, this implies that the forces on the nuclei fall below a
 certain treshold.\</p>
 <p>Larger systems will have more nuclear degrees of freedom than simple
-bimolecular species, and in these cases the PES becomes
+bimolecular species, and in this case, the PES becomes
 many-dimensional; each degree of freedom will correspond to one
-dimension. Geometry optimisations may not converge on very complex
+dimension. Geometry optimizations may not converge on very complex
 potential energy surfaces. If the program is fed with an input that
 resides in a region of the PES that has a difficult topology, the
 algorithm may not find a minimum, and it may be better to restart from a
 different initial geometry. Furthermore, a PES may exhibit multiple
-minima, and the geometry optimisation algorithm may only reach the next
-local minimum, but not neccessarily the global minimum.</p>
+minima, and the geometry optimization algorithm may only reach the next
+local minimum, but not necessarily the global minimum.</p>
 <figure class="align-default" id="geoopt">
 <img alt="../../_images/GeoOpt.png" src="../../_images/GeoOpt.png" />
 <figcaption>
 <p><span class="caption-number">Fig. 3.1 </span><span class="caption-text">Procedure of a geometry optimization.</span><a class="headerlink" href="#geoopt" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
-<p>First again we again import the required modules:</p>
+<p>First, we again import the required modules:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psi4</span>
@@ -537,8 +537,8 @@ local minimum, but not neccessarily the global minimum.</p>
 </div>
 </div>
 </div>
-<p>You will carry out a geometry optimisation on a bad guess for H<span class="math notranslate nohighlight">\(_2\)</span>O
-with an unrealistic H-O-H angle of 90<span class="math notranslate nohighlight">\(^\circ\)</span> and a O-H distance of 1.5Å. During the optimisation,
+<p>You will carry out a geometry optimization on a bad guess for H<span class="math notranslate nohighlight">\(_2\)</span>O
+with an unrealistic H-O-H angle of 90<span class="math notranslate nohighlight">\(^\circ\)</span> and a O-H distance of 1.5 Å. During the optimization,
 Psi4 will move the positions of the atoms in the molecule, moving downhill on the potential energy surface, until it finds a minimum.</p>
 <p>First, we define our suboptimal geometry. Again, we use a UHF reference.</p>
 <div class="cell docutils container">
@@ -586,7 +586,7 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 </div>
 </div>
 </div>
-<p>Let’s have a look at the initial and final conformation after the geometry optimization. We can use the <code class="docutils literal notranslate"><span class="pre">drawXYZSideBySide</span></code> helper funciton, which allows to show two molecules.</p>
+<p>Let’s have a look at the initial and final conformation after the geometry optimization. We can use the <code class="docutils literal notranslate"><span class="pre">drawXYZSideBySide</span></code> helper function, which allows to show two molecules.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZSideBySide</span><span class="p">(</span><span class="n">h2o_suboptimal_start</span><span class="p">,</span> <span class="n">h2o_suboptimal</span><span class="p">)</span>
@@ -594,7 +594,7 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 </div>
 </div>
 </div>
-<p>Lets have a look at the output file and see what is happening. Lets grep again the <code class="docutils literal notranslate"><span class="pre">iter</span></code> keyword as before and also check the convergence of the geometry optimization using <code class="docutils literal notranslate"><span class="pre">Convergence</span> <span class="pre">Check</span></code>.</p>
+<p>Let’s have a look at the output file and see what is happening. Let’s grep again the <code class="docutils literal notranslate"><span class="pre">iter</span></code> keyword as before, and also check the convergence of the geometry optimization using <code class="docutils literal notranslate"><span class="pre">Convergence</span> <span class="pre">Check</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span>-B<span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="s1">'@DF-UHF iter'</span><span class="w"> </span>h2o-opt.log
@@ -629,7 +629,7 @@ Psi4 will move the positions of the atoms in the molecule, moving downhill on th
 </div>
 <section id="visualization-if-the-optimization-procedure">
 <h2><span class="section-number">3.3.1. </span>Visualization if the optimization procedure<a class="headerlink" href="#visualization-if-the-optimization-procedure" title="Link to this heading">#</a></h2>
-<p>Now we want to visualize how the geometry is changed during the optimization procedure. Ler’s save the coordinates first:</p>
+<p>Now we want to visualize how the geometry changed during the optimization procedure. Let’s save the coordinates first:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">optimized_geos</span> <span class="o">=</span> <span class="n">readXYZ</span><span class="p">(</span><span class="s1">'geoms.xyz'</span><span class="p">)</span>
@@ -663,8 +663,8 @@ You can use the little helper function <code class="docutils literal notranslate
 </div>
 </div>
 </div>
-<p>To help you visualizing the result, we have prepared a full potential energy surface of water at the HF/6-31G level. We will load it and the plot the path our geometry optimization takes based on the angle and the distance we extracted from the trajectory (for this we will use  Plotly, a plotting library with 3D capabilities which we imported at the beginning).</p>
-<p>The potential energy function that is plotted was calculated by performing single point energy calculations for water in 40 steps ffor all angles between 20 and 170° and distances between 0.6 and 2 Å.</p>
+<p>To help you visualizing the result, we have prepared a full potential energy surface of water at the HF/6-31G level. We will load it and plot the path of our geometry optimization taking the angles and the distances we extracted from the trajectory (for this we will use  Plotly, a plotting library with 3D capabilities which we imported at the beginning).</p>
+<p>The plotted potential energy function was calculated by performing single point energy calculations for water in 40 steps for all angles between 20 and 170° and distances between 0.6 and 2 Å.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># load in files for PES</span>
@@ -699,7 +699,7 @@ You can use the little helper function <code class="docutils literal notranslate
                    <span class="n">name</span><span class="o">=</span><span class="s2">"Geometry Optimization"</span>
                  <span class="p">)</span>
 
-<span class="c1"># this is comesmetics to add labeles etc.</span>
+<span class="c1"># this is to add labels etc.</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">'Water Potential Energy Surface'</span><span class="p">,</span> <span class="n">autosize</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                   <span class="n">template</span><span class="o">=</span><span class="s1">'simple_white'</span><span class="p">,</span>
                   <span class="n">width</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">900</span><span class="p">,</span>
