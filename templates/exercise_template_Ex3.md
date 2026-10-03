@@ -52,7 +52,7 @@ Your answer here
 
 ```{admonition} Exercise 5 - Bonus
 :class: exercise
-Try to find out why we are using `guess_mix:True` and `'guess':'gwh'`. **Hint**: What happend if you use the same settings as for the RHF calculation?
+Try to find out why are we using `guess_mix:True` and `'guess':'gwh'`. **Hint**: What happens if you use the same settings as for the RHF calculation?
 
 You can also look at the Psi4 manual to find out about the different options for the initial guess. 
 ```

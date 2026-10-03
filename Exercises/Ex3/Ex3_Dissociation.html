@@ -468,8 +468,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="recording-a-dissociation-curve-for-h-2-rhf-vs-uhf">
 <h1><span class="section-number">3.2. </span>Recording a Dissociation Curve for H<span class="math notranslate nohighlight">\(_2\)</span>: RHF vs. UHF<a class="headerlink" href="#recording-a-dissociation-curve-for-h-2-rhf-vs-uhf" title="Link to this heading">#</a></h1>
-<p>In this exercise you will calculate the dissociation curve for the H<span class="math notranslate nohighlight">\(_2\)</span> molecule. So far, we focused on the choice of the basis set and on the effect of the basis set size. However, together with the choice of the basis set, another fundamental choice in computational chemistry calculations is what computational method will give you the most accurate results (in a reasonable time). In this exercise you will be introduced to two similar methods, both related to Hartree-Fock (HF) method: <strong>Restricted HF (RHF)</strong> and <strong>Unrestricted HF (UHF)</strong>.</p>
-<p>First again we again import the required modules:</p>
+<p>In this exercise you will calculate the dissociation curve for the H<span class="math notranslate nohighlight">\(_2\)</span> molecule. So far, we focused on the choice of the basis set and on the effect of the basis set size. However, together with the choice of the basis set, another fundamental choice in computational chemistry calculations is what computational method will give you the most accurate result (in a reasonable time). In this exercise you will be introduced to two similar methods, both related to Hartree-Fock (HF) method: <strong>Restricted HF (RHF)</strong> and <strong>Unrestricted HF (UHF)</strong>.</p>
+<p>First, we import again the required modules:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">psi4</span>
@@ -494,9 +494,9 @@ document.write(`
 </div>
 </div>
 <p>We want to calculate the energy of H<span class="math notranslate nohighlight">\(_2\)</span> at the following internuclear distances at
-both the RHF/6-31G and UHF/6-31G level of theory, i.e. we use two different energy methods with the same basis set.</p>
+both the RHF/6-31G and UHF/6-31G levels of theory, i.e. we use two different energy methods with the same basis set.</p>
 <p>You are given the example for RHF and you need to modify the UHF calculation.</p>
-<p>The calcuation works by creating a list of the distances we want to try and then by iterating over it:</p>
+<p>The calculation works by creating a list of the distances we want to try and then by iterating over it:</p>
 <ul class="simple">
 <li><p>we create a <code class="docutils literal notranslate"><span class="pre">h2</span></code> molecule replacing the z coordinate in the XYZ matrix with our desired distance.</p></li>
 <li><p>we specify the logfile and set appending to <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
@@ -506,7 +506,7 @@ both the RHF/6-31G and UHF/6-31G level of theory, i.e. we use two different ener
 <li><p>for the guess in the UHF calculation: <code class="docutils literal notranslate"><span class="pre">'guess_mix':True</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'gwh'</span></code></p></li>
 </ul>
 </li>
-<li><p>we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specificing the desired method (i.e. RHF or UHF), basis and molecule</p></li>
+<li><p>we use <code class="docutils literal notranslate"><span class="pre">psi4.energy</span></code> specifying the desired method (i.e. RHF or UHF), basis and molecule</p></li>
 <li><p>we clean up temporary files and add our calculated energy to a list for the plotting</p></li>
 </ul>
 <div class="cell docutils container">
@@ -556,7 +556,7 @@ both the RHF/6-31G and UHF/6-31G level of theory, i.e. we use two different ener
           E_{inter}^{6-31G}(\mathbf{R}) = E_{H_2}^{6-31G}(\mathbf{R})-2\cdot E_H^{6-31G}
           \end{aligned}
 \]</div>
-<p>We need the value of the hydrogen atom <span class="math notranslate nohighlight">\(E_H^{6-31G}\)</span>. In particular, we will use as reference value for the H atom the UHF one. This is because RHF method for closed-shell singlet systems, which is not the case for a single H atom.</p>
+<p>We need the value of the hydrogen atom <span class="math notranslate nohighlight">\(E_H^{6-31G}\)</span>. In particular, we will use as reference value for the H atom the UHF one. This is because RHF method is for closed-shell singlet systems, which is not the case for a single H atom.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">clean_options</span><span class="p">()</span>
@@ -575,7 +575,7 @@ both the RHF/6-31G and UHF/6-31G level of theory, i.e. we use two different ener
 </div>
 </div>
 </div>
-<p>We would like to can convert our lists of energies from Hartree to  kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> to interpret easily the results. Psi4 comes with a handy set of <a class="reference external" href="https://psicode.org/psi4manual/master/autodoc_physconst.html">conversion factors</a> e.g to convert a.u into kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p>
+<p>We would like to convert our lists of energies from Hartree to kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> to interpret easily the results. Psi4 comes with a handy set of <a class="reference external" href="https://psicode.org/psi4manual/master/autodoc_physconst.html">conversion factors</a> e.g to convert a.u into kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">constants</span><span class="o">.</span><span class="n">hartree2kcalmol</span>
@@ -585,7 +585,7 @@ both the RHF/6-31G and UHF/6-31G level of theory, i.e. we use two different ener
 </div>
 <p>We can convert the list of energies to numpy arrays and use broadcasting to quickly substract the energy of the single H atoms from each list item to get the interaction energy.</p>
 <p>We have to use <code class="docutils literal notranslate"><span class="pre">np.array</span></code> as standard python lists (defined using <code class="docutils literal notranslate"><span class="pre">[item1,</span> <span class="pre">item2]</span></code>) do not support broadcasting.
-Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a for loop to perform aritemethic for each element we can simply substract the single H energy and conver to kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> once and the operation is broadcast.</p>
+Broadcasting is an efficient way to perform arithmetics on vectors and matrices in python. Instead of having to write a for loop to perform arithmetic for each element, we can simply substract the single H energy and convert to kcal mol<span class="math notranslate nohighlight">\(^{-1}\)</span> once, and the operation is broadcasted.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Complete the interaction energy</span>
@@ -622,7 +622,7 @@ comparing to the energy that is normally required to break a bond.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 5 - Bonus</p>
-<p>Try to find out why we are using <code class="docutils literal notranslate"><span class="pre">guess_mix:True</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'gwh'</span></code>. <strong>Hint</strong>: What happend if you use the same settings as for the RHF calculation?</p>
+<p>Try to find out why are we using <code class="docutils literal notranslate"><span class="pre">guess_mix:True</span></code> and <code class="docutils literal notranslate"><span class="pre">'guess':'gwh'</span></code>. <strong>Hint</strong>: What happens if you use the same settings as for the RHF calculation?</p>
 <p>You can also look at the Psi4 manual to find out about the different options for the initial guess.</p>
 </div>
 </section>
