@@ -45,7 +45,7 @@ $\rightarrow \Psi_{HF}$ inserted into time-independent Schrödinger equation to 
 HF equations (will be derived in detail during Lectures)
 $$E_{HF} = \sum_i \left<\phi_i\middle|\hat{h}\middle|\phi_i\right> + \frac{1}{2}\sum_{i, j}\left(\left[\phi_i \phi_i\middle|\phi_j \phi_j\right] - \left[\phi_i \phi_j\middle|\phi_j \phi_i\right]\right) \quad\quad \forall\phi_i$$
 
-where $\left[\dots\middle|\dots\right]$ integrals contain Coulomb and Exchange operators, whose action on orbital $\phi_i$ depends on all the other one-electron orbitals $\phi_j$. Hence, HF equations have to be solved iteratively until self-consistency (**selfconsistent field SCF method**)
+where $\left[\dots\middle|\dots\right]$ integrals contain Coulomb and Exchange operators, whose action on orbital $\phi_i$ depends on all the other one-electron orbitals $\phi_j$. Hence, HF equations have to be solved iteratively until self-consistency (**self consistent field SCF method**)
 
 ![](/data/iesm/img_slides/Ex3/SCF_cycle.png) \
 
