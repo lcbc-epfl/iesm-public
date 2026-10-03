@@ -22,7 +22,7 @@ Note, that references to other parts of the documents aren't resolved in this te
 
 ```{admonition} Exercise 1
 :class: exercise
-Include a table of the the calculated energies using the three different basis sets
+Include a table of the calculated energies using the three different basis sets
 ```
 
 Your answer here

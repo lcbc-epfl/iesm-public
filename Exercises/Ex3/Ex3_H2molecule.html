@@ -497,7 +497,7 @@ and molecular properties is possible.</p>
 </div>
 </div>
 </div>
-<p>next we define our <span class="math notranslate nohighlight">\(H_2\)</span> geometry, setting the H molecules at equilibrium distance of each other, i.e. 0.7414Å. We are using XYZ coordinates for the <code class="docutils literal notranslate"><span class="pre">psi4.geometry</span></code>, but as you saw last week also Z-matrix geometries can be used here.</p>
+<p>next we define our <span class="math notranslate nohighlight">\(H_2\)</span> geometry, setting the H molecules at equilibrium distance of each other, i.e. 0.7414 Å. We are using XYZ coordinates for the <code class="docutils literal notranslate"><span class="pre">psi4.geometry</span></code>, but as you saw last week also Z-matrix geometries can be used here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">"""</span>
@@ -509,7 +509,7 @@ and molecular properties is possible.</p>
 </div>
 </div>
 </div>
-<p>We can have a look at out molecule using the helper function <code class="docutils literal notranslate"><span class="pre">drawXYZ</span></code>, to double-check everything looks fine</p>
+<p>We can have a look at our molecule using the helper function <code class="docutils literal notranslate"><span class="pre">drawXYZ</span></code>, to double-check everything looks fine:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">drawXYZ</span><span class="p">(</span><span class="n">h2</span><span class="p">)</span>
@@ -517,15 +517,15 @@ and molecular properties is possible.</p>
 </div>
 </div>
 </div>
-<p>Edit the code cell below to compute the energy (using <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> funciton) for the different basis sets selected</p>
+<p>Edit the code cell below to compute the energy (using <code class="docutils literal notranslate"><span class="pre">psi4.energy()</span></code> function) for the different basis sets selected</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'6-31G'</span><span class="p">,</span> <span class="s1">'6-311G'</span><span class="p">,</span> <span class="s1">'aug-cc-pvtz'</span><span class="p">]</span> <span class="c1"># these are the basis sets we are going to use</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">basissets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'6-31G'</span><span class="p">,</span> <span class="s1">'6-311G'</span><span class="p">,</span> <span class="s1">'aug-cc-pvtz'</span><span class="p">]</span> <span class="c1"># those are the basis sets we are going to use</span>
 
-<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'UHF'</span><span class="p">})</span> <span class="c1"># We are using Unrestriced Hartee Fock</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_options</span><span class="p">({</span><span class="s1">'reference'</span><span class="p">:</span><span class="s1">'UHF'</span><span class="p">})</span> <span class="c1"># We are using Unrestricted Hartree-Fock</span>
 
 <span class="k">for</span> <span class="n">basis</span> <span class="ow">in</span> <span class="n">basissets</span><span class="p">:</span>
-    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in seperate log files</span>
+    <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">set_output_file</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">basis</span><span class="si">}</span><span class="s1">-output.log'</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span> <span class="c1"># save in separate log files</span>
     <span class="n">E</span> <span class="o">=</span> <span class="kc">None</span>    <span class="c1"># EDIT HERE</span>
                 <span class="c1"># we want to perform a single point energy calculation once per basis set</span>
 
@@ -536,9 +536,9 @@ and molecular properties is possible.</p>
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Exercise 1</p>
-<p>Include a table of the the calculated energies using the three different basis sets</p>
+<p>Include a table of the calculated energies using the three different basis sets</p>
 </div>
-<p>Lets have a look at one of the outputs (e.g for the <code class="docutils literal notranslate"><span class="pre">6-31G</span></code> basis). We can use the shell command <code class="docutils literal notranslate"><span class="pre">!grep</span> <span class="pre">-options</span> <span class="pre">SEARCHTERM</span> <span class="pre">FILENAME</span></code> for this. (Remember: The <code class="docutils literal notranslate"><span class="pre">!</span></code> denotes that this is not a python command but a bash program.)</p>
+<p>Let’s have a look at one of the outputs (e.g for the <code class="docutils literal notranslate"><span class="pre">6-31G</span></code> basis). We can use the shell command <code class="docutils literal notranslate"><span class="pre">!grep</span> <span class="pre">-options</span> <span class="pre">SEARCHTERM</span> <span class="pre">FILENAME</span></code> for this. (Remember: The <code class="docutils literal notranslate"><span class="pre">!</span></code> denotes that this is not a python command but a bash program.)</p>
 <p>As the SCF procedure is iterative we can search for the word <code class="docutils literal notranslate"><span class="pre">iter</span></code> in the output. By including <code class="docutils literal notranslate"><span class="pre">-A</span> <span class="pre">1</span> <span class="pre">-B</span> <span class="pre">3</span></code> we get 1 line after the last find and 3 lines before the first find, which contain some helpful context to make sense of the results.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -551,7 +551,7 @@ and molecular properties is possible.</p>
 <p class="admonition-title">Exercise 2</p>
 <p>What is the meaning of the Delta E column? What is DIIS? (Hint: to get more details, it may help to check the <a class="reference external" href="https://psicode.org/psi4manual/master/scf.html">HF page on psi4 manual</a>)</p>
 </div>
-<p>Next, let’s plot the SCF convergence for the three tested basis sets. You can use a little helper function called <code class="docutils literal notranslate"><span class="pre">psi4_read_scf</span></code> which will read in the table shown above and return it to you as pandas dataframe that you can easily plot.</p>
+<p>Next, let’s plot the SCF convergence for the three tested basis sets. You can use a little helper function called <code class="docutils literal notranslate"><span class="pre">psi4_read_scf</span></code> which will read in the table shown above and return to you a pandas dataframe that you can easily plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in scf table like so:</span>
@@ -565,13 +565,13 @@ and molecular properties is possible.</p>
 </div>
 </div>
 </div>
-<p>For the plotting we will use matplotlib. We will also include in the plot the exact value. As explained in the introduction, this was obtained with a post-Hartree Fock calculation, and its value for the H<span class="math notranslate nohighlight">\(_2\)</span> molecule is <span class="math notranslate nohighlight">\(E_{exact} = -1.174474{}\)</span> a.u.</p>
-<p>In particular, we suggest you to produce two plots, one with the full set of points, and the other one excluding the first SCF iteration. This can help you to appreciate the differences between the three basis sets. In the cell code below, we already set both subplots. Edit the code in order to plot the results for the three basis sets.</p>
+<p>For the plotting, we will use matplotlib. We will also include in the plot the exact value. As explained in the introduction, this was obtained with a post-Hartree Fock calculation, and the value for the H<span class="math notranslate nohighlight">\(_2\)</span> molecule is <span class="math notranslate nohighlight">\(E_{exact} = -1.174474{}\)</span> a.u.</p>
+<p>In particular, we suggest you to produce two plots: one with the full set of points, and the other one excluding the first SCF iteration. This can help you to appreciate the differences between the three basis sets. In the cell code below, we already set both subplots. Edit the code in order to plot the results for the three basis sets.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Subplot 1: full data and exact value reference</span>
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span> <span class="c1"># create figure with two subplots</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">7.0</span><span class="p">)</span> <span class="c1"># add spacing between supblots </span>
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">(</span><span class="n">pad</span><span class="o">=</span><span class="mf">7.0</span><span class="p">)</span> <span class="c1"># add spacing between subplots </span>
 
 <span class="c1"># we use the table index and the Total Energy column for plotting</span>
 <span class="c1"># repeat the following command once per basis set to have all on the same plot</span>
@@ -586,7 +586,7 @@ and molecular properties is possible.</p>
 <span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span> <span class="c1"># show legend</span>
 
 <span class="c1"># Subplot 2: excluding first SCF point to focus on the difference along SCF cycles</span>
-<span class="c1"># you can exclud the first point of an array just by [1:]. This will select all point from 1 (so excluding 0) to the end</span>
+<span class="c1"># you can exclude the first point of an array just using [1:]. This will select all points from 1 (so excluding 0) to the end</span>
 <span class="c1"># example: array DATA --&gt; DATA[1:]</span>
 <span class="c1"># repeat the following command once per basis set to have all on the same plot</span>
 <span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nameOfDataFrame</span><span class="o">.</span><span class="n">index</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">nameOfDataFrame</span><span class="p">[</span><span class="s1">'Total Energy'</span><span class="p">][</span><span class="mi">1</span><span class="p">:],</span> <span class="s1">'.-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">'label'</span><span class="p">)</span> 
