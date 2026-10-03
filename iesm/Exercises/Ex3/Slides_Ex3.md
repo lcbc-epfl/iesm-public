@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 3
-subtitle: IESM Fall 2025-2026 
-date: September 30, 2025  
-author: "Salomé, Qihao, Thibault, Evan" 
+subtitle: IESM Fall 2026-2027 
+date: Monday 5th October, 2026  
+author: "Amina, Alice, Thibault, Evan" 
 output: beamer_presentation
 ---
 
@@ -21,7 +21,7 @@ Large Basis Sets, Dissociation Energy and Geometry Optimisation
 ![](/data/iesm/img_slides/Ex3/ex3_goals.png) \
 
 # Influence of basis set 
-* System under study: H$_2$ molecule at equilibrium bondlength (H--H distance 0.7414Å)
+* System under study: H$_2$ molecule at equilibrium bond length (H--H distance 0.7414 Å)
 
 	![](/data/iesm/img_slides/Ex3/H2mol.png){width=64px} \ 
 
