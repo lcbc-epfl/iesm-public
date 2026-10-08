@@ -1,23 +1,16 @@
 ---
 title: Exercise Session 4
-subtitle: IESM Fall 2025-2026 
-date: October 7, 2024  
-author: "Qihao, Salomé, Thibault, Evan" 
+subtitle: IESM Fall 2026-2027 
+date: October 12, 2026  
+author: "Thibault, Evan, Amina, Alice" 
 output: beamer_presentation
 ---
 
 # Course Reminders
-* Monday 13.10: mock written exam during the lecture time
-* Tuesday 14.10: mock exam solutions and Q&A session (we'll gather questions on the Moodle forum by Monday 18:00 14.10)
-* **Monday 27.10:** written exam
-* Tuesday 04.11: report for exercise 4 due by 10:00; session for exercise 5
-
-# Report Templates 
-* To assist in making easily uploadable/readable reports, Simon created Report Templates 
-* Google Doc or Overleaf (preferable) format
-* Whenever you modify code, screenshot the cell/output using the Snipping Tool or use the code environment in latex as described in the hints at the top of the template
-
-![](/data/iesm/img_slides/Ex4/report_template.png) 
+* Tomorrow, Tuesday 13.10: mock exam solutions and Q&A session
+* Monday 19.10: report for exercise 4 due by 8:00; Class break
+* Monday 26.10: lecture (post-HF methods)
+* **Tuesday 27.10:** written exam
 
 # Exercise 4 
 The Hartree-Fock procedure in detail
@@ -33,7 +26,7 @@ $\rightarrow \Psi_{HF}$ inserted into time-independent Schrödinger equation to 
 
 # Recap of SCF Method
 
-HF equations (will be derived in detail during Lectures)
+HF equations (were derived in detail during Lectures)
 $$E_{HF} = \sum_i \left<\phi_i\middle|\hat{h}\middle|\phi_i\right> + \frac{1}{2}\sum_{i, j}\left(\left[\phi_i \phi_i\middle|\phi_j \phi_j\right] - \left[\phi_i \phi_j\middle|\phi_j \phi_i\right]\right) \quad\quad \forall\phi_i$$
 
 where $\left[\dots\middle|\dots\right]$ integrals contain Coulomb and Exchange operators, whose action on orbital $\phi_i$ depends on all the other one-electron orbitals $\phi_j$. Hence, HF equations have to be solved iteratively until self-consistency (**self consistent field SCF method**)
@@ -70,7 +63,7 @@ The issue? $\mathbb{F}$ relies on an orbital solution in order to iteratively so
 # Overlap Matrix $\mathbb{S}$
 $\mathbb{S}$, the overlap matrix, describes the inter-relationships of the basis set vectors. Other details about $\mathbb{S}$:
 
-* The number of basis functions, $n$, defines the size and shape of $\mathbb{S}$($n$x$n$)
+* The number of basis functions, $n$, defines the size and shape of $\mathbb{S}$ ($n$x$n$)
 * $\mathbb{S}$ is an idenity matrix in the case of orthonormal basis set functions 
 * By properly transforming the $\mathbb{S}$ matrix, we can ensure orthonormality 
 
