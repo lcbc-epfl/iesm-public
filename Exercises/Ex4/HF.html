@@ -535,7 +535,7 @@ F = H + 2J - K
 </section>
 <section id="orthogonalizing-the-ao-basis-set">
 <h2><span class="section-number">4.1.2. </span>Orthogonalizing the AO basis set<a class="headerlink" href="#orthogonalizing-the-ao-basis-set" title="Link to this heading">#</a></h2>
-<p>Use the two orthonormal basis vector that we defined in Exercise 1</p>
+<p>Use the two orthonormal basis vectors that we defined in Exercise 1</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define a first basis vector and a second, orthogonal vector (you can use your solutions from Ex 1)</span>
@@ -682,7 +682,7 @@ Let’s try this with a simple basis set of two (perhaps) orthonormal vectors.</
 <p>How many electrons are there in total in H<span class="math notranslate nohighlight">\(_2\)</span>O?
 How many occupied molecular orbitals would you expect?</p>
 </div>
-<p>Before we can begin to implement the HF procedure, we need to specify the molecule and basis set that we will be using.  We will also set the memory usage for our calcluation and the output file name.</p>
+<p>Before we can begin to implement the HF procedure, we need to specify the molecule and basis set that we will be using.  We will also set the memory usage for our calculation and the output file name.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==&gt; Set Basic Psi4 Options &lt;==</span>
@@ -729,7 +729,7 @@ The Hartree-Fock ground state energy of the water is: -74.94207989868094 Eh
 </div>
 </div>
 </div>
-<p>Next, we need to build the wavefunction from the basis functions.  We store the wavefunction in a variable called <code class="docutils literal notranslate"><span class="pre">wfn</span></code>. We use the function <code class="docutils literal notranslate"><span class="pre">nalpha()</span></code> provided by the wavefunction object we created above, <code class="docutils literal notranslate"><span class="pre">wfn</span></code>, to determine the number of orbitals with spin alpha, which will be doubly occupied orbitals for close shelled systems. We save this answer as a variable called <code class="docutils literal notranslate"><span class="pre">ndocc</span></code> (number of doubly occupied orbitals).</p>
+<p>Next, we need to build the wavefunction from the basis functions. We store the wavefunction in a variable called <code class="docutils literal notranslate"><span class="pre">wfn</span></code>. We use the function <code class="docutils literal notranslate"><span class="pre">nalpha()</span></code> provided by the wavefunction object we created above, <code class="docutils literal notranslate"><span class="pre">wfn</span></code>, to determine the number of orbitals with spin alpha, which will be doubly occupied orbitals for closed shell systems. We save this answer as a variable called <code class="docutils literal notranslate"><span class="pre">ndocc</span></code> (number of doubly occupied orbitals).</p>
 <p>Execute the code below and confirm that the number of doubly occupied orbitals matches your expectation for the molecule you chose.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -858,8 +858,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-28482e8f-4fae-4515-a74c-85f6aad3e3ad">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-28482e8f-4fae-4515-a74c-85f6aad3e3ad" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ab870252-69ab-4244-9d21-dedfc2bd5d7c">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-ab870252-69ab-4244-9d21-dedfc2bd5d7c" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -891,8 +891,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Link to this heading">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f0acbfc4-82de-477a-ba3e-caf42e2ce4df">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-f0acbfc4-82de-477a-ba3e-caf42e2ce4df" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a03d8c73-99ca-4ba4-8604-27894063000f">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-a03d8c73-99ca-4ba4-8604-27894063000f" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -903,8 +903,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab9a3e8d-f431-49f3-8ffd-981992e7f5eb">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-ab9a3e8d-f431-49f3-8ffd-981992e7f5eb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-617c588e-2a83-4796-bea1-18bd0717c15b">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-617c588e-2a83-4796-bea1-18bd0717c15b" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1235,7 +1235,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 </div>
 <div class="exercise admonition">
 <p class="admonition-title">Bonus Exercise 27</p>
-<p>Modify the value of E_conv and describe its effect the number of iterations.Provide your code, the output of the SCF calculation and the number of iterations.</p>
+<p>Modify the value of E_conv and describe its effect the number of iterations. Provide your code, the output of the SCF calculation and the number of iterations.</p>
 </div>
 </section>
 </section>
