@@ -212,7 +212,7 @@ Your answer here
 
 :::{admonition} Exercise 26
 :class: exercise
- Using the procedure proposed above, calculate the updated coefficients
+ Using the procedure proposed above, calculate the updated coefficients (please add a screenshot of the full code of the SCF loop, together with the output of the cell including the SCF calculation, the final energy, and the number of iterations).
  :::
 
 Your answer here
