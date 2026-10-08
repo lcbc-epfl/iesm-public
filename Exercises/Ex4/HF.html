@@ -858,8 +858,8 @@ a^\dagger s a=a s a=a^2s=1
 <div class="math notranslate nohighlight">
 \[B' = BA.\]</div>
 <p>The new overlap matrix will be</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0c4522ff-73c1-46b1-9217-ea2309472991">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-0c4522ff-73c1-46b1-9217-ea2309472991" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c6cfad6e-84f7-46bf-a749-b5f18a619fde">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-c6cfad6e-84f7-46bf-a749-b5f18a619fde" title="Permalink to this equation">#</a></span>\[\begin{align}
  S' &amp;= B'^\dagger B',\\
  &amp;= (BA)^\dagger (BA),\\
 &amp;= A^\dagger B^\dagger BA,\\
@@ -891,8 +891,8 @@ a^\dagger s a=a s a=a^2s=1
 <section id="the-fock-matrix-transformed-to-an-orthonormal-basis">
 <h2><span class="section-number">4.1.8. </span>The Fock Matrix Transformed to an Orthonormal Basis<a class="headerlink" href="#the-fock-matrix-transformed-to-an-orthonormal-basis" title="Link to this heading">#</a></h2>
 <p>We can now return to Eq. <a class="reference internal" href="#equation-fockmatrix">(4.1)</a> using our orthogonalization matrix <span class="math notranslate nohighlight">\(A\)</span>. A common linear algebra trick is to “insert one.” In this case, the matrix <span class="math notranslate nohighlight">\(A\)</span> times its inverse is, by definition the identity matrix, <span class="math notranslate nohighlight">\(AA^{-1}={\bf1}\)</span>. We can put that factor of one anywhere in an equation that is useful to us, and, then, typically we regroup terms in a way we want. In this case, we insert one  between <span class="math notranslate nohighlight">\(FC\)</span> and <span class="math notranslate nohighlight">\(SC\)</span>.</p>
-<div class="amsmath math notranslate nohighlight" id="equation-653f06f9-ff7b-4dc4-907e-76d878b8b60f">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-653f06f9-ff7b-4dc4-907e-76d878b8b60f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-87d33e49-ac5d-4b52-bcd9-a1ce1d225e0b">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-87d33e49-ac5d-4b52-bcd9-a1ce1d225e0b" title="Permalink to this equation">#</a></span>\[\begin{align}
 FC&amp;=SCE\\
 F({\bf1})C&amp;=S({\bf1})CE\\
 FAA^{-1}C&amp;=SAA^{-1}CE
@@ -903,8 +903,8 @@ FAA^{-1}C&amp;=SAA^{-1}CE
 AFAA^{-1}C=ASAA^{-1}CE
 \]</div>
 <p>We can recognize the transformation <span class="math notranslate nohighlight">\(S'=ASA\)</span> on the right hand side and similarly define <span class="math notranslate nohighlight">\(F'=AFA\)</span> on the left hand side. Lastly, we define a transformed coefficient matrix, <span class="math notranslate nohighlight">\(C'=A^{-1}C\)</span>. Our transformed Fock equation reads</p>
-<div class="amsmath math notranslate nohighlight" id="equation-966531ff-47b6-4a24-9440-d0bd90b963a4">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-966531ff-47b6-4a24-9440-d0bd90b963a4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d87e6456-d6a5-4e48-961d-f1dd2d6f143d">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-d87e6456-d6a5-4e48-961d-f1dd2d6f143d" title="Permalink to this equation">#</a></span>\[\begin{align}
 F'C'&amp;=S'C'E,\\
 &amp;=C'E.
 \end{align}\]</div>
@@ -1187,7 +1187,7 @@ E = \sum_{pq}(H_{pq} + F_{pq})D_{pq}.
 <span class="c1"># Begin Iterations</span>
 <span class="k">for</span> <span class="n">scf_iter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">MAXITER</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
     
-    <span class="c1"># Build Fock matrix (meaning define J, K with density matrix and then define F with J and k) </span>
+    <span class="c1"># Build Fock matrix (meaning define J, K with density matrix and then define F with J and K) </span>
     
     <span class="c1"># &lt;your code here&gt;</span>
 
