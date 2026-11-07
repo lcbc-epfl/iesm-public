@@ -87,7 +87,7 @@ $$
 
 
 # Exercise 5 - HNO3 geometry
-* influence of correlation on electron correlation on structural parameters, such as bond lengths and angles
+* influence of electron correlation on structural parameters, such as bond lengths and angles
 ![](/data/iesm/img_slides/Ex5/HNO3.png){width=100%}
  
 *Note: also these calculations may take some time!* 
@@ -96,8 +96,6 @@ $$
 # Exercise 5 - Tips
 **Tips!**
 
-* MPn theory was treated in detail during the lecture yesterday 
-* CC method used for B atom will be treated in future lectures - take it as just *another* post-HF  method for now
 * This is probably the first exercise where calculations are completed in minutes and not second - it is always a good idea to monitor their status, this can be done using the terminal \texttt{tail -f file.log} command
 
 ![](/data/iesm/img_slides/Ex5/tailcommand.png){width=90%}
