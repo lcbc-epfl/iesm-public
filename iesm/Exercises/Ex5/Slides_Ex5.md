@@ -100,4 +100,13 @@ $$
 
 ![](/data/iesm/img_slides/Ex5/tailcommand.png){width=90%}
 
+# Course Evaluations
+**Some of your comments**
+
+* Need for clearer connection between lectures and practice problems
+* Need for explanation of purpose and significance of the problems in practice sessions and takeaways
+* Gaps between lectures and exercises (ex. pol/diff functions, how to add them to the molecule)
+* Need for more explanations on the slides sometimes
+
+
 
