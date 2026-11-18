@@ -1,8 +1,8 @@
 ---
 title: Exercise Session 7
-subtitle: IESM Fall 2025-2026
-date: November 24, 2025
-author: "Salomé, Qihao, Evan, Thibault" 
+subtitle: IESM Fall 2026-2027
+date: November 23, 2026
+author: "Amina, Alice, Evan, Thibault" 
 output: beamer_presentation
 ---
 
@@ -11,8 +11,8 @@ output: beamer_presentation
 Course Reminders:
 
 * Exercises 9 will not have interviews and will have due dates in January. Plus, we only keep the best grades of 8 of 9 reports : )
-* Q&A session on Tuesday 9 December. Please send questions in advance via email/forum to help us prepare the Q&A session
-* Written exam on Monday 15 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
+* Q&A session on Tuesday 8 December. Please send questions in advance via email/forum to help us prepare the Q&A session
+* Written exam on Monday 14 December, same format of first written exam. Topics: everything not included in the 1st exam (all post-HF methods and DFT).
 
 
 # Exercise 7 - Troubleshooting, Pitfalls, Traps
@@ -22,7 +22,7 @@ In this set of exercises, we will practice recognizing and accounting for common
 
 # Coding & Input Errors
 * In the first part of exercise 7, we’ll hunt for output mistakes which typically arrive via two vectors: the coding or the system input.
-* By the end of the session we will take ~10 min to discuss this part together! So try to solve and think about it, but don't spent the full 2h on this part if you get stuck ;)
+* By the end of the session we will take ~10 min to discuss this part together! So try to solve and think about it, but don't spend the full 2h on this part if you get stuck ;)
 
 
 	![](/data/iesm/img_slides/Ex7/ex7_errors.png){width=65%}
@@ -39,7 +39,7 @@ In this set of exercises, we will practice recognizing and accounting for common
 $$E_{\text{disp}} \propto - C_6/R^6$$
 * Some functionals are designed to take dispersion effects into account:
 $$v_C^{nl}(\mathbf{r}) = \int f(\mathbf{r},\mathbf{r}')\,d\mathbf{r}'$$
-* Other functionals can be improved with corrective functions. D3 and BJ corrections are popular. Here's a D3 correction format:
+* Other functionals can be improved with corrective functions. D3 with BJ damping correction is popular. Here's a D3 correction format:
 $$E_{\text{B3LYP-D3}} = E_{\text{B3LYP}} + E_{\text{D3, 2-body}} + E_{\text{ATM, 3-body}}$$
 
 # Choosing Integration Grid Size
