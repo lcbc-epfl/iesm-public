@@ -7,7 +7,7 @@ output: beamer_presentation
 ---
 
 # Course Reminders
-
+TEST TEST TEST
 Course Reminders:
 
 * Exercises 9 will not have interviews and will have due dates in January. Plus, we only keep the best grades of 8 of 9 reports : )
